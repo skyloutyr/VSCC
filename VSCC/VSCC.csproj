@@ -253,7 +253,9 @@
     </None>
     <None Include="Resources\dnd5eitemindex.json" />
     <None Include="Resources\dnd5espellindex.json" />
-    <None Include="Version.json" />
+    <None Include="Version.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

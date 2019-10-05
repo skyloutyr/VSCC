@@ -34,7 +34,7 @@
             <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left">
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Info}" Click="MenuItem_Click" />
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Roadmap}" />
-                <MenuItem Header="{x:Static p:Resources.MainMenu_CheckForUpdates}" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_CheckForUpdates}" Click="MenuItem_Click_1" />
             </MenuItem>
         </Menu>
         <TabControl x:Name="MainTabs" Margin="0,22,0,0">

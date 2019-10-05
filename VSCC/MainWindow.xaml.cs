@@ -1,7 +1,10 @@
 ﻿using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -168,6 +171,52 @@ namespace VSCC
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             new InfoWindow().Show();
+        }
+
+        private async void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            ((MenuItem)sender).IsEnabled = false;
+            try
+            {
+                HttpWebRequest req = WebRequest.CreateHttp("https://raw.githubusercontent.com/skyloutyr/VSCC/master/VSCC/Version.json");
+                Task<WebResponse> responseTask = req.GetResponseAsync();
+                JObject localJObj = JObject.Parse(System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Version.json")));
+                SemVer.Version localVersion = new SemVer.Version(localJObj["version"].ToObject<string>());
+                using (WebResponse response = await responseTask)
+                {
+                    using (Stream s = response.GetResponseStream())
+                    {
+                        using (StreamReader sr = new StreamReader(s))
+                        {
+                            string result = sr.ReadToEnd();
+                            JObject remoteJObj = JObject.Parse(result);
+                            SemVer.Version remoteVersion = new SemVer.Version(remoteJObj["version"].ToObject<string>());
+                            if (localVersion < remoteVersion)
+                            {
+                                MessageBox.Show($"An update is available!\n\r{ remoteJObj["changelog"][remoteJObj["version"].ToObject<string>()].ToObject<string>() }", "Local version is outdated!");
+                            }
+
+                            if (localVersion > remoteVersion)
+                            {
+                                MessageBox.Show($"", "Remote version is outdated!");
+                            }
+
+                            if (localVersion == remoteVersion)
+                            {
+                                MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Something went wrong while checking for the version:{ ex.GetType().FullName }\n\r{ ex.Message }", "Couldn't check version!");
+            }
+            finally
+            {
+                ((MenuItem)sender).IsEnabled = true;
+            }
         }
     }
 }
