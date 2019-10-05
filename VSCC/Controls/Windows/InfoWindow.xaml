@@ -1,0 +1,49 @@
+﻿<Window x:Class="VSCC.Controls.Windows.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows"
+        mc:Ignorable="d"
+        Title="InfoWindow" Height="300" Width="300">
+    <StackPanel>
+        <Label HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Information" HorizontalContentAlignment="Center"/>
+        <TextBlock Text="Author: SkyLouTyr" />
+        <TextBlock Text="Version: 0" />
+        <TextBlock>
+            License:
+            <Hyperlink NavigateUri="https://www.gnu.org/licenses/gpl-3.0.en.html" RequestNavigate="Hyperlink_RequestNavigate">
+                GPL 3.0
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Text="Used 3rd party libraries:" />
+        <TextBlock>
+            <Hyperlink NavigateUri="https://www.newtonsoft.com/json" RequestNavigate="Hyperlink_RequestNavigate">
+                Json.NET (MIT)
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock>
+            <Hyperlink NavigateUri="https://github.com/xceedsoftware/wpftoolkit" RequestNavigate="Hyperlink_RequestNavigate">
+                Extended WPF Toolkit (MS-PL)
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock>
+            <Hyperlink NavigateUri="https://gitlab.com/sbaeumlisberger/virtualizing-wrap-panel" RequestNavigate="Hyperlink_RequestNavigate">
+                Virtualizing Wrap Panel (MIT)
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock>
+            <Hyperlink NavigateUri="https://github.com/adamreeve/semver.net" RequestNavigate="Hyperlink_RequestNavigate">
+                SemVer.Net (MIT)
+            </Hyperlink>
+        </TextBlock>
+        <Label />
+        <Label />
+        <TextBlock>
+            Repository link:
+            <Hyperlink NavigateUri="" RequestNavigate="Hyperlink_RequestNavigate">
+                Github
+            </Hyperlink>
+        </TextBlock>
+    </StackPanel>
+</Window>

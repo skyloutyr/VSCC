@@ -1,0 +1,297 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:VSCC.Properties"
+             xmlns:local="clr-namespace:VSCC.Controls.Tabs"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:Controls="clr-namespace:VSCC.Controls" x:Class="VSCC.Controls.Tabs.GeneralTab"
+             mc:Ignorable="d" 
+             d:DesignHeight="730" d:DesignWidth="1000">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid Margin="0,0,0,0" MinWidth="1000" MinHeight="730" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <GroupBox x:Name="GroupBox_GlanceValue" Header="{x:Static p:Resources.General_GroupBox_GlanceValue}" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="421">
+                <Grid>
+                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.General_CharacterName}" VerticalAlignment="Top" Width="390" MaxLines="1" FontFamily="Vivaldi" FontSize="36" BorderBrush="{x:Null}"/>
+                    <Button x:Name="Btn_Remove_Exp" Content="-" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
+                    <Button x:Name="Btn_Add_Exp" Content="+" HorizontalAlignment="Left" Margin="379,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
+                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseUp="Bar_Exp_MouseUp">
+                        <Controls:ColoredBar.BarBorder>
+                            <Pen Brush="Black" Thickness="2"/>
+                        </Controls:ColoredBar.BarBorder>
+                    </Controls:ColoredBar>
+                    <Border BorderThickness="1" BorderBrush="Black" Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,80,0,0">
+                        <Image x:Name="Img_Character_Portrait" HorizontalAlignment="Left" Height="100" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
+                    </Border>
+                    <Button x:Name="Btn_Remove_HP" Content="-" HorizontalAlignment="Left" Margin="117,80,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
+                    <Button x:Name="Btn_Remove_TempHP" Content="-" HorizontalAlignment="Left" Margin="117,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
+                    <Button x:Name="Btn_Add_HP" Content="+" HorizontalAlignment="Left" Margin="379,80,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
+                    <Button x:Name="Btn_Add_TempHP" Content="+" HorizontalAlignment="Left" Margin="379,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
+                    <Controls:ColoredBar x:Name="Bar_HP" HorizontalAlignment="Left" Height="20" Margin="142,80,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFEC0000" BarBackground="#FF740000" FontWeight="Bold" MouseUp="Bar_Exp_MouseUp">
+                        <Controls:ColoredBar.BarBorder>
+                            <Pen Brush="Black" Thickness="2"/>
+                        </Controls:ColoredBar.BarBorder>
+                    </Controls:ColoredBar>
+                    <Controls:ColoredBar x:Name="Bar_Temp_HP" HorizontalAlignment="Left" Height="20" Margin="142,105,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FF00ECE1" BarBackground="#FF005F74" FontWeight="Bold" MouseUp="Bar_Exp_MouseUp">
+                        <Controls:ColoredBar.BarBorder>
+                            <Pen Brush="Black" Thickness="2"/>
+                        </Controls:ColoredBar.BarBorder>
+                    </Controls:ColoredBar>
+                    <Label x:Name="Label_Lvl" Content="{x:Static p:Resources.General_Lvl}" HorizontalAlignment="Left" Margin="117,125,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="Label_Race" Content="{x:Static p:Resources.General_Race}" HorizontalAlignment="Left" Margin="117,156,0,0" VerticalAlignment="Top"/>
+                    <xctk:IntegerUpDown x:Name="IntUD_Lvl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,130,0,0" Height="20" Width="56" Value="1" Minimum="1" Maximum="20" ValueChanged="IntUD_Lvl_ValueChanged"/>
+                    <ComboBox x:Name="ComboBox_Class" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="192" Margin="207,130,0,0" IsEditable="True">
+                        <ComboBoxItem x:Name="CBItem_Class_Barbarian" Content="{x:Static p:Resources.General_Class_Barbarian}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Bard" Content="{x:Static p:Resources.General_Class_Bard}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Cleric" Content="{x:Static p:Resources.General_Class_Cleric}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Druid" Content="{x:Static p:Resources.General_Class_Druid}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Fighter" Content="{x:Static p:Resources.General_Class_Fighter}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Monk" Content="{x:Static p:Resources.General_Class_Monk}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Paladin" Content="{x:Static p:Resources.General_Class_Paladin}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Ranger" Content="{x:Static p:Resources.General_Class_Ranger}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Rogue" Content="{x:Static p:Resources.General_Class_Rogue}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Sorcerer" Content="{x:Static p:Resources.General_Class_Sorcerer}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Warlock" Content="{x:Static p:Resources.General_Class_Warlock}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Wizard" Content="{x:Static p:Resources.General_Class_Wizard}"/>
+                    </ComboBox>
+                    <ComboBox x:Name="ComboBox_Race" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="242" Margin="157,156,0,0" IsEditable="True">
+                        <ComboBoxItem x:Name="CBItem_Race_Dwarf_Mountain" Content="{x:Static p:Resources.General_Race_MountainDwarf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Dwarf_Hill" Content="{x:Static p:Resources.General_Race_HillDwarf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Elf_Sun" Content="{x:Static p:Resources.General_Race_SunElf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Elf_Moon" Content="{x:Static p:Resources.General_Race_MoonElf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Elf_Wood" Content="{x:Static p:Resources.General_Race_WoodElf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Elf_Dark" Content="{x:Static p:Resources.General_Race_DarkElf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Halfling" Content="{x:Static p:Resources.General_Race_Halfling}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Human" Content="{x:Static p:Resources.General_Race_Human}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Human_Variant" Content="{x:Static p:Resources.General_Race_HumanVar}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Dragonborn" Content="{x:Static p:Resources.General_Race_Dragonborn}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Gnome_Forest" Content="{x:Static p:Resources.General_Race_ForestGnome}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Gnome_Rock" Content="{x:Static p:Resources.General_Race_RockGnome}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_HalfElf" Content="{x:Static p:Resources.General_Race_HalfElf}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_HalfOrc" Content="{x:Static p:Resources.General_Race_HalfOrc}"/>
+                        <ComboBoxItem x:Name="CBItem_Race_Tiefling" Content="{x:Static p:Resources.General_Race_Tiefling}"/>
+                    </ComboBox>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="GroupBox_Personality" Header="{x:Static p:Resources.General_GroupBox_Personality}" HorizontalAlignment="Left" Height="497" Margin="10,219,0,0" VerticalAlignment="Top" Width="421">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.General_Alignment}" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="ComboBox_Alignment" HorizontalAlignment="Left" Margin="75,14,0,0" VerticalAlignment="Top" Width="50">
+                        <ComboBoxItem x:Name="CBItem_Alignment_LG" Content="{x:Static p:Resources.General_Alignment_LG}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_NG" Content="{x:Static p:Resources.General_Alignment_NG}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_CG" Content="{x:Static p:Resources.General_Alignment_CG}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_LN" Content="{x:Static p:Resources.General_Alignment_LN}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_TN" Content="{x:Static p:Resources.General_Alignment_TN}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_CN" Content="{x:Static p:Resources.General_Alignment_CN}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_LE" Content="{x:Static p:Resources.General_Alignment_LE}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_NE" Content="{x:Static p:Resources.General_Alignment_NE}"/>
+                        <ComboBoxItem x:Name="CBItem_Alignment_CE" Content="{x:Static p:Resources.General_Alignment_CE}"/>
+                    </ComboBox>
+                    <Label Content="{x:Static p:Resources.General_Background}" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="ComboBox_Background" HorizontalAlignment="Left" Margin="203,14,0,0" VerticalAlignment="Top" Width="196" IsEditable="True">
+                        <ComboBoxItem x:Name="CBItem_Background_Acolyte" Content="{x:Static p:Resources.General_Background_Acolyte}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Charlatan" Content="{x:Static p:Resources.General_Background_Charlatan}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Criminal" Content="{x:Static p:Resources.General_Background_Criminal}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Entertainer" Content="{x:Static p:Resources.General_Background_Entertainer}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_FolkHero" Content="{x:Static p:Resources.General_Background_FolkHero}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_GuildArtisan" Content="{x:Static p:Resources.General_Background_GuildArtisan}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Hermit" Content="{x:Static p:Resources.General_Background_Hermit}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Noble" Content="{x:Static p:Resources.General_Background_Noble}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Outlander" Content="{x:Static p:Resources.General_Background_Outlander}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Sage" Content="{x:Static p:Resources.General_Background_Sage}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Sailor" Content="{x:Static p:Resources.General_Background_Sailor}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Soldier" Content="{x:Static p:Resources.General_Background_Soldier}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Urchin" Content="{x:Static p:Resources.General_Background_Urchin}"/>
+                        <ComboBoxItem x:Name="CBItem_Background_Custom" Content="{x:Static p:Resources.General_Background_Custom}"/>
+                    </ComboBox>
+                    <Label Content="{x:Static p:Resources.General_Traits}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TextBox_Traits" HorizontalAlignment="Left" Height="75" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <Label Content="{x:Static p:Resources.General_Ideals}" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TextBox_Ideals" HorizontalAlignment="Left" Height="75" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <Label Content="{x:Static p:Resources.General_Bonds}" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TextBox_Bonds" HorizontalAlignment="Left" Height="75" Margin="10,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <Label Content="{x:Static p:Resources.General_Flaws}" HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TextBox_Flaws" HorizontalAlignment="Left" Height="75" Margin="10,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="GroupBox_Statblock" Header="{x:Static p:Resources.General_GroupBox_Stats}" HorizontalAlignment="Left" Height="500" Margin="436,10,0,0" VerticalAlignment="Top" Width="554">
+                <Grid>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="10,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Strength}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <TextBox x:Name="TextBox_Str" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="10,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Dexterity}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <TextBox x:Name="TextBox_Dex" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="10,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Constitution}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <TextBox x:Name="TextBox_Con" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="106,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Charisma}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <TextBox x:Name="TextBox_Cha" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="106,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Intelligence}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <TextBox x:Name="TextBox_Int" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="106,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Wisdom}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <TextBox x:Name="TextBox_Wis" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="155" Margin="201,234,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Saves}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_Saves_Str" Content="{x:Static p:Resources.General_Str}" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Str" HorizontalAlignment="Left" Margin="85,25,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Saves_Dex" Content="{x:Static p:Resources.General_Dex}" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Dex" HorizontalAlignment="Left" Margin="85,45,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Saves_Con" Content="{x:Static p:Resources.General_Con}" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Con" HorizontalAlignment="Left" Margin="85,65,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Saves_Int" Content="{x:Static p:Resources.General_Int}" HorizontalAlignment="Left" Margin="0,86,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Int" HorizontalAlignment="Left" Margin="85,85,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Saves_Wis" Content="{x:Static p:Resources.General_Wis}" HorizontalAlignment="Left" Margin="0,106,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Wis" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Saves_Cha" Content="{x:Static p:Resources.General_Cha}" HorizontalAlignment="Left" Margin="0,126,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Cha" HorizontalAlignment="Left" Margin="85,125,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" HorizontalAlignment="Left" Height="460" Margin="344,10,0,0" BorderThickness="1" VerticalAlignment="Top" Width="188">
+                        <Grid>
+                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="39" Content="{x:Static p:Resources.General_Skills}" Margin="10,10,0,0"/>
+                            <CheckBox x:Name="CheckBox_Athletics" Content="{x:Static p:Resources.General_Skill_Athletics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,38,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Athletics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,38,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Acrobatics" Content="{x:Static p:Resources.General_Skill_Acrobatics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,59,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Acrobatics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,59,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Stealth" Content="{x:Static p:Resources.General_Skill_Stealth}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,101,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Stealth" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,101,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_SleightOfHand" Content="{x:Static p:Resources.General_Skill_SleightOfHand}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,80,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_SleightOfHand" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,80,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_History" Content="{x:Static p:Resources.General_Skill_History}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,141,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_History" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,141,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Arcana" Content="{x:Static p:Resources.General_Skill_Arcana}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,120,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Arcana" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,120,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_AnimalHandling" Content="{x:Static p:Resources.General_Skill_AH}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,223,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_AnimalHandling" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,223,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Investigation" Content="{x:Static p:Resources.General_Skill_Investigation}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,162,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Investigation" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,162,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Medicine" Content="{x:Static p:Resources.General_Skill_Medicine}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,264,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Medicine" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,264,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Insight" Content="{x:Static p:Resources.General_Skill_Insight}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,243,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Insight" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,243,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Survival" Content="{x:Static p:Resources.General_Skill_Survival}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,306,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Survival" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,306,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Perception" Content="{x:Static p:Resources.General_Skill_Perception}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,285,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Perception" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,285,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Intimidation" Content="{x:Static p:Resources.General_Skill_Intimidation}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,346,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Intimidation" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,346,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Deception" Content="{x:Static p:Resources.General_Skill_Deception}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,325,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Deception" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,325,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Persuasion" Content="{x:Static p:Resources.General_Skill_Persuasion}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,388,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Persuasion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,388,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Performance" Content="{x:Static p:Resources.General_Skill_Performance}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,367,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Performance" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,367,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Nature" Content="{x:Static p:Resources.General_Skill_Nature}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,181,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Nature" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,181,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <CheckBox x:Name="CheckBox_Religion" Content="{x:Static p:Resources.General_Skill_Religion}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,202,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Religion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,202,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="156" Margin="10,72,0,0" BorderBrush="Black" VerticalAlignment="Top" Width="211">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_HitDice}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD12C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,36,0,0" Width="49"/>
+                            <Label Content="d12" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top"/>
+                            <Label Content="/" HorizontalAlignment="Left" Margin="116,33,0,0" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD12M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,36,0,0" Width="49"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD10C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,61,0,0" Width="49"/>
+                            <Label Content="d10" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
+                            <Label Content="/" HorizontalAlignment="Left" Margin="116,58,0,0" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD10M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,61,0,0" Width="49"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD8C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,86,0,0" Width="49"/>
+                            <Label Content="d8" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
+                            <Label Content="/" HorizontalAlignment="Left" Margin="116,83,0,0" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD8M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,86,0,0" Width="49"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD6C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,111,0,0" Width="49"/>
+                            <Label Content="d6" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top"/>
+                            <Label Content="/" HorizontalAlignment="Left" Margin="116,108,0,0" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_HD6M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,111,0,0" Width="49"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="113" Margin="226,72,0,0">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91"/>
+                            <Label Content="{x:Static p:Resources.General_DeathSaves}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="91"/>
+                            <Label Content="{x:Static p:Resources.General_DeathFails}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="91"/>
+                            <CheckBox x:Name="CheckBox_DS_Pass1" HorizontalAlignment="Left" Margin="27,62,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_DS_Pass2" HorizontalAlignment="Left" Margin="48,62,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_DS_Pass3" HorizontalAlignment="Left" Margin="69,62,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_DS_Fail1" HorizontalAlignment="Left" Margin="27,113,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_DS_Fail2" HorizontalAlignment="Left" Margin="48,113,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_DS_Fail3" HorizontalAlignment="Left" Margin="69,113,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="75" Margin="201,395,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Inspiration}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
+                            <CheckBox x:Name="CheckBox_Inspiration" HorizontalAlignment="Left" Margin="55,26,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_PBonus}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_ProfBonus" Minimum="0" Value="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="60" ValueChanged="IntUD_ProfBonus_ValueChanged"/>
+
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="57" Margin="133,10,0,0" VerticalAlignment="Top" Width="85" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_AC}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_AC" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,26,0,0" Width="60"/>
+
+                        </Grid>
+                    </Border>
+                    <Border HorizontalAlignment="Left" Height="57" Margin="226,10,0,0" VerticalAlignment="Top" Width="113" BorderThickness="1" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.General_Speed}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Speed" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="91"/>
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </GroupBox>
+            <Border HorizontalAlignment="Left" Height="201" Margin="436,515,0,0" VerticalAlignment="Top" Width="203" BorderThickness="1" BorderBrush="Black">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.General_Languages}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
+                    <TextBox x:Name="TextBox_Languages" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </Border>
+            <Border HorizontalAlignment="Left" Height="201" Margin="644,515,0,0" VerticalAlignment="Top" Width="346" BorderThickness="1" BorderBrush="Black">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.General_Profficiencies}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
+                    <TextBox x:Name="TextBox_Profficencies" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

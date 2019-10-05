@@ -1,0 +1,25 @@
+﻿<Window x:Class="VSCC.Controls.Windows.ChangeCashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="ChangeCashWindow" Height="106" Width="411.5">
+    <Grid>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_PP}" Margin="0,4,0,0" />
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_GP}" Margin="79,4,0,0" />
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_EP}" Margin="159,4,0,0" />
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_SP}" Margin="239,4,0,0" />
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_CP}" Margin="319,4,0,0" />
+        <xctk:IntegerUpDown x:Name="IntUD_PP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,10,0,0" Width="48" />
+        <xctk:IntegerUpDown x:Name="IntUD_GP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,10,0,0" Width="48" />
+        <xctk:IntegerUpDown x:Name="IntUD_EP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,10,0,0" Width="48" />
+        <xctk:IntegerUpDown x:Name="IntUD_SP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="262,10,0,0" Width="48" />
+        <xctk:IntegerUpDown x:Name="IntUD_CP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="342,10,0,0" Width="48" />
+        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,46,0,0" Click="Button_Click" />
+        <Button Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="330,46,0,0" Click="Button_Click_1" />
+    </Grid>
+</Window>

@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dnd5eitemindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dnd5eitemindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="dnd5espellindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dnd5espellindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Extras_AaB" xml:space="preserve">
+    <value>Appearance and Bio</value>
+  </data>
+  <data name="Extras_Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="Extras_Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Extras_Bio" xml:space="preserve">
+    <value>Biography</value>
+  </data>
+  <data name="Extras_Extra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="Extras_Extras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="Extras_Feats" xml:space="preserve">
+    <value>Feats</value>
+  </data>
+  <data name="Extras_Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Extras_Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Extras_Traits" xml:space="preserve">
+    <value>Traits</value>
+  </data>
+  <data name="Extras_Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="General_AC" xml:space="preserve">
+    <value>Armor Class</value>
+  </data>
+  <data name="General_Alignment" xml:space="preserve">
+    <value>Alignment</value>
+  </data>
+  <data name="General_Alignment_CE" xml:space="preserve">
+    <value>CE</value>
+  </data>
+  <data name="General_Alignment_CG" xml:space="preserve">
+    <value>CG</value>
+  </data>
+  <data name="General_Alignment_CN" xml:space="preserve">
+    <value>CN</value>
+  </data>
+  <data name="General_Alignment_LE" xml:space="preserve">
+    <value>LE</value>
+  </data>
+  <data name="General_Alignment_LG" xml:space="preserve">
+    <value>LG</value>
+  </data>
+  <data name="General_Alignment_LN" xml:space="preserve">
+    <value>LN</value>
+  </data>
+  <data name="General_Alignment_NE" xml:space="preserve">
+    <value>NE</value>
+  </data>
+  <data name="General_Alignment_NG" xml:space="preserve">
+    <value>NG</value>
+  </data>
+  <data name="General_Alignment_TN" xml:space="preserve">
+    <value>TN</value>
+  </data>
+  <data name="General_Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="General_Background_Acolyte" xml:space="preserve">
+    <value>Acolyte</value>
+  </data>
+  <data name="General_Background_Charlatan" xml:space="preserve">
+    <value>Charlatan</value>
+  </data>
+  <data name="General_Background_Criminal" xml:space="preserve">
+    <value>Criminal</value>
+  </data>
+  <data name="General_Background_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="General_Background_Entertainer" xml:space="preserve">
+    <value>Entertainer</value>
+  </data>
+  <data name="General_Background_FolkHero" xml:space="preserve">
+    <value>Folk Hero</value>
+  </data>
+  <data name="General_Background_GuildArtisan" xml:space="preserve">
+    <value>Guild Artisan</value>
+  </data>
+  <data name="General_Background_Hermit" xml:space="preserve">
+    <value>Hermit</value>
+  </data>
+  <data name="General_Background_Noble" xml:space="preserve">
+    <value>Noble</value>
+  </data>
+  <data name="General_Background_Outlander" xml:space="preserve">
+    <value>Outlander</value>
+  </data>
+  <data name="General_Background_Sage" xml:space="preserve">
+    <value>Sage</value>
+  </data>
+  <data name="General_Background_Sailor" xml:space="preserve">
+    <value>Sailor</value>
+  </data>
+  <data name="General_Background_Soldier" xml:space="preserve">
+    <value>Soldier</value>
+  </data>
+  <data name="General_Background_Urchin" xml:space="preserve">
+    <value>Urchin</value>
+  </data>
+  <data name="General_Bonds" xml:space="preserve">
+    <value>Bonds</value>
+  </data>
+  <data name="General_Cha" xml:space="preserve">
+    <value>Cha</value>
+  </data>
+  <data name="General_CharacterName" xml:space="preserve">
+    <value>Character Name</value>
+  </data>
+  <data name="General_Charisma" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="General_Class_Barbarian" xml:space="preserve">
+    <value>Barbarian</value>
+  </data>
+  <data name="General_Class_Bard" xml:space="preserve">
+    <value>Bard</value>
+  </data>
+  <data name="General_Class_Cleric" xml:space="preserve">
+    <value>Cleric</value>
+  </data>
+  <data name="General_Class_Druid" xml:space="preserve">
+    <value>Druid</value>
+  </data>
+  <data name="General_Class_Fighter" xml:space="preserve">
+    <value>Fighter</value>
+  </data>
+  <data name="General_Class_Monk" xml:space="preserve">
+    <value>Monk</value>
+  </data>
+  <data name="General_Class_Paladin" xml:space="preserve">
+    <value>Paladin</value>
+  </data>
+  <data name="General_Class_Ranger" xml:space="preserve">
+    <value>Ranger</value>
+  </data>
+  <data name="General_Class_Rogue" xml:space="preserve">
+    <value>Rogue</value>
+  </data>
+  <data name="General_Class_Sorcerer" xml:space="preserve">
+    <value>Sorcerer</value>
+  </data>
+  <data name="General_Class_Warlock" xml:space="preserve">
+    <value>Warlock</value>
+  </data>
+  <data name="General_Class_Wizard" xml:space="preserve">
+    <value>Wizard</value>
+  </data>
+  <data name="General_Con" xml:space="preserve">
+    <value>Con</value>
+  </data>
+  <data name="General_Constitution" xml:space="preserve">
+    <value>Constitution</value>
+  </data>
+  <data name="General_DeathFails" xml:space="preserve">
+    <value>Fails</value>
+  </data>
+  <data name="General_DeathSaves" xml:space="preserve">
+    <value>Passes</value>
+  </data>
+  <data name="General_DeathThrows" xml:space="preserve">
+    <value>Death Throws</value>
+  </data>
+  <data name="General_Dex" xml:space="preserve">
+    <value>Dex</value>
+  </data>
+  <data name="General_Dexterity" xml:space="preserve">
+    <value>Dexterity</value>
+  </data>
+  <data name="General_Flaws" xml:space="preserve">
+    <value>Flaws</value>
+  </data>
+  <data name="General_GroupBox_GlanceValue" xml:space="preserve">
+    <value>Glance Value</value>
+  </data>
+  <data name="General_GroupBox_Personality" xml:space="preserve">
+    <value>Personality</value>
+  </data>
+  <data name="General_GroupBox_Stats" xml:space="preserve">
+    <value>Statblock</value>
+  </data>
+  <data name="General_HitDice" xml:space="preserve">
+    <value>Hit Dice</value>
+  </data>
+  <data name="General_Ideals" xml:space="preserve">
+    <value>Ideals</value>
+  </data>
+  <data name="General_Inspiration" xml:space="preserve">
+    <value>Inspiration</value>
+  </data>
+  <data name="General_Int" xml:space="preserve">
+    <value>Int</value>
+  </data>
+  <data name="General_Intelligence" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="General_Languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="General_Lvl" xml:space="preserve">
+    <value>Lvl</value>
+  </data>
+  <data name="General_PBonus" xml:space="preserve">
+    <value>Prof. Bonus</value>
+  </data>
+  <data name="General_Profficiencies" xml:space="preserve">
+    <value>Profficiencies</value>
+  </data>
+  <data name="General_Race" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="General_Race_DarkElf" xml:space="preserve">
+    <value>Dark Elf</value>
+  </data>
+  <data name="General_Race_Dragonborn" xml:space="preserve">
+    <value>Dragonborn</value>
+  </data>
+  <data name="General_Race_ForestGnome" xml:space="preserve">
+    <value>Forest Gnome</value>
+  </data>
+  <data name="General_Race_HalfElf" xml:space="preserve">
+    <value>Half-Elf</value>
+  </data>
+  <data name="General_Race_Halfling" xml:space="preserve">
+    <value>Halfling</value>
+  </data>
+  <data name="General_Race_HalfOrc" xml:space="preserve">
+    <value>Half-Orc</value>
+  </data>
+  <data name="General_Race_HillDwarf" xml:space="preserve">
+    <value>Hill Dwarf</value>
+  </data>
+  <data name="General_Race_Human" xml:space="preserve">
+    <value>Human</value>
+  </data>
+  <data name="General_Race_HumanVar" xml:space="preserve">
+    <value>Human Variant</value>
+  </data>
+  <data name="General_Race_MoonElf" xml:space="preserve">
+    <value>Moon Elf</value>
+  </data>
+  <data name="General_Race_MountainDwarf" xml:space="preserve">
+    <value>Mountain Dwarf</value>
+  </data>
+  <data name="General_Race_RockGnome" xml:space="preserve">
+    <value>Rock Gnome</value>
+  </data>
+  <data name="General_Race_SunElf" xml:space="preserve">
+    <value>Sun Elf</value>
+  </data>
+  <data name="General_Race_Tiefling" xml:space="preserve">
+    <value>Tiefling</value>
+  </data>
+  <data name="General_Race_WoodElf" xml:space="preserve">
+    <value>Wood Elf</value>
+  </data>
+  <data name="General_Saves" xml:space="preserve">
+    <value>Saves</value>
+  </data>
+  <data name="General_Skills" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="General_Skill_Acrobatics" xml:space="preserve">
+    <value>[Dex] Acrobatics</value>
+  </data>
+  <data name="General_Skill_AH" xml:space="preserve">
+    <value>[Wis] Animal Handling</value>
+  </data>
+  <data name="General_Skill_Arcana" xml:space="preserve">
+    <value>[Int] Arcana</value>
+  </data>
+  <data name="General_Skill_Athletics" xml:space="preserve">
+    <value>[Str] Athletics</value>
+  </data>
+  <data name="General_Skill_Deception" xml:space="preserve">
+    <value>[Cha] Deception</value>
+  </data>
+  <data name="General_Skill_History" xml:space="preserve">
+    <value>[Int] History</value>
+  </data>
+  <data name="General_Skill_Insight" xml:space="preserve">
+    <value>[Wis] Insight</value>
+  </data>
+  <data name="General_Skill_Intimidation" xml:space="preserve">
+    <value>[Cha] Intimidation</value>
+  </data>
+  <data name="General_Skill_Investigation" xml:space="preserve">
+    <value>[Int] Investigation</value>
+  </data>
+  <data name="General_Skill_Medicine" xml:space="preserve">
+    <value>[Wis] Medicine</value>
+  </data>
+  <data name="General_Skill_Nature" xml:space="preserve">
+    <value>[Int] Nature</value>
+  </data>
+  <data name="General_Skill_Perception" xml:space="preserve">
+    <value>[Wis] Perception</value>
+  </data>
+  <data name="General_Skill_Performance" xml:space="preserve">
+    <value>[Cha] Performance</value>
+  </data>
+  <data name="General_Skill_Persuasion" xml:space="preserve">
+    <value>[Cha] Persuasion</value>
+  </data>
+  <data name="General_Skill_Religion" xml:space="preserve">
+    <value>[Int] Religion</value>
+  </data>
+  <data name="General_Skill_SleightOfHand" xml:space="preserve">
+    <value>[Dex] Sleight of Hand</value>
+  </data>
+  <data name="General_Skill_Stealth" xml:space="preserve">
+    <value>[Dex] Stealth</value>
+  </data>
+  <data name="General_Skill_Survival" xml:space="preserve">
+    <value>[Wis] Survival</value>
+  </data>
+  <data name="General_Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="General_Str" xml:space="preserve">
+    <value>Str</value>
+  </data>
+  <data name="General_Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="General_Traits" xml:space="preserve">
+    <value>Traits</value>
+  </data>
+  <data name="General_Wis" xml:space="preserve">
+    <value>Wis</value>
+  </data>
+  <data name="General_Wisdom" xml:space="preserve">
+    <value>Wisdom</value>
+  </data>
+  <data name="Generic_Wondrous" xml:space="preserve">
+    <value>Wondrous</value>
+  </data>
+  <data name="Inventory_Backpack" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Inventory_Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Inventory_CP" xml:space="preserve">
+    <value>CP</value>
+  </data>
+  <data name="Inventory_EP" xml:space="preserve">
+    <value>EP</value>
+  </data>
+  <data name="Inventory_Equip" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="Inventory_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Inventory_GP" xml:space="preserve">
+    <value>GP</value>
+  </data>
+  <data name="Inventory_InvertSort" xml:space="preserve">
+    <value>Invert Results</value>
+  </data>
+  <data name="Inventory_PP" xml:space="preserve">
+    <value>PP</value>
+  </data>
+  <data name="Inventory_Sorting" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="Inventory_Sort_Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Inventory_Sort_Cost" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="Inventory_Sort_Cost_Total" xml:space="preserve">
+    <value>Total Cost</value>
+  </data>
+  <data name="Inventory_Sort_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Inventory_Sort_Rarity" xml:space="preserve">
+    <value>Rarity</value>
+  </data>
+  <data name="Inventory_Sort_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Inventory_Sort_Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="Inventory_Sort_Weight_Total" xml:space="preserve">
+    <value>Total Weight</value>
+  </data>
+  <data name="Inventory_SP" xml:space="preserve">
+    <value>SP</value>
+  </data>
+  <data name="ItemIndex_Apply" xml:space="preserve">
+    <value>Apply Filters</value>
+  </data>
+  <data name="ItemIndex_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ItemIndex_Properties" xml:space="preserve">
+    <value>Property Filtering</value>
+  </data>
+  <data name="ItemIndex_Properties2" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="ItemIndex_Prop_Ammo" xml:space="preserve">
+    <value>Ammunition</value>
+  </data>
+  <data name="ItemIndex_Prop_Finesse" xml:space="preserve">
+    <value>Finesse</value>
+  </data>
+  <data name="ItemIndex_Prop_Heavy" xml:space="preserve">
+    <value>Heavy</value>
+  </data>
+  <data name="ItemIndex_Prop_Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="ItemIndex_Prop_Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="ItemIndex_Prop_Range" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="ItemIndex_Prop_Reach" xml:space="preserve">
+    <value>Reach</value>
+  </data>
+  <data name="ItemIndex_Prop_Thrown" xml:space="preserve">
+    <value>Thrown</value>
+  </data>
+  <data name="ItemIndex_Prop_TwoHanded" xml:space="preserve">
+    <value>Two-Handed</value>
+  </data>
+  <data name="ItemIndex_Prop_Versatile" xml:space="preserve">
+    <value>Versatile</value>
+  </data>
+  <data name="ItemIndex_Rarity" xml:space="preserve">
+    <value>Rarity</value>
+  </data>
+  <data name="ItemIndex_Rarity_Common" xml:space="preserve">
+    <value>Common</value>
+  </data>
+  <data name="ItemIndex_Rarity_Legendary" xml:space="preserve">
+    <value>Legendary</value>
+  </data>
+  <data name="ItemIndex_Rarity_Rare" xml:space="preserve">
+    <value>Rare</value>
+  </data>
+  <data name="ItemIndex_Rarity_Uncommon" xml:space="preserve">
+    <value>Uncommon</value>
+  </data>
+  <data name="ItemIndex_Rarity_VeryRare" xml:space="preserve">
+    <value>Very Rare</value>
+  </data>
+  <data name="ItemIndex_Sorting" xml:space="preserve">
+    <value>Filtering</value>
+  </data>
+  <data name="ItemIndex_Types" xml:space="preserve">
+    <value>Type Filtering</value>
+  </data>
+  <data name="ItemIndex_Types_Desc" xml:space="preserve">
+    <value>Enter the types to include
+Separate multiple types by a new line</value>
+  </data>
+  <data name="ItemIndex_WondrousOnly" xml:space="preserve">
+    <value>Wondrous Only</value>
+  </data>
+  <data name="MainMenu_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MainMenu_CheckForUpdates" xml:space="preserve">
+    <value>Check For Updates</value>
+  </data>
+  <data name="MainMenu_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="MainMenu_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MainMenu_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MainMenu_File_New" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="MainMenu_File_New_FromScript" xml:space="preserve">
+    <value>From Script...</value>
+  </data>
+  <data name="MainMenu_File_New_New" xml:space="preserve">
+    <value>Blank Sheet</value>
+  </data>
+  <data name="MainMenu_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MainMenu_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="MainMenu_Roadmap" xml:space="preserve">
+    <value>Roadmap</value>
+  </data>
+  <data name="MainMenu_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MainMenu_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="MainMenu_Scripting" xml:space="preserve">
+    <value>Scripting</value>
+  </data>
+  <data name="MainMenu_View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Spellbook_AttackBonus" xml:space="preserve">
+    <value>Spell Attack Bonus</value>
+  </data>
+  <data name="Spellbook_Filtering" xml:space="preserve">
+    <value>Filtering</value>
+  </data>
+  <data name="Spellbook_lv0" xml:space="preserve">
+    <value>Cantrips</value>
+  </data>
+  <data name="Spellbook_lv1" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="Spellbook_lv2" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="Spellbook_lv3" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="Spellbook_lv4" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="Spellbook_lv5" xml:space="preserve">
+    <value>Level 5</value>
+  </data>
+  <data name="Spellbook_lv6" xml:space="preserve">
+    <value>Level 6</value>
+  </data>
+  <data name="Spellbook_lv7" xml:space="preserve">
+    <value>Level 7</value>
+  </data>
+  <data name="Spellbook_lv8" xml:space="preserve">
+    <value>Level 8</value>
+  </data>
+  <data name="Spellbook_lv9" xml:space="preserve">
+    <value>Level 9</value>
+  </data>
+  <data name="Spellbook_MaxSpells" xml:space="preserve">
+    <value>Max Spells</value>
+  </data>
+  <data name="Spellbook_SaveDC" xml:space="preserve">
+    <value>Spell save DC</value>
+  </data>
+  <data name="Spellbook_Slots" xml:space="preserve">
+    <value>Slots</value>
+  </data>
+  <data name="Spellbook_SpellcastingAbility" xml:space="preserve">
+    <value>Spellcasting Ability</value>
+  </data>
+  <data name="SpellIndex_ApplyFilters" xml:space="preserve">
+    <value>Apply Filters</value>
+  </data>
+  <data name="SpellIndex_Classes" xml:space="preserve">
+    <value>Classes</value>
+  </data>
+  <data name="SpellIndex_Class_Bard" xml:space="preserve">
+    <value>Bard</value>
+  </data>
+  <data name="SpellIndex_Class_Cleric" xml:space="preserve">
+    <value>Cleric</value>
+  </data>
+  <data name="SpellIndex_Class_Druid" xml:space="preserve">
+    <value>Druid</value>
+  </data>
+  <data name="SpellIndex_Class_Paladin" xml:space="preserve">
+    <value>Paladin</value>
+  </data>
+  <data name="SpellIndex_Class_Ranger" xml:space="preserve">
+    <value>Ranger</value>
+  </data>
+  <data name="SpellIndex_Class_Sorcerer" xml:space="preserve">
+    <value>Sorcerer</value>
+  </data>
+  <data name="SpellIndex_Class_Warlock" xml:space="preserve">
+    <value>Warlock</value>
+  </data>
+  <data name="SpellIndex_Class_Wizard" xml:space="preserve">
+    <value>Wizard</value>
+  </data>
+  <data name="SpellIndex_Filtering" xml:space="preserve">
+    <value>Filtering</value>
+  </data>
+  <data name="SpellIndex_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="SpellIndex_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SpellIndex_Ritual" xml:space="preserve">
+    <value>Ritual Only</value>
+  </data>
+  <data name="SpellIndex_Schools" xml:space="preserve">
+    <value>Schools</value>
+  </data>
+  <data name="SpellIndex_School_Abjuration" xml:space="preserve">
+    <value>Abjuration</value>
+  </data>
+  <data name="SpellIndex_School_Conjuration" xml:space="preserve">
+    <value>Conjuration</value>
+  </data>
+  <data name="SpellIndex_School_Divination" xml:space="preserve">
+    <value>Divination</value>
+  </data>
+  <data name="SpellIndex_School_Enchantment" xml:space="preserve">
+    <value>Enchantment</value>
+  </data>
+  <data name="SpellIndex_School_Evocation" xml:space="preserve">
+    <value>Evocation</value>
+  </data>
+  <data name="SpellIndex_School_Illusion" xml:space="preserve">
+    <value>Illusion</value>
+  </data>
+  <data name="SpellIndex_School_Necromancy" xml:space="preserve">
+    <value>Necromancy</value>
+  </data>
+  <data name="SpellIndex_School_Transmutation" xml:space="preserve">
+    <value>Transmutation</value>
+  </data>
+  <data name="Tab_Extras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="Tab_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Tab_Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="Tab_InventoryCodex" xml:space="preserve">
+    <value>DnD5e Item Index</value>
+  </data>
+  <data name="Tab_Spellbook" xml:space="preserve">
+    <value>Spellbook</value>
+  </data>
+  <data name="Tab_SpellCodex" xml:space="preserve">
+    <value>DnD5e Spell Index</value>
+  </data>
+  <data name="_________" xml:space="preserve">
+    <value />
+  </data>
+</root>

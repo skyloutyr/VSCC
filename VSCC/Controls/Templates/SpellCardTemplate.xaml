@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="VSCC.Controls.Templates.SpellCardTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VSCC.Controls.Templates"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="280" Background="Transparent">
+    <UserControl.Resources>
+        <BitmapImage x:Key="Image_Conjuration" UriSource="/VSCC;component/Images/Schools/Conjuration.png"/>
+        <BitmapImage x:Key="Image_Divination" UriSource="/VSCC;component/Images/Schools/Divination.png"/>
+        <BitmapImage x:Key="Image_Enchantment" UriSource="/VSCC;component/Images/Schools/Enchantment.png"/>
+        <BitmapImage x:Key="Image_Evocation" UriSource="/VSCC;component/Images/Schools/Evocation.png"/>
+        <BitmapImage x:Key="Image_Illusion" UriSource="/VSCC;component/Images/Schools/Illusion.png"/>
+        <BitmapImage x:Key="Image_Necromancy" UriSource="/VSCC;component/Images/Schools/Necromancy.png"/>
+        <BitmapImage x:Key="Image_Transmutation" UriSource="/VSCC;component/Images/Schools/Transmutation.png"/>
+    </UserControl.Resources>
+    <Border BorderBrush="DarkGoldenrod" BorderThickness="2" CornerRadius="15" Background="White">
+        <Grid>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="64" Margin="212,0,0,0" ToolTip="Into Spellbook" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/VSCC;component/Images/AppIcons/ToBook.png" Stretch="Uniform" />
+                </Button.Background>
+                <Button.Content>
+                    <ImageBrush ImageSource="/VSCC;component/Images/AppIcons/ToBook.png" Stretch="Uniform" />
+                </Button.Content>
+            </Button>
+            <Label Content="Conjuration" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Margin="39,0,48,320" />
+            <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Stroke="Gray" Margin="33,20,0,0" />
+            <Border BorderBrush="Gold" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="2" Margin="3,0,0,305" Height="36" Width="36" CornerRadius="45">
+                <Image Source="{StaticResource Image_Conjuration}" Stretch="Uniform" />
+            </Border>
+            <Label Content="Level" VerticalContentAlignment="Top" Margin="198,320,36,1" />
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Wizard, Cleric, Druid, Bard, Warlock, Sorcerer" Margin="3,327,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
+            <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="243" Stroke="Gray" Margin="10,340,0,0" />
+            <Border BorderBrush="Gold" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="2" Margin="240,0,0,0" Height="36" Width="36" CornerRadius="45">
+                <Label Foreground="White" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Margin="0,-9,0,0"/>
+            </Border>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Name" Margin="10,31,0,0" FontSize="16" FontStyle="Italic" HorizontalContentAlignment="Center" Foreground="Gray" Width="256"/>
+            <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Stroke="LightGray" Margin="10,60,0,0" />
+            <GroupBox Header="Casting Time" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,60,0,0" BorderThickness="1" BorderBrush="Gold">
+                <Label FontSize="12" Content="1 action" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+            </GroupBox>
+            <GroupBox Header="Range" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,60,0,0" BorderThickness="1" BorderBrush="Gold">
+                <Label FontSize="12" Content="30 feet" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+            </GroupBox>
+            <GroupBox Header="Casting Time" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,60,0,0" BorderThickness="1" BorderBrush="Gold">
+                <Label FontSize="12" Content="1 action" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+            </GroupBox>
+            <GroupBox Header="Range" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,60,0,0" BorderThickness="1" BorderBrush="Gold">
+                <Label FontSize="12" Content="30 feet" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+            </GroupBox>
+            <GroupBox Header="Components" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,99,0,0" BorderThickness="1" BorderBrush="Gold">
+                <Label FontSize="12" Content="V S M C" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+            </GroupBox>
+            <GroupBox Header="Duration" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,99,0,0" BorderThickness="1" BorderBrush="Gold">
+                <Label FontSize="12" Content="Up to 12 hours" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+            </GroupBox>
+            <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="162" Width="260" Margin="10,143,0,0" BorderThickness="1" BorderBrush="Gold" CornerRadius="6">
+                <TextBlock Margin="1,-1,-1,1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

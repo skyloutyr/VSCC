@@ -1,0 +1,73 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC"
+        xmlns:Controls="clr-namespace:VSCC.Controls" x:Class="VSCC.MainWindow"
+        xmlns:uc="clr-namespace:VSCC.Controls.Tabs"
+        mc:Ignorable="d"
+        Title="Visual Simple Character Creator - WPF Edition" Height="820" MaxHeight="820" Width="1030" MaxWidth="1030" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="NewEmpty_Click" />
+        <CommandBinding Command="Save" Executed="Save_Click" />
+        <CommandBinding Command="SaveAs" Executed="SaveAs_Click" />
+        <CommandBinding Command="Open" Executed="Open_Click" />
+        <CommandBinding Command="Close" Executed="NewEmpty_Click" />
+    </Window.CommandBindings>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Menu Height="20" Width="960" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuItem x:Name="File" Background="{x:Null}" Header="{x:Static p:Resources.MainMenu_File}">
+                <MenuItem x:Name="NewOptions" Header="{x:Static p:Resources.MainMenu_File_New}">
+                    <MenuItem x:Name="NewEmpty" Header="{x:Static p:Resources.MainMenu_File_New_New}" Command="New"/>
+                    <MenuItem x:Name="NewScript" Header="{x:Static p:Resources.MainMenu_File_New_FromScript}" IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem x:Name="Open" Header="{x:Static p:Resources.MainMenu_Open}" Command="Open"/>
+                <MenuItem x:Name="Save" Header="{x:Static p:Resources.MainMenu_Save}" Command="Save"/>
+                <MenuItem x:Name="SaveAs" Header="{x:Static p:Resources.MainMenu_SaveAs}" Command="SaveAs"/>
+                <MenuItem x:Name="Exit" Header="{x:Static p:Resources.MainMenu_Exit}" Command="Close"/>
+            </MenuItem>
+            <MenuItem x:Name="Edit" Header="{x:Static p:Resources.MainMenu_Edit}" IsEnabled="False"/>
+            <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="False"/>
+            <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="False"/>
+            <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left">
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Info}" Click="MenuItem_Click" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Roadmap}" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_CheckForUpdates}" />
+            </MenuItem>
+        </Menu>
+        <TabControl x:Name="MainTabs" Margin="0,22,0,0">
+            <TabItem x:Name="TabGeneral" Header="{x:Static p:Resources.Tab_General}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:GeneralTab/>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabExtra" Header="{x:Static p:Resources.Tab_Extras}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:ExtrasTab/>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabInventory" Header="{x:Static p:Resources.Tab_Inventory}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:InventoryTab/>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabItemCatalog" Header="{x:Static p:Resources.Tab_InventoryCodex}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:ItemIndexTab/>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabSpellbook" Header="{x:Static p:Resources.Tab_Spellbook}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:SpellbookTab/>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabSpellCatalog" Header="{x:Static p:Resources.Tab_SpellCodex}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:SpellIndexTab/>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
