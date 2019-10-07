@@ -41,6 +41,9 @@
     <ApplicationIcon>d20.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fleck, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fleck.1.1.0\lib\net45\Fleck.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -86,6 +89,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Tabs\Roll20Tab.xaml.cs">
+      <DependentUpon>Roll20Tab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Tabs\SpellbookTab.xaml.cs">
       <DependentUpon>SpellbookTab.xaml</DependentUpon>
     </Compile>
@@ -130,11 +136,17 @@
     <Compile Include="Legacy\SaveV1Adapter.cs" />
     <Compile Include="Models\ImageList\ImageListModel.cs" />
     <Compile Include="Models\ImageList\ImageModel.cs" />
+    <Compile Include="Roll20\R20WSServer.cs" />
+    <Compile Include="Roll20\RollPacket.cs" />
     <Compile Include="State\AppState.cs" />
     <Compile Include="State\SaveState.cs" />
     <Compile Include="Templates\ItemTemplate.cs" />
     <Compile Include="Templates\SpellTemplate.cs" />
     <Page Include="Controls\ColoredBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tabs\Roll20Tab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -3102,6 +3114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="d20.ico" />
+    <EmbeddedResource Include="Roll20\roll20script.js" />
     <Content Include="template\styles\main.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

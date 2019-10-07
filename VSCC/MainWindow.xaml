@@ -68,6 +68,11 @@
                     <uc:SpellIndexTab/>
                 </DockPanel>
             </TabItem>
+            <TabItem x:Name="TabRoll20" Header="Roll20 Integration">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:Roll20Tab/>
+                </DockPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
