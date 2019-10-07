@@ -106,13 +106,13 @@
                         <ComboBoxItem x:Name="CBItem_Background_Custom" Content="{x:Static p:Resources.General_Background_Custom}"/>
                     </ComboBox>
                     <Label Content="{x:Static p:Resources.General_Traits}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TextBox_Traits" HorizontalAlignment="Left" Height="75" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="TextBox_Traits" HorizontalAlignment="Left" Height="75" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                     <Label Content="{x:Static p:Resources.General_Ideals}" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TextBox_Ideals" HorizontalAlignment="Left" Height="75" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="TextBox_Ideals" HorizontalAlignment="Left" Height="75" Margin="10,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                     <Label Content="{x:Static p:Resources.General_Bonds}" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TextBox_Bonds" HorizontalAlignment="Left" Height="75" Margin="10,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="TextBox_Bonds" HorizontalAlignment="Left" Height="75" Margin="10,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                     <Label Content="{x:Static p:Resources.General_Flaws}" HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TextBox_Flaws" HorizontalAlignment="Left" Height="75" Margin="10,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="TextBox_Flaws" HorizontalAlignment="Left" Height="75" Margin="10,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                 </Grid>
             </GroupBox>
             <GroupBox x:Name="GroupBox_Statblock" Header="{x:Static p:Resources.General_GroupBox_Stats}" HorizontalAlignment="Left" Height="500" Margin="436,10,0,0" VerticalAlignment="Top" Width="554">
@@ -283,13 +283,13 @@
             <Border HorizontalAlignment="Left" Height="201" Margin="436,515,0,0" VerticalAlignment="Top" Width="203" BorderThickness="1" BorderBrush="Black">
                 <Grid>
                     <Label Content="{x:Static p:Resources.General_Languages}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="TextBox_Languages" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="TextBox_Languages" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                 </Grid>
             </Border>
             <Border HorizontalAlignment="Left" Height="201" Margin="644,515,0,0" VerticalAlignment="Top" Width="346" BorderThickness="1" BorderBrush="Black">
                 <Grid>
                     <Label Content="{x:Static p:Resources.General_Profficiencies}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="TextBox_Profficencies" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" VerticalScrollBarVisibility="Auto"/>
+                    <TextBox x:Name="TextBox_Profficencies" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
                 </Grid>
             </Border>
         </Grid>

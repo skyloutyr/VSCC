@@ -12,11 +12,11 @@
         <GroupBox Header="{x:Static p:Resources.Extras_Extras}" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="GroupBox_Extras" Width="527" Height="710" Margin="10,10,0,0">
             <Grid Margin="0,0,15,0">
                 <Label Content="{x:Static p:Resources.Extras_Feats}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBox_Feats" HorizontalAlignment="Left" Height="167" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480"/>
+                <TextBox x:Name="TextBox_Feats" HorizontalAlignment="Left" Height="167" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
                 <Label Content="{x:Static p:Resources.Extras_Traits}" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBox_Traits" HorizontalAlignment="Left" Height="214" Margin="10,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480"/>
+                <TextBox x:Name="TextBox_Traits" HorizontalAlignment="Left" Height="214" Margin="10,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
                 <Label Content="{x:Static p:Resources.Extras_Extra}" HorizontalAlignment="Left" Margin="10,466,0,0" VerticalAlignment="Top" Height="27"/>
-                <TextBox x:Name="TextBox_Extras" HorizontalAlignment="Left" Height="180" Margin="10,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480"/>
+                <TextBox x:Name="TextBox_Extras" HorizontalAlignment="Left" Height="180" Margin="10,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
 
             </Grid>
         </GroupBox>
@@ -50,9 +50,9 @@
                     </Grid>
                 </Border>
                 <Label Content="{x:Static p:Resources.Extras_Bio}" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="70" Height="25"/>
-                <TextBox x:Name="TextBox_Bio" HorizontalAlignment="Left" Height="273" Margin="10,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
+                <TextBox x:Name="TextBox_Bio" HorizontalAlignment="Left" Height="273" Margin="10,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" AcceptsReturn="True"/>
                 <Label Content="{x:Static p:Resources.Extras_Appearance}" HorizontalAlignment="Left" Margin="10,401,0,0" VerticalAlignment="Top" Width="90" Height="25"/>
-                <TextBox x:Name="TextBox_Appearance" HorizontalAlignment="Left" Height="247" Margin="10,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
+                <TextBox x:Name="TextBox_Appearance" HorizontalAlignment="Left" Height="247" Margin="10,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" AcceptsReturn="True"/>
             </Grid>
         </GroupBox>
     </Grid>

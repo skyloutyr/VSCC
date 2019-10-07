@@ -15,7 +15,7 @@
                 <Label x:Name="Label_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Not Started" Margin="86,0,0,0" />
                 <Border x:Name="Border_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="248,10,0,0" Background="Black" BorderBrush="Gray" BorderThickness="2" />
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Start Server" Margin="203,168,0,0" Click="Button_Click_1" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Stop Server" Margin="10,168,0,0" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Stop Server" Margin="10,168,0,0" Click="Button_Click_34" />
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Copy Client" Margin="107,168,0,0" Click="Button_Click" />
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Margin="0,35,0,0" Height="128" TextWrapping="Wrap">
                     Server Help:

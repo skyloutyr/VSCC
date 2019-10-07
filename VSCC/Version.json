@@ -1,8 +1,9 @@
 ﻿{
-  "version": "1.0.0",
+  "version": "1.0.1",
   "changelog": 
   {
     "0.0.0": "Pre-release version. Basic functionality.",
-    "1.0.0": "First release. Added roll20 integration."
+    "1.0.0": "First release. Added roll20 integration.",
+    "1.0.1": "Fixed Return not being accepted in text fields."
   }
 }

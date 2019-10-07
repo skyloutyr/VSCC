@@ -53,7 +53,7 @@
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="221" Width="359" Margin="10,188,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label VerticalAlignment="Top" HorizontalAlignment="Left" Content="Description" VerticalContentAlignment="Center" Margin="-3,-8,0,0" />
-                <TextBox x:Name="TextBox_Description" Text="{Binding Description}" IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Height="195" Margin="10,14,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                <TextBox x:Name="TextBox_Description" Text="{Binding Description}" IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Height="195" Margin="10,14,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" />
             </Grid>
         </Border>
         <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="10,0,0,3" Click="Button_Click" />

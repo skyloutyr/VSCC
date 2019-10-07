@@ -62,13 +62,13 @@
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="358" Margin="10,188,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label Content="Short Description" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-8,0,0" />
-                <TextBox x:Name="TextBox_SimpleDesc" Text="{Binding SimpleDescription}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="71" Width="336" />
+                <TextBox x:Name="TextBox_SimpleDesc" Text="{Binding SimpleDescription}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="71" Width="336" AcceptsReturn="True" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="153" Width="358" Margin="10,286,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Long Description" VerticalContentAlignment="Center" Margin="-2,-11,0,0" />
-                <TextBox x:Name="TextBox_Desc" Text="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="131" Width="336" />
+                <TextBox x:Name="TextBox_Desc" Text="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="131" Width="336" AcceptsReturn="True" />
             </Grid>
         </Border>
         <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="11,0,0,10" Click="Button_Click" />

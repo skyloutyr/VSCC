@@ -263,5 +263,10 @@ namespace VSCC.Controls.Tabs
         {
             this.RollDieStat("Persuasion", AppState.Current.State.General.Persuasion);
         }
+
+        private void Button_Click_34(object sender, RoutedEventArgs e)
+        {
+            R20WSServer.CloseServer();
+        }
     }
 }
