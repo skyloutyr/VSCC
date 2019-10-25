@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -178,7 +179,11 @@ namespace VSCC
             ((MenuItem)sender).IsEnabled = false;
             try
             {
+                HttpRequestCachePolicy policy = new HttpRequestCachePolicy(HttpRequestCacheLevel.Default);
+                HttpWebRequest.DefaultCachePolicy = policy;
                 HttpWebRequest req = WebRequest.CreateHttp("https://raw.githubusercontent.com/skyloutyr/VSCC/master/VSCC/Version.json");
+                HttpRequestCachePolicy noCachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                req.CachePolicy = noCachePolicy;
                 Task<WebResponse> responseTask = req.GetResponseAsync();
                 JObject localJObj = JObject.Parse(System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Version.json")));
                 SemVer.Version localVersion = new SemVer.Version(localJObj["version"].ToObject<string>());
