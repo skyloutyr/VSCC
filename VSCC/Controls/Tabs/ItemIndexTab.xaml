@@ -74,7 +74,7 @@
 
             </Grid>
         </GroupBox>
-        <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_ItemTemplates" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="300,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690">
+        <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_ItemTemplates" Margin="300,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <wpftk:VirtualizingWrapPanel/>

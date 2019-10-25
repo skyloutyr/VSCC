@@ -21,12 +21,12 @@ namespace VSCC.DataType
 
         public int GP
         {
-            get => (this._cost / 100) % 10;
+            get => (this._cost / 100);
             set => this._cost = value * 100;
         }
 
         [JsonIgnore]
-        public int Total => this._cost;
+        public int Total { get => this._cost; set => this._cost = value; }
 
         public CostValue(int gp, int sp, int cp)
         {

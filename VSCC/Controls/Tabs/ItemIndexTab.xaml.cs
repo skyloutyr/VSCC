@@ -29,6 +29,8 @@ namespace VSCC.Controls.Tabs
         public ICommand ToItemCommand { get; set; }
         public List<ItemTemplate> AllItemTemplates { get; } = new List<ItemTemplate>();
 
+        public ScrollViewer ScrollViewer_Items => GetChildOfType<ScrollViewer>(this.ListView_ItemTemplates);
+
         public ItemIndexTab()
         {
             InitializeComponent();
@@ -153,6 +155,26 @@ namespace VSCC.Controls.Tabs
             }
 
             return true;
+        }
+
+        public static T GetChildOfType<T>(DependencyObject depObj) where T : DependencyObject
+        {
+            if (depObj == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
+                T result = (child as T) ?? GetChildOfType<T>(child);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+
+            return null;
         }
     }
 

@@ -30,12 +30,12 @@
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="58" Width="226" Margin="143,80,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label Content="Cost" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="-4,-8,0,0" />
-                <xctk:IntegerUpDown x:Name="IntUD_Cost_GP" Value="{Binding Cost.GP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,14,0,0" Width="42" Height="32" />
-                <xctk:IntegerUpDown x:Name="IntUD_Cost_SP" Value="{Binding Cost.SP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="81,14,0,0" Width="42" Height="32" />
-                <xctk:IntegerUpDown x:Name="IntUD_Cost_CP" Value="{Binding Cost.CP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,14,0,0" Width="42" Height="32" />
-                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/gold_coin.png" Margin="53,16,0,0" Height="28" Width="28" />
-                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/silver_coin.png" Margin="123,16,0,0" Height="28" Width="28" />
-                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/copper_coin.png" Margin="193,16,0,0" Height="28" Width="28" />
+                <xctk:IntegerUpDown x:Name="IntUD_Cost_GP" Value="{Binding GP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,14,0,0" Width="55" Height="32" />
+                <xctk:IntegerUpDown x:Name="IntUD_Cost_SP" Value="{Binding SP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="81,14,0,0" Width="54" Height="32" />
+                <xctk:IntegerUpDown x:Name="IntUD_Cost_CP" Value="{Binding CP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,14,0,0" Width="54" Height="32" />
+                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/gold_coin.png" Margin="65,22,0,0" Height="16" Width="16" />
+                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/silver_coin.png" Margin="135,22,0,0" Height="16" Width="16" />
+                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/copper_coin.png" Margin="205,22,0,0" Height="16" Width="16" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="178" Margin="10,143,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">

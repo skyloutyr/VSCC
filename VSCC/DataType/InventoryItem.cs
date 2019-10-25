@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using System.Windows.Media.Imaging;
 using VSCC.Models.ImageList;
+using VSCC.State;
 using VSCC.Templates;
 
 namespace VSCC.DataType
@@ -39,7 +40,7 @@ namespace VSCC.DataType
         public ItemTemplate Template { get; set; }
 
         [JsonIgnore]
-        public BitmapImage PictureProperty => this.ImageList[this.ImageIndex]?.Image ?? null;
+        public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TInventory.Images)[this.ImageIndex]?.Image ?? null;
 
         [JsonIgnore]
         public string AmountProperty => $"#:{ this.Amount }";
@@ -133,6 +134,48 @@ namespace VSCC.DataType
                 imageIndex = value;
                 this.OnPropertyChanged("ImageIndex");
                 this.OnPropertyChanged("PictureProperty");
+            }
+        }
+
+        public int GP
+        {
+            get => this.Cost.GP;
+            set
+            {
+                int valDiff = value - this.Cost.GP;
+                this.cost.Total += valDiff * 100;
+                this.OnPropertyChanged("Cost");
+                this.OnPropertyChanged("GP");
+                this.OnPropertyChanged("SP");
+                this.OnPropertyChanged("CP");
+            }
+        }
+
+        public int SP
+        {
+            get => this.Cost.SP;
+            set
+            {
+                int valDiff = value - this.Cost.SP;
+                this.cost.Total += valDiff * 10;
+                this.OnPropertyChanged("Cost");
+                this.OnPropertyChanged("GP");
+                this.OnPropertyChanged("SP");
+                this.OnPropertyChanged("CP");
+            }
+        }
+
+        public int CP
+        {
+            get => this.Cost.CP;
+            set
+            {
+                int valDiff = value - this.Cost.CP;
+                this.cost.Total += valDiff;
+                this.OnPropertyChanged("Cost");
+                this.OnPropertyChanged("GP");
+                this.OnPropertyChanged("SP");
+                this.OnPropertyChanged("CP");
             }
         }
 

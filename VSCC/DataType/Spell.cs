@@ -7,6 +7,7 @@
     using System.Windows.Media.Imaging;
     using VSCC.Controls.Templates;
     using VSCC.Models.ImageList;
+    using VSCC.State;
 
     public class Spell : INotifyPropertyChanged
     {
@@ -47,7 +48,7 @@
         public ImageListModel ImageList { get; set; }
 
         [JsonIgnore]
-        public BitmapImage PictureProperty => this.ImageList[this.ImageIndex]?.Image ?? null;
+        public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TSpellbook.Images)[this.ImageIndex]?.Image ?? null;
 
         public Templates.SpellTemplate Template { get; set; }
 
