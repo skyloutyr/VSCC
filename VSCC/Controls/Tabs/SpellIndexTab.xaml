@@ -100,7 +100,7 @@
                                 <Label FontSize="12" Content="{Binding Range}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
                             </GroupBox>
                             <GroupBox Header="Components" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,99,0,0" BorderThickness="1" BorderBrush="Gold">
-                                <Label FontSize="12" Content="{Binding Components}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+                                <Label FontSize="12" Content="{Binding ComponentsProperty}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
                             </GroupBox>
                             <GroupBox Header="Duration" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,99,0,0" BorderThickness="1" BorderBrush="Gold">
                                 <Label FontSize="12" Content="{Binding Duration}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />

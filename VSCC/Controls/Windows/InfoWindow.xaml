@@ -9,7 +9,7 @@
     <StackPanel>
         <Label HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="Information" HorizontalContentAlignment="Center"/>
         <TextBlock Text="Author: SkyLouTyr" />
-        <TextBlock Text="Version: 1.0.2" />
+        <TextBlock Text="Version: 1.0.3" />
         <TextBlock>
             License:
             <Hyperlink NavigateUri="https://www.gnu.org/licenses/gpl-3.0.en.html" RequestNavigate="Hyperlink_RequestNavigate">

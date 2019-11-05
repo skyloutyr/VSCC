@@ -23,10 +23,18 @@ namespace VSCC.Templates
         public string Classes { get; set; }
         public string Description { get; set; }
         public string AtHigherLevels { get; set; }
+        public bool Ritual { get; set; }
+        public bool Concentration { get; set; }
 
         public string DescriptionProperty
         {
             get => $"{ this.Materials }\n{ this.Description }\n\n{ this.AtHigherLevels }";
+            set { }
+        }
+
+        public string ComponentsProperty
+        {
+            get => $"{ this.Components }{ (this.Ritual && this.Concentration ? "R C" : this.Ritual ? "R" : this.Concentration ? "C" : "") }";
             set { }
         }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -28,6 +29,7 @@ namespace VSCC.Controls.Tabs
         public ICommand ToSpellCommand { get; set; }
         public List<SpellTemplate> AllSpellTemplates { get; } = new List<SpellTemplate>();
         public ImageListModel SchoolImages { get; } = new ImageListModel() { Async = false };
+        public ScrollViewer ScrollViewer_Items => ItemIndexTab.GetChildOfType<ScrollViewer>(this.ListView_SpellTemplates);
 
         public SpellIndexTab()
         {
@@ -112,7 +114,13 @@ namespace VSCC.Controls.Tabs
                 return false;
             }
 
-            //TODO ritual spells, DB doesn't contain ritual data yet.
+            if (this.CB_Ritual.IsChecked ?? false)
+            {
+                if (!st.Ritual)
+                {
+                    return false;
+                }
+            }
 
             return true;
         }

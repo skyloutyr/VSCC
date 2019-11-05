@@ -256,6 +256,16 @@
             this.School = template.School;
             this.SimpleDescription = string.Empty;
             this.SpellComponents = this.ParseComponents(template.Components);
+            if (template.Concentration)
+            {
+                this.SpellComponents |= SpellComponents.Concentration;
+            }
+
+            if (template.Ritual)
+            {
+                this.SpellComponents |= SpellComponents.Ritual;
+            }
+
             this.Target = string.Empty;
             this.Template = template;
         }
@@ -345,6 +355,7 @@
         Verbal = 1,
         Somatic = 2,
         Material = 4,
-        Concentration = 8
+        Concentration = 8,
+        Ritual = 16,
     }
 }
