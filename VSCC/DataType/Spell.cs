@@ -227,6 +227,22 @@
             }
         }
 
+        public bool PropertyRitual
+        {
+            get => this.SpellComponents.HasFlag(SpellComponents.Ritual);
+            set
+            {
+                if (value)
+                {
+                    this.SpellComponents |= SpellComponents.Ritual;
+                }
+                else
+                {
+                    this.SpellComponents &= ~SpellComponents.Ritual;
+                }
+            }
+        }
+
         [JsonIgnore]
         public string GeneratedDescription =>
             $"{ this.Name }\n" +

@@ -107,6 +107,11 @@ namespace VSCC.Controls.Tabs
             int shouldBeOldVal = this.GetModifierForStat(oldVal);
             int newModVal = this.GetModifierForStat(newVal);
             IntegerUpDown inUD = (IntegerUpDown)sender;
+            if (inUD == this.IntUD_Str)
+            {
+                AppState.Current.TInventory.RecalculateWeights(false, true, true);
+            }
+
             Grid g = inUD.Parent as Grid;
             TextBox tb = g?.Children.OfType<TextBox>().FirstOrDefault();
             if (tb != null)

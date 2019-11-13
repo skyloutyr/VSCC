@@ -70,6 +70,339 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string CreateItem_Amount {
+            get {
+                return ResourceManager.GetString("CreateItem_Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost.
+        /// </summary>
+        public static string CreateItem_Cost {
+            get {
+                return ResourceManager.GetString("CreateItem_Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string CreateItem_Description {
+            get {
+                return ResourceManager.GetString("CreateItem_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rarity.
+        /// </summary>
+        public static string CreateItem_Rarity {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common.
+        /// </summary>
+        public static string CreateItem_Rarity_Common {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Common", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legendary.
+        /// </summary>
+        public static string CreateItem_Rarity_Legendary {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Legendary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rare.
+        /// </summary>
+        public static string CreateItem_Rarity_Rare {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Rare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trash.
+        /// </summary>
+        public static string CreateItem_Rarity_Trash {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Trash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uncommon.
+        /// </summary>
+        public static string CreateItem_Rarity_Uncommon {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Uncommon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unique.
+        /// </summary>
+        public static string CreateItem_Rarity_Unique {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Unique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very Rare.
+        /// </summary>
+        public static string CreateItem_Rarity_VeryRare {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_VeryRare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wondrous.
+        /// </summary>
+        public static string CreateItem_Rarity_Wondrous {
+            get {
+                return ResourceManager.GetString("CreateItem_Rarity_Wondrous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string CreateItem_Type {
+            get {
+                return ResourceManager.GetString("CreateItem_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ammo.
+        /// </summary>
+        public static string CreateItem_Type_Ammo {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Ammo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arcane.
+        /// </summary>
+        public static string CreateItem_Type_Arcane {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Arcane", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Armor.
+        /// </summary>
+        public static string CreateItem_Type_Armor {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Armor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Food.
+        /// </summary>
+        public static string CreateItem_Type_Food {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string CreateItem_Type_Other {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Potion.
+        /// </summary>
+        public static string CreateItem_Type_Potion {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Potion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quest.
+        /// </summary>
+        public static string CreateItem_Type_Quest {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Quest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tool.
+        /// </summary>
+        public static string CreateItem_Type_Tool {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Tool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trinket.
+        /// </summary>
+        public static string CreateItem_Type_Trinket {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Trinket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weapon.
+        /// </summary>
+        public static string CreateItem_Type_Weapon {
+            get {
+                return ResourceManager.GetString("CreateItem_Type_Weapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight.
+        /// </summary>
+        public static string CreateItem_Weight {
+            get {
+                return ResourceManager.GetString("CreateItem_Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cast Time.
+        /// </summary>
+        public static string CreateSpell_CastTime {
+            get {
+                return ResourceManager.GetString("CreateSpell_CastTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concentration.
+        /// </summary>
+        public static string CreateSpell_Concentration {
+            get {
+                return ResourceManager.GetString("CreateSpell_Concentration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string CreateSpell_Desc {
+            get {
+                return ResourceManager.GetString("CreateSpell_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string CreateSpell_Duration {
+            get {
+                return ResourceManager.GetString("CreateSpell_Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Level.
+        /// </summary>
+        public static string CreateSpell_Level {
+            get {
+                return ResourceManager.GetString("CreateSpell_Level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material.
+        /// </summary>
+        public static string CreateSpell_Material {
+            get {
+                return ResourceManager.GetString("CreateSpell_Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Range.
+        /// </summary>
+        public static string CreateSpell_Range {
+            get {
+                return ResourceManager.GetString("CreateSpell_Range", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ritual.
+        /// </summary>
+        public static string CreateSpell_Ritual {
+            get {
+                return ResourceManager.GetString("CreateSpell_Ritual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to School.
+        /// </summary>
+        public static string CreateSpell_School {
+            get {
+                return ResourceManager.GetString("CreateSpell_School", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short Description.
+        /// </summary>
+        public static string CreateSpell_ShortDesc {
+            get {
+                return ResourceManager.GetString("CreateSpell_ShortDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Somatic.
+        /// </summary>
+        public static string CreateSpell_Somatic {
+            get {
+                return ResourceManager.GetString("CreateSpell_Somatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Targets.
+        /// </summary>
+        public static string CreateSpell_Targets {
+            get {
+                return ResourceManager.GetString("CreateSpell_Targets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verbal.
+        /// </summary>
+        public static string CreateSpell_Verbal {
+            get {
+                return ResourceManager.GetString("CreateSpell_Verbal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [
         ///    {
         ///        &quot;Description&quot;: &quot;&quot;,
@@ -90,21 +423,32 @@ namespace VSCC.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to [
-        ///    {
-        ///        &quot;Name&quot;: &quot;Acid Arrow&quot;,
-        ///        &quot;Level&quot;: 2,
-        ///        &quot;School&quot;: &quot;Evocation&quot;,
-        ///        &quot;CastingTime&quot;: &quot;1 action&quot;,
-        ///        &quot;Range&quot;: &quot;90 feet&quot;,
-        ///        &quot;Components&quot;: &quot;V S M&quot;,
-        ///        &quot;Materials&quot;: &quot;Powdered rhubarb leaf and an adder&apos;s stomach&quot;,
-        ///        &quot;Duration&quot;: &quot;Instantaneous&quot;,
-        ///        &quot;Classes&quot;: &quot;Wizard&quot;,
-        ///        &quot;Description&quot;: &quot;A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 [rest of string was truncated]&quot;;.
+        ///  {
+        ///    &quot;Name&quot;: &quot;Abi-Dalzim&apos;s Horrid Wilting&quot;,
+        ///    &quot;id&quot;: &quot;abi-dalzims_horrid_wilting&quot;,
+        ///    &quot;Level&quot;: 8,
+        ///    &quot;School&quot;: &quot;Necromancy&quot;,
+        ///    &quot;CastingTime&quot;: &quot;1 Action&quot;,
+        ///    &quot;Ritual&quot;: false,
+        ///    &quot;Concentration&quot;: false,
+        ///    &quot;Source&quot;: &quot;Elemental Evil&quot;,
+        ///    &quot;Range&quot;: &quot;150 feet&quot;,
+        ///    &quot;Components&quot;: &quot;V S M &quot;,
+        ///    &quot;Duration&quot;: &quot;Instantaneous&quot;,
+        ///    &quot;Description&quot;: &quot;You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution savi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dnd5espellindex {
             get {
                 return ResourceManager.GetString("dnd5espellindex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages.
+        /// </summary>
+        public static string Edit_Languages {
+            get {
+                return ResourceManager.GetString("Edit_Languages", resourceCulture);
             }
         }
         
@@ -1144,11 +1488,173 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Generic_Cancel {
+            get {
+                return ResourceManager.GetString("Generic_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string Generic_No {
+            get {
+                return ResourceManager.GetString("Generic_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string Generic_OK {
+            get {
+                return ResourceManager.GetString("Generic_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An old or incompatible save file was loaded. Due to the way stat calculations were changed it is recommended to do a stat rebuild. Do the rebuild?.
+        /// </summary>
+        public static string Generic_OldSave_Pass1 {
+            get {
+                return ResourceManager.GetString("Generic_OldSave_Pass1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An old or incompatible save file was loaded. Due to general potential save partial or full incompatibility it is recommended to override the file. Save now?.
+        /// </summary>
+        public static string Generic_OldSave_Pass2 {
+            get {
+                return ResourceManager.GetString("Generic_OldSave_Pass2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old save file loaded.
+        /// </summary>
+        public static string Generic_OldSave_Title {
+            get {
+                return ResourceManager.GetString("Generic_OldSave_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Couldn&apos;t save the sheet to the previous location: {0}, {1}. Press OK to select a different file to save to. Press Cancel to cancel the save alltogether..
+        /// </summary>
+        public static string Generic_SaveError_Description {
+            get {
+                return ResourceManager.GetString("Generic_SaveError_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Couldn&apos;t save the sheet!.
+        /// </summary>
+        public static string Generic_SaveError_Title {
+            get {
+                return ResourceManager.GetString("Generic_SaveError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source.
+        /// </summary>
+        public static string Generic_Source {
+            get {
+                return ResourceManager.GetString("Generic_Source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are unsaved changes. Do you want to save the file before resetting it? Press Yes to save the file and reset it. Press No to discard all changes and reset it. Press Cancel to abort the operation.
+        /// </summary>
+        public static string Generic_Unsaved_Description {
+            get {
+                return ResourceManager.GetString("Generic_Unsaved_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsaved changes exist!.
+        /// </summary>
+        public static string Generic_Unsaved_Title {
+            get {
+                return ResourceManager.GetString("Generic_Unsaved_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wondrous.
         /// </summary>
         public static string Generic_Wondrous {
             get {
                 return ResourceManager.GetString("Generic_Wondrous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Generic_Yes {
+            get {
+                return ResourceManager.GetString("Generic_Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used 3rd party libraries.
+        /// </summary>
+        public static string Info_3rd {
+            get {
+                return ResourceManager.GetString("Info_3rd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Author.
+        /// </summary>
+        public static string Info_Author {
+            get {
+                return ResourceManager.GetString("Info_Author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string Info_Information {
+            get {
+                return ResourceManager.GetString("Info_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License.
+        /// </summary>
+        public static string Info_License {
+            get {
+                return ResourceManager.GetString("Info_License", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repository link.
+        /// </summary>
+        public static string Info_Repo {
+            get {
+                return ResourceManager.GetString("Info_Repo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        public static string Info_Version {
+            get {
+                return ResourceManager.GetString("Info_Version", resourceCulture);
             }
         }
         
@@ -1230,6 +1736,15 @@ namespace VSCC.Properties {
         public static string Inventory_PP {
             get {
                 return ResourceManager.GetString("Inventory_PP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rings.
+        /// </summary>
+        public static string Inventory_Rings {
+            get {
+                return ResourceManager.GetString("Inventory_Rings", resourceCulture);
             }
         }
         
@@ -1320,6 +1835,15 @@ namespace VSCC.Properties {
         public static string Inventory_SP {
             get {
                 return ResourceManager.GetString("Inventory_SP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight.
+        /// </summary>
+        public static string Inventory_Weight {
+            get {
+                return ResourceManager.GetString("Inventory_Weight", resourceCulture);
             }
         }
         
@@ -1676,6 +2200,207 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string R20_Actions {
+            get {
+                return ResourceManager.GetString("R20_Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced Roll.
+        /// </summary>
+        public static string R20_AdvancedRoll {
+            get {
+                return ResourceManager.GetString("R20_AdvancedRoll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As multiple rolls.
+        /// </summary>
+        public static string R20_AsMulRolls {
+            get {
+                return ResourceManager.GetString("R20_AsMulRolls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charisma Save.
+        /// </summary>
+        public static string R20_ChaSave {
+            get {
+                return ResourceManager.GetString("R20_ChaSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Constitution Save.
+        /// </summary>
+        public static string R20_ConSave {
+            get {
+                return ResourceManager.GetString("R20_ConSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Client.
+        /// </summary>
+        public static string R20_CopyClient {
+            get {
+                return ResourceManager.GetString("R20_CopyClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dexterity Save.
+        /// </summary>
+        public static string R20_DexSave {
+            get {
+                return ResourceManager.GetString("R20_DexSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Intelligence Save.
+        /// </summary>
+        public static string R20_IntSave {
+            get {
+                return ResourceManager.GetString("R20_IntSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log.
+        /// </summary>
+        public static string R20_Log {
+            get {
+                return ResourceManager.GetString("R20_Log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rolls.
+        /// </summary>
+        public static string R20_Rolls {
+            get {
+                return ResourceManager.GetString("R20_Rolls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server Help:
+        ///Press the &quot;Start server&quot; button first. This will copy the client to your clipboard. 
+        ///Open the browser window, navigate to the game, make sure the game is running, press F12 on your keyboard, select the Console tab and press Ctrl+V into the console.
+        ///On certain browsers you may need to do more actions..
+        /// </summary>
+        public static string R20_ServerHelp {
+            get {
+                return ResourceManager.GetString("R20_ServerHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ServerPanel.
+        /// </summary>
+        public static string R20_ServerPanel {
+            get {
+                return ResourceManager.GetString("R20_ServerPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server Status.
+        /// </summary>
+        public static string R20_ServerStatus {
+            get {
+                return ResourceManager.GetString("R20_ServerStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skills And Saves.
+        /// </summary>
+        public static string R20_SkillsAndSaves {
+            get {
+                return ResourceManager.GetString("R20_SkillsAndSaves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection Lost.
+        /// </summary>
+        public static string R20_SS_ConLost {
+            get {
+                return ResourceManager.GetString("R20_SS_ConLost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection Estabilished.
+        /// </summary>
+        public static string R20_SS_Connection {
+            get {
+                return ResourceManager.GetString("R20_SS_Connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Listening.
+        /// </summary>
+        public static string R20_SS_Listening {
+            get {
+                return ResourceManager.GetString("R20_SS_Listening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Started.
+        /// </summary>
+        public static string R20_SS_NotStarted {
+            get {
+                return ResourceManager.GetString("R20_SS_NotStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Server.
+        /// </summary>
+        public static string R20_StartServer {
+            get {
+                return ResourceManager.GetString("R20_StartServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop Server.
+        /// </summary>
+        public static string R20_StopServer {
+            get {
+                return ResourceManager.GetString("R20_StopServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength Save.
+        /// </summary>
+        public static string R20_StrSave {
+            get {
+                return ResourceManager.GetString("R20_StrSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wisdom Save.
+        /// </summary>
+        public static string R20_WisSave {
+            get {
+                return ResourceManager.GetString("R20_WisSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spell Attack Bonus.
         /// </summary>
         public static string Spellbook_AttackBonus {
@@ -2023,6 +2748,69 @@ namespace VSCC.Properties {
         public static string SpellIndex_Schools {
             get {
                 return ResourceManager.GetString("SpellIndex_Schools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elemental Evil.
+        /// </summary>
+        public static string SpellIndex_Source_EE {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_EE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Homebrew.
+        /// </summary>
+        public static string SpellIndex_Source_HB {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_HB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Players Handbook.
+        /// </summary>
+        public static string SpellIndex_Source_PHB {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_PHB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sword Coast Adv. Guide.
+        /// </summary>
+        public static string SpellIndex_Source_SCAG {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_SCAG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sprouting Chaos.
+        /// </summary>
+        public static string SpellIndex_Source_SCPC {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_SCPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xanathars Guide To Everything.
+        /// </summary>
+        public static string SpellIndex_Source_XGTE {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_XGTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sources.
+        /// </summary>
+        public static string SpellIndex_Sources {
+            get {
+                return ResourceManager.GetString("SpellIndex_Sources", resourceCulture);
             }
         }
         

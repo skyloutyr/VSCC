@@ -110,6 +110,10 @@ namespace VSCC.State
         private void LoadV2(string s)
         {
             this.State.Load(s);
+            if (this.State.Inventory.WeightCurrent == 0 && this.State.Inventory.WeightMax1 == 0 && this.State.Inventory.WeightMax2 == 0)
+            {
+                this.TInventory.RecalculateWeights(true, true, true);
+            }
         }
 
         private void LoadV1(string s)

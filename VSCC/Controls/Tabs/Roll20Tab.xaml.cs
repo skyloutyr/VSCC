@@ -52,7 +52,7 @@ namespace VSCC.Controls.Tabs
             {
                 Dispatcher.Invoke(() =>
                 {
-                    this.Label_ServerStatus.Content = "Listening";
+                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_Listening;
                     this.Border_ServerStatus.Background = Brushes.Gold;
                 });
             });
@@ -61,7 +61,7 @@ namespace VSCC.Controls.Tabs
             {
                 Dispatcher.Invoke(() =>
                 {
-                    this.Label_ServerStatus.Content = "Not Started";
+                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_NotStarted;
                     this.Border_ServerStatus.Background = Brushes.Black;
                 });
             });
@@ -70,7 +70,7 @@ namespace VSCC.Controls.Tabs
             {
                 Dispatcher.Invoke(() =>
                 {
-                    this.Label_ServerStatus.Content = "Connection Estabilished";
+                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_Connection;
                     this.Border_ServerStatus.Background = Brushes.Green;
                 });
             });
@@ -79,7 +79,7 @@ namespace VSCC.Controls.Tabs
             {
                 Dispatcher.Invoke(() =>
                 {
-                    this.Label_ServerStatus.Content = "Connection Lost";
+                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_ConLost;
                     this.Border_ServerStatus.Background = Brushes.Red;
                 });
             });
@@ -141,7 +141,18 @@ namespace VSCC.Controls.Tabs
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-            this.RollDieSimple($"{ this.IntUD_AdvRollNumDice.Value }d{ this.IntUD_AdvRollSidesDice.Value }{ this.ComboBox_AdvRollMathType.Text }{ this.IntUD_AdvRollMod.Value }");
+            if (!this.CheckBox_AsSimpleRoll.IsChecked ?? false)
+            {
+                this.RollDieSimple($"{ this.IntUD_AdvRollNumDice.Value }d{ this.IntUD_AdvRollSidesDice.Value }{ this.ComboBox_AdvRollMathType.Text }{ this.IntUD_AdvRollMod.Value }");
+            }
+            else
+            {
+                R20WSServer.Send(new RollPacket()
+                {
+                    Template = Roll20.Template.None,
+                    Data = new TemplateDataManyRolls() { Roll = $"{ this.IntUD_AdvRollNumDice.Value }d{ this.IntUD_AdvRollSidesDice.Value }{ this.ComboBox_AdvRollMathType.Text }{ this.IntUD_AdvRollMod.Value }" }
+                });
+            }
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)

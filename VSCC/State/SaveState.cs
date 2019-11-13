@@ -758,13 +758,135 @@ namespace VSCC.State
             set => AppState.Current.TInventory.ChangeItemCollection(value);
         }
 
+        public float WeightCurrent
+        {
+            get => AppState.Current.TInventory.IntUD_WeightCurrent.Value ?? 0;
+            set => AppState.Current.TInventory.IntUD_WeightCurrent.Value = value;
+        }
+
+        public float WeightMax1
+        {
+            get => AppState.Current.TInventory.IntUD_WeightMax1.Value ?? 0;
+            set => AppState.Current.TInventory.IntUD_WeightMax1.Value = value;
+        }
+
+        public float WeightMax2
+        {
+            get => AppState.Current.TInventory.IntUD_WeightMax2.Value ?? 0;
+            set => AppState.Current.TInventory.IntUD_WeightMax2.Value = value;
+        }
+
+        public InventoryItem Helmet
+        {
+            get => AppState.Current.TInventory.IIP_Head.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Head.SetDataContext(value);
+        }
+
+        public InventoryItem Necklace
+        {
+            get => AppState.Current.TInventory.IIP_Neck.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Neck.SetDataContext(value);
+        }
+
+        public InventoryItem Chestpiece
+        {
+            get => AppState.Current.TInventory.IIP_Chest.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Chest.SetDataContext(value);
+        }
+
+        public InventoryItem Leggings
+        {
+            get => AppState.Current.TInventory.IIP_Legs.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Legs.SetDataContext(value);
+        }
+
+        public InventoryItem Boots
+        {
+            get => AppState.Current.TInventory.IIP_Boots.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Boots.SetDataContext(value);
+        }
+
+        public InventoryItem WeaponLeft
+        {
+            get => AppState.Current.TInventory.IIP_LeftHand.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_LeftHand.SetDataContext(value);
+        }
+
+        public InventoryItem WeaponRight
+        {
+            get => AppState.Current.TInventory.IIP_RightHand.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_RightHand.SetDataContext(value);
+        }
+
+        public InventoryItem Misc1
+        {
+            get => AppState.Current.TInventory.IIP_Misc1.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Misc1.SetDataContext(value);
+        }
+
+        public InventoryItem Misc2
+        {
+            get => AppState.Current.TInventory.IIP_Misc2.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Misc2.SetDataContext(value);
+        }
+
+        public InventoryItem Ring0
+        {
+            get => AppState.Current.TInventory.IIP_Ring0.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring0.SetDataContext(value);
+        }
+
+        public InventoryItem Ring1
+        {
+            get => AppState.Current.TInventory.IIP_Ring1.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring1.SetDataContext(value);
+        }
+
+        public InventoryItem Ring2
+        {
+            get => AppState.Current.TInventory.IIP_Ring2.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring2.SetDataContext(value);
+        }
+
+        public InventoryItem Ring3
+        {
+            get => AppState.Current.TInventory.IIP_Ring3.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring3.SetDataContext(value);
+        }
+
+        public InventoryItem Ring4
+        {
+            get => AppState.Current.TInventory.IIP_Ring4.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring4.SetDataContext(value);
+        }
+
+        public InventoryItem Ring5
+        {
+            get => AppState.Current.TInventory.IIP_Ring5.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring5.SetDataContext(value);
+        }
+
+        public InventoryItem Ring6
+        {
+            get => AppState.Current.TInventory.IIP_Ring6.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring6.SetDataContext(value);
+        }
+
+        public InventoryItem Ring7
+        {
+            get => AppState.Current.TInventory.IIP_Ring7.DataContext as InventoryItem;
+            set => AppState.Current.TInventory.IIP_Ring7.SetDataContext(value);
+        }
+
         public void Clear()
         {
             this.PP = this.GP = this.EP = this.SP = this.CP = 0;
+            this.WeightCurrent = this.WeightMax1 = this.WeightMax2 = 0;
             this.SortingMethod = Resources.Inventory_Sort_Name;
             this.SortInverted = false;
             this.Filter = string.Empty;
             this.Items.Clear();
+            this.Helmet = this.Necklace = this.Chestpiece = this.Leggings = this.Boots = WeaponLeft = this.WeaponRight = this.Misc1 = this.Misc2 = this.Ring0 = this.Ring1 = this.Ring2 = this.Ring3 = this.Ring4 = this.Ring5 = this.Ring6 = this.Ring7 = null;
         }
     }
 

@@ -118,115 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CreateItem_Amount" xml:space="preserve">
-    <value>Amount</value>
+    <value>Количество</value>
   </data>
   <data name="CreateItem_Cost" xml:space="preserve">
-    <value>Cost</value>
+    <value>Цена</value>
   </data>
   <data name="CreateItem_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Описание</value>
   </data>
   <data name="CreateItem_Rarity" xml:space="preserve">
-    <value>Rarity</value>
+    <value>Редкость</value>
   </data>
   <data name="CreateItem_Rarity_Common" xml:space="preserve">
-    <value>Common</value>
+    <value>Обычный</value>
   </data>
   <data name="CreateItem_Rarity_Legendary" xml:space="preserve">
-    <value>Legendary</value>
+    <value>Легендарный</value>
   </data>
   <data name="CreateItem_Rarity_Rare" xml:space="preserve">
-    <value>Rare</value>
+    <value>Редкий</value>
   </data>
   <data name="CreateItem_Rarity_Trash" xml:space="preserve">
-    <value>Trash</value>
+    <value>Мусор</value>
   </data>
   <data name="CreateItem_Rarity_Uncommon" xml:space="preserve">
-    <value>Uncommon</value>
+    <value>Необычный</value>
   </data>
   <data name="CreateItem_Rarity_Unique" xml:space="preserve">
-    <value>Unique</value>
+    <value>Уникальный</value>
   </data>
   <data name="CreateItem_Rarity_VeryRare" xml:space="preserve">
-    <value>Very Rare</value>
+    <value>Очень Редкий</value>
   </data>
   <data name="CreateItem_Rarity_Wondrous" xml:space="preserve">
-    <value>Wondrous</value>
+    <value>Чудесный</value>
   </data>
   <data name="CreateItem_Type" xml:space="preserve">
-    <value>Type</value>
+    <value>Тип</value>
   </data>
   <data name="CreateItem_Type_Ammo" xml:space="preserve">
-    <value>Ammo</value>
+    <value>Боеприпасы</value>
   </data>
   <data name="CreateItem_Type_Arcane" xml:space="preserve">
-    <value>Arcane</value>
+    <value>Магическое</value>
   </data>
   <data name="CreateItem_Type_Armor" xml:space="preserve">
-    <value>Armor</value>
+    <value>Броня</value>
   </data>
   <data name="CreateItem_Type_Food" xml:space="preserve">
-    <value>Food</value>
+    <value>Еда</value>
   </data>
   <data name="CreateItem_Type_Other" xml:space="preserve">
-    <value>Other</value>
+    <value>Другое</value>
   </data>
   <data name="CreateItem_Type_Potion" xml:space="preserve">
-    <value>Potion</value>
+    <value>Зелье</value>
   </data>
   <data name="CreateItem_Type_Quest" xml:space="preserve">
-    <value>Quest</value>
+    <value>Квест</value>
   </data>
   <data name="CreateItem_Type_Tool" xml:space="preserve">
-    <value>Tool</value>
+    <value>Инструмент</value>
   </data>
   <data name="CreateItem_Type_Trinket" xml:space="preserve">
-    <value>Trinket</value>
+    <value>Безделушка</value>
   </data>
   <data name="CreateItem_Type_Weapon" xml:space="preserve">
-    <value>Weapon</value>
+    <value>Оружие</value>
   </data>
   <data name="CreateItem_Weight" xml:space="preserve">
-    <value>Weight</value>
+    <value>Вес</value>
   </data>
   <data name="CreateSpell_CastTime" xml:space="preserve">
-    <value>Cast Time</value>
+    <value>Время Применения</value>
   </data>
   <data name="CreateSpell_Concentration" xml:space="preserve">
-    <value>Concentration</value>
+    <value>Концентрация</value>
   </data>
   <data name="CreateSpell_Desc" xml:space="preserve">
-    <value>Description</value>
+    <value>Описание</value>
   </data>
   <data name="CreateSpell_Duration" xml:space="preserve">
-    <value>Duration</value>
+    <value>Длительность</value>
   </data>
   <data name="CreateSpell_Level" xml:space="preserve">
-    <value>Level</value>
+    <value>Уровень</value>
   </data>
   <data name="CreateSpell_Material" xml:space="preserve">
-    <value>Material</value>
+    <value>Материальное</value>
   </data>
   <data name="CreateSpell_Range" xml:space="preserve">
-    <value>Range</value>
+    <value>Дистанция</value>
   </data>
   <data name="CreateSpell_Ritual" xml:space="preserve">
-    <value>Ritual</value>
+    <value>Ритуал</value>
   </data>
   <data name="CreateSpell_School" xml:space="preserve">
-    <value>School</value>
+    <value>Школа</value>
   </data>
   <data name="CreateSpell_ShortDesc" xml:space="preserve">
-    <value>Short Description</value>
+    <value>Короткое Описание</value>
   </data>
   <data name="CreateSpell_Somatic" xml:space="preserve">
-    <value>Somatic</value>
+    <value>Соматическое</value>
   </data>
   <data name="CreateSpell_Targets" xml:space="preserve">
-    <value>Targets</value>
+    <value>Цели</value>
   </data>
   <data name="CreateSpell_Verbal" xml:space="preserve">
-    <value>Verbal</value>
+    <value>Вербальное</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dnd5eitemindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -236,46 +236,46 @@
     <value>..\Resources\dnd5espellindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Edit_Languages" xml:space="preserve">
-    <value>Languages</value>
+    <value>Языки</value>
   </data>
   <data name="Extras_AaB" xml:space="preserve">
-    <value>Appearance and Bio</value>
+    <value>Внешность и Биография</value>
   </data>
   <data name="Extras_Age" xml:space="preserve">
-    <value>Age</value>
+    <value>Вес</value>
   </data>
   <data name="Extras_Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Внешность</value>
   </data>
   <data name="Extras_Bio" xml:space="preserve">
-    <value>Biography</value>
+    <value>Биография</value>
   </data>
   <data name="Extras_Extra" xml:space="preserve">
-    <value>Extra</value>
+    <value>Экстра</value>
   </data>
   <data name="Extras_Extras" xml:space="preserve">
-    <value>Extras</value>
+    <value>Экстра</value>
   </data>
   <data name="Extras_Feats" xml:space="preserve">
-    <value>Feats</value>
+    <value>Черты</value>
   </data>
   <data name="Extras_Gender" xml:space="preserve">
-    <value>Gender</value>
+    <value>Пол</value>
   </data>
   <data name="Extras_Height" xml:space="preserve">
-    <value>Height</value>
+    <value>Рост</value>
   </data>
   <data name="Extras_Traits" xml:space="preserve">
-    <value>Traits</value>
+    <value>Трейты</value>
   </data>
   <data name="Extras_Weight" xml:space="preserve">
-    <value>Weight</value>
+    <value>Вес</value>
   </data>
   <data name="General_AC" xml:space="preserve">
-    <value>Armor Class</value>
+    <value>Класс Брони</value>
   </data>
   <data name="General_Alignment" xml:space="preserve">
-    <value>Alignment</value>
+    <value>Мораль</value>
   </data>
   <data name="General_Alignment_CE" xml:space="preserve">
     <value>CE</value>
@@ -305,710 +305,710 @@
     <value>TN</value>
   </data>
   <data name="General_Background" xml:space="preserve">
-    <value>Background</value>
+    <value>Предистория</value>
   </data>
   <data name="General_Background_Acolyte" xml:space="preserve">
-    <value>Acolyte</value>
+    <value>Прислужник</value>
   </data>
   <data name="General_Background_Charlatan" xml:space="preserve">
-    <value>Charlatan</value>
+    <value>Шарлатан</value>
   </data>
   <data name="General_Background_Criminal" xml:space="preserve">
-    <value>Criminal</value>
+    <value>Преступник</value>
   </data>
   <data name="General_Background_Custom" xml:space="preserve">
-    <value>Custom</value>
+    <value>Пользовательское</value>
   </data>
   <data name="General_Background_Entertainer" xml:space="preserve">
-    <value>Entertainer</value>
+    <value>Артист</value>
   </data>
   <data name="General_Background_FolkHero" xml:space="preserve">
-    <value>Folk Hero</value>
+    <value>Народный Герой</value>
   </data>
   <data name="General_Background_GuildArtisan" xml:space="preserve">
-    <value>Guild Artisan</value>
+    <value>Гильдейский Ремесленник</value>
   </data>
   <data name="General_Background_Hermit" xml:space="preserve">
-    <value>Hermit</value>
+    <value>Отшельник</value>
   </data>
   <data name="General_Background_Noble" xml:space="preserve">
-    <value>Noble</value>
+    <value>Благородный</value>
   </data>
   <data name="General_Background_Outlander" xml:space="preserve">
-    <value>Outlander</value>
+    <value>Чужеземец</value>
   </data>
   <data name="General_Background_Sage" xml:space="preserve">
-    <value>Sage</value>
+    <value>Мудрец</value>
   </data>
   <data name="General_Background_Sailor" xml:space="preserve">
-    <value>Sailor</value>
+    <value>Моряк</value>
   </data>
   <data name="General_Background_Soldier" xml:space="preserve">
-    <value>Soldier</value>
+    <value>Солдат</value>
   </data>
   <data name="General_Background_Urchin" xml:space="preserve">
-    <value>Urchin</value>
+    <value>Беспризорник</value>
   </data>
   <data name="General_Bonds" xml:space="preserve">
-    <value>Bonds</value>
+    <value>Связи</value>
   </data>
   <data name="General_Cha" xml:space="preserve">
-    <value>Cha</value>
+    <value>Хар</value>
   </data>
   <data name="General_CharacterName" xml:space="preserve">
-    <value>Character Name</value>
+    <value>Имя Персонажа</value>
   </data>
   <data name="General_Charisma" xml:space="preserve">
-    <value>Charisma</value>
+    <value>Харизма</value>
   </data>
   <data name="General_Class_Barbarian" xml:space="preserve">
-    <value>Barbarian</value>
+    <value>Варвар</value>
   </data>
   <data name="General_Class_Bard" xml:space="preserve">
-    <value>Bard</value>
+    <value>Бард</value>
   </data>
   <data name="General_Class_Cleric" xml:space="preserve">
-    <value>Cleric</value>
+    <value>Клирик</value>
   </data>
   <data name="General_Class_Druid" xml:space="preserve">
-    <value>Druid</value>
+    <value>Друид</value>
   </data>
   <data name="General_Class_Fighter" xml:space="preserve">
-    <value>Fighter</value>
+    <value>Боец</value>
   </data>
   <data name="General_Class_Monk" xml:space="preserve">
-    <value>Monk</value>
+    <value>Монах</value>
   </data>
   <data name="General_Class_Paladin" xml:space="preserve">
-    <value>Paladin</value>
+    <value>Паладин</value>
   </data>
   <data name="General_Class_Ranger" xml:space="preserve">
-    <value>Ranger</value>
+    <value>Следопыт</value>
   </data>
   <data name="General_Class_Rogue" xml:space="preserve">
-    <value>Rogue</value>
+    <value>Плут</value>
   </data>
   <data name="General_Class_Sorcerer" xml:space="preserve">
-    <value>Sorcerer</value>
+    <value>Чародей</value>
   </data>
   <data name="General_Class_Warlock" xml:space="preserve">
-    <value>Warlock</value>
+    <value>Колдун</value>
   </data>
   <data name="General_Class_Wizard" xml:space="preserve">
-    <value>Wizard</value>
+    <value>Волшебник</value>
   </data>
   <data name="General_Con" xml:space="preserve">
-    <value>Con</value>
+    <value>Тел</value>
   </data>
   <data name="General_Constitution" xml:space="preserve">
-    <value>Constitution</value>
+    <value>Телосложение</value>
   </data>
   <data name="General_DeathFails" xml:space="preserve">
-    <value>Fails</value>
+    <value>Промахи</value>
   </data>
   <data name="General_DeathSaves" xml:space="preserve">
-    <value>Passes</value>
+    <value>Успехи</value>
   </data>
   <data name="General_DeathThrows" xml:space="preserve">
-    <value>Death Throws</value>
+    <value>Спасброски смерти</value>
   </data>
   <data name="General_Dex" xml:space="preserve">
-    <value>Dex</value>
+    <value>Лов</value>
   </data>
   <data name="General_Dexterity" xml:space="preserve">
-    <value>Dexterity</value>
+    <value>Ловкость</value>
   </data>
   <data name="General_Flaws" xml:space="preserve">
-    <value>Flaws</value>
+    <value>Недостатки</value>
   </data>
   <data name="General_GroupBox_GlanceValue" xml:space="preserve">
-    <value>Glance Value</value>
+    <value>Первое Впечатление</value>
   </data>
   <data name="General_GroupBox_Personality" xml:space="preserve">
-    <value>Personality</value>
+    <value>Личность</value>
   </data>
   <data name="General_GroupBox_Stats" xml:space="preserve">
-    <value>Statblock</value>
+    <value>Блок Статов</value>
   </data>
   <data name="General_HitDice" xml:space="preserve">
-    <value>Hit Dice</value>
+    <value>Кости Хитов</value>
   </data>
   <data name="General_Ideals" xml:space="preserve">
-    <value>Ideals</value>
+    <value>Идеалы</value>
   </data>
   <data name="General_Inspiration" xml:space="preserve">
-    <value>Inspiration</value>
+    <value>Вдохновение</value>
   </data>
   <data name="General_Int" xml:space="preserve">
-    <value>Int</value>
+    <value>Инт</value>
   </data>
   <data name="General_Intelligence" xml:space="preserve">
-    <value>Intelligence</value>
+    <value>Интеллект</value>
   </data>
   <data name="General_Languages" xml:space="preserve">
-    <value>Languages</value>
+    <value>Языки</value>
   </data>
   <data name="General_Lvl" xml:space="preserve">
-    <value>Lvl</value>
+    <value>Ур</value>
   </data>
   <data name="General_PBonus" xml:space="preserve">
-    <value>Prof. Bonus</value>
+    <value>Бонус Владения</value>
   </data>
   <data name="General_Profficiencies" xml:space="preserve">
-    <value>Profficiencies</value>
+    <value>Владения</value>
   </data>
   <data name="General_Race" xml:space="preserve">
-    <value>Race</value>
+    <value>Раса</value>
   </data>
   <data name="General_Race_DarkElf" xml:space="preserve">
-    <value>Dark Elf</value>
+    <value>Тёмный Эльф</value>
   </data>
   <data name="General_Race_Dragonborn" xml:space="preserve">
-    <value>Dragonborn</value>
+    <value>Драконорождённый</value>
   </data>
   <data name="General_Race_ForestGnome" xml:space="preserve">
-    <value>Forest Gnome</value>
+    <value>Лесной Гном</value>
   </data>
   <data name="General_Race_HalfElf" xml:space="preserve">
-    <value>Half-Elf</value>
+    <value>Полу-Эльф</value>
   </data>
   <data name="General_Race_Halfling" xml:space="preserve">
-    <value>Halfling</value>
+    <value>Полурослик</value>
   </data>
   <data name="General_Race_HalfOrc" xml:space="preserve">
-    <value>Half-Orc</value>
+    <value>Полу-Орк</value>
   </data>
   <data name="General_Race_HillDwarf" xml:space="preserve">
-    <value>Hill Dwarf</value>
+    <value>Холмовой Дварф</value>
   </data>
   <data name="General_Race_Human" xml:space="preserve">
-    <value>Human</value>
+    <value>Человек</value>
   </data>
   <data name="General_Race_HumanVar" xml:space="preserve">
-    <value>Human Variant</value>
+    <value>Вариант Человека</value>
   </data>
   <data name="General_Race_MoonElf" xml:space="preserve">
-    <value>Moon Elf</value>
+    <value>Лесной Эльф</value>
   </data>
   <data name="General_Race_MountainDwarf" xml:space="preserve">
-    <value>Mountain Dwarf</value>
+    <value>Горный Дварф</value>
   </data>
   <data name="General_Race_RockGnome" xml:space="preserve">
-    <value>Rock Gnome</value>
+    <value>Каменный Гном</value>
   </data>
   <data name="General_Race_SunElf" xml:space="preserve">
-    <value>Sun Elf</value>
+    <value>Солнечный Эльф</value>
   </data>
   <data name="General_Race_Tiefling" xml:space="preserve">
-    <value>Tiefling</value>
+    <value>Тифлинг</value>
   </data>
   <data name="General_Race_WoodElf" xml:space="preserve">
-    <value>Wood Elf</value>
+    <value>Лесной Эльф</value>
   </data>
   <data name="General_Saves" xml:space="preserve">
-    <value>Saves</value>
+    <value>Спасброски</value>
   </data>
   <data name="General_Skills" xml:space="preserve">
-    <value>Skills</value>
+    <value>Навыки</value>
   </data>
   <data name="General_Skill_Acrobatics" xml:space="preserve">
-    <value>[Dex] Acrobatics</value>
+    <value>[Лов] Акробатика</value>
   </data>
   <data name="General_Skill_AH" xml:space="preserve">
-    <value>[Wis] Animal Handling</value>
+    <value>[Муд] Уход за Жив.</value>
   </data>
   <data name="General_Skill_Arcana" xml:space="preserve">
-    <value>[Int] Arcana</value>
+    <value>[Инт] Магия</value>
   </data>
   <data name="General_Skill_Athletics" xml:space="preserve">
-    <value>[Str] Athletics</value>
+    <value>[Сил] Атлетика</value>
   </data>
   <data name="General_Skill_Deception" xml:space="preserve">
-    <value>[Cha] Deception</value>
+    <value>[Хар] Обман</value>
   </data>
   <data name="General_Skill_History" xml:space="preserve">
-    <value>[Int] History</value>
+    <value>[Инт] История</value>
   </data>
   <data name="General_Skill_Insight" xml:space="preserve">
-    <value>[Wis] Insight</value>
+    <value>[Муд] Проницательность</value>
   </data>
   <data name="General_Skill_Intimidation" xml:space="preserve">
-    <value>[Cha] Intimidation</value>
+    <value>[Хар] Запугивание</value>
   </data>
   <data name="General_Skill_Investigation" xml:space="preserve">
-    <value>[Int] Investigation</value>
+    <value>[Инт] Анализ</value>
   </data>
   <data name="General_Skill_Medicine" xml:space="preserve">
-    <value>[Wis] Medicine</value>
+    <value>[Муд] Медицина</value>
   </data>
   <data name="General_Skill_Nature" xml:space="preserve">
-    <value>[Int] Nature</value>
+    <value>[Инт] Природа</value>
   </data>
   <data name="General_Skill_Perception" xml:space="preserve">
-    <value>[Wis] Perception</value>
+    <value>[Муд] Внимательность</value>
   </data>
   <data name="General_Skill_Performance" xml:space="preserve">
-    <value>[Cha] Performance</value>
+    <value>[Хар] Выступление</value>
   </data>
   <data name="General_Skill_Persuasion" xml:space="preserve">
-    <value>[Cha] Persuasion</value>
+    <value>[Хар] Убеждение</value>
   </data>
   <data name="General_Skill_Religion" xml:space="preserve">
-    <value>[Int] Religion</value>
+    <value>[Инт] Религия</value>
   </data>
   <data name="General_Skill_SleightOfHand" xml:space="preserve">
-    <value>[Dex] Sleight of Hand</value>
+    <value>[Лов] Ловкость Рук</value>
   </data>
   <data name="General_Skill_Stealth" xml:space="preserve">
-    <value>[Dex] Stealth</value>
+    <value>[Лов] Скрытность</value>
   </data>
   <data name="General_Skill_Survival" xml:space="preserve">
-    <value>[Wis] Survival</value>
+    <value>[Муд] Выживание</value>
   </data>
   <data name="General_Speed" xml:space="preserve">
-    <value>Speed</value>
+    <value>Скорость</value>
   </data>
   <data name="General_Str" xml:space="preserve">
-    <value>Str</value>
+    <value>Сил</value>
   </data>
   <data name="General_Strength" xml:space="preserve">
-    <value>Strength</value>
+    <value>Сила</value>
   </data>
   <data name="General_Traits" xml:space="preserve">
-    <value>Traits</value>
+    <value>Черты Характера</value>
   </data>
   <data name="General_Wis" xml:space="preserve">
-    <value>Wis</value>
+    <value>Муд</value>
   </data>
   <data name="General_Wisdom" xml:space="preserve">
-    <value>Wisdom</value>
+    <value>Мудрость</value>
   </data>
   <data name="Generic_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Отмена</value>
   </data>
   <data name="Generic_No" xml:space="preserve">
-    <value>No</value>
+    <value>Нет</value>
   </data>
   <data name="Generic_OK" xml:space="preserve">
-    <value>OK</value>
+    <value>Окей</value>
   </data>
   <data name="Generic_OldSave_Pass1" xml:space="preserve">
-    <value>An old or incompatible save file was loaded. Due to the way stat calculations were changed it is recommended to do a stat rebuild. Do the rebuild?</value>
+    <value>Было загружено старое или несовместимое сохранение. Из-за того что изменился расчёт характеристик рекоммендуется провести перерасчёт. Провести?</value>
   </data>
   <data name="Generic_OldSave_Pass2" xml:space="preserve">
-    <value>An old or incompatible save file was loaded. Due to general potential save partial or full incompatibility it is recommended to override the file. Save now?</value>
+    <value>Было загружено старое или несовместимое сохранение. Из-за потенциальной несовместимости рекоммендуется перезаписать файл. Перезаписать?</value>
   </data>
   <data name="Generic_OldSave_Title" xml:space="preserve">
-    <value>Old save file loaded</value>
+    <value>Загружено старое сохранение</value>
   </data>
   <data name="Generic_SaveError_Description" xml:space="preserve">
-    <value>Couldn't save the sheet to the previous location: {0}, {1}. Press OK to select a different file to save to. Press Cancel to cancel the save alltogether.</value>
+    <value>Не получилось сохранить: {0}, {1}. Нажмите окей для сохранения в другое место. Нажмите отмена чтобы отменить сохранение</value>
   </data>
   <data name="Generic_SaveError_Title" xml:space="preserve">
-    <value>Couldn't save the sheet!</value>
+    <value>Не получилось сохраниться!</value>
   </data>
   <data name="Generic_Source" xml:space="preserve">
-    <value>Source</value>
+    <value>Источник</value>
   </data>
   <data name="Generic_Unsaved_Description" xml:space="preserve">
-    <value>There are unsaved changes. Do you want to save the file before resetting it? Press Yes to save the file and reset it. Press No to discard all changes and reset it. Press Cancel to abort the operation</value>
+    <value>Имеются несохранённые изменения. Желаете сохраниться перед обнулением? Нажмите ДА для сохранения и обнуления. Нажмите НЕТ для сброса и обнуления. Нажмите Отмена для отмены операции</value>
   </data>
   <data name="Generic_Unsaved_Title" xml:space="preserve">
-    <value>Unsaved changes exist!</value>
+    <value>Есть несохранённые изменения!</value>
   </data>
   <data name="Generic_Wondrous" xml:space="preserve">
-    <value>Wondrous</value>
+    <value>Чудесный</value>
   </data>
   <data name="Generic_Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Да</value>
   </data>
   <data name="Info_3rd" xml:space="preserve">
-    <value>Used 3rd party libraries</value>
+    <value>Использованные сторонние библиотеки</value>
   </data>
   <data name="Info_Author" xml:space="preserve">
-    <value>Author</value>
+    <value>Автор</value>
   </data>
   <data name="Info_Information" xml:space="preserve">
-    <value>Information</value>
+    <value>Информация</value>
   </data>
   <data name="Info_License" xml:space="preserve">
-    <value>License</value>
+    <value>Лицензия</value>
   </data>
   <data name="Info_Repo" xml:space="preserve">
-    <value>Repository link</value>
+    <value>Ссылка на источник</value>
   </data>
   <data name="Info_Version" xml:space="preserve">
-    <value>Version</value>
+    <value>Версия</value>
   </data>
   <data name="Inventory_Backpack" xml:space="preserve">
-    <value>Items</value>
+    <value>Предметы</value>
   </data>
   <data name="Inventory_Cash" xml:space="preserve">
-    <value>Cash</value>
+    <value>Деньги</value>
   </data>
   <data name="Inventory_CP" xml:space="preserve">
-    <value>CP</value>
+    <value>ММ</value>
   </data>
   <data name="Inventory_EP" xml:space="preserve">
-    <value>EP</value>
+    <value>ЭМ</value>
   </data>
   <data name="Inventory_Equip" xml:space="preserve">
-    <value>Equipment</value>
+    <value>Снаряжение</value>
   </data>
   <data name="Inventory_Filter" xml:space="preserve">
-    <value>Filter</value>
+    <value>Фильтр</value>
   </data>
   <data name="Inventory_GP" xml:space="preserve">
-    <value>GP</value>
+    <value>ЗМ</value>
   </data>
   <data name="Inventory_InvertSort" xml:space="preserve">
-    <value>Invert Results</value>
+    <value>Инв. Рез.</value>
   </data>
   <data name="Inventory_PP" xml:space="preserve">
-    <value>PP</value>
+    <value>ПМ</value>
   </data>
   <data name="Inventory_Rings" xml:space="preserve">
-    <value>Rings</value>
+    <value>Кольца</value>
   </data>
   <data name="Inventory_Sorting" xml:space="preserve">
-    <value>Sort By</value>
+    <value>Сортировка</value>
   </data>
   <data name="Inventory_Sort_Amount" xml:space="preserve">
-    <value>Amount</value>
+    <value>Кол-во</value>
   </data>
   <data name="Inventory_Sort_Cost" xml:space="preserve">
-    <value>Cost</value>
+    <value>Цена</value>
   </data>
   <data name="Inventory_Sort_Cost_Total" xml:space="preserve">
-    <value>Total Cost</value>
+    <value>Общая Цена</value>
   </data>
   <data name="Inventory_Sort_Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Название</value>
   </data>
   <data name="Inventory_Sort_Rarity" xml:space="preserve">
-    <value>Rarity</value>
+    <value>Редкость</value>
   </data>
   <data name="Inventory_Sort_Type" xml:space="preserve">
-    <value>Type</value>
+    <value>Тип</value>
   </data>
   <data name="Inventory_Sort_Weight" xml:space="preserve">
-    <value>Weight</value>
+    <value>Вес</value>
   </data>
   <data name="Inventory_Sort_Weight_Total" xml:space="preserve">
-    <value>Total Weight</value>
+    <value>Общий вес</value>
   </data>
   <data name="Inventory_SP" xml:space="preserve">
-    <value>SP</value>
+    <value>СМ</value>
   </data>
   <data name="Inventory_Weight" xml:space="preserve">
-    <value>Weight</value>
+    <value>Вес</value>
   </data>
   <data name="ItemIndex_Apply" xml:space="preserve">
-    <value>Apply Filters</value>
+    <value>Применить Фильтры</value>
   </data>
   <data name="ItemIndex_Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Название</value>
   </data>
   <data name="ItemIndex_Properties" xml:space="preserve">
-    <value>Property Filtering</value>
+    <value>Фильтр Свойств</value>
   </data>
   <data name="ItemIndex_Properties2" xml:space="preserve">
-    <value>Properties</value>
+    <value>Свойства</value>
   </data>
   <data name="ItemIndex_Prop_Ammo" xml:space="preserve">
-    <value>Ammunition</value>
+    <value>Боеприпасы</value>
   </data>
   <data name="ItemIndex_Prop_Finesse" xml:space="preserve">
-    <value>Finesse</value>
+    <value>Фехтовальное</value>
   </data>
   <data name="ItemIndex_Prop_Heavy" xml:space="preserve">
-    <value>Heavy</value>
+    <value>Тяжёлое</value>
   </data>
   <data name="ItemIndex_Prop_Light" xml:space="preserve">
-    <value>Light</value>
+    <value>Лёгкое</value>
   </data>
   <data name="ItemIndex_Prop_Loading" xml:space="preserve">
-    <value>Loading</value>
+    <value>Перезарядка</value>
   </data>
   <data name="ItemIndex_Prop_Range" xml:space="preserve">
-    <value>Range</value>
+    <value>Радиус</value>
   </data>
   <data name="ItemIndex_Prop_Reach" xml:space="preserve">
-    <value>Reach</value>
+    <value>Досягаемость</value>
   </data>
   <data name="ItemIndex_Prop_Thrown" xml:space="preserve">
-    <value>Thrown</value>
+    <value>Метательное</value>
   </data>
   <data name="ItemIndex_Prop_TwoHanded" xml:space="preserve">
-    <value>Two-Handed</value>
+    <value>Двуручное</value>
   </data>
   <data name="ItemIndex_Prop_Versatile" xml:space="preserve">
-    <value>Versatile</value>
+    <value>Универсальное</value>
   </data>
   <data name="ItemIndex_Rarity" xml:space="preserve">
-    <value>Rarity</value>
+    <value>Редкость</value>
   </data>
   <data name="ItemIndex_Rarity_Common" xml:space="preserve">
-    <value>Common</value>
+    <value>Обычный</value>
   </data>
   <data name="ItemIndex_Rarity_Legendary" xml:space="preserve">
-    <value>Legendary</value>
+    <value>Легендарный</value>
   </data>
   <data name="ItemIndex_Rarity_Rare" xml:space="preserve">
-    <value>Rare</value>
+    <value>Редкий</value>
   </data>
   <data name="ItemIndex_Rarity_Uncommon" xml:space="preserve">
-    <value>Uncommon</value>
+    <value>Необычный</value>
   </data>
   <data name="ItemIndex_Rarity_VeryRare" xml:space="preserve">
-    <value>Very Rare</value>
+    <value>Очень Редкий</value>
   </data>
   <data name="ItemIndex_Sorting" xml:space="preserve">
-    <value>Filtering</value>
+    <value>Фильтровка</value>
   </data>
   <data name="ItemIndex_Types" xml:space="preserve">
-    <value>Type Filtering</value>
+    <value>Фильтровка по типу</value>
   </data>
   <data name="ItemIndex_Types_Desc" xml:space="preserve">
-    <value>Enter the types to include
-Separate multiple types by a new line</value>
+    <value>Введите желаемые типы.
+Разделять энтером</value>
   </data>
   <data name="ItemIndex_WondrousOnly" xml:space="preserve">
-    <value>Wondrous Only</value>
+    <value>Только чудесные</value>
   </data>
   <data name="MainMenu_About" xml:space="preserve">
-    <value>About</value>
+    <value>Отменить</value>
   </data>
   <data name="MainMenu_CheckForUpdates" xml:space="preserve">
-    <value>Check For Updates</value>
+    <value>Проверить обновления</value>
   </data>
   <data name="MainMenu_Edit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Отредактировать</value>
   </data>
   <data name="MainMenu_Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Выйти</value>
   </data>
   <data name="MainMenu_File" xml:space="preserve">
-    <value>File</value>
+    <value>Файл</value>
   </data>
   <data name="MainMenu_File_New" xml:space="preserve">
-    <value>New...</value>
+    <value>Новый...</value>
   </data>
   <data name="MainMenu_File_New_FromScript" xml:space="preserve">
-    <value>From Script...</value>
+    <value>Скриптом...</value>
   </data>
   <data name="MainMenu_File_New_New" xml:space="preserve">
-    <value>Blank Sheet</value>
+    <value>Пустой Лист</value>
   </data>
   <data name="MainMenu_Info" xml:space="preserve">
-    <value>Info</value>
+    <value>Информация</value>
   </data>
   <data name="MainMenu_Open" xml:space="preserve">
-    <value>Open</value>
+    <value>Открыть</value>
   </data>
   <data name="MainMenu_Roadmap" xml:space="preserve">
-    <value>Roadmap</value>
+    <value>План Действий</value>
   </data>
   <data name="MainMenu_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранить</value>
   </data>
   <data name="MainMenu_SaveAs" xml:space="preserve">
-    <value>Save As</value>
+    <value>Сохранить Как</value>
   </data>
   <data name="MainMenu_Scripting" xml:space="preserve">
-    <value>Scripting</value>
+    <value>Скрипты</value>
   </data>
   <data name="MainMenu_View" xml:space="preserve">
-    <value>View</value>
+    <value>Вид</value>
   </data>
   <data name="R20_Actions" xml:space="preserve">
-    <value>Actions</value>
+    <value>Действия</value>
   </data>
   <data name="R20_AdvancedRoll" xml:space="preserve">
-    <value>Advanced Roll</value>
+    <value>Комплексный Бросок</value>
   </data>
   <data name="R20_AsMulRolls" xml:space="preserve">
-    <value>As multiple rolls</value>
+    <value>Как несколько</value>
   </data>
   <data name="R20_ChaSave" xml:space="preserve">
-    <value>Charisma Save</value>
+    <value>Спасбросок Хар</value>
   </data>
   <data name="R20_ConSave" xml:space="preserve">
-    <value>Constitution Save</value>
+    <value>Спасбросок Тел</value>
   </data>
   <data name="R20_CopyClient" xml:space="preserve">
-    <value>Copy Client</value>
+    <value>Коп. Клиент</value>
   </data>
   <data name="R20_DexSave" xml:space="preserve">
-    <value>Dexterity Save</value>
+    <value>Спасбросок Лов</value>
   </data>
   <data name="R20_IntSave" xml:space="preserve">
-    <value>Intelligence Save</value>
+    <value>Спасбросик Инт</value>
   </data>
   <data name="R20_Log" xml:space="preserve">
-    <value>Log</value>
+    <value>Логи</value>
   </data>
   <data name="R20_Rolls" xml:space="preserve">
-    <value>Rolls</value>
+    <value>Броски</value>
   </data>
   <data name="R20_ServerHelp" xml:space="preserve">
-    <value>Server Help:
-Press the "Start server" button first. This will copy the client to your clipboard. 
-Open the browser window, navigate to the game, make sure the game is running, press F12 on your keyboard, select the Console tab and press Ctrl+V into the console.
-On certain browsers you may need to do more actions.</value>
+    <value>Инструкции:
+Нажмите "Создать Сервер". Это скопирует клиент в буфер обмена. 
+Откройте вкладку браузера с игрой, убедитесь что игра запущена, нажмите F12 на клавиатуре, выберите Консоль и нажмите Ctrl+V в строку ввода.
+На опр. браузерах надо выполнить доп. действия.</value>
   </data>
   <data name="R20_ServerPanel" xml:space="preserve">
-    <value>ServerPanel</value>
+    <value>Панель Сервера</value>
   </data>
   <data name="R20_ServerStatus" xml:space="preserve">
-    <value>Server Status</value>
+    <value>Статус Сервера</value>
   </data>
   <data name="R20_SkillsAndSaves" xml:space="preserve">
-    <value>Skills And Saves</value>
+    <value>Навыки и Спасброски</value>
   </data>
   <data name="R20_SS_ConLost" xml:space="preserve">
-    <value>Connection Lost</value>
+    <value>Соединение Потеряно</value>
   </data>
   <data name="R20_SS_Connection" xml:space="preserve">
-    <value>Connection Estabilished</value>
+    <value>Соединение Установлено</value>
   </data>
   <data name="R20_SS_Listening" xml:space="preserve">
-    <value>Listening</value>
+    <value>Слушаем</value>
   </data>
   <data name="R20_SS_NotStarted" xml:space="preserve">
-    <value>Not Started</value>
+    <value>Не создано</value>
   </data>
   <data name="R20_StartServer" xml:space="preserve">
-    <value>Start Server</value>
+    <value>Созд. Сервер</value>
   </data>
   <data name="R20_StopServer" xml:space="preserve">
-    <value>Stop Server</value>
+    <value>Ост. Сервер</value>
   </data>
   <data name="R20_StrSave" xml:space="preserve">
-    <value>Strength Save</value>
+    <value>Спасбросок Сил</value>
   </data>
   <data name="R20_WisSave" xml:space="preserve">
-    <value>Wisdom Save</value>
+    <value>Спасбросок Муд</value>
   </data>
   <data name="Spellbook_AttackBonus" xml:space="preserve">
-    <value>Spell Attack Bonus</value>
+    <value>Бонус атаки заклинания</value>
   </data>
   <data name="Spellbook_Filtering" xml:space="preserve">
-    <value>Filtering</value>
+    <value>Фильтрация</value>
   </data>
   <data name="Spellbook_lv0" xml:space="preserve">
-    <value>Cantrips</value>
+    <value>Фокусы</value>
   </data>
   <data name="Spellbook_lv1" xml:space="preserve">
-    <value>Level 1</value>
+    <value>Ур. 1</value>
   </data>
   <data name="Spellbook_lv2" xml:space="preserve">
-    <value>Level 2</value>
+    <value>Ур. 2</value>
   </data>
   <data name="Spellbook_lv3" xml:space="preserve">
-    <value>Level 3</value>
+    <value>Ур. 3</value>
   </data>
   <data name="Spellbook_lv4" xml:space="preserve">
-    <value>Level 4</value>
+    <value>Ур. 4</value>
   </data>
   <data name="Spellbook_lv5" xml:space="preserve">
-    <value>Level 5</value>
+    <value>Ур. 5</value>
   </data>
   <data name="Spellbook_lv6" xml:space="preserve">
-    <value>Level 6</value>
+    <value>Ур. 6</value>
   </data>
   <data name="Spellbook_lv7" xml:space="preserve">
-    <value>Level 7</value>
+    <value>Ур. 7</value>
   </data>
   <data name="Spellbook_lv8" xml:space="preserve">
-    <value>Level 8</value>
+    <value>Ур. 8</value>
   </data>
   <data name="Spellbook_lv9" xml:space="preserve">
-    <value>Level 9</value>
+    <value>Ур. 9</value>
   </data>
   <data name="Spellbook_MaxSpells" xml:space="preserve">
-    <value>Max Spells</value>
+    <value>Макс. Заклинаний</value>
   </data>
   <data name="Spellbook_SaveDC" xml:space="preserve">
-    <value>Spell save DC</value>
+    <value>Спасбросок Заклинания</value>
   </data>
   <data name="Spellbook_Slots" xml:space="preserve">
-    <value>Slots</value>
+    <value>Слоты</value>
   </data>
   <data name="Spellbook_SpellcastingAbility" xml:space="preserve">
-    <value>Spellcasting Ability</value>
+    <value>Навык Заклинателя</value>
   </data>
   <data name="SpellIndex_ApplyFilters" xml:space="preserve">
-    <value>Apply Filters</value>
+    <value>Применить Фильтры</value>
   </data>
   <data name="SpellIndex_Classes" xml:space="preserve">
-    <value>Classes</value>
+    <value>Классы</value>
   </data>
   <data name="SpellIndex_Class_Bard" xml:space="preserve">
-    <value>Bard</value>
+    <value>Бард</value>
   </data>
   <data name="SpellIndex_Class_Cleric" xml:space="preserve">
-    <value>Cleric</value>
+    <value>Клирик</value>
   </data>
   <data name="SpellIndex_Class_Druid" xml:space="preserve">
-    <value>Druid</value>
+    <value>Друид</value>
   </data>
   <data name="SpellIndex_Class_Paladin" xml:space="preserve">
-    <value>Paladin</value>
+    <value>Паладин</value>
   </data>
   <data name="SpellIndex_Class_Ranger" xml:space="preserve">
-    <value>Ranger</value>
+    <value>Следопыт</value>
   </data>
   <data name="SpellIndex_Class_Sorcerer" xml:space="preserve">
-    <value>Sorcerer</value>
+    <value>Чародей</value>
   </data>
   <data name="SpellIndex_Class_Warlock" xml:space="preserve">
-    <value>Warlock</value>
+    <value>Колдун</value>
   </data>
   <data name="SpellIndex_Class_Wizard" xml:space="preserve">
-    <value>Wizard</value>
+    <value>Волшебник</value>
   </data>
   <data name="SpellIndex_Filtering" xml:space="preserve">
-    <value>Filtering</value>
+    <value>Фильтровка</value>
   </data>
   <data name="SpellIndex_Level" xml:space="preserve">
-    <value>Level</value>
+    <value>Уровень</value>
   </data>
   <data name="SpellIndex_Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Название</value>
   </data>
   <data name="SpellIndex_Ritual" xml:space="preserve">
-    <value>Ritual Only</value>
+    <value>Только Ритуалы</value>
   </data>
   <data name="SpellIndex_Schools" xml:space="preserve">
-    <value>Schools</value>
+    <value>Школы</value>
   </data>
   <data name="SpellIndex_School_Abjuration" xml:space="preserve">
-    <value>Abjuration</value>
+    <value>Ограждение</value>
   </data>
   <data name="SpellIndex_School_Conjuration" xml:space="preserve">
-    <value>Conjuration</value>
+    <value>Вызов</value>
   </data>
   <data name="SpellIndex_School_Divination" xml:space="preserve">
-    <value>Divination</value>
+    <value>Прорицание</value>
   </data>
   <data name="SpellIndex_School_Enchantment" xml:space="preserve">
-    <value>Enchantment</value>
+    <value>Очарование</value>
   </data>
   <data name="SpellIndex_School_Evocation" xml:space="preserve">
-    <value>Evocation</value>
+    <value>Воплощение</value>
   </data>
   <data name="SpellIndex_School_Illusion" xml:space="preserve">
-    <value>Illusion</value>
+    <value>Иллюзия</value>
   </data>
   <data name="SpellIndex_School_Necromancy" xml:space="preserve">
-    <value>Necromancy</value>
+    <value>Некромантия</value>
   </data>
   <data name="SpellIndex_School_Transmutation" xml:space="preserve">
-    <value>Transmutation</value>
+    <value>Преобразование</value>
   </data>
   <data name="SpellIndex_Sources" xml:space="preserve">
-    <value>Sources</value>
+    <value>Источники</value>
   </data>
   <data name="SpellIndex_Source_EE" xml:space="preserve">
     <value>Elemental Evil</value>
@@ -1029,22 +1029,22 @@ On certain browsers you may need to do more actions.</value>
     <value>Xanathars Guide To Everything</value>
   </data>
   <data name="Tab_Extras" xml:space="preserve">
-    <value>Extras</value>
+    <value>Экстра</value>
   </data>
   <data name="Tab_General" xml:space="preserve">
-    <value>General</value>
+    <value>Общее</value>
   </data>
   <data name="Tab_Inventory" xml:space="preserve">
-    <value>Inventory</value>
+    <value>Инвентарь</value>
   </data>
   <data name="Tab_InventoryCodex" xml:space="preserve">
-    <value>DnD5e Item Index</value>
+    <value>Список Предметов</value>
   </data>
   <data name="Tab_Spellbook" xml:space="preserve">
-    <value>Spellbook</value>
+    <value>Книга Заклинаний</value>
   </data>
   <data name="Tab_SpellCodex" xml:space="preserve">
-    <value>DnD5e Spell Index</value>
+    <value>Список Заклинаний</value>
   </data>
   <data name="_________" xml:space="preserve">
     <value />

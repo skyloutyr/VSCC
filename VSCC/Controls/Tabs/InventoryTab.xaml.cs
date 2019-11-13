@@ -5,9 +5,12 @@
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
+    using System.Windows.Input;
+    using System.Windows.Media;
     using VSCC.Controls.Windows;
     using VSCC.DataType;
     using VSCC.Models.ImageList;
+    using VSCC.State;
 
     /// <summary>
     /// Interaction logic for InventoryTab.xaml
@@ -51,6 +54,31 @@
             this.Items.CollectionChanged += (o, e) => this.Inventory.Items.Refresh();
             this.Inventory.ItemsSource = this.Items;
             this.Inventory.Items.Refresh();
+            this.RecalculateWeights(true, false, false);
+        }
+
+        public void RecalculateWeights(bool min, bool max1, bool max2)
+        {
+            if (min)
+            {
+                float cw = 0;
+                foreach (InventoryItem ii in this.Items)
+                {
+                    cw += ii.Weight * ii.Amount;
+                }
+
+                AppState.Current.State.Inventory.WeightCurrent = cw;
+            }
+
+            if (max1)
+            {
+                AppState.Current.State.Inventory.WeightMax1 = AppState.Current.State.General.StatStr * 15;
+            }
+
+            if (max2)
+            {
+                AppState.Current.State.Inventory.WeightMax2 = AppState.Current.State.General.StatStr * 30;
+            }
         }
 
         private void Btn_Add_Click(object sender, RoutedEventArgs e)
@@ -60,6 +88,7 @@
             if (ciiw.ShowDialog() ?? false)
             {
                 this.Items.Add((InventoryItem)ciiw.DataContext);
+                AppState.Current.State.Inventory.WeightCurrent += ((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount;
             }
         }
 
@@ -77,6 +106,8 @@
                 if (ciiw.ShowDialog() ?? false)
                 {
                     this.Items[this.Items.IndexOf(ii)] = (InventoryItem)ciiw.DataContext;
+                    float weightDiff = (((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount) - (ii.Weight * ii.Amount);
+                    AppState.Current.State.Inventory.WeightCurrent += weightDiff;
                 }
             }
         }
@@ -86,6 +117,7 @@
             if (this.Inventory.SelectedItem is InventoryItem ii)
             {
                 this.Items.Remove(ii);
+                AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.Amount;
             }
         }
 
@@ -168,6 +200,43 @@
                 this.IntUD_SP.Value = (this.IntUD_SP.Value ?? 0) + ccw.IntUD_SP.Value;
                 this.IntUD_CP.Value = (this.IntUD_CP.Value ?? 0) + ccw.IntUD_CP.Value;
             }
+        }
+
+        private Point startPoint;
+        private void Inventory_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            startPoint = e.GetPosition(null);
+        }
+
+        private void Inventory_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            Point mousePos = e.GetPosition(null);
+            Vector diff = startPoint - mousePos;
+            if (e.LeftButton == MouseButtonState.Pressed && Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance || Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
+            {
+                ListView listView = sender as ListView;
+                ListViewItem listViewItem = FindAnchestor<ListViewItem>((DependencyObject)e.OriginalSource);
+                if (listViewItem != null && listViewItem.IsSelected)
+                {
+                    object contact = listView.ItemContainerGenerator.ItemFromContainer(listViewItem);
+                    DataObject dragData = new DataObject("InventoryItem", contact);
+                    DragDrop.DoDragDrop(listViewItem, dragData, DragDropEffects.Move);
+                }
+            }
+        }
+
+        private static T FindAnchestor<T>(DependencyObject current) where T : DependencyObject
+        {
+            do
+            {
+                if (current is T)
+                {
+                    return (T)current;
+                }
+                current = VisualTreeHelper.GetParent(current);
+            } while (current != null);
+
+            return null;
         }
     }
 }

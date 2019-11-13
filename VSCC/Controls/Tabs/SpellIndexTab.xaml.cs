@@ -122,7 +122,26 @@ namespace VSCC.Controls.Tabs
                 }
             }
 
-            return true;
+            CheckBox[] sources = { this.CB_PHB, this.CB_XGTE, this.CB_SCAG, this.CB_SCPC, this.CB_EE, this.CB_HB };
+            bool sourcesQualify = !sources.Select(c => c.IsChecked ?? false).Any(b => b);
+            if (!sourcesQualify)
+            {
+                if (string.IsNullOrEmpty(st.Source))
+                {
+                    return true;
+                }
+
+                foreach (CheckBox cb in sources)
+                {
+                    if ((cb.IsChecked ?? false) && st.Source.IndexOf((string)cb.Content, 0, StringComparison.OrdinalIgnoreCase) != -1)
+                    {
+                        sourcesQualify = true;
+                        break;
+                    }
+                }
+            }
+
+            return sourcesQualify;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

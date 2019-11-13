@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Media.Imaging;
+using VSCC.Properties;
 
 namespace VSCC.Templates
 {
@@ -25,6 +26,7 @@ namespace VSCC.Templates
         public string AtHigherLevels { get; set; }
         public bool Ritual { get; set; }
         public bool Concentration { get; set; }
+        public string Source { get; set; }
 
         public string DescriptionProperty
         {
@@ -35,6 +37,12 @@ namespace VSCC.Templates
         public string ComponentsProperty
         {
             get => $"{ this.Components }{ (this.Ritual && this.Concentration ? "R C" : this.Ritual ? "R" : this.Concentration ? "C" : "") }";
+            set { }
+        }
+
+        public string SourceProperty
+        {
+            get => $"{ Resources.Generic_Source }: { Source }";
             set { }
         }
 

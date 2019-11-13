@@ -59,6 +59,7 @@
             <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="162" Width="260" Margin="10,143,0,0" BorderThickness="1" BorderBrush="Gold" CornerRadius="6">
                 <TextBlock Margin="1,-1,-1,1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
             </Border>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Source: " Margin="-3,300,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
         </Grid>
     </Border>
 </UserControl>

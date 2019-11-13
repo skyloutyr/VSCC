@@ -21,13 +21,20 @@ namespace VSCC.Roll20
     {
         Default,
         Description,
-        Simple
+        Simple,
+        None
     }
 
     public class TemplateDataDefault
     {
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
+    }
+
+    public class TemplateDataManyRolls
+    {
+        [JsonProperty(PropertyName = "roll")]
+        public string Roll { get; set; }
     }
 
     public class TemplateDataSimple

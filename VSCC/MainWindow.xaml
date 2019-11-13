@@ -28,7 +28,12 @@
                 <MenuItem x:Name="SaveAs" Header="{x:Static p:Resources.MainMenu_SaveAs}" Command="SaveAs"/>
                 <MenuItem x:Name="Exit" Header="{x:Static p:Resources.MainMenu_Exit}" Command="Close"/>
             </MenuItem>
-            <MenuItem x:Name="Edit" Header="{x:Static p:Resources.MainMenu_Edit}" IsEnabled="False"/>
+            <MenuItem x:Name="Edit" Header="{x:Static p:Resources.MainMenu_Edit}" IsEnabled="True">
+                <MenuItem Header="{x:Static p:Resources.Edit_Languages}">
+                    <MenuItem x:Name="Language_English" IsCheckable="True" IsChecked="True" Header="English" Checked="MenuItem_Checked" />
+                    <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Checked="MenuItem_Checked_1" />
+                </MenuItem>
+            </MenuItem>
             <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="False"/>
             <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="False"/>
             <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left">

@@ -78,6 +78,18 @@ var templates = {
         }
 
         return false;
+    },
+
+    ["none"]: function(data) {
+        if (data && (data.r || data.roll))
+        {
+            if (data.r) {
+                return "/r " + data.r;
+            }
+            else {
+                return "/r " + data.roll;
+            }
+        }
     }
 };
 
@@ -297,6 +309,6 @@ function run() {
     }
 }
 
-if (window.confirm("Running VSCC roll20 client 1.0.0.\nBegin launch procedure?")) {
+if (window.confirm("Running VSCC roll20 client 1.0.1.\nBegin launch procedure?")) {
     run();
 }

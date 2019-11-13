@@ -71,6 +71,16 @@
                 </GroupBox>
                 <CheckBox Content="{x:Static p:Resources.SpellIndex_Ritual}" x:Name="CB_Ritual" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top"/>
                 <Button Content="{x:Static p:Resources.SpellIndex_ApplyFilters}" HorizontalAlignment="Left" Margin="10,678,0,0" VerticalAlignment="Top" Width="263" Click="Button_Click"/>
+                <GroupBox Header="{x:Static p:Resources.SpellIndex_Sources}" HorizontalAlignment="Left" Height="116" Margin="10,446,0,0" VerticalAlignment="Top" Width="263">
+                    <Grid>
+                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_PHB}" x:Name="CB_PHB" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0"/>
+                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_EE}" x:Name="CB_EE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0"/>
+                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCAG}" x:Name="CB_SCAG" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0"/>
+                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_XGTE}" x:Name="CB_XGTE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0"/>
+                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCPC}" x:Name="CB_SCPC" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_HB}" x:Name="CB_HB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0"/>
+                    </Grid>
+                </GroupBox>
             </Grid>
         </GroupBox>
         <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_SpellTemplates" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="300,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690">
@@ -108,6 +118,7 @@
                             <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="162" Width="260" Margin="10,143,0,0" BorderThickness="1" BorderBrush="Gold" CornerRadius="6">
                                 <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding DescriptionProperty}" Margin="1,-1,-1,1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
                             </Border>
+                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding SourceProperty}" Margin="-3,300,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

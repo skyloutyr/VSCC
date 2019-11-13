@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VSCC.Controls.Windows;
+using VSCC.Properties;
 using VSCC.State;
 
 namespace VSCC
@@ -30,6 +31,16 @@ namespace VSCC
         public MainWindow()
         {
             AppState.Current.FreezeAutocalc = true;
+            if (Settings.Default.Language == 0)
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            }
+
+            if (Settings.Default.Language == 1)
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+            }
+
             InitializeComponent();
             AppState.Current.FreezeAutocalc = false;
         }
@@ -43,7 +54,7 @@ namespace VSCC
         {
             if (AppState.Current.UnsavedChangesExist)
             {
-                MessageBoxResult result = MessageBox.Show("There are unsaved changes. Do you want to save the file before resetting it? Press Yes to save the file and reset it. Press No to discard all changes and reset it. Press Cancel to abort the operation.", "Unsaved changes exist!", MessageBoxButton.YesNoCancel);
+                MessageBoxResult result = MessageBox.Show(Properties.Resources.Generic_Unsaved_Description, Properties.Resources.Generic_Unsaved_Title, MessageBoxButton.YesNoCancel);
                 if (result == MessageBoxResult.Cancel)
                 {
                     return;
@@ -65,7 +76,7 @@ namespace VSCC
         {
             if (AppState.Current.UnsavedChangesExist)
             {
-                MessageBoxResult result = MessageBox.Show("There are unsaved changes. Do you want to save the file before opening a new one? Press Yes to save the file and open the new one. Press No to discard all changes and open a new file. Press Cancel to abort the operation.", "Unsaved changes exist!", MessageBoxButton.YesNoCancel);
+                MessageBoxResult result = MessageBox.Show(Properties.Resources.Generic_Unsaved_Description, Properties.Resources.Generic_Unsaved_Title, MessageBoxButton.YesNoCancel);
                 if (result == MessageBoxResult.Cancel)
                 {
                     return;
@@ -90,12 +101,12 @@ namespace VSCC
                 AppState.Current.SetSaveLocation(ofd.FileName, true);
                 if (wantsRecalc)
                 {
-                    if (MessageBox.Show("An old or incompatible save file was loaded. Due to the way stat calculations were changed it is recommended to do a stat rebuild. Do the rebuild?", "Old save file loaded", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (MessageBox.Show(Properties.Resources.Generic_OldSave_Pass1, Properties.Resources.Generic_OldSave_Title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         AppState.Current.TGeneral.RebuildAllStats();
                     }
 
-                    if (MessageBox.Show("An old or incompatible save file was loaded. Due to general potential save partial or full incompatibility it is recommended to override the file. Save now?", "Old save file loaded", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (MessageBox.Show(Properties.Resources.Generic_OldSave_Pass2, Properties.Resources.Generic_OldSave_Title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         this.Save_Click(sender, e);
                     }
@@ -117,7 +128,7 @@ namespace VSCC
                 }
                 catch (Exception ex)
                 {
-                    if (MessageBox.Show($"Couldn't save the sheet to the previous location: { ex.GetType().FullName }, { ex.Message }. Press OK to select a different file to save to. Press Cancel to cancel the save alltogether.", "Couldn't save the sheet!", MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.OK)
+                    if (MessageBox.Show(string.Format(Properties.Resources.Generic_SaveError_Description, ex.GetType().FullName, ex.Message), Properties.Resources.Generic_SaveError_Title, MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.OK)
                     {
                         this.SaveAs_Click(sender, e);
                     }
@@ -149,7 +160,7 @@ namespace VSCC
         {
             if (AppState.Current.UnsavedChangesExist)
             {
-                MessageBoxResult result = MessageBox.Show("There are unsaved changes. Do you want to save the file before exiting? Press Yes to save the file and exit. Press No to discard all changes and exit. Press Cancel to abort the operation.", "Unsaved changes exist!", MessageBoxButton.YesNoCancel);
+                MessageBoxResult result = MessageBox.Show(Properties.Resources.Generic_Unsaved_Description, Properties.Resources.Generic_Unsaved_Title, MessageBoxButton.YesNoCancel);
                 if (result == MessageBoxResult.Cancel)
                 {
                     e.Cancel = true;
@@ -221,6 +232,28 @@ namespace VSCC
             finally
             {
                 ((MenuItem)sender).IsEnabled = true;
+            }
+        }
+
+        private void MenuItem_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!AppState.Current.FreezeAutocalc)
+            {
+                this.Language_English.IsChecked = true;
+                this.Language_Russian.IsChecked = false;
+                Settings.Default.Language = 0;
+                Settings.Default.Save();
+            }
+        }
+
+        private void MenuItem_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (!AppState.Current.FreezeAutocalc)
+            {
+                this.Language_Russian.IsChecked = true;
+                this.Language_English.IsChecked = false;
+                Settings.Default.Language = 1;
+                Settings.Default.Save();
             }
         }
     }

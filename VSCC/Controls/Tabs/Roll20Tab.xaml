@@ -9,25 +9,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Initialized="UserControl_Initialized">
     <Grid>
-        <GroupBox Header="Server Panel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="290">
+        <GroupBox Header="{x:Static p:Resources.R20_ServerPanel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="290">
             <Grid>
-                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Server Status:" />
-                <Label x:Name="Label_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Not Started" Margin="86,0,0,0" />
-                <Border x:Name="Border_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="248,10,0,0" Background="Black" BorderBrush="Gray" BorderThickness="2" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Start Server" Margin="203,168,0,0" Click="Button_Click_1" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Stop Server" Margin="10,168,0,0" Click="Button_Click_34" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Copy Client" Margin="107,168,0,0" Click="Button_Click" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Margin="0,35,0,0" Height="128" TextWrapping="Wrap">
-                    Server Help:
-                    Press the "Start server" button first. This will copy the client to your clipboard. 
-                    Open the browser window, navigate to the game, make sure the game is running, press F12 on your keyboard, select the Console tab and press Ctrl+V into the console.
-                    On certain browsers you may need to do more actions.
-                </TextBlock>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="125*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ServerStatus}" Grid.ColumnSpan="2" />
+                <Label x:Name="Label_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_SS_NotStarted}" Margin="58,0,0,0" Grid.Column="1" />
+                <Border x:Name="Border_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="220,10,0,0" Background="Black" BorderBrush="Gray" BorderThickness="2" Grid.Column="1" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StartServer}" Margin="175,168,0,0" Click="Button_Click_1" Grid.Column="1" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StopServer}" Margin="10,168,0,0" Click="Button_Click_34" Grid.ColumnSpan="2" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_CopyClient}" Margin="79,168,0,0" Click="Button_Click" Grid.Column="1" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Margin="0,35,0,0" Height="128" TextWrapping="Wrap" Grid.ColumnSpan="2" Text="{x:Static p:Resources.R20_ServerHelp}" />
             </Grid>
         </GroupBox>
-        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="495" Width="290" Margin="0,225,0,0" Header="Actions">
+        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="495" Width="290" Margin="0,225,0,0" Header="{x:Static p:Resources.R20_Actions}">
             <Grid>
-                <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="Rolls" Height="111" Width="278">
+                <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_Rolls}" Height="111" Width="278">
                     <Grid>
                         <Button Content="1d4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="10,10,0,0" Click="Button_Click_2" />
                         <Button Content="1d6" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="45,10,0,0" Click="Button_Click_3" />
@@ -44,17 +43,18 @@
                             <ComboBoxItem Content="-" />
                         </ComboBox>
                         <xctk:IntegerUpDown x:Name="IntUD_AdvRollMod" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="0" Value="0" Margin="206,37,0,0" Width="50" />
-                        <Button Content="Advanced Roll" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="87" Margin="93,63,0,0" Click="Button_Click_9" />
+                        <Button Content="{x:Static p:Resources.R20_AdvancedRoll}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="87" Margin="10,62,0,0" Click="Button_Click_9" />
+                        <CheckBox x:Name="CheckBox_AsSimpleRoll" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.R20_AsMulRolls}" Margin="150,66,0,0" />
                     </Grid>
                 </GroupBox>
-                <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="Skills and Saves" Margin="0,116,0,0" Padding="4,4,4,4" Height="357" Width="278">
+                <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_SkillsAndSaves}" Margin="0,116,0,0" Padding="4,4,4,4" Height="357" Width="278">
                     <Grid>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Strength Save" Margin="10,10,0,0" Click="Button_Click_11" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Dexterity Save" Margin="10,35,0,0" Click="Button_Click_12" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Constitution Save" Margin="151,10,0,0" Click="Button_Click_14" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Charisma Save" Margin="167,35,0,0" Click="Button_Click_15" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Wisdom Save" Margin="10,60,0,0" Click="Button_Click_13" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Intelligence Save" Margin="155,60,0,0" Click="Button_Click_16" />
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StrSave}" Margin="10,10,0,0" Click="Button_Click_11" />
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_DexSave}" Margin="10,35,0,0" Click="Button_Click_12" />
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ConSave}" Margin="151,10,0,0" Click="Button_Click_14" />
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ChaSave}" Margin="167,35,0,0" Click="Button_Click_15" />
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_WisSave}" Margin="10,60,0,0" Click="Button_Click_13" />
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_IntSave}" Margin="155,60,0,0" Click="Button_Click_16" />
 
                         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Athletics}" Margin="10,106,0,0" Click="Button_Click_10" />
                         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Acrobatics}" Margin="10,131,0,0" Click="Button_Click_17" />
@@ -78,7 +78,7 @@
                 </GroupBox>
             </Grid>
         </GroupBox>
-        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="710" Width="695" Margin="295,10,0,0" Header="Log">
+        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="710" Width="695" Margin="295,10,0,0" Header="{x:Static p:Resources.R20_Log}">
             <TextBlock x:Name="TextBlock_Log" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True">
 
             </TextBlock>

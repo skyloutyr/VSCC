@@ -89,10 +89,9 @@ namespace VSCC.Legacy
             AppState.Current.State.Inventory.EP = from["EP"].ToObject<int>();
             AppState.Current.State.Inventory.SP = from["SP"].ToObject<int>();
             AppState.Current.State.Inventory.CP = from["CP"].ToObject<int>();
-            // TODO implement weight
-            //Form1.Instance.numericUpDown80.Value = from.ContainsKey("Weight") ? from["Weight"].ToObject<int>() : 0;
-            //Form1.Instance.numericUpDown81.Value = from.ContainsKey("MidWeight") ? from["MidWeight"].ToObject<int>() : 0;
-            //Form1.Instance.numericUpDown82.Value = from.ContainsKey("MaxWeight") ? from["MaxWeight"].ToObject<int>() : 0;
+            AppState.Current.State.Inventory.WeightCurrent = from.ContainsKey("Weight") ? from["Weight"].ToObject<int>() : 0;
+            AppState.Current.State.Inventory.WeightMax1 = from.ContainsKey("MidWeight") ? from["MidWeight"].ToObject<int>() : 0;
+            AppState.Current.State.Inventory.WeightMax2 = from.ContainsKey("MaxWeight") ? from["MaxWeight"].ToObject<int>() : 0;
 
             // TODO implement equipment panels
             /*
