@@ -73,7 +73,7 @@
                     <uc:SpellIndexTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabRoll20" Header="Roll20 Integration">
+            <TabItem x:Name="TabRoll20" Header="{x:Static p:Resources.Tab_Roll20}">
                 <DockPanel LastChildFill="False" Margin="0">
                     <uc:Roll20Tab/>
                 </DockPanel>

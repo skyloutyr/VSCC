@@ -16,13 +16,18 @@
                     <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.General_CharacterName}" VerticalAlignment="Top" Width="390" MaxLines="1" FontFamily="Vivaldi" FontSize="36" BorderBrush="{x:Null}"/>
                     <Button x:Name="Btn_Remove_Exp" Content="-" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Button x:Name="Btn_Add_Exp" Content="+" HorizontalAlignment="Left" Margin="379,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
-                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseUp="Bar_Exp_MouseUp">
+                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp">
                         <Controls:ColoredBar.BarBorder>
                             <Pen Brush="Black" Thickness="2"/>
                         </Controls:ColoredBar.BarBorder>
                     </Controls:ColoredBar>
                     <Border BorderThickness="1" BorderBrush="Black" Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,80,0,0">
-                        <Image x:Name="Img_Character_Portrait" HorizontalAlignment="Left" Height="100" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
+                        <Grid>
+                            <Image x:Name="Portrait" Stretch="Fill" Height="100" Width="100" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="72,72,0,0" Width="26" Click="Button_Click">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
+                            </Button>
+                        </Grid>
                     </Border>
                     <Button x:Name="Btn_Remove_HP" Content="-" HorizontalAlignment="Left" Margin="117,80,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Button x:Name="Btn_Remove_TempHP" Content="-" HorizontalAlignment="Left" Margin="117,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>

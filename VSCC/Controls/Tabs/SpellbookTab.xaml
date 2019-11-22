@@ -53,7 +53,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Cantrips" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Cantrips" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -92,7 +92,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells1" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells1" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -131,7 +131,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells2" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells2" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -170,7 +170,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells3" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells3" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -209,7 +209,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells4" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells4" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -248,7 +248,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells5" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells5" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -287,7 +287,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells6" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells6" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -326,7 +326,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells7" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells7" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -365,7 +365,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells8" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView x:Name="List_Spells8" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -404,7 +404,7 @@
                     <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <ListView x:Name="List_Spells9" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3">
+                    <ListView x:Name="List_Spells9" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>

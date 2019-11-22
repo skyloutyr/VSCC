@@ -78,7 +78,7 @@
                     <ComboBoxItem x:Name="SortBy_Type" Content="{x:Static p:Resources.Inventory_Sort_Type}" />
                 </ComboBox>
                 <Border HorizontalAlignment="Left" Height="557" Margin="10,49,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="Black">
-                    <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove">
+                    <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <wpftk:VirtualizingWrapPanel />

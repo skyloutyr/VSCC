@@ -302,5 +302,13 @@ namespace VSCC.Controls.Tabs
         {
             e.CanExecute = true;
         }
+
+        private void List_Cantrips_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if ((sender as ListView)?.SelectedItems?.Count > 0)
+            {
+                this.EditSpellCommand_Executed(null, null);
+            }
+        }
     }
 }

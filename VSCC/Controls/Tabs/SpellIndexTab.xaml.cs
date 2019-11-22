@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,7 +39,8 @@ namespace VSCC.Controls.Tabs
             this.ToSpellCommand = new ToSpellCommand(this);
             this.SchoolImages.LoadFromEmbeddedFolder("Images/Schools");
             this.ListView_SpellTemplates.ItemsSource = this.AllSpellTemplates;
-            string database = Properties.Resources.dnd5espellindex;
+            string culture = Thread.CurrentThread.CurrentUICulture.Name;
+            string database = File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", File.Exists(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "dnd5espellindex-" + culture + ".json")) ? "dnd5espellindex-" + culture + ".json" : "dnd5espellindex-en-US.json"));
             this.AllSpellTemplates.AddRange(JsonConvert.DeserializeObject<SpellTemplate[]>(database).Select(s => s.ApplyImageGetterFunc(this.ImageFromSchoolName)));
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.ListView_SpellTemplates.ItemsSource);
             view.SortDescriptions.Add(new SortDescription("Level", ListSortDirection.Ascending));

@@ -316,8 +316,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\dnd5eitemindex.json" />
-    <None Include="Resources\dnd5espellindex.json" />
+    <None Include="Resources\dnd5eitemindex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\dnd5espellindex-ru-RU.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\dnd5espellindex-en-US.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Version.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

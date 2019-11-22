@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -298,6 +299,25 @@ namespace VSCC.Controls.Tabs
             if (cvw.ShowDialog() ?? false)
             {
                 valueChanger((int)cvw.DUD_Value.Value);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                InitialDirectory = AppDomain.CurrentDomain.BaseDirectory,
+                Filter = "Images(*.png;*.jpg;*.jpeg;*.bmp;*.gif)|*.png;*.jpg;*.jpeg;*.bmp;*.gif",
+                Multiselect = false
+            };
+
+            if (ofd.ShowDialog() ?? false)
+            {
+                if (Uri.TryCreate(Uri.UriSchemeFile + "://" + System.IO.Path.GetFullPath(ofd.FileName), UriKind.Absolute, out Uri uri))
+                {
+                    AppState.Current.State.General.PortraitLocation = uri.AbsoluteUri;
+                    //AppState.Current.TGeneral.Portrait.Source = new BitmapImage(uri);
+                }
             }
         }
     }

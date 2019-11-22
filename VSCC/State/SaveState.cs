@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
@@ -616,6 +617,24 @@ namespace VSCC.State
             set => AppState.Current.TGeneral.TextBox_Profficencies.Text = value;
         }
 
+        private string _portrait;
+        public string PortraitLocation
+        {
+            get => this._portrait;
+            set
+            {
+                this._portrait = value;
+                try
+                {
+                    AppState.Current.TGeneral.Portrait.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(value));
+                }
+                catch
+                {
+                    AppState.Current.TGeneral.Portrait.Source = null;
+                }
+            }
+        }
+
         public void Clear()
         {
             this.Name = string.Empty;
@@ -635,6 +654,7 @@ namespace VSCC.State
             this.ProfficientAtAthletics = this.ProfficientAtAcrobatics = this.ProfficientAtSleightOfHand = this.ProfficientAtStealth = this.ProfficientAtArcana = this.ProfficientAtHistory = this.ProfficientAtInvestigation = this.ProfficientAtNature = this.ProfficientAtReligion = this.ProfficientAtAnimalHandling = this.ProfficientAtInsight = this.ProfficientAtMedicine = this.ProfficientAtPerception = this.ProfficientAtSurvival = this.ProfficientAtDeception = this.ProfficientAtIntimidation = this.ProfficientAtPerformance = this.ProfficientAtPersuasion = false;
             this.HasInspiration = false;
             this.Languages = this.Profficiencies = string.Empty;
+            this.PortraitLocation = "file://#0";
         }
     }
 

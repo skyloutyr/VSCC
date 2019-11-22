@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -31,14 +32,17 @@ namespace VSCC
         public MainWindow()
         {
             AppState.Current.FreezeAutocalc = true;
-            if (Settings.Default.Language == 0)
+            if (!Debugger.IsAttached)
             {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            }
+                if (Settings.Default.Language == 0)
+                {
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                }
 
-            if (Settings.Default.Language == 1)
-            {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+                if (Settings.Default.Language == 1)
+                {
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+                }
             }
 
             InitializeComponent();

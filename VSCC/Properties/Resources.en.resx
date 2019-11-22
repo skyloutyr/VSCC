@@ -232,9 +232,6 @@
   <data name="dnd5eitemindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dnd5eitemindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="dnd5espellindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dnd5espellindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Edit_Languages" xml:space="preserve">
     <value>Languages</value>
   </data>
@@ -1039,6 +1036,9 @@ On certain browsers you may need to do more actions.</value>
   </data>
   <data name="Tab_InventoryCodex" xml:space="preserve">
     <value>DnD5e Item Index</value>
+  </data>
+  <data name="Tab_Roll20" xml:space="preserve">
+    <value>Roll20 Integration</value>
   </data>
   <data name="Tab_Spellbook" xml:space="preserve">
     <value>Spellbook</value>

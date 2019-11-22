@@ -232,9 +232,6 @@
   <data name="dnd5eitemindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dnd5eitemindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="dnd5espellindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dnd5espellindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Edit_Languages" xml:space="preserve">
     <value>Языки</value>
   </data>
@@ -242,7 +239,7 @@
     <value>Внешность и Биография</value>
   </data>
   <data name="Extras_Age" xml:space="preserve">
-    <value>Вес</value>
+    <value>Возраст</value>
   </data>
   <data name="Extras_Appearance" xml:space="preserve">
     <value>Внешность</value>
@@ -305,7 +302,7 @@
     <value>TN</value>
   </data>
   <data name="General_Background" xml:space="preserve">
-    <value>Предистория</value>
+    <value>Предыстория</value>
   </data>
   <data name="General_Background_Acolyte" xml:space="preserve">
     <value>Прислужник</value>
@@ -590,7 +587,7 @@
     <value>Нет</value>
   </data>
   <data name="Generic_OK" xml:space="preserve">
-    <value>Окей</value>
+    <value>Принять</value>
   </data>
   <data name="Generic_OldSave_Pass1" xml:space="preserve">
     <value>Было загружено старое или несовместимое сохранение. Из-за того что изменился расчёт характеристик рекоммендуется провести перерасчёт. Провести?</value>
@@ -777,7 +774,7 @@
     <value>Только чудесные</value>
   </data>
   <data name="MainMenu_About" xml:space="preserve">
-    <value>Отменить</value>
+    <value>О программе</value>
   </data>
   <data name="MainMenu_CheckForUpdates" xml:space="preserve">
     <value>Проверить обновления</value>
@@ -1039,6 +1036,9 @@
   </data>
   <data name="Tab_InventoryCodex" xml:space="preserve">
     <value>Список Предметов</value>
+  </data>
+  <data name="Tab_Roll20" xml:space="preserve">
+    <value>Интеграция с Roll20</value>
   </data>
   <data name="Tab_Spellbook" xml:space="preserve">
     <value>Книга Заклинаний</value>

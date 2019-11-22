@@ -422,28 +422,6 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [
-        ///  {
-        ///    &quot;Name&quot;: &quot;Abi-Dalzim&apos;s Horrid Wilting&quot;,
-        ///    &quot;id&quot;: &quot;abi-dalzims_horrid_wilting&quot;,
-        ///    &quot;Level&quot;: 8,
-        ///    &quot;School&quot;: &quot;Necromancy&quot;,
-        ///    &quot;CastingTime&quot;: &quot;1 Action&quot;,
-        ///    &quot;Ritual&quot;: false,
-        ///    &quot;Concentration&quot;: false,
-        ///    &quot;Source&quot;: &quot;Elemental Evil&quot;,
-        ///    &quot;Range&quot;: &quot;150 feet&quot;,
-        ///    &quot;Components&quot;: &quot;V S M &quot;,
-        ///    &quot;Duration&quot;: &quot;Instantaneous&quot;,
-        ///    &quot;Description&quot;: &quot;You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution savi [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string dnd5espellindex {
-            get {
-                return ResourceManager.GetString("dnd5espellindex", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
         public static string Edit_Languages {
@@ -2847,6 +2825,15 @@ namespace VSCC.Properties {
         public static string Tab_InventoryCodex {
             get {
                 return ResourceManager.GetString("Tab_InventoryCodex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roll20 Integration.
+        /// </summary>
+        public static string Tab_Roll20 {
+            get {
+                return ResourceManager.GetString("Tab_Roll20", resourceCulture);
             }
         }
         

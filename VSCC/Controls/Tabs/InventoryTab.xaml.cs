@@ -238,5 +238,13 @@
 
             return null;
         }
+
+        private void Inventory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Inventory.SelectedItems.Count > 0)
+            {
+                this.Btn_Edit_Click(null, new RoutedEventArgs());
+            }
+        }
     }
 }
