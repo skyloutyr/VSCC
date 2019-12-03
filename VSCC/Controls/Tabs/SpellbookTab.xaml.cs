@@ -294,7 +294,11 @@ namespace VSCC.Controls.Tabs
         {
             if (this.GetSpellCollection(this.TabControl_Spellbook.SelectedIndex).SelectedItem is Spell s)
             {
+                object o = new object();
+                BindingOperations.EnableCollectionSynchronization(this[this.TabControl_Spellbook.SelectedIndex], o);
                 this[this.TabControl_Spellbook.SelectedIndex].Remove(s);
+                BindingOperations.DisableCollectionSynchronization(this[this.TabControl_Spellbook.SelectedIndex]);
+                //this.GetSpellCollection(this.TabControl_Spellbook.SelectedIndex)
             }
         }
 
