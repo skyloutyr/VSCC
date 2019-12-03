@@ -12,7 +12,7 @@
         <TextBlock Text="{x:Static p:Resources.Info_Author}" />
         <TextBlock Text="SkyLouTyr" />
         <TextBlock Text="{x:Static p:Resources.Info_Version}" />
-        <TextBlock Text="1.0.5" />
+        <TextBlock Text="1.0.5.1" />
         <TextBlock Text="{x:Static p:Resources.Info_License}" />
         <TextBlock>
             <Hyperlink NavigateUri="https://www.gnu.org/licenses/gpl-3.0.en.html" RequestNavigate="Hyperlink_RequestNavigate">
