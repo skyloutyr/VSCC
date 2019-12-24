@@ -38,7 +38,7 @@ namespace Updater
                 return;
             }
 
-            while (ConsoleLoop());
+            while (ConsoleLoop()) ;
         }
 
         public static bool ConsoleLoop()
