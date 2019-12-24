@@ -8,17 +8,67 @@ using System.Net;
 using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace VSCC.VersionManager
 {
     public class VersionChecker
     {
-        public static async Task<Tuple<VersionCheckResult, SemVer.Version, string, string>> CheckVersion()
+        public static async Task CheckVersion(bool showFineWindows = true)
+        {
+            Tuple<VersionCheckResult, SemVer.Version, string, string> t = await CheckVersionInternal();
+            switch (t.Item1)
+            {
+                case VersionCheckResult.Behind:
+                {
+                    if (MessageBox.Show($"An update is available!\n\r{ t.Item2.ToString() }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        UpdateManager.Update(t.Item4);
+                    }
+
+                    break;
+                }
+
+                case VersionCheckResult.Ahead:
+                {
+                    if (showFineWindows)
+                    {
+                        MessageBox.Show($"", "Remote version is outdated!");
+                    }
+
+                    break;
+                }
+
+                case VersionCheckResult.Current:
+                {
+                    if (showFineWindows)
+                    {
+                        MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
+                    }
+
+                    break;
+                }
+
+                case VersionCheckResult.Error:
+                {
+                    if (showFineWindows)
+                    {
+                        MessageBox.Show($"Something went wrong while checking for the version:{ t.Item3 }", "Couldn't check version!");
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        public static async Task<Tuple<VersionCheckResult, SemVer.Version, string, string>> CheckVersionInternal()
         {
             try
             {
                 Task<VersionSpecV1> t1 = new Task<VersionSpecV1>(GetVersionSpecV1);
                 Task<SemVer.Version> t2 = new Task<SemVer.Version>(GetCurrentVersion);
+                t1.Start();
+                t2.Start();
                 VersionSpecV1 spec = await t1;
                 SemVer.Version local = await t2;
                 SemVer.Version remote = spec.Version;

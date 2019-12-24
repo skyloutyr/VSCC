@@ -200,6 +200,7 @@
     <Compile Include="Templates\ItemTemplate.cs" />
     <Compile Include="Templates\SpellTemplate.cs" />
     <Compile Include="VersionManager\SemVerConverter.cs" />
+    <Compile Include="VersionManager\UpdateManager.cs" />
     <Compile Include="VersionManager\VersionChecker.cs" />
     <Compile Include="VersionManager\VersionSpecV1.cs" />
     <Page Include="Controls\ColoredBar.xaml">

@@ -58,7 +58,6 @@ namespace VSCC
             AppState.Current.Window = this;
             ScriptEngine.Create();
             AppEvents.InvokeStartup();
-            
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
@@ -201,33 +200,8 @@ namespace VSCC
         private async void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             ((MenuItem)sender).IsEnabled = false;
-            Tuple<VersionCheckResult, SemVer.Version, string, string> t = await VersionChecker.CheckVersion();
-            switch (t.Item1)
-            {
-                case VersionCheckResult.Behind:
-                {
-                    MessageBox.Show($"An update is available!\n\r{ t.Item2.ToString() }\n\r{ t.Item3 }", "Local version is outdated!");
-                    break;
-                }
-
-                case VersionCheckResult.Ahead:
-                {
-                     MessageBox.Show($"", "Remote version is outdated!");
-                    break;
-                }
-
-                case VersionCheckResult.Current:
-                {
-                    MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
-                    break;
-                }
-
-                case VersionCheckResult.Error:
-                {
-                    MessageBox.Show($"Something went wrong while checking for the version:{ t.Item3 }", "Couldn't check version!");
-                    break;
-                }
-            }
+            await VersionChecker.CheckVersion();
+            ((MenuItem)sender).IsEnabled = true;
         }
 
         private void MenuItem_Checked(object sender, RoutedEventArgs e)
