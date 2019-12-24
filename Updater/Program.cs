@@ -20,6 +20,7 @@ namespace Updater
         public static string TempFileName { get; set; }
         public static int DownloadStatus { get; set; } = 0;
         public static List<string> ErroredFiles { get; } = new List<string>();
+        public static Exception DownloadException { get; set; }
 
         public static void Main(string[] args)
         {
@@ -67,13 +68,20 @@ namespace Updater
                         int left = 100 - completed;
                         Console.WriteLine($"Downloading the new package... ({ completed }%)");
                         Console.WriteLine(string.Empty);
-                        Console.WriteLine($"[{ new string('|', completed) }{ new string('|', left) }]");
+                        Console.WriteLine($"[{ new string('|', completed) }{ new string(' ', left) }]");
                     }
                     else
                     {
                         if (DownloadStatus == -1)
                         {
                             Console.WriteLine("An error occured downloading the new update.");
+                            Console.WriteLine(string.Empty);
+                            Console.WriteLine(DownloadException.Message);
+                            foreach (string s in DownloadException.StackTrace.Split('\n'))
+                            {
+                                Console.WriteLine(s);
+                            }
+
                             Console.ReadKey();
                             return false;
                         }
@@ -96,7 +104,7 @@ namespace Updater
                             int left = 100 - completed;
                             Console.WriteLine($"Updating... ({ completed }%)");
                             Console.WriteLine(string.Empty);
-                            Console.WriteLine($"[{ new string('|', completed) }{ new string('|', left) }]");
+                            Console.WriteLine($"[{ new string('|', completed) }{ new string(' ', left) }]");
                             Console.WriteLine(string.Empty);
                             foreach (string error in ErroredFiles)
                             {
@@ -129,7 +137,7 @@ namespace Updater
                 }
             }
 
-            Thread.Sleep(250);
+            Thread.Sleep(10);
             return true;
         }
 
@@ -154,19 +162,28 @@ namespace Updater
 
         public static void StartDownload()
         {
-            Thread.CurrentThread.IsBackground = true;
-            WebClient wc = new WebClient();
-            wc.DownloadProgressChanged += (o, e) => 
+            try
             {
-                DownloadPercentage = (float)(e.BytesReceived / (double)e.TotalBytesToReceive);
-            };
+                Thread.CurrentThread.IsBackground = true;
+                WebClient wc = new WebClient();
+                wc.DownloadProgressChanged += (o, e) =>
+                {
+                    DownloadPercentage = (float)(e.BytesReceived / (double)e.TotalBytesToReceive);
+                };
 
-            wc.DownloadFileCompleted += (o, e) =>
+                wc.DownloadFileCompleted += (o, e) =>
+                {
+                    DownloadStatus = e.Cancelled || e.Error != null ? -1 : 1;
+                    DownloadException = e.Error;
+                };
+
+                wc.DownloadFileAsync(new Uri(Link), TempFileName = Path.GetTempFileName());
+            }
+            catch (Exception e)
             {
-                DownloadStatus = e.Cancelled || e.Error != null ? -1 : 1;
-            };
-
-            wc.DownloadFile(Link, TempFileName = Path.GetTempFileName());
+                DownloadException = e;
+                DownloadStatus = -1;
+            }
         }
 
         public static void DoUpdate()
@@ -208,11 +225,11 @@ namespace Updater
                     {
                         try
                         {
-                            File.Replace(file, currentFile, currentFile + ".bak");
+                            File.Delete(currentFile);
+                            File.Move(file, currentFile);
                         }
                         catch
                         {
-                            File.Move(currentFile + ".bak", currentFile);
                             ErroredFiles.Add(currentFile);
                         }
                     }

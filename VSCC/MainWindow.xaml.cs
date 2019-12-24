@@ -82,6 +82,11 @@ namespace VSCC
             AppState.Current.FreezeAutocalc = false;
         }
 
+        private void Exit_Click(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void Open_Click(object sender, ExecutedRoutedEventArgs e)
         {
             if (AppState.Current.UnsavedChangesExist)
@@ -159,11 +164,6 @@ namespace VSCC
                 AppState.Current.SetSaveLocation(sfd.FileName, false);
                 System.IO.File.WriteAllText(AppState.Current.LastSaveFile, AppState.Current.Save());
             }
-        }
-
-        private void Exit_Click(object sender, ExecutedRoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
