@@ -58,6 +58,9 @@ namespace VSCC
             AppState.Current.Window = this;
             ScriptEngine.Create();
             AppEvents.InvokeStartup();
+#pragma warning disable CS4014 // This call is executed on an another thread entirely, the await is thus not needed.
+            new Thread(() => VersionChecker.CheckVersion(false)).Start();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
