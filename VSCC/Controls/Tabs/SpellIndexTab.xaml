@@ -33,96 +33,98 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <GroupBox Header="{x:Static p:Resources.SpellIndex_Filtering}" HorizontalAlignment="Left" Width="295">
-            <Grid>
-                <Label Content="{x:Static p:Resources.SpellIndex_Name}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
-                <GroupBox Header="{x:Static p:Resources.SpellIndex_Classes}" HorizontalAlignment="Left" Height="145" Margin="10,64,0,0" VerticalAlignment="Top" Width="263">
-                    <Grid>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Bard}" x:Name="CB_Bard" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Cleric}" x:Name="CB_Cleric" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Druid}" x:Name="CB_Druid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Paladin}" x:Name="CB_Paladin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Ranger}" x:Name="CB_Ranger" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,61,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Sorcerer}" x:Name="CB_Sorcerer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,76,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Warlock}" x:Name="CB_Warlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,91,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Wizard}" x:Name="CB_Wizard" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,106,0,0"/>
-                    </Grid>
-                </GroupBox>
-                <GroupBox Header="{x:Static p:Resources.SpellIndex_Level}" HorizontalAlignment="Left" Height="56" Margin="10,214,0,0" VerticalAlignment="Top" Width="263">
-                    <Grid>
-                        <xctk:IntegerUpDown x:Name="IntUD_LvlMin" Value="0" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" />
-                        <xctk:IntegerUpDown x:Name="IntUD_LvlMax" Value="9" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,10,0,0" Width="80" />
-                        <Label Content="->" HorizontalAlignment="Left" Margin="112,7,0,0" VerticalAlignment="Top"/>
-                    </Grid>
-                </GroupBox>
-                <GroupBox Header="{x:Static p:Resources.SpellIndex_Schools}" HorizontalAlignment="Left" Height="146" Margin="10,275,0,0" VerticalAlignment="Top" Width="263">
-                    <Grid>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Abjuration}" x:Name="CB_Abj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Conjuration}" x:Name="CB_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Divination}" x:Name="CB_Div" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Enchantment}" x:Name="CB_Enc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Evocation}" x:Name="CB_Evo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Illusion}" x:Name="CB_Ill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Necromancy}" x:Name="CB_Nec" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,92,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Transmutation}" x:Name="CB_Tra" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,107,0,0"/>
-                    </Grid>
-                </GroupBox>
-                <CheckBox Content="{x:Static p:Resources.SpellIndex_Ritual}" x:Name="CB_Ritual" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top"/>
-                <Button Content="{x:Static p:Resources.SpellIndex_ApplyFilters}" HorizontalAlignment="Left" Margin="10,678,0,0" VerticalAlignment="Top" Width="263" Click="Button_Click"/>
-                <GroupBox Header="{x:Static p:Resources.SpellIndex_Sources}" HorizontalAlignment="Left" Height="116" Margin="10,446,0,0" VerticalAlignment="Top" Width="263">
-                    <Grid>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_PHB}" x:Name="CB_PHB" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_EE}" x:Name="CB_EE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCAG}" x:Name="CB_SCAG" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_XGTE}" x:Name="CB_XGTE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCPC}" x:Name="CB_SCPC" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
-                        <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_HB}" x:Name="CB_HB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0"/>
-                    </Grid>
-                </GroupBox>
-            </Grid>
-        </GroupBox>
-        <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_SpellTemplates" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="300,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <wpftk:VirtualizingWrapPanel/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="DarkGoldenrod" BorderThickness="2" CornerRadius="15" Background="White" Width="280" Height="350">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <GroupBox Header="{x:Static p:Resources.SpellIndex_Filtering}" HorizontalAlignment="Left" Width="295">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.SpellIndex_Name}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Classes}" HorizontalAlignment="Left" Height="145" Margin="10,64,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
-                            <Button Style="{StaticResource BtnSpellCard}" Command="{Binding ToSpellCommand, RelativeSource={RelativeSource AncestorType=local:SpellIndexTab}}" CommandParameter="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="64" Margin="212,0,0,0" ToolTip="Into Spellbook" />
-                            <Label Content="{Binding School}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Margin="39,0,48,320" />
-                            <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Stroke="Gray" Margin="33,20,0,0" />
-                            <Border BorderBrush="Gold" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="2" Margin="3,0,0,305" Height="36" Width="36" CornerRadius="45">
-                                <Label Foreground="White" Content="{Binding Level}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Margin="0,-9,0,0"/>
-                            </Border>
-                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding Classes}" Margin="3,327,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
-                            <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="243" Stroke="Gray" Margin="10,340,0,0" />
-                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding Name}" Margin="10,31,0,0" FontSize="16" FontStyle="Italic" HorizontalContentAlignment="Center" Foreground="Gray" Width="256"/>
-                            <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Stroke="LightGray" Margin="10,60,0,0" />
-                            <GroupBox Header="Casting Time" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,60,0,0" BorderThickness="1" BorderBrush="Gold">
-                                <Label FontSize="12" Content="{Binding CastingTime}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
-                            </GroupBox>
-                            <GroupBox Header="Range" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,60,0,0" BorderThickness="1" BorderBrush="Gold">
-                                <Label FontSize="12" Content="{Binding Range}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
-                            </GroupBox>
-                            <GroupBox Header="Components" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,99,0,0" BorderThickness="1" BorderBrush="Gold">
-                                <Label FontSize="12" Content="{Binding ComponentsProperty}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
-                            </GroupBox>
-                            <GroupBox Header="Duration" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,99,0,0" BorderThickness="1" BorderBrush="Gold">
-                                <Label FontSize="12" Content="{Binding Duration}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
-                            </GroupBox>
-                            <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="162" Width="260" Margin="10,143,0,0" BorderThickness="1" BorderBrush="Gold" CornerRadius="6">
-                                <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding DescriptionProperty}" Margin="1,-1,-1,1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
-                            </Border>
-                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding SourceProperty}" Margin="-3,300,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Bard}" x:Name="CB_Bard" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Cleric}" x:Name="CB_Cleric" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Druid}" x:Name="CB_Druid" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Paladin}" x:Name="CB_Paladin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,45,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Ranger}" x:Name="CB_Ranger" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,61,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Sorcerer}" x:Name="CB_Sorcerer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,76,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Warlock}" x:Name="CB_Warlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,91,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Wizard}" x:Name="CB_Wizard" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,106,0,0"/>
                         </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Level}" HorizontalAlignment="Left" Height="56" Margin="10,214,0,0" VerticalAlignment="Top" Width="263">
+                        <Grid>
+                            <xctk:IntegerUpDown x:Name="IntUD_LvlMin" Value="0" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" />
+                            <xctk:IntegerUpDown x:Name="IntUD_LvlMax" Value="9" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,10,0,0" Width="80" />
+                            <Label Content="->" HorizontalAlignment="Left" Margin="112,7,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Schools}" HorizontalAlignment="Left" Height="146" Margin="10,275,0,0" VerticalAlignment="Top" Width="263">
+                        <Grid>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Abjuration}" x:Name="CB_Abj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Conjuration}" x:Name="CB_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Divination}" x:Name="CB_Div" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Enchantment}" x:Name="CB_Enc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Evocation}" x:Name="CB_Evo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Illusion}" x:Name="CB_Ill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Necromancy}" x:Name="CB_Nec" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,92,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Transmutation}" x:Name="CB_Tra" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,107,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <CheckBox Content="{x:Static p:Resources.SpellIndex_Ritual}" x:Name="CB_Ritual" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top"/>
+                    <Button Content="{x:Static p:Resources.SpellIndex_ApplyFilters}" HorizontalAlignment="Left" Margin="10,678,0,0" VerticalAlignment="Top" Width="263" Click="Button_Click"/>
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Sources}" HorizontalAlignment="Left" Height="116" Margin="10,446,0,0" VerticalAlignment="Top" Width="263">
+                        <Grid>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_PHB}" x:Name="CB_PHB" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_EE}" x:Name="CB_EE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCAG}" x:Name="CB_SCAG" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_XGTE}" x:Name="CB_XGTE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCPC}" x:Name="CB_SCPC" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_HB}" x:Name="CB_HB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+            <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_SpellTemplates" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="300,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <wpftk:VirtualizingWrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="DarkGoldenrod" BorderThickness="2" CornerRadius="15" Background="White" Width="280" Height="350">
+                            <Grid>
+                                <Button Style="{StaticResource BtnSpellCard}" Command="{Binding ToSpellCommand, RelativeSource={RelativeSource AncestorType=local:SpellIndexTab}}" CommandParameter="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="64" Margin="212,0,0,0" ToolTip="Into Spellbook" />
+                                <Label Content="{Binding School}" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Margin="39,0,48,320" />
+                                <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Stroke="Gray" Margin="33,20,0,0" />
+                                <Border BorderBrush="Gold" Background="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" BorderThickness="2" Margin="3,0,0,305" Height="36" Width="36" CornerRadius="45">
+                                    <Label Foreground="White" Content="{Binding Level}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Margin="0,-9,0,0"/>
+                                </Border>
+                                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding Classes}" Margin="3,327,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
+                                <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="243" Stroke="Gray" Margin="10,340,0,0" />
+                                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding Name}" Margin="10,31,0,0" FontSize="16" FontStyle="Italic" HorizontalContentAlignment="Center" Foreground="Gray" Width="256"/>
+                                <Line X2="1" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Stroke="LightGray" Margin="10,60,0,0" />
+                                <GroupBox Header="Casting Time" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,60,0,0" BorderThickness="1" BorderBrush="Gold">
+                                    <Label FontSize="12" Content="{Binding CastingTime}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+                                </GroupBox>
+                                <GroupBox Header="Range" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,60,0,0" BorderThickness="1" BorderBrush="Gold">
+                                    <Label FontSize="12" Content="{Binding Range}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+                                </GroupBox>
+                                <GroupBox Header="Components" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="9,99,0,0" BorderThickness="1" BorderBrush="Gold">
+                                    <Label FontSize="12" Content="{Binding ComponentsProperty}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+                                </GroupBox>
+                                <GroupBox Header="Duration" Foreground="Gray" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="139,99,0,0" BorderThickness="1" BorderBrush="Gold">
+                                    <Label FontSize="12" Content="{Binding Duration}" VerticalContentAlignment="Center" Margin="-6,-13,0,-12" />
+                                </GroupBox>
+                                <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="162" Width="260" Margin="10,143,0,0" BorderThickness="1" BorderBrush="Gold" CornerRadius="6">
+                                    <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding DescriptionProperty}" Margin="1,-1,-1,1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+                                </Border>
+                                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding SourceProperty}" Margin="-3,300,0,0" FontSize="7" FontStyle="Italic" Foreground="Gray"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

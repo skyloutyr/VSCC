@@ -23,6 +23,7 @@ namespace VSCC.State
             this.Extras.Clear();
             this.Inventory.Clear();
             this.Spellbook.Clear();
+            AppEvents.InvokeClear();
         }
 
         public string Save() => JsonConvert.SerializeObject(this, Formatting.Indented);

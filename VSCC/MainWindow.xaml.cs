@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Cache;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +21,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VSCC.Controls.Windows;
 using VSCC.Properties;
+using VSCC.Scripting;
 using VSCC.State;
+using VSCC.VersionManager;
 
 namespace VSCC
 {
@@ -32,6 +35,7 @@ namespace VSCC
         public MainWindow()
         {
             AppState.Current.FreezeAutocalc = true;
+            AppState.Current.AppThread = Thread.CurrentThread;
             if (!Debugger.IsAttached)
             {
                 if (Settings.Default.Language == 0)
@@ -52,6 +56,9 @@ namespace VSCC
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AppState.Current.Window = this;
+            ScriptEngine.Create();
+            AppEvents.InvokeStartup();
+            
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
@@ -173,6 +180,7 @@ namespace VSCC
 
                 if (result == MessageBoxResult.No)
                 {
+                    AppEvents.InvokeExit();
                     e.Cancel = false;
                 }
 
@@ -180,6 +188,7 @@ namespace VSCC
                 {
                     this.Save_Click(sender, null);
                     e.Cancel = false;
+                    AppEvents.InvokeExit();
                 }
             }
         }
@@ -192,50 +201,32 @@ namespace VSCC
         private async void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             ((MenuItem)sender).IsEnabled = false;
-            try
+            Tuple<VersionCheckResult, SemVer.Version, string, string> t = await VersionChecker.CheckVersion();
+            switch (t.Item1)
             {
-                HttpRequestCachePolicy policy = new HttpRequestCachePolicy(HttpRequestCacheLevel.Default);
-                HttpWebRequest.DefaultCachePolicy = policy;
-                HttpWebRequest req = WebRequest.CreateHttp("https://raw.githubusercontent.com/skyloutyr/VSCC/master/VSCC/Version.json");
-                HttpRequestCachePolicy noCachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
-                req.CachePolicy = noCachePolicy;
-                Task<WebResponse> responseTask = req.GetResponseAsync();
-                JObject localJObj = JObject.Parse(System.IO.File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Version.json")));
-                SemVer.Version localVersion = new SemVer.Version(localJObj["version"].ToObject<string>());
-                using (WebResponse response = await responseTask)
+                case VersionCheckResult.Behind:
                 {
-                    using (Stream s = response.GetResponseStream())
-                    {
-                        using (StreamReader sr = new StreamReader(s))
-                        {
-                            string result = sr.ReadToEnd();
-                            JObject remoteJObj = JObject.Parse(result);
-                            SemVer.Version remoteVersion = new SemVer.Version(remoteJObj["version"].ToObject<string>());
-                            if (localVersion < remoteVersion)
-                            {
-                                MessageBox.Show($"An update is available!\n\r{ remoteJObj["changelog"][remoteJObj["version"].ToObject<string>()].ToObject<string>() }", "Local version is outdated!");
-                            }
-
-                            if (localVersion > remoteVersion)
-                            {
-                                MessageBox.Show($"", "Remote version is outdated!");
-                            }
-
-                            if (localVersion == remoteVersion)
-                            {
-                                MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
-                            }
-                        }
-                    }
+                    MessageBox.Show($"An update is available!\n\r{ t.Item2.ToString() }\n\r{ t.Item3 }", "Local version is outdated!");
+                    break;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Something went wrong while checking for the version:{ ex.GetType().FullName }\n\r{ ex.Message }", "Couldn't check version!");
-            }
-            finally
-            {
-                ((MenuItem)sender).IsEnabled = true;
+
+                case VersionCheckResult.Ahead:
+                {
+                     MessageBox.Show($"", "Remote version is outdated!");
+                    break;
+                }
+
+                case VersionCheckResult.Current:
+                {
+                    MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
+                    break;
+                }
+
+                case VersionCheckResult.Error:
+                {
+                    MessageBox.Show($"Something went wrong while checking for the version:{ t.Item3 }", "Couldn't check version!");
+                    break;
+                }
             }
         }
 
@@ -259,6 +250,26 @@ namespace VSCC
                 Settings.Default.Language = 1;
                 Settings.Default.Save();
             }
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                InitialDirectory = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts"),
+                Filter = "LUA Script(*.lua)|*.lua",
+                Multiselect = false
+            };
+
+            if (ofd.ShowDialog() ?? false)
+            {
+                ScriptEngine.Instance.Value.DoFile(ofd.FileName);
+            }
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            new ScriptsWindow().Show();
         }
     }
 }

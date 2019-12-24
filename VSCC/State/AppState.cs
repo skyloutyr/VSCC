@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Windows.Controls;
 using VSCC.Controls.Tabs;
 
@@ -18,17 +19,22 @@ namespace VSCC.State
         public string LastSaveFile { get; set; } = string.Empty;
         public bool FreezeAutocalc { get; set; } = false;
         public MainWindow Window { get; set; }
+
+        public Thread AppThread { get; set; }
+
         public SaveState State { get; set; } = new SaveState();
 
         public GeneralTab TGeneral => ((DockPanel)this.Window.TabGeneral.Content).Children[0] as GeneralTab;
         public ExtrasTab TExtras => ((DockPanel)this.Window.TabExtra.Content).Children[0] as ExtrasTab;
         public InventoryTab TInventory => ((DockPanel)this.Window.TabInventory.Content).Children[0] as InventoryTab;
         public SpellbookTab TSpellbook => ((DockPanel)this.Window.TabSpellbook.Content).Children[0] as SpellbookTab;
+        public ScriptingTab TScripting => ((DockPanel)this.Window.TabScripting.Content).Children[0] as ScriptingTab;
 
         public string Save()
         {
             this.FreezeAutocalc = true;
             string s = this.State.Save();
+            AppEvents.InvokeSave(ref s);
             using (MD5 md5Hash = MD5.Create())
             {
                 this._lastSaveHash = GetMd5Hash(md5Hash, s);
@@ -63,6 +69,7 @@ namespace VSCC.State
                     throw new NotSupportedException($"The specified save file version can't be loaded - no format converter exists for version { saveVersion }.");
             }
 
+            AppEvents.InvokeLoad(ref s);
             this.FreezeAutocalc = false;
         }
 

@@ -34,7 +34,10 @@
                     <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Checked="MenuItem_Checked_1" />
                 </MenuItem>
             </MenuItem>
-            <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="False"/>
+            <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="True">
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_Scripts}" Click="MenuItem_Click_3" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_DoFile}" Click="MenuItem_Click_2" />
+            </MenuItem>
             <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="False"/>
             <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left">
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Info}" Click="MenuItem_Click" />
@@ -76,6 +79,11 @@
             <TabItem x:Name="TabRoll20" Header="{x:Static p:Resources.Tab_Roll20}">
                 <DockPanel LastChildFill="False" Margin="0">
                     <uc:Roll20Tab/>
+                </DockPanel>
+            </TabItem>
+            <TabItem x:Name="TabScripting" Header="{x:Static p:Resources.Tab_Scripting}">
+                <DockPanel LastChildFill="False" Margin="0">
+                    <uc:ScriptingTab/>
                 </DockPanel>
             </TabItem>
         </TabControl>

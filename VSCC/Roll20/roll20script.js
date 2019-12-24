@@ -90,6 +90,12 @@ var templates = {
                 return "/r " + data.roll;
             }
         }
+    },
+
+    ["custom"]: function (data) {
+        if (data && typeof (data) === "string") {
+            return data;
+        }
     }
 };
 

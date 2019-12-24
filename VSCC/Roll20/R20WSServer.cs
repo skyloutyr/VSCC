@@ -41,9 +41,14 @@ namespace VSCC.Roll20
 
         public static void Send(object packet)
         {
+            SendRaw(JsonConvert.SerializeObject(packet, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+        }
+
+        public static void SendRaw(string packet)
+        {
             try
             {
-                _connection?.Send(JsonConvert.SerializeObject(packet, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+                _connection?.Send(packet);
             }
             catch (Exception e)
             {

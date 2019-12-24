@@ -815,6 +815,12 @@
   <data name="MainMenu_Scripting" xml:space="preserve">
     <value>Скрипты</value>
   </data>
+  <data name="MainMenu_Scripting_DoFile" xml:space="preserve">
+    <value>Выполнить Файл</value>
+  </data>
+  <data name="MainMenu_Scripting_Scripts" xml:space="preserve">
+    <value>Открыть Скрипты</value>
+  </data>
   <data name="MainMenu_View" xml:space="preserve">
     <value>Вид</value>
   </data>
@@ -1039,6 +1045,9 @@
   </data>
   <data name="Tab_Roll20" xml:space="preserve">
     <value>Интеграция с Roll20</value>
+  </data>
+  <data name="Tab_Scripting" xml:space="preserve">
+    <value>Логи Скриптов</value>
   </data>
   <data name="Tab_Spellbook" xml:space="preserve">
     <value>Книга Заклинаний</value>

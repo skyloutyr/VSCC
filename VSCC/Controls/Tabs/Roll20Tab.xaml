@@ -8,80 +8,82 @@
              xmlns:p="clr-namespace:VSCC.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Initialized="UserControl_Initialized">
-    <Grid>
-        <GroupBox Header="{x:Static p:Resources.R20_ServerPanel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="290">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="14*"/>
-                    <ColumnDefinition Width="125*"/>
-                </Grid.ColumnDefinitions>
-                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ServerStatus}" Grid.ColumnSpan="2" />
-                <Label x:Name="Label_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_SS_NotStarted}" Margin="58,0,0,0" Grid.Column="1" />
-                <Border x:Name="Border_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="220,10,0,0" Background="Black" BorderBrush="Gray" BorderThickness="2" Grid.Column="1" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StartServer}" Margin="175,168,0,0" Click="Button_Click_1" Grid.Column="1" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StopServer}" Margin="10,168,0,0" Click="Button_Click_34" Grid.ColumnSpan="2" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_CopyClient}" Margin="79,168,0,0" Click="Button_Click" Grid.Column="1" />
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Margin="0,35,0,0" Height="128" TextWrapping="Wrap" Grid.ColumnSpan="2" Text="{x:Static p:Resources.R20_ServerHelp}" />
-            </Grid>
-        </GroupBox>
-        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="495" Width="290" Margin="0,225,0,0" Header="{x:Static p:Resources.R20_Actions}">
-            <Grid>
-                <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_Rolls}" Height="111" Width="278">
-                    <Grid>
-                        <Button Content="1d4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="10,10,0,0" Click="Button_Click_2" />
-                        <Button Content="1d6" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="45,10,0,0" Click="Button_Click_3" />
-                        <Button Content="1d8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="80,10,0,0" Click="Button_Click_4" />
-                        <Button Content="1d10" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="115,10,0,0" Click="Button_Click_5" />
-                        <Button Content="1d12" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="150,10,0,0" Click="Button_Click_6" />
-                        <Button Content="1d20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="185,10,0,0" Click="Button_Click_7" />
-                        <Button Content="1d100" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="40" Margin="220,10,0,0" Click="Button_Click_8" />
-                        <xctk:IntegerUpDown x:Name="IntUD_AdvRollNumDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="1" Value="1" Margin="10,37,0,0" Width="50" />
-                        <Label Content="d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,34,0,0" />
-                        <xctk:IntegerUpDown x:Name="IntUD_AdvRollSidesDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="2" Value="2" Margin="95,37,0,0" Width="50" />
-                        <ComboBox x:Name="ComboBox_AdvRollMathType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,36,0,0" SelectedIndex="0">
-                            <ComboBoxItem Content="+" />
-                            <ComboBoxItem Content="-" />
-                        </ComboBox>
-                        <xctk:IntegerUpDown x:Name="IntUD_AdvRollMod" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="0" Value="0" Margin="206,37,0,0" Width="50" />
-                        <Button Content="{x:Static p:Resources.R20_AdvancedRoll}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="87" Margin="10,62,0,0" Click="Button_Click_9" />
-                        <CheckBox x:Name="CheckBox_AsSimpleRoll" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.R20_AsMulRolls}" Margin="150,66,0,0" />
-                    </Grid>
-                </GroupBox>
-                <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_SkillsAndSaves}" Margin="0,116,0,0" Padding="4,4,4,4" Height="357" Width="278">
-                    <Grid>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StrSave}" Margin="10,10,0,0" Click="Button_Click_11" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_DexSave}" Margin="10,35,0,0" Click="Button_Click_12" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ConSave}" Margin="151,10,0,0" Click="Button_Click_14" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ChaSave}" Margin="167,35,0,0" Click="Button_Click_15" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_WisSave}" Margin="10,60,0,0" Click="Button_Click_13" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_IntSave}" Margin="155,60,0,0" Click="Button_Click_16" />
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <GroupBox Header="{x:Static p:Resources.R20_ServerPanel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="290">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="125*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ServerStatus}" Grid.ColumnSpan="2" />
+                    <Label x:Name="Label_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_SS_NotStarted}" Margin="58,0,0,0" Grid.Column="1" />
+                    <Border x:Name="Border_ServerStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="220,10,0,0" Background="Black" BorderBrush="Gray" BorderThickness="2" Grid.Column="1" />
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StartServer}" Margin="175,168,0,0" Click="Button_Click_1" Grid.Column="1" />
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StopServer}" Margin="10,168,0,0" Click="Button_Click_34" Grid.ColumnSpan="2" />
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_CopyClient}" Margin="79,168,0,0" Click="Button_Click" Grid.Column="1" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Margin="0,35,0,0" Height="128" TextWrapping="Wrap" Grid.ColumnSpan="2" Text="{x:Static p:Resources.R20_ServerHelp}" />
+                </Grid>
+            </GroupBox>
+            <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="495" Width="290" Margin="0,225,0,0" Header="{x:Static p:Resources.R20_Actions}">
+                <Grid>
+                    <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_Rolls}" Height="111" Width="278">
+                        <Grid>
+                            <Button Content="1d4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="10,10,0,0" Click="Button_Click_2" />
+                            <Button Content="1d6" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="45,10,0,0" Click="Button_Click_3" />
+                            <Button Content="1d8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="80,10,0,0" Click="Button_Click_4" />
+                            <Button Content="1d10" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="115,10,0,0" Click="Button_Click_5" />
+                            <Button Content="1d12" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="150,10,0,0" Click="Button_Click_6" />
+                            <Button Content="1d20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="185,10,0,0" Click="Button_Click_7" />
+                            <Button Content="1d100" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="40" Margin="220,10,0,0" Click="Button_Click_8" />
+                            <xctk:IntegerUpDown x:Name="IntUD_AdvRollNumDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="1" Value="1" Margin="10,37,0,0" Width="50" />
+                            <Label Content="d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,34,0,0" />
+                            <xctk:IntegerUpDown x:Name="IntUD_AdvRollSidesDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="2" Value="2" Margin="95,37,0,0" Width="50" />
+                            <ComboBox x:Name="ComboBox_AdvRollMathType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,36,0,0" SelectedIndex="0">
+                                <ComboBoxItem Content="+" />
+                                <ComboBoxItem Content="-" />
+                            </ComboBox>
+                            <xctk:IntegerUpDown x:Name="IntUD_AdvRollMod" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="0" Value="0" Margin="206,37,0,0" Width="50" />
+                            <Button Content="{x:Static p:Resources.R20_AdvancedRoll}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="87" Margin="10,62,0,0" Click="Button_Click_9" />
+                            <CheckBox x:Name="CheckBox_AsSimpleRoll" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.R20_AsMulRolls}" Margin="150,66,0,0" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_SkillsAndSaves}" Margin="0,116,0,0" Padding="4,4,4,4" Height="357" Width="278">
+                        <Grid>
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_StrSave}" Margin="10,10,0,0" Click="Button_Click_11" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_DexSave}" Margin="10,35,0,0" Click="Button_Click_12" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ConSave}" Margin="151,10,0,0" Click="Button_Click_14" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_ChaSave}" Margin="167,35,0,0" Click="Button_Click_15" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_WisSave}" Margin="10,60,0,0" Click="Button_Click_13" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_IntSave}" Margin="155,60,0,0" Click="Button_Click_16" />
 
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Athletics}" Margin="10,106,0,0" Click="Button_Click_10" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Acrobatics}" Margin="10,131,0,0" Click="Button_Click_17" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_SleightOfHand}" Margin="10,181,0,0" Click="Button_Click_19" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Stealth}" Margin="10,156,0,0" Click="Button_Click_18" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Arcana}" Margin="183,106,0,0" Click="Button_Click_25" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Investigation}" Margin="151,131,0,0" Click="Button_Click_26" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Nature}" Margin="182,181,0,0" Click="Button_Click_28" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_History}" Margin="182,156,0,0" Click="Button_Click_27" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Religion}" Margin="176,206,0,0" Click="Button_Click_29" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_AH}" Margin="10,206,0,0" Click="Button_Click_20" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Insight}" Margin="10,281,0,0" Click="Button_Click_23" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Medicine}" Margin="10,231,0,0" Click="Button_Click_21" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Perception}" Margin="10,306,0,0" Click="Button_Click_24" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Survival}" Margin="10,256,0,0" Click="Button_Click_22" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Deception}" Margin="159,231,0,0" Click="Button_Click_30" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Intimidation}" Margin="149,256,0,0" Click="Button_Click_31" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Performance}" Margin="146,281,0,0" Click="Button_Click_32" />
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Persuasion}" Margin="157,306,0,0" Click="Button_Click_33" />
-                    </Grid>
-                </GroupBox>
-            </Grid>
-        </GroupBox>
-        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="710" Width="695" Margin="295,10,0,0" Header="{x:Static p:Resources.R20_Log}">
-            <TextBlock x:Name="TextBlock_Log" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True">
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Athletics}" Margin="10,106,0,0" Click="Button_Click_10" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Acrobatics}" Margin="10,131,0,0" Click="Button_Click_17" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_SleightOfHand}" Margin="10,181,0,0" Click="Button_Click_19" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Stealth}" Margin="10,156,0,0" Click="Button_Click_18" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Arcana}" Margin="183,106,0,0" Click="Button_Click_25" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Investigation}" Margin="151,131,0,0" Click="Button_Click_26" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Nature}" Margin="182,181,0,0" Click="Button_Click_28" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_History}" Margin="182,156,0,0" Click="Button_Click_27" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Religion}" Margin="176,206,0,0" Click="Button_Click_29" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_AH}" Margin="10,206,0,0" Click="Button_Click_20" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Insight}" Margin="10,281,0,0" Click="Button_Click_23" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Medicine}" Margin="10,231,0,0" Click="Button_Click_21" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Perception}" Margin="10,306,0,0" Click="Button_Click_24" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Survival}" Margin="10,256,0,0" Click="Button_Click_22" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Deception}" Margin="159,231,0,0" Click="Button_Click_30" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Intimidation}" Margin="149,256,0,0" Click="Button_Click_31" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Performance}" Margin="146,281,0,0" Click="Button_Click_32" />
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.General_Skill_Persuasion}" Margin="157,306,0,0" Click="Button_Click_33" />
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+            <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="710" Width="695" Margin="295,10,0,0" Header="{x:Static p:Resources.R20_Log}">
+                <TextBlock x:Name="TextBlock_Log" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True">
 
-            </TextBlock>
-        </GroupBox>
-    </Grid>
+                </TextBlock>
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

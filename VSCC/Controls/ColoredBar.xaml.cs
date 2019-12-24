@@ -57,7 +57,7 @@ namespace VSCC.Controls
         {
             base.OnRender(drawingContext);
             drawingContext.DrawRectangle(this.BarBackground, this.BarBorder, new Rect(0, 0, this.ActualWidth, this.ActualHeight));
-            drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, (this.ActualWidth - 4) * ((float)this.CurrentValue / this.MaximumValue), this.ActualHeight - 4));
+            drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, (this.ActualWidth - 4) * Math.Min(1, (float)this.CurrentValue / this.MaximumValue), this.ActualHeight - 4));
             FormattedText ft = new FormattedText(
                 $"{ this.CurrentValue }/{ this.MaximumValue }", 
                 CultureInfo.CurrentCulture, 

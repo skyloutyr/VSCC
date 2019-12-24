@@ -2169,6 +2169,24 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do File.
+        /// </summary>
+        public static string MainMenu_Scripting_DoFile {
+            get {
+                return ResourceManager.GetString("MainMenu_Scripting_DoFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Scripts.
+        /// </summary>
+        public static string MainMenu_Scripting_Scripts {
+            get {
+                return ResourceManager.GetString("MainMenu_Scripting_Scripts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View.
         /// </summary>
         public static string MainMenu_View {
@@ -2834,6 +2852,15 @@ namespace VSCC.Properties {
         public static string Tab_Roll20 {
             get {
                 return ResourceManager.GetString("Tab_Roll20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Script Logs.
+        /// </summary>
+        public static string Tab_Scripting {
+            get {
+                return ResourceManager.GetString("Tab_Scripting", resourceCulture);
             }
         }
         

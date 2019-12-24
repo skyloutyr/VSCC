@@ -815,6 +815,12 @@ Separate multiple types by a new line</value>
   <data name="MainMenu_Scripting" xml:space="preserve">
     <value>Scripting</value>
   </data>
+  <data name="MainMenu_Scripting_DoFile" xml:space="preserve">
+    <value>Do File</value>
+  </data>
+  <data name="MainMenu_Scripting_Scripts" xml:space="preserve">
+    <value>Open Scripts</value>
+  </data>
   <data name="MainMenu_View" xml:space="preserve">
     <value>View</value>
   </data>
@@ -1039,6 +1045,9 @@ On certain browsers you may need to do more actions.</value>
   </data>
   <data name="Tab_Roll20" xml:space="preserve">
     <value>Roll20 Integration</value>
+  </data>
+  <data name="Tab_Scripting" xml:space="preserve">
+    <value>Script Logs</value>
   </data>
   <data name="Tab_Spellbook" xml:space="preserve">
     <value>Spellbook</value>

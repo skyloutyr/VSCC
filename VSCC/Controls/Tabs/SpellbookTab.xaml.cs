@@ -314,5 +314,33 @@ namespace VSCC.Controls.Tabs
                 this.EditSpellCommand_Executed(null, null);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.MoveSelectedSpell(true);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.MoveSelectedSpell(false);
+        }
+
+        private void MoveSelectedSpell(bool direction)
+        {
+            int page = this.TabControl_Spellbook.SelectedIndex;
+            int selectedIndex = this.GetSpellCollection(page).SelectedIndex;
+            if (this.GetSpellCollection(page).SelectedItem is Spell s)
+            {
+                int dir = direction && selectedIndex != 0 ? -1 : !direction && selectedIndex != this[page].Count - 1 ? 1 : 0;
+                if (dir != 0)
+                {
+                    Spell s1 = this[page][selectedIndex + dir];
+                    this[page].Remove(s);
+                    this[page].Insert(selectedIndex + dir, s);
+                    //this[page][selectedIndex + dir] = s;
+                    //this[page][selectedIndex] = s1;
+                }
+            }
+        }
     }
 }

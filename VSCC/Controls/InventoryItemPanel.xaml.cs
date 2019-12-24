@@ -28,7 +28,7 @@ namespace VSCC.Controls
 
         public void SetDataContext(InventoryItem context)
         {
-            this.DataContext = this.Picture.DataContext = this.Name.DataContext = context;
+            this.DataContext = this.Picture.DataContext = this.SName.DataContext = context;
         }
 
         private void UserControl_PreviewDrop(object sender, DragEventArgs e)
