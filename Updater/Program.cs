@@ -197,7 +197,7 @@ namespace Updater
             foreach (string file in Directory.EnumerateFiles(tempDir, "*.*", SearchOption.AllDirectories))
             {
                 string relativeFile = file.Substring(tempDir.Length + 1);
-                if (relativeFile.Contains("Updater.exe", StringComparison.OrdinalIgnoreCase))
+                if (relativeFile.ToLower().Contains("updater.exe"))
                 {
                     ++filesProcessed;
                     continue;
