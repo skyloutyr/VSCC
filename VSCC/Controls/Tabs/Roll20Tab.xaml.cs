@@ -147,7 +147,7 @@ namespace VSCC.Controls.Tabs
             }
             else
             {
-                R20WSServer.Send(new RollPacket()
+                R20WSServer.Send(new CommandPacket()
                 {
                     Template = Roll20.Template.None,
                     Data = new TemplateDataManyRolls() { Roll = $"{ this.IntUD_AdvRollNumDice.Value }d{ this.IntUD_AdvRollSidesDice.Value }{ this.ComboBox_AdvRollMathType.Text }{ this.IntUD_AdvRollMod.Value }" }

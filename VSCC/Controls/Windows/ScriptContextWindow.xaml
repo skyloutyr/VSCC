@@ -1,0 +1,20 @@
+﻿<Window x:Class="VSCC.Controls.Windows.ScriptContextWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows"
+        mc:Ignorable="d"
+        Title="ScriptContextWindow" Height="450" Width="800">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Border VerticalAlignment="Top" Height="200" BorderBrush="Black" BorderThickness="2" CornerRadius="2" Margin="0,0,63,0">
+                <Label x:Name="Label_Description" HorizontalAlignment="Center" Margin="0, 30, 0, 0" />
+            </Border>
+            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,0,10,0" Content="{x:Static p:Resources.Generic_OK}" Click="Button_Click" />
+            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,100,10,0" Content="{x:Static p:Resources.Generic_Cancel}" Click="Button_Click_1" />
+            <StackPanel x:Name="WrapPanel_Content" Margin="0,205,0,0" />
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -22,10 +22,11 @@ namespace VSCC.Roll20
         public static Action ClientConnectCallback { get; set; }
         public static Action ClientDisconnectCallback { get; set; }
         public static Action<string> Logger { get; set; }
+        public static bool Connected { get; set; }
 
         public static void Roll(string r1, string r2, string type, string action)
         {
-            Send(new RollPacket()
+            Send(new CommandPacket()
             {
                 Template = Template.Simple,
                 Data = new TemplateDataSimple()
@@ -62,6 +63,7 @@ namespace VSCC.Roll20
             _server.Dispose();
             _server = null;
             ServerStopCallback?.Invoke();
+            Connected = false;
         }
 
         public static void CreateServer()
@@ -94,6 +96,7 @@ namespace VSCC.Roll20
                     Logger?.Invoke("TCP client connected.");
                     ClientConnectCallback?.Invoke();
                     _connection = ws;
+                    Connected = true;
                 };
 
                 ws.OnClose = () =>
@@ -101,6 +104,7 @@ namespace VSCC.Roll20
                     Logger?.Invoke("TCP client disconnected.");
                     ClientDisconnectCallback?.Invoke();
                     _connection = null;
+                    Connected = false;
                 };
 
                 ws.OnMessage = s =>

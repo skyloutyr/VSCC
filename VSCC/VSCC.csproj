@@ -173,6 +173,9 @@
     <Compile Include="Controls\Windows\InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Windows\ScriptContextWindow.xaml.cs">
+      <DependentUpon>ScriptContextWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Windows\ScriptsWindow.xaml.cs">
       <DependentUpon>ScriptsWindow.xaml</DependentUpon>
     </Compile>
@@ -192,7 +195,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Roll20\R20WSServer.cs" />
-    <Compile Include="Roll20\RollPacket.cs" />
+    <Compile Include="Roll20\CommandPacket.cs" />
     <Compile Include="Scripting\ScriptEngine.cs" />
     <Compile Include="State\AppEvents.cs" />
     <Compile Include="State\AppState.cs" />
@@ -283,6 +286,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Windows\ScriptContextWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Windows\ScriptsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -351,6 +358,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\dnd5espellindex-en-US.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Attack.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Initiative.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Version.json">

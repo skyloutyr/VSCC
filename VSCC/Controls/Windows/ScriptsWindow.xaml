@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         mc:Ignorable="d"
         Title="ScriptsWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <WrapPanel x:Name="WrapPanel_Main">
+    <WrapPanel x:Name="WrapPanel_Main" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
         
     </WrapPanel>
 </Window>

@@ -3,7 +3,7 @@ using Newtonsoft.Json.Converters;
 
 namespace VSCC.Roll20
 {
-    public class RollPacket
+    public class CommandPacket
     {
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty(PropertyName = "type")]
@@ -17,12 +17,43 @@ namespace VSCC.Roll20
         public object Data { get; set; }
     }
 
+    public class MessagePacket
+    {
+        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty(PropertyName = "type")]
+        public PacketType Type { get; } = PacketType.Message;
+
+        [JsonProperty(PropertyName = "text")]
+        public string Text { get; set; }
+    }
+
+    public class RollPacket
+    {
+        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty(PropertyName = "type")]
+        public PacketType Type { get; } = PacketType.Roll;
+
+        [JsonProperty(PropertyName = "numDice")]
+        public int NumDice { get; set; }
+
+        [JsonProperty(PropertyName = "numSides")]
+        public int NumSides { get; set; }
+    }
+
+    public class ClosePacket
+    {
+        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty(PropertyName = "type")]
+        public PacketType Type { get; } = PacketType.Close;
+    }
+
     public enum Template
     {
         Default,
         Description,
         Simple,
-        None
+        None,
+        Custom
     }
 
     public class TemplateDataDefault
