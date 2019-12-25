@@ -14,7 +14,7 @@ namespace VSCC.VersionManager
 {
     public class VersionChecker
     {
-        public static async Task CheckVersion(bool showFineWindows = true)
+        public static async Task CheckVersion(bool showFineWindows = true, bool callUpdateFromVC = true, Action<string> updateCallback = null)
         {
             Tuple<VersionCheckResult, SemVer.Version, string, string> t = await CheckVersionInternal();
             switch (t.Item1)
@@ -23,7 +23,14 @@ namespace VSCC.VersionManager
                 {
                     if (MessageBox.Show($"An update is available!\n\r{ t.Item2.ToString() }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
-                        UpdateManager.Update(t.Item4);
+                        if (callUpdateFromVC)
+                        {
+                            UpdateManager.Update(t.Item4);
+                        }
+                        else
+                        {
+                            updateCallback?.Invoke(t.Item4);
+                        }
                     }
 
                     break;

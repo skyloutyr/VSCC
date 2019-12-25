@@ -137,7 +137,7 @@ namespace Updater
                 }
             }
 
-            Thread.Sleep(10);
+            Thread.Sleep(50);
             return true;
         }
 

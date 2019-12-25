@@ -40,6 +40,7 @@ namespace VSCC.Scripting
         private void Setup()
         {
             Log(LogLevel.Fine, "Initializing script engine.");
+            this.Lua.State.Encoding = System.Text.Encoding.UTF8;
             this.Lua["State"] = AppState.Current.State;
             this.Lua["Engine"] = this;
             this.Lua["Roll20"] = new Roll20Provider();
