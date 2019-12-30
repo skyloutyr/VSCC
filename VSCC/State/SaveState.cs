@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using VSCC.Controls.Tabs;
 using VSCC.DataType;
 using VSCC.Properties;
+using VSCC.State.Adapters;
 
 namespace VSCC.State
 {
@@ -618,7 +619,7 @@ namespace VSCC.State
             set => AppState.Current.TGeneral.TextBox_Profficencies.Text = value;
         }
 
-        private string _portrait;
+        private string _portrait = "file://#0";
         public string PortraitLocation
         {
             get => this._portrait;
@@ -645,9 +646,11 @@ namespace VSCC.State
             this.HitDice6Max = this.HitDice6Current = this.HitDice8Current = this.HitDice8Max = this.HitDice10Current = this.HitDice10Max = this.HitDice12Current = this.HitDice12Max = 0;
             this.Class = this.Race = this.Alignment = string.Empty;
             this.Traits = this.Bonds = this.Flaws = this.Ideals = this.Background = string.Empty;
-            this.ProfficiencyBonus = this.Level = this.Speed = this.ArmorClass = 0;
+            this.Speed = this.ArmorClass = 0;
+            this.Level = 1;
+            this.ProfficiencyBonus = 2;
             this.DeathThrowFails = this.DeathThrowPasses = 0;
-            this.StatStr = this.StatDex = this.StatCon = this.StatCha = this.StatInt = this.StatWis = 0;
+            this.StatStr = this.StatDex = this.StatCon = this.StatCha = this.StatInt = this.StatWis = 10;
             this.StatModStr = this.StatModDex = this.StatModCon = this.StatModCha = this.StatModInt = this.StatModWis = 0;
             this.StrSave = this.DexSave = this.ConSave = this.ChaSave = this.WisSave = this.IntSave = 0;
             this.ProfficientAtStrSave = this.ProfficientAtDexSave = this.ProfficientAtConSave = this.ProfficientAtIntSave = this.ProfficientAtChaSave = this.ProfficientAtWisSave = false;
@@ -755,10 +758,11 @@ namespace VSCC.State
             set => AppState.Current.TInventory.IntUD_CP.Value = value;
         }
 
-        public string SortingMethod
+        [JsonConverter(typeof(SortingMethodAdapter))]
+        public int SortingMethod
         {
-            get => AppState.Current.TInventory.ComboBox_SortBy.Text;
-            set => AppState.Current.TInventory.ComboBox_SortBy.Text = value;
+            get => AppState.Current.TInventory.ComboBox_SortBy.SelectedIndex;
+            set => AppState.Current.TInventory.ComboBox_SortBy.SelectedIndex = value;
         }
 
         public bool SortInverted
@@ -902,8 +906,10 @@ namespace VSCC.State
         public void Clear()
         {
             this.PP = this.GP = this.EP = this.SP = this.CP = 0;
-            this.WeightCurrent = this.WeightMax1 = this.WeightMax2 = 0;
-            this.SortingMethod = Resources.Inventory_Sort_Name;
+            this.WeightCurrent = 0;
+            this.WeightMax1 = 150;
+            this.WeightMax2 = 300;
+            this.SortingMethod = 0;
             this.SortInverted = false;
             this.Filter = string.Empty;
             this.Items.Clear();

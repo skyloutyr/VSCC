@@ -40,12 +40,12 @@ namespace VSCC
             {
                 if (Settings.Default.Language == 0)
                 {
-                    System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
                 }
 
                 if (Settings.Default.Language == 1)
                 {
-                    System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
                 }
             }
 
@@ -56,6 +56,12 @@ namespace VSCC
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AppState.Current.Window = this;
+            if (Debugger.IsAttached)
+            {
+                AppState.Current.GenerateDefaultMD5();
+            }
+
+            AppState.Current.SetDefaultMD5();
             ScriptEngine.Create();
             AppEvents.InvokeStartup();
 #pragma warning disable CS4014 // This call is executed on an another thread entirely, the await is thus not needed.
@@ -82,6 +88,7 @@ namespace VSCC
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.State.Clear();
             AppState.Current.LastSaveFile = string.Empty;
+            AppState.Current.SetDefaultMD5();
             AppState.Current.FreezeAutocalc = false;
         }
 

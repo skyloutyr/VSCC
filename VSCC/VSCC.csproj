@@ -197,6 +197,9 @@
     <Compile Include="Roll20\R20WSServer.cs" />
     <Compile Include="Roll20\CommandPacket.cs" />
     <Compile Include="Scripting\ScriptEngine.cs" />
+    <Compile Include="Scripting\TabCreator\UIDefinition.cs" />
+    <Compile Include="Scripting\TabCreator\UIGenerator.cs" />
+    <Compile Include="State\Adapters\SortingMethodAdapter.cs" />
     <Compile Include="State\AppEvents.cs" />
     <Compile Include="State\AppState.cs" />
     <Compile Include="State\SaveState.cs" />
@@ -3219,7 +3222,6 @@
   <ItemGroup>
     <Resource Include="Images\AppIcons\icons8-down-arrow-64.png" />
     <Resource Include="Images\AppIcons\icons8-up-64.png" />
-    <Content Include="template\styles\main.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\KeraLua.1.0.22\build\net45\KeraLua.targets" Condition="Exists('..\packages\KeraLua.1.0.22\build\net45\KeraLua.targets')" />

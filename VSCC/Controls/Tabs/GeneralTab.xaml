@@ -13,7 +13,7 @@
         <Grid Margin="0,0,0,0" MinWidth="1000" MinHeight="730" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
             <GroupBox x:Name="GroupBox_GlanceValue" Header="{x:Static p:Resources.General_GroupBox_GlanceValue}" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="421">
                 <Grid>
-                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.General_CharacterName}" VerticalAlignment="Top" Width="390" MaxLines="1" FontFamily="Vivaldi" FontSize="36" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" MaxLines="1" FontFamily="Vivaldi" FontSize="36" BorderBrush="{x:Null}"/>
                     <Button x:Name="Btn_Remove_Exp" Content="-" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Button x:Name="Btn_Add_Exp" Content="+" HorizontalAlignment="Left" Margin="379,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp">

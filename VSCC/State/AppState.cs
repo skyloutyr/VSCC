@@ -13,6 +13,7 @@ namespace VSCC.State
     public class AppState
     {
         private string _lastSaveHash;
+        private bool _ignoreLastSaveFile;
 
         public static AppState Current { get; set; } = new AppState();
 
@@ -30,6 +31,48 @@ namespace VSCC.State
         public SpellbookTab TSpellbook => ((DockPanel)this.Window.TabSpellbook.Content).Children[0] as SpellbookTab;
         public ScriptingTab TScripting => ((DockPanel)this.Window.TabScripting.Content).Children[0] as ScriptingTab;
 
+        public void SetDefaultMD5(bool isDefault = true)
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Defaults.md5");
+            if (File.Exists(path))
+            {
+                byte[] b = File.ReadAllBytes(path);
+                byte[] md5 = new byte[16];
+                Array.Copy(b, isDefault ? 0 : 16, md5, 0, 16);
+                StringBuilder sBuilder = new StringBuilder();
+                foreach (byte b1 in md5)
+                {
+                    sBuilder.Append(b1.ToString("x2"));
+                }
+
+                this._lastSaveHash = sBuilder.ToString();
+                this._ignoreLastSaveFile = true;
+            }
+        }
+
+        public void GenerateDefaultMD5()
+        {
+            byte[] GetMD5(string input)
+            {
+                using (MD5 md5Hash = MD5.Create())
+                {
+                    return md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                }
+            }
+
+            string s = this.Save();
+            byte[] l = GetMD5(s);
+            this.State.Clear();
+            byte[] r = GetMD5(this.Save());
+            
+            // Idealy both MD5 will be the same
+            byte[] joined = new byte[l.Length + r.Length];
+            Array.Copy(l, 0, joined, 0, l.Length);
+            Array.Copy(r, 0, joined, l.Length, r.Length);
+            File.WriteAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Defaults.md5"), joined);
+            this.Load(s, out _);
+        }
+
         public string Save()
         {
             this.FreezeAutocalc = true;
@@ -41,6 +84,7 @@ namespace VSCC.State
             }
 
             this.FreezeAutocalc = false;
+            this._ignoreLastSaveFile = false;
             return s;
         }
 
@@ -52,18 +96,18 @@ namespace VSCC.State
             switch (saveVersion)
             {
                 case 1:
-                {
-                    this.LoadV1(s);
-                    wantsRecalc = true;
-                    break;
-                }
+                    {
+                        this.LoadV1(s);
+                        wantsRecalc = true;
+                        break;
+                    }
 
                 case 2:
-                {
-                    this.LoadV2(s);
-                    wantsRecalc = false;
-                    break;
-                }
+                    {
+                        this.LoadV2(s);
+                        wantsRecalc = false;
+                        break;
+                    }
 
                 default:
                     throw new NotSupportedException($"The specified save file version can't be loaded - no format converter exists for version { saveVersion }.");
@@ -71,6 +115,7 @@ namespace VSCC.State
 
             AppEvents.InvokeLoad(ref s);
             this.FreezeAutocalc = false;
+            this._ignoreLastSaveFile = false;
         }
 
         public void SetSaveLocation(string location, bool calculateMD5)
@@ -133,7 +178,7 @@ namespace VSCC.State
         {
             get
             {
-                if (string.IsNullOrEmpty(this.LastSaveFile))
+                if (string.IsNullOrEmpty(this.LastSaveFile) && !this._ignoreLastSaveFile)
                 {
                     return true;
                 }
