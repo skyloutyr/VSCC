@@ -12,7 +12,7 @@
         <TextBlock Text="{x:Static p:Resources.Info_Author}" />
         <TextBlock Text="SkyLouTyr" />
         <TextBlock Text="{x:Static p:Resources.Info_Version}" />
-        <TextBlock Text="1.1.3" />
+        <TextBlock Text="{Binding Path=CurrentVersion, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:InfoWindow}}}" />
         <TextBlock Text="{x:Static p:Resources.Info_License}" />
         <TextBlock>
             <Hyperlink NavigateUri="https://www.gnu.org/licenses/gpl-3.0.en.html" RequestNavigate="Hyperlink_RequestNavigate">

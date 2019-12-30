@@ -19,6 +19,17 @@ namespace VSCC.Controls.Windows
     /// </summary>
     public partial class InfoWindow : Window
     {
+        private Lazy<string> _currentVersion = new Lazy<string>(() => VersionManager.VersionChecker.GetCurrentVersion().ToString());
+
+        public string CurrentVersion
+        {
+            get => this._currentVersion.Value;
+
+            set
+            {
+            }
+        }
+        
         public InfoWindow()
         {
             InitializeComponent();
