@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VSCC.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Language" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en-US</Value>
     </Setting>
     <Setting Name="ShowOutdatedVersionWindow" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

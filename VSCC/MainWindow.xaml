@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VSCC"
         xmlns:Controls="clr-namespace:VSCC.Controls" x:Class="VSCC.MainWindow"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:uc="clr-namespace:VSCC.Controls.Tabs"
         mc:Ignorable="d"
         Title="Visual Simple Character Creator - WPF Edition" Height="820" MaxHeight="820" Width="1030" MaxWidth="1030" Loaded="Window_Loaded" Closing="Window_Closing">
@@ -30,8 +31,8 @@
             </MenuItem>
             <MenuItem x:Name="Edit" Header="{x:Static p:Resources.MainMenu_Edit}" IsEnabled="True">
                 <MenuItem Header="{x:Static p:Resources.Edit_Languages}">
-                    <MenuItem x:Name="Language_English" IsCheckable="True" IsChecked="True" Header="English" Checked="MenuItem_Checked" />
-                    <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Checked="MenuItem_Checked_1" />
+                    <MenuItem x:Name="Language_English" IsCheckable="True" IsChecked="True" Header="English" Tag="en-US" Checked="MenuItem_Checked" />
+                    <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Tag="ru-RU" Checked="MenuItem_Checked" />
                 </MenuItem>
             </MenuItem>
             <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="True">

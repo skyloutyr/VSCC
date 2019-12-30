@@ -24,17 +24,15 @@ namespace VSCC.Scripting
 
         public static void Create()
         {
-            if (Instance.IsValueCreated)
-            {
-                throw new Exception("Value already created");
-            }
-
             if (Thread.CurrentThread != AppState.Current.AppThread)
             {
                 throw new Exception("Can't create value on a non-ui thread");
             }
 
-            Instance.Value.Setup();
+            if (!Instance.IsValueCreated)
+            {
+                Instance.Value.Setup();
+            }
         }
 
         private void Setup()
