@@ -9,7 +9,7 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Initialized="UserControl_Initialized">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="White" Initialized="UserControl_Initialized">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
             <GroupBox Header="{x:Static p:Resources.Inventory_Cash}" HorizontalAlignment="Left" Height="67" Margin="10,10,0,0" VerticalAlignment="Top" Width="980" Grid.ColumnSpan="2">
@@ -78,8 +78,8 @@
                         <ComboBoxItem x:Name="SortBy_Rarity" Content="{x:Static p:Resources.Inventory_Sort_Rarity}" />
                         <ComboBoxItem x:Name="SortBy_Type" Content="{x:Static p:Resources.Inventory_Sort_Type}" />
                     </ComboBox>
-                    <Border HorizontalAlignment="Left" Height="557" Margin="10,49,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="Black">
-                        <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick">
+                    <Border HorizontalAlignment="Left" Height="557" Margin="10,49,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="DarkGray">
+                        <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick" BorderThickness="0">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <wpftk:VirtualizingWrapPanel />

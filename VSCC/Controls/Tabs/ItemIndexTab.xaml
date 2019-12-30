@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="White">
     <UserControl.Resources>
         <ImageBrush x:Key="ButtonImage" ImageSource="/VSCC;component/Images/AppIcons/tobackpack.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
         <Style TargetType="Button" x:Key="BtnItemCard">

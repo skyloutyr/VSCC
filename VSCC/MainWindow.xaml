@@ -18,7 +18,7 @@
         <CommandBinding Command="Close" Executed="Exit_Click" />
     </Window.CommandBindings>
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Menu Height="20" Width="960" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Menu Height="20" Width="960" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White">
             <MenuItem x:Name="File" Background="{x:Null}" Header="{x:Static p:Resources.MainMenu_File}">
                 <MenuItem x:Name="NewOptions" Header="{x:Static p:Resources.MainMenu_File_New}">
                     <MenuItem x:Name="NewEmpty" Header="{x:Static p:Resources.MainMenu_File_New_New}" Command="New"/>

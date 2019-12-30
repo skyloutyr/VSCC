@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d"
-             d:DesignHeight="730" d:DesignWidth="1000" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" >
+             d:DesignHeight="730" d:DesignWidth="1000" Background="White" >
     <UserControl.CommandBindings>
         <CommandBinding Command="{x:Static local:SpellbookTab.NewSpellCmd}" Executed="NewSpellCommand_Executed" CanExecute="NewSpellCommand_CanExecute" />
         <CommandBinding Command="{x:Static local:SpellbookTab.EditSpellCmd}" Executed="EditSpellCommand_Executed" CanExecute="EditSpellCommand_CanExecute" />
@@ -37,7 +37,7 @@
             <TabControl x:Name="TabControl_Spellbook" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="697">
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv0}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_0CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -82,7 +82,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv1}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_1CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -127,7 +127,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv2}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_2CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -172,7 +172,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv3}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_3CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -217,7 +217,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv4}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_4CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -262,7 +262,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv5}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_5CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -307,7 +307,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv6}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_6CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -352,7 +352,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv7}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_7CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -397,7 +397,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv8}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_8CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
@@ -442,7 +442,7 @@
                 </TabItem>
                 <TabItem Header="{x:Static p:Resources.Spellbook_lv9}">
                     <Grid>
-                        <Border BorderBrush="CornflowerBlue" BorderThickness="1" CornerRadius="15" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_9CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />

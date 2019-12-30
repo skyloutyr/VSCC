@@ -9,7 +9,7 @@
         Title="ScriptContextWindow" Height="450" Width="800">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
-            <Border VerticalAlignment="Top" Height="200" BorderBrush="Black" BorderThickness="2" CornerRadius="2" Margin="0,0,63,0">
+            <Border VerticalAlignment="Top" Height="200" BorderBrush="DarkGray" BorderThickness="1" CornerRadius="2" Margin="0,0,63,0">
                 <Label x:Name="Label_Description" HorizontalAlignment="Center" Margin="0, 30, 0, 0" />
             </Border>
             <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,0,10,0" Content="{x:Static p:Resources.Generic_OK}" Click="Button_Click" />

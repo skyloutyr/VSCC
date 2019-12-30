@@ -10,18 +10,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <Grid Margin="0,0,0,0" MinWidth="1000" MinHeight="730" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Grid Margin="0,0,0,0" MinWidth="1000" MinHeight="730" Background="White">
             <GroupBox x:Name="GroupBox_GlanceValue" Header="{x:Static p:Resources.General_GroupBox_GlanceValue}" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="421">
                 <Grid>
-                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" MaxLines="1" FontFamily="Vivaldi" FontSize="36" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" MaxLines="1" FontSize="30" />
                     <Button x:Name="Btn_Remove_Exp" Content="-" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Button x:Name="Btn_Add_Exp" Content="+" HorizontalAlignment="Left" Margin="379,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
-                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp">
-                        <Controls:ColoredBar.BarBorder>
-                            <Pen Brush="Black" Thickness="2"/>
-                        </Controls:ColoredBar.BarBorder>
-                    </Controls:ColoredBar>
-                    <Border BorderThickness="1" BorderBrush="Black" Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,80,0,0">
+                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="DarkGray" BorderThickness="1" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
+                    <Border BorderThickness="1" BorderBrush="DarkGray" Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,80,0,0">
                         <Grid>
                             <Image x:Name="Portrait" Stretch="Fill" Height="100" Width="100" />
                             <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="72,72,0,0" Width="26" Click="Button_Click">
@@ -33,16 +29,8 @@
                     <Button x:Name="Btn_Remove_TempHP" Content="-" HorizontalAlignment="Left" Margin="117,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Button x:Name="Btn_Add_HP" Content="+" HorizontalAlignment="Left" Margin="379,80,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
                     <Button x:Name="Btn_Add_TempHP" Content="+" HorizontalAlignment="Left" Margin="379,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked"/>
-                    <Controls:ColoredBar x:Name="Bar_HP" HorizontalAlignment="Left" Height="20" Margin="142,80,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FFEC0000" BarBackground="#FF740000" FontWeight="Bold" MouseUp="Bar_Exp_MouseUp">
-                        <Controls:ColoredBar.BarBorder>
-                            <Pen Brush="Black" Thickness="2"/>
-                        </Controls:ColoredBar.BarBorder>
-                    </Controls:ColoredBar>
-                    <Controls:ColoredBar x:Name="Bar_Temp_HP" HorizontalAlignment="Left" Height="20" Margin="142,105,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{x:Null}" BarColor="#FF00ECE1" BarBackground="#FF005F74" FontWeight="Bold" MouseUp="Bar_Exp_MouseUp">
-                        <Controls:ColoredBar.BarBorder>
-                            <Pen Brush="Black" Thickness="2"/>
-                        </Controls:ColoredBar.BarBorder>
-                    </Controls:ColoredBar>
+                    <Controls:ColoredBar x:Name="Bar_HP" HorizontalAlignment="Left" Height="20" Margin="142,80,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="DarkGray" BorderThickness="1" BarColor="#FFEC0000" BarBackground="#FF740000" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
+                    <Controls:ColoredBar x:Name="Bar_Temp_HP" HorizontalAlignment="Left" Height="20" Margin="142,105,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="DarkGray" BorderThickness="1" BarColor="#FF00ECE1" BarBackground="#FF005F74" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
                     <Label x:Name="Label_Lvl" Content="{x:Static p:Resources.General_Lvl}" HorizontalAlignment="Left" Margin="117,125,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="Label_Race" Content="{x:Static p:Resources.General_Race}" HorizontalAlignment="Left" Margin="117,156,0,0" VerticalAlignment="Top"/>
                     <xctk:IntegerUpDown x:Name="IntUD_Lvl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,130,0,0" Height="20" Width="56" Value="1" Minimum="1" Maximum="20" ValueChanged="IntUD_Lvl_ValueChanged"/>
@@ -122,49 +110,49 @@
             </GroupBox>
             <GroupBox x:Name="GroupBox_Statblock" Header="{x:Static p:Resources.General_GroupBox_Stats}" HorizontalAlignment="Left" Height="500" Margin="436,10,0,0" VerticalAlignment="Top" Width="554">
                 <Grid>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="10,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="10,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Strength}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Str" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="10,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="10,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Dexterity}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Dex" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="10,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="10,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Constitution}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Con" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="106,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="106,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Charisma}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Cha" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="106,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="106,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Intelligence}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Int" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="106,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="106,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Wisdom}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Wis" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="155" Margin="201,234,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="155" Margin="201,234,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Saves}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <CheckBox x:Name="CheckBox_Saves_Str" Content="{x:Static p:Resources.General_Str}" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
@@ -181,7 +169,7 @@
                             <xctk:IntegerUpDown x:Name="IntUD_Saves_Cha" HorizontalAlignment="Left" Margin="85,125,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                         </Grid>
                     </Border>
-                    <Border BorderBrush="Black" HorizontalAlignment="Left" Height="460" Margin="344,10,0,0" BorderThickness="1" VerticalAlignment="Top" Width="188">
+                    <Border BorderBrush="DarkGray" HorizontalAlignment="Left" Height="460" Margin="344,10,0,0" BorderThickness="1" VerticalAlignment="Top" Width="188">
                         <Grid>
                             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="39" Content="{x:Static p:Resources.General_Skills}" Margin="10,10,0,0"/>
                             <CheckBox x:Name="CheckBox_Athletics" Content="{x:Static p:Resources.General_Skill_Athletics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,38,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked"/>
@@ -222,7 +210,7 @@
                             <xctk:IntegerUpDown x:Name="IntUD_Religion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,202,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                         </Grid>
                     </Border>
-                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="156" Margin="10,72,0,0" BorderBrush="Black" VerticalAlignment="Top" Width="211">
+                    <Border BorderThickness="1" HorizontalAlignment="Left" Height="156" Margin="10,72,0,0" BorderBrush="DarkGray" VerticalAlignment="Top" Width="211">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_HitDice}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <xctk:IntegerUpDown x:Name="IntUD_HD12C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,36,0,0" Width="49"/>
@@ -243,7 +231,7 @@
                             <xctk:IntegerUpDown x:Name="IntUD_HD6M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,111,0,0" Width="49"/>
                         </Grid>
                     </Border>
-                    <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="113" Margin="226,72,0,0">
+                    <Border BorderThickness="1" BorderBrush="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="113" Margin="226,72,0,0">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91"/>
                             <Label Content="{x:Static p:Resources.General_DeathSaves}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="91"/>
@@ -256,27 +244,27 @@
                             <CheckBox x:Name="CheckBox_DS_Fail3" HorizontalAlignment="Left" Margin="69,113,0,0" VerticalAlignment="Top"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="75" Margin="201,395,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="75" Margin="201,395,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Inspiration}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
                             <CheckBox x:Name="CheckBox_Inspiration" HorizontalAlignment="Left" Margin="55,26,0,0" VerticalAlignment="Top"/>
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_PBonus}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <xctk:IntegerUpDown x:Name="IntUD_ProfBonus" Minimum="0" Value="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="60" ValueChanged="IntUD_ProfBonus_ValueChanged"/>
 
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="57" Margin="133,10,0,0" VerticalAlignment="Top" Width="85" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="57" Margin="133,10,0,0" VerticalAlignment="Top" Width="85" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_AC}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <xctk:IntegerUpDown x:Name="IntUD_AC" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,26,0,0" Width="60"/>
 
                         </Grid>
                     </Border>
-                    <Border HorizontalAlignment="Left" Height="57" Margin="226,10,0,0" VerticalAlignment="Top" Width="113" BorderThickness="1" BorderBrush="Black">
+                    <Border HorizontalAlignment="Left" Height="57" Margin="226,10,0,0" VerticalAlignment="Top" Width="113" BorderThickness="1" BorderBrush="DarkGray">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Speed}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Speed" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="91"/>
@@ -285,18 +273,12 @@
                     </Border>
                 </Grid>
             </GroupBox>
-            <Border HorizontalAlignment="Left" Height="201" Margin="436,515,0,0" VerticalAlignment="Top" Width="203" BorderThickness="1" BorderBrush="Black">
-                <Grid>
-                    <Label Content="{x:Static p:Resources.General_Languages}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="TextBox_Languages" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
-                </Grid>
-            </Border>
-            <Border HorizontalAlignment="Left" Height="201" Margin="644,515,0,0" VerticalAlignment="Top" Width="346" BorderThickness="1" BorderBrush="Black">
-                <Grid>
-                    <Label Content="{x:Static p:Resources.General_Profficiencies}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="116" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="TextBox_Profficencies" HorizontalAlignment="Left" Height="173" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
-                </Grid>
-            </Border>
+            <GroupBox HorizontalAlignment="Left" Height="201" Margin="436,515,0,0" VerticalAlignment="Top" Width="203" BorderThickness="1" BorderBrush="DarkGray" Header="{x:Static p:Resources.General_Languages}">
+                <TextBox x:Name="TextBox_Languages" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" BorderThickness="0"/>
+            </GroupBox>
+            <GroupBox HorizontalAlignment="Left" Height="201" Margin="644,515,0,0" VerticalAlignment="Top" Width="346" BorderThickness="1" BorderBrush="DarkGray" Header="{x:Static p:Resources.General_Profficiencies}">
+                <TextBox x:Name="TextBox_Profficencies" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" BorderThickness="0"/>
+            </GroupBox>
         </Grid>
     </ScrollViewer>
 </UserControl>

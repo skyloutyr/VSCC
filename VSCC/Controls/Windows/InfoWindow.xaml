@@ -40,7 +40,11 @@
                 SemVer.Net (MIT)
             </Hyperlink>
         </TextBlock>
-        <Label />
+        <TextBlock>
+            <Hyperlink NavigateUri="http://nlua.org/" RequestNavigate="Hyperlink_RequestNavigate">
+                NLua (MIT)
+            </Hyperlink>
+        </TextBlock>
         <Label />
         <TextBlock Text="{x:Static p:Resources.Info_Repo}" />
         <TextBlock>

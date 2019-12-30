@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="White">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
             <GroupBox Header="{x:Static p:Resources.Extras_Extras}" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="GroupBox_Extras" Width="527" Height="710" Margin="10,10,0,0">
@@ -23,33 +23,21 @@
             </GroupBox>
             <GroupBox Header="{x:Static p:Resources.Extras_AaB}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="710" Width="448" Margin="542,10,0,0">
                 <Grid>
-                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="10,10,0,0" BorderThickness="1" BorderBrush="Black">
-                        <Grid>
-                            <Label Content="{x:Static p:Resources.Extras_Age}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Age" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,35,0,0" Width="68" RenderTransformOrigin="0.515,1.05" Value="0" />
-                        </Grid>
-                    </Border>
-                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="105,10,0,0" BorderThickness="1" BorderBrush="Black">
-                        <Grid>
-                            <Label Content="{x:Static p:Resources.Extras_Height}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <xctk:SingleUpDown x:Name="FloatUD_Height" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,35,0,0" Width="68" RenderTransformOrigin="0.515,1.05" Value="0.0" />
-                        </Grid>
-                    </Border>
-                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="200,10,0,0" BorderThickness="1" BorderBrush="Black">
-                        <Grid>
-                            <Label Content="{x:Static p:Resources.Extras_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <xctk:SingleUpDown x:Name="FloatUD_Weight" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,35,0,0" Width="68" RenderTransformOrigin="0.515,1.05" Value="0" />
-                        </Grid>
-                    </Border>
-                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="131" Margin="295,10,0,0" BorderThickness="1" BorderBrush="Black">
-                        <Grid>
-                            <Label Content="{x:Static p:Resources.Extras_Gender}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="ComboBox_Gender" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0" Width="109" IsReadOnly="False" IsEditable="True">
-                                <ComboBoxItem Content="M"/>
-                                <ComboBoxItem Content="F"/>
-                            </ComboBox>
-                        </Grid>
-                    </Border>
+                    <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="10,10,0,0" Header="{x:Static p:Resources.Extras_Age}">
+                        <xctk:IntegerUpDown x:Name="IntUD_Age" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0" />
+                    </GroupBox>
+                    <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="105,10,0,0" Header="{x:Static p:Resources.Extras_Height}">
+                        <xctk:SingleUpDown x:Name="FloatUD_Height" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0.0" />
+                    </GroupBox>
+                    <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="200,10,0,0" Header="{x:Static p:Resources.Extras_Weight}">
+                        <xctk:SingleUpDown x:Name="FloatUD_Weight" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0" />
+                    </GroupBox>
+                    <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="131" Margin="295,10,0,0" Header="{x:Static p:Resources.Extras_Gender}">
+                        <ComboBox x:Name="ComboBox_Gender" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,-2,0" Width="109" IsReadOnly="False" IsEditable="True">
+                            <ComboBoxItem Content="M"/>
+                            <ComboBoxItem Content="F"/>
+                        </ComboBox>
+                    </GroupBox>
                     <Label Content="{x:Static p:Resources.Extras_Bio}" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="70" Height="25"/>
                     <TextBox x:Name="TextBox_Bio" HorizontalAlignment="Left" Height="273" Margin="10,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" AcceptsReturn="True"/>
                     <Label Content="{x:Static p:Resources.Extras_Appearance}" HorizontalAlignment="Left" Margin="10,401,0,0" VerticalAlignment="Top" Width="90" Height="25"/>
