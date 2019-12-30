@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.1.2",
+  "version": "1.1.3",
   "changelog": {
     "0.0.0": "Pre-release version. Basic functionality.",
     "1.0.0": "First release. Added roll20 integration.",
@@ -11,6 +11,7 @@
     "1.0.6": "Fixed crash when deleting spells.",
     "1.1.0": "Added scrollbars for all tabs. Added first scripts draft, for now without documentation, added automatic version check",
     "1.1.1": "Added proper script functionality. Added extra packet types for R20 integration.",
-    "1.1.2": "Fixed encoding issues for scripts."
+    "1.1.2": "Fixed encoding issues for scripts.",
+    "1.1.3": "App no longer asks to save a blank file. Removed legacy components."
   }
 }
