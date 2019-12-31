@@ -8,6 +8,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using VSCC.Controls.Windows;
+using VSCC.Scripting.TabCreator;
 using VSCC.State;
 using Xceed.Wpf.Toolkit;
 
@@ -20,7 +21,7 @@ namespace VSCC.Scripting
         public Lua Lua { get; } = new Lua();
         public bool AutocalcFrozen => AppState.Current.FreezeAutocalc;
 
-        public static Lazy<ScriptEngine> Instance = new Lazy<ScriptEngine>(false);
+        public static Lazy<ScriptEngine> Instance { get; } = new Lazy<ScriptEngine>(false);
 
         public static void Create()
         {
@@ -42,6 +43,7 @@ namespace VSCC.Scripting
             this.Lua["State"] = AppState.Current.State;
             this.Lua["Engine"] = this;
             this.Lua["Roll20"] = new Roll20Provider();
+            this.Lua["UI"] = new UIProvider();
             Log(LogLevel.Fine, "Looking for scripts...");
             int loaded = 0, errored = 0;
             Stopwatch sw = new Stopwatch();
@@ -91,6 +93,26 @@ namespace VSCC.Scripting
                     Log(LogLevel.Error, s);
                 }
             }
+        }
+
+        public string ReadFile(string file)
+        {
+            if (!Path.IsPathRooted(file))
+            {
+                file = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts", file));
+            }
+
+            return File.ReadAllText(file);
+        }
+
+        public bool FileExists(string file)
+        {
+            if (!Path.IsPathRooted(file))
+            {
+                file = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts", file));
+            }
+
+            return File.Exists(file);
         }
 
         public void Log(object message) => this.Log(message.ToString());
@@ -351,6 +373,47 @@ namespace VSCC.Scripting
         public void Roll(int numDice, int numSides) => Roll20.R20WSServer.Send(new Roll20.RollPacket() { NumDice = numDice, NumSides = numSides });
 
         public void Message(string message) => Roll20.R20WSServer.Send(new Roll20.MessagePacket() { Text = message });
+    }
+
+    public class UIProvider
+    {
+        public void RemoveTab(int tabID) => AppState.Current.Window.MainTabs.Items.RemoveAt(tabID);
+        public string GetInternalTabName(int tabID) => AppState.Current.Window.MainTabs.Items.Count > tabID ? ((TabItem)AppState.Current.Window.MainTabs.Items[tabID]).Name : string.Empty;
+        public LuaTable AddTab(string tabName, string json)
+        {
+            LuaTable table = UIGenerator.FromJSON(json);
+            UIElement root = (UIElement)table["root"];
+            TabItem ti = new TabItem
+            {
+                Name = tabName,
+                Content = root
+            };
+
+            AppState.Current.Window.MainTabs.Items.Add(ti);
+            return table;
+        }
+
+        public LuaTable DisplayWindow(string windowTitle, string json, bool dialog)
+        {
+            LuaTable table = UIGenerator.FromJSON(json);
+            UIElement root = (UIElement)table["root"];
+            Window window = new Window
+            {
+                Content = root,
+                Title = windowTitle
+            };
+
+            if (dialog)
+            {
+                window.ShowDialog();
+            }
+            else
+            {
+                window.Show();
+            }
+
+            return table;
+        }
     }
 
     public enum LogLevel
