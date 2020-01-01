@@ -8,6 +8,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using VSCC.Controls.Windows;
+using VSCC.Properties;
 using VSCC.Scripting.TabCreator;
 using VSCC.State;
 using Xceed.Wpf.Toolkit;
@@ -337,6 +338,26 @@ namespace VSCC.Scripting
         public bool ShowMessage(string title, string text)
         {
             return System.Windows.MessageBox.Show(text, title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
+        }
+
+        public string GetCurrentLanguage() => Settings.Default.Language;
+
+        public string Localize(string key, LuaTable localeTable)
+        {
+            try
+            {
+                string locale = this.GetCurrentLanguage();
+                if (localeTable[locale] == null)
+                {
+                    locale = "en-US";
+                }
+
+                return ((LuaTable)localeTable[locale])[key].ToString();
+            }
+            catch
+            {
+                return key;
+            }
         }
 
         private string PrefixFromLevel(LogLevel level)

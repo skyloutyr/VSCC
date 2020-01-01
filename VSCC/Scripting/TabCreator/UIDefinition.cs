@@ -72,7 +72,8 @@ namespace VSCC.Scripting.TabCreator
         RadioButton,
         ScrollViewer,
         IntUpDown,
-        FloatUpDown
+        FloatUpDown,
+        Viewbox
     }
 
     public class Rect

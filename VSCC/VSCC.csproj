@@ -205,6 +205,7 @@
     <Compile Include="Scripting\TabCreator\Defs\TextBoxDefinition.cs" />
     <Compile Include="Scripting\TabCreator\Defs\LabelDefinition.cs" />
     <Compile Include="Scripting\TabCreator\Defs\PanelDefinition.cs" />
+    <Compile Include="Scripting\TabCreator\ReverseUIGenerator.cs" />
     <Compile Include="Scripting\TabCreator\UIDefinition.cs" />
     <Compile Include="Scripting\TabCreator\UIGenerator.cs" />
     <Compile Include="State\Adapters\SortingMethodAdapter.cs" />

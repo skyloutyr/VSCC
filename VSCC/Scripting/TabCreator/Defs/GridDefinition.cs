@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace VSCC.Scripting.TabCreator.Defs
 {
-    public class GridDefinition : UIDefinition
+    public class GridDefinition
     {
         public GridColumnDefinition[] Columns { get; set; }
         public GridRowDefinition[] Rows { get; set; }

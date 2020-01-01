@@ -8,6 +8,7 @@
         xmlns:Controls="clr-namespace:VSCC.Controls" x:Class="VSCC.MainWindow"
         xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:uc="clr-namespace:VSCC.Controls.Tabs"
+        xmlns:test="clr-namespace:VSCC.Controls.Templates.Scripts"
         mc:Ignorable="d"
         Title="Visual Simple Character Creator - WPF Edition" Height="820" MaxHeight="820" Width="1030" MaxWidth="1030" Loaded="Window_Loaded" Closing="Window_Closing">
     <Window.CommandBindings>

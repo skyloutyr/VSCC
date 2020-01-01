@@ -147,6 +147,11 @@ namespace VSCC.Scripting.TabCreator
                     tb.VerticalScrollBarVisibility = def.TextBoxData.VerticalScrollBarVisibility;
                     tb.HorizontalScrollBarVisibility = def.TextBoxData.HorizontalScrollBarVisibility;
                     tb.TextWrapping = def.TextBoxData.WrapMode;
+                    if (def.TextBoxData.Border != null)
+                    {
+                        tb.BorderBrush = new SolidColorBrush(ColorFromColorString(def.TextBoxData.Border.BorderColor));
+                        tb.BorderThickness = new Thickness() { Top = def.TextBoxData.Border.BorderThickness.Top, Right = def.TextBoxData.Border.BorderThickness.Right, Left = def.TextBoxData.Border.BorderThickness.Left, Bottom = def.TextBoxData.Border.BorderThickness.Bottom };
+                    }
                 }
 
                 return tb;
@@ -227,6 +232,13 @@ namespace VSCC.Scripting.TabCreator
 
                 return floatUD;
             },
+
+            [UIType.Viewbox] = def =>
+            {
+                Viewbox v = new Viewbox();
+                SetBasicData(v, def);
+                return v;
+            },
         };
 
         public static Dictionary<UIType, Action<UIElement, UIElement[], UIDefinition[]>> ChildrenSetters { get; } = new Dictionary<UIType, Action<UIElement, UIElement[], UIDefinition[]>>()
@@ -276,6 +288,13 @@ namespace VSCC.Scripting.TabCreator
             [UIType.ScrollViewer] = AddContext,
             [UIType.IntUpDown] = AddContext,
             [UIType.FloatUpDown] = AddContext,
+            [UIType.Viewbox] = (e, c, d) =>
+            {
+                if (c.Length > 0)
+                {
+                    ((Viewbox)e).Child = c[0];
+                }
+            }
         };
 
         public static LuaTable FromFile(string path) => FromJSON(File.ReadAllText(Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path))));

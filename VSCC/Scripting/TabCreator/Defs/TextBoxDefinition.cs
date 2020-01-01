@@ -24,5 +24,6 @@ namespace VSCC.Scripting.TabCreator.Defs
 
         [JsonConverter(typeof(StringEnumConverter))]
         public TextWrapping WrapMode { get; set; }
+        public BorderDefinition Border { get; set; }
     }
 }
