@@ -7,9 +7,9 @@
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="CreateSpellWindow" Height="520" Width="386">
+        Title="CreateSpellWindow" Height="520" Width="386" Background="{StaticResource Static.Background}">
     <Grid>
-        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="128" Width="128" Margin="10,10,0,0">
+        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="128" Width="128" Margin="10,10,0,0">
             <Image x:Name="Img_Picture" Source="{Binding PictureProperty}" Stretch="Fill" />
         </Border>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="32" Margin="106,106,0,0" Click="Button_Click_2">
@@ -18,41 +18,41 @@
         <TextBox x:Name="TextBox_Name" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="226" Height="28" />
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="225" Margin="143,43,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <CheckBox x:Name="CheckBox_Verbal" IsChecked="{Binding PropertyVerbal}" Content="{x:Static p:Resources.CreateSpell_Verbal}" />
-                <CheckBox x:Name="CheckBox_Somatic" IsChecked="{Binding PropertySomatic}" Content="{x:Static p:Resources.CreateSpell_Somatic}" Margin="73,0,-73,0" />
-                <CheckBox x:Name="CheckBox_Material" IsChecked="{Binding PropertyMaterial}" Content="{x:Static p:Resources.CreateSpell_Material}" Margin="156,0,-156,0" />
-                <CheckBox x:Name="CheckBox_Concentration" IsChecked="{Binding PropertyConcentration}" Content="{x:Static p:Resources.CreateSpell_Concentration}" Margin="10,14,-10,-18" />
-                <CheckBox x:Name="CheckBox_Ritual" IsChecked="{Binding PropertyRitual}" Content="{x:Static p:Resources.CreateSpell_Ritual}" Margin="167,14,-167,-18" />
+                <CheckBox x:Name="CheckBox_Verbal" IsChecked="{Binding PropertyVerbal}" Content="{x:Static p:Resources.CreateSpell_Verbal}" Foreground="{StaticResource Static.Foreground}" />
+                <CheckBox x:Name="CheckBox_Somatic" IsChecked="{Binding PropertySomatic}" Content="{x:Static p:Resources.CreateSpell_Somatic}" Margin="73,0,-73,0" Foreground="{StaticResource Static.Foreground}" />
+                <CheckBox x:Name="CheckBox_Material" IsChecked="{Binding PropertyMaterial}" Content="{x:Static p:Resources.CreateSpell_Material}" Margin="156,0,-156,0" Foreground="{StaticResource Static.Foreground}" />
+                <CheckBox x:Name="CheckBox_Concentration" IsChecked="{Binding PropertyConcentration}" Content="{x:Static p:Resources.CreateSpell_Concentration}" Margin="10,14,-10,-18" Foreground="{StaticResource Static.Foreground}" />
+                <CheckBox x:Name="CheckBox_Ritual" IsChecked="{Binding PropertyRitual}" Content="{x:Static p:Resources.CreateSpell_Ritual}" Margin="167,14,-167,-18" Foreground="{StaticResource Static.Foreground}" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="143,75,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateSpell_Level}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Label Content="{x:Static p:Resources.CreateSpell_Level}" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}"/>
                 <xctk:IntegerUpDown x:Name="IntUD_Level" Value="{Binding Level}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,0,0,0" Height="30" Width="47" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="262,75,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateSpell_Range}" Margin="-4,-10,4,10"/>
+                <Label Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateSpell_Range}" Margin="-4,-10,4,10" Foreground="{StaticResource Static.Foreground}"/>
                 <TextBox x:Name="TextBox_Range" Text="{Binding Range}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,10,0,0" Width="96" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="143,107,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateSpell_CastTime}" Margin="-4,-10,4,10"/>
+                <Label Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateSpell_CastTime}" Margin="-4,-10,4,10" Foreground="{StaticResource Static.Foreground}"/>
                 <TextBox x:Name="TextBox_CastTime" Text="{Binding CastTime}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,10,0,0" Width="96" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="262,107,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateSpell_Duration}" Margin="-4,-10,4,10"/>
+                <Label Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateSpell_Duration}" Margin="-4,-10,4,10" Foreground="{StaticResource Static.Foreground}"/>
                 <TextBox x:Name="TextBox_Duration" Text="{Binding Duration}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,10,0,0" Width="96" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="178" Margin="10,143,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateSpell_School}" VerticalContentAlignment="Top" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-4,-8,0,0" />
-                <ComboBox x:Name="ComboBox_School" Text="{Binding School}" IsReadOnly="False" IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0">
+                <Label Content="{x:Static p:Resources.CreateSpell_School}" VerticalContentAlignment="Top" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-4,-8,0,0" Foreground="{StaticResource Static.Foreground}" />
+                <ComboBox x:Name="ComboBox_School" Text="{Binding School}" IsReadOnly="False" IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0" Foreground="{StaticResource Static.Foreground}">
                     <ComboBoxItem Content="{x:Static p:Resources.SpellIndex_School_Abjuration}" />
                     <ComboBoxItem Content="{x:Static p:Resources.SpellIndex_School_Conjuration}" />
                     <ComboBoxItem Content="{x:Static p:Resources.SpellIndex_School_Divination}" />
@@ -66,23 +66,23 @@
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="178" Margin="191,143,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateSpell_Targets}" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-8,0,0" />
+                <Label Content="{x:Static p:Resources.CreateSpell_Targets}" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-8,0,0" Foreground="{StaticResource Static.Foreground}" />
                 <TextBox x:Name="ComboBox_Targets" Text="{Binding Target}" IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="358" Margin="10,188,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateSpell_ShortDesc}" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-8,0,0" />
+                <Label Content="{x:Static p:Resources.CreateSpell_ShortDesc}" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-8,0,0" Foreground="{StaticResource Static.Foreground}" />
                 <TextBox x:Name="TextBox_SimpleDesc" Text="{Binding SimpleDescription}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="71" Width="336" AcceptsReturn="True" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="153" Width="358" Margin="10,286,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.CreateSpell_Desc}" VerticalContentAlignment="Center" Margin="-2,-11,0,0" />
+                <Label Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.CreateSpell_Desc}" VerticalContentAlignment="Center" Margin="-2,-11,0,0" Foreground="{StaticResource Static.Foreground}" />
                 <TextBox x:Name="TextBox_Desc" Text="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="131" Width="336" AcceptsReturn="True" />
             </Grid>
         </Border>
-        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="11,0,0,10" Click="Button_Click" />
-        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="213,0,0,10" Click="Button_Click_1" />
+        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="11,0,0,10" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
+        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="213,0,0,10" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
     </Grid>
 </Window>

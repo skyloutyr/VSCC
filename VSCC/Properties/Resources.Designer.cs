@@ -2196,6 +2196,42 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Themes.
+        /// </summary>
+        public static string MainMenu_View_Skins {
+            get {
+                return ResourceManager.GetString("MainMenu_View_Skins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bright.
+        /// </summary>
+        public static string MainMenu_View_Skins_Bright {
+            get {
+                return ResourceManager.GetString("MainMenu_View_Skins_Bright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string MainMenu_View_Skins_Dark {
+            get {
+                return ResourceManager.GetString("MainMenu_View_Skins_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        public static string MainMenu_View_Skins_Default {
+            get {
+                return ResourceManager.GetString("MainMenu_View_Skins_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Actions.
         /// </summary>
         public static string R20_Actions {

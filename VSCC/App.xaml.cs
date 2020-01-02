@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using VSCC.Skins;
 
 namespace VSCC
 {
@@ -13,5 +14,19 @@ namespace VSCC
     /// </summary>
     public partial class App : Application
     {
+        public void ChangeSkin()
+        {
+            foreach (ResourceDictionary dict in this.Resources.MergedDictionaries)
+            {
+                if (dict is SkinResourceDictionary skinDict)
+                {
+                    skinDict.UpdateSource();
+                }
+                else
+                {
+                    dict.Source = dict.Source;
+                }
+            }
+        }
     }
 }

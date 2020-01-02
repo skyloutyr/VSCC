@@ -7,7 +7,9 @@
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d"
-             d:DesignHeight="730" d:DesignWidth="1000" Background="White" >
+             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" >
+    <UserControl.Resources>
+    </UserControl.Resources>
     <UserControl.CommandBindings>
         <CommandBinding Command="{x:Static local:SpellbookTab.NewSpellCmd}" Executed="NewSpellCommand_Executed" CanExecute="NewSpellCommand_CanExecute" />
         <CommandBinding Command="{x:Static local:SpellbookTab.EditSpellCmd}" Executed="EditSpellCommand_Executed" CanExecute="EditSpellCommand_CanExecute" />
@@ -17,8 +19,8 @@
         <StackPanel>
             <GroupBox Height="32">
                 <Grid>
-                    <Label Content="{x:Static p:Resources.Spellbook_SpellcastingAbility}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="ComboBox_SpellcastingAbility" HorizontalAlignment="Left" Margin="115,1,0,0" VerticalAlignment="Top" Width="120" Height="25">
+                    <Label Content="{x:Static p:Resources.Spellbook_SpellcastingAbility}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                    <ComboBox x:Name="ComboBox_SpellcastingAbility" HorizontalAlignment="Left" Margin="115,1,0,0" VerticalAlignment="Top" Width="120" Height="25" Foreground="{StaticResource Static.Foreground}">
                         <ComboBoxItem Content="{x:Static p:Resources.General_Strength}" />
                         <ComboBoxItem Content="{x:Static p:Resources.General_Dexterity}" />
                         <ComboBoxItem Content="{x:Static p:Resources.General_Constitution}" />
@@ -26,23 +28,23 @@
                         <ComboBoxItem Content="{x:Static p:Resources.General_Intelligence}" />
                         <ComboBoxItem Content="{x:Static p:Resources.General_Charisma}" />
                     </ComboBox>
-                    <Label Content="{x:Static p:Resources.Spellbook_SaveDC}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,0,0,0"/>
+                    <Label Content="{x:Static p:Resources.Spellbook_SaveDC}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown Value="0" x:Name="IntUD_SpellSave" HorizontalAlignment="Left" Margin="406,5,0,0" VerticalAlignment="Top" Width="72" />
-                    <Label Content="{x:Static p:Resources.Spellbook_AttackBonus}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="564,0,0,0"/>
+                    <Label Content="{x:Static p:Resources.Spellbook_AttackBonus}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="564,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown Value="0" x:Name="IntUD_SpellAttackAbility" HorizontalAlignment="Left" Margin="677,6,0,0" VerticalAlignment="Top" Width="72" />
-                    <Label Content="{x:Static p:Resources.Spellbook_MaxSpells}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="843,0,0,0"/>
+                    <Label Content="{x:Static p:Resources.Spellbook_MaxSpells}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="843,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown Value="0" x:Name="IntUD_SpellsAmount" HorizontalAlignment="Left" Margin="916,6,0,0" VerticalAlignment="Top" Width="72" />
                 </Grid>
             </GroupBox>
-            <TabControl x:Name="TabControl_Spellbook" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="697">
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv0}">
+            <TabControl x:Name="TabControl_Spellbook" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="697" Background="{StaticResource Static.Background}" BorderThickness="0 1 0 0">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv0}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_0CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_0MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -60,34 +62,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Cantrips" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView x:Name="List_Cantrips" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick" Background="Transparent" BorderThickness="0">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv1}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv1}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_1CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_1MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -105,34 +107,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells1" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView x:Name="List_Spells1" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick" Background="Transparent" BorderThickness="0">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv2}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv2}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_2CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_2MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -150,34 +152,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells2" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells2" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv3}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv3}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_3CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_3MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -195,34 +197,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells3" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells3" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv4}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv4}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_4CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_4MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0"  Foreground="{StaticResource Static.Foreground}"/>
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -240,34 +242,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells4" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells4" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv5}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv5}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_5CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_5MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -285,34 +287,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells5" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells5" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv6}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv6}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_6CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_6MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -330,34 +332,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells6" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells6" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv7}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv7}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_7CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_7MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -375,34 +377,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells7" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells7" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv8}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv8}" Foreground="{StaticResource Static.Foreground}" BorderThickness="0 1 0 0">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_8CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_8MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -420,34 +422,34 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells8" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells8" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </Grid>
                 </TabItem>
-                <TabItem Header="{x:Static p:Resources.Spellbook_lv9}">
+                <TabItem Header="{x:Static p:Resources.Spellbook_lv9}" Foreground="{StaticResource Static.Foreground}">
                     <Grid>
-                        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
-                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" />
+                                <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_9CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
                                 <xctk:IntegerUpDown Value="0" x:Name="IntUD_9MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
-                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" />
+                                <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
                         <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -465,20 +467,20 @@
                         <Button Click="Button_Click_1" HorizontalAlignment="Left" Margin="973,26,0,0" VerticalAlignment="Top" Width="21" Height="21">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-down-arrow-64.png" Stretch="Uniform"/>
                         </Button>
-                        <ListView x:Name="List_Spells9" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
+                        <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells9" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" />
-                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

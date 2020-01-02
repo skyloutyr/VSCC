@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="White">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}">
     <UserControl.Resources>
         <ImageBrush x:Key="ButtonImage" ImageSource="/VSCC;component/Images/AppIcons/tobackpack.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" />
         <Style TargetType="Button" x:Key="BtnItemCard">
@@ -34,74 +34,74 @@
     </UserControl.Resources>
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
-            <GroupBox Header="{x:Static p:Resources.ItemIndex_Sorting}" HorizontalAlignment="Left" Width="295">
+            <GroupBox Header="{x:Static p:Resources.ItemIndex_Sorting}" HorizontalAlignment="Left" Width="295" Foreground="{StaticResource Static.Foreground}">
                 <Grid>
-                    <Label Content="{x:Static p:Resources.ItemIndex_Name}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.ItemIndex_Name}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <TextBox x:Name="TextBox_Filter" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="263"/>
-                    <Label Content="{x:Static p:Resources.ItemIndex_Rarity}" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.ItemIndex_Rarity}" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <GroupBox Header="{x:Static p:Resources.ItemIndex_Rarity}" HorizontalAlignment="Left" Height="128" Margin="10,100,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
-                            <CheckBox x:Name="CB_Rarity_Common" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Common}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CB_Rarity_Uncommon" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Uncommon}" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CB_Rarity_Rare" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Rare}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CB_Rarity_VeryRare" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_VeryRare}" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CB_Rarity_Legendary" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Legendary}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CB_Rarity_Common" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Common}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CB_Rarity_Uncommon" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Uncommon}" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CB_Rarity_Rare" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Rare}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CB_Rarity_VeryRare" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_VeryRare}" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CB_Rarity_Legendary" IsChecked="True" Content="{x:Static p:Resources.ItemIndex_Rarity_Legendary}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>
-                    <CheckBox x:Name="CB_WondrousOnly" Content="{x:Static p:Resources.ItemIndex_WondrousOnly}" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="CB_WondrousOnly" Content="{x:Static p:Resources.ItemIndex_WondrousOnly}" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <GroupBox Header="" HorizontalAlignment="Left" Height="219" Margin="10,279,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
-                            <Label Content="{x:Static p:Resources.ItemIndex_Types_Desc}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="61" Width="231"/>
+                            <Label Content="{x:Static p:Resources.ItemIndex_Types_Desc}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="61" Width="231" Foreground="{StaticResource Static.Foreground}"/>
                             <TextBox x:Name="TextBox_TypeFilter" HorizontalAlignment="Left" Height="111" Margin="10,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="231" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                         </Grid>
                     </GroupBox>
-                    <Label Content="{x:Static p:Resources.ItemIndex_Types}" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top"/>
-                    <Label Content="{x:Static p:Resources.ItemIndex_Properties}" HorizontalAlignment="Left" Margin="10,508,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.ItemIndex_Types}" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                    <Label Content="{x:Static p:Resources.ItemIndex_Properties}" HorizontalAlignment="Left" Margin="10,508,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <GroupBox Header="{x:Static p:Resources.ItemIndex_Properties2}" HorizontalAlignment="Left" Height="128" Margin="10,539,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
-                            <CheckBox x:Name="CheckBox_Property_Light" Content="{x:Static p:Resources.ItemIndex_Prop_Light}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Heavy" Content="{x:Static p:Resources.ItemIndex_Prop_Heavy}" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Ammo" Content="{x:Static p:Resources.ItemIndex_Prop_Ammo}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Finesse" Content="{x:Static p:Resources.ItemIndex_Prop_Finesse}" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Loading" Content="{x:Static p:Resources.ItemIndex_Prop_Loading}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Range" Content="{x:Static p:Resources.ItemIndex_Prop_Range}" HorizontalAlignment="Left" Margin="121,10,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Reach" Content="{x:Static p:Resources.ItemIndex_Prop_Reach}" HorizontalAlignment="Left" Margin="121,30,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_TwoHanded" Content="{x:Static p:Resources.ItemIndex_Prop_TwoHanded}" HorizontalAlignment="Left" Margin="121,50,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Thrown" Content="{x:Static p:Resources.ItemIndex_Prop_Thrown}" HorizontalAlignment="Left" Margin="121,70,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="CheckBox_Property_Versatile" Content="{x:Static p:Resources.ItemIndex_Prop_Versatile}" HorizontalAlignment="Left" Margin="121,90,0,0" VerticalAlignment="Top"/>
+                            <CheckBox x:Name="CheckBox_Property_Light" Content="{x:Static p:Resources.ItemIndex_Prop_Light}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Heavy" Content="{x:Static p:Resources.ItemIndex_Prop_Heavy}" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Ammo" Content="{x:Static p:Resources.ItemIndex_Prop_Ammo}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Finesse" Content="{x:Static p:Resources.ItemIndex_Prop_Finesse}" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Loading" Content="{x:Static p:Resources.ItemIndex_Prop_Loading}" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Range" Content="{x:Static p:Resources.ItemIndex_Prop_Range}" HorizontalAlignment="Left" Margin="121,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Reach" Content="{x:Static p:Resources.ItemIndex_Prop_Reach}" HorizontalAlignment="Left" Margin="121,30,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_TwoHanded" Content="{x:Static p:Resources.ItemIndex_Prop_TwoHanded}" HorizontalAlignment="Left" Margin="121,50,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Thrown" Content="{x:Static p:Resources.ItemIndex_Prop_Thrown}" HorizontalAlignment="Left" Margin="121,70,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox x:Name="CheckBox_Property_Versatile" Content="{x:Static p:Resources.ItemIndex_Prop_Versatile}" HorizontalAlignment="Left" Margin="121,90,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>
-                    <Button Content="{x:Static p:Resources.ItemIndex_Apply}" HorizontalAlignment="Left" Margin="10,678,0,0" VerticalAlignment="Top" Width="263" Click="Button_Click"/>
+                    <Button Content="{x:Static p:Resources.ItemIndex_Apply}" HorizontalAlignment="Left" Margin="10,678,0,0" VerticalAlignment="Top" Width="263" Click="Button_Click" Foreground="{StaticResource Static.Foreground}"/>
 
                 </Grid>
             </GroupBox>
-            <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_ItemTemplates" Margin="300,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690">
+            <ListView VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True" VirtualizingPanel.VirtualizationMode="Recycling" x:Name="ListView_ItemTemplates" Margin="300,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" VerticalAlignment="Top" Height="720" Width="690" Background="Transparent" BorderThickness="0">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <wpftk:VirtualizingWrapPanel/>
+                        <wpftk:VirtualizingWrapPanel Background="{StaticResource Static.Background}"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="DarkCyan" BorderThickness="2" CornerRadius="15" Background="White" Width="280" Height="350">
+                        <Border BorderBrush="DarkCyan" BorderThickness="2" CornerRadius="15" Background="{StaticResource Static.Background}" Width="280" Height="350">
                             <Grid>
-                                <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="256" Margin="10,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" />
-                                <Label Content="{Binding Subtitle}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="256" Margin="10,42,0,0" FontSize="8" FontStyle="Italic" Foreground="Gray" />
-                                <Line VerticalAlignment="Top" Stretch="Fill" Stroke="Gray" X2="1" Margin="0,61,0,0" />
+                                <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="256" Margin="10,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Foreground="{StaticResource Static.Foreground}" />
+                                <Label Content="{Binding Subtitle}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="256" Margin="10,42,0,0" FontSize="8" FontStyle="Italic" Foreground="{StaticResource Static.Foreground}" />
+                                <Line VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Margin="0,61,0,0" />
                                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="130" Margin="9,67,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
-                                    <Label Content="{Binding DamageProperty}" ToolTip="{Binding DamageProperty}" VerticalContentAlignment="Center" />
+                                    <Label Content="{Binding DamageProperty}" ToolTip="{Binding DamageProperty}" VerticalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}" />
                                 </Border>
                                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="130" Margin="140,67,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
-                                    <Label Content="{Binding RangeProperty}" VerticalContentAlignment="Center" Margin="1,-1,-1,1" />
+                                    <Label Content="{Binding RangeProperty}" VerticalContentAlignment="Center" Margin="1,-1,-1,1" Foreground="{StaticResource Static.Foreground}" />
                                 </Border>
                                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="130" Margin="9,100,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
-                                    <Label Content="{Binding ACProperty}" VerticalContentAlignment="Center" />
+                                    <Label Content="{Binding ACProperty}" VerticalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}" />
                                 </Border>
                                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="130" Margin="140,100,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
-                                    <Label Content="{Binding WeightProperty}" VerticalContentAlignment="Center" Margin="1,-1,-1,1" />
+                                    <Label Content="{Binding WeightProperty}" VerticalContentAlignment="Center" Margin="1,-1,-1,1" Foreground="{StaticResource Static.Foreground}" />
                                 </Border>
                                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="260" Margin="10,133,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
-                                    <Label Content="{Binding RarityProperty}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="1,-1,-1,1" />
+                                    <Label Content="{Binding RarityProperty}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="1,-1,-1,1" Foreground="{StaticResource Static.Foreground}"/>
                                 </Border>
                                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="147" Width="260" Margin="10,170,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
                                     <TextBox IsReadOnly="True" Text="{Binding DescriptionProperty, Mode=OneWay}" TextWrapping="Wrap" Margin="1,-1,-1,1" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />

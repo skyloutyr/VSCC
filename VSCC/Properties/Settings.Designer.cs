@@ -46,5 +46,17 @@ namespace VSCC.Properties {
                 this["ShowOutdatedVersionWindow"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Skin {
+            get {
+                return ((int)(this["Skin"]));
+            }
+            set {
+                this["Skin"] = value;
+            }
+        }
     }
 }

@@ -824,6 +824,18 @@
   <data name="MainMenu_View" xml:space="preserve">
     <value>Вид</value>
   </data>
+  <data name="MainMenu_View_Skins" xml:space="preserve">
+    <value>Темы</value>
+  </data>
+  <data name="MainMenu_View_Skins_Bright" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="MainMenu_View_Skins_Dark" xml:space="preserve">
+    <value>Тёмная</value>
+  </data>
+  <data name="MainMenu_View_Skins_Default" xml:space="preserve">
+    <value>По Умолчанию</value>
+  </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Действия</value>
   </data>

@@ -7,8 +7,8 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:p="clr-namespace:VSCC.Properties"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="White">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <TextBlock x:Name="TextBlock_Log" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True" Background="White" />
+        <TextBlock x:Name="TextBlock_Log" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True" Background="{StaticResource Static.Background}" />
     </ScrollViewer>
 </UserControl>

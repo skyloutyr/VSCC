@@ -8,9 +8,10 @@
         xmlns:Controls="clr-namespace:VSCC.Controls" x:Class="VSCC.MainWindow"
         xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:uc="clr-namespace:VSCC.Controls.Tabs"
-        xmlns:test="clr-namespace:VSCC.Controls.Templates.Scripts"
         mc:Ignorable="d"
-        Title="Visual Simple Character Creator - WPF Edition" Height="820" MaxHeight="820" Width="1030" MaxWidth="1030" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="Visual Simple Character Creator - WPF Edition" Height="820" MaxHeight="820" Width="1030" MaxWidth="1030" Loaded="Window_Loaded" Closing="Window_Closing" Background="{StaticResource Static.Background}">
+    <Window.Resources>
+    </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewEmpty_Click" />
         <CommandBinding Command="Save" Executed="Save_Click" />
@@ -19,72 +20,78 @@
         <CommandBinding Command="Close" Executed="Exit_Click" />
     </Window.CommandBindings>
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Menu Height="20" Width="960" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White">
-            <MenuItem x:Name="File" Background="{x:Null}" Header="{x:Static p:Resources.MainMenu_File}">
-                <MenuItem x:Name="NewOptions" Header="{x:Static p:Resources.MainMenu_File_New}">
-                    <MenuItem x:Name="NewEmpty" Header="{x:Static p:Resources.MainMenu_File_New_New}" Command="New"/>
-                    <MenuItem x:Name="NewScript" Header="{x:Static p:Resources.MainMenu_File_New_FromScript}" IsEnabled="False"/>
+        <Menu Height="20" Width="960" VerticalAlignment="Top" HorizontalAlignment="Left" Background="{StaticResource Static.Background}" Foreground="{StaticResource Static.Foreground}">
+            <MenuItem x:Name="File" Background="{StaticResource Static.Background}" Header="{x:Static p:Resources.MainMenu_File}" Style="{StaticResource RootMenuItem}">
+                <MenuItem x:Name="NewOptions" Header="{x:Static p:Resources.MainMenu_File_New}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItem}">
+                    <MenuItem x:Name="NewEmpty" Header="{x:Static p:Resources.MainMenu_File_New_New}" Command="New" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}"/>
+                    <MenuItem x:Name="NewScript" Header="{x:Static p:Resources.MainMenu_File_New_FromScript}" IsEnabled="False" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}"/>
                 </MenuItem>
-                <MenuItem x:Name="Open" Header="{x:Static p:Resources.MainMenu_Open}" Command="Open"/>
-                <MenuItem x:Name="Save" Header="{x:Static p:Resources.MainMenu_Save}" Command="Save"/>
-                <MenuItem x:Name="SaveAs" Header="{x:Static p:Resources.MainMenu_SaveAs}" Command="SaveAs"/>
-                <MenuItem x:Name="Exit" Header="{x:Static p:Resources.MainMenu_Exit}" Command="Close"/>
+                <MenuItem x:Name="Open" Header="{x:Static p:Resources.MainMenu_Open}" Command="Open" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}"/>
+                <MenuItem x:Name="Save" Header="{x:Static p:Resources.MainMenu_Save}" Command="Save" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}"/>
+                <MenuItem x:Name="SaveAs" Header="{x:Static p:Resources.MainMenu_SaveAs}" Command="SaveAs" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}"/>
+                <MenuItem x:Name="Exit" Header="{x:Static p:Resources.MainMenu_Exit}" Command="Close" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}"/>
             </MenuItem>
-            <MenuItem x:Name="Edit" Header="{x:Static p:Resources.MainMenu_Edit}" IsEnabled="True">
-                <MenuItem Header="{x:Static p:Resources.Edit_Languages}">
-                    <MenuItem x:Name="Language_English" IsCheckable="True" IsChecked="True" Header="English" Tag="en-US" Checked="MenuItem_Checked" />
-                    <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Tag="ru-RU" Checked="MenuItem_Checked" />
+            <MenuItem x:Name="Edit" Header="{x:Static p:Resources.MainMenu_Edit}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.Edit_Languages}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItem}">
+                    <MenuItem x:Name="Language_English" IsCheckable="True" IsChecked="True" Header="English" Tag="en-US" Checked="MenuItem_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
+                    <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Tag="ru-RU" Checked="MenuItem_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                 </MenuItem>
             </MenuItem>
-            <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="True">
-                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_Scripts}" Click="MenuItem_Click_3" />
-                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_DoFile}" Click="MenuItem_Click_2" />
+            <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_Scripts}" Click="MenuItem_Click_3" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_DoFile}" Click="MenuItem_Click_2" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
             </MenuItem>
-            <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="False"/>
-            <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left">
-                <MenuItem Header="{x:Static p:Resources.MainMenu_Info}" Click="MenuItem_Click" />
-                <MenuItem Header="{x:Static p:Resources.MainMenu_Roadmap}" />
-                <MenuItem Header="{x:Static p:Resources.MainMenu_CheckForUpdates}" Click="MenuItem_Click_1" />
+            <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.MainMenu_View_Skins}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItem}">
+                    <MenuItem x:Name="Skin_Default" IsCheckable="True" IsChecked="True" Header="{x:Static p:Resources.MainMenu_View_Skins_Default}" Tag="0" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
+                    <MenuItem x:Name="Skin_Bright" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Bright}" Tag="1" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
+                    <MenuItem x:Name="Skin_Dark" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Dark}" Tag="2" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Info}" Click="MenuItem_Click" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Roadmap}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_CheckForUpdates}" Click="MenuItem_Click_1" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
             </MenuItem>
         </Menu>
-        <TabControl x:Name="MainTabs" Margin="0,22,0,0">
-            <TabItem x:Name="TabGeneral" Header="{x:Static p:Resources.Tab_General}">
-                <DockPanel LastChildFill="False" Margin="0">
+        <TabControl x:Name="MainTabs" Margin="0,22,0,0" Background="Transparent" BorderThickness="0 1 0 0">
+            <TabItem x:Name="TabGeneral" Header="{x:Static p:Resources.Tab_General}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:GeneralTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabExtra" Header="{x:Static p:Resources.Tab_Extras}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabExtra" Header="{x:Static p:Resources.Tab_Extras}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:ExtrasTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabInventory" Header="{x:Static p:Resources.Tab_Inventory}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabInventory" Header="{x:Static p:Resources.Tab_Inventory}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:InventoryTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabItemCatalog" Header="{x:Static p:Resources.Tab_InventoryCodex}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabItemCatalog" Header="{x:Static p:Resources.Tab_InventoryCodex}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:ItemIndexTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabSpellbook" Header="{x:Static p:Resources.Tab_Spellbook}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabSpellbook" Header="{x:Static p:Resources.Tab_Spellbook}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:SpellbookTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabSpellCatalog" Header="{x:Static p:Resources.Tab_SpellCodex}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabSpellCatalog" Header="{x:Static p:Resources.Tab_SpellCodex}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:SpellIndexTab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabRoll20" Header="{x:Static p:Resources.Tab_Roll20}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabRoll20" Header="{x:Static p:Resources.Tab_Roll20}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:Roll20Tab/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="TabScripting" Header="{x:Static p:Resources.Tab_Scripting}">
-                <DockPanel LastChildFill="False" Margin="0">
+            <TabItem x:Name="TabScripting" Header="{x:Static p:Resources.Tab_Scripting}" Foreground="{StaticResource Static.Foreground}">
+                <DockPanel LastChildFill="False" Margin="0" Background="{StaticResource Static.Background}">
                     <uc:ScriptingTab/>
                 </DockPanel>
             </TabItem>

@@ -7,12 +7,12 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:p="clr-namespace:VSCC.Properties"
         mc:Ignorable="d"
-        Title="ChangeMinMaxWindow" Height="100" Width="192">
+        Title="ChangeMinMaxWindow" Height="100" Width="192" Background="{StaticResource Static.Background}">
     <Grid>
-        <xctk:DecimalUpDown x:Name="DUD_Min" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="64" ButtonSpinnerLocation="Left" />
-        <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,7,0,0" />
-        <xctk:DecimalUpDown x:Name="DUD_Max" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,10,0,0" Width="64" />
-        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,40,0,0" Click="Button_Click" />
-        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="110,40,0,0" Click="Button_Click_1" />
+        <xctk:SingleUpDown x:Name="DUD_Min" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="64" ButtonSpinnerLocation="Left" />
+        <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,7,0,0" Foreground="{StaticResource Static.Foreground}" />
+        <xctk:SingleUpDown x:Name="DUD_Max" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,10,0,0" Width="64" />
+        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,40,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
+        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="110,40,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
     </Grid>
 </Window>

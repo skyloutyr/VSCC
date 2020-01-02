@@ -7,9 +7,9 @@
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="CreateIItemWindow" Height="480" Width="386">
+        Title="CreateIItemWindow" Height="480" Width="386" Background="{StaticResource Static.Background}">
     <Grid>
-        <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="128" Width="128" Margin="10,10,0,0">
+        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="128" Width="128" Margin="10,10,0,0">
             <Image x:Name="Img_Picture" Source="{Binding PictureProperty}" Stretch="Fill" />
         </Border>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="32" Margin="106,106,0,0" Click="Button_Click_2">
@@ -18,19 +18,19 @@
         <TextBox x:Name="TextBox_Name" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="226" Height="28" />
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="143,43,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateItem_Amount}" VerticalContentAlignment="Center" />
+                <Label Content="{x:Static p:Resources.CreateItem_Amount}" VerticalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}" />
                 <xctk:IntegerUpDown x:Name="IntUD_Amount" Value="{Binding Amount}" HorizontalAlignment="Left" Margin="52,0,0,0" Width="52" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="263,44,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateItem_Weight}" VerticalContentAlignment="Center" Margin="1,-1,-1,1" />
+                <Label Content="{x:Static p:Resources.CreateItem_Weight}" VerticalContentAlignment="Center" Margin="1,-1,-1,1" Foreground="{StaticResource Static.Foreground}" />
                 <xctk:SingleUpDown x:Name="SUD_Weight" Value="{Binding Weight}" HorizontalAlignment="Left" Margin="52,0,0,0" Width="52" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="58" Width="226" Margin="143,80,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateItem_Cost}" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="-4,-8,0,0" />
+                <Label Content="{x:Static p:Resources.CreateItem_Cost}" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Margin="-4,-8,0,0" Foreground="{StaticResource Static.Foreground}" />
                 <xctk:IntegerUpDown x:Name="IntUD_Cost_GP" Value="{Binding GP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,14,0,0" Width="55" Height="32" />
                 <xctk:IntegerUpDown x:Name="IntUD_Cost_SP" Value="{Binding SP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="81,14,0,0" Width="54" Height="32" />
                 <xctk:IntegerUpDown x:Name="IntUD_Cost_CP" Value="{Binding CP}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,14,0,0" Width="54" Height="32" />
@@ -41,8 +41,8 @@
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="178" Margin="10,143,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateItem_Type}" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Top" Margin="0,-8,0,0" Height="26" />
-                <ComboBox x:Name="ComboBox_Type" Text="{Binding Type}" IsReadOnly="False" IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0">
+                <Label Content="{x:Static p:Resources.CreateItem_Type}" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Top" Margin="0,-8,0,0" Height="26" Foreground="{StaticResource Static.Foreground}" />
+                <ComboBox x:Name="ComboBox_Type" Text="{Binding Type}" IsReadOnly="False" IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0" Foreground="{StaticResource Static.Foreground}">
                     <ComboBoxItem Content="{x:Static p:Resources.CreateItem_Type_Ammo}" />
                     <ComboBoxItem Content="{x:Static p:Resources.CreateItem_Type_Arcane}" />
                     <ComboBoxItem Content="{x:Static p:Resources.CreateItem_Type_Armor}" />
@@ -58,8 +58,8 @@
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="178" Margin="191,143,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label Content="{x:Static p:Resources.CreateItem_Rarity}" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-8,0,0" Height="26" />
-                <ComboBox x:Name="ComboBox_Rarity" Text="{Binding Rarity}" IsReadOnly="False" IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0">
+                <Label Content="{x:Static p:Resources.CreateItem_Rarity}" VerticalContentAlignment="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-8,0,0" Height="26" Foreground="{StaticResource Static.Foreground}" />
+                <ComboBox x:Name="ComboBox_Rarity" Text="{Binding Rarity}" IsReadOnly="False" IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Height="24" Margin="10,14,0,0" Foreground="{StaticResource Static.Foreground}">
                     <ComboBoxItem Content="{x:Static p:Resources.CreateItem_Rarity_Trash}" />
                     <ComboBoxItem Content="{x:Static p:Resources.CreateItem_Rarity_Common}" />
                     <ComboBoxItem Content="{x:Static p:Resources.CreateItem_Rarity_Uncommon}" />
@@ -73,11 +73,11 @@
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="221" Width="359" Margin="10,188,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
-                <Label VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateItem_Description}" VerticalContentAlignment="Center" Margin="-3,-8,0,0" />
+                <Label VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.CreateItem_Description}" VerticalContentAlignment="Center" Margin="-3,-8,0,0" Foreground="{StaticResource Static.Foreground}" />
                 <TextBox x:Name="TextBox_Description" Text="{Binding Description}" IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="337" Height="195" Margin="10,14,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" />
             </Grid>
         </Border>
-        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="10,0,0,3" Click="Button_Click" />
-        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="212,0,0,3" Click="Button_Click_1" />
+        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="10,0,0,3" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
+        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="212,0,0,3" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
     </Grid>
 </Window>

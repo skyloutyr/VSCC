@@ -78,12 +78,14 @@
     <Reference Include="NLua, Version=1.4.26.0, Culture=neutral, PublicKeyToken=6a194c04b9c89217, processorArchitecture=MSIL">
       <HintPath>..\packages\NLua.1.4.26\lib\net45\NLua.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="SemVer, Version=1.2.2.0, Culture=neutral, PublicKeyToken=a89bb7dc6f7a145c, processorArchitecture=MSIL">
       <HintPath>..\packages\SemanticVersioning.1.2.2\lib\net45\SemVer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -208,6 +210,7 @@
     <Compile Include="Scripting\TabCreator\ReverseUIGenerator.cs" />
     <Compile Include="Scripting\TabCreator\UIDefinition.cs" />
     <Compile Include="Scripting\TabCreator\UIGenerator.cs" />
+    <Compile Include="Skins\SkinResourceDictionary.cs" />
     <Compile Include="State\Adapters\SortingMethodAdapter.cs" />
     <Compile Include="State\AppEvents.cs" />
     <Compile Include="State\AppState.cs" />
@@ -331,6 +334,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Skins\Default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Dark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

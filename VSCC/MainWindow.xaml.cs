@@ -27,6 +27,7 @@ namespace VSCC
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.AppThread = Thread.CurrentThread;
             ChangeLanguage(Settings.Default.Language, true, false);
+            ChangeSkin(Settings.Default.Skin, false);
             InitializeComponent();
             AppState.Current.FreezeAutocalc = false;
         }
@@ -55,6 +56,9 @@ namespace VSCC
 
             this.Language_English.IsChecked = Settings.Default.Language.Equals("en-US");
             this.Language_Russian.IsChecked = Settings.Default.Language.Equals("ru-RU");
+            this.Skin_Default.IsChecked = Settings.Default.Skin == 0;
+            this.Skin_Bright.IsChecked = Settings.Default.Skin == 1;
+            this.Skin_Dark.IsChecked = Settings.Default.Skin == 2;
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
@@ -191,7 +195,7 @@ namespace VSCC
         {
             if (!AppState.Current.FreezeAutocalc)
             {
-                ChangeLanguage((sender as MenuItem).Tag.ToString(), false, true);
+                this.ChangeLanguage((sender as MenuItem).Tag.ToString(), false, true);
             }
         }
 
@@ -249,6 +253,31 @@ namespace VSCC
             }
         }
 
+        public void ChangeSkin(int skinID, bool reloadApp = false)
+        {
+            bool skinEquals = Settings.Default.Skin == skinID;
+            if (!skinEquals)
+            {
+                Settings.Default.Skin = skinID;
+                Settings.Default.Save();
+                ((App)Application.Current).ChangeSkin();
+                if (reloadApp)
+                {
+                    string s = AppState.Current.Save();
+                    this._forceClose = true;
+                    AppEvents.InvokeExit();
+                    Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
+                    this.Close();
+                    new MainWindow()
+                    {
+                        OldWindowSaveData = s
+                    }.Show();
+                    Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
+                    return;
+                }
+            }
+        }
+
         public bool CloseSelf()
         {
             if (AppState.Current.UnsavedChangesExist)
@@ -274,6 +303,14 @@ namespace VSCC
             }
 
             return true;
+        }
+
+        private void Skin_Default_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!AppState.Current.FreezeAutocalc)
+            {
+                this.ChangeSkin(int.Parse((sender as MenuItem).Tag.ToString()), true);
+            }
         }
     }
 }

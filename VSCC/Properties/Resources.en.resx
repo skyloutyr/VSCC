@@ -824,6 +824,18 @@ Separate multiple types by a new line</value>
   <data name="MainMenu_View" xml:space="preserve">
     <value>View</value>
   </data>
+  <data name="MainMenu_View_Skins" xml:space="preserve">
+    <value>Themes</value>
+  </data>
+  <data name="MainMenu_View_Skins_Bright" xml:space="preserve">
+    <value>Bright</value>
+  </data>
+  <data name="MainMenu_View_Skins_Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="MainMenu_View_Skins_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>

@@ -6,14 +6,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         mc:Ignorable="d"
-        Title="ScriptContextWindow" Height="450" Width="800">
+        Title="ScriptContextWindow" Height="450" Width="800" Background="{StaticResource Static.Background}">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
-            <Border VerticalAlignment="Top" Height="200" BorderBrush="DarkGray" BorderThickness="1" CornerRadius="2" Margin="0,0,63,0">
+            <Border VerticalAlignment="Top" Height="200" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="2" Margin="0,0,63,0">
                 <Label x:Name="Label_Description" HorizontalAlignment="Center" Margin="0, 30, 0, 0" />
             </Border>
-            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,0,10,0" Content="{x:Static p:Resources.Generic_OK}" Click="Button_Click" />
-            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,100,10,0" Content="{x:Static p:Resources.Generic_Cancel}" Click="Button_Click_1" />
+            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,0,10,0" Content="{x:Static p:Resources.Generic_OK}" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
+            <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="100" Margin="0,100,10,0" Content="{x:Static p:Resources.Generic_Cancel}" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
             <StackPanel x:Name="WrapPanel_Content" Margin="0,205,0,0" />
         </Grid>
     </ScrollViewer>

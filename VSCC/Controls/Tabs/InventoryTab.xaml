@@ -9,23 +9,23 @@
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="White" Initialized="UserControl_Initialized">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" Initialized="UserControl_Initialized">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
-            <GroupBox Header="{x:Static p:Resources.Inventory_Cash}" HorizontalAlignment="Left" Height="67" Margin="10,10,0,0" VerticalAlignment="Top" Width="980" Grid.ColumnSpan="2">
+            <GroupBox Header="{x:Static p:Resources.Inventory_Cash}" HorizontalAlignment="Left" Height="67" Margin="10,10,0,0" VerticalAlignment="Top" Width="980" Grid.ColumnSpan="2" Foreground="{StaticResource Static.Foreground}">
                 <Grid>
-                    <Label Content="{x:Static p:Resources.Inventory_PP}" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.Inventory_PP}" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/platinum_coin.png" Margin="33,17,0,0" />
                     <xctk:IntegerUpDown x:Name="IntUD_PP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,15,0,0" Width="64" Value="0" />
-                    <Label Content="{x:Static p:Resources.Inventory_GP}" HorizontalAlignment="Left" Margin="124,11,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.Inventory_GP}" HorizontalAlignment="Left" Margin="124,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown x:Name="IntUD_GP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,15,0,0" Width="64" Value="0" />
-                    <Label Content="{x:Static p:Resources.Inventory_EP}" HorizontalAlignment="Left" Margin="242,11,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.Inventory_EP}" HorizontalAlignment="Left" Margin="242,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown x:Name="IntUD_EP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,15,0,0" Width="64" Value="0" />
-                    <Label Content="{x:Static p:Resources.Inventory_SP}" HorizontalAlignment="Left" Margin="364,11,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.Inventory_SP}" HorizontalAlignment="Left" Margin="364,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown x:Name="IntUD_SP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="407,15,0,0" Width="64" Value="0" />
-                    <Label Content="{x:Static p:Resources.Inventory_CP}" HorizontalAlignment="Left" Margin="486,11,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{x:Static p:Resources.Inventory_CP}" HorizontalAlignment="Left" Margin="486,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown x:Name="IntUD_CP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="529,15,0,0" Width="64" Value="0" />
-                    <Button x:Name="Btn_AddCash" Content="+" HorizontalAlignment="Left" Margin="606,14,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="Btn_AddCash_Click"/>
+                    <Button x:Name="Btn_AddCash" Content="+" HorizontalAlignment="Left" Margin="606,14,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="Btn_AddCash_Click" Foreground="{StaticResource Static.Foreground}"/>
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/gold_coin.png" Margin="149,17,0,0" />
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/electrum_coin.png" Margin="264,17,0,0" />
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/silver_coin.png" Margin="386,17,0,0" />
@@ -50,7 +50,7 @@
                     <vscc:InventoryItemPanel x:Name="IIP_Misc2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="222,89,0,0" />
                 </Grid>
             </GroupBox>
-            <GroupBox Header="{x:Static p:Resources.Inventory_Rings}" HorizontalAlignment="Left" Height="189" Margin="654,531,0,0" VerticalAlignment="Top" Width="336">
+            <GroupBox Header="{x:Static p:Resources.Inventory_Rings}" HorizontalAlignment="Left" Height="189" Margin="654,531,0,0" VerticalAlignment="Top" Width="336" Foreground="{StaticResource Static.Foreground}">
                 <Grid>
                     <vscc:InventoryItemPanel x:Name="IIP_Ring0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" />
                     <vscc:InventoryItemPanel x:Name="IIP_Ring1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0" />
@@ -62,13 +62,13 @@
                     <vscc:InventoryItemPanel x:Name="IIP_Ring7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,88,0,0" />
                 </Grid>
             </GroupBox>
-            <GroupBox Header="{x:Static p:Resources.Inventory_Backpack}" HorizontalAlignment="Left" Height="638" Margin="10,82,0,0" VerticalAlignment="Top" Width="639" Grid.ColumnSpan="2">
+            <GroupBox Header="{x:Static p:Resources.Inventory_Backpack}" HorizontalAlignment="Left" Height="638" Margin="10,82,0,0" VerticalAlignment="Top" Width="639" Grid.ColumnSpan="2" Foreground="{StaticResource Static.Foreground}">
                 <Grid>
-                    <Label Content="{x:Static p:Resources.Inventory_Sorting}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <CheckBox x:Name="CheckBox_ReverseSearchResults" Content="{x:Static p:Resources.Inventory_InvertSort}" HorizontalAlignment="Left" Margin="117,7,0,0" VerticalAlignment="Top" Checked="CheckBox_ReverseSearchResults_Checked" Unchecked="CheckBox_ReverseSearchResults_Checked"/>
-                    <Label Content="{x:Static p:Resources.Inventory_Filter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="449,-5,0,0"/>
+                    <Label Content="{x:Static p:Resources.Inventory_Sorting}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                    <CheckBox x:Name="CheckBox_ReverseSearchResults" Content="{x:Static p:Resources.Inventory_InvertSort}" HorizontalAlignment="Left" Margin="117,7,0,0" VerticalAlignment="Top" Checked="CheckBox_ReverseSearchResults_Checked" Unchecked="CheckBox_ReverseSearchResults_Checked" Foreground="{StaticResource Static.Foreground}"/>
+                    <Label Content="{x:Static p:Resources.Inventory_Filter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="449,-5,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <TextBox x:Name="TextBox_Filter" HorizontalAlignment="Left" Height="23" Margin="450,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" TextChanged="TextBox_Filter_TextChanged"/>
-                    <ComboBox x:Name="ComboBox_SortBy" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SortBy_SelectionChanged">
+                    <ComboBox x:Name="ComboBox_SortBy" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SortBy_SelectionChanged" Foreground="{StaticResource Static.Foreground}">
                         <ComboBoxItem x:Name="SortBy_Name" Content="{x:Static p:Resources.Inventory_Sort_Name}" IsSelected="True" />
                         <ComboBoxItem x:Name="SortBy_Amount" Content="{x:Static p:Resources.Inventory_Sort_Amount}" />
                         <ComboBoxItem x:Name="SortBy_Weight" Content="{x:Static p:Resources.Inventory_Sort_Weight}" />
@@ -78,11 +78,11 @@
                         <ComboBoxItem x:Name="SortBy_Rarity" Content="{x:Static p:Resources.Inventory_Sort_Rarity}" />
                         <ComboBoxItem x:Name="SortBy_Type" Content="{x:Static p:Resources.Inventory_Sort_Type}" />
                     </ComboBox>
-                    <Border HorizontalAlignment="Left" Height="557" Margin="10,49,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="DarkGray">
-                        <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick" BorderThickness="0">
+                    <Border HorizontalAlignment="Left" Height="557" Margin="10,49,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
+                        <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick" BorderThickness="0" Background="Transparent">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <wpftk:VirtualizingWrapPanel />
+                                    <wpftk:VirtualizingWrapPanel Background="{StaticResource Static.Background}" />
                                 </ItemsPanelTemplate>
                             </ListView.ItemsPanel>
                             <ListView.ItemTemplate>
@@ -109,12 +109,12 @@
                     <Button x:Name="Btn_Add" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Add_Click">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <Label Content="{x:Static p:Resources.Inventory_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,1,0,0"/>
-                    <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,19,0,0"/>
+                    <Label Content="{x:Static p:Resources.Inventory_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,1,0,0" Foreground="{StaticResource Static.Foreground}"/>
+                    <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,19,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:SingleUpDown x:Name="IntUD_WeightCurrent" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,23,0,0" Width="50"/>
                     <xctk:SingleUpDown x:Name="IntUD_WeightMax1" Value="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299,23,0,0" Width="50"/>
                     <xctk:SingleUpDown x:Name="IntUD_WeightMax2" Value="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="361,23,0,0" Width="50"/>
-                    <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,19,0,0"/>
+                    <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="348,19,0,0" Foreground="{StaticResource Static.Foreground}"/>
                 </Grid>
             </GroupBox>
         </Grid>
