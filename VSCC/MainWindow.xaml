@@ -42,7 +42,7 @@
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_DoFile}" Click="MenuItem_Click_2" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
             </MenuItem>
             <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
-                <MenuItem Header="{x:Static p:Resources.MainMenu_View_Skins}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItem}">
+                <MenuItem x:Name="Skins" Header="{x:Static p:Resources.MainMenu_View_Skins}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItem}">
                     <MenuItem x:Name="Skin_Default" IsCheckable="True" IsChecked="True" Header="{x:Static p:Resources.MainMenu_View_Skins_Default}" Tag="0" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                     <MenuItem x:Name="Skin_Bright" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Bright}" Tag="1" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                     <MenuItem x:Name="Skin_Dark" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Dark}" Tag="2" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>

@@ -8,6 +8,7 @@ using System.Windows.Input;
 using VSCC.Controls.Windows;
 using VSCC.Properties;
 using VSCC.Scripting;
+using VSCC.Skins;
 using VSCC.State;
 using VSCC.VersionManager;
 
@@ -59,6 +60,7 @@ namespace VSCC
             this.Skin_Default.IsChecked = Settings.Default.Skin == 0;
             this.Skin_Bright.IsChecked = Settings.Default.Skin == 1;
             this.Skin_Dark.IsChecked = Settings.Default.Skin == 2;
+            this.Skins.IsEnabled = SkinResourceDictionary.IsRunningWin8OrGreater();
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
@@ -255,25 +257,28 @@ namespace VSCC
 
         public void ChangeSkin(int skinID, bool reloadApp = false)
         {
-            bool skinEquals = Settings.Default.Skin == skinID;
-            if (!skinEquals)
+            if (SkinResourceDictionary.IsRunningWin8OrGreater())
             {
-                Settings.Default.Skin = skinID;
-                Settings.Default.Save();
-                ((App)Application.Current).ChangeSkin();
-                if (reloadApp)
+                bool skinEquals = Settings.Default.Skin == skinID;
+                if (!skinEquals)
                 {
-                    string s = AppState.Current.Save();
-                    this._forceClose = true;
-                    AppEvents.InvokeExit();
-                    Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
-                    this.Close();
-                    new MainWindow()
+                    Settings.Default.Skin = skinID;
+                    Settings.Default.Save();
+                    ((App)Application.Current).ChangeSkin();
+                    if (reloadApp)
                     {
-                        OldWindowSaveData = s
-                    }.Show();
-                    Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
-                    return;
+                        string s = AppState.Current.Save();
+                        this._forceClose = true;
+                        AppEvents.InvokeExit();
+                        Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
+                        this.Close();
+                        new MainWindow()
+                        {
+                            OldWindowSaveData = s
+                        }.Show();
+                        Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
+                        return;
+                    }
                 }
             }
         }

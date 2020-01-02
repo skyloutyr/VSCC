@@ -42,7 +42,7 @@ namespace VSCC.Skins
 
         public void UpdateSource()
         {
-            Uri value = Settings.Default.Skin == 0 ? this.ResolveSystemSkin() : Settings.Default.Skin == 1 ? this._defaultSource : this._darkSource;
+            Uri value = IsRunningWin8OrGreater() ? Settings.Default.Skin == 0 ? this.ResolveSystemSkin() : Settings.Default.Skin == 1 ? this._defaultSource : this._darkSource : this._defaultSource;
             if (value != null && base.Source != value)
             {
                 base.Source = value;
@@ -64,6 +64,22 @@ namespace VSCC.Skins
                 int registryValue = (int)registryValueObject;
                 return registryValue > 0 ? this._defaultSource : this._darkSource;
             }
+        }
+
+        public static bool IsRunningWin8OrGreater()
+        {
+            OperatingSystem os = Environment.OSVersion;
+
+            // Only support skins on windows
+            if (os.Platform == PlatformID.Win32NT)
+            {
+                Version vs = os.Version;
+
+                // win 8 or greater
+                return vs.Major == 10 || (vs.Major == 6 && vs.Minor >= 2);
+            }
+
+            return true;
         }
     }
 }
