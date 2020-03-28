@@ -1,21 +1,18 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using System.Windows.Threading;
-
-namespace VSCC.Models.ImageList
+﻿namespace VSCC.Models.ImageList
 {
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Threading;
+
     public class ImageModel
     {
         private volatile bool _finished;
-        private Func<string, Tuple<bool, Func<Stream>>> _imageSourceGetter;
+        private readonly Func<string, Tuple<bool, Func<Stream>>> _imageSourceGetter;
         private BitmapImage _img;
 
-        public BitmapImage Image
-        {
-            get => this._finished ? this._img : null;
-        }
+        public BitmapImage Image => this._finished ? this._img : null;
 
         public bool Async { get; set; }
         public string Name { get; }
@@ -46,6 +43,7 @@ namespace VSCC.Models.ImageList
                         bi.CacheOption = BitmapCacheOption.OnLoad;
                         bi.StreamSource = ms;
                         bi.EndInit();
+                        bi.StreamSource = null;
                         bi.Freeze();
                         if (this.Async)
                         {
