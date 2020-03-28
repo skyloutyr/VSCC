@@ -22,13 +22,13 @@
 
         public InventoryTab()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.Images.LoadFromPhysicalFolder("./Images/Lists/Items");
             this.Items.CollectionChanged += (o, e) => this.Inventory.Items.Refresh();
             this.Inventory.ItemsSource = this.Items;
             this.Inventory.Items.Refresh();
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.Inventory.ItemsSource);
-            view.Filter = Filter;
+            view.Filter = this.Filter;
             view.SortDescriptions.Clear();
             view.SortDescriptions.Add(new System.ComponentModel.SortDescription("Name", this.CheckBox_ReverseSearchResults.IsChecked ?? false ? System.ComponentModel.ListSortDirection.Descending : System.ComponentModel.ListSortDirection.Ascending));
         }
@@ -121,10 +121,7 @@
             }
         }
 
-        private void TextBox_Filter_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            CollectionViewSource.GetDefaultView(this.Inventory.ItemsSource).Refresh();
-        }
+        private void TextBox_Filter_TextChanged(object sender, TextChangedEventArgs e) => CollectionViewSource.GetDefaultView(this.Inventory.ItemsSource).Refresh();
 
         private void ChangeSortingMethod()
         {
@@ -203,15 +200,12 @@
         }
 
         private Point startPoint;
-        private void Inventory_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            startPoint = e.GetPosition(null);
-        }
+        private void Inventory_MouseDown(object sender, MouseButtonEventArgs e) => this.startPoint = e.GetPosition(null);
 
         private void Inventory_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             Point mousePos = e.GetPosition(null);
-            Vector diff = startPoint - mousePos;
+            Vector diff = this.startPoint - mousePos;
             if (e.LeftButton == MouseButtonState.Pressed && Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance || Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
             {
                 ListView listView = sender as ListView;

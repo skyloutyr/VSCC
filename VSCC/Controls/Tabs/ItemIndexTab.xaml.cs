@@ -1,19 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VSCC.Controls.Windows;
 using VSCC.DataType;
 using VSCC.State;
@@ -33,20 +25,17 @@ namespace VSCC.Controls.Tabs
 
         public ItemIndexTab()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.ToItemCommand = new CommandToItem(this);
             this.ListView_ItemTemplates.ItemsSource = this.AllItemTemplates;
             string database = Properties.Resources.dnd5eitemindex;
             this.AllItemTemplates.AddRange(JsonConvert.DeserializeObject<ItemTemplate[]>(database));
             this.ListView_ItemTemplates.Items.Refresh();
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.ListView_ItemTemplates.ItemsSource);
-            view.Filter = Filter;
+            view.Filter = this.Filter;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            CollectionViewSource.GetDefaultView(this.ListView_ItemTemplates.ItemsSource).Refresh();
-        }
+        private void Button_Click(object sender, RoutedEventArgs e) => CollectionViewSource.GetDefaultView(this.ListView_ItemTemplates.ItemsSource).Refresh();
 
         private bool Filter(object item)
         {
@@ -137,7 +126,7 @@ namespace VSCC.Controls.Tabs
 
             int boxes_checked = 0;
             int matches = 0;
-            foreach (CheckBox cb in new []{ this.CheckBox_Property_Light, this.CheckBox_Property_Heavy, this.CheckBox_Property_Ammo, this.CheckBox_Property_Finesse, this.CheckBox_Property_Loading, this.CheckBox_Property_Range, this.CheckBox_Property_Reach, this.CheckBox_Property_Thrown, this.CheckBox_Property_TwoHanded, this.CheckBox_Property_Versatile })
+            foreach (CheckBox cb in new[] { this.CheckBox_Property_Light, this.CheckBox_Property_Heavy, this.CheckBox_Property_Ammo, this.CheckBox_Property_Finesse, this.CheckBox_Property_Loading, this.CheckBox_Property_Range, this.CheckBox_Property_Reach, this.CheckBox_Property_Thrown, this.CheckBox_Property_TwoHanded, this.CheckBox_Property_Versatile })
             {
                 if (cb.IsChecked ?? false)
                 {
@@ -182,21 +171,20 @@ namespace VSCC.Controls.Tabs
     {
         private readonly ItemIndexTab _owner;
 
-        #pragma warning disable 0067 
+#pragma warning disable 0067
         public event EventHandler CanExecuteChanged;
 
-        public CommandToItem(ItemIndexTab owner)
-        {
-            _owner = owner;
-        }
+        public CommandToItem(ItemIndexTab owner) => this._owner = owner;
 
         public bool CanExecute(object parameter) => true;
 
         public void Execute(object parameter)
         {
             ItemTemplate it = (ItemTemplate)parameter;
-            InventoryItem ii = new InventoryItem(it);
-            ii.ImageList = AppState.Current.TInventory.Images;
+            InventoryItem ii = new InventoryItem(it)
+            {
+                ImageList = AppState.Current.TInventory.Images
+            };
             CreateIItemWindow cciw = new CreateIItemWindow();
             cciw.SetDataContext(ii);
             if (cciw.ShowDialog() ?? false)

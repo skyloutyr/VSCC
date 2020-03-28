@@ -1,6 +1,5 @@
 ﻿using NLua;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -39,13 +38,13 @@ namespace VSCC.Scripting
 
         private void Setup()
         {
-            Log(LogLevel.Fine, "Initializing script engine.");
+            this.Log(LogLevel.Fine, "Initializing script engine.");
             this.Lua.State.Encoding = System.Text.Encoding.UTF8;
             this.Lua["State"] = AppState.Current.State;
             this.Lua["Engine"] = this;
             this.Lua["Roll20"] = new Roll20Provider();
             this.Lua["UI"] = new UIProvider();
-            Log(LogLevel.Fine, "Looking for scripts...");
+            this.Log(LogLevel.Fine, "Looking for scripts...");
             int loaded = 0, errored = 0;
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -56,22 +55,22 @@ namespace VSCC.Scripting
 
             foreach (string file in Directory.EnumerateFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts"), "*.lua", SearchOption.AllDirectories))
             {
-                Log(LogLevel.Fine, "Loading script " + Path.GetFileName(file));
+                this.Log(LogLevel.Fine, "Loading script " + Path.GetFileName(file));
                 try
                 {
                     this.Lua.DoFile(file);
-                    Log(LogLevel.Fine, "Loaded script " + Path.GetFileName(file));
+                    this.Log(LogLevel.Fine, "Loaded script " + Path.GetFileName(file));
                     ++loaded;
                 }
                 catch
                 {
-                    Log(LogLevel.Fatal, "Loading of script " + Path.GetFileName(file) + " failed, script errored.");
+                    this.Log(LogLevel.Fatal, "Loading of script " + Path.GetFileName(file) + " failed, script errored.");
                     ++errored;
                 }
             }
 
             sw.Stop();
-            Log(LogLevel.Fine, $"Done loading scripts, took { sw.ElapsedMilliseconds }ms, loaded { loaded } scripts, { errored } errored.");
+            this.Log(LogLevel.Fine, $"Done loading scripts, took { sw.ElapsedMilliseconds }ms, loaded { loaded } scripts, { errored } errored.");
         }
 
         public void DoFile(string file)
@@ -87,11 +86,11 @@ namespace VSCC.Scripting
             }
             catch (Exception e)
             {
-                Log(LogLevel.Error, "Doing file " + Path.GetFileName(file) + " failed, script errored.");
-                Log(LogLevel.Error, "The error was: " + e.GetType().Name);
+                this.Log(LogLevel.Error, "Doing file " + Path.GetFileName(file) + " failed, script errored.");
+                this.Log(LogLevel.Error, "The error was: " + e.GetType().Name);
                 foreach (string s in e.StackTrace.Split('\n'))
                 {
-                    Log(LogLevel.Error, s);
+                    this.Log(LogLevel.Error, s);
                 }
             }
         }
@@ -182,10 +181,10 @@ namespace VSCC.Scripting
                         UIElement elem = null;
                         if (value is bool bo)
                         {
-                            elem = new CheckBox() 
-                            { 
-                                IsChecked = bo, 
-                                VerticalAlignment = VerticalAlignment.Top, 
+                            elem = new CheckBox()
+                            {
+                                IsChecked = bo,
+                                VerticalAlignment = VerticalAlignment.Top,
                                 HorizontalAlignment = HorizontalAlignment.Left,
                             };
                         }
@@ -335,10 +334,7 @@ namespace VSCC.Scripting
             }
         }
 
-        public bool ShowMessage(string title, string text)
-        {
-            return System.Windows.MessageBox.Show(text, title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
-        }
+        public bool ShowMessage(string title, string text) => System.Windows.MessageBox.Show(text, title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
 
         public string GetCurrentLanguage() => Settings.Default.Language;
 

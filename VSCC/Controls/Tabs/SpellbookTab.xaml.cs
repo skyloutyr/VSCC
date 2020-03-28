@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VSCC.Controls.Windows;
 using VSCC.DataType;
 using VSCC.Models.ImageList;
@@ -79,7 +69,7 @@ namespace VSCC.Controls.Tabs
 
         public SpellbookTab()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.Images.LoadFromPhysicalFolder("./Images/Lists/Spells");
 
             this.Spells0.CollectionChanged += (o, e) => this.List_Cantrips.Items.Refresh();
@@ -266,10 +256,7 @@ namespace VSCC.Controls.Tabs
             }
         }
 
-        private void NewSpellCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
+        private void NewSpellCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e) => e.CanExecute = true;
 
         private void EditSpellCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -285,10 +272,7 @@ namespace VSCC.Controls.Tabs
             }
         }
 
-        private void EditSpellCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
+        private void EditSpellCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e) => e.CanExecute = true;
 
         private void DeleteSpellCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -302,10 +286,7 @@ namespace VSCC.Controls.Tabs
             }
         }
 
-        private void DeleteSpellCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
+        private void DeleteSpellCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e) => e.CanExecute = true;
 
         private void List_Cantrips_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -315,15 +296,9 @@ namespace VSCC.Controls.Tabs
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.MoveSelectedSpell(true);
-        }
+        private void Button_Click(object sender, RoutedEventArgs e) => this.MoveSelectedSpell(true);
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.MoveSelectedSpell(false);
-        }
+        private void Button_Click_1(object sender, RoutedEventArgs e) => this.MoveSelectedSpell(false);
 
         private void MoveSelectedSpell(bool direction)
         {

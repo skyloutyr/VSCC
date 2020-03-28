@@ -2,17 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VSCC.Controls.Windows;
 using VSCC.State;
 using Xceed.Wpf.Toolkit;
@@ -28,8 +20,8 @@ namespace VSCC.Controls.Tabs
         private KeyValuePair<IntegerUpDown, IntegerUpDown[]>[] _statsSkillsMap;
         public GeneralTab()
         {
-            InitializeComponent();
-            this._statsProfMap = new []
+            this.InitializeComponent();
+            this._statsProfMap = new[]
             {
                 new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Str, this.IntUD_Saves_Str),
                 new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Dex, this.IntUD_Saves_Dex),
@@ -58,7 +50,7 @@ namespace VSCC.Controls.Tabs
                 new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Persuasion, this.IntUD_Persuasion),
             };
 
-            this._statsSkillsMap = new []
+            this._statsSkillsMap = new[]
             {
                 new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Str, new []{ this.IntUD_Saves_Str, this.IntUD_Athletics }),
                 new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Dex, new []{ this.IntUD_Saves_Dex, this.IntUD_Acrobatics, this.IntUD_SleightOfHand, this.IntUD_Stealth }),
@@ -178,15 +170,9 @@ namespace VSCC.Controls.Tabs
             }
         }
 
-        private void CheckBox_Stat_Checked(object sender, RoutedEventArgs e)
-        {
-            this.ChangeStatData((CheckBox)sender, true);
-        }
+        private void CheckBox_Stat_Checked(object sender, RoutedEventArgs e) => this.ChangeStatData((CheckBox)sender, true);
 
-        private void CheckBox_Stat_UnChecked(object sender, RoutedEventArgs e)
-        {
-            this.ChangeStatData((CheckBox)sender, false);
-        }
+        private void CheckBox_Stat_UnChecked(object sender, RoutedEventArgs e) => this.ChangeStatData((CheckBox)sender, false);
 
         private void ChangeStatData(CheckBox stat, bool check)
         {
@@ -288,7 +274,7 @@ namespace VSCC.Controls.Tabs
                             }
                             else
                             {
-                                 valueChanger = i => AppState.Current.State.General.CurrentTempHP -= i;
+                                valueChanger = i => AppState.Current.State.General.CurrentTempHP -= i;
                             }
                         }
                     }

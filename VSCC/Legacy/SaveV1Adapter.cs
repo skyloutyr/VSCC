@@ -178,10 +178,7 @@ namespace VSCC.Legacy
             }
         }
 
-        private static int AdaptDeathData(bool b0, bool b1, bool b2)
-        {
-            return 0 + (b0 ? 1 : 0) + (b1 ? 1 : 0) + (b2 ? 1 : 0);
-        }
+        private static int AdaptDeathData(bool b0, bool b1, bool b2) => 0 + (b0 ? 1 : 0) + (b1 ? 1 : 0) + (b2 ? 1 : 0);
 
         private static (Action<bool>, Action<int>) AdaptSkillsSaves(int i)
         {

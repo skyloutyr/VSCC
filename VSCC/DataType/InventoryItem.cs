@@ -62,19 +62,19 @@ namespace VSCC.DataType
 
         public string Name
         {
-            get => name;
+            get => this.name;
             set
             {
-                name = value;
+                this.name = value;
                 this.OnPropertyChanged("Name");
             }
         }
         public int Amount
         {
-            get => amount;
+            get => this.amount;
             set
             {
-                amount = value;
+                this.amount = value;
                 this.OnPropertyChanged("Amount");
                 this.OnPropertyChanged("AmountProperty");
                 this.OnPropertyChanged("TotalWeightProperty");
@@ -82,56 +82,56 @@ namespace VSCC.DataType
         }
         public float Weight
         {
-            get => weight;
+            get => this.weight;
             set
             {
-                weight = value;
+                this.weight = value;
                 this.OnPropertyChanged("Weight");
                 this.OnPropertyChanged("TotalWeightProperty");
             }
         }
         public CostValue Cost
         {
-            get => cost;
+            get => this.cost;
             set
             {
-                cost = value;
+                this.cost = value;
                 this.OnPropertyChanged("TotalCostProperty");
             }
         }
         public string Type
         {
-            get => type;
+            get => this.type;
             set
             {
-                type = value;
+                this.type = value;
                 this.OnPropertyChanged("Type");
             }
         }
         public string Rarity
         {
-            get => rarity;
+            get => this.rarity;
             set
             {
-                rarity = value;
+                this.rarity = value;
                 this.OnPropertyChanged("Rarity");
             }
         }
         public string Description
         {
-            get => description;
+            get => this.description;
             set
             {
-                description = value;
+                this.description = value;
                 this.OnPropertyChanged("Description");
             }
         }
         public string ImageIndex
         {
-            get => imageIndex;
+            get => this.imageIndex;
             set
             {
-                imageIndex = value;
+                this.imageIndex = value;
                 this.OnPropertyChanged("ImageIndex");
                 this.OnPropertyChanged("PictureProperty");
             }
@@ -239,20 +239,17 @@ namespace VSCC.DataType
             return false;
         }
 
-        public static InventoryItem Apply(JObject obj)
+        public static InventoryItem Apply(JObject obj) => new InventoryItem()
         {
-            return new InventoryItem()
-            {
-                Name = obj.Value<string>("Name"),
-                Amount = obj.Value<int>("Amount"),
-                Weight = (float)obj.Value<int>("Weight"),
-                Cost = new CostValue(obj.Value<int>("Cost"), 0, 0),
-                Type = obj.Value<string>("Type"),
-                Rarity = obj.Value<string>("Rarity"),
-                Description = obj.Value<string>("Description"),
-                ImageIndex = "",
-                Template = ItemTemplate.Empty
-            };
-        }
+            Name = obj.Value<string>("Name"),
+            Amount = obj.Value<int>("Amount"),
+            Weight = obj.Value<int>("Weight"),
+            Cost = new CostValue(obj.Value<int>("Cost"), 0, 0),
+            Type = obj.Value<string>("Type"),
+            Rarity = obj.Value<string>("Rarity"),
+            Description = obj.Value<string>("Description"),
+            ImageIndex = "",
+            Template = ItemTemplate.Empty
+        };
     }
 }

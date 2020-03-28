@@ -4,20 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VSCC.Controls.Windows;
 using VSCC.DataType;
 using VSCC.Models.ImageList;
@@ -35,7 +27,7 @@ namespace VSCC.Controls.Tabs
 
         public SpellIndexTab()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.ToSpellCommand = new ToSpellCommand(this);
             this.SchoolImages.LoadFromEmbeddedFolder("Images/Schools");
             this.ListView_SpellTemplates.ItemsSource = this.AllSpellTemplates;
@@ -45,7 +37,7 @@ namespace VSCC.Controls.Tabs
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.ListView_SpellTemplates.ItemsSource);
             view.SortDescriptions.Add(new SortDescription("Level", ListSortDirection.Ascending));
             view.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Ascending));
-            view.Filter = Filter;
+            view.Filter = this.Filter;
             this.ListView_SpellTemplates.Items.Refresh();
         }
 
@@ -147,10 +139,7 @@ namespace VSCC.Controls.Tabs
             return sourcesQualify;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ((CollectionView)CollectionViewSource.GetDefaultView(this.ListView_SpellTemplates.ItemsSource)).Refresh();
-        }
+        private void Button_Click(object sender, RoutedEventArgs e) => ((CollectionView)CollectionViewSource.GetDefaultView(this.ListView_SpellTemplates.ItemsSource)).Refresh();
     }
 
     public class ToSpellCommand : ICommand
@@ -160,15 +149,9 @@ namespace VSCC.Controls.Tabs
 #pragma warning disable 0067
         public event EventHandler CanExecuteChanged;
 
-        public ToSpellCommand(SpellIndexTab sit)
-        {
-            this._owner = sit;
-        }
+        public ToSpellCommand(SpellIndexTab sit) => this._owner = sit;
 
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
+        public bool CanExecute(object parameter) => true;
 
         public void Execute(object parameter)
         {

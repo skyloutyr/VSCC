@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace VSCC.Controls
 {
@@ -25,32 +15,32 @@ namespace VSCC.Controls
         public static readonly DependencyProperty CurrentValueDependency = DependencyProperty.Register("CurrentValue", typeof(int), typeof(ColoredBar));
 
         [Category("Appearance")]
-        public int CurrentValue { get => (int)GetValue(CurrentValueDependency); set => SetValue(CurrentValueDependency, value); }
+        public int CurrentValue { get => (int)this.GetValue(CurrentValueDependency); set => this.SetValue(CurrentValueDependency, value); }
 
         public static readonly DependencyProperty MaximumValueDependency = DependencyProperty.Register("MaximumValue", typeof(int), typeof(ColoredBar));
 
         [Category("Appearance")]
-        public int MaximumValue { get => (int)GetValue(MaximumValueDependency); set => SetValue(MaximumValueDependency, value); }
+        public int MaximumValue { get => (int)this.GetValue(MaximumValueDependency); set => this.SetValue(MaximumValueDependency, value); }
 
         public static readonly DependencyProperty BarColorDependency = DependencyProperty.Register("BarColor", typeof(Brush), typeof(ColoredBar));
 
         [Category("Appearance")]
-        public Brush BarColor { get => (Brush)GetValue(BarColorDependency); set => SetValue(BarColorDependency, value); }
+        public Brush BarColor { get => (Brush)this.GetValue(BarColorDependency); set => this.SetValue(BarColorDependency, value); }
 
         public static readonly DependencyProperty BarBackgroundDependency = DependencyProperty.Register("BarBackground", typeof(Brush), typeof(ColoredBar));
 
         [Category("Appearance")]
-        public Brush BarBackground { get => (Brush)GetValue(BarBackgroundDependency); set => SetValue(BarBackgroundDependency, value); }
+        public Brush BarBackground { get => (Brush)this.GetValue(BarBackgroundDependency); set => this.SetValue(BarBackgroundDependency, value); }
 
         public static readonly DependencyProperty BarBorderDependency = DependencyProperty.Register("BarBorder", typeof(Pen), typeof(ColoredBar));
 
         [Category("Appearance")]
-        public Pen BarBorder { get => (Pen)GetValue(BarBorderDependency); set => SetValue(BarBorderDependency, value); }
+        public Pen BarBorder { get => (Pen)this.GetValue(BarBorderDependency); set => this.SetValue(BarBorderDependency, value); }
 
         public ColoredBar()
         {
-            InitializeComponent();
-            DefaultStyleKey = typeof(ColoredBar);
+            this.InitializeComponent();
+            this.DefaultStyleKey = typeof(ColoredBar);
         }
 
         protected override void OnRender(DrawingContext drawingContext)
@@ -59,12 +49,12 @@ namespace VSCC.Controls
             drawingContext.DrawRectangle(this.BarBackground, this.BarBorder, new Rect(0, 0, this.ActualWidth, this.ActualHeight));
             drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, (this.ActualWidth - 4) * Math.Min(1, (float)this.CurrentValue / this.MaximumValue), this.ActualHeight - 4));
             FormattedText ft = new FormattedText(
-                $"{ this.CurrentValue }/{ this.MaximumValue }", 
-                CultureInfo.CurrentCulture, 
-                this.FlowDirection, 
-                new Typeface(this.FontFamily, this.FontStyle, this.FontWeight, this.FontStretch), 
-                this.FontSize, 
-                Brushes.Black, 
+                $"{ this.CurrentValue }/{ this.MaximumValue }",
+                CultureInfo.CurrentCulture,
+                this.FlowDirection,
+                new Typeface(this.FontFamily, this.FontStyle, this.FontWeight, this.FontStretch),
+                this.FontSize,
+                Brushes.Black,
                 (PresentationSource.FromVisual(this)?.CompositionTarget?.TransformToDevice.M11 ?? 1) * 96.0
             );
 

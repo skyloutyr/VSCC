@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VSCC.VersionManager
 {
@@ -18,7 +14,7 @@ namespace VSCC.VersionManager
             {
                 return new SemVer.Version(0, 0, 0);
             }
-            else 
+            else
             {
                 JToken token = JToken.Load(reader);
                 return new SemVer.Version(token.Value<string>());

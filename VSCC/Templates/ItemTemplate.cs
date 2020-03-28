@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Media;
-
-namespace VSCC.Templates
+﻿namespace VSCC.Templates
 {
     public class ItemTemplate
     {
@@ -63,7 +59,7 @@ namespace VSCC.Templates
         public string ACProperty => string.IsNullOrEmpty(this.AC) ? "AC: N/A" : "AC: " + this.AC;
         public string RangeProperty => string.IsNullOrEmpty(this.Range) ? "Range: N/A" : "Range: " + this.Range;
         public string WeightProperty => string.IsNullOrEmpty(this.Weight) ? "Weight: 0" : "Weight: " + this.Weight;
-        public string RarityProperty => string.IsNullOrEmpty(this.ItemRarity) ? "Rarity: Common" : "Rarity: "+ this.ItemRarity;
+        public string RarityProperty => string.IsNullOrEmpty(this.ItemRarity) ? "Rarity: Common" : "Rarity: " + this.ItemRarity;
         public string PropertiesProperty
         {
             get

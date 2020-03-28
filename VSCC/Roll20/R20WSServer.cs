@@ -1,11 +1,7 @@
 ﻿using Fleck;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using VSCC.State;
 
 namespace VSCC.Roll20
@@ -24,26 +20,20 @@ namespace VSCC.Roll20
         public static Action<string> Logger { get; set; }
         public static bool Connected { get; set; }
 
-        public static void Roll(string r1, string r2, string type, string action)
+        public static void Roll(string r1, string r2, string type, string action) => Send(new CommandPacket()
         {
-            Send(new CommandPacket()
+            Template = Template.Simple,
+            Data = new TemplateDataSimple()
             {
-                Template = Template.Simple,
-                Data = new TemplateDataSimple()
-                {
-                    R1 = $"[[{ r1 }]]",
-                    R2 = r2 == null ? r2 : $"[[{ r2 }]]",
-                    CharName = AppState.Current.State.General.Name,
-                    Mod = action,
-                    Name = type
-                }
-            });
-        }
+                R1 = $"[[{ r1 }]]",
+                R2 = r2 == null ? r2 : $"[[{ r2 }]]",
+                CharName = AppState.Current.State.General.Name,
+                Mod = action,
+                Name = type
+            }
+        });
 
-        public static void Send(object packet)
-        {
-            SendRaw(JsonConvert.SerializeObject(packet, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
-        }
+        public static void Send(object packet) => SendRaw(JsonConvert.SerializeObject(packet, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
 
         public static void SendRaw(string packet)
         {

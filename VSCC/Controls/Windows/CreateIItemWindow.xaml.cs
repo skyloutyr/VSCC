@@ -1,17 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using VSCC.DataType;
 
 namespace VSCC.Controls.Windows
@@ -21,15 +10,9 @@ namespace VSCC.Controls.Windows
     /// </summary>
     public partial class CreateIItemWindow : Window
     {
-        public CreateIItemWindow()
-        {
-            InitializeComponent();
-        }
+        public CreateIItemWindow() => this.InitializeComponent();
 
-        public void SetDataContext(InventoryItem context)
-        {
-            this.DataContext = this.Img_Picture.DataContext = this.TextBox_Name.DataContext = this.IntUD_Amount.DataContext = this.SUD_Weight.DataContext = this.IntUD_Cost_CP.DataContext = this.IntUD_Cost_GP.DataContext = this.IntUD_Cost_SP.DataContext = this.ComboBox_Type.DataContext = this.ComboBox_Rarity.DataContext = this.TextBox_Description.DataContext = context;
-        }
+        public void SetDataContext(InventoryItem context) => this.DataContext = this.Img_Picture.DataContext = this.TextBox_Name.DataContext = this.IntUD_Amount.DataContext = this.SUD_Weight.DataContext = this.IntUD_Cost_CP.DataContext = this.IntUD_Cost_GP.DataContext = this.IntUD_Cost_SP.DataContext = this.ComboBox_Type.DataContext = this.ComboBox_Rarity.DataContext = this.TextBox_Description.DataContext = context;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

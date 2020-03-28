@@ -64,7 +64,7 @@ namespace VSCC.State
             byte[] l = GetMD5(s);
             this.State.Clear();
             byte[] r = GetMD5(this.Save());
-            
+
             // Idealy both MD5 will be the same
             byte[] joined = new byte[l.Length + r.Length];
             Array.Copy(l, 0, joined, 0, l.Length);
@@ -96,18 +96,18 @@ namespace VSCC.State
             switch (saveVersion)
             {
                 case 1:
-                    {
-                        this.LoadV1(s);
-                        wantsRecalc = true;
-                        break;
-                    }
+                {
+                    this.LoadV1(s);
+                    wantsRecalc = true;
+                    break;
+                }
 
                 case 2:
-                    {
-                        this.LoadV2(s);
-                        wantsRecalc = false;
-                        break;
-                    }
+                {
+                    this.LoadV2(s);
+                    wantsRecalc = false;
+                    break;
+                }
 
                 default:
                     throw new NotSupportedException($"The specified save file version can't be loaded - no format converter exists for version { saveVersion }.");
@@ -168,10 +168,7 @@ namespace VSCC.State
             }
         }
 
-        private void LoadV1(string s)
-        {
-            Legacy.SaveV1Adapter.Load(s);
-        }
+        private void LoadV1(string s) => Legacy.SaveV1Adapter.Load(s);
 
         //TODO make this reasonable
         public bool UnsavedChangesExist

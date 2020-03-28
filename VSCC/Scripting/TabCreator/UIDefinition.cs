@@ -39,22 +39,22 @@ namespace VSCC.Scripting.TabCreator
 
     public enum Alignment
     {
-        TopLeft         = 0b10001000,
-        TopCenter       = 0b10000100,
-        TopRight        = 0b10000010,
-        TopStretch      = 0b10000001,
-        CenterLeft      = 0b01001000,
-        CenterCenter    = 0b01000100,
-        CenterRight     = 0b01000010,
-        CenterStretch   = 0b01000001,
-        BottomLeft      = 0b00101000,
-        BottomCenter    = 0b00100100,
-        BottomRight     = 0b00100010,
-        BottomStretch   = 0b00100001,
-        StretchLeft     = 0b00011000,
-        StretchCenter   = 0b00010100,
-        SretchRight     = 0b00010010,
-        StretchAll      = 0b00010001
+        TopLeft = 0b10001000,
+        TopCenter = 0b10000100,
+        TopRight = 0b10000010,
+        TopStretch = 0b10000001,
+        CenterLeft = 0b01001000,
+        CenterCenter = 0b01000100,
+        CenterRight = 0b01000010,
+        CenterStretch = 0b01000001,
+        BottomLeft = 0b00101000,
+        BottomCenter = 0b00100100,
+        BottomRight = 0b00100010,
+        BottomStretch = 0b00100001,
+        StretchLeft = 0b00011000,
+        StretchCenter = 0b00010100,
+        SretchRight = 0b00010010,
+        StretchAll = 0b00010001
     }
 
     public enum UIType

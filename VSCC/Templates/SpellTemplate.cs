@@ -42,7 +42,7 @@ namespace VSCC.Templates
 
         public string SourceProperty
         {
-            get => $"{ Resources.Generic_Source }: { Source }";
+            get => $"{ Resources.Generic_Source }: { this.Source }";
             set { }
         }
 

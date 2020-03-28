@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Controls;
-using VSCC.Controls.Tabs;
 using VSCC.DataType;
-using VSCC.Properties;
 using VSCC.State.Adapters;
 
 namespace VSCC.State
@@ -913,7 +909,7 @@ namespace VSCC.State
             this.SortInverted = false;
             this.Filter = string.Empty;
             this.Items.Clear();
-            this.Helmet = this.Necklace = this.Chestpiece = this.Leggings = this.Boots = WeaponLeft = this.WeaponRight = this.Misc1 = this.Misc2 = this.Ring0 = this.Ring1 = this.Ring2 = this.Ring3 = this.Ring4 = this.Ring5 = this.Ring6 = this.Ring7 = null;
+            this.Helmet = this.Necklace = this.Chestpiece = this.Leggings = this.Boots = this.WeaponLeft = this.WeaponRight = this.Misc1 = this.Misc2 = this.Ring0 = this.Ring1 = this.Ring2 = this.Ring3 = this.Ring4 = this.Ring5 = this.Ring6 = this.Ring7 = null;
         }
     }
 

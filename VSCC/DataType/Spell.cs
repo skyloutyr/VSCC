@@ -5,7 +5,6 @@
     using System;
     using System.ComponentModel;
     using System.Windows.Media.Imaging;
-    using VSCC.Controls.Templates;
     using VSCC.Models.ImageList;
     using VSCC.State;
 
@@ -54,19 +53,19 @@
 
         public string Name
         {
-            get => name;
+            get => this.name;
             set
             {
-                name = value;
+                this.name = value;
                 this.OnPropertyChanged("Name");
             }
         }
         public SpellComponents SpellComponents
         {
-            get => spellComponents;
+            get => this.spellComponents;
             set
             {
-                spellComponents = value;
+                this.spellComponents = value;
                 this.OnPropertyChanged("SpellComponents");
                 this.OnPropertyChanged("GeneratedDescription");
                 this.OnPropertyChanged("PropertyVerbal");
@@ -77,88 +76,88 @@
         }
         public string School
         {
-            get => school;
+            get => this.school;
             set
             {
-                school = value;
+                this.school = value;
                 this.OnPropertyChanged("School");
             }
         }
         public int Level
         {
-            get => level;
+            get => this.level;
             set
             {
-                level = value;
+                this.level = value;
                 this.OnPropertyChanged("Level");
                 this.OnPropertyChanged("GeneratedDescription");
             }
         }
         public string ImageIndex
         {
-            get => imageIndex;
+            get => this.imageIndex;
             set
             {
-                imageIndex = value;
+                this.imageIndex = value;
                 this.OnPropertyChanged("ImageIndex");
                 this.OnPropertyChanged("PictureProperty");
             }
         }
         public string Target
         {
-            get => target;
+            get => this.target;
             set
             {
-                target = value;
+                this.target = value;
                 this.OnPropertyChanged("Target");
             }
         }
         public string Range
         {
-            get => range;
+            get => this.range;
             set
             {
-                range = value;
+                this.range = value;
                 this.OnPropertyChanged("Range");
                 this.OnPropertyChanged("GeneratedDescription");
             }
         }
         public string Description
         {
-            get => description;
+            get => this.description;
             set
             {
-                description = value;
+                this.description = value;
                 this.OnPropertyChanged("Description");
                 this.OnPropertyChanged("GeneratedDescription");
             }
         }
         public string Duration
         {
-            get => duration;
+            get => this.duration;
             set
             {
-                duration = value;
+                this.duration = value;
                 this.OnPropertyChanged("Duration");
                 this.OnPropertyChanged("GeneratedDescription");
             }
         }
         public string CastTime
         {
-            get => castTime;
+            get => this.castTime;
             set
             {
-                castTime = value;
+                this.castTime = value;
                 this.OnPropertyChanged("CastTime");
                 this.OnPropertyChanged("GeneratedDescription");
             }
         }
         public string SimpleDescription
         {
-            get => simpleDescription;
+            get => this.simpleDescription;
             set
             {
-                simpleDescription = value;
+                this.simpleDescription = value;
                 this.OnPropertyChanged("SimpleDescription");
             }
         }
@@ -319,49 +318,43 @@
             return ret;
         }
 
-        public Spell Copy()
+        public Spell Copy() => new Spell()
         {
-            return new Spell()
-            {
-                Name = this.Name,
-                Level = this.Level,
-                Template = this.Template,
-                School = this.School,
-                Range = this.Range,
-                Target = this.Target,
-                CastTime = this.CastTime,
-                Duration = this.Duration,
-                SpellComponents = this.SpellComponents,
-                SimpleDescription = this.SimpleDescription,
-                Description = this.Description,
-                ImageIndex = this.ImageIndex,
-                ImageList = this.ImageList,
-            };
-        }
+            Name = this.Name,
+            Level = this.Level,
+            Template = this.Template,
+            School = this.School,
+            Range = this.Range,
+            Target = this.Target,
+            CastTime = this.CastTime,
+            Duration = this.Duration,
+            SpellComponents = this.SpellComponents,
+            SimpleDescription = this.SimpleDescription,
+            Description = this.Description,
+            ImageIndex = this.ImageIndex,
+            ImageList = this.ImageList,
+        };
     }
 
     public class SpellLegacyAdapter
     {
         public static bool CanApply(JObject obj) => obj.ContainsKey("Verbal") && obj["Verbal"].Type == JTokenType.Boolean;
 
-        public static Spell Apply(JObject obj)
+        public static Spell Apply(JObject obj) => new Spell()
         {
-            return new Spell()
-            {
-                Name = obj.Value<string>("Name"),
-                SpellComponents = (obj.Value<bool>("Verbal") ? SpellComponents.Verbal : 0) | (obj.Value<bool>("Somatic") ? SpellComponents.Somatic : 0) | (obj.Value<bool>("Material") ? SpellComponents.Material : 0) | (obj.Value<bool>("Concentration") ? SpellComponents.Concentration : 0),
-                School = obj.Value<string>("School"),
-                Level = obj.Value<int>("Level"),
-                ImageIndex = string.Empty,
-                Target = obj.Value<string>("Target"),
-                Range = obj.Value<int>("Range").ToString(),
-                Description = obj.Value<string>("Description"),
-                Duration = obj.Value<string>("Duration"),
-                CastTime = obj.Value<string>("CastTime"),
-                SimpleDescription = "Spell converted from older version. Edit it to make this description be a thing.",
-                Template = Templates.SpellTemplate.Empty
-            };
-        }
+            Name = obj.Value<string>("Name"),
+            SpellComponents = (obj.Value<bool>("Verbal") ? SpellComponents.Verbal : 0) | (obj.Value<bool>("Somatic") ? SpellComponents.Somatic : 0) | (obj.Value<bool>("Material") ? SpellComponents.Material : 0) | (obj.Value<bool>("Concentration") ? SpellComponents.Concentration : 0),
+            School = obj.Value<string>("School"),
+            Level = obj.Value<int>("Level"),
+            ImageIndex = string.Empty,
+            Target = obj.Value<string>("Target"),
+            Range = obj.Value<int>("Range").ToString(),
+            Description = obj.Value<string>("Description"),
+            Duration = obj.Value<string>("Duration"),
+            CastTime = obj.Value<string>("CastTime"),
+            SimpleDescription = "Spell converted from older version. Edit it to make this description be a thing.",
+            Template = Templates.SpellTemplate.Empty
+        };
     }
 
     [Flags]

@@ -1,12 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Cache;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -96,10 +93,7 @@ namespace VSCC.VersionManager
             return new SemVer.Version(localJObj["version"].ToObject<string>());
         }
 
-        public static VersionSpecV1 GetVersionSpecV1()
-        {
-            return JsonConvert.DeserializeObject<VersionSpecV1>(ReadRemoteVersion());
-        }
+        public static VersionSpecV1 GetVersionSpecV1() => JsonConvert.DeserializeObject<VersionSpecV1>(ReadRemoteVersion());
 
         private static string ReadRemoteVersion()
         {
@@ -124,7 +118,7 @@ namespace VSCC.VersionManager
     }
 
     public enum VersionCheckResult
-    { 
+    {
         Error,
         Behind,
         Current,

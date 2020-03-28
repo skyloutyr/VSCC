@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VSCC.State.Adapters
 {
@@ -19,7 +15,7 @@ namespace VSCC.State.Adapters
             {
                 return 0;
             }
-            
+
             return JToken.Load(reader).ToObject<int>();
         }
 

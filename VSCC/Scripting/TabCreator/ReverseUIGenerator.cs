@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -36,9 +34,11 @@ namespace VSCC.Scripting.TabCreator
 
         public static UIDefinition CreateDefFromUI(UIElement element, ref int id)
         {
-            UIDefinition ret = new UIDefinition();
-            ret.Name = "GeneratedUI_" + id++.ToString();
-            ret.Type = Type2DefTypeTable[element.GetType()];
+            UIDefinition ret = new UIDefinition
+            {
+                Name = "GeneratedUI_" + id++.ToString(),
+                Type = Type2DefTypeTable[element.GetType()]
+            };
             if (element is FrameworkElement felem)
             {
                 ret.Name = !string.IsNullOrEmpty(felem.Name) ? felem.Name : ret.Name;
@@ -90,22 +90,22 @@ namespace VSCC.Scripting.TabCreator
 
             if (element is GroupBox groupbox)
             {
-                ret.GroupBoxData = new GroupBoxDefinition() { Header = groupbox.Header.ToString(), Font = new FontDefinition() { Size = (int)groupbox.FontSize, Style = groupbox.FontStyle }};
+                ret.GroupBoxData = new GroupBoxDefinition() { Header = groupbox.Header.ToString(), Font = new FontDefinition() { Size = (int)groupbox.FontSize, Style = groupbox.FontStyle } };
             }
 
             if (element is Border border)
             {
-                ret.BorderData = new BorderDefinition() { BorderColor = ((SolidColorBrush)border.BorderBrush).Color.ToString(), BorderThickness = new Margin() { Bottom = (int)border.BorderThickness.Bottom, Left = (int)border.BorderThickness.Left, Right = (int)border.BorderThickness.Right, Top = (int)border.BorderThickness.Top }};
+                ret.BorderData = new BorderDefinition() { BorderColor = ((SolidColorBrush)border.BorderBrush).Color.ToString(), BorderThickness = new Margin() { Bottom = (int)border.BorderThickness.Bottom, Left = (int)border.BorderThickness.Left, Right = (int)border.BorderThickness.Right, Top = (int)border.BorderThickness.Top } };
             }
 
             if (element is Label label)
             {
-                ret.LabelData = new LabelDefinition() { Text = label.Content.ToString(), Font = new FontDefinition() { Size = (int)label.FontSize, Style = label.FontStyle }};
+                ret.LabelData = new LabelDefinition() { Text = label.Content.ToString(), Font = new FontDefinition() { Size = (int)label.FontSize, Style = label.FontStyle } };
             }
 
             if (element is Button button)
             {
-                ret.ButtonData = new ButtonDefinition() { Enabled = button.IsEnabled, Text = button.Content is string ? button.Content.ToString() : string.Empty, Font = new FontDefinition() { Size = (int)button.FontSize, Style = button.FontStyle }};
+                ret.ButtonData = new ButtonDefinition() { Enabled = button.IsEnabled, Text = button.Content is string ? button.Content.ToString() : string.Empty, Font = new FontDefinition() { Size = (int)button.FontSize, Style = button.FontStyle } };
             }
 
             if (element is TextBox textbox)
