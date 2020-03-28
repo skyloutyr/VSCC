@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.IO.Compression;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-
-namespace Updater
+﻿namespace Updater
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
+    using System.IO.Compression;
+    using System.Net;
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Threading;
+
     public class Program
     {
         public static int PID { get; set; }
@@ -38,7 +38,9 @@ namespace Updater
                 return;
             }
 
-            while (ConsoleLoop()) ;
+            while (ConsoleLoop())
+            {
+            }
         }
 
         public static bool ConsoleLoop()
@@ -146,12 +148,7 @@ namespace Updater
             try
             {
                 process = Process.GetProcessById(PID);
-                if (process?.HasExited ?? false)
-                {
-                    return false;
-                }
-
-                return true;
+                return !(process?.HasExited ?? false);
             }
             catch
             {
@@ -166,10 +163,7 @@ namespace Updater
             {
                 Thread.CurrentThread.IsBackground = true;
                 WebClient wc = new WebClient();
-                wc.DownloadProgressChanged += (o, e) =>
-                {
-                    DownloadPercentage = (float)(e.BytesReceived / (double)e.TotalBytesToReceive);
-                };
+                wc.DownloadProgressChanged += (o, e) => DownloadPercentage = (float)(e.BytesReceived / (double)e.TotalBytesToReceive);
 
                 wc.DownloadFileCompleted += (o, e) =>
                 {

@@ -1,17 +1,10 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Management;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using VSCC.Properties;
-
-namespace VSCC.Skins
+﻿namespace VSCC.Skins
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Windows;
+    using VSCC.Properties;
+
     public class SkinResourceDictionary : ResourceDictionary
     {
         private const string RegistryKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
@@ -26,7 +19,7 @@ namespace VSCC.Skins
             get => this._defaultSource;
             set
             {
-                _defaultSource = value;
+                this._defaultSource = value;
                 this.UpdateSource();
             }
         }
@@ -35,7 +28,7 @@ namespace VSCC.Skins
             get => this._darkSource;
             set
             {
-                _darkSource = value;
+                this._darkSource = value;
                 this.UpdateSource();
             }
         }
@@ -51,8 +44,6 @@ namespace VSCC.Skins
 
         private Uri ResolveSystemSkin()
         {
-            var currentUser = WindowsIdentity.GetCurrent();
-            string query = string.Format(CultureInfo.InvariantCulture, @"SELECT * FROM RegistryValueChangeEvent WHERE Hive = 'HKEY_USERS' AND KeyPath = '{0}\\{1}' AND ValueName = '{2}'", currentUser.User.Value, RegistryKeyPath.Replace(@"\", @"\\"), RegistryValueName);
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
             {
                 object registryValueObject = key?.GetValue(RegistryValueName);
@@ -76,7 +67,7 @@ namespace VSCC.Skins
                 Version vs = os.Version;
 
                 // win 8 or greater
-                return vs.Major == 10 || (vs.Major == 6 && vs.Minor >= 2);
+                return Settings.Default.AllowSkinChangesOnOlderWindowsVersions || vs.Major == 10 || (vs.Major == 6 && vs.Minor >= 2);
             }
 
             return true;

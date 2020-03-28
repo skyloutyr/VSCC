@@ -1,19 +1,19 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Diagnostics;
-using System.Threading;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using VSCC.Controls.Windows;
-using VSCC.Properties;
-using VSCC.Scripting;
-using VSCC.Skins;
-using VSCC.State;
-using VSCC.VersionManager;
-
-namespace VSCC
+﻿namespace VSCC
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Diagnostics;
+    using System.Threading;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using VSCC.Controls.Windows;
+    using VSCC.Properties;
+    using VSCC.Scripting;
+    using VSCC.Skins;
+    using VSCC.State;
+    using VSCC.VersionManager;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -27,9 +27,9 @@ namespace VSCC
         {
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.AppThread = Thread.CurrentThread;
-            ChangeLanguage(Settings.Default.Language, true, false);
-            ChangeSkin(Settings.Default.Skin, false);
-            InitializeComponent();
+            this.ChangeLanguage(Settings.Default.Language, true, false);
+            this.ChangeSkin(Settings.Default.Skin, false);
+            this.InitializeComponent();
             AppState.Current.FreezeAutocalc = false;
         }
 
@@ -46,7 +46,7 @@ namespace VSCC
             AppEvents.InvokeStartup();
 
 #pragma warning disable CS4014 // This call is executed on an another thread entirely, the await is thus not needed.
-            new Thread(() => VersionChecker.CheckVersion(false, false, (s) => Dispatcher.Invoke(() => UpdateManager.Update(s)))).Start();
+            new Thread(() => VersionChecker.CheckVersion(false, false, (s) => this.Dispatcher.Invoke(() => UpdateManager.Update(s)))).Start();
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 
             if (!string.IsNullOrEmpty(this.OldWindowSaveData))
@@ -55,6 +55,7 @@ namespace VSCC
                 this.OldWindowSaveData = null;
             }
 
+            this.AllowThemeSwitch.IsChecked = Settings.Default.AllowSkinChangesOnOlderWindowsVersions;
             this.Language_English.IsChecked = Settings.Default.Language.Equals("en-US");
             this.Language_Russian.IsChecked = Settings.Default.Language.Equals("ru-RU");
             this.Skin_Default.IsChecked = Settings.Default.Skin == 0;
@@ -86,10 +87,7 @@ namespace VSCC
             AppState.Current.FreezeAutocalc = false;
         }
 
-        private void Exit_Click(object sender, ExecutedRoutedEventArgs e)
-        {
-            this.Close();
-        }
+        private void Exit_Click(object sender, ExecutedRoutedEventArgs e) => this.Close();
 
         private void Open_Click(object sender, ExecutedRoutedEventArgs e)
         {
@@ -174,17 +172,14 @@ namespace VSCC
         {
             if (!this._forceClose)
             {
-                if (!CloseSelf())
+                if (!this.CloseSelf())
                 {
                     e.Cancel = true;
                 }
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            new InfoWindow().Show();
-        }
+        private void MenuItem_Click(object sender, RoutedEventArgs e) => new InfoWindow().Show();
 
         private async void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
@@ -216,10 +211,7 @@ namespace VSCC
             }
         }
 
-        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
-        {
-            new ScriptsWindow().Show();
-        }
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e) => new ScriptsWindow().Show();
 
         public void ChangeLanguage(string lang, bool forceChange = false, bool reloadApp = false)
         {
@@ -315,6 +307,16 @@ namespace VSCC
             if (!AppState.Current.FreezeAutocalc)
             {
                 this.ChangeSkin(int.Parse((sender as MenuItem).Tag.ToString()), true);
+            }
+        }
+
+        private void AllowThemeSwitch_Checked(object sender, RoutedEventArgs e)
+        {
+            bool val = Settings.Default.AllowSkinChangesOnOlderWindowsVersions = this.AllowThemeSwitch.IsChecked;
+            Settings.Default.Save();
+            if (!val && Settings.Default.Skin != 0 && !SkinResourceDictionary.IsRunningWin8OrGreater())
+            {
+                this.ChangeSkin(0);
             }
         }
     }

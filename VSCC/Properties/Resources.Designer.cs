@@ -422,6 +422,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable Themes on Win7.
+        /// </summary>
+        public static string Edit_AllowThemeChangeOnOlderWinVersions {
+            get {
+                return ResourceManager.GetString("Edit_AllowThemeChangeOnOlderWinVersions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
         public static string Edit_Languages {
