@@ -1,23 +1,23 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using VSCC.Controls.Windows;
-using VSCC.DataType;
-using VSCC.Models.ImageList;
-using VSCC.State;
-using VSCC.Templates;
-
-namespace VSCC.Controls.Tabs
+﻿namespace VSCC.Controls.Tabs
 {
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.IO;
+    using System.Linq;
+    using System.Threading;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Input;
+    using System.Windows.Media.Imaging;
+    using VSCC.Controls.Windows;
+    using VSCC.DataType;
+    using VSCC.Models.ImageList;
+    using VSCC.State;
+    using VSCC.Templates;
+
     public partial class SpellIndexTab : UserControl
     {
         public ICommand ToSpellCommand { get; set; }
@@ -28,11 +28,11 @@ namespace VSCC.Controls.Tabs
         public SpellIndexTab()
         {
             this.InitializeComponent();
-            this.ToSpellCommand = new ToSpellCommand(this);
+            this.ToSpellCommand = new ToSpellCommand();
             this.SchoolImages.LoadFromEmbeddedFolder("Images/Schools");
             this.ListView_SpellTemplates.ItemsSource = this.AllSpellTemplates;
             string culture = Thread.CurrentThread.CurrentUICulture.Name;
-            string database = File.ReadAllText(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", File.Exists(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "dnd5espellindex-" + culture + ".json")) ? "dnd5espellindex-" + culture + ".json" : "dnd5espellindex-en-US.json"));
+            string database = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "dnd5espellindex-" + culture + ".json")) ? "dnd5espellindex-" + culture + ".json" : "dnd5espellindex-en-US.json"));
             this.AllSpellTemplates.AddRange(JsonConvert.DeserializeObject<SpellTemplate[]>(database).Select(s => s.ApplyImageGetterFunc(this.ImageFromSchoolName)));
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.ListView_SpellTemplates.ItemsSource);
             view.SortDescriptions.Add(new SortDescription("Level", ListSortDirection.Ascending));
@@ -144,13 +144,8 @@ namespace VSCC.Controls.Tabs
 
     public class ToSpellCommand : ICommand
     {
-        private SpellIndexTab _owner;
-
 #pragma warning disable 0067
         public event EventHandler CanExecuteChanged;
-
-        public ToSpellCommand(SpellIndexTab sit) => this._owner = sit;
-
         public bool CanExecute(object parameter) => true;
 
         public void Execute(object parameter)

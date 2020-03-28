@@ -1,7 +1,7 @@
-﻿using System.Windows.Controls;
-
-namespace VSCC.Controls.Tabs
+﻿namespace VSCC.Controls.Tabs
 {
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for ScriptingTab.xaml
     /// </summary>

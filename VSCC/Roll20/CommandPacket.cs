@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
-namespace VSCC.Roll20
+﻿namespace VSCC.Roll20
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+
     public class CommandPacket
     {
         [JsonConverter(typeof(StringEnumConverter))]

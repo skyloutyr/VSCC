@@ -1,10 +1,10 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Windows;
-using VSCC.DataType;
-
-namespace VSCC.Controls.Windows
+﻿namespace VSCC.Controls.Windows
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Windows;
+    using VSCC.DataType;
+
     /// <summary>
     /// Interaction logic for CreateIItemWindow.xaml
     /// </summary>

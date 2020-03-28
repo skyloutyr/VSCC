@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Windows;
-
-namespace VSCC.Scripting.TabCreator.Defs
+﻿namespace VSCC.Scripting.TabCreator.Defs
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    using System.Windows;
+
     public class GridDefinition
     {
         public GridColumnDefinition[] Columns { get; set; }

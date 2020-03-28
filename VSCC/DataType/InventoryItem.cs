@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.ComponentModel;
-using System.Windows.Media.Imaging;
-using VSCC.Models.ImageList;
-using VSCC.State;
-using VSCC.Templates;
-
-namespace VSCC.DataType
+﻿namespace VSCC.DataType
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System.ComponentModel;
+    using System.Windows.Media.Imaging;
+    using VSCC.Models.ImageList;
+    using VSCC.State;
+    using VSCC.Templates;
+
     public class InventoryItem : INotifyPropertyChanged
     {
         [JsonIgnore]
@@ -229,15 +229,7 @@ namespace VSCC.DataType
 
     public class InventoryItemLegacyAdapter
     {
-        public static bool CanApply(JObject itemJson)
-        {
-            if (itemJson.ContainsKey("Cost") && itemJson["Cost"].Type == JTokenType.Integer)
-            {
-                return true;
-            }
-
-            return false;
-        }
+        public static bool CanApply(JObject itemJson) => itemJson.ContainsKey("Cost") && itemJson["Cost"].Type == JTokenType.Integer;
 
         public static InventoryItem Apply(JObject obj) => new InventoryItem()
         {

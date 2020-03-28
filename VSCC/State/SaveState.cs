@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.ObjectModel;
-using VSCC.DataType;
-using VSCC.State.Adapters;
-
-namespace VSCC.State
+﻿namespace VSCC.State
 {
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.ObjectModel;
+    using VSCC.DataType;
+    using VSCC.State.Adapters;
+
     public class SaveState
     {
         public int Version { get; set; } = 2;

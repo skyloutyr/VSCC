@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
-
-namespace VSCC.Models.ImageList
+﻿namespace VSCC.Models.ImageList
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Globalization;
+    using System.IO;
+    using System.Linq;
+    using System.Reflection;
+    using System.Resources;
+
     public class ImageListModel : IList<ImageModel>
     {
         public bool Async { get; set; } = true;
@@ -31,7 +31,7 @@ namespace VSCC.Models.ImageList
         public void RemoveAt(int index) => this.Images.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
-        public void LoadFromPhysicalFolder(string folderPath, bool enumerateSubdirectories = true)
+        public void LoadFromPhysicalFolder(string folderPath)
         {
             folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderPath);
             List<ImageModel> prev = new List<ImageModel>();

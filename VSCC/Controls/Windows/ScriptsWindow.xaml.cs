@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-
-namespace VSCC.Controls.Windows
+﻿namespace VSCC.Controls.Windows
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Windows;
+    using System.Windows.Controls;
+    using VSCC.State;
+
     /// <summary>
     /// Interaction logic for ScriptsWindow.xaml
     /// </summary>
@@ -25,7 +26,8 @@ namespace VSCC.Controls.Windows
                     HorizontalContentAlignment = HorizontalAlignment.Center,
                     VerticalContentAlignment = VerticalAlignment.Center,
                     Content = kv.Key,
-                    Margin = new Thickness(3, 3, 3, 3)
+                    Margin = new Thickness(3, 3, 3, 3),
+                    Foreground = AppState.Current.TGeneral.Foreground
                 };
 
                 b.Click += (o, ev) => kv.Value?.Invoke(o, ev);

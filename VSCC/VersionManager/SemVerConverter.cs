@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-
-namespace VSCC.VersionManager
+﻿namespace VSCC.VersionManager
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+
     public class SemVerConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType) => objectType == typeof(string) || objectType == typeof(SemVer.Version);

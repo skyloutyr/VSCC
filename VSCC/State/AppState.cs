@@ -1,15 +1,15 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Windows.Controls;
-using VSCC.Controls.Tabs;
-
-namespace VSCC.State
+﻿namespace VSCC.State
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.IO;
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Threading;
+    using System.Windows.Controls;
+    using VSCC.Controls.Tabs;
+
     public class AppState
     {
         private string _lastSaveHash;

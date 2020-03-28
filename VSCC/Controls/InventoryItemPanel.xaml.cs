@@ -1,10 +1,10 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using VSCC.DataType;
-
-namespace VSCC.Controls
+﻿namespace VSCC.Controls
 {
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using VSCC.DataType;
+
     /// <summary>
     /// Interaction logic for InventoryItemPanel.xaml
     /// </summary>
@@ -18,6 +18,7 @@ namespace VSCC.Controls
         {
             if (e.Data != null && e.Data.GetDataPresent("InventoryItem"))
             {
+                e.Effects = DragDropEffects.Move;
             }
         }
 

@@ -1,14 +1,14 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using VSCC.Controls.Windows;
-using VSCC.DataType;
-using VSCC.Models.ImageList;
-
-namespace VSCC.Controls.Tabs
+﻿namespace VSCC.Controls.Tabs
 {
+    using System.Collections.ObjectModel;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Input;
+    using VSCC.Controls.Windows;
+    using VSCC.DataType;
+    using VSCC.Models.ImageList;
+
     public partial class SpellbookTab : UserControl
     {
         public ImageListModel Images { get; } = new ImageListModel();
@@ -309,11 +309,8 @@ namespace VSCC.Controls.Tabs
                 int dir = direction && selectedIndex != 0 ? -1 : !direction && selectedIndex != this[page].Count - 1 ? 1 : 0;
                 if (dir != 0)
                 {
-                    Spell s1 = this[page][selectedIndex + dir];
                     this[page].Remove(s);
                     this[page].Insert(selectedIndex + dir, s);
-                    //this[page][selectedIndex + dir] = s;
-                    //this[page][selectedIndex] = s1;
                 }
             }
         }

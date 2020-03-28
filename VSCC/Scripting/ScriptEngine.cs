@@ -1,19 +1,19 @@
-﻿using NLua;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Threading;
-using System.Windows;
-using System.Windows.Controls;
-using VSCC.Controls.Windows;
-using VSCC.Properties;
-using VSCC.Scripting.TabCreator;
-using VSCC.State;
-using Xceed.Wpf.Toolkit;
-
-namespace VSCC.Scripting
+﻿namespace VSCC.Scripting
 {
+    using NLua;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Threading;
+    using System.Windows;
+    using System.Windows.Controls;
+    using VSCC.Controls.Windows;
+    using VSCC.Properties;
+    using VSCC.Scripting.TabCreator;
+    using VSCC.State;
+    using Xceed.Wpf.Toolkit;
+
     public class ScriptEngine
     {
         public Dictionary<string, EventHandler> Scripts { get; } = new Dictionary<string, EventHandler>();

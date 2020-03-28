@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
-using NLua;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using VSCC.Scripting.TabCreator.Defs;
-using Xceed.Wpf.Toolkit;
-
-namespace VSCC.Scripting.TabCreator
+﻿namespace VSCC.Scripting.TabCreator
 {
+    using Newtonsoft.Json;
+    using NLua;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using VSCC.Scripting.TabCreator.Defs;
+    using Xceed.Wpf.Toolkit;
+
     public class UIGenerator
     {
         public static Dictionary<UIType, Func<UIDefinition, UIElement>> Generators { get; } = new Dictionary<UIType, Func<UIDefinition, UIElement>>()

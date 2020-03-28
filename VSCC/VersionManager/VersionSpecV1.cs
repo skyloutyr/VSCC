@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-
-namespace VSCC.VersionManager
+﻿namespace VSCC.VersionManager
 {
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+
     public class VersionSpecV1
     {
         [JsonProperty(PropertyName = "version")]

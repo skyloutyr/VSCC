@@ -1,12 +1,12 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
-using System.Windows;
-using VSCC.Scripting.TabCreator.Defs;
-
-namespace VSCC.Scripting.TabCreator
+﻿namespace VSCC.Scripting.TabCreator
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    using System;
+    using System.Collections.Generic;
+    using System.Windows;
+    using VSCC.Scripting.TabCreator.Defs;
+
     public class UIDefinition
     {
         public string Name { get; set; }

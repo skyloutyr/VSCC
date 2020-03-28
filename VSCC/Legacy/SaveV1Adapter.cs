@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.ObjectModel;
-using VSCC.DataType;
-using VSCC.State;
-
-namespace VSCC.Legacy
+﻿namespace VSCC.Legacy
 {
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.ObjectModel;
+    using VSCC.DataType;
+    using VSCC.State;
+
     public class SaveV1Adapter
     {
         public static void Load(string s)
@@ -92,17 +92,35 @@ namespace VSCC.Legacy
             AppState.Current.State.Inventory.WeightCurrent = from.ContainsKey("Weight") ? from["Weight"].ToObject<int>() : 0;
             AppState.Current.State.Inventory.WeightMax1 = from.ContainsKey("MidWeight") ? from["MidWeight"].ToObject<int>() : 0;
             AppState.Current.State.Inventory.WeightMax2 = from.ContainsKey("MaxWeight") ? from["MaxWeight"].ToObject<int>() : 0;
+            Action<InventoryItem>[] iiPanelSetters = {
+                v => AppState.Current.State.Inventory.Misc1 = v,
+                v => AppState.Current.State.Inventory.Helmet = v,
+                v => AppState.Current.State.Inventory.Misc2 = v,
+                v => AppState.Current.State.Inventory.WeaponRight = v,
+                v => AppState.Current.State.Inventory.Chestpiece = v,
+                v => AppState.Current.State.Inventory.WeaponLeft = v,
+                v => AppState.Current.State.Inventory.Boots = v,
+                v => AppState.Current.State.Inventory.Ring0 = v,
+                v => AppState.Current.State.Inventory.Ring1 = v,
+                v => AppState.Current.State.Inventory.Ring2 = v,
+                v => AppState.Current.State.Inventory.Ring3 = v,
+                v => AppState.Current.State.Inventory.Ring4 = v,
+                v => AppState.Current.State.Inventory.Ring5 = v,
+                v => AppState.Current.State.Inventory.Ring6 = v,
+                v => AppState.Current.State.Inventory.Ring7 = v
+            };
 
-            // TODO implement equipment panels
-            /*
-            int i = 0;
-            foreach (Panel p in EquippedItems)
+            int eqIndex = 0;
+            while (from.ContainsKey($"Equip{ eqIndex }"))
             {
-                JObject jo = from[$"Equip{ i++ }"] as JObject;
-                p.Tag = jo.HasValues ? jo.ToObject<InventoryItem>() : null;
-                p.Invalidate();
+                JObject jo = from[$"Equip{ eqIndex++ }"] as JObject;
+                InventoryItem ii = InventoryItemLegacyAdapter.Apply(jo);
+                ii.ImageList = AppState.Current.TInventory.Images;
+                if (eqIndex - 1 < iiPanelSetters.Length)
+                {
+                    iiPanelSetters[eqIndex - 1](ii);
+                }
             }
-            */
 
             AppState.Current.State.Inventory.Items.Clear();
             for (int i = 0; i < from["Items"].ToObject<int>(); ++i)

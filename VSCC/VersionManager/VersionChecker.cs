@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.IO;
-using System.Net;
-using System.Net.Cache;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace VSCC.VersionManager
+﻿namespace VSCC.VersionManager
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.IO;
+    using System.Net;
+    using System.Net.Cache;
+    using System.Threading.Tasks;
+    using System.Windows;
+
     public class VersionChecker
     {
         public static async Task CheckVersion(bool showFineWindows = true, bool callUpdateFromVC = true, Action<string> updateCallback = null)
@@ -18,7 +18,7 @@ namespace VSCC.VersionManager
             {
                 case VersionCheckResult.Behind:
                 {
-                    if (MessageBox.Show($"An update is available!\n\r{ t.Item2.ToString() }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    if (MessageBox.Show($"An update is available!\n\r{ t.Item2 }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
                         if (callUpdateFromVC)
                         {
@@ -77,7 +77,7 @@ namespace VSCC.VersionManager
                 SemVer.Version local = await t2;
                 SemVer.Version remote = spec.Version;
                 string changelog = spec.Changelog.ContainsKey(remote.ToString()) ? spec.Changelog[remote.ToString()] : "No changelog provided";
-                string latestLink = $"https://github.com/skyloutyr/VSCC/releases/download/{ remote.ToString() }/VSCC.zip";
+                string latestLink = $"https://github.com/skyloutyr/VSCC/releases/download/{ remote }/VSCC.zip";
                 VersionCheckResult result = remote > local ? VersionCheckResult.Behind : remote < local ? VersionCheckResult.Ahead : VersionCheckResult.Current;
                 return new Tuple<VersionCheckResult, SemVer.Version, string, string>(result, remote, changelog, latestLink);
             }

@@ -33,15 +33,7 @@
             view.SortDescriptions.Add(new System.ComponentModel.SortDescription("Name", this.CheckBox_ReverseSearchResults.IsChecked ?? false ? System.ComponentModel.ListSortDirection.Descending : System.ComponentModel.ListSortDirection.Ascending));
         }
 
-        public bool Filter(object item)
-        {
-            if (string.IsNullOrEmpty(this.TextBox_Filter.Text))
-            {
-                return true;
-            }
-
-            return ((InventoryItem)item).Name.IndexOf(this.TextBox_Filter.Text, StringComparison.OrdinalIgnoreCase) != -1;
-        }
+        public bool Filter(object item) => string.IsNullOrEmpty(this.TextBox_Filter.Text) || ((InventoryItem)item).Name.IndexOf(this.TextBox_Filter.Text, StringComparison.OrdinalIgnoreCase) != -1;
 
         public void ChangeItemCollection(ObservableCollection<InventoryItem> collection)
         {
@@ -206,7 +198,7 @@
         {
             Point mousePos = e.GetPosition(null);
             Vector diff = this.startPoint - mousePos;
-            if (e.LeftButton == MouseButtonState.Pressed && Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance || Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
+            if ((e.LeftButton == MouseButtonState.Pressed && Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance) || Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
             {
                 ListView listView = sender as ListView;
                 ListViewItem listViewItem = FindAnchestor<ListViewItem>((DependencyObject)e.OriginalSource);
@@ -227,6 +219,7 @@
                 {
                     return (T)current;
                 }
+
                 current = VisualTreeHelper.GetParent(current);
             } while (current != null);
 

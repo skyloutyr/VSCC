@@ -1,23 +1,23 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using VSCC.Controls.Windows;
-using VSCC.State;
-using Xceed.Wpf.Toolkit;
-
-namespace VSCC.Controls.Tabs
+﻿namespace VSCC.Controls.Tabs
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using VSCC.Controls.Windows;
+    using VSCC.State;
+    using Xceed.Wpf.Toolkit;
+
     /// <summary>
     /// Interaction logic for GeneralTab.xaml
     /// </summary>
     public partial class GeneralTab : UserControl
     {
-        private KeyValuePair<CheckBox, IntegerUpDown>[] _statsProfMap;
-        private KeyValuePair<IntegerUpDown, IntegerUpDown[]>[] _statsSkillsMap;
+        private readonly KeyValuePair<CheckBox, IntegerUpDown>[] _statsProfMap;
+        private readonly KeyValuePair<IntegerUpDown, IntegerUpDown[]>[] _statsSkillsMap;
         public GeneralTab()
         {
             this.InitializeComponent();
@@ -241,45 +241,17 @@ namespace VSCC.Controls.Tabs
 
         private void Button_ChangeValue_Clicked(object sender, RoutedEventArgs e)
         {
-            Action<int> valueChanger;
-
-            //TODO Kill all these god damned nests of conditions.
-            if (sender == this.Btn_Add_Exp)
-            {
-                valueChanger = i => AppState.Current.State.General.CurrentExp += i;
-            }
-            else
-            {
-                if (sender == this.Btn_Remove_Exp)
-                {
-                    valueChanger = i => AppState.Current.State.General.CurrentExp -= i;
-                }
-                else
-                {
-                    if (sender == this.Btn_Add_HP)
-                    {
-                        valueChanger = i => AppState.Current.State.General.CurrentHP += i;
-                    }
-                    else
-                    {
-                        if (sender == this.Btn_Remove_HP)
-                        {
-                            valueChanger = i => AppState.Current.State.General.CurrentHP -= i;
-                        }
-                        else
-                        {
-                            if (sender == this.Btn_Add_TempHP)
-                            {
-                                valueChanger = i => AppState.Current.State.General.CurrentTempHP += i;
-                            }
-                            else
-                            {
-                                valueChanger = i => AppState.Current.State.General.CurrentTempHP -= i;
-                            }
-                        }
-                    }
-                }
-            }
+            Action<int> valueChanger = sender == this.Btn_Add_Exp
+                ? (i => AppState.Current.State.General.CurrentExp += i)
+                : sender == this.Btn_Remove_Exp
+                    ? (i => AppState.Current.State.General.CurrentExp -= i)
+                    : sender == this.Btn_Add_HP
+                        ? (i => AppState.Current.State.General.CurrentHP += i)
+                        : sender == this.Btn_Remove_HP
+                            ? (i => AppState.Current.State.General.CurrentHP -= i)
+                            : sender == this.Btn_Add_TempHP
+                                ? (i => AppState.Current.State.General.CurrentTempHP += i)
+                                : new Action<int>(i => AppState.Current.State.General.CurrentTempHP -= i); // Need this for compiler
 
             ChangeValueWindow cvw = new ChangeValueWindow();
             if (cvw.ShowDialog() ?? false)

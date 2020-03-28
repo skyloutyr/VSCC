@@ -1,7 +1,7 @@
-﻿using System.Windows.Controls;
-
-namespace VSCC.Controls
+﻿namespace VSCC.Controls
 {
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for IItemTest.xaml
     /// </summary>

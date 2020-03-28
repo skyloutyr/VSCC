@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace VSCC.State
+﻿namespace VSCC.State
 {
+    using System;
+
     public class StringEventArgs : EventArgs
     {
         public string Value { get; set; }

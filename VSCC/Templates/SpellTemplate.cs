@@ -1,9 +1,9 @@
-﻿using System;
-using System.Windows.Media.Imaging;
-using VSCC.Properties;
-
-namespace VSCC.Templates
+﻿namespace VSCC.Templates
 {
+    using System;
+    using System.Windows.Media.Imaging;
+    using VSCC.Properties;
+
     public class SpellTemplate
     {
         public static SpellTemplate Empty => new SpellTemplate();

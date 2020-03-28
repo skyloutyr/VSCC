@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Windows;
-using System.Windows.Controls;
-
-namespace VSCC.Scripting.TabCreator.Defs
+﻿namespace VSCC.Scripting.TabCreator.Defs
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+    using System.Windows;
+    using System.Windows.Controls;
+
     public class TextBoxDefinition
     {
         public string Text { get; set; }

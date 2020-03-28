@@ -1,7 +1,7 @@
-﻿using System.Windows;
-
-namespace VSCC.Controls.Windows
+﻿namespace VSCC.Controls.Windows
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for ChangeCashWindow.xaml
     /// </summary>

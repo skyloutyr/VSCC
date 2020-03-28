@@ -1,14 +1,14 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using VSCC.Roll20;
-using VSCC.State;
-
-namespace VSCC.Controls.Tabs
+﻿namespace VSCC.Controls.Tabs
 {
+    using System;
+    using System.IO;
+    using System.Reflection;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+    using VSCC.Roll20;
+    using VSCC.State;
+
     /// <summary>
     /// Interaction logic for Roll20Tab.xaml
     /// </summary>
@@ -35,49 +35,31 @@ namespace VSCC.Controls.Tabs
 
         private void UserControl_Initialized(object sender, EventArgs e)
         {
-            R20WSServer.ServerStartCallback = new Action(() =>
+            R20WSServer.ServerStartCallback = new Action(() => this.Dispatcher.Invoke(() =>
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_Listening;
-                    this.Border_ServerStatus.Background = Brushes.Gold;
-                });
-            });
+                this.Label_ServerStatus.Content = Properties.Resources.R20_SS_Listening;
+                this.Border_ServerStatus.Background = Brushes.Gold;
+            }));
 
-            R20WSServer.ServerStopCallback = new Action(() =>
+            R20WSServer.ServerStopCallback = new Action(() => this.Dispatcher.Invoke(() =>
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_NotStarted;
-                    this.Border_ServerStatus.Background = Brushes.Black;
-                });
-            });
+                this.Label_ServerStatus.Content = Properties.Resources.R20_SS_NotStarted;
+                this.Border_ServerStatus.Background = Brushes.Black;
+            }));
 
-            R20WSServer.ClientConnectCallback = new Action(() =>
+            R20WSServer.ClientConnectCallback = new Action(() => this.Dispatcher.Invoke(() =>
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_Connection;
-                    this.Border_ServerStatus.Background = Brushes.Green;
-                });
-            });
+                this.Label_ServerStatus.Content = Properties.Resources.R20_SS_Connection;
+                this.Border_ServerStatus.Background = Brushes.Green;
+            }));
 
-            R20WSServer.ClientDisconnectCallback = new Action(() =>
+            R20WSServer.ClientDisconnectCallback = new Action(() => this.Dispatcher.Invoke(() =>
             {
-                this.Dispatcher.Invoke(() =>
-                {
-                    this.Label_ServerStatus.Content = Properties.Resources.R20_SS_ConLost;
-                    this.Border_ServerStatus.Background = Brushes.Red;
-                });
-            });
+                this.Label_ServerStatus.Content = Properties.Resources.R20_SS_ConLost;
+                this.Border_ServerStatus.Background = Brushes.Red;
+            }));
 
-            R20WSServer.Logger = new Action<string>(s =>
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    this.TextBlock_Log.Text += s + '\n';
-                });
-            });
+            R20WSServer.Logger = new Action<string>(s => this.Dispatcher.Invoke(() => this.TextBlock_Log.Text += s + '\n'));
         }
 
         private void RollDieSimple(string die) => R20WSServer.Roll(die, die, "Simple Roll", null);

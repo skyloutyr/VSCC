@@ -1,15 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using VSCC.Scripting.TabCreator.Defs;
-using Xceed.Wpf.Toolkit;
-
-namespace VSCC.Scripting.TabCreator
+﻿namespace VSCC.Scripting.TabCreator
 {
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+    using VSCC.Scripting.TabCreator.Defs;
+    using Xceed.Wpf.Toolkit;
+
     public class ReverseUIGenerator
     {
         public static Dictionary<Type, UIType> Type2DefTypeTable { get; } = new Dictionary<Type, UIType>()

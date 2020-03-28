@@ -1,7 +1,7 @@
-﻿using System.Windows.Controls;
-
-namespace VSCC.Controls.Templates
+﻿namespace VSCC.Controls.Templates
 {
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for SpellTemplate.xaml
     /// </summary>

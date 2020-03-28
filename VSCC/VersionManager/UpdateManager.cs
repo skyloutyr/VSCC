@@ -1,10 +1,10 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using VSCC.State;
-
-namespace VSCC.VersionManager
+﻿namespace VSCC.VersionManager
 {
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using VSCC.State;
+
     public class UpdateManager
     {
         public static void Update(string link)

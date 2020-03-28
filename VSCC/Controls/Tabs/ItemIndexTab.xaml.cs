@@ -1,18 +1,18 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using VSCC.Controls.Windows;
-using VSCC.DataType;
-using VSCC.State;
-using VSCC.Templates;
-
-namespace VSCC.Controls.Tabs
+﻿namespace VSCC.Controls.Tabs
 {
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using VSCC.Controls.Windows;
+    using VSCC.DataType;
+    using VSCC.State;
+    using VSCC.Templates;
+
     /// <summary>
     /// Interaction logic for ItemIndexTab.xaml
     /// </summary>
@@ -26,7 +26,7 @@ namespace VSCC.Controls.Tabs
         public ItemIndexTab()
         {
             this.InitializeComponent();
-            this.ToItemCommand = new CommandToItem(this);
+            this.ToItemCommand = new CommandToItem();
             this.ListView_ItemTemplates.ItemsSource = this.AllItemTemplates;
             string database = Properties.Resources.dnd5eitemindex;
             this.AllItemTemplates.AddRange(JsonConvert.DeserializeObject<ItemTemplate[]>(database));
@@ -53,7 +53,7 @@ namespace VSCC.Controls.Tabs
             bool rarityQualifies = !((this.CB_Rarity_Common.IsChecked ?? false) || (this.CB_Rarity_Uncommon.IsChecked ?? false) || (this.CB_Rarity_Rare.IsChecked ?? false) || (this.CB_Rarity_VeryRare.IsChecked ?? false) || (this.CB_Rarity_Legendary.IsChecked ?? false));
             if (!rarityQualifies && (this.CB_Rarity_Common.IsChecked ?? false))
             {
-                if (!string.IsNullOrEmpty(template.ItemRarity) && template.ItemRarity.Equals(VSCC.Properties.Resources.ItemIndex_Rarity_Common, StringComparison.OrdinalIgnoreCase))
+                if (!string.IsNullOrEmpty(template.ItemRarity) && template.ItemRarity.Equals(Properties.Resources.ItemIndex_Rarity_Common, StringComparison.OrdinalIgnoreCase))
                 {
                     rarityQualifies = true;
                 }
@@ -61,7 +61,7 @@ namespace VSCC.Controls.Tabs
 
             if (!rarityQualifies && (this.CB_Rarity_Uncommon.IsChecked ?? false))
             {
-                if (VSCC.Properties.Resources.ItemIndex_Rarity_Uncommon.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
+                if (Properties.Resources.ItemIndex_Rarity_Uncommon.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
                 {
                     rarityQualifies = true;
                 }
@@ -69,7 +69,7 @@ namespace VSCC.Controls.Tabs
 
             if (!rarityQualifies && (this.CB_Rarity_Rare.IsChecked ?? false))
             {
-                if (VSCC.Properties.Resources.ItemIndex_Rarity_Rare.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
+                if (Properties.Resources.ItemIndex_Rarity_Rare.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
                 {
                     rarityQualifies = true;
                 }
@@ -77,7 +77,7 @@ namespace VSCC.Controls.Tabs
 
             if (!rarityQualifies && (this.CB_Rarity_VeryRare.IsChecked ?? false))
             {
-                if (VSCC.Properties.Resources.ItemIndex_Rarity_VeryRare.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
+                if (Properties.Resources.ItemIndex_Rarity_VeryRare.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
                 {
                     rarityQualifies = true;
                 }
@@ -85,7 +85,7 @@ namespace VSCC.Controls.Tabs
 
             if (!rarityQualifies && (this.CB_Rarity_Legendary.IsChecked ?? false))
             {
-                if (VSCC.Properties.Resources.ItemIndex_Rarity_Legendary.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
+                if (Properties.Resources.ItemIndex_Rarity_Legendary.Equals(template.ItemRarity, StringComparison.OrdinalIgnoreCase))
                 {
                     rarityQualifies = true;
                 }
@@ -138,12 +138,7 @@ namespace VSCC.Controls.Tabs
                 }
             }
 
-            if (matches <= 0 && boxes_checked > 0)
-            {
-                return false;
-            }
-
-            return true;
+            return matches > 0 || boxes_checked <= 0;
         }
 
         public static T GetChildOfType<T>(DependencyObject depObj) where T : DependencyObject
@@ -169,12 +164,8 @@ namespace VSCC.Controls.Tabs
 
     internal class CommandToItem : ICommand
     {
-        private readonly ItemIndexTab _owner;
-
 #pragma warning disable 0067
         public event EventHandler CanExecuteChanged;
-
-        public CommandToItem(ItemIndexTab owner) => this._owner = owner;
 
         public bool CanExecute(object parameter) => true;
 
@@ -185,6 +176,7 @@ namespace VSCC.Controls.Tabs
             {
                 ImageList = AppState.Current.TInventory.Images
             };
+
             CreateIItemWindow cciw = new CreateIItemWindow();
             cciw.SetDataContext(ii);
             if (cciw.ShowDialog() ?? false)

@@ -1,14 +1,14 @@
-﻿using Fleck;
-using Newtonsoft.Json;
-using System;
-using System.Threading;
-using VSCC.State;
-
-namespace VSCC.Roll20
+﻿namespace VSCC.Roll20
 {
+    using Fleck;
+    using Newtonsoft.Json;
+    using System;
+    using System.Threading;
+    using VSCC.State;
+
     class R20WSServer
     {
-        private static int _port = 23521;
+        private static readonly int _port = 23521;
 
         private static WebSocketServer _server;
         private static IWebSocketConnection _connection;
@@ -97,10 +97,7 @@ namespace VSCC.Roll20
                     Connected = false;
                 };
 
-                ws.OnMessage = s =>
-                {
-                    Logger?.Invoke("Client says: " + s);
-                };
+                ws.OnMessage = s => Logger?.Invoke("Client says: " + s);
             });
         }
     }

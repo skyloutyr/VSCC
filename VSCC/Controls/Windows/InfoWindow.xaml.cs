@@ -1,14 +1,14 @@
-﻿using System;
-using System.Windows;
-
-namespace VSCC.Controls.Windows
+﻿namespace VSCC.Controls.Windows
 {
+    using System;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for InfoWindow.xaml
     /// </summary>
     public partial class InfoWindow : Window
     {
-        private Lazy<string> _currentVersion = new Lazy<string>(() => VersionManager.VersionChecker.GetCurrentVersion().ToString());
+        private readonly Lazy<string> _currentVersion = new Lazy<string>(() => VersionManager.VersionChecker.GetCurrentVersion().ToString());
 
         public string CurrentVersion
         {
