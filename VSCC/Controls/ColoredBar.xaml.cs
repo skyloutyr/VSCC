@@ -1,12 +1,12 @@
-﻿using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-
-namespace VSCC.Controls
+﻿namespace VSCC.Controls
 {
+    using System;
+    using System.ComponentModel;
+    using System.Globalization;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+
     /// <summary>
     /// Interaction logic for ColoredBar.xaml
     /// </summary>
@@ -47,7 +47,7 @@ namespace VSCC.Controls
         {
             base.OnRender(drawingContext);
             drawingContext.DrawRectangle(this.BarBackground, this.BarBorder, new Rect(0, 0, this.ActualWidth, this.ActualHeight));
-            drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, (this.ActualWidth - 4) * Math.Min(1, (float)this.CurrentValue / this.MaximumValue), this.ActualHeight - 4));
+            drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, Math.Max(0, (this.ActualWidth - 4) * Math.Min(1, (float)this.CurrentValue / this.MaximumValue)), this.ActualHeight - 4));
             FormattedText ft = new FormattedText(
                 $"{ this.CurrentValue }/{ this.MaximumValue }",
                 CultureInfo.CurrentCulture,
@@ -58,7 +58,7 @@ namespace VSCC.Controls
                 (PresentationSource.FromVisual(this)?.CompositionTarget?.TransformToDevice.M11 ?? 1) * 96.0
             );
 
-            drawingContext.DrawText(ft, new Point(this.ActualWidth / 2 - ft.Width / 2, this.ActualHeight / 2 - ft.Height / 2));
+            drawingContext.DrawText(ft, new Point((this.ActualWidth / 2) - (ft.Width / 2), (this.ActualHeight / 2) - (ft.Height / 2)));
         }
     }
 }
