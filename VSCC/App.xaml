@@ -7,7 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <skins:SkinResourceDictionary DarkSource="Skins/Dark.xaml" DefaultSource="Skins/Default.xaml" />
+                <skins:SkinResourceDictionary DarkSource="Skins/Dark.xaml" DefaultSource="Skins/Default.xaml" SoftSource="Skins/Soft.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

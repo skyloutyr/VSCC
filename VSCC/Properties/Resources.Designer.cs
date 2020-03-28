@@ -2241,6 +2241,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Soft.
+        /// </summary>
+        public static string MainMenu_View_Skins_Soft {
+            get {
+                return ResourceManager.GetString("MainMenu_View_Skins_Soft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Actions.
         /// </summary>
         public static string R20_Actions {

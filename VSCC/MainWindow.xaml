@@ -47,6 +47,7 @@
                     <MenuItem x:Name="Skin_Default" IsCheckable="True" IsChecked="True" Header="{x:Static p:Resources.MainMenu_View_Skins_Default}" Tag="0" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                     <MenuItem x:Name="Skin_Bright" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Bright}" Tag="1" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                     <MenuItem x:Name="Skin_Dark" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Dark}" Tag="2" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
+                    <MenuItem x:Name="Skin_Soft" IsCheckable="True" IsChecked="False" Header="{x:Static p:Resources.MainMenu_View_Skins_Soft}" Tag="3" Checked="Skin_Default_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem x:Name="Help" Header="{x:Static p:Resources.MainMenu_About}" IsEnabled="True" HorizontalAlignment="Left" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">

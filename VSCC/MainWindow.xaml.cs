@@ -61,6 +61,7 @@
             this.Skin_Default.IsChecked = Settings.Default.Skin == 0;
             this.Skin_Bright.IsChecked = Settings.Default.Skin == 1;
             this.Skin_Dark.IsChecked = Settings.Default.Skin == 2;
+            this.Skin_Soft.IsChecked = Settings.Default.Skin == 3;
             this.Skins.IsEnabled = SkinResourceDictionary.IsRunningWin8OrGreater();
         }
 

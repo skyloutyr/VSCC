@@ -839,6 +839,9 @@
   <data name="MainMenu_View_Skins_Default" xml:space="preserve">
     <value>По Умолчанию</value>
   </data>
+  <data name="MainMenu_View_Skins_Soft" xml:space="preserve">
+    <value>Мягкая</value>
+  </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Действия</value>
   </data>

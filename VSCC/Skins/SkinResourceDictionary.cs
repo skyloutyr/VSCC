@@ -13,6 +13,7 @@
 
         private Uri _defaultSource;
         private Uri _darkSource;
+        private Uri _softSource;
 
         public Uri DefaultSource
         {
@@ -33,9 +34,29 @@
             }
         }
 
+        public Uri SoftSource
+        {
+            get => this._softSource;
+            set
+            {
+                this._softSource = value;
+                this.UpdateSource();
+            }
+        }
+
         public void UpdateSource()
         {
-            Uri value = IsRunningWin8OrGreater() ? Settings.Default.Skin == 0 ? this.ResolveSystemSkin() : Settings.Default.Skin == 1 ? this._defaultSource : this._darkSource : this._defaultSource;
+            Uri value =
+                IsRunningWin8OrGreater() ?
+                    Settings.Default.Skin == 0 ?
+                        this.ResolveSystemSkin() :
+                    Settings.Default.Skin == 1 ?
+                        this._defaultSource :
+                    Settings.Default.Skin == 3 ?
+                        this._softSource :
+                    this._darkSource :
+                this._defaultSource;
+
             if (value != null && base.Source != value)
             {
                 base.Source = value;
@@ -44,16 +65,23 @@
 
         private Uri ResolveSystemSkin()
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
+            try
             {
-                object registryValueObject = key?.GetValue(RegistryValueName);
-                if (registryValueObject == null)
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
                 {
-                    return this._defaultSource;
-                }
+                    object registryValueObject = key?.GetValue(RegistryValueName);
+                    if (registryValueObject == null)
+                    {
+                        return this._defaultSource;
+                    }
 
-                int registryValue = (int)registryValueObject;
-                return registryValue > 0 ? this._defaultSource : this._darkSource;
+                    int registryValue = (int)registryValueObject;
+                    return registryValue > 0 ? this._defaultSource : this._darkSource;
+                }
+            }
+            catch
+            {
+                return this._defaultSource;
             }
         }
 
