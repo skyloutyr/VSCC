@@ -19,12 +19,20 @@
     {
         public ObservableCollection<InventoryItem> Items { get; set; } = new ObservableCollection<InventoryItem>();
         public ImageListModel Images { get; } = new ImageListModel();
+        private bool _haltRefresh;
 
         public InventoryTab()
         {
             this.InitializeComponent();
             this.Images.LoadFromPhysicalFolder("./Images/Lists/Items");
-            this.Items.CollectionChanged += (o, e) => this.Inventory.Items.Refresh();
+            this.Items.CollectionChanged += (o, e) =>
+            {
+                if (!this._haltRefresh)
+                {
+                    this.Inventory.Items.Refresh();
+                }
+            };
+
             this.Inventory.ItemsSource = this.Items;
             this.Inventory.Items.Refresh();
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.Inventory.ItemsSource);
@@ -84,10 +92,21 @@
             }
         }
 
-        private void UserControl_Initialized(object sender, EventArgs e)
-        {
+        private void UserControl_Initialized(object sender, EventArgs e) =>
+            this.KeyUp += (o, kea) =>
+            {
+                if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
+                {
+                    this._haltRefresh = true;
+                    foreach (InventoryItem ii in this.Inventory.SelectedItems)
+                    {
+                        this.Items.Remove(ii);
+                    }
 
-        }
+                    this._haltRefresh = false;
+                    this.Inventory.Items.Refresh();
+                }
+            };
 
         private void Btn_Edit_Click(object sender, RoutedEventArgs e)
         {
