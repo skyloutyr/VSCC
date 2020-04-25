@@ -1920,7 +1920,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-refresh-64.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Images\Lists\Spells\air-burst-air-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

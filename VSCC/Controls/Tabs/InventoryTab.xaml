@@ -109,6 +109,9 @@
                     <Button x:Name="Btn_Add" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Add_Click">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
+                    <Button x:Name="Btn_Refresh" HorizontalAlignment="Left" Margin="212,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Refresh_Click">
+                        <Image Source="/VSCC;component/Images/AppIcons/icons8-refresh-64.png" Stretch="Uniform"/>
+                    </Button>
                     <Label Content="{x:Static p:Resources.Inventory_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,1,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="286,19,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:SingleUpDown x:Name="IntUD_WeightCurrent" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,23,0,0" Width="50"/>

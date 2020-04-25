@@ -233,5 +233,7 @@
                 this.Btn_Edit_Click(null, new RoutedEventArgs());
             }
         }
+
+        private void Btn_Refresh_Click(object sender, RoutedEventArgs e) => this.RecalculateWeights(true, false, false);
     }
 }
