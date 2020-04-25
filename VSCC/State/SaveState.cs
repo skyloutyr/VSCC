@@ -243,10 +243,42 @@
             set => AppState.Current.TGeneral.IntUD_Str.Value = value;
         }
 
+        public ObservableCollection<StatModifier> ModifiersStr
+        {
+            get => AppState.Current.TGeneral.ModifiersStrength;
+            set
+            {
+                AppState.Current.TGeneral.ModifiersStrength.Clear();
+                if (value != null)
+                {
+                    foreach (StatModifier sm in value)
+                    {
+                        AppState.Current.TGeneral.ModifiersStrength.Add(sm);
+                    }
+                }
+            }
+        }
+
         public int StatDex
         {
             get => AppState.Current.TGeneral.IntUD_Dex.Value ?? 0;
             set => AppState.Current.TGeneral.IntUD_Dex.Value = value;
+        }
+
+        public ObservableCollection<StatModifier> ModifiersDex
+        {
+            get => AppState.Current.TGeneral.ModifiersDexterity;
+            set
+            {
+                AppState.Current.TGeneral.ModifiersDexterity.Clear();
+                if (value != null)
+                {
+                    foreach (StatModifier sm in value)
+                    {
+                        AppState.Current.TGeneral.ModifiersDexterity.Add(sm);
+                    }
+                }
+            }
         }
 
         public int StatCon
@@ -255,10 +287,42 @@
             set => AppState.Current.TGeneral.IntUD_Con.Value = value;
         }
 
+        public ObservableCollection<StatModifier> ModifiersCon
+        {
+            get => AppState.Current.TGeneral.ModifiersConstitution;
+            set
+            {
+                AppState.Current.TGeneral.ModifiersConstitution.Clear();
+                if (value != null)
+                {
+                    foreach (StatModifier sm in value)
+                    {
+                        AppState.Current.TGeneral.ModifiersConstitution.Add(sm);
+                    }
+                }
+            }
+        }
+
         public int StatCha
         {
             get => AppState.Current.TGeneral.IntUD_Cha.Value ?? 0;
             set => AppState.Current.TGeneral.IntUD_Cha.Value = value;
+        }
+
+        public ObservableCollection<StatModifier> ModifiersCha
+        {
+            get => AppState.Current.TGeneral.ModifiersCharisma;
+            set
+            {
+                AppState.Current.TGeneral.ModifiersCharisma.Clear();
+                if (value != null)
+                {
+                    foreach (StatModifier sm in value)
+                    {
+                        AppState.Current.TGeneral.ModifiersCharisma.Add(sm);
+                    }
+                }
+            }
         }
 
         public int StatWis
@@ -267,10 +331,42 @@
             set => AppState.Current.TGeneral.IntUD_Wis.Value = value;
         }
 
+        public ObservableCollection<StatModifier> ModifiersWis
+        {
+            get => AppState.Current.TGeneral.ModifiersWisdom;
+            set
+            {
+                AppState.Current.TGeneral.ModifiersWisdom.Clear();
+                if (value != null)
+                {
+                    foreach (StatModifier sm in value)
+                    {
+                        AppState.Current.TGeneral.ModifiersWisdom.Add(sm);
+                    }
+                }
+            }
+        }
+
         public int StatInt
         {
             get => AppState.Current.TGeneral.IntUD_Int.Value ?? 0;
             set => AppState.Current.TGeneral.IntUD_Int.Value = value;
+        }
+
+        public ObservableCollection<StatModifier> ModifiersInt
+        {
+            get => AppState.Current.TGeneral.ModifiersIntelligence;
+            set
+            {
+                AppState.Current.TGeneral.ModifiersIntelligence.Clear();
+                if (value != null)
+                {
+                    foreach (StatModifier sm in value)
+                    {
+                        AppState.Current.TGeneral.ModifiersIntelligence.Add(sm);
+                    }
+                }
+            }
         }
 
         public int StatModStr
@@ -655,6 +751,7 @@
             this.HasInspiration = false;
             this.Languages = this.Profficiencies = string.Empty;
             this.PortraitLocation = "file://#0";
+            this.ModifiersStr = this.ModifiersCon = this.ModifiersCha = this.ModifiersInt = this.ModifiersDex = this.ModifiersWis = null;
         }
     }
 

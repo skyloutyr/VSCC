@@ -115,43 +115,61 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="10,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Strength}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Str" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                            <Button x:Name="Btn_TempStat_Str" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                                <Path x:Name="Path_Down" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+                            </Button>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="75" Margin="10,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Dexterity}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Dex" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                            <Button x:Name="Btn_TempStat_Dex" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                                <Path x:Name="Path_Down_Dex" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+                            </Button>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="75" Margin="10,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Constitution}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Con" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                            <Button x:Name="Btn_TempStat_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                                <Path x:Name="Path_Down_Con" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+                            </Button>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="75" Margin="106,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Charisma}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Cha" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                            <Button x:Name="Btn_TempStat_Cha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                                <Path x:Name="Path_Down_Cha" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+                            </Button>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="75" Margin="106,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Intelligence}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Int" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                            <Button x:Name="Btn_TempStat_Int" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                                <Path x:Name="Path_Down_Int" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+                            </Button>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="75" Margin="106,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Wisdom}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="68" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <xctk:IntegerUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Wis" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
+                            <Button x:Name="Btn_TempStat_Wis" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                                <Path x:Name="Path_Down_Wis" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+                            </Button>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="155" Margin="201,234,0,0" VerticalAlignment="Top" Width="138" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">

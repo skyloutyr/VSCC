@@ -583,6 +583,9 @@
   <data name="General_Wisdom" xml:space="preserve">
     <value>Wisdom</value>
   </data>
+  <data name="Generic_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="Generic_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -1048,6 +1051,12 @@ On certain browsers you may need to do more actions.</value>
   </data>
   <data name="SpellIndex_Source_XGTE" xml:space="preserve">
     <value>Xanathars Guide To Everything</value>
+  </data>
+  <data name="StatModifier_Label" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="StatModifier_Text" xml:space="preserve">
+    <value>Text</value>
   </data>
   <data name="Tab_Extras" xml:space="preserve">
     <value>Extras</value>

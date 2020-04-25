@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="VSCC.Controls.Templates.StatModifierTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VSCC.Controls.Templates"
+             mc:Ignorable="d" 
+             d:DesignHeight="23" d:DesignWidth="237">
+    <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Background="{StaticResource Static.Background}">
+        <Grid>
+            <Button x:Name="Btn_Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="21" Foreground="{StaticResource Static.Foreground}" >
+                <Path Fill="Red">
+                    <Path.Data>
+                        <CombinedGeometry>
+                            <CombinedGeometry.Geometry1>
+                                <RectangleGeometry Rect="0, 0, 2, 10" >
+                                    <RectangleGeometry.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-45"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </RectangleGeometry.Transform>
+                                </RectangleGeometry>
+                            </CombinedGeometry.Geometry1>
+                            <CombinedGeometry.Geometry2>
+                                <RectangleGeometry Rect="4, -6, 2, 10" >
+                                    <RectangleGeometry.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="45"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </RectangleGeometry.Transform>
+                                </RectangleGeometry>
+                            </CombinedGeometry.Geometry2>
+                        </CombinedGeometry>
+                    </Path.Data>
+                </Path>
+            </Button>
+            <Label x:Name="Label_ModAmount" Content="-12" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,0,0,0" FontSize="8" />
+            <TextBlock x:Name="TB_ModDesc" Text="A very long and elaborate description of the modifier that can't fit into the size of the template" TextAlignment="Left" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,0,0,0" FontSize="8" Width="198" Height="21" />
+        </Grid>
+    </Border>
+</UserControl>

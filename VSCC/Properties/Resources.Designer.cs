@@ -1475,6 +1475,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Generic_Add {
+            get {
+                return ResourceManager.GetString("Generic_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Generic_Cancel {
@@ -2861,6 +2870,24 @@ namespace VSCC.Properties {
         public static string SpellIndex_Sources {
             get {
                 return ResourceManager.GetString("SpellIndex_Sources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modifier.
+        /// </summary>
+        public static string StatModifier_Label {
+            get {
+                return ResourceManager.GetString("StatModifier_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        public static string StatModifier_Text {
+            get {
+                return ResourceManager.GetString("StatModifier_Text", resourceCulture);
             }
         }
         

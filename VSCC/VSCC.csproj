@@ -123,6 +123,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Dialogs\NewStatModifierDialog.xaml.cs">
+      <DependentUpon>NewStatModifierDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\InventoryItemPanel.xaml.cs">
       <DependentUpon>InventoryItemPanel.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,12 @@
     <Compile Include="Controls\Templates\SpellTemplate.xaml.cs">
       <DependentUpon>SpellTemplate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Templates\StatModifierTemplate.xaml.cs">
+      <DependentUpon>StatModifierTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TemporaryStatsPanel.xaml.cs">
+      <DependentUpon>TemporaryStatsPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Windows\ChangeCashWindow.xaml.cs">
       <DependentUpon>ChangeCashWindow.xaml</DependentUpon>
     </Compile>
@@ -179,6 +188,7 @@
     </Compile>
     <Compile Include="DataType\CostValue.cs" />
     <Compile Include="DataType\Spell.cs" />
+    <Compile Include="DataType\StatModifier.cs" />
     <Compile Include="Legacy\SaveV1Adapter.cs" />
     <Compile Include="Models\ImageList\ImageListModel.cs" />
     <Compile Include="Models\ImageList\ImageModel.cs" />
@@ -222,6 +232,10 @@
     <Compile Include="VersionManager\VersionChecker.cs" />
     <Compile Include="VersionManager\VersionSpecV1.cs" />
     <Page Include="Controls\ColoredBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\NewStatModifierDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -274,6 +288,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Templates\SpellTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\StatModifierTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TemporaryStatsPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1898,9 +1920,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\Dialogs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Images\Lists\Spells\air-burst-air-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

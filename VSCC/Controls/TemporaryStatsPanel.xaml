@@ -1,0 +1,68 @@
+﻿<UserControl x:Name="userControl" x:Class="VSCC.Controls.TemporaryStatsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VSCC.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="256" d:DesignWidth="256" Foreground="{StaticResource Static.Foreground}">
+    <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Width="256" Height="256" Background="{StaticResource Static.Background}">
+        <Grid>
+            <Button x:Name="Btn_Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Foreground="{StaticResource Static.Foreground}" Click="Btn_Close_Click" BorderThickness="1" >
+                <Path x:Name="Path_Down" Data="M4,0L8,7 0,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
+            </Button>
+            <Button x:Name="Btn_New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Height="23" Margin="19,0,0,0" Content="Add" Foreground="{StaticResource Static.Foreground}" Click="Btn_New_Click" />
+            <ListView x:Name="List_Modifiers" VirtualizingPanel.IsVirtualizing="False" Margin="0,23,0,0" Background="{StaticResource Static.Background}" ItemsSource="{Binding DataContext, ElementName=userControl}" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Background="{StaticResource Static.Background}">
+                            <Grid>
+                                <Button x:Name="Btn_Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="21" Foreground="{StaticResource Static.Foreground}" BorderThickness="1" Click="Btn_Delete_Click">
+                                    <Path Fill="Red">
+                                        <Path.Data>
+                                            <CombinedGeometry>
+                                                <CombinedGeometry.Geometry1>
+                                                    <RectangleGeometry Rect="0, 0, 2, 10" >
+                                                        <RectangleGeometry.Transform>
+                                                            <TransformGroup>
+                                                                <ScaleTransform/>
+                                                                <SkewTransform/>
+                                                                <RotateTransform Angle="-45"/>
+                                                                <TranslateTransform/>
+                                                            </TransformGroup>
+                                                        </RectangleGeometry.Transform>
+                                                    </RectangleGeometry>
+                                                </CombinedGeometry.Geometry1>
+                                                <CombinedGeometry.Geometry2>
+                                                    <RectangleGeometry Rect="4, -6, 2, 10" >
+                                                        <RectangleGeometry.Transform>
+                                                            <TransformGroup>
+                                                                <ScaleTransform/>
+                                                                <SkewTransform/>
+                                                                <RotateTransform Angle="45"/>
+                                                                <TranslateTransform/>
+                                                            </TransformGroup>
+                                                        </RectangleGeometry.Transform>
+                                                    </RectangleGeometry>
+                                                </CombinedGeometry.Geometry2>
+                                            </CombinedGeometry>
+                                        </Path.Data>
+                                    </Path>
+                                </Button>
+                                <Label x:Name="Label_ModAmount" Content="{Binding Value}" Foreground="{Binding LabelBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,0,0,0" FontSize="8" />
+                                <TextBlock x:Name="TB_ModDesc" Text="{Binding Label}" TextAlignment="Left" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,0,0,0" FontSize="8" Width="195" Height="21" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Border>
+</UserControl>

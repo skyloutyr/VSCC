@@ -3,11 +3,15 @@
     using Microsoft.Win32;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Controls.Primitives;
     using System.Windows.Input;
     using VSCC.Controls.Windows;
+    using VSCC.DataType;
     using VSCC.State;
     using Xceed.Wpf.Toolkit;
 
@@ -18,6 +22,14 @@
     {
         private readonly KeyValuePair<CheckBox, IntegerUpDown>[] _statsProfMap;
         private readonly KeyValuePair<IntegerUpDown, IntegerUpDown[]>[] _statsSkillsMap;
+
+        public ObservableCollection<StatModifier> ModifiersStrength { get; set; } = new ObservableCollection<StatModifier>();
+        public ObservableCollection<StatModifier> ModifiersDexterity { get; set; } = new ObservableCollection<StatModifier>();
+        public ObservableCollection<StatModifier> ModifiersConstitution { get; set; } = new ObservableCollection<StatModifier>();
+        public ObservableCollection<StatModifier> ModifiersWisdom { get; set; } = new ObservableCollection<StatModifier>();
+        public ObservableCollection<StatModifier> ModifiersIntelligence { get; set; } = new ObservableCollection<StatModifier>();
+        public ObservableCollection<StatModifier> ModifiersCharisma { get; set; } = new ObservableCollection<StatModifier>();
+
         public GeneralTab()
         {
             this.InitializeComponent();
@@ -59,6 +71,60 @@
                 new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Cha, new []{ this.IntUD_Saves_Cha, this.IntUD_Deception, this.IntUD_Persuasion, this.IntUD_Performance, this.IntUD_Intimidation }),
                 new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Con, new []{ this.IntUD_Saves_Con }),
             };
+
+            this.ModifiersStrength.CollectionChanged += this.ChangeStatModifiers;
+            this.ModifiersDexterity.CollectionChanged += this.ChangeStatModifiers;
+            this.ModifiersConstitution.CollectionChanged += this.ChangeStatModifiers;
+            this.ModifiersWisdom.CollectionChanged += this.ChangeStatModifiers;
+            this.ModifiersCharisma.CollectionChanged += this.ChangeStatModifiers;
+            this.ModifiersIntelligence.CollectionChanged += this.ChangeStatModifiers;
+            this.Btn_TempStat_Str.Tag = this.ModifiersStrength;
+            this.Btn_TempStat_Dex.Tag = this.ModifiersDexterity;
+            this.Btn_TempStat_Con.Tag = this.ModifiersConstitution;
+            this.Btn_TempStat_Cha.Tag = this.ModifiersCharisma;
+            this.Btn_TempStat_Int.Tag = this.ModifiersIntelligence;
+            this.Btn_TempStat_Wis.Tag = this.ModifiersWisdom;
+        }
+
+        public void ChangeStatModifiers(object sender, NotifyCollectionChangedEventArgs args)
+        {
+            int modsOld = args.OldItems?.Cast<StatModifier>().Sum(sm => sm.Value) ?? 0;
+            int modsNew = args.NewItems?.Cast<StatModifier>().Sum(sm => sm.Value) ?? 0;
+            if (sender == this.ModifiersStrength)
+            {
+                this.IntUD_Str.Value += modsNew - modsOld;
+                return;
+            }
+
+            if (sender == this.ModifiersDexterity)
+            {
+                this.IntUD_Dex.Value += modsNew - modsOld;
+                return;
+            }
+
+            if (sender == this.ModifiersConstitution)
+            {
+                this.IntUD_Con.Value += modsNew - modsOld;
+                return;
+            }
+
+            if (sender == this.ModifiersCharisma)
+            {
+                this.IntUD_Cha.Value += modsNew - modsOld;
+                return;
+            }
+
+            if (sender == this.ModifiersWisdom)
+            {
+                this.IntUD_Wis.Value += modsNew - modsOld;
+                return;
+            }
+
+            if (sender == this.ModifiersIntelligence)
+            {
+                this.IntUD_Int.Value += modsNew - modsOld;
+                return;
+            }
         }
 
         public void RebuildAllStats()
@@ -69,7 +135,7 @@
             for (int i = 0; i < 6; ++i)
             {
                 (IntegerUpDown, TextBox) dat = statMods[i];
-                dat.Item2.Text = this.GetModifierForStat(dat.Item1.Value ?? 0).ToString();
+                dat.Item2.Text = this.GetModifierForStat(dat.Item1.Value ?? 10).ToString();
             }
 
             foreach (KeyValuePair<IntegerUpDown, IntegerUpDown[]> kvp in this._statsSkillsMap)
@@ -97,7 +163,7 @@
 
             int oldVal = (int)(e.OldValue ?? 0);
             int newVal = (int)(e.NewValue ?? 0);
-            int shouldBeOldVal = this.GetModifierForStat(oldVal);
+            int oldModVal = this.GetModifierForStat(oldVal);
             int newModVal = this.GetModifierForStat(newVal);
             IntegerUpDown inUD = (IntegerUpDown)sender;
             if (inUD == this.IntUD_Str)
@@ -114,7 +180,7 @@
                     actualOldVal = 0;
                 }
 
-                int statDiff = actualOldVal - shouldBeOldVal;
+                int statDiff = actualOldVal - oldModVal;
                 tb.Text = (newModVal + statDiff).ToString();
             }
 
@@ -126,7 +192,7 @@
                 }
                 else
                 {
-                    stat.Value += newModVal - shouldBeOldVal;
+                    stat.Value += newModVal - oldModVal;
                 }
             }
         }
@@ -277,6 +343,15 @@
                     //AppState.Current.TGeneral.Portrait.Source = new BitmapImage(uri);
                 }
             }
+        }
+
+        private void Btn_TempStat_Str_Click(object sender, RoutedEventArgs e)
+        {
+            Popup popup = new Popup();
+            TemporaryStatsPanel tsp = new TemporaryStatsPanel(popup, ((Button)sender).Tag as ObservableCollection<StatModifier>);
+            tsp.HorizontalOffset = tsp.VerticalOffset = -1;
+            tsp.PlacementTarget = (UIElement)sender;
+            Popup.CreateRootPopup(popup, tsp);
         }
     }
 }

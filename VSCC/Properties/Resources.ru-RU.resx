@@ -350,7 +350,7 @@
     <value>Беспризорник</value>
   </data>
   <data name="General_Bonds" xml:space="preserve">
-    <value>Связи</value>
+    <value>Привязанности</value>
   </data>
   <data name="General_Cha" xml:space="preserve">
     <value>Хар</value>
@@ -368,13 +368,13 @@
     <value>Бард</value>
   </data>
   <data name="General_Class_Cleric" xml:space="preserve">
-    <value>Клирик</value>
+    <value>Жрец</value>
   </data>
   <data name="General_Class_Druid" xml:space="preserve">
     <value>Друид</value>
   </data>
   <data name="General_Class_Fighter" xml:space="preserve">
-    <value>Боец</value>
+    <value>Воин</value>
   </data>
   <data name="General_Class_Monk" xml:space="preserve">
     <value>Монах</value>
@@ -582,6 +582,9 @@
   </data>
   <data name="General_Wisdom" xml:space="preserve">
     <value>Мудрость</value>
+  </data>
+  <data name="Generic_Add" xml:space="preserve">
+    <value>Добавить</value>
   </data>
   <data name="Generic_Cancel" xml:space="preserve">
     <value>Отмена</value>
@@ -864,7 +867,7 @@
     <value>Спасбросок Лов</value>
   </data>
   <data name="R20_IntSave" xml:space="preserve">
-    <value>Спасбросик Инт</value>
+    <value>Спасбросок Инт</value>
   </data>
   <data name="R20_Log" xml:space="preserve">
     <value>Логи</value>
@@ -1048,6 +1051,12 @@
   </data>
   <data name="SpellIndex_Source_XGTE" xml:space="preserve">
     <value>Xanathars Guide To Everything</value>
+  </data>
+  <data name="StatModifier_Label" xml:space="preserve">
+    <value>Модификатор</value>
+  </data>
+  <data name="StatModifier_Text" xml:space="preserve">
+    <value>Текст</value>
   </data>
   <data name="Tab_Extras" xml:space="preserve">
     <value>Экстра</value>
