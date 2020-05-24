@@ -2,6 +2,7 @@
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using System;
     using System.ComponentModel;
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
@@ -178,6 +179,8 @@
                 this.OnPropertyChanged("CP");
             }
         }
+
+        public Guid ObjectID { get; set; }
 
         [JsonIgnore]
         public string GeneratedDescription => $"{ this.Name }\nAmount: { this.Amount }\nWeight: { this.Weight * this.Amount }({ this.Weight })\nCost:{ this.Cost }\nType:{ this.Type }\nRarity: { this.Rarity }\n\n{ this.Description }";

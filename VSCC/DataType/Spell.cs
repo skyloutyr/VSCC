@@ -242,6 +242,8 @@
             }
         }
 
+        public Guid ObjectID { get; set; }
+
         [JsonIgnore]
         public string GeneratedDescription =>
             $"{ this.Name }\n" +

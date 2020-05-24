@@ -9,6 +9,7 @@
     public class SaveState
     {
         public int Version { get; set; } = 2;
+        public Guid ObjectID { get; set; } = Guid.NewGuid();
         public General General { get; set; } = new General();
         public Extras Extras { get; set; } = new Extras();
         public Inventory Inventory { get; set; } = new Inventory();

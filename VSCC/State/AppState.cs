@@ -4,11 +4,14 @@
     using Newtonsoft.Json.Linq;
     using System;
     using System.IO;
+    using System.Linq;
     using System.Security.Cryptography;
     using System.Text;
     using System.Threading;
     using System.Windows.Controls;
     using VSCC.Controls.Tabs;
+    using VSCC.DataType;
+    using VSCC.Structs;
 
     public class AppState
     {
@@ -88,8 +91,9 @@
             return s;
         }
 
-        public void Load(string s, out bool wantsRecalc)
+        public void Load(string s, out LoadFlags flags)
         {
+            flags = LoadFlags.None;
             this.FreezeAutocalc = true;
             int saveVersion = this.LookupSaveVersion(s);
             this.State.Clear();
@@ -98,14 +102,13 @@
                 case 1:
                 {
                     this.LoadV1(s);
-                    wantsRecalc = true;
+                    flags = LoadFlags.V2AdaptV1;
                     break;
                 }
 
                 case 2:
                 {
-                    this.LoadV2(s);
-                    wantsRecalc = false;
+                    this.LoadV2(s, ref flags);
                     break;
                 }
 
@@ -127,6 +130,50 @@
                 {
                     this._lastSaveHash = GetMd5Hash(md5Hash, File.ReadAllText(location));
                 }
+            }
+        }
+
+        public void CreateObjectIDs()
+        {
+            this.State.ObjectID = Guid.NewGuid();
+            foreach (InventoryItem ii in this.State.Inventory.Items
+                .Append(this.State.Inventory.Boots)
+                .Append(this.State.Inventory.Chestpiece)
+                .Append(this.State.Inventory.Helmet)
+                .Append(this.State.Inventory.Leggings)
+                .Append(this.State.Inventory.Misc1)
+                .Append(this.State.Inventory.Misc2)
+                .Append(this.State.Inventory.Necklace)
+                .Append(this.State.Inventory.Ring0)
+                .Append(this.State.Inventory.Ring1)
+                .Append(this.State.Inventory.Ring2)
+                .Append(this.State.Inventory.Ring3)
+                .Append(this.State.Inventory.Ring4)
+                .Append(this.State.Inventory.Ring5)
+                .Append(this.State.Inventory.Ring6)
+                .Append(this.State.Inventory.Ring7)
+                .Append(this.State.Inventory.WeaponLeft)
+                .Append(this.State.Inventory.WeaponRight)
+                )
+            {
+                if (ii != null)
+                {
+                    ii.ObjectID = Guid.NewGuid();
+                }
+            }
+
+            foreach (Spell s in this.State.Spellbook.Cantrips
+                .Concat(this.State.Spellbook.Lvl1Spells)
+                .Concat(this.State.Spellbook.Lvl2Spells)
+                .Concat(this.State.Spellbook.Lvl3Spells)
+                .Concat(this.State.Spellbook.Lvl4Spells)
+                .Concat(this.State.Spellbook.Lvl5Spells)
+                .Concat(this.State.Spellbook.Lvl6Spells)
+                .Concat(this.State.Spellbook.Lvl7Spells)
+                .Concat(this.State.Spellbook.Lvl8Spells)
+                .Concat(this.State.Spellbook.Lvl9Spells))
+            {
+                s.ObjectID = Guid.NewGuid();
             }
         }
 
@@ -159,12 +206,17 @@
             return 1;
         }
 
-        private void LoadV2(string s)
+        private void LoadV2(string s, ref LoadFlags flags)
         {
             this.State.Load(s);
             if (this.State.Inventory.WeightCurrent == 0 && this.State.Inventory.WeightMax1 == 0 && this.State.Inventory.WeightMax2 == 0)
             {
-                this.TInventory.RecalculateWeights(true, true, true);
+                flags |= LoadFlags.V2InventoryWeightsMissing;
+            }
+
+            if (this.State.ObjectID.Equals(Guid.Empty))
+            {
+                flags |= LoadFlags.V2NoObjectIDs;
             }
         }
 
@@ -194,7 +246,7 @@
             }
         }
 
-        private static string GetMd5Hash(MD5 md5Hash, string input)
+        public static string GetMd5Hash(MD5 md5Hash, string input)
         {
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
             StringBuilder sBuilder = new StringBuilder();
