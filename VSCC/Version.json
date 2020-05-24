@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.1.6",
+  "version": "1.1.7",
   "changelog": {
     "0.0.0": "Pre-release version. Basic functionality.",
     "1.0.0": "First release. Added roll20 integration.",
@@ -15,6 +15,7 @@
     "1.1.3": "App no longer asks to save a blank file. Removed legacy components.",
     "1.1.4": "Updated the target to .net 4.8. App now restarts on language changes. Made the UI more consistent. Removed a lot of unnecessary references. Added NLua to the list of 3rd party libraries.",
     "1.1.5": "Added a dark skin. Added a reverse UI generator for scripting.",
-    "1.1.6": "Added a soft skin. Added the ability to use skins on systems other than win10/win8.1. Fixed a memory leak with icons. Fixed a crash with negative HP/XP/THP values. Added stat modifiers. Added the ability to recalculate your inventory's weight. Added a keybinding to delete selected inventory items."
+    "1.1.6": "Added a soft skin. Added the ability to use skins on systems other than win10/win8.1. Fixed a memory leak with icons. Fixed a crash with negative HP/XP/THP values. Added stat modifiers. Added the ability to recalculate your inventory's weight. Added a keybinding to delete selected inventory items.",
+    "1.1.7": "Fixed item weights not displaying correctly. Scripts now have access to ObjectIDs to save data easier. Scripts now have a built-in json <-> table converter. Added the Scripts Marketplace (Experimental)"
   }
 }
