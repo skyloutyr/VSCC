@@ -5,7 +5,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using VSCC.Controls.Windows;
     using VSCC.VersionManager;
 
     public class MarketplaceEntry
@@ -82,10 +81,10 @@
         public string FlagsProperty => string.Join(", ", this.Flags.Select(p => Enum.GetName(typeof(MarketplaceEntryFlag), p)));
 
         [JsonIgnore]
-        public string DeleteTooltip => this.IsLocal ? (string)ScriptsMarketplace.CurrentWindow?.FindResource("Marketplace_Entry_Delete") ?? "Delete" : "Can only delete local scripts!";
+        public string DeleteTooltip => this.IsLocal ? "Delete" ?? "Delete" : "Can only delete local scripts!";
 
         [JsonIgnore]
-        public string UpdateTooltip => this.IsLocal ? this.HasUpdate ? (string)ScriptsMarketplace.CurrentWindow?.FindResource("Marketplace_Entry_Download") : "Using latest version" : (string)ScriptsMarketplace.CurrentWindow?.FindResource("Marketplace_Entry_Download");
+        public string UpdateTooltip => this.IsLocal ? this.HasUpdate ? "Download" : "Using latest version" : "Download";
 
         [JsonIgnore]
         public string VersionProperty => this.LatestVersion.ToString();

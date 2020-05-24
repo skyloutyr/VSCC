@@ -131,7 +131,7 @@
         {
             e.Handled = true;
             MarketplaceEntry me = (MarketplaceEntry)((Button)sender).DataContext;
-            if (MessageBox.Show((string)this.FindResource("Marketplace_Delete_Desc"), (string)this.FindResource("Marketplace_Delete_Title"), MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this script? This action can't be reversed!", "Confirm script deletion", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 if (me.HasNoMetadata) // Is outdated local script before the marketplace introduction
                 {
