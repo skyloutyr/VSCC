@@ -12,6 +12,7 @@
     using VSCC.Scripting;
     using VSCC.Skins;
     using VSCC.State;
+    using VSCC.Structs;
     using VSCC.VersionManager;
 
     /// <summary>
@@ -20,17 +21,63 @@
     public partial class MainWindow : Window
     {
         private bool _forceClose;
+        private bool _marketplaceOpen;
 
         public string OldWindowSaveData { get; set; }
 
         public MainWindow()
         {
+            this.Dispatcher.UnhandledException += this.Dispatcher_UnhandledException;
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.AppThread = Thread.CurrentThread;
             this.ChangeLanguage(Settings.Default.Language, true, false);
             this.ChangeSkin(Settings.Default.Skin, false);
             this.InitializeComponent();
             AppState.Current.FreezeAutocalc = false;
+        }
+
+        private void Dispatcher_UnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            if (!Debugger.IsAttached)
+            {
+                try
+                {
+                    if (!this.TryFindResourceSafe("CrashTitle", out string title))
+                    {
+                        title = "Application has terminated!";
+                    }
+
+                    if (!this.TryFindResourceSafe("CrashDesc", out string desc))
+                    {
+                        desc = "The application has terminated with an unhandled exception: {0}[{1}]. Would you like to reset the application settings to factory default?";
+                    }
+
+                    desc = string.Format(desc, e.Exception, e.Exception.HResult);
+                    if (MessageBox.Show(desc, title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        Settings.Default.Reset();
+                        Settings.Default.Save();
+                    }
+                }
+                catch
+                {
+                    throw e.Exception;
+                }
+            }
+        }
+
+        private bool TryFindResourceSafe(string resourceName, out string resource)
+        {
+            try
+            {
+                resource = (string)this.FindResource(resourceName);
+                return true;
+            }
+            catch
+            {
+                resource = string.Empty;
+                return false;
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -115,9 +162,9 @@
 
             if (ofd.ShowDialog() ?? false)
             {
-                AppState.Current.Load(System.IO.File.ReadAllText(ofd.FileName), out bool wantsRecalc);
+                AppState.Current.Load(System.IO.File.ReadAllText(ofd.FileName), out LoadFlags flags);
                 AppState.Current.SetSaveLocation(ofd.FileName, true);
-                if (wantsRecalc)
+                if (flags.HasFlag(LoadFlags.V2AdaptV1))
                 {
                     if (MessageBox.Show(Properties.Resources.Generic_OldSave_Pass1, Properties.Resources.Generic_OldSave_Title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
@@ -128,6 +175,19 @@
                     {
                         this.Save_Click(sender, e);
                     }
+                }
+
+                if (flags.HasFlag(LoadFlags.V2InventoryWeightsMissing))
+                {
+                    if (MessageBox.Show(Properties.Resources.Generic_No_Inventory_Weight_Desc, Properties.Resources.Generic_No_Inventory_Weight_Title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        AppState.Current.TInventory.RecalculateWeights(true, true, true);
+                    }
+                }
+
+                if (flags.HasFlag(LoadFlags.V2NoObjectIDs))
+                {
+                    AppState.Current.CreateObjectIDs();
                 }
             }
         }
@@ -318,6 +378,17 @@
             if (!val && Settings.Default.Skin != 0 && !SkinResourceDictionary.IsRunningWin8OrGreater())
             {
                 this.ChangeSkin(0);
+            }
+        }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (ScriptEngine.Instance.IsValueCreated && !this._marketplaceOpen)
+            {
+                this._marketplaceOpen = true;
+                ScriptsMarketplace sm = new ScriptsMarketplace();
+                sm.Closed += (o, ea) => this._marketplaceOpen = false;
+                sm.Show();
             }
         }
     }

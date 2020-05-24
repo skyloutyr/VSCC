@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CrashDesc" xml:space="preserve">
+    <value>Приложение аварийно завершило работу со следующей ошибкой: {0}[{1}]. Желаете ли вернуть настройки обратно на заводские?</value>
+  </data>
+  <data name="CrashTitle" xml:space="preserve">
+    <value>Приложение аварийно закрыто!</value>
+  </data>
   <data name="CreateItem_Amount" xml:space="preserve">
     <value>Количество</value>
   </data>
@@ -592,6 +598,12 @@
   <data name="Generic_No" xml:space="preserve">
     <value>Нет</value>
   </data>
+  <data name="Generic_No_Inventory_Weight_Desc" xml:space="preserve">
+    <value>Инвентарь данного листа персонажа указывает 0 как все параметры веса. Желаете ли пересчитать весь вес?</value>
+  </data>
+  <data name="Generic_No_Inventory_Weight_Title" xml:space="preserve">
+    <value>Вес Инвентаря Неверен</value>
+  </data>
   <data name="Generic_OK" xml:space="preserve">
     <value>Принять</value>
   </data>
@@ -824,6 +836,9 @@
   <data name="MainMenu_Scripting_DoFile" xml:space="preserve">
     <value>Выполнить Файл</value>
   </data>
+  <data name="MainMenu_Scripting_Marketplace" xml:space="preserve">
+    <value>Рынок</value>
+  </data>
   <data name="MainMenu_Scripting_Scripts" xml:space="preserve">
     <value>Открыть Скрипты</value>
   </data>
@@ -844,6 +859,36 @@
   </data>
   <data name="MainMenu_View_Skins_Soft" xml:space="preserve">
     <value>Мягкая</value>
+  </data>
+  <data name="Marketplace_Delete_Desc" xml:space="preserve">
+    <value>Вы уверены что хотите удалить этот скрипт? Это действие необратимо!</value>
+  </data>
+  <data name="Marketplace_Delete_Title" xml:space="preserve">
+    <value>Подтвердите уделание скрипта</value>
+  </data>
+  <data name="Marketplace_Entry_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Marketplace_Entry_Download" xml:space="preserve">
+    <value>Загрузить этот скрипт из рынка</value>
+  </data>
+  <data name="Marketplace_Error_Desc" xml:space="preserve">
+    <value>Не удалось установить соединение с рынком! Желаете ли повторить попытку? Детали ошибки:</value>
+  </data>
+  <data name="Marketplace_Error_Title" xml:space="preserve">
+    <value>Произошла ошибка!</value>
+  </data>
+  <data name="Marketplace_Installed" xml:space="preserve">
+    <value>Установленные</value>
+  </data>
+  <data name="Marketplace_Loading" xml:space="preserve">
+    <value>Загружаем Рынок</value>
+  </data>
+  <data name="Marketplace_Loading_Subtitle" xml:space="preserve">
+    <value>Это может занять пару секунд...</value>
+  </data>
+  <data name="Marketplace_Online" xml:space="preserve">
+    <value>Онлайн</value>
   </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Действия</value>

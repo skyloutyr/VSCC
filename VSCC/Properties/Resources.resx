@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CrashDesc" xml:space="preserve">
+    <value>The application has terminated with an unhandled exception: {0}[{1}]. Would you like to reset the application settings to factory default?</value>
+  </data>
+  <data name="CrashTitle" xml:space="preserve">
+    <value>Application has terminated!</value>
+  </data>
   <data name="CreateItem_Amount" xml:space="preserve">
     <value>Amount</value>
   </data>
@@ -592,6 +598,12 @@
   <data name="Generic_No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="Generic_No_Inventory_Weight_Desc" xml:space="preserve">
+    <value>The inventory of this sheet has 0 as all parameters (current weight/midpoint weight/max weight)! Do you want to recalculate it?</value>
+  </data>
+  <data name="Generic_No_Inventory_Weight_Title" xml:space="preserve">
+    <value>Inventory Weights Incorrect</value>
+  </data>
   <data name="Generic_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -824,6 +836,9 @@ Separate multiple types by a new line</value>
   <data name="MainMenu_Scripting_DoFile" xml:space="preserve">
     <value>Do File</value>
   </data>
+  <data name="MainMenu_Scripting_Marketplace" xml:space="preserve">
+    <value>Marketplace</value>
+  </data>
   <data name="MainMenu_Scripting_Scripts" xml:space="preserve">
     <value>Open Scripts</value>
   </data>
@@ -844,6 +859,36 @@ Separate multiple types by a new line</value>
   </data>
   <data name="MainMenu_View_Skins_Soft" xml:space="preserve">
     <value>Soft</value>
+  </data>
+  <data name="Marketplace_Delete_Desc" xml:space="preserve">
+    <value>Are you sure you want to delete this script? This action can't be reversed!</value>
+  </data>
+  <data name="Marketplace_Delete_Title" xml:space="preserve">
+    <value>Confirm Script Deletion</value>
+  </data>
+  <data name="Marketplace_Entry_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Marketplace_Entry_Download" xml:space="preserve">
+    <value>Download this script from remote</value>
+  </data>
+  <data name="Marketplace_Error_Desc" xml:space="preserve">
+    <value>A connection to the marketplace could not be established! Do you want to try again? Exception details:</value>
+  </data>
+  <data name="Marketplace_Error_Title" xml:space="preserve">
+    <value>An exception has occured!</value>
+  </data>
+  <data name="Marketplace_Installed" xml:space="preserve">
+    <value>Installed</value>
+  </data>
+  <data name="Marketplace_Loading" xml:space="preserve">
+    <value>Loading Marketplace</value>
+  </data>
+  <data name="Marketplace_Loading_Subtitle" xml:space="preserve">
+    <value>This may take a few seconds...</value>
+  </data>
+  <data name="Marketplace_Online" xml:space="preserve">
+    <value>Online</value>
   </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Actions</value>

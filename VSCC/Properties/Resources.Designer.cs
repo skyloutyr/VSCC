@@ -70,6 +70,24 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The application has terminated with an unhandled exception: {0}[{1}]. Would you like to reset the application settings to factory default?.
+        /// </summary>
+        public static string CrashDesc {
+            get {
+                return ResourceManager.GetString("CrashDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application has terminated!.
+        /// </summary>
+        public static string CrashTitle {
+            get {
+                return ResourceManager.GetString("CrashTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string CreateItem_Amount {
@@ -1502,6 +1520,24 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The inventory of this sheet has 0 as all parameters (current weight/midpoint weight/max weight)! Do you want to recalculate it?.
+        /// </summary>
+        public static string Generic_No_Inventory_Weight_Desc {
+            get {
+                return ResourceManager.GetString("Generic_No_Inventory_Weight_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory Weights Incorrect.
+        /// </summary>
+        public static string Generic_No_Inventory_Weight_Title {
+            get {
+                return ResourceManager.GetString("Generic_No_Inventory_Weight_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string Generic_OK {
@@ -2196,6 +2232,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Marketplace.
+        /// </summary>
+        public static string MainMenu_Scripting_Marketplace {
+            get {
+                return ResourceManager.GetString("MainMenu_Scripting_Marketplace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open Scripts.
         /// </summary>
         public static string MainMenu_Scripting_Scripts {
@@ -2255,6 +2300,96 @@ namespace VSCC.Properties {
         public static string MainMenu_View_Skins_Soft {
             get {
                 return ResourceManager.GetString("MainMenu_View_Skins_Soft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this script? This action can&apos;t be reversed!.
+        /// </summary>
+        public static string Marketplace_Delete_Desc {
+            get {
+                return ResourceManager.GetString("Marketplace_Delete_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Script Deletion.
+        /// </summary>
+        public static string Marketplace_Delete_Title {
+            get {
+                return ResourceManager.GetString("Marketplace_Delete_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Marketplace_Entry_Delete {
+            get {
+                return ResourceManager.GetString("Marketplace_Entry_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download this script from remote.
+        /// </summary>
+        public static string Marketplace_Entry_Download {
+            get {
+                return ResourceManager.GetString("Marketplace_Entry_Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A connection to the marketplace could not be established! Do you want to try again? Exception details:.
+        /// </summary>
+        public static string Marketplace_Error_Desc {
+            get {
+                return ResourceManager.GetString("Marketplace_Error_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An exception has occured!.
+        /// </summary>
+        public static string Marketplace_Error_Title {
+            get {
+                return ResourceManager.GetString("Marketplace_Error_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installed.
+        /// </summary>
+        public static string Marketplace_Installed {
+            get {
+                return ResourceManager.GetString("Marketplace_Installed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading Marketplace.
+        /// </summary>
+        public static string Marketplace_Loading {
+            get {
+                return ResourceManager.GetString("Marketplace_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This may take a few seconds....
+        /// </summary>
+        public static string Marketplace_Loading_Subtitle {
+            get {
+                return ResourceManager.GetString("Marketplace_Loading_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online.
+        /// </summary>
+        public static string Marketplace_Online {
+            get {
+                return ResourceManager.GetString("Marketplace_Online", resourceCulture);
             }
         }
         

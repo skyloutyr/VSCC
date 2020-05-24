@@ -41,6 +41,7 @@
             <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_Scripts}" Click="MenuItem_Click_3" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_DoFile}" Click="MenuItem_Click_2" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
+                <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_Marketplace}" Click="MenuItem_Click_4" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />
             </MenuItem>
             <MenuItem x:Name="View" Header="{x:Static p:Resources.MainMenu_View}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
                 <MenuItem x:Name="Skins" Header="{x:Static p:Resources.MainMenu_View_Skins}" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItem}">
