@@ -5,6 +5,8 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
+    using System.Reflection;
+    using System.Text;
     using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
@@ -40,6 +42,14 @@
         {
             this.Log(LogLevel.Fine, "Initializing script engine.");
             this.Lua.State.Encoding = System.Text.Encoding.UTF8;
+            using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("VSCC.Scripting.json.lua"))
+            {
+                using (StreamReader sr = new StreamReader(s, Encoding.UTF8))
+                {
+                    this.Lua.DoString(sr.ReadToEnd(), "json.lua");
+                }
+            }
+
             this.Lua["State"] = AppState.Current.State;
             this.Lua["Engine"] = this;
             this.Lua["Roll20"] = new Roll20Provider();
