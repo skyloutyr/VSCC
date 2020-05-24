@@ -234,9 +234,9 @@
         {
             do
             {
-                if (current is T)
+                if (current is T t)
                 {
-                    return (T)current;
+                    return t;
                 }
 
                 current = VisualTreeHelper.GetParent(current);
