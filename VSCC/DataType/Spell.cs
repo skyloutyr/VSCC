@@ -242,7 +242,7 @@
             }
         }
 
-        public Guid ObjectID { get; set; }
+        public Guid ObjectID { get; set; } = Guid.NewGuid();
 
         [JsonIgnore]
         public string GeneratedDescription =>

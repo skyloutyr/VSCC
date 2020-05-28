@@ -214,7 +214,7 @@
                 flags |= LoadFlags.V2InventoryWeightsMissing;
             }
 
-            if (this.State.ObjectID.Equals(Guid.Empty))
+            if (this.State.ObjectID.Equals(Guid.Empty) || this.State.Inventory.Items.Any(i => i.ObjectID.Equals(Guid.Empty)) || this.State.Spellbook.AllSpells.Any(sp => sp.ObjectID.Equals(Guid.Empty)))
             {
                 flags |= LoadFlags.V2NoObjectIDs;
             }

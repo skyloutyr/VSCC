@@ -2,7 +2,9 @@
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using VSCC.DataType;
     using VSCC.State.Adapters;
 
@@ -1216,6 +1218,9 @@
             get => AppState.Current.TSpellbook.Spells9;
             set => AppState.Current.TSpellbook.SetSpellCollection(value, 9);
         }
+
+        [JsonIgnore]
+        public List<Spell> AllSpells => this.Cantrips.Concat(this.Lvl1Spells).Concat(this.Lvl2Spells).Concat(this.Lvl3Spells).Concat(this.Lvl4Spells).Concat(this.Lvl5Spells).Concat(this.Lvl6Spells).Concat(this.Lvl7Spells).Concat(this.Lvl8Spells).Concat(this.Lvl9Spells).ToList();
 
         public void Clear()
         {

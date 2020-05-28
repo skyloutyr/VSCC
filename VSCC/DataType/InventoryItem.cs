@@ -180,7 +180,7 @@
             }
         }
 
-        public Guid ObjectID { get; set; }
+        public Guid ObjectID { get; set; } = Guid.NewGuid();
 
         [JsonIgnore]
         public string GeneratedDescription => $"{ this.Name }\nAmount: { this.Amount }\nWeight: { this.Weight * this.Amount }({ this.Weight })\nCost:{ this.Cost }\nType:{ this.Type }\nRarity: { this.Rarity }\n\n{ this.Description }";
