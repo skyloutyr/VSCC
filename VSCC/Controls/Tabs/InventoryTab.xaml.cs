@@ -98,8 +98,9 @@
                 if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
                 {
                     this._haltRefresh = true;
-                    foreach (InventoryItem ii in this.Inventory.SelectedItems)
+                    for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
                     {
+                        InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
                         this.Items.Remove(ii);
                     }
 
