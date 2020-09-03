@@ -1259,6 +1259,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recalculate Stats.
+        /// </summary>
+        public static string General_Recalculate {
+            get {
+                return ResourceManager.GetString("General_Recalculate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saves.
         /// </summary>
         public static string General_Saves {

@@ -511,6 +511,9 @@
   <data name="General_Race_WoodElf" xml:space="preserve">
     <value>Wood Elf</value>
   </data>
+  <data name="General_Recalculate" xml:space="preserve">
+    <value>Recalculate Stats</value>
+  </data>
   <data name="General_Saves" xml:space="preserve">
     <value>Saves</value>
   </data>

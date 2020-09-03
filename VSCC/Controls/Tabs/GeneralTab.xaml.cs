@@ -358,5 +358,10 @@
         /// Refresh death saving throws
         /// </summary>
         private void Button_Click_1(object sender, RoutedEventArgs e) => this.CheckBox_DS_Fail1.IsChecked = this.CheckBox_DS_Fail2.IsChecked = this.CheckBox_DS_Fail3.IsChecked = this.CheckBox_DS_Pass1.IsChecked = this.CheckBox_DS_Pass2.IsChecked = this.CheckBox_DS_Pass3.IsChecked = false;
+
+        /// <summary>
+        /// Recalculate all stats button click
+        /// </summary>
+        private void Button_Click_2(object sender, RoutedEventArgs e) => this.RebuildAllStats();
     }
 }

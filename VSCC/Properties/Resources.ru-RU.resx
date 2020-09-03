@@ -511,6 +511,9 @@
   <data name="General_Race_WoodElf" xml:space="preserve">
     <value>Лесной Эльф</value>
   </data>
+  <data name="General_Recalculate" xml:space="preserve">
+    <value>Перерассчитать Статы</value>
+  </data>
   <data name="General_Saves" xml:space="preserve">
     <value>Спасброски</value>
   </data>
