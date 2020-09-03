@@ -118,6 +118,13 @@
 
             AppEvents.InvokeLoad(ref s);
             this.FreezeAutocalc = false;
+            //HACK modifiers fix
+            this.State.General.StatStr -= this.State.General.ModifiersStr.Sum(m => m.Value);
+            this.State.General.StatDex -= this.State.General.ModifiersDex.Sum(m => m.Value);
+            this.State.General.StatCon -= this.State.General.ModifiersCon.Sum(m => m.Value);
+            this.State.General.StatCha -= this.State.General.ModifiersCha.Sum(m => m.Value);
+            this.State.General.StatWis -= this.State.General.ModifiersWis.Sum(m => m.Value);
+            this.State.General.StatInt -= this.State.General.ModifiersInt.Sum(m => m.Value);
             this._ignoreLastSaveFile = false;
         }
 
