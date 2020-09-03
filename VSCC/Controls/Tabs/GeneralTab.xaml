@@ -253,7 +253,10 @@
                     </Border>
                     <Border BorderThickness="1" BorderBrush="{StaticResource Static.Border}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="113" Margin="226,72,0,0">
                         <Grid>
-                            <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}"/>
+                            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Height="18" Width="18" Click="Button_Click_1">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-refresh-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}" IsHitTestVisible="False"/>
                             <Label Content="{x:Static p:Resources.General_DeathSaves}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}"/>
                             <Label Content="{x:Static p:Resources.General_DeathFails}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox x:Name="CheckBox_DS_Pass1" HorizontalAlignment="Left" Margin="27,62,0,0" VerticalAlignment="Top"/>
