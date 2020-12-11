@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.1.8",
+  "version": "1.1.9",
   "changelog": {
     "0.0.0": "Pre-release version. Basic functionality.",
     "1.0.0": "First release. Added roll20 integration.",
@@ -17,6 +17,7 @@
     "1.1.5": "Added a dark skin. Added a reverse UI generator for scripting.",
     "1.1.6": "Added a soft skin. Added the ability to use skins on systems other than win10/win8.1. Fixed a memory leak with icons. Fixed a crash with negative HP/XP/THP values. Added stat modifiers. Added the ability to recalculate your inventory's weight. Added a keybinding to delete selected inventory items.",
     "1.1.7": "Fixed item weights not displaying correctly. Scripts now have access to ObjectIDs to save data easier. Scripts now have a built-in json <-> table converter. Added the Scripts Marketplace (Experimental)",
-    "1.1.8": "Fixed application crashing when deleting items with a hotkey. Fixed stat modifiers being reapplied each file reload. Added a button to reset all death roll results. Added a button to recalculate all stats."
+    "1.1.8": "Fixed application crashing when deleting items with a hotkey. Fixed stat modifiers being reapplied each file reload. Added a button to reset all death roll results. Added a button to recalculate all stats.",
+    "1.1.9": "Fixed the cleric spell filter not working in russian language. Fixed the certificate error on Win7. Added color option to spells and items. Fixed inventory weight sorting. Fixed spell components not appearing in the spell's short description. Fixed the version checker window issue."
   }
 }
