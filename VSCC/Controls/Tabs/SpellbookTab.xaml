@@ -74,10 +74,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -119,10 +119,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -164,10 +164,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -209,10 +209,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -254,10 +254,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -299,10 +299,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -344,10 +344,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -389,10 +389,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -434,10 +434,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -479,10 +479,10 @@
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="881" Margin="69,0,0,0" Foreground="{Binding Color}" />
                                         <Line HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" Stroke="{StaticResource Static.Gray}" X2="1" Height="1" Width="881" Margin="69,24,0,0" />
-                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{StaticResource Static.Foreground}" />
-                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{StaticResource Static.Foreground}" />
+                                        <Label Content="{Binding SimpleDescription}" FontSize="12" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="896" Margin="64,22,0,0" Foreground="{Binding Color}" />
+                                        <Label Content="{Binding ComponentsProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="58" Margin="892,0,0,0" Foreground="{Binding Color}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

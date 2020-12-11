@@ -4,6 +4,7 @@
     using Newtonsoft.Json.Linq;
     using System;
     using System.ComponentModel;
+    using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
     using VSCC.State;
@@ -36,6 +37,9 @@
         private string name;
 
         [JsonIgnore]
+        private uint color;
+
+        [JsonIgnore]
         public ImageListModel ImageList { get; set; }
 
         public ItemTemplate Template { get; set; }
@@ -59,7 +63,26 @@
         public int CostTotalortProperty => this.Cost.Total * this.Amount;
 
         [JsonIgnore]
-        public float WeightTotalortProperty => this.Weight * this.Amount;
+        public float WeightTotalSortProperty => this.Weight * this.Amount;
+
+        [JsonIgnore]
+        public Brush Color
+        {
+            get
+            {
+                if (this.color == 0)
+                {
+                    return (SolidColorBrush)AppState.Current.Window.TryFindResource("Static.Foreground");
+                }
+
+                byte a = (byte)((this.color >> 24) & 0xFF);
+                byte r = (byte)((this.color >> 16) & 0xFF);
+                byte g = (byte)((this.color >> 8) & 0xFF);
+                byte b = (byte)((this.color) & 0xFF);
+                Color c = System.Windows.Media.Color.FromArgb(a, r, g, b);
+                return new SolidColorBrush(c);
+            }
+        }
 
         public string Name
         {
@@ -79,6 +102,7 @@
                 this.OnPropertyChanged("Amount");
                 this.OnPropertyChanged("AmountProperty");
                 this.OnPropertyChanged("TotalWeightProperty");
+                this.OnPropertyChanged("WeightTotalSortProperty");
             }
         }
         public float Weight
@@ -89,6 +113,7 @@
                 this.weight = value;
                 this.OnPropertyChanged("Weight");
                 this.OnPropertyChanged("TotalWeightProperty");
+                this.OnPropertyChanged("WeightTotalSortProperty");
             }
         }
         public CostValue Cost
@@ -180,6 +205,16 @@
             }
         }
 
+        public uint TitleColor
+        {
+            get => this.color;
+            set
+            {
+                this.color = value;
+                this.OnPropertyChanged("Color");
+            }
+        }
+
         public Guid ObjectID { get; set; } = Guid.NewGuid();
 
         [JsonIgnore]
@@ -226,7 +261,8 @@
                 Cost = this.Cost.Copy(),
                 Type = this.Type,
                 Rarity = this.Rarity,
-                Description = this.Description
+                Description = this.Description,
+                TitleColor = this.TitleColor
             };
     }
 
@@ -244,7 +280,8 @@
             Rarity = obj.Value<string>("Rarity"),
             Description = obj.Value<string>("Description"),
             ImageIndex = "",
-            Template = ItemTemplate.Empty
+            Template = ItemTemplate.Empty,
+            TitleColor = 0
         };
     }
 }

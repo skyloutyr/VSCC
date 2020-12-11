@@ -15,7 +15,8 @@
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="32" Margin="106,106,0,0" Click="Button_Click_2">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" />
         </Button>
-        <TextBox x:Name="TextBox_Name" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="226" Height="28" />
+        <TextBox x:Name="TextBox_Name" Text="{Binding Name}" Foreground="{Binding Color}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="193" Height="28" />
+        <Button x:Name="Btn_ColorChange" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{Binding Color}" Height="28" Width="28" Margin="341,10,0,0" Click="Button_Click_3"></Button>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="225" Margin="143,43,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <CheckBox x:Name="CheckBox_Verbal" IsChecked="{Binding PropertyVerbal}" Content="{x:Static p:Resources.CreateSpell_Verbal}" Foreground="{StaticResource Static.Foreground}" />

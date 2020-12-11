@@ -15,7 +15,8 @@
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="32" Margin="106,106,0,0" Click="Button_Click_2">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" />
         </Button>
-        <TextBox x:Name="TextBox_Name" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="226" Height="28" />
+        <TextBox x:Name="TextBox_Name" Text="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="192" Height="28" Foreground="{Binding Color}" />
+        <Button x:Name="Btn_ColorChange" Background="{Binding Color}" Margin="340,11,0,0" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="28"></Button>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="143,43,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label Content="{x:Static p:Resources.CreateItem_Amount}" VerticalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}" />

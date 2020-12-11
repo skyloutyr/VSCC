@@ -4,6 +4,7 @@
     using Newtonsoft.Json.Linq;
     using System;
     using System.ComponentModel;
+    using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
     using VSCC.State;
@@ -44,12 +45,34 @@
         private string simpleDescription;
 
         [JsonIgnore]
+        private uint color;
+
+        [JsonIgnore]
         public ImageListModel ImageList { get; set; }
 
         [JsonIgnore]
         public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TSpellbook.Images)[this.ImageIndex]?.Image ?? null;
 
         public Templates.SpellTemplate Template { get; set; }
+
+        [JsonIgnore]
+        public Brush Color
+        {
+            get
+            {
+                if (this.color == 0)
+                {
+                    return (SolidColorBrush)AppState.Current.Window.TryFindResource("Static.Foreground");
+                }
+
+                byte a = (byte)((this.color >> 24) & 0xFF);
+                byte r = (byte)((this.color >> 16) & 0xFF);
+                byte g = (byte)((this.color >> 8) & 0xFF);
+                byte b = (byte)((this.color) & 0xFF);
+                Color c = System.Windows.Media.Color.FromArgb(a, r, g, b);
+                return new SolidColorBrush(c);
+            }
+        }
 
         public string Name
         {
@@ -242,6 +265,50 @@
             }
         }
 
+        public string ComponentsProperty
+        {
+            get
+            {
+                string ret = string.Empty;
+                if (this.SpellComponents.HasFlag(SpellComponents.Verbal))
+                {
+                    ret += 'V';
+                }
+
+                if (this.SpellComponents.HasFlag(SpellComponents.Somatic))
+                {
+                    ret += 'S';
+                }
+
+                if (this.SpellComponents.HasFlag(SpellComponents.Material))
+                {
+                    ret += 'M';
+                }
+
+                if (this.SpellComponents.HasFlag(SpellComponents.Ritual))
+                {
+                    ret += 'R';
+                }
+
+                if (this.SpellComponents.HasFlag(SpellComponents.Concentration))
+                {
+                    ret += 'C';
+                }
+
+                return ret;
+            }
+        }
+
+        public uint TitleColor
+        {
+            get => this.color;
+            set
+            {
+                this.color = value;
+                this.OnPropertyChanged("Color");
+            }
+        }
+
         public Guid ObjectID { get; set; } = Guid.NewGuid();
 
         [JsonIgnore]
@@ -335,6 +402,7 @@
             Description = this.Description,
             ImageIndex = this.ImageIndex,
             ImageList = this.ImageList,
+            TitleColor = this.TitleColor
         };
     }
 
@@ -355,7 +423,8 @@
             Duration = obj.Value<string>("Duration"),
             CastTime = obj.Value<string>("CastTime"),
             SimpleDescription = "Spell converted from older version. Edit it to make this description be a thing.",
-            Template = Templates.SpellTemplate.Empty
+            Template = Templates.SpellTemplate.Empty,
+            TitleColor = 0
         };
     }
 
