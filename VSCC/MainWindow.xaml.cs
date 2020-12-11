@@ -3,6 +3,7 @@
     using Microsoft.Win32;
     using System;
     using System.Diagnostics;
+    using System.Net;
     using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
@@ -34,6 +35,16 @@
             this.ChangeSkin(Settings.Default.Skin, false);
             this.InitializeComponent();
             AppState.Current.FreezeAutocalc = false;
+            ServicePointManager.ServerCertificateValidationCallback += (s, cert, chain, err) => true;
+            Version v = Environment.OSVersion.Version;
+            if (v < new Version(6, 2)) // Win 7 or older
+            {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls13;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Ssl3;
+            }
         }
 
         private void Dispatcher_UnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

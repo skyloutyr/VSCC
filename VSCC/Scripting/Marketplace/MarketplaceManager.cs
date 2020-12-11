@@ -158,6 +158,7 @@
                 req.Timeout = 5000;
                 HttpRequestCachePolicy noCachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
                 req.CachePolicy = noCachePolicy;
+
                 using (WebResponse response = req.GetResponse())
                 {
                     using (Stream s = response.GetResponseStream())
