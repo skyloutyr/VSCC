@@ -7,6 +7,7 @@
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
+    using VSCC.Properties;
     using VSCC.State;
 
     public class Spell : INotifyPropertyChanged
@@ -272,27 +273,27 @@
                 string ret = string.Empty;
                 if (this.SpellComponents.HasFlag(SpellComponents.Verbal))
                 {
-                    ret += 'V';
+                    ret += Resources.CreateSpell_Verbal[0];
                 }
 
                 if (this.SpellComponents.HasFlag(SpellComponents.Somatic))
                 {
-                    ret += 'S';
+                    ret += Resources.CreateSpell_Somatic[0];
                 }
 
                 if (this.SpellComponents.HasFlag(SpellComponents.Material))
                 {
-                    ret += 'M';
+                    ret += Resources.CreateSpell_Material[0];
                 }
 
                 if (this.SpellComponents.HasFlag(SpellComponents.Ritual))
                 {
-                    ret += 'R';
+                    ret += Resources.CreateSpell_Ritual[0];
                 }
 
                 if (this.SpellComponents.HasFlag(SpellComponents.Concentration))
                 {
-                    ret += 'C';
+                    ret += Resources.CreateSpell_Concentration[0];
                 }
 
                 return ret;
