@@ -8,61 +8,65 @@
     using System.Net.Cache;
     using System.Threading.Tasks;
     using System.Windows;
+    using VSCC.State;
 
     public class VersionChecker
     {
         public static async Task CheckVersion(bool showFineWindows = true, bool callUpdateFromVC = true, Action<string> updateCallback = null)
         {
             Tuple<VersionCheckResult, SemVer.Version, string, string> t = await CheckVersionInternal();
-            switch (t.Item1)
+            AppState.Current.Window.Dispatcher.Invoke(() =>
             {
-                case VersionCheckResult.Behind:
+                switch (t.Item1)
                 {
-                    if (MessageBox.Show($"An update is available!\n\r{ t.Item2 }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    case VersionCheckResult.Behind:
                     {
-                        if (callUpdateFromVC)
+                        if (MessageBox.Show($"An update is available!\n\r{ t.Item2 }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                         {
-                            UpdateManager.Update(t.Item4);
+                            if (callUpdateFromVC)
+                            {
+                                UpdateManager.Update(t.Item4);
+                            }
+                            else
+                            {
+                                updateCallback?.Invoke(t.Item4);
+                            }
                         }
-                        else
+
+                        break;
+                    }
+
+                    case VersionCheckResult.Ahead:
+                    {
+                        if (showFineWindows)
                         {
-                            updateCallback?.Invoke(t.Item4);
+                            MessageBox.Show($"", "Remote version is outdated!");
                         }
+
+                        break;
                     }
 
-                    break;
-                }
-
-                case VersionCheckResult.Ahead:
-                {
-                    if (showFineWindows)
+                    case VersionCheckResult.Current:
                     {
-                        MessageBox.Show($"", "Remote version is outdated!");
+                        if (showFineWindows)
+                        {
+                            MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
+                        }
+
+                        break;
                     }
 
-                    break;
-                }
-
-                case VersionCheckResult.Current:
-                {
-                    if (showFineWindows)
+                    case VersionCheckResult.Error:
                     {
-                        MessageBox.Show($"The local version corresponds to the latest remote version.", "You are using the latest version.");
+                        if (showFineWindows)
+                        {
+                            MessageBox.Show($"Something went wrong while checking for the version:{ t.Item3 }", "Couldn't check version!");
+                        }
+
+                        break;
                     }
-
-                    break;
                 }
-
-                case VersionCheckResult.Error:
-                {
-                    if (showFineWindows)
-                    {
-                        MessageBox.Show($"Something went wrong while checking for the version:{ t.Item3 }", "Couldn't check version!");
-                    }
-
-                    break;
-                }
-            }
+            });
         }
 
         public static async Task<Tuple<VersionCheckResult, SemVer.Version, string, string>> CheckVersionInternal()
