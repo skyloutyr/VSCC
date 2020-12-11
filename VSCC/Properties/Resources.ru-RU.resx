@@ -1020,7 +1020,7 @@
     <value>Бард</value>
   </data>
   <data name="SpellIndex_Class_Cleric" xml:space="preserve">
-    <value>Клирик</value>
+    <value>Жрец</value>
   </data>
   <data name="SpellIndex_Class_Druid" xml:space="preserve">
     <value>Друид</value>

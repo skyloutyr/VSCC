@@ -48,7 +48,7 @@
         <Label />
         <TextBlock Text="{x:Static p:Resources.Info_Repo}" Foreground="{StaticResource Static.Foreground}" />
         <TextBlock>
-            <Hyperlink NavigateUri="" RequestNavigate="Hyperlink_RequestNavigate">
+            <Hyperlink NavigateUri="https://github.com/skyloutyr/VSCC" RequestNavigate="Hyperlink_RequestNavigate">
                 Github
             </Hyperlink>
         </TextBlock>
