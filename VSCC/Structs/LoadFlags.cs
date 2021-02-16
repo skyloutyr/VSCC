@@ -8,6 +8,8 @@
         None = 0,
         V2AdaptV1 = 1,
         V2NoObjectIDs = 2,
-        V2InventoryWeightsMissing = 4
+        V2InventoryWeightsMissing = 4,
+        V2OldFeats = 8,
+        KeepLoadObject = 0b01000000000000000000000000000000
     }
 }

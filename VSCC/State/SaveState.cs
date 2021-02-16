@@ -6,6 +6,7 @@
     using System.Collections.ObjectModel;
     using System.Linq;
     using VSCC.DataType;
+    using VSCC.Roll20.Macros;
     using VSCC.State.Adapters;
 
     public class SaveState
@@ -16,6 +17,12 @@
         public Extras Extras { get; set; } = new Extras();
         public Inventory Inventory { get; set; } = new Inventory();
         public Spellbook Spellbook { get; set; } = new Spellbook();
+
+        public string Macros
+        {
+            get => MacroSerializer.SaveAll();
+            set => MacroSerializer.LoadAll(value);
+        }
 
         public void Clear()
         {
@@ -760,16 +767,16 @@
 
     public sealed class Extras
     {
-        public string Feats
+        public ObservableCollection<Feat> FeatsArray
         {
-            get => AppState.Current.TExtras.TextBox_Feats.Text;
-            set => AppState.Current.TExtras.TextBox_Feats.Text = value;
+            get => AppState.Current.TExtras.Feats;
+            set => AppState.Current.TExtras.ChangeFeatCollection(value);
         }
 
-        public string Traits
+        public ObservableCollection<Feat> TraitsArray
         {
-            get => AppState.Current.TExtras.TextBox_Traits.Text;
-            set => AppState.Current.TExtras.TextBox_Traits.Text = value;
+            get => AppState.Current.TExtras.Traits;
+            set => AppState.Current.TExtras.ChangeTraitCollection(value);
         }
 
         public string Extra
@@ -816,7 +823,9 @@
 
         public void Clear()
         {
-            this.Feats = this.Traits = this.Extra = this.Bio = this.Appearance = this.Gender = string.Empty;
+            this.Extra = this.Bio = this.Appearance = this.Gender = string.Empty;
+            this.FeatsArray.Clear();
+            this.TraitsArray.Clear();
             this.Age = 0;
             this.Height = this.Weight = 0;
         }

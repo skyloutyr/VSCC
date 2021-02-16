@@ -34,6 +34,11 @@
         public SpellbookTab TSpellbook => ((DockPanel)this.Window.TabSpellbook.Content).Children[0] as SpellbookTab;
         public ScriptingTab TScripting => ((DockPanel)this.Window.TabScripting.Content).Children[0] as ScriptingTab;
 
+        /// <summary>
+        /// Note that this might be null after load is invoked, unless the LoadFlags.KeepLoadObject has been set
+        /// </summary>
+        public JObject LoadObject => this._tempLoadObject;
+
         public void SetDefaultMD5(bool isDefault = true)
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Defaults.md5");
@@ -91,11 +96,13 @@
             return s;
         }
 
+        private JObject _tempLoadObject;
         public void Load(string s, out LoadFlags flags)
         {
             flags = LoadFlags.None;
             this.FreezeAutocalc = true;
-            int saveVersion = this.LookupSaveVersion(s);
+            this._tempLoadObject = JObject.Parse(s);
+            int saveVersion = this.LookupSaveVersion();
             this.State.Clear();
             switch (saveVersion)
             {
@@ -126,6 +133,10 @@
             this.State.General.StatWis -= this.State.General.ModifiersWis.Sum(m => m.Value);
             this.State.General.StatInt -= this.State.General.ModifiersInt.Sum(m => m.Value);
             this._ignoreLastSaveFile = false;
+            if (!flags.HasFlag(LoadFlags.KeepLoadObject))
+            {
+                this._tempLoadObject = null;
+            }
         }
 
         public void SetSaveLocation(string location, bool calculateMD5)
@@ -184,12 +195,11 @@
             }
         }
 
-        private int LookupSaveVersion(string s)
+        private int LookupSaveVersion()
         {
             try
             {
-                JObject jobj = JObject.Parse(s);
-                if (jobj.TryGetValue("Version", out JToken versionToken))
+                if (this._tempLoadObject.TryGetValue("Version", out JToken versionToken))
                 {
                     if (versionToken.Type == JTokenType.Integer)
                     {
@@ -225,6 +235,11 @@
             {
                 flags |= LoadFlags.V2NoObjectIDs;
             }
+
+            if (this._tempLoadObject.ContainsKey("Extras") && ((JObject)this._tempLoadObject["Extras"]).ContainsKey("Feats"))
+            {
+                flags |= LoadFlags.V2OldFeats | LoadFlags.KeepLoadObject;
+            }
         }
 
         private void LoadV1(string s) => Legacy.SaveV1Adapter.Load(s);
@@ -243,7 +258,7 @@
                 {
                     string s = this.State.Save();
                     string hash = GetMd5Hash(md5Hash, s);
-                    if (hash.Equals(this._lastSaveHash, System.StringComparison.OrdinalIgnoreCase))
+                    if (hash.Equals(this._lastSaveHash, StringComparison.OrdinalIgnoreCase))
                     {
                         return false;
                     }

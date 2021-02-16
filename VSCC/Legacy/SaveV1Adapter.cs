@@ -71,8 +71,18 @@
 
         private static void ReadExtras(JObject from)
         {
-            AppState.Current.State.Extras.Feats = from["Feats"].ToObject<string>();
-            AppState.Current.State.Extras.Traits = from["Traits"].ToObject<string>();
+            foreach (string line in from["Feats"].ToObject<string>().Split('\n'))
+            {
+                Feat f = new Feat { ImageList = AppState.Current.TExtras.Images, DescProperty = MainWindow.Translate("Feat_Desc_NeedsConversion"), NameProperty = MainWindow.Translate("Feat_Name_Old"), FullDescProperty = line, ImageIndex = "if886_t" };
+                AppState.Current.State.Extras.FeatsArray.Add(f);
+            }
+
+            foreach (string line in from["Traits"].ToObject<string>().Split('\n'))
+            {
+                Feat f = new Feat { ImageList = AppState.Current.TExtras.Images, DescProperty = MainWindow.Translate("Feat_Desc_NeedsConversion"), NameProperty = MainWindow.Translate("Feat_Name_Old"), FullDescProperty = line, ImageIndex = "if886_t" };
+                AppState.Current.State.Extras.TraitsArray.Add(f);
+            }
+
             AppState.Current.State.Extras.Extra = from["Extra"].ToObject<string>();
             AppState.Current.State.Extras.Bio = from["Bio"].ToObject<string>();
             AppState.Current.State.Extras.Appearance = from["Appearance"].ToObject<string>();

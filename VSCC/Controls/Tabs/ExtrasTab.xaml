@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:p="clr-namespace:VSCC.Properties"
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
+             xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:Themes="clr-namespace:Xceed.Wpf.Toolkit.Themes;assembly=Xceed.Wpf.Toolkit" x:Class="VSCC.Controls.Tabs.ExtrasTab"
+             xmlns:cb="clr-namespace:VSCC.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000">
     <UserControl.Resources>
@@ -18,12 +20,140 @@
         <Grid>
             <GroupBox Header="{x:Static p:Resources.Extras_Extras}" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="GroupBox_Extras" Width="527" Height="710" Margin="10,10,0,0" Foreground="{StaticResource Static.Foreground}">
                 <Grid Margin="0,0,15,0">
-                    <Label Content="{x:Static p:Resources.Extras_Feats}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <TextBox x:Name="TextBox_Feats" HorizontalAlignment="Left" Height="167" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
-                    <Label Content="{x:Static p:Resources.Extras_Traits}" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <TextBox x:Name="TextBox_Traits" HorizontalAlignment="Left" Height="214" Margin="10,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
-                    <Label Content="{x:Static p:Resources.Extras_Extra}" HorizontalAlignment="Left" Margin="10,466,0,0" VerticalAlignment="Top" Height="27" Foreground="{StaticResource Static.Foreground}"/>
-                    <TextBox x:Name="TextBox_Extras" HorizontalAlignment="Left" Height="180" Margin="10,498,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
+                    <GroupBox Header="{x:Static p:Resources.Extras_Feats}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="245" Width="511" Margin="0,0,-11,0">
+                        <Grid x:Name="Grid_Feats">
+                            <Button x:Name="Btn_FeatNew" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Click="Btn_FeatNew_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CreateFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_FeatEdit" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="85,0,0,0" Click="Btn_FeatEdit_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_FeatCopy" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="170,0,0,0" Click="Btn_FeatCopy_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CopyFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_FeatPaste" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="255,0,0,0" Click="Btn_FeatPaste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_FeatDelete" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="340,0,0,0" Click="Btn_FeatDelete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <ListView x:Name="LV_Feats" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Margin="0,20,0,0" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseDoubleClick="Feats_MouseDoubleClick">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <wpftk:VirtualizingWrapPanel Background="{StaticResource Static.Background}" />
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="Padding" Value="0" />
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="5" Background="{StaticResource Static.Background}">
+                                            <Grid>
+                                                <Ellipse HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="48" Margin="7,2,0,0" ToolTip="{Binding FullDescProperty}">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush ImageSource="{Binding PictureProperty}" Stretch="Uniform" />
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+                                                <TextBlock Text="{Binding NameProperty}" Foreground="{Binding NameColorProperty}" ToolTip="{Binding NameProperty}" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,46,0,0" Width="78" TextAlignment="Center" />
+                                                <TextBlock Text="{Binding DescProperty}" Foreground="{Binding NameColorProperty}" ToolTip="{Binding FullDescProperty}" Background="Transparent" FontSize="8" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,62,0,0" Width="78" TextAlignment="Center" Height="22" />
+                                                <Button x:Name="Btn_Value2Max" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,2,0,0" Height="12" Width="12" Click="Btn_Value2Max_Click"  ToolTip="{x:Static p:Resources.Tooltip_Button_Feat2Max}">
+                                                    <StackPanel>
+                                                        <Path Data="M0,8L8,8 4,0z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                        <Path Data="M0,8L8,8 4,0z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                    </StackPanel>
+                                                </Button>
+                                                <Button x:Name="Btn_ValueIncrement" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,14,0,0" Height="12" Width="12" Click="Btn_ValueIncrement_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_FeatIncrement}">
+                                                    <Path Data="M0,8L8,8 4,0z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8"/>
+                                                </Button>
+                                                <Button x:Name="Btn_ValueDecrement" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,26,0,0" Height="12" Width="12" Click="Btn_ValueDecrement_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_FeatDecrement}">
+                                                    <Path  Data="M0,0L8,0 4,8z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8"/>
+                                                </Button>
+                                                <Button x:Name="Btn_Value2Zero" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,38,0,0" Height="12" Width="12" Click="Btn_Value2Zero_Click"  ToolTip="{x:Static p:Resources.Tooltip_Button_Feat2Zero}">
+                                                    <StackPanel>
+                                                        <Path  Data="M0,0L8,0 4,8z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                        <Path  Data="M0,0L8,0 4,8z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                    </StackPanel>
+                                                </Button>
+                                                <ProgressBar Foreground="{Binding BarForegroundProperty}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78" Height="10" Margin="0,84,0,0" Background="{Binding BarBackgroundProperty}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Minimum="0" Maximum="{Binding ValueMaxProperty}" Value="{Binding ValueProperty}" />
+                                                <TextBlock Foreground="{Binding NameColorProperty}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78" Height="10" Margin="0,84,0,0" Background="Transparent" FontSize="8" TextAlignment="Center" Text="{Binding ValueAndMaxProperty, Mode=OneWay}" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.Extras_Traits}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="245" Width="511" Margin="0,250,-11,0">
+                        <Grid x:Name="Grid_Traits">
+                            <Button x:Name="Btn_TraitNew" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Click="Btn_FeatNew_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CreateFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_TraitEdit" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="85,0,0,0" Click="Btn_FeatEdit_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_TraitCopy" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="170,0,0,0" Click="Btn_FeatCopy_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CopyFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_TraitPaste" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="255,0,0,0" Click="Btn_FeatPaste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <Button x:Name="Btn_TraitDelete" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="80" Margin="340,0,0,0" Click="Btn_FeatDelete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteFeat}">
+                                <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
+                            </Button>
+                            <ListView x:Name="LV_Traits" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Margin="0,20,0,0" MouseDoubleClick="Feats_MouseDoubleClick">
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <wpftk:VirtualizingWrapPanel Background="{StaticResource Static.Background}" />
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="Padding" Value="0" />
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="5" Background="{StaticResource Static.Background}">
+                                            <Grid>
+                                                <Ellipse HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="48" Margin="7,2,0,0" ToolTip="{Binding FullDescProperty}">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush ImageSource="{Binding PictureProperty}" Stretch="Uniform" />
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
+                                                <TextBlock Text="{Binding NameProperty}" Foreground="{Binding NameColorProperty}" ToolTip="{Binding NameProperty}" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,46,0,0" Width="78" TextAlignment="Center" />
+                                                <TextBlock Text="{Binding DescProperty}" Foreground="{Binding NameColorProperty}" ToolTip="{Binding FullDescProperty}" Background="Transparent" FontSize="8" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,62,0,0" Width="78" TextAlignment="Center" Height="22" />
+                                                <Button x:Name="Btn_Value2Max" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,2,0,0" Height="12" Width="12" Click="Btn_Value2Max_Click"  ToolTip="{x:Static p:Resources.Tooltip_Button_Feat2Max}">
+                                                    <StackPanel>
+                                                        <Path Data="M0,8L8,8 4,0z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                        <Path Data="M0,8L8,8 4,0z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                    </StackPanel>
+                                                </Button>
+                                                <Button x:Name="Btn_ValueIncrement" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,14,0,0" Height="12" Width="12" Click="Btn_ValueIncrement_Click"  ToolTip="{x:Static p:Resources.Tooltip_Button_FeatIncrement}">
+                                                    <Path Data="M0,8L8,8 4,0z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8"/>
+                                                </Button>
+                                                <Button x:Name="Btn_ValueDecrement" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,26,0,0" Height="12" Width="12" Click="Btn_ValueDecrement_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_FeatDecrement}">
+                                                    <Path  Data="M0,0L8,0 4,8z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8"/>
+                                                </Button>
+                                                <Button x:Name="Btn_Value2Zero" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,38,0,0" Height="12" Width="12" Click="Btn_Value2Zero_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_Feat2Zero}">
+                                                    <StackPanel>
+                                                        <Path  Data="M0,0L8,0 4,8z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                        <Path  Data="M0,0L8,0 4,8z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Visibility="Visible" VerticalAlignment="Center" Stretch="Fill" Width="8" Height="4.5"/>
+                                                    </StackPanel>
+                                                </Button>
+                                                <ProgressBar Foreground="{Binding BarForegroundProperty}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78" Height="10" Margin="0,84,0,0" Background="{Binding BarBackgroundProperty}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Minimum="0" Maximum="{Binding ValueMaxProperty}" Value="{Binding ValueProperty}" />
+                                                <TextBlock Foreground="{Binding NameColorProperty}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78" Height="10" Margin="0,84,0,0" Background="Transparent" FontSize="8" TextAlignment="Center" Text="{Binding ValueAndMaxProperty, Mode=OneWay}" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </GroupBox>
+                    <Label Content="{x:Static p:Resources.Extras_Extra}" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top" Height="27" Foreground="{StaticResource Static.Foreground}"/>
+                    <TextBox x:Name="TextBox_Extras" HorizontalAlignment="Left" Height="151" Margin="10,527,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" AcceptsReturn="True"/>
 
                 </Grid>
             </GroupBox>
