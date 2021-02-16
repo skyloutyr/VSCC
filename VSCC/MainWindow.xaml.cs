@@ -9,7 +9,9 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using VSCC.Controls.Windows;
+    using VSCC.DataType;
     using VSCC.Properties;
+    using VSCC.Roll20;
     using VSCC.Scripting;
     using VSCC.Skins;
     using VSCC.State;
@@ -76,6 +78,8 @@
                 }
             }
         }
+
+        public static string Translate(string key, params object[] pars) => string.Format(VSCC.Properties.Resources.ResourceManager.GetString(key), pars);
 
         private bool TryFindResourceSafe(string resourceName, out string resource)
         {
@@ -200,6 +204,23 @@
                 {
                     AppState.Current.CreateObjectIDs();
                 }
+
+                if (flags.HasFlag(LoadFlags.V2OldFeats))
+                {
+                    string featsStr = AppState.Current.LoadObject["Extras"]["Feats"].ToObject<string>();
+                    string traitsStr = AppState.Current.LoadObject["Extras"]["Traits"].ToObject<string>();
+                    foreach (string line in featsStr.Split('\n'))
+                    {
+                        Feat f = new Feat { ImageList = AppState.Current.TExtras.Images, DescProperty = Translate("Feat_Desc_NeedsConversion"), NameProperty = Translate("Feat_Name_Old"), FullDescProperty = line, ImageIndex = "if886_t" };
+                        AppState.Current.State.Extras.FeatsArray.Add(f);
+                    }
+
+                    foreach (string line in traitsStr.Split('\n'))
+                    {
+                        Feat f = new Feat { ImageList = AppState.Current.TExtras.Images, DescProperty = Translate("Feat_Desc_NeedsConversion"), NameProperty = Translate("Feat_Name_Old"), FullDescProperty = line, ImageIndex = "if886_t" };
+                        AppState.Current.State.Extras.TraitsArray.Add(f);
+                    }
+                }
             }
         }
 
@@ -248,6 +269,11 @@
                 {
                     e.Cancel = true;
                 }
+            }
+
+            if (!e.Cancel)
+            {
+                R20Logger.Close();
             }
         }
 
