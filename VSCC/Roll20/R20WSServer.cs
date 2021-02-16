@@ -2,6 +2,7 @@
 {
     using Fleck;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using System;
     using System.Threading;
     using VSCC.State;
@@ -12,12 +13,14 @@
 
         private static WebSocketServer _server;
         private static IWebSocketConnection _connection;
+        private static bool _awaitingPoll;
+        private static int _pollResult;
+        private static readonly EventWaitHandle _wh = new EventWaitHandle(false, EventResetMode.AutoReset);
 
         public static Action ServerStartCallback { get; set; }
         public static Action ServerStopCallback { get; set; }
         public static Action ClientConnectCallback { get; set; }
         public static Action ClientDisconnectCallback { get; set; }
-        public static Action<string> Logger { get; set; }
         public static bool Connected { get; set; }
 
         public static void Roll(string r1, string r2, string type, string action) => Send(new CommandPacket()
@@ -43,7 +46,7 @@
             }
             catch (Exception e)
             {
-                Logger?.Invoke($"Could not send data - { e.GetType().FullName }, { e.Message }");
+                R20Logger.WriteLine($"Could not send data - { e.GetType().FullName }, { e.Message }");
             }
         }
 
@@ -58,9 +61,14 @@
 
         public static void CreateServer()
         {
+            if (!R20Logger.Exists)
+            {
+                R20Logger.Init();
+            }
+
             if (_server != null)
             {
-                Logger?.Invoke("A server is already running.");
+                R20Logger.WriteLine("A server is already running.");
                 return;
             }
 
@@ -69,11 +77,18 @@
                 EnabledSslProtocols = System.Security.Authentication.SslProtocols.None
             };
 
-            Logger?.Invoke("Starting server...");
+            R20Logger.WriteLine("Starting server...");
             new Thread(ServerEntryPoint)
             {
                 IsBackground = true
             }.Start();
+        }
+
+        public static int? AwaitCallback()
+        {
+            _awaitingPoll = true;
+            bool b = _wh.WaitOne(30000);
+            return b ? _pollResult : (int?)null;
         }
 
         public static void ServerEntryPoint()
@@ -83,7 +98,7 @@
             {
                 ws.OnOpen = () =>
                 {
-                    Logger?.Invoke("TCP client connected.");
+                    R20Logger.WriteLine("TCP client connected.");
                     ClientConnectCallback?.Invoke();
                     _connection = ws;
                     Connected = true;
@@ -91,13 +106,46 @@
 
                 ws.OnClose = () =>
                 {
-                    Logger?.Invoke("TCP client disconnected.");
+                    R20Logger.WriteLine("TCP client disconnected.");
                     ClientDisconnectCallback?.Invoke();
                     _connection = null;
                     Connected = false;
+                    R20Logger.Close();
                 };
 
-                ws.OnMessage = s => Logger?.Invoke("Client says: " + s);
+                ws.OnMessage = s =>
+                {
+                    try
+                    {
+                        JObject jo = JObject.Parse(s);
+                        if (jo.ContainsKey("type"))
+                        {
+                            if (string.Equals("error", jo["type"].Value<string>()))
+                            {
+                                R20Logger.WriteLine($"[Error] The cliend sends an error code { jo["data"]["code"].Value<string>() }");
+                                R20Logger.WriteLine($"[Error] { jo["data"]["message"].Value<string>() }");
+                            }
+
+                            if (string.Equals("polled", jo["type"].Value<string>()))
+                            {
+                                if (_awaitingPoll && int.TryParse(jo["data"]["value"].Value<string>(), out int i))
+                                {
+                                    _pollResult = i;
+                                    _wh.Set();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            R20Logger.WriteLine($"[Warning] Client sent a JSON object without specifying the type!");
+                            R20Logger.WriteLine($"[Warning] The JSON was: { s }");
+                        }
+                    }
+                    catch (JsonException) // Not json?
+                    {
+                        R20Logger.WriteLine($"[Fine] Client sends a message: { s }");
+                    }
+                };
             });
         }
     }

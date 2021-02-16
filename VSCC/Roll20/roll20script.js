@@ -1,14 +1,16 @@
 ﻿var client;
 var chatWindow;
 var chatButton;
+var chatObserver;
+var poll = false;
 
 var templates = {
     ["default"]: function (data) {
         if (data && data.name) {
-            var ret = "&{template:default} "
-            for (var propt in data) {
+            let ret = "&{template:default} "
+            for (let propt in data) {
                 if (data.hasOwnProperty(propt)) {
-                    var val = data[propt];
+                    let val = data[propt];
                     if (typeof (val) === "string") {
                         ret += "{{" + propt + "=" + val + "}} ";
                     }
@@ -25,8 +27,8 @@ var templates = {
     },
 
     ["description"]: function (data) {
-        if (data && typeof (data) === "string") {
-            return "&{template:desc} {{desc=" + data + "}}";
+        if (data && data.desc) {
+            return "&{template:desc} {{desc=" + data.desc + "}}";
         }
 
         return false;
@@ -34,7 +36,7 @@ var templates = {
 
     ["simple"]: function (data) {
         if (data && data.r1) {
-            var ret = "&{template:simple} ";
+            let ret = "&{template:simple} ";
             if (data.type) {
                 ret += "{{" + data.type + "=1}} ";
             }
@@ -80,6 +82,206 @@ var templates = {
         return false;
     },
 
+    ["atkdmg"]: function (data) {
+        if (data && data.r1) {
+            let ret = "&{template:atkdmg} ";
+            if (data.type) {
+                ret += "{{" + data.type + "=1}} ";
+            }
+            else {
+                if (data.r2) {
+                    ret += "{{always=1}} ";
+                }
+                else {
+                    ret += "{{normal=1}} ";
+                }
+            }
+
+            if (data.name || data.rname) {
+                if (data.name) {
+                    ret += "{{rname=" + data.name + "}} ";
+                }
+                else {
+                    ret += "{{rname=" + data.rname + "}} ";
+                }
+            }
+
+            if (data.mod) {
+                ret += "{{mod=" + data.mod + "}} ";
+            }
+
+            if (data.range || data.desc) {
+                if (data.range) {
+                    ret += "{{range=" + data.range + "}} ";
+                }
+                else {
+                    ret += "{{range=" + data.desc + "}} ";
+                }
+            }
+
+            if (data.cname || data.charname) {
+                if (data.charname) {
+                    ret += "{{charname=" + data.charname + "}} ";
+                }
+                else {
+                    ret += "{{charname=" + data.cname + "}} ";
+                }
+            }
+
+            if (data.dmg1type) {
+                ret += "{{dmg1type=" + data.dmg1type + "}} ";
+            }
+
+            if (data.crit1) {
+                ret += "{{crit1=" + data.crit1 + "}} ";
+            }
+
+            ret += "{{r1=" + data.r1 + "}} ";
+            ret += "{{dmg1=" + data.dmg1 + "}} ";
+            ret += "{{attack=1}} ";
+            ret += "{{damage=1}} ";
+            ret += "{{dmg1flag=1}} ";
+            if (data.r2) {
+                ret += "{{r2=" + data.r2 + "}} ";
+            }
+
+            return ret;
+        }
+
+        return false;
+    },
+
+    ["dmg"]: function (data) {
+        if (data) {
+            let ret = "&{template:dmg} ";
+
+            if (data.dmg1) {
+                ret += "{{damage=1}} ";
+                ret += "{{dmg1flag=1}} ";
+                ret += "{{dmg1=" + data.dmg1 + "}} ";
+
+                if (data.dmg1type) {
+                    ret += "{{dmg1type=" + data.dmg1type + "}} ";
+                }
+
+                if (data.crit1) {
+                    ret += "{{crit=1}} ";
+                    ret += "{{crit1=" + data.crit1 + "}} ";
+                }
+            }
+
+            if (data.dmg2) {
+                ret += "{{dmg2flag=1}} ";
+                ret += "{{dmg2=" + data.dmg2 + "}} ";
+
+                if (data.dmg2type) {
+                    ret += "{{dmg2type=" + data.dmg2type + "}} ";
+                }
+
+                if (data.crit2) {
+                    ret += "{{crit2=" + data.crit2 + "}} ";
+                }
+            }
+
+            if (data.savedc) {
+                ret += "{{save=1}} ";
+                ret += "{{savedc=" + data.savedc + "}} ";
+                ret += "{{saveattr=" + data.saveattr + "}} ";
+                ret += "{{savedesc=" + data.savedesc + "}} ";
+            }
+
+            if (data.name || data.rname) {
+                if (data.name) {
+                    ret += "{{rname=" + data.name + "}} ";
+                }
+                else {
+                    ret += "{{rname=" + data.rname + "}} ";
+                }
+            }
+
+            if (data.range || data.desc) {
+                if (data.range) {
+                    ret += "{{range=" + data.range + "}} ";
+                }
+                else {
+                    ret += "{{range=" + data.desc + "}} ";
+                }
+            }
+
+            if (data.cname || data.charname) {
+                if (data.charname) {
+                    ret += "{{charname=" + data.charname + "}} ";
+                }
+                else {
+                    ret += "{{charname=" + data.cname + "}} ";
+                }
+            }
+
+            return ret;
+        }
+
+        return false;
+    },
+
+    ["spell"]: function (data) {
+        if (data) {
+            let ret = "&{template:spell} ";
+            ret += "{{name=" + data.name + "}} ";
+            ret += "{{description=" + data.description + "}} ";
+            if (data.charname) {
+                ret += "{{charname=" + data.charname + "}} ";
+            }
+
+            if (data.level) {
+                ret += "{{level=" + data.level + "}} ";
+            }
+
+            if (data.castingtime) {
+                ret += "{{castingtime=" + data.castingtime + "}} ";
+            }
+
+            if (data.range) {
+                ret += "{{range=" + data.range + "}} ";
+            }
+
+            if (data.target) {
+                ret += "{{target=" + data.target + "}} ";
+            }
+
+            if (data.v && data.v == "1") {
+                ret += "{{v=" + data.v + "}} ";
+            }
+
+            if (data.s && data.s == "1") {
+                ret += "{{s=" + data.s + "}} ";
+            }
+
+            if (data.m && data.m == "1") {
+                ret += "{{m=" + data.m + "}} ";
+            }
+
+            if (data.ritual && data.ritual == "1") {
+                ret += "{{ritual=" + data.ritual + "}} ";
+            }
+
+            if (data.concentration && data.concentration == "1") {
+                ret += "{{concentration=" + data.concentration + "}} ";
+            }
+
+            if (data.material) {
+                ret += "{{material=" + data.material + "}} ";
+            }
+
+            if (data.duration) {
+                ret += "{{duration=" + data.duration + "}} ";
+            }
+
+            return ret;
+        }
+
+        return false;
+    },
+
     ["none"]: function(data) {
         if (data && (data.r || data.roll))
         {
@@ -112,6 +314,17 @@ var packets = {
         }
 
         return false;
+    },
+
+    ["polled"]: function (data) {
+        if (data) {
+            return {
+                type: "polled",
+                data: {
+                    value: data.value
+                }
+            }
+        }
     }
 };
 
@@ -138,13 +351,15 @@ function createClient(){
         });
 
         client.addEventListener("close", function (evt) {
+            cleanupObserver();
             if (window.confirm("A server connection was terminated(closed)! Do you want to restart the client?")) {
                 createClient();
             }
         });
 
         client.addEventListener("error", function (evt) {
-            for (var propt in evt) {
+            cleanupObserver();
+            for (let propt in evt) {
                 console.log(propt + ": " + evt[propt]);
             }
 
@@ -158,16 +373,67 @@ function createClient(){
     catch (e) {
         client = null;
         window.alert("Unable to start a client!\nLikely your browser disallows unsecure web sockets.\nIf you want to use this feature you must enable unsecure web sockets.\nIf you are using Firefox open a new page and go to about:config. Agree to the liability factor. Search for network.websocket.allowInsecureFromHTTPS and set it to true.");
+        cleanupObserver
         return false;
     }
 }
 
 function validateSite() {
-    var url = window.location.href;
+    let url = window.location.href;
     if (url.includes("app.roll20.net")) {
-        var chat = document.getElementById("textchat-input");
+        let chat = document.getElementById("textchat-input");
         chatWindow = chat.getElementsByTagName("textarea")[0];
         chatButton = chat.getElementsByTagName("button")[0];
+        if (!(window.MutationObserver || window.WebKitMutationObserver)) {
+            window.alert("Your browser does not support the MutationObserver feature! This will interfere with the macro system. Please consider using a more modern browser or not using Poll Roll20 macro feature.");
+        }
+        else {
+            let target = document.getElementById("textchat").getElementsByClassName("content")[0];
+            let config = { attributes: false, childList: true, subtree: false };
+            let callback = function (mutationsList, observer) {
+                if (poll) {
+                    let num = "";
+                    for (let mi = 0; mi < mutationsList.length; ++mi) {
+                        if (!poll) {
+                            break;
+                        }
+
+                        let mutation = mutationsList[mi];
+                        if (mutation && mutation.addedNodes && mutation.addedNodes.length) {
+                            for (let ani = 0; ani < mutation.addedNodes.length; ++ani) {
+                                if (!poll) {
+                                    break;
+                                }
+
+                                let addedNode = mutation.addedNodes[ani];
+                                if (addedNode.classList.contains("you")) {
+                                    let childrenCollection = addedNode.childNodes;
+                                    for (let cni = 0; cni < childrenCollection.length; ++cni) {
+                                        let cN = childrenCollection[cni]
+                                        if (cN.nodeName.toLowerCase() == "span" && cN.classList.contains("inlinerollresult")) {
+                                            let innerText = cN.innerText;
+                                            if (!isNaN(cN.innerText)) {
+                                                num = cN.innerText;
+                                                poll = false;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (!isNaN(num)) {
+                        send(packets["polled"]({ value: num }));
+                    }
+                }
+            };
+
+            chatObserver = new MutationObserver(callback);
+            chatObserver.observe(target, config);
+        }
+
         if (chatWindow != null) {
             return true;
         }
@@ -221,7 +487,15 @@ function handleServerCommand(data) {
             case "exit":
             case "stop": {
                 client.close(1000);
+                cleanupObserver();
                 client = null;
+                return true;
+            }
+
+            case "poll":
+            case "listen_poll":
+            case "poll_listen": {
+                poll = true;
                 return true;
             }
 
@@ -298,6 +572,7 @@ function send(text) {
             }
             finally {
                 client = null;
+                cleanupObserver();
             }
 
             return false;
@@ -309,12 +584,19 @@ function send(text) {
     return false;
 }
 
+function cleanupObserver() {
+    if (chatObserver) {
+        chatObserver.disconnect();
+        chatObserver = null;
+    }
+}
+
 function run() {
     if (validateSite() && createClient()) {
         console.log("Everything is setup correctly. You may now close the console and resume play.");
     }
 }
 
-if (window.confirm("Running VSCC roll20 client 1.0.1.\nBegin launch procedure?")) {
+if (window.confirm("Running VSCC roll20 client 1.1.0.\nBegin launch procedure?")) {
     run();
 }
