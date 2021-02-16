@@ -1,0 +1,47 @@
+﻿<Window x:Class="VSCC.Controls.Windows.EditMacroWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.Window_EditMacro_Title}" Height="450" Width="800" Background="{StaticResource Static.Background}" Loaded="Window_Loaded">
+    <Grid>
+        <TextBox x:Name="TB_Name" VerticalAlignment="Top" HorizontalAlignment="Left" Width="156" Margin="10,10,0,0" TextChanged="TB_Name_TextChanged" Text="{x:Static p:Resources.Macro_Generic_New}"></TextBox>
+        <TextBox x:Name="TB_Desc" VerticalAlignment="Top" HorizontalAlignment="Left" Width="611" Margin="171,10,0,0" TextChanged="TB_Desc_TextChanged" Text="{x:Static p:Resources.Macro_Generic_NewGenericDescription}"></TextBox>
+        <GroupBox Margin="0,33,0,34" Header="{x:Static p:Resources.Macro_Window_Code}" Foreground="{StaticResource Static.Foreground}">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <TreeView x:Name="TV_Content">
+                    <TreeViewItem x:Name="TVI_Links" Header="{x:Static p:Resources.Macro_Generic_Links}">
+                        <TreeViewItem.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{x:Static p:Resources.Macro_Generic_NewLinkItem}" Click="MenuItem_Click" />
+                                <MenuItem Header="{x:Static p:Resources.Macro_Generic_NewLinkSpell}" Click="MenuItem_Click_1" />
+                            </ContextMenu>
+                        </TreeViewItem.ContextMenu>
+                    </TreeViewItem>
+                    <TreeViewItem x:Name="TVI_Locals" Header="{x:Static p:Resources.Macro_Generic_Locals}">
+                        <TreeViewItem.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{x:Static p:Resources.Macro_Generic_NewLocal}" Click="MenuItem_Click_2" />
+                            </ContextMenu>
+                        </TreeViewItem.ContextMenu>
+                    </TreeViewItem>
+                    <TreeViewItem x:Name="TVI_Actions" Header="{x:Static p:Resources.Macro_Generic_Actions}" AllowDrop="True" PreviewDrop="Tvi_PreviewDrop" Drop="Tvi_Drop">
+                        <TreeViewItem.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{x:Static p:Resources.Macro_Generic_NewAction}" Click="MenuItem_Click_3" />
+                                <MenuItem Header="{x:Static p:Resources.Macro_Generic_IfThenElse}" Click="MenuItem_Click_4" />
+                            </ContextMenu>
+                        </TreeViewItem.ContextMenu>
+                    </TreeViewItem>
+                </TreeView>
+            </ScrollViewer>
+        </GroupBox>
+        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="19" Width="64" Margin="10,0,0,10" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" RenderTransformOrigin="0.51,2.246" />
+        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="19" Width="64" Margin="0,0,10,10" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
+        <Line x:Name="Line_InsertionLineAbs" Visibility="Hidden" X1="0" Y1="100" Y2="100" X2="1000" Stroke="Black" StrokeThickness="1" />
+    </Grid>
+</Window>

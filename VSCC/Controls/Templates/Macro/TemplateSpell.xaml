@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="VSCC.Controls.Templates.Macro.TemplateSpell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VSCC.Controls.Templates.Macro"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="300" Width="200" Height="300">
+    <Border BorderBrush="Black" BorderThickness="1" Background="White">
+        <Grid>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">
+                <Hyperlink x:Name="HLName">name</Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,26,0,0" RenderTransformOrigin="0.503,0.188">
+                <Hyperlink x:Name="HLSchool">school</Hyperlink> <Hyperlink x:Name="HLLevel">level</Hyperlink> (ritual: <Hyperlink x:Name="HLIsRitual">ritual</Hyperlink>)
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,52,0,0">
+                CastingTime: <Hyperlink x:Name="HLCastingTime">castingtime</Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,68,0,0">
+                Range: <Hyperlink x:Name="HLRange">range</Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,84,0,0">
+                Target: <Hyperlink x:Name="HLTarget">target</Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0">
+                Components: 
+                <LineBreak />
+                Verbal: <Hyperlink x:Name="HLVerbal">verbal</Hyperlink>
+                <LineBreak />
+                Somatic: <Hyperlink x:Name="HLSomatic">somatic</Hyperlink>
+                <LineBreak />
+                Material: <Hyperlink x:Name="HLMaterial">material</Hyperlink>
+                <LineBreak />
+                Concentration: <Hyperlink x:Name="HLConcentration">concentration</Hyperlink>
+                <LineBreak />
+                (<Hyperlink x:Name="HLMatComponents">material components</Hyperlink>)
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,217,0,0">
+                Duration: <Hyperlink x:Name="HLDuration">duration</Hyperlink>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0">
+                <Hyperlink x:Name="HLDesc">description</Hyperlink>
+            </TextBlock>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="VSCC.Controls.Windows.Macro.MacroActionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows.Macro"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.Window_MacroAction_Title}" Height="400" Width="600" Background="{StaticResource Static.Background}">
+    <Grid>
+        <Label Content="{x:Static p:Resources.Macro_Window_Categories}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" />
+        <Label Content="{x:Static p:Resources.Macro_Window_Actions}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,36,0,0" />
+        <ComboBox x:Name="CBCategories" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,10,0,0" Width="511" IsEditable="False" SelectionChanged="CBCategories_SelectionChanged" Foreground="{StaticResource Static.Foreground}" />
+        <ComboBox x:Name="CBAllPossibleActions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,37,0,0" Width="511" IsEditable="False" SelectionChanged="CBAllPossibleActions_SelectionChanged" Foreground="{StaticResource Static.Foreground}" />
+        <TextBlock x:Name="TBMAInteractable" Margin="10,64,10,35" Foreground="{StaticResource Static.Foreground}" />
+        <TextBox x:Name="TBMAConstantString" Visibility="Hidden" Margin="10,64,10,35" Foreground="{StaticResource Static.Foreground}" />
+        <xctk:IntegerUpDown x:Name="IUDAConstantInt" Margin="10,64,10,35" DefaultValue="0" Foreground="{StaticResource Static.Foreground}" Visibility="Hidden"></xctk:IntegerUpDown>
+        <xctk:SingleUpDown x:Name="IUDAConstantFloat" Margin="10,64,10,35" DefaultValue="0" Foreground="{StaticResource Static.Foreground}" Visibility="Hidden"></xctk:SingleUpDown>
+        <CheckBox x:Name="CBConstantBool" Margin="10,64,10,35" IsChecked="False" Visibility="Hidden" Content="Value" Foreground="{StaticResource Static.Foreground}" />
+        <Grid x:Name="CustomContent" Margin="10,64,10,35" Visibility="Hidden" Background="#F1F1F1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        </Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="{x:Static p:Resources.Generic_Cancel}" Margin="10,0,0,10" Width="96" Foreground="{StaticResource Static.Foreground}" Click="Button_Click" />
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="{x:Static p:Resources.Generic_OK}" Margin="0,0,10,10" Width="96" Foreground="{StaticResource Static.Foreground}" Click="Button_Click_1" />
+    </Grid>
+</Window>

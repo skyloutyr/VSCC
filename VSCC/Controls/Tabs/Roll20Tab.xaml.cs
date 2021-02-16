@@ -1,12 +1,17 @@
 ﻿namespace VSCC.Controls.Tabs
 {
     using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using VSCC.Controls.Windows;
     using VSCC.Roll20;
+    using VSCC.Roll20.Macros;
+    using VSCC.Roll20.Macros.Actions;
     using VSCC.State;
 
     /// <summary>
@@ -14,7 +19,22 @@
     /// </summary>
     public partial class Roll20Tab : UserControl
     {
-        public Roll20Tab() => this.InitializeComponent();
+        public bool HaltRefresh { get; set; }
+
+        public Roll20Tab()
+        {
+            this.InitializeComponent();
+            MacroSerializer.Macros.CollectionChanged += (o, e) =>
+            {
+                if (!this.HaltRefresh)
+                {
+                    this.LV_Macros.Items.Refresh();
+                }
+            };
+
+            this.LV_Macros.ItemsSource = MacroSerializer.Macros;
+            this.LV_Macros.Items.Refresh();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -59,7 +79,9 @@
                 this.Border_ServerStatus.Background = Brushes.Red;
             }));
 
-            R20WSServer.Logger = new Action<string>(s => this.Dispatcher.Invoke(() => this.TextBlock_Log.Text += s + '\n'));
+            this._errs = this.ImgErrs_ErrIcon.Source;
+            this._fine = this.ImgErrs.Source;
+            ((Grid)this.ImgErrs_ErrIcon.Parent).Children.Remove(this.ImgErrs_ErrIcon);
         }
 
         private void RollDieSimple(string die) => R20WSServer.Roll(die, die, "Simple Roll", null);
@@ -149,5 +171,120 @@
         private void Button_Click_33(object sender, RoutedEventArgs e) => this.RollDieStat("Persuasion", AppState.Current.State.General.Persuasion);
 
         private void Button_Click_34(object sender, RoutedEventArgs e) => R20WSServer.CloseServer();
+
+        // Add Macro Click
+        private void Button_Click_35(object sender, RoutedEventArgs e)
+        {
+            EditMacroWindow emw = new EditMacroWindow(new Roll20.Macros.Macro() { Name = "New Macro", Description = "The macro description goes here." });
+            if (emw.ShowDialog() ?? false)
+            {
+                MacroSerializer.Macros.Add(emw.EditedMacro);
+            }
+        }
+
+        private ImageSource _errs;
+        private ImageSource _fine;
+
+        // Macro Run click
+        private void Button_Click_36(object sender, RoutedEventArgs e)
+        {
+            Macro m = (Macro)((Button)sender).DataContext;
+            this.ImgErrs.Source = this._fine;
+            this.ImgErrs.ToolTip = null;
+            List<string> errs = new List<string>();
+            MacroActionExecuteMacro.NumExecutions = 0;
+            m.Execute(errs);
+            if (errs.Count > 0)
+            {
+                ToolTip tt = new ToolTip
+                {
+                    Content = string.Join("\n", errs.ToArray())
+                };
+
+                this.ImgErrs.Source = this._errs;
+                this.ImgErrs.ToolTip = tt;
+            }
+
+            this.ImgErrs.InvalidateVisual();
+        }
+
+        // Macro Edit click
+        private void Button_Click_37(object sender, RoutedEventArgs e)
+        {
+            Macro m = ((Button)sender).DataContext is Macro mac ? mac : this.LV_Macros.SelectedItems == null || this.LV_Macros.SelectedItems.Count == 0 ? null : (Macro)this.LV_Macros.SelectedItems[0];
+            if (m == null)
+            {
+                return;
+            }
+
+            byte[] arr;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (BinaryWriter bw = new BinaryWriter(ms))
+                {
+                    m.Serialize(bw);
+                }
+
+                arr = ms.ToArray();
+            }
+
+            EditMacroWindow emw = new EditMacroWindow(m);
+            if (!emw.ShowDialog() ?? true)
+            {
+                using (MemoryStream ms = new MemoryStream(arr))
+                {
+                    using (BinaryReader br = new BinaryReader(ms))
+                    {
+                        m.Deserialize(br);
+                    }
+                }
+            }
+        }
+
+        // Macro Share click
+        private void Button_Click_38(object sender, RoutedEventArgs e)
+        {
+            Macro m = (Macro)((Button)sender).DataContext;
+            string s = MacroSerializer.Save(m);
+            Clipboard.SetText(s);
+        }
+
+        // Macro Delete click
+        private void Button_Click_39(object sender, RoutedEventArgs e)
+        {
+            Macro m = ((Button)sender).DataContext is Macro mac ? mac : this.LV_Macros.SelectedItems == null || this.LV_Macros.SelectedItems.Count == 0 ? null : (Macro)this.LV_Macros.SelectedItems[0];
+            if (m == null)
+            {
+                return;
+            }
+
+            MacroSerializer.Macros.Remove(m);
+            this.LV_Macros.Items.Refresh();
+        }
+
+        // Macro Paste click
+        private void Button_Click_40(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Macro m = MacroSerializer.Load(Clipboard.GetText());
+                MacroSerializer.Macros.Add(m);
+                Clipboard.SetText(string.Empty);
+            }
+            catch (Exception)
+            {
+                // NOOP
+            }
+        }
+
+        // Open Log File click
+        private void Button_Click_41(object sender, RoutedEventArgs e)
+        {
+            string tPath = Path.Combine(R20Logger.LogPath, "r20-log-latest.txt");
+            if (File.Exists(tPath))
+            {
+                Process.Start(tPath);
+            }
+        }
     }
 }

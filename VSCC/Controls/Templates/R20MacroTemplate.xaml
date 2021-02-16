@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="VSCC.Controls.Templates.R20MacroTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VSCC.Controls.Templates"
+             mc:Ignorable="d" 
+             d:DesignHeight="64" d:DesignWidth="96">
+    <StackPanel>
+        <Border BorderBrush="DarkViolet" BorderThickness="1" CornerRadius="7" Background="{StaticResource Static.Background}" Height="64">
+            <Grid>
+                <Label Margin="0,-17,0,36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}">Name</Label>
+                <TextBlock FontSize="9" Margin="0,10,0,0" Foreground="{StaticResource Static.Foreground}">Description</TextBlock>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="16" Height="16" BorderBrush="DarkViolet" BorderThickness="0 1 1 1" Margin="86,0,-8,0" Background="{StaticResource Static.Background}" >
+                    <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                </Button>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="16" Height="16" BorderBrush="DarkViolet" BorderThickness="0 1 1 1" Background="{StaticResource Static.Background}" Margin="86,46,-8,-16" >
+                    <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
+                </Button>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="16" Height="16" BorderBrush="DarkViolet" BorderThickness="0 1 1 1" Margin="86,15,-8,0" Background="{StaticResource Static.Background}" >
+                    <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
+                </Button>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="16" Height="16" BorderBrush="DarkViolet" BorderThickness="0 1 1 1" Margin="86,30,-8,0" Background="{StaticResource Static.Background}" >
+                    <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                </Button>
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>

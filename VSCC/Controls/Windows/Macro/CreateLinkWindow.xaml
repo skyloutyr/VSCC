@@ -1,0 +1,16 @@
+﻿<Window x:Class="VSCC.Controls.Windows.Macro.CreateLinkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows.Macro"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.Window_CreateLink_Title}" Height="128" Width="192" Background="{StaticResource Static.Background}" Loaded="Window_Loaded">
+    <Grid>
+        <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,68,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" RenderTransformOrigin="0.51,2.246" />
+        <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="110,68,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
+        <TextBox x:Name="TB_LinkName" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="164" Margin="10,7,0,0" Text="{x:Static p:Resources.Macro_Generic_NewLink}" Foreground="{StaticResource Static.Foreground}" />
+        <ComboBox x:Name="CB_Value" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0" Width="164" Foreground="{StaticResource Static.Foreground}" />
+    </Grid>
+</Window>
