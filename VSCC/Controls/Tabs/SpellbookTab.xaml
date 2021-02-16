@@ -47,13 +47,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -94,13 +94,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -139,13 +139,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -184,13 +184,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -229,13 +229,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0"  Foreground="{StaticResource Static.Foreground}"/>
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -274,13 +274,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -319,13 +319,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -364,13 +364,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -409,13 +409,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
@@ -454,13 +454,13 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                         </Button>
-                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21">
+                        <Button Command="{x:Static local:SpellbookTab.NewSpellCmd}" HorizontalAlignment="Left" Margin="208,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_AddSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Click="Button_Click" HorizontalAlignment="Left" Margin="973,0,0,0" VerticalAlignment="Top" Width="21" Height="21">
