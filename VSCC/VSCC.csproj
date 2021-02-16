@@ -141,6 +141,9 @@
     <Compile Include="Controls\Tabs\SpellIndexTab.xaml.cs">
       <DependentUpon>SpellIndexTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Templates\FeatTemplate.xaml.cs">
+      <DependentUpon>FeatTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Templates\InventoryItemTemplate.xaml.cs">
       <DependentUpon>InventoryItemTemplate.xaml</DependentUpon>
     </Compile>
@@ -150,8 +153,29 @@
     <Compile Include="Controls\Templates\ItemCardTemplate.xaml.cs">
       <DependentUpon>ItemCardTemplate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Templates\Macro\TemplateAtkDmg.xaml.cs">
+      <DependentUpon>TemplateAtkDmg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Templates\Macro\TemplateDesc.xaml.cs">
+      <DependentUpon>TemplateDesc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Templates\Macro\TemplateDmg.xaml.cs">
+      <DependentUpon>TemplateDmg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Templates\Macro\TemplateSaveDmg.xaml.cs">
+      <DependentUpon>TemplateSaveDmg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Templates\Macro\TemplateSimple.xaml.cs">
+      <DependentUpon>TemplateSimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Templates\Macro\TemplateSpell.xaml.cs">
+      <DependentUpon>TemplateSpell.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Templates\MarketplaceEntryTemplate.xaml.cs">
       <DependentUpon>MarketplaceEntryTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Templates\R20MacroTemplate.xaml.cs">
+      <DependentUpon>R20MacroTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Templates\SpellCardTemplate.xaml.cs">
       <DependentUpon>SpellCardTemplate.xaml</DependentUpon>
@@ -177,14 +201,32 @@
     <Compile Include="Controls\Windows\ColorPickerWindow.xaml.cs">
       <DependentUpon>ColorPickerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Windows\CreateFeatWindow.xaml.cs">
+      <DependentUpon>CreateFeatWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Windows\CreateIItemWindow.xaml.cs">
       <DependentUpon>CreateIItemWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Windows\CreateSpellWindow.xaml.cs">
       <DependentUpon>CreateSpellWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Windows\EditMacroWindow.xaml.cs">
+      <DependentUpon>EditMacroWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Windows\InfoWindow.xaml.cs">
       <DependentUpon>InfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\InventoryContainerWindow.xaml.cs">
+      <DependentUpon>InventoryContainerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\Macro\CreateLinkWindow.xaml.cs">
+      <DependentUpon>CreateLinkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\Macro\DefineLocalWindow.xaml.cs">
+      <DependentUpon>DefineLocalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windows\Macro\MacroActionWindow.xaml.cs">
+      <DependentUpon>MacroActionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Windows\ScriptContextWindow.xaml.cs">
       <DependentUpon>ScriptContextWindow.xaml</DependentUpon>
@@ -196,6 +238,7 @@
       <DependentUpon>ScriptsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataType\CostValue.cs" />
+    <Compile Include="DataType\Feat.cs" />
     <Compile Include="DataType\Spell.cs" />
     <Compile Include="DataType\StatModifier.cs" />
     <Compile Include="Legacy\SaveV1Adapter.cs" />
@@ -211,6 +254,146 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Roll20\Macros\Actions\MacroActionDmg.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionExecuteMacro.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionSpell.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionInferredSpell.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionSaveDmg.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionCondition.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionAtkDmg.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionSimpleRoll.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionShowDescription.cs" />
+    <Compile Include="Roll20\Macros\Basic\MacroActionBoolConstant.cs" />
+    <Compile Include="Roll20\Macros\Basic\MacroActionRealConstant.cs" />
+    <Compile Include="Roll20\Macros\Basic\MacroActionStringConcat.cs" />
+    <Compile Include="Roll20\Macros\Basic\MacroActionNumberConstant.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionBool2Str.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionBool2Num.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionNum2Bool.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionReal2Str.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionReal2Exp.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionNum2Exp.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionNum2Real.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionReal2Num.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionStr2Real.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionStr2Num.cs" />
+    <Compile Include="Roll20\Macros\Expressions\Expression.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionStr2Exp.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionExp2String.cs" />
+    <Compile Include="Roll20\Macros\Expressions\MacroActionExpressionAdvRoll.cs" />
+    <Compile Include="Roll20\Macros\Expressions\MacroActionExpressionAnnotate.cs" />
+    <Compile Include="Roll20\Macros\Expressions\MacroActionExpressionRoll.cs" />
+    <Compile Include="Roll20\Macros\Expressions\Math\MacroExpressionMul.cs" />
+    <Compile Include="Roll20\Macros\Expressions\Math\MacroExpressionSub.cs" />
+    <Compile Include="Roll20\Macros\Expressions\Math\MacroExpressionDiv.cs" />
+    <Compile Include="Roll20\Macros\Expressions\Math\MacroExpressionSum.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILAmount.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILGetWeight.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILCostGold.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILCostSilver.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILDesc.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILCostCopper.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILType.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILRarity.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionILName.cs" />
+    <Compile Include="Roll20\Macros\ItemLinks\MacroActionItemLinkBase.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionGetBoolLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionGetStringLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionGetRealLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionGetNumberLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetNextBoolLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetBoolLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetNextNumberLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetNextRealLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetNextStringLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetStringLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetRealLocal.cs" />
+    <Compile Include="Roll20\Macros\Locals\MacroActionSetNumberLocal.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionNEqS.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionEqS.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionNEqB.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionNor.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionNand.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionEqB.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionXNor.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionXor.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionOr.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionAnd.cs" />
+    <Compile Include="Roll20\Macros\Logic\MacroConditionInvert.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionEqR.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionGreaterR.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionGrequalR.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionGrequalN.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionLequalR.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionLequalN.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionGreaterN.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionLessR.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionLessN.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionNEqR.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionNEqN.cs" />
+    <Compile Include="Roll20\Macros\Logic\Math\MacroConditionEqN.cs" />
+    <Compile Include="Roll20\Macros\Macro.cs" />
+    <Compile Include="Roll20\Macros\MacroAction.cs" />
+    <Compile Include="Roll20\Macros\Basic\MacroActionStringConstant.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionMessage.cs" />
+    <Compile Include="Roll20\Macros\MacroSerializer.cs" />
+    <Compile Include="Roll20\Macros\Convert\MacroActionNum2Str.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionSqrt.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionFloor.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionCeil.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionRound.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionMul.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionDiv.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionSub.cs" />
+    <Compile Include="Roll20\Macros\Math\MacroActionSum.cs" />
+    <Compile Include="Roll20\Macros\Numbers\MacroActionPollR20.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionAcrobatics.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionArcana.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionAnimalHandling.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionPersuasion.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionPerformance.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionIntimidation.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionDeception.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionSurvival.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionPerception.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionMedicine.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionInsight.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionReligion.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionNature.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionInvestigation.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionHistory.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionStealth.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionSleightOfHand.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Skills\MacroActionAthletics.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionCha.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionLevel.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionHP.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionInt.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionSpellSaveDC.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionProf.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionWis.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionCon.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionDex.cs" />
+    <Compile Include="Roll20\Macros\Numbers\Stats\MacroActionStr.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLIsRitual.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLIsConcentration.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLIsMaterial.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLIsSomatic.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLIsCantrip.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLIsVerbal.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLLevel.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLDescription.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLDuration.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLCastTime.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLSimpleDescription.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLRange.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLTarget.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLSchool.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSLName.cs" />
+    <Compile Include="Roll20\Macros\SpellLinks\MacroActionSpellLinkBase.cs" />
+    <Compile Include="Roll20\Macros\Strings\MacroActionCharName.cs" />
+    <Compile Include="Roll20\Macros\Strings\MacroActionStrLen.cs" />
+    <Compile Include="Roll20\R20Logger.cs" />
     <Compile Include="Roll20\R20WSServer.cs" />
     <Compile Include="Roll20\CommandPacket.cs" />
     <Compile Include="Scripting\Marketplace\MarketplaceEntry.cs" />
@@ -273,6 +456,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Templates\FeatTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Templates\InventoryItemTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -297,7 +484,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Templates\Macro\TemplateAtkDmg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\Macro\TemplateDesc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\Macro\TemplateDmg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\Macro\TemplateSaveDmg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\Macro\TemplateSimple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\Macro\TemplateSpell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Templates\MarketplaceEntryTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Templates\R20MacroTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -333,6 +548,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Windows\CreateFeatWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Windows\CreateIItemWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -341,7 +560,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Windows\EditMacroWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Windows\InfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Windows\InventoryContainerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Windows\Macro\CreateLinkWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Windows\Macro\DefineLocalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Windows\Macro\MacroActionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -3303,6 +3542,3326 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AppIcons\icons8-flag-2-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-run-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-check-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-exclamation-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-share-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-text-64.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\AppFeatures\sack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Lists\Skills\if001.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if002.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if003.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if004.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if005.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if006.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if007.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if008.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if009.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if010.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if011.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if012.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if014.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if015.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if016.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if017.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if018.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if020.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if021-fix.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if021.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if022.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if023.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if027.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if028.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if029.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if030.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if031.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if032.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if033.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if034.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if035.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if036.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if037.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if038.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if039.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if040.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if041.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if042.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if043.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if044.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if045.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if046.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if047.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if048.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if049.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if050.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if051.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if052.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if053.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if054.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if055.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if056.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if057.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if058.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if059.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if060.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if061.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if062.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if063.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if064.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if065.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if066.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if067.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if068.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if069.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if070.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if071.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if072.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if073.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if074.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if075.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if076.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if077.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if078.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if079.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if080.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if081.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if082.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if083.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if084.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if085.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if086.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if087.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if088.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if089.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if090.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if091.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if092.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if093.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if094.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if095.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if096.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if097.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if098.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if099.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1000.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1001.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1002.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1003.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1004.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1005.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if1006.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if101.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if102.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if103.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if104.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if105.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if106.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if107.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if108.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if109.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if110.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if111.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if112.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if113.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if114.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if115.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if116.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if117.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if118.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if119.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if120.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if121.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if122.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if123.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if124.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if125.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if126.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if127.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if129.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if130.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if131.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if132.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if133.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if134.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if135.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if136.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if137.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if138.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if139.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if140.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if141.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if142.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if143.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if144.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if145.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if146.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if147.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if148.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if149.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if150.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if151.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if152.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if153.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if154.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if155.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if156.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if157.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if158.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if159.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if160.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if161.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if162.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if163.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if164.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if165.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if166.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if167.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if168.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if169.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if170.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if171.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if172.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if173.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if174.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if175.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if176.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if177.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if178.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if179.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if180.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if181.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if182.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if183.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if184.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if185.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if186.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if187.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if188.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if189.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if190.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if191.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if192.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if193.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if194.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if195.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if196.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if197.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if198.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if199.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if200.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if201.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if202.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if203.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if204.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if205.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if206.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if207.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if208.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if209.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if210.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if211.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if212.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if213.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if214.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if215.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if216.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if217.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if218.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if219.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if220.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if221.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if222.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if223.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if224.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if225.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if226.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if227.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if228.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if229.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if230.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if231.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if232.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if233.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if234.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if235.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if236.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if237.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if238.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if239.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if241.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if242.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if243.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if244.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if245.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if246.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if247.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if248.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if249.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if250.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if251.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if252.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if253.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if254.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if255.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if256.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if257.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if258.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if259.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if260.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if261.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if262.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if263.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if264.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if265.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if266.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if267.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if268.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if269.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if270.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if271.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if272.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if273.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if274.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if275.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if276.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if277.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if278.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if279.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if280.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if281.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if282.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if283.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if284.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if285.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if286.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if287.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if288.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if289.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if290.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if291.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if292.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if292BorderTest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if293.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if294.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if295.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if296.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if297.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if298.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if299.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if300.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if301.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if302.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if303.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if304.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if305.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if306.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if307.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if308.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if309.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if310.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if311.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if312.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if313.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if314.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if315.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if316.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if317.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if318.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if319.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if320.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if321.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if322.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if323.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if324.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if325.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if326.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if327.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if328.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if329.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if330.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if331.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if332.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if333.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if334.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if335.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if336.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if337.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if338.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if339.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if340.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if341.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if342.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if343.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if344.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if345.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if346.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if347.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if348.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if349.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if350.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if351.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if352.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if353.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if354.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if355.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if356.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if357.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if358.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if359.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if360.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if361.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if362.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if363.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if364.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if365.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if366.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if367.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if368.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if369.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if370.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if371.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if372.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if373.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if374.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if375.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if376.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if377.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if378.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if379.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if380.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if381.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if382.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if383.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if384.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if385.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if386.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if387.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if388.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if389.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if390.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if391.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if392.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if393.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if394.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if395.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if395flat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if396.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if397.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if398.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if399.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if401.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if402.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if403.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if404.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if405.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if406.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if407.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if408.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if409.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if410.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if411.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if412.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if413.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if414.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if415.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if416.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if417.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if418.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if419.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if420.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if421.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if422.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if423.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if424.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if425.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if426.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if427.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if428.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if429.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if430.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if431.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if432.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if433.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if434.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if435.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if436.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if437.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if438.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if439.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if440.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if441.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if442.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if443.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if444.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if445.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if446.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if447.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if448.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if449.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if450.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if451.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if452.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if453.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if454.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if455.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if456.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if457.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if458.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if459.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if460.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if461.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if462.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if463.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if464.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if465.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if466.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if467.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if468.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if469.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if470.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if471.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if472.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if473.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if474.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if475.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if476.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if477.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if478.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if479.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if480.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if481.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if482.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if483.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if484.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if485.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if486.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if487.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if488.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if489.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if490.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if491.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if492.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if493.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if494.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if495.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if496.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if497.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if498.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if499.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if500.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if501.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if502.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if503.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if504.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if505.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if506.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if507.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if508.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if509.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if510.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if511.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if512.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if513.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if514.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if515.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if516.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if517.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if518.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if519.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if520.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if521.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if522.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if523.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if524.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if525.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if526.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if527.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if528.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if529.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if530.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if531.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if532.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if533.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if534.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if535.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if536.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if537.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if538.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if539.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if540.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if541.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if542.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if543.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if544.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if545.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if546.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if547.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if548.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if549.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if550.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if551.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if552.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if553.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if554.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if555.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if556.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if557.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if558.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if559.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if560.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if561.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if562.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if563.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if564.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if565.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if566.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if567.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if568.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if569.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if570.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if571.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if572.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if573.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if574.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if575.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if576.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if577.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if578.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if579.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if580.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if581.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if582.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if583.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if584.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if585.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if586.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if587.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if588.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if589.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if590.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if591.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if592.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if593.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if594.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if595.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if596.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if597.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if598.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if599.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if600.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if601.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if602.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if603.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if604.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if605.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if606.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if607.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if608.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if609.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if610.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if611.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if612.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if613.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if614.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if615.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if616.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if617.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if618.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if619.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if620.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if621.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if622.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if623.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if624.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if625.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if626.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if627.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if628.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if629.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if630.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if631.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if632.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if633.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if634.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if635.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if636.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if636BorderMod.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if637.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if638.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if639.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if640.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if641.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if642.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if643.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if644.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if645.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if646.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if647.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if648.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if649.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if650.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if651.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if652.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if653.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if654.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if655.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if656.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if657.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if658.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if659.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if670.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if671.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if671_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if672.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if672_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if673.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if673_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if674.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if675.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if676.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if677.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if678.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if679.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if680.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if681.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if681_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if682.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if683.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if684.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if685.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if686.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if687.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if688.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if689.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if690.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if691.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if692.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if693.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if694.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if695.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if696.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if697.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if698.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if699.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if700.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if701.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if702.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if703.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if704.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if705.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if705_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if706.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if707.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if708.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if709_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if710.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if711.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if712.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if713.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if714.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if714_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if715.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if715_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if716.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if716_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if717.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if717_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if718.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if719.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if720.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if721.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if722.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if723.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if723_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if724_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if725.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if726.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if727.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if728.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if729.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if730.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if731.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if732.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if733.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if734.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if735.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if736.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if737.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if738.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if739.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if740.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if741.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if742.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if743.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if744.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if745.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if746.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if747.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if748.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if749.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if750.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if751.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if752.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if753.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if754.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if755.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if756.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if757.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if758.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if758_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if759.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if759_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if760.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if760_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if761.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if762.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if763.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if764.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if765.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if766.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if767.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if768.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if769.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if770.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if771.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if772.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if773.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if774.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if775.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if776.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if777.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if778.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if779.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if780.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if781.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if782.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if783.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if784.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if785.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if786.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if787.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if788.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if789.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if790.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if791.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if792.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if793.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if794.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if795.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if796.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if797.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if798.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if799.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if800.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if801.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if802.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if802_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if803.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if804.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if805.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if806.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if807.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if808.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if809.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if810.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if811.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if812.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if812_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if813.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if813_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if814.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if815.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if816.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if817.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if818.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if818_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if819.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if820.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if821.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if822.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if823.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if825.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if826.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if827.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if828.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if829.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if830.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if831.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if832.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if833.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if834.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if835.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if836.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if837.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if838.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if839.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if840.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if841.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if842.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if843.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if844.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if845.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if846.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if847.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if848.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if849.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if850.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if851.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if852.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if853.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if854.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if855.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if856.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if857.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if858.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if859.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if860.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if861.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if862.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if863.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if864.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if865.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if866.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if867.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if868.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if869.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if870.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if871.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if872.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if873.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if874.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if875.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if876.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if877.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if878.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if879.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if880.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if881.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if882.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if883.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if884.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if885.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if886.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if886_t.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if887.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if888.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if889.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if890.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if891.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if892.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if893.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if894.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if895.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if896.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if897.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if898.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if899.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if900.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if901.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if902.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if903.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if904.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if905.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if906.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if907.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if908.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if909.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if910.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if911.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if912.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if913.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if914.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if915.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if916.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if917.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if918.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if919.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if920.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if921.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if922.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if923.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if924.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if925.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if926.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if927.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if928.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if929.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if930.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if931.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if932.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if933.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if934.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if935.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if936.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if937.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if938.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if939.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if940.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if941.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if942.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if943.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if944.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if945.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if946.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if947.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if948.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if949.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if950.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if951.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if952.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if953.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if954.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if955.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if956.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if957.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if958.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if959.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if960.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if961.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if962.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if963.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if964.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if965.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if966.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if967.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if968.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if969.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if970.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if971.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if972.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if973.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if974.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if975.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if976.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if977.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if978.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if979.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if980.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if981.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if982.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if983.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if984.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if985.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if986.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if987.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if988.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if989.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if990.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if991.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if992.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if993.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if994.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if995.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if996.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if997.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if998.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Skills\if999.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Lists\Items\Loot\Icon1.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon10.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon11.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon12.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon13.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon14.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon15.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon16.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon17.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon18.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon19.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon2.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon20.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon21.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon22.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon23.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon24.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon25.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon26.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon27.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon28.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon29.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon3.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon30.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon31.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon32.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon33.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon34.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon35.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon36.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon37.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon38.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon39.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon4.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon40.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon41.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon42.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon43.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon44.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon45.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon46.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon47.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon48.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon5.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon6.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon7.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon8.png" />
+    <Resource Include="Images\Lists\Items\Loot\Icon9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\1.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\10.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\11.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\12.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\13.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\14.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\15.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\16.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\17.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\18.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\19.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\2.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\20.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\21.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\22.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\23.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\24.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\25.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\26.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\27.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\28.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\29.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\3.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\30.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\31.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\32.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\33.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\34.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\35.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\36.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\37.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\38.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\39.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\4.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\40.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\41.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\42.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\43.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\44.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\45.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\46.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\47.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\48.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\5.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\50.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\51.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\52.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\53.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\54.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\55.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\56.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\57.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\58.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\59.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\6.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\60.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\61.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\62.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\63.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\64.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\65.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\66.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\67.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\68.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\69.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\7.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\70.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\71.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\72.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\73.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\74.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\75.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\76.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\77.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\78.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\79.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\8.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\80.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\81.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\82.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\83.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\84.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\85.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\86.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\87.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\88.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\89.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\9.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\90.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\91.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\92.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\93.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\94.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\95.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\96.png" />
+    <Resource Include="Images\Lists\Items\Alchemy\Herbs\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon1.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon10.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon11.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon12.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon13.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon14.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon15.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon16.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon17.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon18.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon19.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon2.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon20.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon21.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon22.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon23.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon24.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon25.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon26.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon27.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon28.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon29.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon3.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon30.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon31.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon32.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon33.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon34.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon35.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon36.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon37.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon38.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon39.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon4.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon40.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon41.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon42.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon43.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon44.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon45.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon46.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon47.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon48.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon5.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon6.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon7.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon8.png" />
+    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Lists\Items\Minerals\Icon1.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon10.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon11.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon12.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon13.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon14.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon15.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon16.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon17.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon18.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon19.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon2.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon20.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon21.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon22.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon23.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon24.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon25.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon26.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon27.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon28.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon29.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon3.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon30.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon31.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon32.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon33.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon34.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon35.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon36.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon37.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon38.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon39.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon4.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon40.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon41.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon42.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon43.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon44.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon45.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon46.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon47.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon48.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon5.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon6.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon7.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon8.png" />
+    <Resource Include="Images\Lists\Items\Minerals\Icon9.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\KeraLua.1.0.22\build\net45\KeraLua.targets" Condition="Exists('..\packages\KeraLua.1.0.22\build\net45\KeraLua.targets')" />
