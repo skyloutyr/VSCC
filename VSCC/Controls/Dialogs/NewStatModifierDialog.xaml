@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:Properties="clr-namespace:VSCC.Properties" x:Class="VSCC.Controls.Dialogs.NewStatModifierDialog"
         mc:Ignorable="d"
-        Title="NewStatModifierDialog" Height="128" Width="640" Background="{StaticResource Static.Background}">
+        Title="{x:Static Properties:Resources.Window_NewStatModifierDialog_Title}" Height="128" Width="640" Background="{StaticResource Static.Background}">
     <Grid>
         <Button Content="{x:Static Properties:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,68,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
         <Button Content="{x:Static Properties:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="558,68,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
