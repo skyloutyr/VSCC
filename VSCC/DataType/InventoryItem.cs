@@ -4,6 +4,8 @@
     using Newtonsoft.Json.Linq;
     using System;
     using System.ComponentModel;
+    using System.Linq;
+    using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
@@ -48,7 +50,7 @@
         public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TInventory.Images)[this.ImageIndex]?.Image ?? null;
 
         [JsonIgnore]
-        public string AmountProperty => $"#:{ this.Amount }";
+        public string AmountProperty => $"{ this.Amount }";
 
         [JsonIgnore]
         public string TotalWeightProperty => $"⚖:{ this.Amount * this.Weight }";
@@ -145,13 +147,25 @@
         }
         public string Description
         {
-            get => this.description;
+            get
+            {
+                int i = AppState.Current.TInventory.Items.Count(it => it.ContainerID.Equals(this.ObjectID));
+                return i == 0 ? this.description : MainWindow.Translate("Text_Item_HasContents", i) + "\n\n" + this.description;
+            }
+
             set
             {
                 this.description = value;
                 this.OnPropertyChanged("Description");
             }
         }
+
+        public Visibility HasItems
+        {
+            get => AppState.Current.TInventory.Items.Any(it => it.ContainerID.Equals(this.ObjectID)) ? Visibility.Visible : Visibility.Hidden;
+            set => this.OnPropertyChanged("HasItems");
+        }
+
         public string ImageIndex
         {
             get => this.imageIndex;
@@ -217,6 +231,8 @@
 
         public Guid ObjectID { get; set; } = Guid.NewGuid();
 
+        public Guid ContainerID { get; set; } = Guid.Empty;
+
         [JsonIgnore]
         public string GeneratedDescription => $"{ this.Name }\nAmount: { this.Amount }\nWeight: { this.Weight * this.Amount }({ this.Weight })\nCost:{ this.Cost }\nType:{ this.Type }\nRarity: { this.Rarity }\n\n{ this.Description }";
 
@@ -247,7 +263,7 @@
 
         }
 
-        private void OnPropertyChanged(string name) => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        public void OnPropertyChanged(string name) => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         public InventoryItem Copy() =>
             new InventoryItem()
@@ -262,8 +278,32 @@
                 Type = this.Type,
                 Rarity = this.Rarity,
                 Description = this.Description,
-                TitleColor = this.TitleColor
+                TitleColor = this.TitleColor,
+                ObjectID = this.ObjectID
             };
+
+        public JObject ToShareObject()
+        {
+            JObject mio = JObject.FromObject(this);
+            JArray mia = new JArray();
+            foreach (InventoryItem ii in AppState.Current.State.Inventory.Items)
+            {
+                if (ii.ContainerID.Equals(this.ObjectID))
+                {
+                    mia.Add(ii.ToShareObject());
+                }
+            }
+
+            JObject ret = new JObject
+            {
+                ["main_item"] = mio,
+                ["secondary_items"] = mia
+            };
+
+            return ret;
+        }
+
+        public string ToShareString() => this.ToShareObject().ToString(Formatting.None);
     }
 
     public class InventoryItemLegacyAdapter

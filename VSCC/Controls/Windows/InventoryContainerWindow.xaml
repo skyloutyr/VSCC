@@ -1,0 +1,90 @@
+﻿<Window x:Class="VSCC.Controls.Windows.InventoryContainerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows"
+        xmlns:vscc="clr-namespace:VSCC.Controls"
+        xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.Window_InventoryContainer_Title}" Height="400" Width="500" Background="{StaticResource Static.Background}">
+    <Grid>
+        <Label Content="{x:Static p:Resources.Inventory_Sorting}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+        <CheckBox x:Name="CheckBox_ReverseSearchResults" Content="{x:Static p:Resources.Inventory_InvertSort}" HorizontalAlignment="Left" Margin="117,7,0,0" VerticalAlignment="Top" Checked="CheckBox_ReverseSearchResults_Checked" Unchecked="CheckBox_ReverseSearchResults_Checked" Foreground="{StaticResource Static.Foreground}"/>
+        <Label Content="{x:Static p:Resources.Inventory_Filter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="449,-5,0,0" Foreground="{StaticResource Static.Foreground}"/>
+        <TextBox x:Name="TextBox_Filter" HorizontalAlignment="Left" Height="23" Margin="342,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TextChanged="TextBox_Filter_TextChanged"/>
+        <ComboBox x:Name="ComboBox_SortBy" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SortBy_SelectionChanged" Foreground="{StaticResource Static.Foreground}">
+            <ComboBoxItem x:Name="SortBy_Name" Content="{x:Static p:Resources.Inventory_Sort_Name}" IsSelected="True" />
+            <ComboBoxItem x:Name="SortBy_Amount" Content="{x:Static p:Resources.Inventory_Sort_Amount}" />
+            <ComboBoxItem x:Name="SortBy_Weight" Content="{x:Static p:Resources.Inventory_Sort_Weight}" />
+            <ComboBoxItem x:Name="SortBy_WeightTotal" Content="{x:Static p:Resources.Inventory_Sort_Weight_Total}" />
+            <ComboBoxItem x:Name="SortBy_Cost" Content="{x:Static p:Resources.Inventory_Sort_Cost}" />
+            <ComboBoxItem x:Name="SortBy_CostTotal" Content="{x:Static p:Resources.Inventory_Sort_Cost_Total}" />
+            <ComboBoxItem x:Name="SortBy_Rarity" Content="{x:Static p:Resources.Inventory_Sort_Rarity}" />
+            <ComboBoxItem x:Name="SortBy_Type" Content="{x:Static p:Resources.Inventory_Sort_Type}" />
+        </ComboBox>
+        <Button x:Name="Btn_Delete" HorizontalAlignment="Left" Margin="239,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Delete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteItem}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Edit" HorizontalAlignment="Left" Margin="161,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Edit_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditItem}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Add" HorizontalAlignment="Left" Margin="135,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Add_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CreateItem}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Copy" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Copy_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CopyItem}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Paste" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteItem}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+        </Button>
+        <Border Margin="10,49,10,10" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
+            <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick" BorderThickness="0" Background="Transparent" PreviewDrop="Inventory_PreviewDrop" Drop="Inventory_Drop" AllowDrop="True">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <wpftk:VirtualizingWrapPanel Margin="0 0 0 0" Background="{StaticResource Static.Background}" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.CommandBindings>
+                    <CommandBinding Command="{x:Static ApplicationCommands.Copy}" Executed="CommandBindingCopy_Executed" />
+                    <CommandBinding Command="{x:Static ApplicationCommands.Paste}" Executed="CommandBindingPaste_Executed" />
+                    <CommandBinding Command="{x:Static ApplicationCommands.Cut}" Executed="CommandBindingCut_Executed" />
+                </ListView.CommandBindings>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" Background="{StaticResource Static.Background}">
+                            <Grid ToolTip="{Binding Description}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" Height="96" Width="81">
+
+                                <Image Source="/VSCC;component/Images/AppFeatures/gold_coin.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" />
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding GP}" Foreground="{StaticResource Static.Foreground}" FontSize="8" Margin="10,-1,0,0" />
+                                <Image Source="/VSCC;component/Images/AppFeatures/silver_coin.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" Margin="25,0,0,0" />
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding SP}" Foreground="{StaticResource Static.Foreground}" FontSize="8" Margin="35,-1,0,0" />
+                                <Image Source="/VSCC;component/Images/AppFeatures/copper_coin.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" Margin="50,0,0,0" />
+                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding CP}" Foreground="{StaticResource Static.Foreground}" FontSize="8" Margin="60,-1,0,0" />
+
+                                <Image Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="48" Margin="0,10,0,0" />
+
+                                <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="32" Margin="47,62,0,0">
+                                    <TextBlock VerticalAlignment="Bottom" TextAlignment="Justify" Text="{Binding AmountProperty}" Foreground="{StaticResource Static.Foreground}" />
+                                </Viewbox>
+
+                                <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" TextWrapping="Wrap" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47" Height="26" Margin="0,58,0,0" Foreground="{Binding Color}" Background="{StaticResource Static.Background}" />
+                                <TextBlock Text="{Binding Description}" ToolTip="{Binding Description}" TextWrapping="Wrap" FontSize="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="31" Height="52" Margin="48,10,0,0" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                <TextBlock Text="{Binding TotalWeightProperty}" TextWrapping="Wrap" FontSize="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="10" Margin="0,84,0,0" Foreground="{StaticResource Static.Foreground}" Background="Transparent" />
+                                <Image Source="/VSCC;component/Images/AppFeatures/sack.png" Visibility="{Binding HasItems}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="24" Margin="0,10,0,0" />
+
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+    </Grid>
+</Window>

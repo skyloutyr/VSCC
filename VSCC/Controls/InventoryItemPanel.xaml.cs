@@ -1,5 +1,7 @@
 ﻿namespace VSCC.Controls
 {
+    using System;
+    using System.ComponentModel;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
@@ -26,7 +28,8 @@
         {
             if (e.Data != null && e.Data.GetDataPresent("InventoryItem"))
             {
-                this.SetDataContext((InventoryItem)e.Data.GetData("InventoryItem"));
+                Tuple<object, object, ICollectionView> data = (Tuple<object, object, ICollectionView>)e.Data.GetData("InventoryItem");
+                this.SetDataContext((InventoryItem)data.Item1);
                 e.Handled = true;
             }
         }
@@ -35,8 +38,6 @@
         {
             if (this.DataContext != null)
             {
-                DataObject dragData = new DataObject("InventoryItem", this.DataContext);
-                DragDrop.DoDragDrop(this, dragData, DragDropEffects.Move);
                 this.SetDataContext(null);
             }
         }
