@@ -47,14 +47,14 @@
         {
             base.OnRender(drawingContext);
             drawingContext.DrawRectangle(this.BarBackground, this.BarBorder, new Rect(0, 0, this.ActualWidth, this.ActualHeight));
-            drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, Math.Max(0, (this.ActualWidth - 4) * Math.Min(1, (float)this.CurrentValue / this.MaximumValue)), this.ActualHeight - 4));
+            drawingContext.DrawRectangle(this.BarColor, null, new Rect(2, 2, Math.Max(0, (this.ActualWidth - 4) * Math.Min(1, this.MaximumValue == 0 ? 0 : (float)this.CurrentValue / this.MaximumValue)), this.ActualHeight - 4));
             FormattedText ft = new FormattedText(
                 $"{ this.CurrentValue }/{ this.MaximumValue }",
                 CultureInfo.CurrentCulture,
                 this.FlowDirection,
                 new Typeface(this.FontFamily, this.FontStyle, this.FontWeight, this.FontStretch),
                 this.FontSize,
-                Brushes.Black,
+                this.Foreground,
                 (PresentationSource.FromVisual(this)?.CompositionTarget?.TransformToDevice.M11 ?? 1) * 96.0
             );
 
