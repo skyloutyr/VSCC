@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="ColorPickerWindow" Height="115.445" Width="353.534" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_ColorPicker_Title}" Height="115.445" Width="353.534" Background="{StaticResource Static.Background}">
     <Grid>
         <xctk:ColorPicker x:Name="ColorPicker_Picker" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{StaticResource Static.Background}" DropDownBackground="{StaticResource Static.Background}" HeaderBackground="{StaticResource Static.Background}" HeaderForeground="{StaticResource Static.Foreground}" TabBackground="Transparent" TabForeground="{StaticResource Static.Foreground}" Width="326" DisplayColorAndName="True" SelectedColorChanged="ColorPicker_Picker_SelectedColorChanged">
         </xctk:ColorPicker>

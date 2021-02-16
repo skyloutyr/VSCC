@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="CreateSpellWindow" Height="520" Width="386" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_CreateSpell_Title}" Height="520" Width="386" Background="{StaticResource Static.Background}">
     <Grid>
         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="128" Width="128" Margin="10,10,0,0">
             <Image x:Name="Img_Picture" Source="{Binding PictureProperty}" Stretch="Fill" />
@@ -80,7 +80,7 @@
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="153" Width="358" Margin="10,286,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.CreateSpell_Desc}" VerticalContentAlignment="Center" Margin="-2,-11,0,0" Foreground="{StaticResource Static.Foreground}" />
-                <TextBox x:Name="TextBox_Desc" Text="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="131" Width="336" AcceptsReturn="True" />
+                <TextBox x:Name="TextBox_Desc" Text="{Binding Description}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="131" Width="336" AcceptsReturn="True" TextWrapping="WrapWithOverflow" />
             </Grid>
         </Border>
         <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="156" Margin="11,0,0,10" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />

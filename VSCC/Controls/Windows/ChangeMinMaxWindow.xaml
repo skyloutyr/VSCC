@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:p="clr-namespace:VSCC.Properties"
         mc:Ignorable="d"
-        Title="ChangeMinMaxWindow" Height="100" Width="192" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_ChangeMinMax_Title}" Height="100" Width="192" Background="{StaticResource Static.Background}">
     <Grid>
         <xctk:SingleUpDown x:Name="DUD_Min" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="64" ButtonSpinnerLocation="Left" />
         <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,7,0,0" Foreground="{StaticResource Static.Foreground}" />

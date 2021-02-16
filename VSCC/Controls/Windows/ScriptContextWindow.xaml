@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         mc:Ignorable="d"
-        Title="ScriptContextWindow" Height="450" Width="800" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_ScriptContext_Title}" Height="450" Width="800" Background="{StaticResource Static.Background}">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
             <Border VerticalAlignment="Top" Height="200" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="2" Margin="0,0,63,0">

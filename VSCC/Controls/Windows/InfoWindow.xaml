@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         mc:Ignorable="d"
-        Title="InfoWindow" Height="300" Width="300" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_Info_Title}" Height="300" Width="300" Background="{StaticResource Static.Background}">
     <StackPanel>
         <Label HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="{x:Static p:Resources.Info_Information}" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
         <TextBlock Text="{x:Static p:Resources.Info_Author}" Foreground="{StaticResource Static.Foreground}" />
