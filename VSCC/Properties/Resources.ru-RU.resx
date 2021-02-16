@@ -277,6 +277,12 @@
   <data name="Extras_Weight" xml:space="preserve">
     <value>Вес</value>
   </data>
+  <data name="Feat_Desc_NeedsConversion" xml:space="preserve">
+    <value>Эта способность была созранена до 1.2 Её необходимо конвертировать вручную.</value>
+  </data>
+  <data name="Feat_Name_Old" xml:space="preserve">
+    <value>Способность до 1.2</value>
+  </data>
   <data name="General_AC" xml:space="preserve">
     <value>Класс Брони</value>
   </data>
@@ -794,6 +800,1848 @@
   <data name="ItemIndex_WondrousOnly" xml:space="preserve">
     <value>Только чудесные</value>
   </data>
+  <data name="Macro_ActionAtkDmg_FullInnerText" xml:space="preserve">
+    <value>Показать бросок атаки с кубами ({0}) и ({1}) с описанием ({2}), названием ({3}) и модификатором ({4}) персонажем ({5}) с уроном ({6}) и критом ({7}) типа ({8}) </value>
+  </data>
+  <data name="Macro_ActionAtkDmg_Name" xml:space="preserve">
+    <value>Показать бросок Атаки и Урона</value>
+  </data>
+  <data name="Macro_ActionDesc_FullInnerText" xml:space="preserve">
+    <value>Показать описание ({0})</value>
+  </data>
+  <data name="Macro_ActionDesc_Name" xml:space="preserve">
+    <value>Показать описание</value>
+  </data>
+  <data name="Macro_ActionDmg_FullInnerText" xml:space="preserve">
+    <value>Показать урон ({0}) и ({1}) типов ({2}) и ({3}) описанных как ({4}) с доп. описанием ({5}) совершаемых ({6})</value>
+  </data>
+  <data name="Macro_ActionDmg_Name" xml:space="preserve">
+    <value>Показать урон</value>
+  </data>
+  <data name="Macro_ActionExecuteMacro_FullInnerText" xml:space="preserve">
+    <value>Выполнить Макро с названием ({0})</value>
+  </data>
+  <data name="Macro_ActionExecuteMacro_Name" xml:space="preserve">
+    <value>Выполнить другое Макро</value>
+  </data>
+  <data name="Macro_ActionExecuteMacro_Text_0" xml:space="preserve">
+    <value>Выполнить Макро с названием </value>
+  </data>
+  <data name="Macro_ActionInferredSpell_FullInnerText" xml:space="preserve">
+    <value>Показать автосгенерированную карточку заклинания ({0})</value>
+  </data>
+  <data name="Macro_ActionInferredSpell_Name" xml:space="preserve">
+    <value>Показать автосгенерированную карточку заклинания</value>
+  </data>
+  <data name="Macro_ActionInferredSpell_Text_0" xml:space="preserve">
+    <value>Показать автосгенерированную карточку заклинания  </value>
+  </data>
+  <data name="Macro_ActionMsg_FullInnerText" xml:space="preserve">
+    <value>Написать ({0}) в чат</value>
+  </data>
+  <data name="Macro_ActionMsg_Name" xml:space="preserve">
+    <value>Показать сообщение</value>
+  </data>
+  <data name="Macro_ActionMsg_Text_0" xml:space="preserve">
+    <value>Вывести </value>
+  </data>
+  <data name="Macro_ActionMsg_Text_1" xml:space="preserve">
+    <value> в чат.</value>
+  </data>
+  <data name="Macro_ActionSaveDmg_FullInnerText" xml:space="preserve">
+    <value>Показать спасбросок со сложностью ({0}) описаный как ({1}) аттрибута ({2}), нанося ({3}) урона с критом в ({4}) типа ({5}) с описанием ({6}) названный ({7}) совершаемый ({8})</value>
+  </data>
+  <data name="Macro_ActionSaveDmg_Name" xml:space="preserve">
+    <value>Показать Спасбросок + Урон</value>
+  </data>
+  <data name="Macro_ActionSimpleRoll_FullInnerText" xml:space="preserve">
+    <value>Показать броски ({0}) и ({1}) с названием ({2}) и описанием ({3}) персонажа ({4})</value>
+  </data>
+  <data name="Macro_ActionSimpleRoll_Name" xml:space="preserve">
+    <value>Показать простой бросок</value>
+  </data>
+  <data name="Macro_ActionSpell_FullInnerText" xml:space="preserve">
+    <value>Показать заклинание с названием ({0}) школы ({1}) и уровнем ({2}) с описанием ({13})</value>
+  </data>
+  <data name="Macro_ActionSpell_Name" xml:space="preserve">
+    <value>Показать карточку заклинания</value>
+  </data>
+  <data name="Macro_BasicBoolCon_Name" xml:space="preserve">
+    <value>Постоянное значение</value>
+  </data>
+  <data name="Macro_BasicIntCon_Name" xml:space="preserve">
+    <value>Постоянное значение</value>
+  </data>
+  <data name="Macro_BasicRealCon_Name" xml:space="preserve">
+    <value>Постоянное значение</value>
+  </data>
+  <data name="Macro_BasicStrConcat_FullInnerText" xml:space="preserve">
+    <value>{0} + {1}</value>
+  </data>
+  <data name="Macro_BasicStrConcat_Name" xml:space="preserve">
+    <value>Соединить строки</value>
+  </data>
+  <data name="Macro_BasicStrConcat_Text_0" xml:space="preserve">
+    <value>Соединить </value>
+  </data>
+  <data name="Macro_BasicStrConcat_Text_1" xml:space="preserve">
+    <value> и </value>
+  </data>
+  <data name="Macro_BasicStrCon_Name" xml:space="preserve">
+    <value>Постоянное значение</value>
+  </data>
+  <data name="Macro_Category_Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="Macro_Category_Basic" xml:space="preserve">
+    <value>Базовое</value>
+  </data>
+  <data name="Macro_Category_Conversion" xml:space="preserve">
+    <value>Конвертация</value>
+  </data>
+  <data name="Macro_Category_ExpressionMath" xml:space="preserve">
+    <value>Математика (Выражение)</value>
+  </data>
+  <data name="Macro_Category_Expressions" xml:space="preserve">
+    <value>Выражения</value>
+  </data>
+  <data name="Macro_Category_IL" xml:space="preserve">
+    <value>Связи с Предметами</value>
+  </data>
+  <data name="Macro_Category_Locals" xml:space="preserve">
+    <value>Переменные</value>
+  </data>
+  <data name="Macro_Category_Logic" xml:space="preserve">
+    <value>Логика</value>
+  </data>
+  <data name="Macro_Category_LogicMath" xml:space="preserve">
+    <value>Логика (Числа)</value>
+  </data>
+  <data name="Macro_Category_Math" xml:space="preserve">
+    <value>Математика</value>
+  </data>
+  <data name="Macro_Category_Skills" xml:space="preserve">
+    <value>Навыки</value>
+  </data>
+  <data name="Macro_Category_SL" xml:space="preserve">
+    <value>Связи с Заклинаниями</value>
+  </data>
+  <data name="Macro_Category_Special" xml:space="preserve">
+    <value>Особое</value>
+  </data>
+  <data name="Macro_Category_Stats" xml:space="preserve">
+    <value>Характеристики</value>
+  </data>
+  <data name="Macro_Category_Strings" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="Macro_ConvBool2Num_FullInnerText" xml:space="preserve">
+    <value>[{0} как число]</value>
+  </data>
+  <data name="Macro_ConvBool2Num_Name" xml:space="preserve">
+    <value>Логика в Число</value>
+  </data>
+  <data name="Macro_ConvBool2Num_Text_0" xml:space="preserve">
+    <value> как число</value>
+  </data>
+  <data name="Macro_ConvBool2Str_FullInnerText" xml:space="preserve">
+    <value>[{0} как текст]</value>
+  </data>
+  <data name="Macro_ConvBool2Str_Name" xml:space="preserve">
+    <value>Логика в Текст</value>
+  </data>
+  <data name="Macro_ConvBool2Str_Text_0" xml:space="preserve">
+    <value> как текст</value>
+  </data>
+  <data name="Macro_ConvNum2Bool_FullInnerText" xml:space="preserve">
+    <value>[{0} как логика]</value>
+  </data>
+  <data name="Macro_ConvNum2Bool_Name" xml:space="preserve">
+    <value>Число в Логику</value>
+  </data>
+  <data name="Macro_ConvNum2Bool_Text_0" xml:space="preserve">
+    <value> как логика</value>
+  </data>
+  <data name="Macro_ConvNum2Exp_FullInnerText" xml:space="preserve">
+    <value>[{0} как выражение]</value>
+  </data>
+  <data name="Macro_ConvNum2Exp_Name" xml:space="preserve">
+    <value>Число в Выражение</value>
+  </data>
+  <data name="Macro_ConvNum2Exp_Text_0" xml:space="preserve">
+    <value> как выражение</value>
+  </data>
+  <data name="Macro_ConvNum2Real_FullInnerText" xml:space="preserve">
+    <value>[{0} как рациональная]</value>
+  </data>
+  <data name="Macro_ConvNum2Real_Name" xml:space="preserve">
+    <value>Число в Рациональное Число</value>
+  </data>
+  <data name="Macro_ConvNum2Real_Text_0" xml:space="preserve">
+    <value> как рациональное число</value>
+  </data>
+  <data name="Macro_ConvNum2Str_FullInnerText" xml:space="preserve">
+    <value>[{0} как текст]</value>
+  </data>
+  <data name="Macro_ConvNum2Str_Name" xml:space="preserve">
+    <value>Число в Текст</value>
+  </data>
+  <data name="Macro_ConvNum2Str_Text_0" xml:space="preserve">
+    <value> как текст</value>
+  </data>
+  <data name="Macro_ConvReal2Exp_FullInnerText" xml:space="preserve">
+    <value>[{0} как выражение]</value>
+  </data>
+  <data name="Macro_ConvReal2Exp_Name" xml:space="preserve">
+    <value>Рациональное Число в Выражение</value>
+  </data>
+  <data name="Macro_ConvReal2Exp_Text_0" xml:space="preserve">
+    <value> как выражение</value>
+  </data>
+  <data name="Macro_ConvReal2Num_FullInnerText" xml:space="preserve">
+    <value>[{0} как число]</value>
+  </data>
+  <data name="Macro_ConvReal2Num_Name" xml:space="preserve">
+    <value>Рациональное Число в Натуральное Число</value>
+  </data>
+  <data name="Macro_ConvReal2Num_Text_0" xml:space="preserve">
+    <value> как число</value>
+  </data>
+  <data name="Macro_ConvReal2Str_FullInnerText" xml:space="preserve">
+    <value>[{0} как текст]</value>
+  </data>
+  <data name="Macro_ConvReal2Str_Name" xml:space="preserve">
+    <value>Рациональное Число в Текст</value>
+  </data>
+  <data name="Macro_ConvReal2Str_Text_0" xml:space="preserve">
+    <value> как текст</value>
+  </data>
+  <data name="Macro_ConvStr2Num_FullInnerText" xml:space="preserve">
+    <value>[{0} как число]</value>
+  </data>
+  <data name="Macro_ConvStr2Num_Name" xml:space="preserve">
+    <value>Текст в Число</value>
+  </data>
+  <data name="Macro_ConvStr2Num_Text_0" xml:space="preserve">
+    <value> как число</value>
+  </data>
+  <data name="Macro_ConvStr2Real_FullInnerText" xml:space="preserve">
+    <value>[{0} как рациональная]</value>
+  </data>
+  <data name="Macro_ConvStr2Real_Name" xml:space="preserve">
+    <value>Текст в Рациональное Число</value>
+  </data>
+  <data name="Macro_ConvStr2Real_Text_0" xml:space="preserve">
+    <value> как рациональное число</value>
+  </data>
+  <data name="Macro_Error_CantParseFloat" xml:space="preserve">
+    <value>Не получилось интерпретировать Текст как Рациональное Число</value>
+  </data>
+  <data name="Macro_Error_CantParseInt" xml:space="preserve">
+    <value>Не получилось интерпретировать Текст как Натуральное Число</value>
+  </data>
+  <data name="Macro_Error_DivideBy0" xml:space="preserve">
+    <value>Произошло деление на ноль</value>
+  </data>
+  <data name="Macro_Error_NoConditions" xml:space="preserve">
+    <value>У Если/То/Иначе нету условий</value>
+  </data>
+  <data name="Macro_Error_NoLink" xml:space="preserve">
+    <value>Связи с данным именем не найдено</value>
+  </data>
+  <data name="Macro_Error_NoLocal" xml:space="preserve">
+    <value>Переменной с данным именем не найдено</value>
+  </data>
+  <data name="Macro_Error_NoPollR20" xml:space="preserve">
+    <value>Не удалось получить ответ от Ролл20 за 30 секунд</value>
+  </data>
+  <data name="Macro_Error_NoServer" xml:space="preserve">
+    <value>Срединение с Ролл20 не установлено</value>
+  </data>
+  <data name="Macro_Err_NoMacro" xml:space="preserve">
+    <value>Макро с данным именем не найдено</value>
+  </data>
+  <data name="Macro_Err_StackOverflow" xml:space="preserve">
+    <value>Макро выполнило слишком много других Макро и было остановлено</value>
+  </data>
+  <data name="Macro_ExpAdvRoll_FullInnerText" xml:space="preserve">
+    <value>Бросить ({0})к({1})</value>
+  </data>
+  <data name="Macro_ExpAdvRoll_Name" xml:space="preserve">
+    <value>Комплексный Бросок</value>
+  </data>
+  <data name="Macro_ExpAdvRoll_Text_0" xml:space="preserve">
+    <value>Кинуть </value>
+  </data>
+  <data name="Macro_ExpAdvRoll_Text_1" xml:space="preserve">
+    <value>к</value>
+  </data>
+  <data name="Macro_ExpAnnotate_FullInnerText" xml:space="preserve">
+    <value>Указать [{0}] как ({1})</value>
+  </data>
+  <data name="Macro_ExpAnnotate_Name" xml:space="preserve">
+    <value>Указать</value>
+  </data>
+  <data name="Macro_ExpAnnotate_Text_0" xml:space="preserve">
+    <value>Указать </value>
+  </data>
+  <data name="Macro_ExpAnnotate_Text_1" xml:space="preserve">
+    <value> как [</value>
+  </data>
+  <data name="Macro_ExpAnnotate_Text_2" xml:space="preserve">
+    <value>]</value>
+  </data>
+  <data name="Macro_ExpDiv_FullInnerText" xml:space="preserve">
+    <value>[{0} / {1}]</value>
+  </data>
+  <data name="Macro_ExpDiv_Name" xml:space="preserve">
+    <value>Деление Выражения и Выражения (В / В)</value>
+  </data>
+  <data name="Macro_ExpDiv_Text_0" xml:space="preserve">
+    <value> / </value>
+  </data>
+  <data name="Macro_ExpExp2Str_FullInnerText" xml:space="preserve">
+    <value>[{0} как текст, оставить как выражение: {1}]</value>
+  </data>
+  <data name="Macro_ExpExp2Str_Name" xml:space="preserve">
+    <value>Выражение в Текст</value>
+  </data>
+  <data name="Macro_ExpExp2Str_Text_0" xml:space="preserve">
+    <value> как текст, оставить как выражение: </value>
+  </data>
+  <data name="Macro_ExpHPDiv_FullInnerText" xml:space="preserve">
+    <value>([{0}] / [{1}])</value>
+  </data>
+  <data name="Macro_ExpHPDiv_Name" xml:space="preserve">
+    <value>Приоритетное деление Выражения и Выражения ((В / В))</value>
+  </data>
+  <data name="Macro_ExpHPDiv_Text_0" xml:space="preserve">
+    <value> / </value>
+  </data>
+  <data name="Macro_ExpHPDiv_Text_1" xml:space="preserve">
+    <value>. Это бужет выссчитано ДО других выражений/чисел</value>
+  </data>
+  <data name="Macro_ExpHPMul_FullInnerText" xml:space="preserve">
+    <value>([{0}] * [{1}])</value>
+  </data>
+  <data name="Macro_ExpHPMul_Name" xml:space="preserve">
+    <value>Приоритетное умножение Выражения и Выражения ((В * В))</value>
+  </data>
+  <data name="Macro_ExpHPMul_Text_0" xml:space="preserve">
+    <value> * </value>
+  </data>
+  <data name="Macro_ExpHPMul_Text_1" xml:space="preserve">
+    <value>. Это будет выссчитано ДО других выражений/чисел</value>
+  </data>
+  <data name="Macro_ExpHPSSub_Name" xml:space="preserve">
+    <value>Приоритетное вычитание Выражения и Числа ((В - Ч))</value>
+  </data>
+  <data name="Macro_ExpHPSSum_Name" xml:space="preserve">
+    <value>Приоритетная Сумма Выражения и Числа ((В + Ч))</value>
+  </data>
+  <data name="Macro_ExpHPSub_FullInnerText" xml:space="preserve">
+    <value>([{0}] - [{1}])</value>
+  </data>
+  <data name="Macro_ExpHPSub_Name" xml:space="preserve">
+    <value>Приоритетное вычитание Выражения и Выражения ((В - В))</value>
+  </data>
+  <data name="Macro_ExpHPSub_Text_0" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="Macro_ExpHPSub_Text_1" xml:space="preserve">
+    <value>. Это будет выссчитано ДО других выражений/чисел</value>
+  </data>
+  <data name="Macro_ExpHPSum_FullInnerText" xml:space="preserve">
+    <value>([{0}] + [{1}])</value>
+  </data>
+  <data name="Macro_ExpHPSum_Name" xml:space="preserve">
+    <value>Приоритетная Сумма Выражения и Выражения ((В + В))</value>
+  </data>
+  <data name="Macro_ExpHPSum_Text_0" xml:space="preserve">
+    <value> + </value>
+  </data>
+  <data name="Macro_ExpHPSum_Text_1" xml:space="preserve">
+    <value>. Это будет выссчитано ДО других выражений/чисел</value>
+  </data>
+  <data name="Macro_ExpMul_FullInnerText" xml:space="preserve">
+    <value>[{0}] * [{1}]</value>
+  </data>
+  <data name="Macro_ExpMul_Name" xml:space="preserve">
+    <value>Умножение Выражения на Выражение (В * В)</value>
+  </data>
+  <data name="Macro_ExpMul_Text_0" xml:space="preserve">
+    <value> * </value>
+  </data>
+  <data name="Macro_ExpRoll_FullInnerText" xml:space="preserve">
+    <value>Бросок {0}к{1}</value>
+  </data>
+  <data name="Macro_ExpRoll_Name" xml:space="preserve">
+    <value>Бросить кубик</value>
+  </data>
+  <data name="Macro_ExpRoll_Text_0" xml:space="preserve">
+    <value>Бросить </value>
+  </data>
+  <data name="Macro_ExpRoll_Text_1" xml:space="preserve">
+    <value>к</value>
+  </data>
+  <data name="Macro_ExpSDiv_Name" xml:space="preserve">
+    <value>Деление Выражения на Число (В / Ч)</value>
+  </data>
+  <data name="Macro_ExpSHPDiv_Name" xml:space="preserve">
+    <value>Приоритетное деление Выражения на Число ((В / Ч))</value>
+  </data>
+  <data name="Macro_ExpSHPMul_Name" xml:space="preserve">
+    <value>Приоритетное умножение Выражения на Число ((В * Ч))</value>
+  </data>
+  <data name="Macro_ExpSMul_Name" xml:space="preserve">
+    <value>Умножение Выражения на Число (В * Ч)</value>
+  </data>
+  <data name="Macro_ExpSSub_Name" xml:space="preserve">
+    <value>Вычитание Выражения и Числа (В - Ч)</value>
+  </data>
+  <data name="Macro_ExpSSum_Name" xml:space="preserve">
+    <value>Сумма Выражения и Числа (В + Ч)</value>
+  </data>
+  <data name="Macro_ExpStr2Exp_FullInnerText" xml:space="preserve">
+    <value>[{0} как выражение]</value>
+  </data>
+  <data name="Macro_ExpStr2Exp_Name" xml:space="preserve">
+    <value>Текст в Выражение</value>
+  </data>
+  <data name="Macro_ExpStr2Exp_Text_0" xml:space="preserve">
+    <value> как выражение</value>
+  </data>
+  <data name="Macro_ExpSub_FullInnerText" xml:space="preserve">
+    <value>[{0}] - [{1}]</value>
+  </data>
+  <data name="Macro_ExpSub_Name" xml:space="preserve">
+    <value>Вычитание Выражения и Выражения (В - В)</value>
+  </data>
+  <data name="Macro_ExpSub_Text_0" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="Macro_ExpSum_FullInnerText" xml:space="preserve">
+    <value>[{0}] + [{1}]</value>
+  </data>
+  <data name="Macro_ExpSum_Name" xml:space="preserve">
+    <value>Сумма Выражения и Выражения (E + E)</value>
+  </data>
+  <data name="Macro_ExpSum_Text_0" xml:space="preserve">
+    <value> + </value>
+  </data>
+  <data name="Macro_Generic_Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="Macro_Generic_Condition" xml:space="preserve">
+    <value>Условие</value>
+  </data>
+  <data name="Macro_Generic_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Macro_Generic_DeleteLink" xml:space="preserve">
+    <value>Удалить Связь</value>
+  </data>
+  <data name="Macro_Generic_Edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="Macro_Generic_Else" xml:space="preserve">
+    <value>Иначе</value>
+  </data>
+  <data name="Macro_Generic_Err_NoLink" xml:space="preserve">
+    <value>ОШИБКА-НетСвязи</value>
+  </data>
+  <data name="Macro_Generic_If" xml:space="preserve">
+    <value>Если</value>
+  </data>
+  <data name="Macro_Generic_IfThenElse" xml:space="preserve">
+    <value>Если/То/Иначе</value>
+  </data>
+  <data name="Macro_Generic_Links" xml:space="preserve">
+    <value>Связи</value>
+  </data>
+  <data name="Macro_Generic_Locals" xml:space="preserve">
+    <value>Переменные</value>
+  </data>
+  <data name="Macro_Generic_New" xml:space="preserve">
+    <value>Новое Макро</value>
+  </data>
+  <data name="Macro_Generic_NewAction" xml:space="preserve">
+    <value>Новое Действие</value>
+  </data>
+  <data name="Macro_Generic_NewCondition" xml:space="preserve">
+    <value>Новое Условие</value>
+  </data>
+  <data name="Macro_Generic_NewGenericDescription" xml:space="preserve">
+    <value>Описание Макро пишется сюда</value>
+  </data>
+  <data name="Macro_Generic_NewLink" xml:space="preserve">
+    <value>Новая Связь</value>
+  </data>
+  <data name="Macro_Generic_NewLinkItem" xml:space="preserve">
+    <value>Новая Связь с Предметом</value>
+  </data>
+  <data name="Macro_Generic_NewLinkSpell" xml:space="preserve">
+    <value>Новая Связь с Заклинанием</value>
+  </data>
+  <data name="Macro_Generic_NewLocal" xml:space="preserve">
+    <value>Новая Переменная</value>
+  </data>
+  <data name="Macro_Generic_Then" xml:space="preserve">
+    <value>То</value>
+  </data>
+  <data name="Macro_ILAmount" xml:space="preserve">
+    <value>Получить кол-во Предмета</value>
+  </data>
+  <data name="Macro_ILAmount_FullInnerText" xml:space="preserve">
+    <value>Кол-во ({0})</value>
+  </data>
+  <data name="Macro_ILAmount_Text_0" xml:space="preserve">
+    <value>Кол-во </value>
+  </data>
+  <data name="Macro_ILCostCopper" xml:space="preserve">
+    <value>Стоимость предмета в Медяках (Сдача)</value>
+  </data>
+  <data name="Macro_ILCostCopper_FullInnerText" xml:space="preserve">
+    <value>сдача в медяках</value>
+    <comment>с ({0})</comment>
+  </data>
+  <data name="Macro_ILCostCopper_Text_0" xml:space="preserve">
+    <value> сдача в медяках</value>
+  </data>
+  <data name="Macro_ILCostGold" xml:space="preserve">
+    <value>Стоимость предмета в Золоте</value>
+  </data>
+  <data name="Macro_ILCostGold_FullInnerText" xml:space="preserve">
+    <value>Стоимость ({0}) в золоте </value>
+  </data>
+  <data name="Macro_ILCostGold_Text_0" xml:space="preserve">
+    <value>Стоимость </value>
+  </data>
+  <data name="Macro_ILCostGold_Text_1" xml:space="preserve">
+    <value> в золоте</value>
+  </data>
+  <data name="Macro_ILCostSilver" xml:space="preserve">
+    <value>Стоимость предмета в Серебре (Сдача)</value>
+  </data>
+  <data name="Macro_ILCostSilver_FullInnerText" xml:space="preserve">
+    <value>сдача в серебре с ({0})</value>
+  </data>
+  <data name="Macro_ILCostSilver_Text_0" xml:space="preserve">
+    <value> сдача в серебре</value>
+  </data>
+  <data name="Macro_ILCostTotalCopper" xml:space="preserve">
+    <value>Стоимость в Меди (Всего)</value>
+  </data>
+  <data name="Macro_ILCostTotalCopper_FullInnerText" xml:space="preserve">
+    <value>Стоимость ({0}) в Меди</value>
+  </data>
+  <data name="Macro_ILCostTotalCopper_Text_0" xml:space="preserve">
+    <value>Стоимость  </value>
+  </data>
+  <data name="Macro_ILCostTotalCopper_Text_1" xml:space="preserve">
+    <value> в меди</value>
+  </data>
+  <data name="Macro_ILCostTotalSilver" xml:space="preserve">
+    <value>Стоимость предмета в Серебре (Всего)</value>
+  </data>
+  <data name="Macro_ILCostTotalSilver_FullInnerText" xml:space="preserve">
+    <value>Стоимость ({0}) в Серебре</value>
+  </data>
+  <data name="Macro_ILCostTotalSilver_Text_0" xml:space="preserve">
+    <value>Стоимость </value>
+  </data>
+  <data name="Macro_ILCostTotalSilver_Text_1" xml:space="preserve">
+    <value> в серебре</value>
+  </data>
+  <data name="Macro_ILDesc" xml:space="preserve">
+    <value>Описание Предмета</value>
+  </data>
+  <data name="Macro_ILDesc_FullInnerText" xml:space="preserve">
+    <value>Описание ({0})</value>
+  </data>
+  <data name="Macro_ILDesc_Text_0" xml:space="preserve">
+    <value>Описание </value>
+  </data>
+  <data name="Macro_ILGetWeight" xml:space="preserve">
+    <value>Вес предмета</value>
+  </data>
+  <data name="Macro_ILGetWeight_FullInnerText" xml:space="preserve">
+    <value>Вес ({0})</value>
+  </data>
+  <data name="Macro_ILGetWeight_Text_0" xml:space="preserve">
+    <value>Вес </value>
+  </data>
+  <data name="Macro_ILName" xml:space="preserve">
+    <value>Название Предмета</value>
+  </data>
+  <data name="Macro_ILName_FullInnerText" xml:space="preserve">
+    <value>Название ({0})</value>
+  </data>
+  <data name="Macro_ILName_Text_0" xml:space="preserve">
+    <value>Название </value>
+  </data>
+  <data name="Macro_ILRarity" xml:space="preserve">
+    <value>Редкость</value>
+  </data>
+  <data name="Macro_ILRarity_FullInnerText" xml:space="preserve">
+    <value>Редкость ({0})</value>
+  </data>
+  <data name="Macro_ILRarity_Text_0" xml:space="preserve">
+    <value>Редкость </value>
+  </data>
+  <data name="Macro_ILSetAmount" xml:space="preserve">
+    <value>Установить Кол-во Предмета</value>
+  </data>
+  <data name="Macro_ILSetAmount_FullInnerText" xml:space="preserve">
+    <value>Установить кол-во предмета ({0}) как ({1})</value>
+  </data>
+  <data name="Macro_ILSetAmount_Text_0" xml:space="preserve">
+    <value>Установить кол-во предмета </value>
+  </data>
+  <data name="Macro_ILSetAmount_Text_1" xml:space="preserve">
+    <value> как </value>
+  </data>
+  <data name="Macro_ILType" xml:space="preserve">
+    <value>Тип Предмета</value>
+  </data>
+  <data name="Macro_ILType_FullInnerText" xml:space="preserve">
+    <value>Тип ({0})</value>
+  </data>
+  <data name="Macro_ILType_Text_0" xml:space="preserve">
+    <value>Тип </value>
+  </data>
+  <data name="Macro_LocalGetB_FullInnerText" xml:space="preserve">
+    <value>Значение ({0})</value>
+  </data>
+  <data name="Macro_LocalGetB_Name" xml:space="preserve">
+    <value>Значение Переменной</value>
+  </data>
+  <data name="Macro_LocalGetB_Text_0" xml:space="preserve">
+    <value>Значение </value>
+  </data>
+  <data name="Macro_LocalGetN_FullInnerText" xml:space="preserve">
+    <value>Значение ({0})</value>
+  </data>
+  <data name="Macro_LocalGetN_Name" xml:space="preserve">
+    <value>Значение Переменной</value>
+  </data>
+  <data name="Macro_LocalGetN_Text_0" xml:space="preserve">
+    <value>Значение </value>
+  </data>
+  <data name="Macro_LocalGetR_FullInnerText" xml:space="preserve">
+    <value>Значение ({0})</value>
+  </data>
+  <data name="Macro_LocalGetR_Name" xml:space="preserve">
+    <value>Значение Переменной</value>
+  </data>
+  <data name="Macro_LocalGetR_Text_0" xml:space="preserve">
+    <value>Значение </value>
+  </data>
+  <data name="Macro_LocalGetS_FullInnerText" xml:space="preserve">
+    <value>Значение ({0})</value>
+  </data>
+  <data name="Macro_LocalGetS_Name" xml:space="preserve">
+    <value>Значение Переменной</value>
+  </data>
+  <data name="Macro_LocalGetS_Text_0" xml:space="preserve">
+    <value>Значение </value>
+  </data>
+  <data name="Macro_LocalSetB_FullInnerText" xml:space="preserve">
+    <value>({0}) = ({1})</value>
+  </data>
+  <data name="Macro_LocalSetB_Name" xml:space="preserve">
+    <value>Установить Значение Логической Локальной</value>
+  </data>
+  <data name="Macro_LocalSetB_Text_0" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Macro_LocalSetB_Text_1" xml:space="preserve">
+    <value> = </value>
+  </data>
+  <data name="Macro_LocalSetNextB_FullInnerText" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить ({0}) на ({1})</value>
+  </data>
+  <data name="Macro_LocalSetNextB_Name" xml:space="preserve">
+    <value>Установить Значение Логической Локальной в Следующем Макро</value>
+  </data>
+  <data name="Macro_LocalSetNextB_Text_0" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить </value>
+  </data>
+  <data name="Macro_LocalSetNextB_Text_1" xml:space="preserve">
+    <value> на </value>
+  </data>
+  <data name="Macro_LocalSetNextN_FullInnerText" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить ({0}) на ({1})</value>
+  </data>
+  <data name="Macro_LocalSetNextN_Name" xml:space="preserve">
+    <value>Установить значение Численной Локальной в Следующем Макро</value>
+  </data>
+  <data name="Macro_LocalSetNextN_Text_0" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить </value>
+  </data>
+  <data name="Macro_LocalSetNextN_Text_1" xml:space="preserve">
+    <value> на </value>
+  </data>
+  <data name="Macro_LocalSetNextR_FullInnerText" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить ({0}) на ({1})</value>
+  </data>
+  <data name="Macro_LocalSetNextR_Name" xml:space="preserve">
+    <value>Установить значение Рациональной Локальной в Следующем Макро</value>
+  </data>
+  <data name="Macro_LocalSetNextR_Text_0" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить </value>
+  </data>
+  <data name="Macro_LocalSetNextR_Text_1" xml:space="preserve">
+    <value> на </value>
+  </data>
+  <data name="Macro_LocalSetNextS_FullInnerText" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить ({0}) на ({1})</value>
+  </data>
+  <data name="Macro_LocalSetNextS_Name" xml:space="preserve">
+    <value>Установить значение Текстовой Локальной в Следующем Макро</value>
+  </data>
+  <data name="Macro_LocalSetNextS_Text_0" xml:space="preserve">
+    <value>Когда следующее Макро будет выполняться установить </value>
+  </data>
+  <data name="Macro_LocalSetNextS_Text_1" xml:space="preserve">
+    <value> на </value>
+  </data>
+  <data name="Macro_LocalSetN_FullInnerText" xml:space="preserve">
+    <value>({0}) = ({1})</value>
+  </data>
+  <data name="Macro_LocalSetN_Name" xml:space="preserve">
+    <value>Установить Значение Численной Локальной</value>
+  </data>
+  <data name="Macro_LocalSetN_Text_0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Macro_LocalSetN_Text_1" xml:space="preserve">
+    <value> = </value>
+  </data>
+  <data name="Macro_LocalSetR_FullInnerText" xml:space="preserve">
+    <value>({0}) = ({1})</value>
+  </data>
+  <data name="Macro_LocalSetR_Name" xml:space="preserve">
+    <value>Установить Значение Рациональной Локальной</value>
+  </data>
+  <data name="Macro_LocalSetR_Text_0" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Macro_LocalSetR_Text_1" xml:space="preserve">
+    <value> = </value>
+  </data>
+  <data name="Macro_LocalSetS_FullInnerText" xml:space="preserve">
+    <value>({0}) = ({1})</value>
+  </data>
+  <data name="Macro_LocalSetS_Name" xml:space="preserve">
+    <value>Установить Значение Текстовой Локальной</value>
+  </data>
+  <data name="Macro_LocalSetS_Text_0" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Macro_LocalSetS_Text_1" xml:space="preserve">
+    <value> = </value>
+  </data>
+  <data name="Macro_LogicAnd_FullInnerText" xml:space="preserve">
+    <value>({0}) и ({1})</value>
+  </data>
+  <data name="Macro_LogicAnd_Name" xml:space="preserve">
+    <value>И (AND)</value>
+  </data>
+  <data name="Macro_LogicAnd_Text_0" xml:space="preserve">
+    <value> и </value>
+  </data>
+  <data name="Macro_LogicEqB_FullInnerText" xml:space="preserve">
+    <value>({0}) равно ({1})</value>
+  </data>
+  <data name="Macro_LogicEqB_Name" xml:space="preserve">
+    <value>Равно (Логика)</value>
+  </data>
+  <data name="Macro_LogicEqB_Text_0" xml:space="preserve">
+    <value> равно </value>
+  </data>
+  <data name="Macro_LogicEqN_FullInnerText" xml:space="preserve">
+    <value>({0}) равно ({1})</value>
+  </data>
+  <data name="Macro_LogicEqN_Name" xml:space="preserve">
+    <value>Равно (Число)</value>
+  </data>
+  <data name="Macro_LogicEqN_Text_0" xml:space="preserve">
+    <value> равно </value>
+  </data>
+  <data name="Macro_LogicEqR_FullInnerText" xml:space="preserve">
+    <value>({0}) равно ({1})</value>
+  </data>
+  <data name="Macro_LogicEqR_Name" xml:space="preserve">
+    <value>Равно (Рациональное Число)</value>
+  </data>
+  <data name="Macro_LogicEqR_Text_0" xml:space="preserve">
+    <value> равно </value>
+  </data>
+  <data name="Macro_LogicEqS_FullInnerText" xml:space="preserve">
+    <value>({0}) равно ({1})</value>
+  </data>
+  <data name="Macro_LogicEqS_Name" xml:space="preserve">
+    <value>Равно (Текст)</value>
+  </data>
+  <data name="Macro_LogicEqS_Text_0" xml:space="preserve">
+    <value> равно </value>
+  </data>
+  <data name="Macro_LogicGreaterN_FullInnerText" xml:space="preserve">
+    <value>({0}) &gt; ({1})</value>
+  </data>
+  <data name="Macro_LogicGreaterN_Name" xml:space="preserve">
+    <value>Больше Чем (Число)</value>
+  </data>
+  <data name="Macro_LogicGreaterN_Text_0" xml:space="preserve">
+    <value> &gt; </value>
+  </data>
+  <data name="Macro_LogicGreaterR_FullInnerText" xml:space="preserve">
+    <value>({0}) &gt; ({1})</value>
+  </data>
+  <data name="Macro_LogicGreaterR_Name" xml:space="preserve">
+    <value>Больше Чем (Рациональное Число)</value>
+  </data>
+  <data name="Macro_LogicGreaterR_Text_0" xml:space="preserve">
+    <value> &gt; </value>
+  </data>
+  <data name="Macro_LogicGrequalN_FullInnerText" xml:space="preserve">
+    <value>({0}) &gt;= ({1})</value>
+  </data>
+  <data name="Macro_LogicGrequalN_Name" xml:space="preserve">
+    <value>Больше чем или Равно (Число)</value>
+  </data>
+  <data name="Macro_LogicGrequalN_Text_0" xml:space="preserve">
+    <value> &gt;= </value>
+  </data>
+  <data name="Macro_LogicGrequalR_FullInnerText" xml:space="preserve">
+    <value>({0}) &gt;= ({1})</value>
+  </data>
+  <data name="Macro_LogicGrequalR_Name" xml:space="preserve">
+    <value>Больше чем или Равно (Рациональное Число)</value>
+  </data>
+  <data name="Macro_LogicGrequalR_Text_0" xml:space="preserve">
+    <value> &gt;= </value>
+  </data>
+  <data name="Macro_LogicInvert_FullInnerText" xml:space="preserve">
+    <value>Не ({0})</value>
+  </data>
+  <data name="Macro_LogicInvert_Name" xml:space="preserve">
+    <value>Инверсия (NOT)</value>
+  </data>
+  <data name="Macro_LogicInvert_Text_0" xml:space="preserve">
+    <value>Не </value>
+  </data>
+  <data name="Macro_LogicLequalN_FullInnerText" xml:space="preserve">
+    <value>({0}) &lt;= ({1})</value>
+  </data>
+  <data name="Macro_LogicLequalN_Name" xml:space="preserve">
+    <value>Меньше чем или равно (Число)</value>
+  </data>
+  <data name="Macro_LogicLequalN_Text_0" xml:space="preserve">
+    <value> &lt;= </value>
+  </data>
+  <data name="Macro_LogicLequalR_FullInnerText" xml:space="preserve">
+    <value>({0}) &lt;= ({1})</value>
+  </data>
+  <data name="Macro_LogicLequalR_Name" xml:space="preserve">
+    <value>Меньше чем или равно (Рациональное Число)</value>
+  </data>
+  <data name="Macro_LogicLequalR_Text_0" xml:space="preserve">
+    <value> &lt;= </value>
+  </data>
+  <data name="Macro_LogicLessN_FullInnerText" xml:space="preserve">
+    <value>({0}) &lt; ({1})</value>
+  </data>
+  <data name="Macro_LogicLessN_Name" xml:space="preserve">
+    <value>Меньше чем (Число)</value>
+  </data>
+  <data name="Macro_LogicLessN_Text_0" xml:space="preserve">
+    <value> &lt; </value>
+  </data>
+  <data name="Macro_LogicLessR_FullInnerText" xml:space="preserve">
+    <value>({0}) &lt; ({1})</value>
+  </data>
+  <data name="Macro_LogicLessR_Name" xml:space="preserve">
+    <value>Меньше чем (Рациональное Число)</value>
+  </data>
+  <data name="Macro_LogicLessR_Text_0" xml:space="preserve">
+    <value> &lt; </value>
+  </data>
+  <data name="Macro_LogicNand_FullInnerText" xml:space="preserve">
+    <value>({0}) не равно ({1})</value>
+  </data>
+  <data name="Macro_LogicNand_Name" xml:space="preserve">
+    <value>Не равно (NAND)</value>
+  </data>
+  <data name="Macro_LogicNand_Text_0" xml:space="preserve">
+    <value> не равно </value>
+  </data>
+  <data name="Macro_LogicNEqBr_Name" xml:space="preserve">
+    <value>Не равно (Логика)</value>
+  </data>
+  <data name="Macro_LogicNEqB_FullInnerText" xml:space="preserve">
+    <value>({0}) не равно ({1})</value>
+  </data>
+  <data name="Macro_LogicNEqB_Text_0" xml:space="preserve">
+    <value> не равно </value>
+  </data>
+  <data name="Macro_LogicNEqN_FullInnerText" xml:space="preserve">
+    <value>({0}) не равно ({1})</value>
+  </data>
+  <data name="Macro_LogicNEqN_Name" xml:space="preserve">
+    <value>Не равно (Число)</value>
+  </data>
+  <data name="Macro_LogicNEqN_Text_0" xml:space="preserve">
+    <value> не равно </value>
+  </data>
+  <data name="Macro_LogicNEqR_FullInnerText" xml:space="preserve">
+    <value>({0}) не равно ({1})</value>
+  </data>
+  <data name="Macro_LogicNEqR_Name" xml:space="preserve">
+    <value>Не равно (Рациональное Число)</value>
+  </data>
+  <data name="Macro_LogicNEqR_Text_0" xml:space="preserve">
+    <value> не равно </value>
+  </data>
+  <data name="Macro_LogicNEqS_FullInnerText" xml:space="preserve">
+    <value>({0}) не равно ({1})</value>
+  </data>
+  <data name="Macro_LogicNEqS_Name" xml:space="preserve">
+    <value>Не равно (Текст)</value>
+  </data>
+  <data name="Macro_LogicNEqS_Text_0" xml:space="preserve">
+    <value> не равно </value>
+  </data>
+  <data name="Macro_LogicNor_FullInnerText" xml:space="preserve">
+    <value>({0}) и не ({1})</value>
+  </data>
+  <data name="Macro_LogicNor_Name" xml:space="preserve">
+    <value>И не (NOR)</value>
+  </data>
+  <data name="Macro_LogicNor_Text_0" xml:space="preserve">
+    <value> и не </value>
+  </data>
+  <data name="Macro_LogicOr_FullInnerText" xml:space="preserve">
+    <value>({0}) или ({1})</value>
+  </data>
+  <data name="Macro_LogicOr_Name" xml:space="preserve">
+    <value>Или (OR)</value>
+  </data>
+  <data name="Macro_LogicOr_Text_0" xml:space="preserve">
+    <value> или </value>
+  </data>
+  <data name="Macro_LogicXNor_FullInnerText" xml:space="preserve">
+    <value>({0}) равно ({1})</value>
+  </data>
+  <data name="Macro_LogicXNor_Name" xml:space="preserve">
+    <value>Равно (XNOR)</value>
+  </data>
+  <data name="Macro_LogicXNor_Text_0" xml:space="preserve">
+    <value> равно </value>
+  </data>
+  <data name="Macro_LogicXor_FullInnerText" xml:space="preserve">
+    <value>({0}) исключающее или ({1})</value>
+  </data>
+  <data name="Macro_LogicXor_Name" xml:space="preserve">
+    <value>Исключающее Или (XOR)</value>
+  </data>
+  <data name="Macro_LogicXor_Text_0" xml:space="preserve">
+    <value> исключающее или </value>
+  </data>
+  <data name="Macro_MathCeil_FullInnerText" xml:space="preserve">
+    <value>Округлить ({0}) вверх</value>
+  </data>
+  <data name="Macro_MathCeil_Name" xml:space="preserve">
+    <value>Округлить Вверх</value>
+  </data>
+  <data name="Macro_MathCeil_Text_0" xml:space="preserve">
+    <value>Округлить </value>
+  </data>
+  <data name="Macro_MathCeil_Text_1" xml:space="preserve">
+    <value> вверх</value>
+  </data>
+  <data name="Macro_MathDivFF_Name" xml:space="preserve">
+    <value>Деление (Рац. Число / Рац. Число)</value>
+  </data>
+  <data name="Macro_MathDivFN_Name" xml:space="preserve">
+    <value>Деление (Рац. Число / Нат. Число)</value>
+  </data>
+  <data name="Macro_MathDivNF_Name" xml:space="preserve">
+    <value>Деление (Нат. Число / Рац. Число)</value>
+  </data>
+  <data name="Macro_MathDiv_FullInnerText" xml:space="preserve">
+    <value>({0}) / ({1})</value>
+  </data>
+  <data name="Macro_MathDiv_Name" xml:space="preserve">
+    <value>Деление (Число / Число)</value>
+  </data>
+  <data name="Macro_MathDiv_Text_0" xml:space="preserve">
+    <value> / </value>
+  </data>
+  <data name="Macro_MathFloor_FullInnerText" xml:space="preserve">
+    <value>Округлить ({0}) вниз</value>
+  </data>
+  <data name="Macro_MathFloor_Name" xml:space="preserve">
+    <value>Округлить Вниз</value>
+  </data>
+  <data name="Macro_MathFloor_Text_0" xml:space="preserve">
+    <value>Округлить </value>
+  </data>
+  <data name="Macro_MathFloor_Text_1" xml:space="preserve">
+    <value> вниз</value>
+  </data>
+  <data name="Macro_MathMulFF_Name" xml:space="preserve">
+    <value>Умножение (Рац. Число * Рац. Число)</value>
+  </data>
+  <data name="Macro_MathMulFN_Name" xml:space="preserve">
+    <value>Умножение (Рац. Число * Нат. Число)</value>
+  </data>
+  <data name="Macro_MathMulNF_Name" xml:space="preserve">
+    <value>Умножение (Нат. Число * Рац. Число)</value>
+  </data>
+  <data name="Macro_MathMul_FullInnerText" xml:space="preserve">
+    <value>({0}) * ({1})</value>
+  </data>
+  <data name="Macro_MathMul_Name" xml:space="preserve">
+    <value>Умножение (Число * Число)</value>
+  </data>
+  <data name="Macro_MathMul_Text_0" xml:space="preserve">
+    <value> * </value>
+  </data>
+  <data name="Macro_MathRound_FullInnerText" xml:space="preserve">
+    <value>Округлить ({0})</value>
+  </data>
+  <data name="Macro_MathRound_Name" xml:space="preserve">
+    <value>Округлить Значение</value>
+  </data>
+  <data name="Macro_MathRound_Text_0" xml:space="preserve">
+    <value>Округлить </value>
+  </data>
+  <data name="Macro_MathSqrt_FullInnerText" xml:space="preserve">
+    <value>Корень из ({0})</value>
+  </data>
+  <data name="Macro_MathSqrt_Name" xml:space="preserve">
+    <value>Квадратный Корень</value>
+  </data>
+  <data name="Macro_MathSqrt_Text_0" xml:space="preserve">
+    <value>Корень из </value>
+  </data>
+  <data name="Macro_MathSubFF_Name" xml:space="preserve">
+    <value>Вычитание (Рац. Число - Рац. Число)</value>
+  </data>
+  <data name="Macro_MathSubFN_Name" xml:space="preserve">
+    <value>Вычитание (Рац. Число - Нат. Число)</value>
+  </data>
+  <data name="Macro_MathSubNF_Name" xml:space="preserve">
+    <value>Вычитание (Нат. Число - Рац. Число)</value>
+  </data>
+  <data name="Macro_MathSub_FullInnerText" xml:space="preserve">
+    <value>({0}) - ({1})</value>
+  </data>
+  <data name="Macro_MathSub_Name" xml:space="preserve">
+    <value>Вычитание (Число - Число)</value>
+  </data>
+  <data name="Macro_MathSub_Text_0" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="Macro_MathSumFF_Name" xml:space="preserve">
+    <value>Сумма (Рац. Число + Рац. Число)</value>
+  </data>
+  <data name="Macro_MathSumFN_Name" xml:space="preserve">
+    <value>Сумма (Рац. Число + Нат. Число)</value>
+  </data>
+  <data name="Macro_MathSumNF_Name" xml:space="preserve">
+    <value>Сумма (Нат. Число + Рац. Число)</value>
+  </data>
+  <data name="Macro_MathSum_FullInnerText" xml:space="preserve">
+    <value>({0}) + ({1})</value>
+  </data>
+  <data name="Macro_MathSum_Name" xml:space="preserve">
+    <value>Сумма (Число + Число)</value>
+  </data>
+  <data name="Macro_MathSum_Text_0" xml:space="preserve">
+    <value> + </value>
+  </data>
+  <data name="Macro_NumPollR20_FullInnerText" xml:space="preserve">
+    <value>Приостановить выполнение и ждать результата ({0})</value>
+  </data>
+  <data name="Macro_NumPollR20_Name" xml:space="preserve">
+    <value>Подождать результат броска из Ролл20</value>
+  </data>
+  <data name="Macro_NumPollR20_Text_0" xml:space="preserve">
+    <value>Приостановить выполнение и ждать результата  </value>
+  </data>
+  <data name="Macro_SkillsAcrobatics_FullInnerText" xml:space="preserve">
+    <value>Значение Акробатики</value>
+  </data>
+  <data name="Macro_SkillsAcrobatics_Name" xml:space="preserve">
+    <value>Значение Акробатики</value>
+  </data>
+  <data name="Macro_SkillsAcrobatics_Text_0" xml:space="preserve">
+    <value>Значение Акробатики</value>
+  </data>
+  <data name="Macro_SkillsAnimalHandling_FullInnerText" xml:space="preserve">
+    <value>Значение Дрессировки</value>
+  </data>
+  <data name="Macro_SkillsAnimalHandling_Name" xml:space="preserve">
+    <value>Значение Дрессировки </value>
+  </data>
+  <data name="Macro_SkillsAnimalHandling_Text_0" xml:space="preserve">
+    <value>Значение Дрессировки</value>
+  </data>
+  <data name="Macro_SkillsArcana_FullInnerText" xml:space="preserve">
+    <value>Значение Магии</value>
+  </data>
+  <data name="Macro_SkillsArcana_Name" xml:space="preserve">
+    <value>Значение Магии</value>
+  </data>
+  <data name="Macro_SkillsArcana_Text_0" xml:space="preserve">
+    <value>Значение Магии</value>
+  </data>
+  <data name="Macro_SkillsAthletics_FullInnerText" xml:space="preserve">
+    <value>Значение Атлетики</value>
+  </data>
+  <data name="Macro_SkillsAthletics_Name" xml:space="preserve">
+    <value>Значение Атлетики</value>
+  </data>
+  <data name="Macro_SkillsAthletics_Text_0" xml:space="preserve">
+    <value>Значение Атлетики</value>
+  </data>
+  <data name="Macro_SkillsDeception_FullInnerText" xml:space="preserve">
+    <value>Значение Обмана</value>
+  </data>
+  <data name="Macro_SkillsDeception_Name" xml:space="preserve">
+    <value>Значение Обмана</value>
+  </data>
+  <data name="Macro_SkillsDeception_Text_0" xml:space="preserve">
+    <value>Значение Обмана</value>
+  </data>
+  <data name="Macro_SkillsHasPAcrobatics_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Акробатикой</value>
+  </data>
+  <data name="Macro_SkillsHasPAcrobatics_Name" xml:space="preserve">
+    <value>Имеется ли Владение Акробатикой</value>
+  </data>
+  <data name="Macro_SkillsHasPAcrobatics_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Акробатикой</value>
+  </data>
+  <data name="Macro_SkillsHasPAnimalHandling_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Дрессировкой</value>
+  </data>
+  <data name="Macro_SkillsHasPAnimalHandling_Name" xml:space="preserve">
+    <value>Имеется ли Владение Дрессировкой</value>
+  </data>
+  <data name="Macro_SkillsHasPAnimalHandling_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Дрессировкой</value>
+  </data>
+  <data name="Macro_SkillsHasPArcana_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Магией</value>
+  </data>
+  <data name="Macro_SkillsHasPArcana_Name" xml:space="preserve">
+    <value>Имеется ли Владение Магией</value>
+  </data>
+  <data name="Macro_SkillsHasPArcana_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Магией</value>
+  </data>
+  <data name="Macro_SkillsHasPAthletics_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Атлетикой</value>
+  </data>
+  <data name="Macro_SkillsHasPAthletics_Name" xml:space="preserve">
+    <value>Имеется ли Владение Атлетикой</value>
+  </data>
+  <data name="Macro_SkillsHasPAthletics_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Атлетикой</value>
+  </data>
+  <data name="Macro_SkillsHasPDeception_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Обманом</value>
+  </data>
+  <data name="Macro_SkillsHasPDeception_Name" xml:space="preserve">
+    <value>Имеется ли Владение Обманом</value>
+  </data>
+  <data name="Macro_SkillsHasPDeception_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Обманом</value>
+  </data>
+  <data name="Macro_SkillsHasPHistory_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Историей</value>
+  </data>
+  <data name="Macro_SkillsHasPHistory_Name" xml:space="preserve">
+    <value>Имеется ли Владение Историей</value>
+  </data>
+  <data name="Macro_SkillsHasPHistory_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Историей</value>
+  </data>
+  <data name="Macro_SkillsHasPInsight_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Проницательностью</value>
+  </data>
+  <data name="Macro_SkillsHasPInsight_Name" xml:space="preserve">
+    <value>Имеется ли Владение Проницательностью</value>
+  </data>
+  <data name="Macro_SkillsHasPInsight_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Проницательностью</value>
+  </data>
+  <data name="Macro_SkillsHasPIntimidation_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Угрозой</value>
+  </data>
+  <data name="Macro_SkillsHasPIntimidation_Name" xml:space="preserve">
+    <value>Имеется ли Владение Угрозой</value>
+  </data>
+  <data name="Macro_SkillsHasPIntimidation_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Угрозой</value>
+  </data>
+  <data name="Macro_SkillsHasPInvestigation_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Расследованием</value>
+  </data>
+  <data name="Macro_SkillsHasPInvestigation_Name" xml:space="preserve">
+    <value>Имеется ли Владение Расследованием</value>
+  </data>
+  <data name="Macro_SkillsHasPInvestigation_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Расследованием</value>
+  </data>
+  <data name="Macro_SkillsHasPMedicine_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Медициной</value>
+  </data>
+  <data name="Macro_SkillsHasPMedicine_Name" xml:space="preserve">
+    <value>Имеется ли Владение Медициной</value>
+  </data>
+  <data name="Macro_SkillsHasPMedicine_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Медициной</value>
+  </data>
+  <data name="Macro_SkillsHasPNature_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Природой</value>
+  </data>
+  <data name="Macro_SkillsHasPNature_Name" xml:space="preserve">
+    <value>Имеется ли Владение Природой</value>
+  </data>
+  <data name="Macro_SkillsHasPNature_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Природой</value>
+  </data>
+  <data name="Macro_SkillsHasPPerception_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Наблюдательностью</value>
+  </data>
+  <data name="Macro_SkillsHasPPerception_Name" xml:space="preserve">
+    <value>Имеется ли Владение Наблюдательностью</value>
+  </data>
+  <data name="Macro_SkillsHasPPerception_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Наблюдательностью</value>
+  </data>
+  <data name="Macro_SkillsHasPPerformance_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Выступлением</value>
+  </data>
+  <data name="Macro_SkillsHasPPerformance_Name" xml:space="preserve">
+    <value>Имеется ли Владение Выступлением</value>
+  </data>
+  <data name="Macro_SkillsHasPPerformance_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Выступлением</value>
+  </data>
+  <data name="Macro_SkillsHasPPersuasion_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Убеждением</value>
+  </data>
+  <data name="Macro_SkillsHasPPersuasion_Name" xml:space="preserve">
+    <value>Имеется ли Владение Убеждением</value>
+  </data>
+  <data name="Macro_SkillsHasPPersuasion_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Убеждением</value>
+  </data>
+  <data name="Macro_SkillsHasPReligion_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Религией</value>
+  </data>
+  <data name="Macro_SkillsHasPReligion_Name" xml:space="preserve">
+    <value>Имеется ли Владение Религией</value>
+  </data>
+  <data name="Macro_SkillsHasPReligion_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Религией</value>
+  </data>
+  <data name="Macro_SkillsHasPSleightOfHand_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Ловкостью Рук</value>
+  </data>
+  <data name="Macro_SkillsHasPSleightOfHand_Name" xml:space="preserve">
+    <value>Имеется ли Владение Ловкостью Рук</value>
+  </data>
+  <data name="Macro_SkillsHasPSleightOfHand_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Ловкостью Рук</value>
+  </data>
+  <data name="Macro_SkillsHasPStealth_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Скрытностью</value>
+  </data>
+  <data name="Macro_SkillsHasPStealth_Name" xml:space="preserve">
+    <value>Имеется ли Владение Скрытностью</value>
+  </data>
+  <data name="Macro_SkillsHasPStealth_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Скрытностью</value>
+  </data>
+  <data name="Macro_SkillsHasPSurvival_FullInnerText" xml:space="preserve">
+    <value>Имеется ли Владение Выживанием</value>
+  </data>
+  <data name="Macro_SkillsHasPSurvival_Name" xml:space="preserve">
+    <value>Имеется ли Владение Выживанием</value>
+  </data>
+  <data name="Macro_SkillsHasPSurvival_Text_0" xml:space="preserve">
+    <value>Имеется ли Владение Выживанием</value>
+  </data>
+  <data name="Macro_SkillsHistory_FullInnerText" xml:space="preserve">
+    <value>Значение Истории</value>
+  </data>
+  <data name="Macro_SkillsHistory_Name" xml:space="preserve">
+    <value>Значение Истории</value>
+  </data>
+  <data name="Macro_SkillsHistory_Text_0" xml:space="preserve">
+    <value>Значение Истории</value>
+  </data>
+  <data name="Macro_SkillsInsight_FullInnerText" xml:space="preserve">
+    <value>Значение Проницательности</value>
+  </data>
+  <data name="Macro_SkillsInsight_Name" xml:space="preserve">
+    <value>Значение Проницательности</value>
+  </data>
+  <data name="Macro_SkillsInsight_Text_0" xml:space="preserve">
+    <value>Значение Проницательности</value>
+  </data>
+  <data name="Macro_SkillsIntimidation_FullInnerText" xml:space="preserve">
+    <value>Значение Угрозы</value>
+  </data>
+  <data name="Macro_SkillsIntimidation_Name" xml:space="preserve">
+    <value>Значение Угрозы</value>
+  </data>
+  <data name="Macro_SkillsIntimidation_Text_0" xml:space="preserve">
+    <value>Значение Угрозы</value>
+  </data>
+  <data name="Macro_SkillsInvestigation_FullInnerText" xml:space="preserve">
+    <value>Значение Расследования</value>
+  </data>
+  <data name="Macro_SkillsInvestigation_Name" xml:space="preserve">
+    <value>Значение Расследования</value>
+  </data>
+  <data name="Macro_SkillsInvestigation_Text_0" xml:space="preserve">
+    <value>Значение Расследования</value>
+  </data>
+  <data name="Macro_SkillsMedicine_FullInnerText" xml:space="preserve">
+    <value>Значение Медицины</value>
+  </data>
+  <data name="Macro_SkillsMedicine_Name" xml:space="preserve">
+    <value>Значение Медицины</value>
+  </data>
+  <data name="Macro_SkillsMedicine_Text_0" xml:space="preserve">
+    <value>Значение Медицины</value>
+  </data>
+  <data name="Macro_SkillsNature_FullInnerText" xml:space="preserve">
+    <value>Значение Природы</value>
+  </data>
+  <data name="Macro_SkillsNature_Name" xml:space="preserve">
+    <value>Значение Природы</value>
+  </data>
+  <data name="Macro_SkillsNature_Text_0" xml:space="preserve">
+    <value>Значение Природы</value>
+  </data>
+  <data name="Macro_SkillsPerception_FullInnerText" xml:space="preserve">
+    <value>Значение Наблюдательности</value>
+  </data>
+  <data name="Macro_SkillsPerception_Name" xml:space="preserve">
+    <value>Значение Наблюдательности</value>
+  </data>
+  <data name="Macro_SkillsPerception_Text_0" xml:space="preserve">
+    <value>Значение Наблюдательности</value>
+  </data>
+  <data name="Macro_SkillsPerformance_FullInnerText" xml:space="preserve">
+    <value>Значение Выступления</value>
+  </data>
+  <data name="Macro_SkillsPerformance_Name" xml:space="preserve">
+    <value>Значение Выступления </value>
+  </data>
+  <data name="Macro_SkillsPerformance_Text_0" xml:space="preserve">
+    <value>Значение Выступления</value>
+  </data>
+  <data name="Macro_SkillsPersuasion_FullInnerText" xml:space="preserve">
+    <value>Значение Убеждения</value>
+  </data>
+  <data name="Macro_SkillsPersuasion_Name" xml:space="preserve">
+    <value>Значение Убеждения</value>
+  </data>
+  <data name="Macro_SkillsPersuasion_Text_0" xml:space="preserve">
+    <value>Значение Убеждения</value>
+  </data>
+  <data name="Macro_SkillsReligion_FullInnerText" xml:space="preserve">
+    <value>Значение Религии</value>
+  </data>
+  <data name="Macro_SkillsReligion_Name" xml:space="preserve">
+    <value>Значение Религии</value>
+  </data>
+  <data name="Macro_SkillsReligion_Text_0" xml:space="preserve">
+    <value>Значение Религии</value>
+  </data>
+  <data name="Macro_SkillsSleightOfHand_FullInnerText" xml:space="preserve">
+    <value>Значение Ловкости Рук</value>
+  </data>
+  <data name="Macro_SkillsSleightOfHand_Name" xml:space="preserve">
+    <value>Значение Ловкости Рук</value>
+  </data>
+  <data name="Macro_SkillsSleightOfHand_Text_0" xml:space="preserve">
+    <value>Значение Ловкости Рук</value>
+  </data>
+  <data name="Macro_SkillsStealth_FullInnerText" xml:space="preserve">
+    <value>Значение Скрытности</value>
+  </data>
+  <data name="Macro_SkillsStealth_Name" xml:space="preserve">
+    <value>Значение Скрытности</value>
+  </data>
+  <data name="Macro_SkillsStealth_Text_0" xml:space="preserve">
+    <value>Значение Скрытности</value>
+  </data>
+  <data name="Macro_SkillsSurvival_FullInnerText" xml:space="preserve">
+    <value>Значение Выживания</value>
+  </data>
+  <data name="Macro_SkillsSurvival_Name" xml:space="preserve">
+    <value>Значение Выживания</value>
+  </data>
+  <data name="Macro_SkillsSurvival_Text_0" xml:space="preserve">
+    <value>Значение Выживания</value>
+  </data>
+  <data name="Macro_SLCastTime_FullInnerText" xml:space="preserve">
+    <value>Время Применения ({0})</value>
+  </data>
+  <data name="Macro_SLCastTime_Name" xml:space="preserve">
+    <value>Время Применения Заклинания</value>
+  </data>
+  <data name="Macro_SLCastTime_Text_0" xml:space="preserve">
+    <value>Время Применения </value>
+  </data>
+  <data name="Macro_SLDescription_FullInnerText" xml:space="preserve">
+    <value>Описание ({0})</value>
+  </data>
+  <data name="Macro_SLDescription_Name" xml:space="preserve">
+    <value>Описание Заклинания</value>
+  </data>
+  <data name="Macro_SLDescription_Text_0" xml:space="preserve">
+    <value>Описание </value>
+  </data>
+  <data name="Macro_SLDuration_FullInnerText" xml:space="preserve">
+    <value>Длительность ({0})</value>
+  </data>
+  <data name="Macro_SLDuration_Name" xml:space="preserve">
+    <value>Длительность Заклинания</value>
+  </data>
+  <data name="Macro_SLDuration_Text_0" xml:space="preserve">
+    <value>Длительность </value>
+  </data>
+  <data name="Macro_SLIsCantrip_FullInnerText" xml:space="preserve">
+    <value>Является ли ({0}) заговором</value>
+  </data>
+  <data name="Macro_SLIsCantrip_Name" xml:space="preserve">
+    <value>Является ли Заклинание заговором</value>
+  </data>
+  <data name="Macro_SLIsCantrip_Text_0" xml:space="preserve">
+    <value> является ли заговором</value>
+  </data>
+  <data name="Macro_SLIsConcentration_FullInnerText" xml:space="preserve">
+    <value>({0}) требует концентрацию</value>
+  </data>
+  <data name="Macro_SLIsConcentration_Name" xml:space="preserve">
+    <value>Требует ли Заклинание Концентрацию</value>
+  </data>
+  <data name="Macro_SLIsConcentration_Text_0" xml:space="preserve">
+    <value> требует концентрацию</value>
+  </data>
+  <data name="Macro_SLIsMaterial_FullInnerText" xml:space="preserve">
+    <value>({0}) имеет материальные компоненты</value>
+  </data>
+  <data name="Macro_SLIsMaterial_Name" xml:space="preserve">
+    <value>Имеет ли Заклинание Материальные Компоненты</value>
+  </data>
+  <data name="Macro_SLIsMaterial_Text_0" xml:space="preserve">
+    <value> имеет материальные компоненты</value>
+  </data>
+  <data name="Macro_SLIsRitual_FullInnerText" xml:space="preserve">
+    <value>({0}) является ритуалом</value>
+  </data>
+  <data name="Macro_SLIsRitual_Name" xml:space="preserve">
+    <value>Является ли Заклинание Ритуалом</value>
+  </data>
+  <data name="Macro_SLIsRitual_Text_0" xml:space="preserve">
+    <value> является ритуалом</value>
+  </data>
+  <data name="Macro_SLIsSomatic_FullInnerText" xml:space="preserve">
+    <value>({0}) имеет Соматический компонент</value>
+  </data>
+  <data name="Macro_SLIsSomatic_Name" xml:space="preserve">
+    <value>Имеет ли Заклинание Соматический Компонент</value>
+  </data>
+  <data name="Macro_SLIsSomatic_Text_0" xml:space="preserve">
+    <value> имеет Соматический компонент</value>
+  </data>
+  <data name="Macro_SLIsVerbal_FullInnerText" xml:space="preserve">
+    <value>({0}) имеет Вербальный компонент</value>
+  </data>
+  <data name="Macro_SLIsVerbal_Name" xml:space="preserve">
+    <value>Имеет ли Заклинение Вербальный компонент</value>
+  </data>
+  <data name="Macro_SLIsVerbal_Text_0" xml:space="preserve">
+    <value> имеет Вербальный компонент</value>
+  </data>
+  <data name="Macro_SLLevel_FullInnerText" xml:space="preserve">
+    <value>Уровень ({0})</value>
+  </data>
+  <data name="Macro_SLLevel_Name" xml:space="preserve">
+    <value>Уровень Заклинания</value>
+  </data>
+  <data name="Macro_SLLevel_Text_0" xml:space="preserve">
+    <value>уровень </value>
+  </data>
+  <data name="Macro_SLName_FullInnerText" xml:space="preserve">
+    <value>Название ({0})</value>
+  </data>
+  <data name="Macro_SLName_Name" xml:space="preserve">
+    <value>название Заклинания</value>
+  </data>
+  <data name="Macro_SLName_Text_0" xml:space="preserve">
+    <value>название </value>
+  </data>
+  <data name="Macro_SLRange_FullInnerText" xml:space="preserve">
+    <value>Дистанция ({0})</value>
+  </data>
+  <data name="Macro_SLRange_Name" xml:space="preserve">
+    <value>Дистанция Заклинания</value>
+  </data>
+  <data name="Macro_SLRange_Text_0" xml:space="preserve">
+    <value>дистанция </value>
+  </data>
+  <data name="Macro_SLSchool_FullInnerText" xml:space="preserve">
+    <value>Школа ({0})</value>
+  </data>
+  <data name="Macro_SLSchool_Name" xml:space="preserve">
+    <value>Школа Заклинания</value>
+  </data>
+  <data name="Macro_SLSchool_Text_0" xml:space="preserve">
+    <value>школа</value>
+  </data>
+  <data name="Macro_SLSimpleDescription_FullInnerText" xml:space="preserve">
+    <value>Короткое описание ({0})</value>
+  </data>
+  <data name="Macro_SLSimpleDescription_Name" xml:space="preserve">
+    <value>Короткое описание Заклинания</value>
+  </data>
+  <data name="Macro_SLSimpleDescription_Text_0" xml:space="preserve">
+    <value>короткое описание </value>
+  </data>
+  <data name="Macro_SLTarget_FullInnerText" xml:space="preserve">
+    <value>Цели ({0})</value>
+  </data>
+  <data name="Macro_SLTarget_Name" xml:space="preserve">
+    <value>Цели Заклинания</value>
+  </data>
+  <data name="Macro_SLTarget_Text_0" xml:space="preserve">
+    <value>цели </value>
+  </data>
+  <data name="Macro_StatsCha_FullInnerText" xml:space="preserve">
+    <value>Значение Харизмы </value>
+  </data>
+  <data name="Macro_StatsCha_Name" xml:space="preserve">
+    <value>Значение Харизмы (Стат)</value>
+  </data>
+  <data name="Macro_StatsCha_Text_0" xml:space="preserve">
+    <value>Значение Харизмы</value>
+  </data>
+  <data name="Macro_StatsCon_FullInnerText" xml:space="preserve">
+    <value>Значение Телосложения</value>
+  </data>
+  <data name="Macro_StatsCon_Name" xml:space="preserve">
+    <value>Значение Телосложения (Стат)</value>
+  </data>
+  <data name="Macro_StatsCon_Text_0" xml:space="preserve">
+    <value>Значение Телосложения</value>
+  </data>
+  <data name="Macro_StatsDex_FullInnerText" xml:space="preserve">
+    <value>Значение Ловкости</value>
+  </data>
+  <data name="Macro_StatsDex_Name" xml:space="preserve">
+    <value>Значение Ловкости (Стат)</value>
+  </data>
+  <data name="Macro_StatsDex_Text_0" xml:space="preserve">
+    <value>Значение Ловкости</value>
+  </data>
+  <data name="Macro_StatsHasChaProf_FullInnerText" xml:space="preserve">
+    <value>Владеет Харизмой</value>
+  </data>
+  <data name="Macro_StatsHasChaProf_Name" xml:space="preserve">
+    <value>Владеет ли Харизмой</value>
+  </data>
+  <data name="Macro_StatsHasChaProf_Text_0" xml:space="preserve">
+    <value>Владеет Харизмой</value>
+  </data>
+  <data name="Macro_StatsHasConProf_FullInnerText" xml:space="preserve">
+    <value>Владеет Телосложением</value>
+  </data>
+  <data name="Macro_StatsHasConProf_Name" xml:space="preserve">
+    <value>Владеет ли Телосложением</value>
+  </data>
+  <data name="Macro_StatsHasConProf_Text_0" xml:space="preserve">
+    <value>Владеет Телосложением</value>
+  </data>
+  <data name="Macro_StatsHasDexProf_FullInnerText" xml:space="preserve">
+    <value>Владеет Ловкостью</value>
+  </data>
+  <data name="Macro_StatsHasDexProf_Name" xml:space="preserve">
+    <value>Владеет ли Ловкостью</value>
+  </data>
+  <data name="Macro_StatsHasDexProf_Text_0" xml:space="preserve">
+    <value>Владеет Ловкостью</value>
+  </data>
+  <data name="Macro_StatsHasIntProf_FullInnerText" xml:space="preserve">
+    <value>Владеет Интеллектом</value>
+  </data>
+  <data name="Macro_StatsHasIntProf_Name" xml:space="preserve">
+    <value>Владеет ли Интеллектом</value>
+  </data>
+  <data name="Macro_StatsHasIntProf_Text_0" xml:space="preserve">
+    <value>Владеет Интеллектом</value>
+  </data>
+  <data name="Macro_StatsHasStrProf_FullInnerText" xml:space="preserve">
+    <value>Владеет Силой</value>
+  </data>
+  <data name="Macro_StatsHasStrProf_Name" xml:space="preserve">
+    <value>Владеет ли Силой</value>
+  </data>
+  <data name="Macro_StatsHasStrProf_Text_0" xml:space="preserve">
+    <value>Владеет Силой</value>
+  </data>
+  <data name="Macro_StatsHasWisProf_FullInnerText" xml:space="preserve">
+    <value>Владеет Мудростью</value>
+  </data>
+  <data name="Macro_StatsHasWisProf_Name" xml:space="preserve">
+    <value>Владеет ли Мудростью</value>
+  </data>
+  <data name="Macro_StatsHasWisProf_Text_0" xml:space="preserve">
+    <value>Владеет Мудростью</value>
+  </data>
+  <data name="Macro_StatsHP_FullInnerText" xml:space="preserve">
+    <value>Хитпоинты</value>
+  </data>
+  <data name="Macro_StatsHP_Name" xml:space="preserve">
+    <value>Значение Хитпоинтов</value>
+  </data>
+  <data name="Macro_StatsHP_Text_0" xml:space="preserve">
+    <value>Хитпоинты</value>
+  </data>
+  <data name="Macro_StatsInt_FullInnerText" xml:space="preserve">
+    <value>Значение Интеллекта </value>
+  </data>
+  <data name="Macro_StatsInt_Name" xml:space="preserve">
+    <value>Значение Интеллекта (Стат)</value>
+  </data>
+  <data name="Macro_StatsInt_Text_0" xml:space="preserve">
+    <value>Значение Интеллекта</value>
+  </data>
+  <data name="Macro_StatsLevel_FullInnerText" xml:space="preserve">
+    <value>Уровень</value>
+    <comment>персонажа</comment>
+  </data>
+  <data name="Macro_StatsLevel_Name" xml:space="preserve">
+    <value>Уровень</value>
+    <comment>персонажа</comment>
+  </data>
+  <data name="Macro_StatsLevel_Text_0" xml:space="preserve">
+    <value>Уровень персонажа</value>
+  </data>
+  <data name="Macro_StatsMaxHP_FullInnerText" xml:space="preserve">
+    <value>Максимальные Хитпоинты</value>
+  </data>
+  <data name="Macro_StatsMaxHP_Name" xml:space="preserve">
+    <value>Значение Максимальных Хитпоинтов</value>
+  </data>
+  <data name="Macro_StatsMaxHP_Text_0" xml:space="preserve">
+    <value>Максимальные Хитпоинты</value>
+  </data>
+  <data name="Macro_StatsModCha_FullInnerText" xml:space="preserve">
+    <value>Значение Модификатора Харизмы</value>
+  </data>
+  <data name="Macro_StatsModCha_Name" xml:space="preserve">
+    <value>Значение Модификатора Харизмы (Мод)</value>
+  </data>
+  <data name="Macro_StatsModCha_Text_0" xml:space="preserve">
+    <value>Значение Модификатора Харизмы</value>
+  </data>
+  <data name="Macro_StatsModCon_FullInnerText" xml:space="preserve">
+    <value>Значение Модификатора Телосложения</value>
+  </data>
+  <data name="Macro_StatsModCon_Name" xml:space="preserve">
+    <value>Значение Модификатора Телосложения (Мод)</value>
+  </data>
+  <data name="Macro_StatsModCon_Text_0" xml:space="preserve">
+    <value>Значение Модификатора Телосложения</value>
+  </data>
+  <data name="Macro_StatsModDex_FullInnerText" xml:space="preserve">
+    <value>Значение Модификатора Ловкости</value>
+  </data>
+  <data name="Macro_StatsModDex_Name" xml:space="preserve">
+    <value>Значение Модификатора Ловкости (Мод)</value>
+  </data>
+  <data name="Macro_StatsModDex_Text_0" xml:space="preserve">
+    <value>Значение Модификатора Ловкости</value>
+  </data>
+  <data name="Macro_StatsModInt_FullInnerText" xml:space="preserve">
+    <value>Значение Модификатора Интеллекта</value>
+  </data>
+  <data name="Macro_StatsModInt_Name" xml:space="preserve">
+    <value>Значение Модификатора Интеллекта (Мод)</value>
+  </data>
+  <data name="Macro_StatsModInt_Text_0" xml:space="preserve">
+    <value>Значение Модификатора Интеллекта</value>
+  </data>
+  <data name="Macro_StatsModStr_FullInnerText" xml:space="preserve">
+    <value>Значение Модификатора Силы</value>
+  </data>
+  <data name="Macro_StatsModStr_Name" xml:space="preserve">
+    <value>Значение Модификатора Силы (Мод)</value>
+  </data>
+  <data name="Macro_StatsModStr_Text_0" xml:space="preserve">
+    <value>Значение Модификатора Силы</value>
+  </data>
+  <data name="Macro_StatsModWis_FullInnerText" xml:space="preserve">
+    <value>Значение Модификатора Мудрости</value>
+  </data>
+  <data name="Macro_StatsModWis_Name" xml:space="preserve">
+    <value>Значение Модификатора Мудрости (Мод)</value>
+  </data>
+  <data name="Macro_StatsModWis_Text_0" xml:space="preserve">
+    <value>Значение Модификатора Мудрости</value>
+  </data>
+  <data name="Macro_StatsProf_FullInnerText" xml:space="preserve">
+    <value>Значение Бонуса Мастерства</value>
+  </data>
+  <data name="Macro_StatsProf_Name" xml:space="preserve">
+    <value>Значение Бонуса Мастерства</value>
+  </data>
+  <data name="Macro_StatsProf_Text_0" xml:space="preserve">
+    <value>Значение Бонуса Мастерства</value>
+  </data>
+  <data name="Macro_StatsSaveCha_FullInnerText" xml:space="preserve">
+    <value>Значение модификатора Спасброска Харизмы</value>
+  </data>
+  <data name="Macro_StatsSaveCha_Name" xml:space="preserve">
+    <value>Значение модификатора Спасброска Харизмы (Спас)</value>
+  </data>
+  <data name="Macro_StatsSaveCha_Text_0" xml:space="preserve">
+    <value>Значение модификатора Спасброска Харизмы</value>
+  </data>
+  <data name="Macro_StatsSaveCon_FullInnerText" xml:space="preserve">
+    <value>Значение модификатора Спасброска Телосложения</value>
+  </data>
+  <data name="Macro_StatsSaveCon_Name" xml:space="preserve">
+    <value>Значение модификатора Спасброска Телосложения (Спас)</value>
+  </data>
+  <data name="Macro_StatsSaveCon_Text_0" xml:space="preserve">
+    <value>Значение модификатора Спасброска Телосложения</value>
+  </data>
+  <data name="Macro_StatsSaveDex_FullInnerText" xml:space="preserve">
+    <value>Значение модификатора Спасброска Ловкости</value>
+  </data>
+  <data name="Macro_StatsSaveDex_Name" xml:space="preserve">
+    <value>Значение модификатора Спасброска Ловкости (Спас)</value>
+  </data>
+  <data name="Macro_StatsSaveDex_Text_0" xml:space="preserve">
+    <value>Значение модификатора Спасброска Ловкости</value>
+  </data>
+  <data name="Macro_StatsSaveInt_FullInnerText" xml:space="preserve">
+    <value>Значение модификатора Спасброска Интеллекта</value>
+  </data>
+  <data name="Macro_StatsSaveInt_Name" xml:space="preserve">
+    <value>Значение модификатора Спасброска Интеллекта (Спас)</value>
+  </data>
+  <data name="Macro_StatsSaveInt_Text_0" xml:space="preserve">
+    <value>Значение модификатора Спасброска Интеллекта</value>
+  </data>
+  <data name="Macro_StatsSaveStr_FullInnerText" xml:space="preserve">
+    <value>Значение модификатора Спасброска Силы</value>
+  </data>
+  <data name="Macro_StatsSaveStr_Name" xml:space="preserve">
+    <value>Значение модификатора Спасброска Силы (Спас)</value>
+  </data>
+  <data name="Macro_StatsSaveStr_Text_0" xml:space="preserve">
+    <value>Значение модификатора Спасброска Силы</value>
+  </data>
+  <data name="Macro_StatsSaveWis_FullInnerText" xml:space="preserve">
+    <value>Значение модификатора Спасброска Мудрости</value>
+  </data>
+  <data name="Macro_StatsSaveWis_Name" xml:space="preserve">
+    <value>Значение модификатора Спасброска Мудрости (Спас)</value>
+  </data>
+  <data name="Macro_StatsSaveWis_Text_0" xml:space="preserve">
+    <value>Значение модификатора Спасброска Мудрости</value>
+  </data>
+  <data name="Macro_StatsSpellAttackBonus_FullInnerText" xml:space="preserve">
+    <value>Бонус заклинательной атаки</value>
+  </data>
+  <data name="Macro_StatsSpellAttackBonus_Name" xml:space="preserve">
+    <value>Бонус заклинательной атаки</value>
+  </data>
+  <data name="Macro_StatsSpellAttackBonus_Text_0" xml:space="preserve">
+    <value>Бонус заклинательной атаки</value>
+  </data>
+  <data name="Macro_StatsSpellSaveDC_FullInnerText" xml:space="preserve">
+    <value>Спасбросок Заклинателя</value>
+  </data>
+  <data name="Macro_StatsSpellSaveDC_Name" xml:space="preserve">
+    <value>Спасбросок Заклинателя</value>
+  </data>
+  <data name="Macro_StatsSpellSaveDC_Text_0" xml:space="preserve">
+    <value>Спасбросок Заклинателя</value>
+  </data>
+  <data name="Macro_StatsStr_FullInnerText" xml:space="preserve">
+    <value>Значение Силы</value>
+  </data>
+  <data name="Macro_StatsStr_Name" xml:space="preserve">
+    <value>Значение Силы (Стат)</value>
+  </data>
+  <data name="Macro_StatsStr_Text_0" xml:space="preserve">
+    <value>Значение Силы</value>
+  </data>
+  <data name="Macro_StatsWis_FullInnerText" xml:space="preserve">
+    <value>Значение Мудрости </value>
+  </data>
+  <data name="Macro_StatsWis_Name" xml:space="preserve">
+    <value>Значение Мудрости (Стат)</value>
+  </data>
+  <data name="Macro_StatsWis_Text_0" xml:space="preserve">
+    <value>Значение Мудрости</value>
+  </data>
+  <data name="Macro_StringsGetCharName_FullInnerText" xml:space="preserve">
+    <value>Имя Персонажа</value>
+  </data>
+  <data name="Macro_StringsGetCharName_Name" xml:space="preserve">
+    <value>Имя Персонажа</value>
+  </data>
+  <data name="Macro_StringsGetCharName_Text_0" xml:space="preserve">
+    <value>Имя Персонажа</value>
+  </data>
+  <data name="Macro_StringsLen_FullInnerText" xml:space="preserve">
+    <value>Длинна ({0})</value>
+  </data>
+  <data name="Macro_StringsLen_Name" xml:space="preserve">
+    <value>Длинна</value>
+  </data>
+  <data name="Macro_StringsLen_Text_0" xml:space="preserve">
+    <value>Длинна </value>
+  </data>
+  <data name="Macro_Type_Boolean" xml:space="preserve">
+    <value>Логическая</value>
+  </data>
+  <data name="Macro_Type_Number" xml:space="preserve">
+    <value>Натуральное Число</value>
+  </data>
+  <data name="Macro_Type_Real" xml:space="preserve">
+    <value>Рациональное Число</value>
+  </data>
+  <data name="Macro_Type_Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="Macro_Window_Actions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="Macro_Window_Categories" xml:space="preserve">
+    <value>Категории</value>
+  </data>
+  <data name="Macro_Window_Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
   <data name="MainMenu_About" xml:space="preserve">
     <value>О программе</value>
   </data>
@@ -893,6 +2741,12 @@
   <data name="Marketplace_Online" xml:space="preserve">
     <value>Онлайн</value>
   </data>
+  <data name="Message_ContainerWithItems_Desc" xml:space="preserve">
+    <value>Вы удаляете предмет, содержащий в себе другие предметы! Вы хотите так же удалить и их?</value>
+  </data>
+  <data name="Message_ContainerWithItems_Title" xml:space="preserve">
+    <value>Удаляемый предмет содержит предметы!</value>
+  </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Действия</value>
   </data>
@@ -919,6 +2773,9 @@
   </data>
   <data name="R20_Log" xml:space="preserve">
     <value>Логи</value>
+  </data>
+  <data name="R20_Macro" xml:space="preserve">
+    <value>Макро</value>
   </data>
   <data name="R20_Rolls" xml:space="preserve">
     <value>Броски</value>
@@ -1129,6 +2986,177 @@
   </data>
   <data name="Tab_SpellCodex" xml:space="preserve">
     <value>Список Заклинаний</value>
+  </data>
+  <data name="Text_Item_HasContents" xml:space="preserve">
+    <value>Предмет сожержит {0} дополнительных предметов</value>
+  </data>
+  <data name="Tooltip_Button_AddMacro" xml:space="preserve">
+    <value>Создать новое Макро</value>
+  </data>
+  <data name="Tooltip_Button_AddSpell" xml:space="preserve">
+    <value>Создать новое Заклинание</value>
+  </data>
+  <data name="Tooltip_Button_AdvancedRoll" xml:space="preserve">
+    <value>Использовать значения выше чтобы кинуть вариативный бросок на Ролл20.</value>
+  </data>
+  <data name="Tooltip_Button_CopyFeat" xml:space="preserve">
+    <value>Скопировать выделеные способности в буфер обмена</value>
+  </data>
+  <data name="Tooltip_Button_CopyItem" xml:space="preserve">
+    <value>Скопировать выделеные предметы в буфер обмена</value>
+  </data>
+  <data name="Tooltip_Button_CopyServer" xml:space="preserve">
+    <value>Скопировать код, который выполняет сервер в буфер обмена. Этот код будет необходимо вставить в консоль вашего браузера чтобы запустить сервер.</value>
+  </data>
+  <data name="Tooltip_Button_CopyThisMacro" xml:space="preserve">
+    <value>Скопировать Макро в буфер обмена</value>
+  </data>
+  <data name="Tooltip_Button_CreateFeat" xml:space="preserve">
+    <value>Добавить новую способность</value>
+  </data>
+  <data name="Tooltip_Button_CreateItem" xml:space="preserve">
+    <value>Добавить новый предмет</value>
+  </data>
+  <data name="Tooltip_Button_DeleteFeat" xml:space="preserve">
+    <value>Удалить выбраные способности</value>
+  </data>
+  <data name="Tooltip_Button_DeleteItem" xml:space="preserve">
+    <value>Удалить выбраные предметы</value>
+  </data>
+  <data name="Tooltip_Button_DeleteMacro" xml:space="preserve">
+    <value>Удалить выбраные Макро</value>
+  </data>
+  <data name="Tooltip_Button_DeleteSpell" xml:space="preserve">
+    <value>Удалить выбраное заклинание</value>
+  </data>
+  <data name="Tooltip_Button_DeleteThisMacro" xml:space="preserve">
+    <value>Удалить это Макро</value>
+  </data>
+  <data name="Tooltip_Button_EditFeat" xml:space="preserve">
+    <value>Редактировать выбраную Способность</value>
+  </data>
+  <data name="Tooltip_Button_EditFeatImage" xml:space="preserve">
+    <value>Выбрать изображение для этой Способности</value>
+  </data>
+  <data name="Tooltip_Button_EditItem" xml:space="preserve">
+    <value>Редактировать выбраный Предмет</value>
+  </data>
+  <data name="Tooltip_Button_EditItemImage" xml:space="preserve">
+    <value>Выбрать изображение для этого предмета</value>
+  </data>
+  <data name="Tooltip_Button_EditMacro" xml:space="preserve">
+    <value>Редактировать выбраное Макро</value>
+  </data>
+  <data name="Tooltip_Button_EditModifiers" xml:space="preserve">
+    <value>Редактировать временные модификаторы характеристики</value>
+  </data>
+  <data name="Tooltip_Button_EditPortrait" xml:space="preserve">
+    <value>Выбрать портрет персонажа</value>
+  </data>
+  <data name="Tooltip_Button_EditSpell" xml:space="preserve">
+    <value>Редактировать выбраное заклинание</value>
+  </data>
+  <data name="Tooltip_Button_EditSpellImage" xml:space="preserve">
+    <value>Выбрать изображение для этого заклинания</value>
+  </data>
+  <data name="Tooltip_Button_EditThisMacro" xml:space="preserve">
+    <value>Редактировать это Макро</value>
+  </data>
+  <data name="Tooltip_Button_Feat2Max" xml:space="preserve">
+    <value>Установить значение способности на максимум</value>
+  </data>
+  <data name="Tooltip_Button_Feat2Zero" xml:space="preserve">
+    <value>Установить значение способности на 0</value>
+  </data>
+  <data name="Tooltip_Button_FeatDecrement" xml:space="preserve">
+    <value>Увеличить значение способности на 1</value>
+  </data>
+  <data name="Tooltip_Button_FeatIncrement" xml:space="preserve">
+    <value>Уменьшить значение способности на 1</value>
+  </data>
+  <data name="Tooltip_Button_Log" xml:space="preserve">
+    <value>Открыть последний файл журнала Ролл20.</value>
+  </data>
+  <data name="Tooltip_Button_PasteFeat" xml:space="preserve">
+    <value>Вставить содержимое буфера обмена как Способности</value>
+  </data>
+  <data name="Tooltip_Button_PasteItem" xml:space="preserve">
+    <value>Вставить содержимое буфера обмена как Предметы</value>
+  </data>
+  <data name="Tooltip_Button_PasteMacro" xml:space="preserve">
+    <value>Вставить содержимое буфера обмена как Макро</value>
+  </data>
+  <data name="Tooltip_Button_RecalculateStatModifiers" xml:space="preserve">
+    <value>Сбросить все модификаторы характеристик и перерассчитать их на основе базовых значений. Это действие сбросит ваши пользовательские значения для навыков и спасбросков!</value>
+  </data>
+  <data name="Tooltip_Button_RecalculateWeights" xml:space="preserve">
+    <value>Перерассчитать все весы. Это включает в себя вес инвентаря и оба порога.</value>
+  </data>
+  <data name="Tooltip_Button_ResetDeathSaves" xml:space="preserve">
+    <value>Сбросить все спасброски смерти.</value>
+  </data>
+  <data name="Tooltip_Button_RunThisMacro" xml:space="preserve">
+    <value>Выполнить это Макро.</value>
+  </data>
+  <data name="Tooltip_Button_StartServer" xml:space="preserve">
+    <value>Скопировать код сервера в буфер обмена, запустить клиент и пытаться установить соединение с сервером.</value>
+  </data>
+  <data name="Tooltip_Button_StopServer" xml:space="preserve">
+    <value>Оборвать соединение с сервером и закрыть клиент. Сервер без соединения отключается сам.</value>
+  </data>
+  <data name="Tooltip_Checkbox_AsMultipleRolls" xml:space="preserve">
+    <value>Указать Ролл20, что бросок, совершаемый кнопкой слева стоит интерпретировать как простую комманду чата, и не использовать оформление.</value>
+  </data>
+  <data name="Window_ChangeCash_Title" xml:space="preserve">
+    <value>Редактирование Денег</value>
+  </data>
+  <data name="Window_ChangeMinMax_Title" xml:space="preserve">
+    <value>Редактирование Значения/Макс. Значения</value>
+  </data>
+  <data name="Window_ChangeValue_Title" xml:space="preserve">
+    <value>Редактирование Значения</value>
+  </data>
+  <data name="Window_ColorPicker_Title" xml:space="preserve">
+    <value>Выберите цвет</value>
+  </data>
+  <data name="Window_CreateFeat_Title" xml:space="preserve">
+    <value>Редактирование Способности</value>
+  </data>
+  <data name="Window_CreateItem_Title" xml:space="preserve">
+    <value>Редактирование Предмета</value>
+  </data>
+  <data name="Window_CreateLink_Title" xml:space="preserve">
+    <value>Создание Связи</value>
+  </data>
+  <data name="Window_CreateLocal_Title" xml:space="preserve">
+    <value>Создание Переменной</value>
+  </data>
+  <data name="Window_CreateSpell_Title" xml:space="preserve">
+    <value>Редактирование Заклинания</value>
+  </data>
+  <data name="Window_EditMacro_Title" xml:space="preserve">
+    <value>Редактирование Макро</value>
+  </data>
+  <data name="Window_Info_Title" xml:space="preserve">
+    <value>О Программе</value>
+  </data>
+  <data name="Window_InventoryContainer_Title" xml:space="preserve">
+    <value>Вид Контейнера</value>
+  </data>
+  <data name="Window_MacroAction_Title" xml:space="preserve">
+    <value>Редактирование Действия Макро</value>
+  </data>
+  <data name="Window_NewStatModifierDialog_Title" xml:space="preserve">
+    <value>Новый Модификатор Характеристики</value>
+  </data>
+  <data name="Window_ScriptContext_Title" xml:space="preserve">
+    <value>Окно Динамического Контента Скрипта</value>
+  </data>
+  <data name="Window_ScriptsMarketplace_Title" xml:space="preserve">
+    <value>Рынок</value>
+  </data>
+  <data name="Window_Scripts_Title" xml:space="preserve">
+    <value>Скрипты</value>
   </data>
   <data name="_________" xml:space="preserve">
     <value />
