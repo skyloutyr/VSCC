@@ -18,11 +18,11 @@
                     <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" MaxLines="1" FontSize="30" BorderBrush="{StaticResource Static.Border}" Foreground="{StaticResource Static.Foreground}"/>
                     <Button x:Name="Btn_Remove_Exp" Content="-" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked" Foreground="{StaticResource Static.Foreground}" />
                     <Button x:Name="Btn_Add_Exp" Content="+" HorizontalAlignment="Left" Margin="379,55,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked" Foreground="{StaticResource Static.Foreground}"/>
-                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
+                    <Controls:ColoredBar x:FieldModifier="public" x:Name="Bar_Exp" HorizontalAlignment="Left" Height="20" Margin="35,55,0,0" VerticalAlignment="Top" Width="339" Background="{x:Null}" Foreground="Black" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" BarColor="#FFFFD854" BarBackground="#FF957300" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
                     <Border BorderThickness="1" BorderBrush="{StaticResource Static.Border}" Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,80,0,0">
                         <Grid>
                             <Image x:Name="Portrait" Stretch="Fill" Height="100" Width="100" />
-                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="72,72,0,0" Width="26" Click="Button_Click">
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="72,72,0,0" Width="26" Click="Button_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditPortrait}">
                                 <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                             </Button>
                         </Grid>
@@ -31,8 +31,8 @@
                     <Button x:Name="Btn_Remove_TempHP" Content="-" HorizontalAlignment="Left" Margin="117,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked" Foreground="{StaticResource Static.Foreground}"/>
                     <Button x:Name="Btn_Add_HP" Content="+" HorizontalAlignment="Left" Margin="379,80,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked" Foreground="{StaticResource Static.Foreground}"/>
                     <Button x:Name="Btn_Add_TempHP" Content="+" HorizontalAlignment="Left" Margin="379,105,0,0" VerticalAlignment="Top" Width="20" Click="Button_ChangeValue_Clicked" Foreground="{StaticResource Static.Foreground}"/>
-                    <Controls:ColoredBar x:Name="Bar_HP" HorizontalAlignment="Left" Height="20" Margin="142,80,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" BarColor="#FFEC0000" BarBackground="#FF740000" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
-                    <Controls:ColoredBar x:Name="Bar_Temp_HP" HorizontalAlignment="Left" Height="20" Margin="142,105,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" BarColor="#FF00ECE1" BarBackground="#FF005F74" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
+                    <Controls:ColoredBar x:Name="Bar_HP" HorizontalAlignment="Left" Height="20" Margin="142,80,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Foreground="Black" BarColor="#FFEC0000" BarBackground="#FF740000" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
+                    <Controls:ColoredBar x:Name="Bar_Temp_HP" HorizontalAlignment="Left" Height="20" Margin="142,105,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Foreground="Black" BarColor="#FF00ECE1" BarBackground="#FF005F74" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
                     <Label x:Name="Label_Lvl" Content="{x:Static p:Resources.General_Lvl}" HorizontalAlignment="Left" Margin="117,125,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <Label x:Name="Label_Race" Content="{x:Static p:Resources.General_Race}" HorizontalAlignment="Left" Margin="117,156,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <xctk:IntegerUpDown x:Name="IntUD_Lvl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,130,0,0" Height="20" Width="56" Value="1" Minimum="1" Maximum="20" ValueChanged="IntUD_Lvl_ValueChanged"/>
@@ -117,7 +117,7 @@
                             <Label Content="{x:Static p:Resources.General_Strength}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Str" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                            <Button x:Name="Btn_TempStat_Str" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                            <Button x:Name="Btn_TempStat_Str" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
                             </Button>
                         </Grid>
@@ -127,7 +127,7 @@
                             <Label Content="{x:Static p:Resources.General_Dexterity}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Dex" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                            <Button x:Name="Btn_TempStat_Dex" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                            <Button x:Name="Btn_TempStat_Dex" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Dex" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
                             </Button>
                         </Grid>
@@ -137,7 +137,7 @@
                             <Label Content="{x:Static p:Resources.General_Constitution}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Con" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                            <Button x:Name="Btn_TempStat_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                            <Button x:Name="Btn_TempStat_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Con" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
                             </Button>
                         </Grid>
@@ -147,7 +147,7 @@
                             <Label Content="{x:Static p:Resources.General_Charisma}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Cha" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                            <Button x:Name="Btn_TempStat_Cha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                            <Button x:Name="Btn_TempStat_Cha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Cha" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
                             </Button>
                         </Grid>
@@ -157,7 +157,7 @@
                             <Label Content="{x:Static p:Resources.General_Intelligence}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Int" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                            <Button x:Name="Btn_TempStat_Int" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                            <Button x:Name="Btn_TempStat_Int" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Int" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
                             </Button>
                         </Grid>
@@ -167,7 +167,7 @@
                             <Label Content="{x:Static p:Resources.General_Wisdom}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Wis" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
-                            <Button x:Name="Btn_TempStat_Wis" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" >
+                            <Button x:Name="Btn_TempStat_Wis" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Wis" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
                             </Button>
                         </Grid>
@@ -228,7 +228,7 @@
                             <xctk:IntegerUpDown x:Name="IntUD_Nature" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,181,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Religion" Content="{x:Static p:Resources.General_Skill_Religion}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,202,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Religion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,202,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
-                            <Button VerticalAlignment="Bottom" Height="30" Margin="0,0,0,0" Content="{x:Static p:Resources.General_Recalculate}" Foreground="{StaticResource Static.Foreground}" Click="Button_Click_2"></Button>
+                            <Button VerticalAlignment="Bottom" Height="30" Margin="0,0,0,0" Content="{x:Static p:Resources.General_Recalculate}" Foreground="{StaticResource Static.Foreground}" Click="Button_Click_2" ToolTip="{x:Static p:Resources.Tooltip_Button_RecalculateStatModifiers}" />
                         </Grid>
                     </Border>
                     <Border BorderThickness="1" HorizontalAlignment="Left" Height="156" Margin="10,72,0,0" BorderBrush="{StaticResource Static.Border}" VerticalAlignment="Top" Width="211">
@@ -254,7 +254,7 @@
                     </Border>
                     <Border BorderThickness="1" BorderBrush="{StaticResource Static.Border}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="113" Margin="226,72,0,0">
                         <Grid>
-                            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Height="18" Width="18" Click="Button_Click_1">
+                            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Height="18" Width="18" Click="Button_Click_1" ToolTip="{x:Static p:Resources.Tooltip_Button_ResetDeathSaves}" >
                                 <Image Source="/VSCC;component/Images/AppIcons/icons8-refresh-64.png" Stretch="Uniform"/>
                             </Button>
                             <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}" IsHitTestVisible="False"/>
