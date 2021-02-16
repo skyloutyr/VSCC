@@ -403,7 +403,8 @@
             Description = this.Description,
             ImageIndex = this.ImageIndex,
             ImageList = this.ImageList,
-            TitleColor = this.TitleColor
+            TitleColor = this.TitleColor,
+            ObjectID = this.ObjectID
         };
     }
 
