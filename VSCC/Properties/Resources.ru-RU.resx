@@ -278,7 +278,7 @@
     <value>Вес</value>
   </data>
   <data name="Feat_Desc_NeedsConversion" xml:space="preserve">
-    <value>Эта способность была созранена до 1.2 Её необходимо конвертировать вручную.</value>
+    <value>Эта способность была создана до 1.2 Её необходимо конвертировать вручную.</value>
   </data>
   <data name="Feat_Name_Old" xml:space="preserve">
     <value>Способность до 1.2</value>
@@ -1224,7 +1224,7 @@
     <value>[{0}] + [{1}]</value>
   </data>
   <data name="Macro_ExpSum_Name" xml:space="preserve">
-    <value>Сумма Выражения и Выражения (E + E)</value>
+    <value>Сумма Выражения и Выражения (В + В)</value>
   </data>
   <data name="Macro_ExpSum_Text_0" xml:space="preserve">
     <value> + </value>
@@ -1302,8 +1302,7 @@
     <value>Стоимость предмета в Медяках (Сдача)</value>
   </data>
   <data name="Macro_ILCostCopper_FullInnerText" xml:space="preserve">
-    <value>сдача в медяках</value>
-    <comment>с ({0})</comment>
+    <value>сдача в медяках с ({0})</value>
   </data>
   <data name="Macro_ILCostCopper_Text_0" xml:space="preserve">
     <value> сдача в медяках</value>
@@ -2431,12 +2430,10 @@
     <value>Значение Интеллекта</value>
   </data>
   <data name="Macro_StatsLevel_FullInnerText" xml:space="preserve">
-    <value>Уровень</value>
-    <comment>персонажа</comment>
+    <value>Уровень персонажа</value>
   </data>
   <data name="Macro_StatsLevel_Name" xml:space="preserve">
-    <value>Уровень</value>
-    <comment>персонажа</comment>
+    <value>Уровень персонажа</value>
   </data>
   <data name="Macro_StatsLevel_Text_0" xml:space="preserve">
     <value>Уровень персонажа</value>
@@ -2988,7 +2985,7 @@
     <value>Список Заклинаний</value>
   </data>
   <data name="Text_Item_HasContents" xml:space="preserve">
-    <value>Предмет сожержит {0} дополнительных предметов</value>
+    <value>Предмет содержит {0} дополнительных предметов</value>
   </data>
   <data name="Tooltip_Button_AddMacro" xml:space="preserve">
     <value>Создать новое Макро</value>
