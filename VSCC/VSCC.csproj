@@ -6616,202 +6616,586 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Lists\Items\Loot\Icon1.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon10.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon11.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon12.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon13.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon14.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon15.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon16.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon17.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon18.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon19.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon2.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon20.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon21.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon22.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon23.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon24.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon25.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon26.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon27.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon28.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon29.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon3.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon30.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon31.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon32.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon33.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon34.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon35.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon36.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon37.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon38.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon39.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon4.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon40.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon41.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon42.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon43.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon44.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon45.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon46.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon47.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon48.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon5.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon6.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon7.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon8.png" />
-    <Resource Include="Images\Lists\Items\Loot\Icon9.png" />
+    <None Include="Images\Lists\Items\Loot\Icon1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon22.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon23.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon28.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon30.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon31.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon33.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon34.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon35.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon37.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon38.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon39.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon41.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon42.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon43.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon44.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon47.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Loot\Icon9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\1.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\10.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\11.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\12.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\13.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\14.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\15.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\16.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\17.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\18.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\19.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\2.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\20.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\21.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\22.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\23.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\24.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\25.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\26.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\27.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\28.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\29.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\3.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\30.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\31.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\32.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\33.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\34.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\35.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\36.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\37.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\38.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\39.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\4.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\40.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\41.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\42.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\43.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\44.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\45.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\46.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\47.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\48.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\5.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\50.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\51.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\52.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\53.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\54.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\55.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\56.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\57.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\58.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\59.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\6.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\60.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\61.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\62.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\63.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\64.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\65.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\66.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\67.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\68.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\69.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\7.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\70.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\71.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\72.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\73.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\74.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\75.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\76.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\77.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\78.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\79.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\8.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\80.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\81.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\82.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\83.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\84.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\85.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\86.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\87.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\88.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\89.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\9.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\90.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\91.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\92.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\93.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\94.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\95.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\96.png" />
-    <Resource Include="Images\Lists\Items\Alchemy\Herbs\97.png" />
+    <None Include="Images\Lists\Items\Alchemy\Herbs\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\22.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\23.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\28.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\30.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\31.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\33.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\34.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\35.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\37.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\38.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\39.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\41.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\42.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\43.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\44.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\47.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\51.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\52.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\53.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\54.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\55.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\56.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\57.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\58.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\59.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\60.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\61.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\62.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\63.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\65.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\66.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\67.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\68.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\69.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\70.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\71.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\72.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\73.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\74.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\75.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\76.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\77.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\78.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\79.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\80.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\81.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\82.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\83.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\84.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\85.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\86.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\87.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\88.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\89.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\90.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\91.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\92.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\93.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\94.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\95.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\96.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Alchemy\Herbs\97.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon1.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon10.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon11.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon12.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon13.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon14.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon15.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon16.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon17.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon18.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon19.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon2.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon20.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon21.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon22.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon23.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon24.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon25.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon26.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon27.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon28.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon29.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon3.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon30.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon31.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon32.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon33.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon34.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon35.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon36.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon37.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon38.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon39.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon4.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon40.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon41.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon42.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon43.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon44.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon45.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon46.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon47.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon48.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon5.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon6.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon7.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon8.png" />
-    <Resource Include="Images\Lists\Items\Consumables\Potions\Unique\Icon9.png" />
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon22.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon23.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon28.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon30.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon31.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon33.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon34.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon35.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon37.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon38.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon39.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon41.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon42.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon43.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon44.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon47.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Lists\Items\Consumables\Potions\Unique\Icon9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Lists\Items\Minerals\Icon1.png" />
