@@ -30,7 +30,12 @@
             yield return new Hyperlink(new Run()) { Tag = 1 };
         }
 
-        public override void Deserialize(BinaryReader br) => this.Params[0] = MacroSerializer.ReadMacroAction(br);
+        public override void Deserialize(BinaryReader br)
+        {
+            this.Params[0] = MacroSerializer.ReadMacroAction(br);
+            this.Params[1] = MacroSerializer.ReadMacroAction(br);
+        }
+
         public override object Execute(Macro m, List<string> errors)
         {
             string s = ((Expression)this.Params[0].Execute(m, errors)).ToString();
@@ -42,7 +47,12 @@
             return s;
         }
 
-        public override void Serialize(BinaryWriter bw) => MacroSerializer.WriteMacroAction(bw, this.Params[0]);
+        public override void Serialize(BinaryWriter bw)
+        {
+            MacroSerializer.WriteMacroAction(bw, this.Params[0]);
+            MacroSerializer.WriteMacroAction(bw, this.Params[1]);
+        }
+
         public override void SetDefaults()
         {
             this._backend[0] = new MacroActionExpressionRoll();
