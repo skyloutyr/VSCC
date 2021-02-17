@@ -62,7 +62,8 @@
             MenuItem mi = (MenuItem)sender;
             TreeViewItem tvi = (TreeViewItem)((ContextMenu)mi.Parent).PlacementTarget;
             Tuple<string, bool, Guid> dat = (Tuple<string, bool, Guid>)tvi.Tag;
-            CreateLinkWindow clw = new CreateLinkWindow { SuggestedName = dat.Item2 ? MainWindow.Translate("Macro_Generic_NewLinkItem") : MainWindow.Translate("Macro_Generic_NewLinkSpell"), IsItemLink = dat.Item2 };
+            CreateLinkWindow clw = new CreateLinkWindow { SuggestedName = dat.Item1, IsItemLink = dat.Item2 };
+            clw.TB_LinkName.IsReadOnly = true;
             if (clw.ShowDialog() ?? false)
             {
                 tvi.Header = $"{ clw.TB_LinkName.Text }: { clw.CB_Value.Text }";
@@ -335,19 +336,22 @@
 
         public void AssignGenericActionMenu(TreeViewItem tvi)
         {
-            ContextMenu cm = new ContextMenu();
-            cm.Items.Add(new MenuItem() { Header = MainWindow.Translate("Macro_Generic_Delete") });
-            cm.Items.Add(new MenuItem() { Header = MainWindow.Translate("Macro_Generic_Edit") });
-            ((MenuItem)cm.Items[0]).Click += this.DeleteActionMenuClicked;
-            ((MenuItem)cm.Items[1]).Click += this.EditMacroActionClick;
-            tvi.ContextMenu = cm;
-            tvi.MouseDown += this.Tvi_MouseDown;
-            tvi.PreviewMouseMove += this.Tvi_PreviewMouseMove;
-            tvi.PreviewDrop += this.Tvi_PreviewDrop;
-            tvi.PreviewDragOver += this.Tvi_PreviewDragOver;
-            tvi.Drop += this.Tvi_Drop;
-            tvi.DragLeave += this.Tvi_DragLeave;
-            tvi.AllowDrop = true;
+            if (!tvi.AllowDrop)
+            {
+                ContextMenu cm = new ContextMenu();
+                cm.Items.Add(new MenuItem() { Header = MainWindow.Translate("Macro_Generic_Delete") });
+                cm.Items.Add(new MenuItem() { Header = MainWindow.Translate("Macro_Generic_Edit") });
+                ((MenuItem)cm.Items[0]).Click += this.DeleteActionMenuClicked;
+                ((MenuItem)cm.Items[1]).Click += this.EditMacroActionClick;
+                tvi.ContextMenu = cm;
+                tvi.MouseDown += this.Tvi_MouseDown;
+                tvi.PreviewMouseMove += this.Tvi_PreviewMouseMove;
+                tvi.PreviewDrop += this.Tvi_PreviewDrop;
+                tvi.PreviewDragOver += this.Tvi_PreviewDragOver;
+                tvi.Drop += this.Tvi_Drop;
+                tvi.DragLeave += this.Tvi_DragLeave;
+                tvi.AllowDrop = true;
+            }
         }
 
         private void Tvi_DragLeave(object sender, DragEventArgs e) => this.Line_InsertionLineAbs.Visibility = Visibility.Hidden;
@@ -367,7 +371,7 @@
                 MacroAction cA = (MacroAction)tvi.Tag;
                 Tuple<LinkedListNode<MacroAction>, LinkedList<MacroAction>, TreeViewItem, TreeViewItem> data = new Tuple<LinkedListNode<MacroAction>, LinkedList<MacroAction>, TreeViewItem, TreeViewItem>(container.Find(cA), container, tvi, parent);
                 DataObject dragDrop = new DataObject("MacroAction", data);
-                DragDrop.DoDragDrop(tvi, dragDrop, DragDropEffects.Move);
+                DragDrop.DoDragDrop(tvi, dragDrop, DragDropEffects.Copy);
             }
         }
 
@@ -375,7 +379,7 @@
         {
             if (e.Data != null && e.Data.GetDataPresent("MacroAction"))
             {
-                e.Effects = DragDropEffects.Move;
+                e.Effects = DragDropEffects.Copy;
             }
         }
 
@@ -442,6 +446,7 @@
                     }
 
                     this.TVI_Actions.InvalidateVisual();
+                    e.Handled = true;
                 }
             }
 
