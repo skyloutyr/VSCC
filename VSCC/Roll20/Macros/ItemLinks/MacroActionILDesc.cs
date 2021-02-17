@@ -35,7 +35,7 @@
             string n = (string)this.Params[0].Execute(m, errors);
             if (this.TryGetItemLink(m, n, out InventoryItem ii))
             {
-                return ii.Description;
+                return ii.Description ?? string.Empty;
             }
 
             errors.Add(this.Translate("Macro_Error_NoLink"));

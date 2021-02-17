@@ -35,7 +35,7 @@
             string n = (string)this.Params[0].Execute(m, errors);
             if (this.TryGetSpellLink(m, n, out Spell s))
             {
-                return s.Duration;
+                return s.Duration ?? string.Empty;
             }
 
             errors.Add(this.Translate("Macro_Error_NoLink"));
