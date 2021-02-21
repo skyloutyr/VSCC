@@ -7956,6 +7956,42 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There was no value specified for the edited local. Please specify the value in the text field below.
+        /// </summary>
+        public static string Message_Local_NoValue_Desc {
+            get {
+                return ResourceManager.GetString("Message_Local_NoValue_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Value for local.
+        /// </summary>
+        public static string Message_Local_NoValue_Title {
+            get {
+                return ResourceManager.GetString("Message_Local_NoValue_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A local with this name already exists. Please choose another name.
+        /// </summary>
+        public static string Message_Local_SameName_Desc {
+            get {
+                return ResourceManager.GetString("Message_Local_SameName_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local with the same name is defined.
+        /// </summary>
+        public static string Message_Local_SameName_Title {
+            get {
+                return ResourceManager.GetString("Message_Local_SameName_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Actions.
         /// </summary>
         public static string R20_Actions {

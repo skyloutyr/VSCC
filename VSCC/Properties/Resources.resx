@@ -2744,6 +2744,18 @@ Separate multiple types by a new line</value>
   <data name="Message_ContainerWithItems_Title" xml:space="preserve">
     <value>Deleted item contains Items!</value>
   </data>
+  <data name="Message_Local_NoValue_Desc" xml:space="preserve">
+    <value>There was no value specified for the edited local. Please specify the value in the text field below</value>
+  </data>
+  <data name="Message_Local_NoValue_Title" xml:space="preserve">
+    <value>No Value for local</value>
+  </data>
+  <data name="Message_Local_SameName_Desc" xml:space="preserve">
+    <value>A local with this name already exists. Please choose another name</value>
+  </data>
+  <data name="Message_Local_SameName_Title" xml:space="preserve">
+    <value>Local with the same name is defined</value>
+  </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>

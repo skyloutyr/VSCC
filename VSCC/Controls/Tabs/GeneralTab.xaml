@@ -191,7 +191,7 @@
                     </Border>
                     <Border BorderBrush="{StaticResource Static.Border}" HorizontalAlignment="Left" Height="460" Margin="344,10,0,0" BorderThickness="1" VerticalAlignment="Top" Width="188">
                         <Grid>
-                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="39" Content="{x:Static p:Resources.General_Skills}" Margin="10,10,0,0" Foreground="{StaticResource Static.Foreground}"/>
+                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="166" Content="{x:Static p:Resources.General_Skills}" Margin="10,10,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox x:Name="CheckBox_Athletics" Content="{x:Static p:Resources.General_Skill_Athletics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,38,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
                             <xctk:IntegerUpDown x:Name="IntUD_Athletics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,38,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Acrobatics" Content="{x:Static p:Resources.General_Skill_Acrobatics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,59,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
@@ -257,7 +257,7 @@
                             <Button HorizontalAlignment="Right" VerticalAlignment="Top" Height="18" Width="18" Click="Button_Click_1" ToolTip="{x:Static p:Resources.Tooltip_Button_ResetDeathSaves}" >
                                 <Image Source="/VSCC;component/Images/AppIcons/icons8-refresh-64.png" Stretch="Uniform"/>
                             </Button>
-                            <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}" IsHitTestVisible="False"/>
+                            <Label Content="{x:Static p:Resources.General_DeathThrows}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}" IsHitTestVisible="False" Height="45"/>
                             <Label Content="{x:Static p:Resources.General_DeathSaves}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}"/>
                             <Label Content="{x:Static p:Resources.General_DeathFails}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="91" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox x:Name="CheckBox_DS_Pass1" HorizontalAlignment="Left" Margin="27,62,0,0" VerticalAlignment="Top"/>

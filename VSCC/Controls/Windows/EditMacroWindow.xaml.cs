@@ -177,7 +177,7 @@
         // Create Local clicked
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-            DefineLocalWindow dlw = new DefineLocalWindow();
+            DefineLocalWindow dlw = new DefineLocalWindow { EditedMacro = this.EditedMacro };
             if (dlw.ShowDialog() ?? false)
             {
                 TreeViewItem tvi = new TreeViewItem() { Header = $"{ dlw.CB_Type.Text } { dlw.TB_Name.Text } = { dlw.TB_Value.Text }" };
@@ -236,7 +236,7 @@
             Tuple<string, LocalType> dat = (Tuple<string, LocalType>)tvi.Tag;
             LocalType startingT = dat.Item2;
             string lName = dat.Item1;
-            DefineLocalWindow dlw = new DefineLocalWindow();
+            DefineLocalWindow dlw = new DefineLocalWindow { EditedMacro = this.EditedMacro };
             dlw.TB_Name.Text = lName;
             dlw.TB_Name.IsReadOnly = true;
             if (dlw.ShowDialog() ?? false)

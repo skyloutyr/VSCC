@@ -1881,13 +1881,13 @@
     <value>Значение Акробатики</value>
   </data>
   <data name="Macro_SkillsAnimalHandling_FullInnerText" xml:space="preserve">
-    <value>Значение Дрессировки</value>
+    <value>Значение Ухода за Животными</value>
   </data>
   <data name="Macro_SkillsAnimalHandling_Name" xml:space="preserve">
-    <value>Значение Дрессировки </value>
+    <value>Значение Ухода за Животными</value>
   </data>
   <data name="Macro_SkillsAnimalHandling_Text_0" xml:space="preserve">
-    <value>Значение Дрессировки</value>
+    <value>Значение Ухода за Животными</value>
   </data>
   <data name="Macro_SkillsArcana_FullInnerText" xml:space="preserve">
     <value>Значение Магии</value>
@@ -1926,13 +1926,13 @@
     <value>Имеется ли Владение Акробатикой</value>
   </data>
   <data name="Macro_SkillsHasPAnimalHandling_FullInnerText" xml:space="preserve">
-    <value>Имеется ли Владение Дрессировкой</value>
+    <value>Имеется ли Владение Уходом за Животными</value>
   </data>
   <data name="Macro_SkillsHasPAnimalHandling_Name" xml:space="preserve">
-    <value>Имеется ли Владение Дрессировкой</value>
+    <value>Имеется ли Владение Уходом за Животными</value>
   </data>
   <data name="Macro_SkillsHasPAnimalHandling_Text_0" xml:space="preserve">
-    <value>Имеется ли Владение Дрессировкой</value>
+    <value>Имеется ли Владение Уходом за Животными</value>
   </data>
   <data name="Macro_SkillsHasPArcana_FullInnerText" xml:space="preserve">
     <value>Имеется ли Владение Магией</value>
@@ -1980,22 +1980,22 @@
     <value>Имеется ли Владение Проницательностью</value>
   </data>
   <data name="Macro_SkillsHasPIntimidation_FullInnerText" xml:space="preserve">
-    <value>Имеется ли Владение Угрозой</value>
+    <value>Имеется ли Владение Запугиванием</value>
   </data>
   <data name="Macro_SkillsHasPIntimidation_Name" xml:space="preserve">
-    <value>Имеется ли Владение Угрозой</value>
+    <value>Имеется ли Владение Запугиванием</value>
   </data>
   <data name="Macro_SkillsHasPIntimidation_Text_0" xml:space="preserve">
-    <value>Имеется ли Владение Угрозой</value>
+    <value>Имеется ли Владение Запугиванием</value>
   </data>
   <data name="Macro_SkillsHasPInvestigation_FullInnerText" xml:space="preserve">
-    <value>Имеется ли Владение Расследованием</value>
+    <value>Имеется ли Владение Анализом</value>
   </data>
   <data name="Macro_SkillsHasPInvestigation_Name" xml:space="preserve">
-    <value>Имеется ли Владение Расследованием</value>
+    <value>Имеется ли Владение Анализом</value>
   </data>
   <data name="Macro_SkillsHasPInvestigation_Text_0" xml:space="preserve">
-    <value>Имеется ли Владение Расследованием</value>
+    <value>Имеется ли Владение Анализом</value>
   </data>
   <data name="Macro_SkillsHasPMedicine_FullInnerText" xml:space="preserve">
     <value>Имеется ли Владение Медициной</value>
@@ -2016,13 +2016,13 @@
     <value>Имеется ли Владение Природой</value>
   </data>
   <data name="Macro_SkillsHasPPerception_FullInnerText" xml:space="preserve">
-    <value>Имеется ли Владение Наблюдательностью</value>
+    <value>Имеется ли Владение Внимательностью</value>
   </data>
   <data name="Macro_SkillsHasPPerception_Name" xml:space="preserve">
-    <value>Имеется ли Владение Наблюдательностью</value>
+    <value>Имеется ли Владение Внимательностью</value>
   </data>
   <data name="Macro_SkillsHasPPerception_Text_0" xml:space="preserve">
-    <value>Имеется ли Владение Наблюдательностью</value>
+    <value>Имеется ли Владение Внимательностью</value>
   </data>
   <data name="Macro_SkillsHasPPerformance_FullInnerText" xml:space="preserve">
     <value>Имеется ли Владение Выступлением</value>
@@ -2097,22 +2097,22 @@
     <value>Значение Проницательности</value>
   </data>
   <data name="Macro_SkillsIntimidation_FullInnerText" xml:space="preserve">
-    <value>Значение Угрозы</value>
+    <value>Значение Запугивания</value>
   </data>
   <data name="Macro_SkillsIntimidation_Name" xml:space="preserve">
-    <value>Значение Угрозы</value>
+    <value>Значение Запугивания</value>
   </data>
   <data name="Macro_SkillsIntimidation_Text_0" xml:space="preserve">
-    <value>Значение Угрозы</value>
+    <value>Значение Запугивания</value>
   </data>
   <data name="Macro_SkillsInvestigation_FullInnerText" xml:space="preserve">
-    <value>Значение Расследования</value>
+    <value>Значение Анализа</value>
   </data>
   <data name="Macro_SkillsInvestigation_Name" xml:space="preserve">
-    <value>Значение Расследования</value>
+    <value>Значение Анализа</value>
   </data>
   <data name="Macro_SkillsInvestigation_Text_0" xml:space="preserve">
-    <value>Значение Расследования</value>
+    <value>Значение Анализа</value>
   </data>
   <data name="Macro_SkillsMedicine_FullInnerText" xml:space="preserve">
     <value>Значение Медицины</value>
@@ -2133,13 +2133,13 @@
     <value>Значение Природы</value>
   </data>
   <data name="Macro_SkillsPerception_FullInnerText" xml:space="preserve">
-    <value>Значение Наблюдательности</value>
+    <value>Значение Внимательности</value>
   </data>
   <data name="Macro_SkillsPerception_Name" xml:space="preserve">
-    <value>Значение Наблюдательности</value>
+    <value>Значение Внимательности</value>
   </data>
   <data name="Macro_SkillsPerception_Text_0" xml:space="preserve">
-    <value>Значение Наблюдательности</value>
+    <value>Значение Внимательности</value>
   </data>
   <data name="Macro_SkillsPerformance_FullInnerText" xml:space="preserve">
     <value>Значение Выступления</value>
@@ -2744,11 +2744,23 @@
   <data name="Message_ContainerWithItems_Title" xml:space="preserve">
     <value>Удаляемый предмет содержит предметы!</value>
   </data>
+  <data name="Message_Local_NoValue_Desc" xml:space="preserve">
+    <value>У редактируемой переменной не указано значение, либо же оно не совпадает с типом переменной. Пожалуйста, укажите значение в поле текста</value>
+  </data>
+  <data name="Message_Local_NoValue_Title" xml:space="preserve">
+    <value>Значение переменной не указано</value>
+  </data>
+  <data name="Message_Local_SameName_Desc" xml:space="preserve">
+    <value>Переменная с таким названием уже существует. Пожалуйста, укажите другое название</value>
+  </data>
+  <data name="Message_Local_SameName_Title" xml:space="preserve">
+    <value>Переменная с таким названием уже существует</value>
+  </data>
   <data name="R20_Actions" xml:space="preserve">
     <value>Действия</value>
   </data>
   <data name="R20_AdvancedRoll" xml:space="preserve">
-    <value>Комплексный Бросок</value>
+    <value>Комплексный</value>
   </data>
   <data name="R20_AsMulRolls" xml:space="preserve">
     <value>Как несколько</value>
