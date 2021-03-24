@@ -72,43 +72,193 @@
             this.InitializeComponent();
             this.Images.LoadFromPhysicalFolder("./Images/Lists/Spells");
 
-            this.Spells0.CollectionChanged += (o, e) => this.List_Cantrips.Items.Refresh();
+            this.Spells0.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Cantrips.Items.Refresh();
+            };
+
             this.List_Cantrips.ItemsSource = this.Spells0;
             this.List_Cantrips.Items.Refresh();
 
-            this.Spells1.CollectionChanged += (o, e) => this.List_Spells1.Items.Refresh();
+            this.Spells1.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells1.Items.Refresh();
+            };
+
             this.List_Spells1.ItemsSource = this.Spells1;
             this.List_Spells1.Items.Refresh();
 
-            this.Spells2.CollectionChanged += (o, e) => this.List_Spells2.Items.Refresh();
+            this.Spells2.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells2.Items.Refresh();
+            };
+
             this.List_Spells2.ItemsSource = this.Spells2;
             this.List_Spells2.Items.Refresh();
 
-            this.Spells3.CollectionChanged += (o, e) => this.List_Spells3.Items.Refresh();
+            this.Spells3.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells3.Items.Refresh();
+            };
+
             this.List_Spells3.ItemsSource = this.Spells3;
             this.List_Spells3.Items.Refresh();
 
-            this.Spells4.CollectionChanged += (o, e) => this.List_Spells4.Items.Refresh();
+            this.Spells4.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells4.Items.Refresh();
+            };
+
             this.List_Spells4.ItemsSource = this.Spells4;
             this.List_Spells4.Items.Refresh();
 
-            this.Spells5.CollectionChanged += (o, e) => this.List_Spells5.Items.Refresh();
+            this.Spells5.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells5.Items.Refresh();
+            };
+
             this.List_Spells5.ItemsSource = this.Spells5;
             this.List_Spells5.Items.Refresh();
 
-            this.Spells6.CollectionChanged += (o, e) => this.List_Spells6.Items.Refresh();
+            this.Spells6.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells6.Items.Refresh();
+            };
+
             this.List_Spells6.ItemsSource = this.Spells6;
             this.List_Spells6.Items.Refresh();
 
-            this.Spells7.CollectionChanged += (o, e) => this.List_Spells7.Items.Refresh();
+            this.Spells7.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells7.Items.Refresh();
+            };
+
             this.List_Spells7.ItemsSource = this.Spells7;
             this.List_Spells7.Items.Refresh();
 
-            this.Spells8.CollectionChanged += (o, e) => this.List_Spells8.Items.Refresh();
+            this.Spells8.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells8.Items.Refresh();
+            };
+
             this.List_Spells8.ItemsSource = this.Spells8;
             this.List_Spells8.Items.Refresh();
 
-            this.Spells9.CollectionChanged += (o, e) => this.List_Spells9.Items.Refresh();
+            this.Spells9.CollectionChanged += (o, e) =>
+            {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Spell f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
+                this.List_Spells9.Items.Refresh();
+            };
+
             this.List_Spells9.ItemsSource = this.Spells9;
             this.List_Spells9.Items.Refresh();
         }
@@ -159,84 +309,84 @@
             switch (index)
             {
                 case 0:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Cantrips.Items.Refresh();
-                    this.List_Cantrips.ItemsSource = spells;
-                    this.List_Cantrips.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Cantrips.Items.Refresh();
+                        this.List_Cantrips.ItemsSource = spells;
+                        this.List_Cantrips.Items.Refresh();
+                        break;
+                    }
 
                 case 1:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells1.Items.Refresh();
-                    this.List_Spells1.ItemsSource = spells;
-                    this.List_Spells1.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells1.Items.Refresh();
+                        this.List_Spells1.ItemsSource = spells;
+                        this.List_Spells1.Items.Refresh();
+                        break;
+                    }
 
                 case 2:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells2.Items.Refresh();
-                    this.List_Spells2.ItemsSource = spells;
-                    this.List_Spells2.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells2.Items.Refresh();
+                        this.List_Spells2.ItemsSource = spells;
+                        this.List_Spells2.Items.Refresh();
+                        break;
+                    }
 
                 case 3:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells3.Items.Refresh();
-                    this.List_Spells3.ItemsSource = spells;
-                    this.List_Spells3.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells3.Items.Refresh();
+                        this.List_Spells3.ItemsSource = spells;
+                        this.List_Spells3.Items.Refresh();
+                        break;
+                    }
 
                 case 4:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells4.Items.Refresh();
-                    this.List_Spells4.ItemsSource = spells;
-                    this.List_Spells4.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells4.Items.Refresh();
+                        this.List_Spells4.ItemsSource = spells;
+                        this.List_Spells4.Items.Refresh();
+                        break;
+                    }
 
                 case 5:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells5.Items.Refresh();
-                    this.List_Spells5.ItemsSource = spells;
-                    this.List_Spells5.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells5.Items.Refresh();
+                        this.List_Spells5.ItemsSource = spells;
+                        this.List_Spells5.Items.Refresh();
+                        break;
+                    }
 
                 case 6:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells6.Items.Refresh();
-                    this.List_Spells6.ItemsSource = spells;
-                    this.List_Spells6.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells6.Items.Refresh();
+                        this.List_Spells6.ItemsSource = spells;
+                        this.List_Spells6.Items.Refresh();
+                        break;
+                    }
 
                 case 7:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells7.Items.Refresh();
-                    this.List_Spells7.ItemsSource = spells;
-                    this.List_Spells7.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells7.Items.Refresh();
+                        this.List_Spells7.ItemsSource = spells;
+                        this.List_Spells7.Items.Refresh();
+                        break;
+                    }
 
                 case 8:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells8.Items.Refresh();
-                    this.List_Spells8.ItemsSource = spells;
-                    this.List_Spells8.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells8.Items.Refresh();
+                        this.List_Spells8.ItemsSource = spells;
+                        this.List_Spells8.Items.Refresh();
+                        break;
+                    }
 
                 case 9:
-                {
-                    spells.CollectionChanged += (o, e) => this.List_Spells9.Items.Refresh();
-                    this.List_Spells9.ItemsSource = spells;
-                    this.List_Spells9.Items.Refresh();
-                    break;
-                }
+                    {
+                        spells.CollectionChanged += (o, e) => this.List_Spells9.Items.Refresh();
+                        this.List_Spells9.ItemsSource = spells;
+                        this.List_Spells9.Items.Refresh();
+                        break;
+                    }
             }
         }
 

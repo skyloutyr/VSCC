@@ -6,6 +6,7 @@
     using System.Windows.Controls;
     using System.Windows.Media;
     using VSCC.DataType;
+    using VSCC.State;
 
     /// <summary>
     /// Interaction logic for CreateIItemWindow.xaml
@@ -39,7 +40,7 @@
             if (ofd.ShowDialog() ?? false)
             {
                 string path = ofd.FileName;
-                string name = System.IO.Path.GetFileNameWithoutExtension(path);
+                string name = path.Substring(AppState.Current.TInventory.Images.BaseFolderPath.Length);
                 ((InventoryItem)this.DataContext).ImageIndex = name;
             }
         }

@@ -12,9 +12,11 @@
 
     public class ImageListModel : IList<ImageModel>
     {
-        public bool Async { get; set; } = true;
+        private Dictionary<string, ImageModel> _imgs = new Dictionary<string, ImageModel>();
+
         public ImageModel this[int index] { get => this.Images[index]; set => this.Images[index] = value; }
-        public ImageModel this[string index] { get => string.IsNullOrEmpty(index) ? null : this.Images.FirstOrDefault(i => i.Name.ToLower().Equals(index.ToLower())); set => this.Images[this.Images.IndexOf(this.Images.First(i => i.Name.ToLower().Equals(index.ToLower())))] = value; }
+        public ImageModel this[string index] { get => this.GetImage(index); }
+        public string BaseFolderPath { get; set; }
 
         public ObservableCollection<ImageModel> Images { get; } = new ObservableCollection<ImageModel>();
 
@@ -31,17 +33,43 @@
         public void RemoveAt(int index) => this.Images.RemoveAt(index);
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
+        public ImageModel GetImage(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return null;
+            }
+
+            if (!this._imgs.ContainsKey(name))
+            {
+                ImageModel im = this.FirstOrDefault(i => i.Name.Equals(name));
+                if (im != null)
+                {
+                    im.Load();
+                }
+
+                this._imgs[name] = im;
+            }
+
+            return this._imgs[name];
+        }
+
+        public string TryFindName(string oldName)
+        {
+            oldName += ".png";
+            ImageModel im = this.FirstOrDefault(i => i.Name.EndsWith(oldName));
+            return im?.Name ?? null;
+        }
+
         public void LoadFromPhysicalFolder(string folderPath)
         {
-            folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderPath);
+            folderPath = this.BaseFolderPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderPath));
             List<ImageModel> prev = new List<ImageModel>();
             foreach (string path in Directory.EnumerateFiles(folderPath, "*.*", SearchOption.AllDirectories))
             {
-                string savedPath = path;
+                string savedPath = Path.GetFullPath(path);
                 ImageModel img;
-                prev.Add(img = new ImageModel(Path.GetFileNameWithoutExtension(path), s => new Tuple<bool, Func<Stream>>(true, () => File.OpenRead(savedPath))));
-                img.Async = this.Async;
-                img.Load();
+                prev.Add(img = new ImageModel(path.Substring(folderPath.Length), s => new Tuple<bool, Func<Stream>>(true, () => File.OpenRead(savedPath))));
             }
 
             prev.Sort((l, r) => string.Compare(l.Name, r.Name));
@@ -68,8 +96,6 @@
                     Stream st = kv.Value as Stream;
                     string nameSubstr = path.Substring(path.LastIndexOf('/', path.LastIndexOf('.') - 1) + 1);
                     prev.Add(img = new ImageModel(nameSubstr.Substring(0, nameSubstr.LastIndexOf('.')).Trim(), s => new Tuple<bool, Func<Stream>>(true, () => st)));
-                    img.Async = this.Async;
-                    img.Load();
                 }
             }
 

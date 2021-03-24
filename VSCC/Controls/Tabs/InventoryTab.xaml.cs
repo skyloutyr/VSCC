@@ -33,6 +33,17 @@
             this.Images.LoadFromPhysicalFolder("./Images/Lists/Items");
             this.Items.CollectionChanged += (o, e) =>
             {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is InventoryItem f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
                 if (!this._haltRefresh)
                 {
                     this.Inventory.Items.Refresh();
@@ -67,6 +78,17 @@
 
             this.Items.CollectionChanged += (o, e) =>
             {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is InventoryItem f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
                 this.Inventory.Items.Refresh();
                 foreach (ListView icollection in this.ChildCollections)
                 {

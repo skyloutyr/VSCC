@@ -196,7 +196,7 @@
         public ImageListModel ImageList { get; set; }
 
         [JsonIgnore]
-        public BitmapImage PictureProperty => this.image_index == null ? null : this.ImageList[this.image_index].Image;
+        public BitmapImage PictureProperty => this.image_index == null ? null : this.ImageList[this.image_index]?.Image ?? null;
 
 
         public Guid ObjectID { get; set; } = Guid.NewGuid();

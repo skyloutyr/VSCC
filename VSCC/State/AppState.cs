@@ -107,17 +107,17 @@
             switch (saveVersion)
             {
                 case 1:
-                {
-                    this.LoadV1(s);
-                    flags = LoadFlags.V2AdaptV1;
-                    break;
-                }
+                    {
+                        this.LoadV1(s);
+                        flags = LoadFlags.V2AdaptV1;
+                        break;
+                    }
 
                 case 2:
-                {
-                    this.LoadV2(s, ref flags);
-                    break;
-                }
+                    {
+                        this.LoadV2(s, ref flags);
+                        break;
+                    }
 
                 default:
                     throw new NotSupportedException($"The specified save file version can't be loaded - no format converter exists for version { saveVersion }.");
@@ -239,6 +239,14 @@
             if (this._tempLoadObject.ContainsKey("Extras") && ((JObject)this._tempLoadObject["Extras"]).ContainsKey("Feats"))
             {
                 flags |= LoadFlags.V2OldFeats | LoadFlags.KeepLoadObject;
+            }
+
+            if (this.State.Inventory.Items.Any(i => !string.IsNullOrEmpty(i.ImageIndex) && i.ImageIndex[0] != '\\') ||
+                this.State.Extras.FeatsArray.Any(i => !string.IsNullOrEmpty(i.ImageIndex) && i.ImageIndex[0] != '\\') ||
+                this.State.Extras.TraitsArray.Any(i => !string.IsNullOrEmpty(i.ImageIndex) && i.ImageIndex[0] != '\\') ||
+                this.State.Spellbook.AllSpells.Any(i => !string.IsNullOrEmpty(i.ImageIndex) && i.ImageIndex[0] != '\\'))
+            {
+                flags |= LoadFlags.V2OldImageModels;
             }
         }
 

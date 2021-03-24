@@ -6,6 +6,7 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using VSCC.DataType;
+    using VSCC.State;
 
     /// <summary>
     /// Interaction logic for InventoryItemPanel.xaml
@@ -14,7 +15,19 @@
     {
         public InventoryItemPanel() => this.InitializeComponent();
 
-        public void SetDataContext(InventoryItem context) => this.DataContext = this.Picture.DataContext = this.SName.DataContext = context;
+        public void SetDataContext(InventoryItem context)
+        {
+            if (context != null && context.ImageList == null)
+            {
+                context.ImageList = AppState.Current.TInventory.Images;
+                if (!string.IsNullOrEmpty(context.ImageIndex) && context.ImageIndex[0] != '\\') // Old Item
+                {
+                    context.ImageIndex = AppState.Current.TInventory.Images.TryFindName(context.ImageIndex);
+                }
+            }
+
+            this.DataContext = this.Picture.DataContext = this.SName.DataContext = context;
+        }
 
         private void UserControl_PreviewDrop(object sender, DragEventArgs e)
         {

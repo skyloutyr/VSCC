@@ -221,6 +221,41 @@
                         AppState.Current.State.Extras.TraitsArray.Add(f);
                     }
                 }
+
+                if (flags.HasFlag(LoadFlags.V2OldImageModels))
+                {
+                    foreach (InventoryItem ii in AppState.Current.State.Inventory.Items)
+                    {
+                        if (!string.IsNullOrEmpty(ii.ImageIndex) && ii.ImageIndex[0] != '\\')
+                        {
+                            ii.ImageIndex = AppState.Current.TInventory.Images.TryFindName(ii.ImageIndex);
+                        }
+                    }
+
+                    foreach (Feat f in AppState.Current.State.Extras.FeatsArray)
+                    {
+                        if (!string.IsNullOrEmpty(f.ImageIndex) && f.ImageIndex[0] != '\\')
+                        {
+                            f.ImageIndex = AppState.Current.TExtras.Images.TryFindName(f.ImageIndex);
+                        }
+                    }
+
+                    foreach (Feat f in AppState.Current.State.Extras.TraitsArray)
+                    {
+                        if (!string.IsNullOrEmpty(f.ImageIndex) && f.ImageIndex[0] != '\\')
+                        {
+                            f.ImageIndex = AppState.Current.TExtras.Images.TryFindName(f.ImageIndex);
+                        }
+                    }
+
+                    foreach (Spell s in AppState.Current.State.Spellbook.AllSpells)
+                    {
+                        if (!string.IsNullOrEmpty(s.ImageIndex) && s.ImageIndex[0] != '\\')
+                        {
+                            s.ImageIndex = AppState.Current.TSpellbook.Images.TryFindName(s.ImageIndex);
+                        }
+                    }
+                }
             }
         }
 

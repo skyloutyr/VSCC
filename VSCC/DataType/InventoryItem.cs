@@ -47,7 +47,7 @@
         public ItemTemplate Template { get; set; }
 
         [JsonIgnore]
-        public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TInventory.Images)[this.ImageIndex]?.Image ?? null;
+        public BitmapImage PictureProperty => this.imageIndex == null ? null : this.ImageList[this.ImageIndex].Image;
 
         [JsonIgnore]
         public string AmountProperty => $"{ this.Amount }";

@@ -22,7 +22,7 @@
     {
         public ICommand ToSpellCommand { get; set; }
         public List<SpellTemplate> AllSpellTemplates { get; } = new List<SpellTemplate>();
-        public ImageListModel SchoolImages { get; } = new ImageListModel() { Async = false };
+        public ImageListModel SchoolImages { get; } = new ImageListModel();
         public ScrollViewer ScrollViewer_Items => ItemIndexTab.GetChildOfType<ScrollViewer>(this.ListView_SpellTemplates);
 
         public SpellIndexTab()

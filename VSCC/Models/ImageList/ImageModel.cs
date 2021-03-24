@@ -2,7 +2,6 @@
 {
     using System;
     using System.IO;
-    using System.Threading.Tasks;
     using System.Windows.Media.Imaging;
     using System.Windows.Threading;
 
@@ -25,47 +24,35 @@
 
         public void Load()
         {
-            void a()
+            Tuple<bool, Func<Stream>> d = this._imageSourceGetter(this.Name);
+            if (d.Item1)
             {
-                Tuple<bool, Func<Stream>> d = this._imageSourceGetter(this.Name);
-                if (d.Item1)
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    using (MemoryStream ms = new MemoryStream())
+                    using (Stream s = d.Item2())
                     {
-                        using (Stream s = d.Item2())
-                        {
-                            s.CopyTo(ms);
-                        }
-
-                        ms.Position = 0;
-                        BitmapImage bi = new BitmapImage();
-                        bi.BeginInit();
-                        bi.CacheOption = BitmapCacheOption.OnLoad;
-                        bi.StreamSource = ms;
-                        bi.EndInit();
-                        bi.StreamSource = null;
-                        bi.Freeze();
-                        if (this.Async)
-                        {
-                            Dispatcher.CurrentDispatcher.Invoke(() => this._img = bi);
-                        }
-                        else
-                        {
-                            this._img = bi;
-                        }
-
-                        this._finished = true;
+                        s.CopyTo(ms);
                     }
-                }
-            }
 
-            if (this.Async)
-            {
-                Task.Run(a);
-            }
-            else
-            {
-                a();
+                    ms.Position = 0;
+                    BitmapImage bi = new BitmapImage();
+                    bi.BeginInit();
+                    bi.CacheOption = BitmapCacheOption.OnLoad;
+                    bi.StreamSource = ms;
+                    bi.EndInit();
+                    bi.StreamSource = null;
+                    bi.Freeze();
+                    if (this.Async)
+                    {
+                        Dispatcher.CurrentDispatcher.Invoke(() => this._img = bi);
+                    }
+                    else
+                    {
+                        this._img = bi;
+                    }
+
+                    this._finished = true;
+                }
             }
         }
     }
