@@ -30,6 +30,17 @@
             this.Images.LoadFromPhysicalFolder("./Images/Lists/Skills");
             this.Feats.CollectionChanged += (o, e) =>
             {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Feat f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
                 if (!this._haltRefresh)
                 {
                     this.LV_Feats.Items.Refresh();
@@ -38,6 +49,17 @@
 
             this.Traits.CollectionChanged += (o, e) =>
             {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Feat f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
                 if (!this._haltRefresh)
                 {
                     this.LV_Traits.Items.Refresh();

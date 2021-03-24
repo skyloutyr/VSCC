@@ -196,7 +196,7 @@
         public ImageListModel ImageList { get; set; }
 
         [JsonIgnore]
-        public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TSpellbook.Images)[this.image_index]?.Image ?? null;
+        public BitmapImage PictureProperty => this.image_index == null ? null : this.ImageList[this.image_index].Image;
 
 
         public Guid ObjectID { get; set; } = Guid.NewGuid();
