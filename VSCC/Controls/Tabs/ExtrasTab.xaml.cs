@@ -171,7 +171,7 @@
 
         private Feat LoadFeatFromJSON(JObject item)
         {
-            JObject mitem = item["main_item"] as JObject;
+            JObject mitem = item["main_feat"] as JObject;
             Feat f = mitem.ToObject<Feat>();
             Guid oid = Guid.NewGuid();
             f.ObjectID = oid;
