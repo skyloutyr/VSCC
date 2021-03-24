@@ -6,6 +6,7 @@
     using System.Windows.Controls;
     using System.Windows.Media;
     using VSCC.DataType;
+    using VSCC.State;
 
     /// <summary>
     /// Interaction logic for CreateSpellWindow.xaml
@@ -38,7 +39,7 @@
 
             if (ofd.ShowDialog() ?? false)
             {
-                ((Spell)this.DataContext).ImageIndex = System.IO.Path.GetFileNameWithoutExtension(ofd.FileName);
+                ((Spell)this.DataContext).ImageIndex = ofd.FileName.Substring(AppState.Current.TSpellbook.Images.BaseFolderPath.Length);
             }
         }
 

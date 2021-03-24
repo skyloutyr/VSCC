@@ -6,6 +6,7 @@
     using System.Windows.Controls;
     using System.Windows.Media;
     using VSCC.DataType;
+    using VSCC.State;
 
     /// <summary>
     /// Interaction logic for CreateFeatWindow.xaml
@@ -27,7 +28,7 @@
 
             if (ofd.ShowDialog() ?? false)
             {
-                ((Feat)this.DataContext).ImageIndex = System.IO.Path.GetFileNameWithoutExtension(ofd.FileName);
+                ((Feat)this.DataContext).ImageIndex = ofd.FileName.Substring(AppState.Current.TExtras.Images.BaseFolderPath.Length);
             }
         }
 
