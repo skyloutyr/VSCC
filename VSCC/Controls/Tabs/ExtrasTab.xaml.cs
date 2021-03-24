@@ -90,6 +90,17 @@
 
             this.Feats.CollectionChanged += (o, e) =>
             {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Feat f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
                 this.LV_Feats.Items.Refresh();
             };
 
@@ -107,6 +118,17 @@
 
             this.Traits.CollectionChanged += (o, e) =>
             {
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Add)
+                {
+                    foreach (object t in e.NewItems)
+                    {
+                        if (t is Feat f)
+                        {
+                            f.ImageList = this.Images;
+                        }
+                    }
+                }
+
                 this.LV_Traits.Items.Refresh();
             };
 
@@ -232,8 +254,6 @@
         {
             Feat f = (Feat)((Button)sender).DataContext;
             f.ValueProperty = Math.Max(0, f.ValueProperty - 1);
-            Button sb = (Button)sender;
-
         }
 
         private void Btn_Value2Zero_Click(object sender, RoutedEventArgs e)

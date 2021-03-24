@@ -44,7 +44,6 @@
         [JsonIgnore]
         public ImageListModel ImageList { get; set; }
 
-        public ItemTemplate Template { get; set; }
 
         [JsonIgnore]
         public BitmapImage PictureProperty => this.imageIndex == null ? null : this.ImageList[this.ImageIndex].Image;
@@ -244,7 +243,6 @@
 
         public InventoryItem(ItemTemplate template) : base()
         {
-            this.Template = template;
             this.Name = template.Name;
             this.Amount = 1;
             if (float.TryParse(template.Weight, out float w))
@@ -270,7 +268,6 @@
             {
                 ImageList = this.ImageList,
                 ImageIndex = this.ImageIndex,
-                Template = this.Template,
                 Name = this.Name,
                 Amount = this.Amount,
                 Weight = this.Weight,
@@ -320,7 +317,6 @@
             Rarity = obj.Value<string>("Rarity"),
             Description = obj.Value<string>("Description"),
             ImageIndex = "",
-            Template = ItemTemplate.Empty,
             TitleColor = 0
         };
     }

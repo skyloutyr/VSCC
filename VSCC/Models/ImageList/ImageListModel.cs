@@ -12,7 +12,7 @@
 
     public class ImageListModel : IList<ImageModel>
     {
-        private Dictionary<string, ImageModel> _imgs = new Dictionary<string, ImageModel>();
+        private readonly Dictionary<string, ImageModel> _imgs = new Dictionary<string, ImageModel>();
 
         public ImageModel this[int index] { get => this.Images[index]; set => this.Images[index] = value; }
         public ImageModel this[string index] { get => this.GetImage(index); }

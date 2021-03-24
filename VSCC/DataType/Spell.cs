@@ -54,8 +54,6 @@
         [JsonIgnore]
         public BitmapImage PictureProperty => (this.ImageList ?? AppState.Current.TSpellbook.Images)[this.ImageIndex]?.Image ?? null;
 
-        public Templates.SpellTemplate Template { get; set; }
-
         [JsonIgnore]
         public Brush Color
         {
@@ -352,7 +350,6 @@
             }
 
             this.Target = string.Empty;
-            this.Template = template;
         }
 
         private void OnPropertyChanged(string name) => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -392,7 +389,6 @@
         {
             Name = this.Name,
             Level = this.Level,
-            Template = this.Template,
             School = this.School,
             Range = this.Range,
             Target = this.Target,
@@ -425,7 +421,6 @@
             Duration = obj.Value<string>("Duration"),
             CastTime = obj.Value<string>("CastTime"),
             SimpleDescription = "Spell converted from older version. Edit it to make this description be a thing.",
-            Template = Templates.SpellTemplate.Empty,
             TitleColor = 0
         };
     }
