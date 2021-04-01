@@ -22,7 +22,9 @@
         public override Type ReturnType => typeof(Expression);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ExpAdvRoll_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_ExpAdvRoll_Text_0"));
@@ -38,6 +40,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => new Expression($"[[{ this.Params[0].Execute(m, errors) }]]d[[{ this.Params[1].Execute(m, errors) }]]");
+
         public override void Serialize(BinaryWriter bw)
         {
             MacroSerializer.WriteMacroAction(bw, this.Params[0]);

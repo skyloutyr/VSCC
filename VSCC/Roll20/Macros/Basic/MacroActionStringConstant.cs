@@ -20,6 +20,7 @@
         public override string Category => this.Translate("Macro_Category_Basic");
 
         public override string[] CreateFormattedText() => new[] { this._s };
+
         public override string CreateFullInnerText() => $"{ this._s }";
 
         public override IEnumerable<Inline> CreateInnerText()
@@ -28,11 +29,15 @@
         }
 
         public override void Deserialize(BinaryReader br) => this._s = br.ReadString();
+
         public override object Execute(Macro m, List<string> errors) => this._s;
+
         public override void Serialize(BinaryWriter bw) => bw.Write(this._s);
+
         public override void SetDefaults() => this._s = "text";
 
         public virtual void SetValue(string s) => this._s = string.IsNullOrEmpty(s) ? " " : s;
+
         public virtual string GetValue() => this._s;
     }
 }

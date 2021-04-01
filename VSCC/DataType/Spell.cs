@@ -385,44 +385,50 @@
             return ret;
         }
 
-        public Spell Copy() => new Spell()
+        public Spell Copy()
         {
-            Name = this.Name,
-            Level = this.Level,
-            School = this.School,
-            Range = this.Range,
-            Target = this.Target,
-            CastTime = this.CastTime,
-            Duration = this.Duration,
-            SpellComponents = this.SpellComponents,
-            SimpleDescription = this.SimpleDescription,
-            Description = this.Description,
-            ImageIndex = this.ImageIndex,
-            ImageList = this.ImageList,
-            TitleColor = this.TitleColor,
-            ObjectID = this.ObjectID
-        };
+            return new Spell()
+            {
+                Name = this.Name,
+                Level = this.Level,
+                School = this.School,
+                Range = this.Range,
+                Target = this.Target,
+                CastTime = this.CastTime,
+                Duration = this.Duration,
+                SpellComponents = this.SpellComponents,
+                SimpleDescription = this.SimpleDescription,
+                Description = this.Description,
+                ImageIndex = this.ImageIndex,
+                ImageList = this.ImageList,
+                TitleColor = this.TitleColor,
+                ObjectID = this.ObjectID
+            };
+        }
     }
 
     public class SpellLegacyAdapter
     {
         public static bool CanApply(JObject obj) => obj.ContainsKey("Verbal") && obj["Verbal"].Type == JTokenType.Boolean;
 
-        public static Spell Apply(JObject obj) => new Spell()
+        public static Spell Apply(JObject obj)
         {
-            Name = obj.Value<string>("Name"),
-            SpellComponents = (obj.Value<bool>("Verbal") ? SpellComponents.Verbal : 0) | (obj.Value<bool>("Somatic") ? SpellComponents.Somatic : 0) | (obj.Value<bool>("Material") ? SpellComponents.Material : 0) | (obj.Value<bool>("Concentration") ? SpellComponents.Concentration : 0),
-            School = obj.Value<string>("School"),
-            Level = obj.Value<int>("Level"),
-            ImageIndex = string.Empty,
-            Target = obj.Value<string>("Target"),
-            Range = obj.Value<int>("Range").ToString(),
-            Description = obj.Value<string>("Description"),
-            Duration = obj.Value<string>("Duration"),
-            CastTime = obj.Value<string>("CastTime"),
-            SimpleDescription = "Spell converted from older version. Edit it to make this description be a thing.",
-            TitleColor = 0
-        };
+            return new Spell()
+            {
+                Name = obj.Value<string>("Name"),
+                SpellComponents = (obj.Value<bool>("Verbal") ? SpellComponents.Verbal : 0) | (obj.Value<bool>("Somatic") ? SpellComponents.Somatic : 0) | (obj.Value<bool>("Material") ? SpellComponents.Material : 0) | (obj.Value<bool>("Concentration") ? SpellComponents.Concentration : 0),
+                School = obj.Value<string>("School"),
+                Level = obj.Value<int>("Level"),
+                ImageIndex = string.Empty,
+                Target = obj.Value<string>("Target"),
+                Range = obj.Value<int>("Range").ToString(),
+                Description = obj.Value<string>("Description"),
+                Duration = obj.Value<string>("Duration"),
+                CastTime = obj.Value<string>("CastTime"),
+                SimpleDescription = "Spell converted from older version. Edit it to make this description be a thing.",
+                TitleColor = 0
+            };
+        }
     }
 
     [Flags]

@@ -263,8 +263,9 @@
 
         public void OnPropertyChanged(string name) => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        public InventoryItem Copy() =>
-            new InventoryItem()
+        public InventoryItem Copy()
+        {
+            return new InventoryItem()
             {
                 ImageList = this.ImageList,
                 ImageIndex = this.ImageIndex,
@@ -278,6 +279,7 @@
                 TitleColor = this.TitleColor,
                 ObjectID = this.ObjectID
             };
+        }
 
         public JObject ToShareObject()
         {
@@ -307,17 +309,20 @@
     {
         public static bool CanApply(JObject itemJson) => itemJson.ContainsKey("Cost") && itemJson["Cost"].Type == JTokenType.Integer;
 
-        public static InventoryItem Apply(JObject obj) => new InventoryItem()
+        public static InventoryItem Apply(JObject obj)
         {
-            Name = obj.Value<string>("Name"),
-            Amount = obj.Value<int>("Amount"),
-            Weight = obj.Value<int>("Weight"),
-            Cost = new CostValue(obj.Value<int>("Cost"), 0, 0),
-            Type = obj.Value<string>("Type"),
-            Rarity = obj.Value<string>("Rarity"),
-            Description = obj.Value<string>("Description"),
-            ImageIndex = "",
-            TitleColor = 0
-        };
+            return new InventoryItem()
+            {
+                Name = obj.Value<string>("Name"),
+                Amount = obj.Value<int>("Amount"),
+                Weight = obj.Value<int>("Weight"),
+                Cost = new CostValue(obj.Value<int>("Cost"), 0, 0),
+                Type = obj.Value<string>("Type"),
+                Rarity = obj.Value<string>("Rarity"),
+                Description = obj.Value<string>("Description"),
+                ImageIndex = "",
+                TitleColor = 0
+            };
+        }
     }
 }

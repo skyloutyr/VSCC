@@ -21,7 +21,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ILCostCopper_FullInnerText", this.Params[0].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };
@@ -65,7 +67,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ILCostTotalCopper_FullInnerText", this.Params[0].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_ILCostTotalCopper_Text_0"));

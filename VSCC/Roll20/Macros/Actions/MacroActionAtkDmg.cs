@@ -24,7 +24,9 @@
         public override Type ReturnType => typeof(void);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText(), this.Params[2].CreateFullInnerText(), this.Params[3].CreateFullInnerText(), this.Params[4].CreateFullInnerText(), this.Params[5].CreateFullInnerText(), this.Params[6].CreateFullInnerText(), this.Params[7].CreateFullInnerText(), this.Params[8].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ActionAtkDmg_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText(), this.Params[2].CreateFullInnerText(), this.Params[3].CreateFullInnerText(), this.Params[4].CreateFullInnerText(), this.Params[5].CreateFullInnerText(), this.Params[6].CreateFullInnerText(), this.Params[7].CreateFullInnerText(), this.Params[8].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield break;

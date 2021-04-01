@@ -19,7 +19,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => this.Translate("Macro_StatsCon_FullInnerText");
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_StatsCon_Text_0"));
@@ -30,6 +32,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => AppState.Current.State.General.StatCon;
+
         public override void Serialize(BinaryWriter bw)
         {
         }
@@ -52,7 +55,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => this.Translate("Macro_StatsModCon_FullInnerText");
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_StatsModCon_Text_0"));
@@ -63,6 +68,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => AppState.Current.State.General.StatModCon;
+
         public override void Serialize(BinaryWriter bw)
         {
         }
@@ -85,7 +91,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => this.Translate("Macro_StatsSaveCon_FullInnerText");
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_StatsSaveCon_Text_0"));
@@ -96,6 +104,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => AppState.Current.State.General.ConSave;
+
         public override void Serialize(BinaryWriter bw)
         {
         }

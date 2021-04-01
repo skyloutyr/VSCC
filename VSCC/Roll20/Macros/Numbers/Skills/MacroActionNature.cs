@@ -19,7 +19,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => this.Translate("Macro_SkillsNature_FullInnerText");
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_SkillsNature_Text_0"));
@@ -30,6 +32,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => AppState.Current.State.General.Nature;
+
         public override void Serialize(BinaryWriter bw)
         {
         }
@@ -52,7 +55,9 @@
         public override Type ReturnType => typeof(bool);
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => this.Translate("Macro_SkillsHasPNature_FullInnerText");
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_SkillsHasPNature_Text_0"));
@@ -63,6 +68,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => AppState.Current.State.General.ProfficientAtNature;
+
         public override void Serialize(BinaryWriter bw)
         {
         }

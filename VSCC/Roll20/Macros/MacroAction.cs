@@ -50,7 +50,8 @@
         public abstract void Serialize(BinaryWriter bw);
         public abstract void Deserialize(BinaryReader br);
 
-        public virtual string Translate(string key, params object[] pars) => string.Format((string)Resources.ResourceManager.GetString(key), pars);
+        public virtual string Translate(string key, params object[] pars) => string.Format(Resources.ResourceManager.GetString(key), pars);
+
         public virtual bool CreateCustomView(Grid grid) => false;
 
         public Regex GroupRX = new Regex(@"(?<=\[\[)([^\[\[].*?)(?=\]\])", RegexOptions.Compiled);

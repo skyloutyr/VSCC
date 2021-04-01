@@ -23,7 +23,9 @@
         public override bool IsQueryable => false;
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => string.Empty;
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield break;

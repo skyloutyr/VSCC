@@ -21,7 +21,9 @@
         public override Type ReturnType => typeof(string);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_SLSchool_FullInnerText", this.Params[0].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_SLSchool_Text_0"));

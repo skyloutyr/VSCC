@@ -21,7 +21,9 @@
         public override Type ReturnType => typeof(bool);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_SLIsCantrip_FullInnerText", this.Params[0].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };

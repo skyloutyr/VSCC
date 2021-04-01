@@ -19,7 +19,9 @@
         public override Type ReturnType => typeof(string);
 
         public override string[] CreateFormattedText() => new string[0];
+
         public override string CreateFullInnerText() => this.Translate("Macro_StringsGetCharName_FullInnerText");
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_StringsGetCharName_Text_0"));
@@ -30,6 +32,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => AppState.Current.State.General.Name;
+
         public override void Serialize(BinaryWriter bw)
         {
         }

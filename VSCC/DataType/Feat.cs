@@ -205,20 +205,23 @@
 
         public void OnPropertyChanged(string name) => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        public Feat Copy() => new Feat()
+        public Feat Copy()
         {
-            name = this.name,
-            desc = this.desc,
-            full_desc = this.full_desc,
-            image_index = this.image_index,
-            color_bar = this.color_bar,
-            color_bar_active = this.color_bar_active,
-            color_name = this.color_name,
-            amt = this.amt,
-            max = this.max,
-            ImageList = this.ImageList,
-            ObjectID = this.ObjectID
-        };
+            return new Feat()
+            {
+                name = this.name,
+                desc = this.desc,
+                full_desc = this.full_desc,
+                image_index = this.image_index,
+                color_bar = this.color_bar,
+                color_bar_active = this.color_bar_active,
+                color_name = this.color_name,
+                amt = this.amt,
+                max = this.max,
+                ImageList = this.ImageList,
+                ObjectID = this.ObjectID
+            };
+        }
 
         public JObject ToShareObject()
         {

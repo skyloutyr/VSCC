@@ -5,6 +5,7 @@
         public string InnerText { get; }
 
         public Expression(string innerText) => this.InnerText = innerText;
+
         public override string ToString() => this.InnerText;
     }
 }

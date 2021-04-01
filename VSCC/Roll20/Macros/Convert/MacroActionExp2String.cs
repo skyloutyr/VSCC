@@ -22,7 +22,9 @@
         public override Type ReturnType => typeof(string);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ExpExp2Str_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };

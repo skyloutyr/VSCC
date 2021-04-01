@@ -133,10 +133,7 @@
             return new SemVer.Version(localJObj["version"].ToObject<string>());
         }
 
-        public static VersionSpecV1 GetVersionSpecV1()
-        {
-            return JsonConvert.DeserializeObject<VersionSpecV1>(ReadRemoteVersion());
-        }
+        public static VersionSpecV1 GetVersionSpecV1() => JsonConvert.DeserializeObject<VersionSpecV1>(ReadRemoteVersion());
 
         private static string ReadRemoteUpdaterVersion()
         {

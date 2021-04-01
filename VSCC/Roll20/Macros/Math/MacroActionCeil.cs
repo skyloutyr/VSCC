@@ -21,7 +21,9 @@
         public override Type ReturnType => typeof(int);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_MathCeil_FullInnerText", this.Params[0].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Run(this.Translate("Macro_MathCeil_Text_0"));
@@ -30,9 +32,11 @@
         }
 
         public override void Deserialize(BinaryReader br) => this.Params[0] = MacroSerializer.ReadMacroAction(br);
+
         public override object Execute(Macro m, List<string> errors) => (int)Math.Ceiling((float)this.Params[0].Execute(m, errors));
 
         public override void Serialize(BinaryWriter bw) => MacroSerializer.WriteMacroAction(bw, this.Params[0]);
+
         public override void SetDefaults()
         {
             this._backend[0] = new MacroActionRealConstant();

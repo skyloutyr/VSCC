@@ -21,7 +21,9 @@
         public override Type ReturnType => typeof(string);
 
         public override string[] CreateFormattedText() => new string[] { $"{ this.Params[0].CreateFullInnerText() }" };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ConvReal2Str_FullInnerText", this.Params[0].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };
@@ -29,8 +31,11 @@
         }
 
         public override void Deserialize(BinaryReader br) => this.Params[0] = MacroSerializer.ReadMacroAction(br);
+
         public override object Execute(Macro m, List<string> errors) => this._backend[0].Execute(m, errors).ToString();
+
         public override void Serialize(BinaryWriter bw) => MacroSerializer.WriteMacroAction(bw, this.Params[0]);
+
         public override void SetDefaults()
         {
             this._backend[0] = new MacroActionRealConstant();

@@ -41,6 +41,7 @@
         public override string Category => this.Translate("Macro_Category_Actions");
 
         public override string[] CreateFormattedText() => this._backend.Select(s => s.CreateFullInnerText()).ToArray();
+
         public override string CreateFullInnerText() => this.Translate("Macro_ActionSpell_FullInnerText", this.CreateFormattedText());
 
         public override IEnumerable<Inline> CreateInnerText()

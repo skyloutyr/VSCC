@@ -21,6 +21,7 @@
         public override string Category => this.Translate("Macro_Category_Actions");
 
         public override string[] CreateFormattedText() => new string[] { $"{ this.Params[0].CreateFullInnerText() }" };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ActionMsg_FullInnerText", this.Params[0].CreateFullInnerText());
 
         public override IEnumerable<Inline> CreateInnerText()

@@ -21,7 +21,9 @@
         public override Type ReturnType => typeof(Expression);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ExpSum_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };
@@ -36,6 +38,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => new Expression($"{ this.Params[0].Execute(m, errors) } + { this.Params[1].Execute(m, errors) }");
+
         public override void Serialize(BinaryWriter bw)
         {
             MacroSerializer.WriteMacroAction(bw, this.Params[0]);
@@ -66,7 +69,9 @@
         public override Type ReturnType => typeof(Expression);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ExpSum_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };
@@ -81,6 +86,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => new Expression($"{ this.Params[0].Execute(m, errors) } + { this.Params[1].Execute(m, errors) }");
+
         public override void Serialize(BinaryWriter bw)
         {
             MacroSerializer.WriteMacroAction(bw, this.Params[0]);
@@ -111,7 +117,9 @@
         public override Type ReturnType => typeof(Expression);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ExpHPSum_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };
@@ -127,6 +135,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => new Expression($"[[{ this.Params[0].Execute(m, errors) } + { this.Params[1].Execute(m, errors) }]]");
+
         public override void Serialize(BinaryWriter bw)
         {
             MacroSerializer.WriteMacroAction(bw, this.Params[0]);
@@ -157,7 +166,9 @@
         public override Type ReturnType => typeof(Expression);
 
         public override string[] CreateFormattedText() => new string[] { this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText() };
+
         public override string CreateFullInnerText() => this.Translate("Macro_ExpHPSum_FullInnerText", this.Params[0].CreateFullInnerText(), this.Params[1].CreateFullInnerText());
+
         public override IEnumerable<Inline> CreateInnerText()
         {
             yield return new Hyperlink(new Run()) { Tag = 0 };
@@ -173,6 +184,7 @@
         }
 
         public override object Execute(Macro m, List<string> errors) => new Expression($"[[{ this.Params[0].Execute(m, errors) } + { this.Params[1].Execute(m, errors) }]]");
+
         public override void Serialize(BinaryWriter bw)
         {
             MacroSerializer.WriteMacroAction(bw, this.Params[0]);

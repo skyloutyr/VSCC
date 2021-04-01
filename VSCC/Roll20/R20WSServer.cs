@@ -23,18 +23,21 @@
         public static Action ClientDisconnectCallback { get; set; }
         public static bool Connected { get; set; }
 
-        public static void Roll(string r1, string r2, string type, string action) => Send(new CommandPacket()
+        public static void Roll(string r1, string r2, string type, string action)
         {
-            Template = Template.Simple,
-            Data = new TemplateDataSimple()
+            Send(new CommandPacket()
             {
-                R1 = $"[[{ r1 }]]",
-                R2 = r2 == null ? r2 : $"[[{ r2 }]]",
-                CharName = AppState.Current.State.General.Name,
-                Mod = action,
-                Name = type
-            }
-        });
+                Template = Template.Simple,
+                Data = new TemplateDataSimple()
+                {
+                    R1 = $"[[{ r1 }]]",
+                    R2 = r2 == null ? r2 : $"[[{ r2 }]]",
+                    CharName = AppState.Current.State.General.Name,
+                    Mod = action,
+                    Name = type
+                }
+            });
+        }
 
         public static void Send(object packet) => SendRaw(JsonConvert.SerializeObject(packet, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
 
