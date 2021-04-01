@@ -3,7 +3,10 @@
     using Microsoft.Win32;
     using System;
     using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
     using System.Net;
+    using System.Reflection;
     using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
@@ -30,6 +33,35 @@
 
         public MainWindow()
         {
+            try
+            {
+                if (Settings.Default.WasLastShutdownUnexpected)
+                {
+                    if (!this.TryFindResourceSafe("CrashTitle", out string title))
+                    {
+                        title = "Unexpected last shutdown!";
+                    }
+
+                    if (!this.TryFindResourceSafe("CrashDesc", out string desc))
+                    {
+                        desc = "The last shutdown performed by the application was unexpected. Do you want to reset to default settings?";
+                    }
+
+                    if (MessageBox.Show(desc, title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        Settings.Default.Reset();
+                        Settings.Default.Save();
+                    }
+
+                    Settings.Default.WasLastShutdownUnexpected = false;
+                    Settings.Default.Save();
+                }
+            }
+            catch
+            {
+                // NOOP
+            }
+
             this.Dispatcher.UnhandledException += this.Dispatcher_UnhandledException;
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.AppThread = Thread.CurrentThread;
@@ -55,22 +87,38 @@
             {
                 try
                 {
-                    if (!this.TryFindResourceSafe("CrashTitle", out string title))
-                    {
-                        title = "Application has terminated!";
-                    }
+                    Settings.Default.WasLastShutdownUnexpected = true;
+                    Settings.Default.Save();
+                    e.Handled = true;
+                    string text = @"
+Host Information:
+OS: {0},
+OSVersion: {1},
+Settings: 
+{2}
+App Location contains invalid characters: {3},
+App Version: {4},
+========================================================
+Exception Information:
+Exception was: {5},
+Call Stack: {6},
+Full Exception Object Dump:
+{7}
+";
 
-                    if (!this.TryFindResourceSafe("CrashDesc", out string desc))
-                    {
-                        desc = "The application has terminated with an unhandled exception: {0}[{1}]. Would you like to reset the application settings to factory default?";
-                    }
+                    text = string.Format(text,
+                        nameof(Environment.OSVersion.Platform),
+                        Environment.OSVersion.Version.ToString(),
+                        DumpObject2String(Settings.Default),
+                        Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory).Any(c => c > 127),
+                        VersionChecker.GetCurrentVersion(),
+                        e.Exception.GetType().Name,
+                        e.Exception.StackTrace,
+                        e.Exception.ToString()
+                    );
 
-                    desc = string.Format(desc, e.Exception, e.Exception.HResult);
-                    if (MessageBox.Show(desc, title, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                    {
-                        Settings.Default.Reset();
-                        Settings.Default.Save();
-                    }
+                    System.IO.File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "crashinfo-" + DateTimeOffset.Now.ToString() + ".txt"), text);
+                    Application.Current.Shutdown(-0x000FFFF); //HRESULT E_UNEXPECTED
                 }
                 catch
                 {
@@ -93,6 +141,18 @@
                 resource = string.Empty;
                 return false;
             }
+        }
+
+        private static string DumpObject2String(object obj)
+        {
+            string ret = "";
+            Type t = obj.GetType();
+            foreach (PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
+            {
+                ret += pi.Name + ": " + pi.GetValue(obj).ToString();
+            }
+
+            return ret;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
