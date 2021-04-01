@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CrashDesc" xml:space="preserve">
-    <value>The application has terminated with an unhandled exception: {0}[{1}]. Would you like to reset the application settings to factory default?</value>
+    <value>The last shutdown performed by the application was unexpected. Do you want to reset to default settings?</value>
   </data>
   <data name="CrashTitle" xml:space="preserve">
-    <value>Application has terminated!</value>
+    <value>Unexpected last shutdown!</value>
   </data>
   <data name="CreateItem_Amount" xml:space="preserve">
     <value>Amount</value>
@@ -243,6 +243,12 @@
   </data>
   <data name="Edit_Languages" xml:space="preserve">
     <value>Languages</value>
+  </data>
+  <data name="Error_ImageExtInvalidDesc" xml:space="preserve">
+    <value>The extension for the image you've selected is not supported. The supported formats are JPG, PNG, BMP, GIF, TIFF, JPEG XR and ICO.</value>
+  </data>
+  <data name="Error_ImageExtInvalidTitle" xml:space="preserve">
+    <value>Invalid image specified!</value>
   </data>
   <data name="Extras_AaB" xml:space="preserve">
     <value>Appearance and Bio</value>

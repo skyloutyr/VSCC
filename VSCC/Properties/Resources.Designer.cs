@@ -70,7 +70,7 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The application has terminated with an unhandled exception: {0}[{1}]. Would you like to reset the application settings to factory default?.
+        ///   Looks up a localized string similar to The last shutdown performed by the application was unexpected. Do you want to reset to default settings?.
         /// </summary>
         public static string CrashDesc {
             get {
@@ -79,7 +79,7 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application has terminated!.
+        ///   Looks up a localized string similar to Unexpected last shutdown!.
         /// </summary>
         public static string CrashTitle {
             get {
@@ -454,6 +454,24 @@ namespace VSCC.Properties {
         public static string Edit_Languages {
             get {
                 return ResourceManager.GetString("Edit_Languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The extension for the image you&apos;ve selected is not supported. The supported formats are JPG, PNG, BMP, GIF, TIFF, JPEG XR and ICO..
+        /// </summary>
+        public static string Error_ImageExtInvalidDesc {
+            get {
+                return ResourceManager.GetString("Error_ImageExtInvalidDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid image specified!.
+        /// </summary>
+        public static string Error_ImageExtInvalidTitle {
+            get {
+                return ResourceManager.GetString("Error_ImageExtInvalidTitle", resourceCulture);
             }
         }
         

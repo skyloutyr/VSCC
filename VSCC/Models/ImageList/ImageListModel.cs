@@ -9,28 +9,43 @@
     using System.Linq;
     using System.Reflection;
     using System.Resources;
+    using System.Windows;
 
     public class ImageListModel : IList<ImageModel>
     {
+        private static readonly string[] ImageExtensions = new[] {
+            ".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff", ".ico", ".jxr", ".hdp", ".wdp"
+        };
+
         private readonly Dictionary<string, ImageModel> _imgs = new Dictionary<string, ImageModel>();
 
         public ImageModel this[int index] { get => this.Images[index]; set => this.Images[index] = value; }
-        public ImageModel this[string index] { get => this.GetImage(index); }
+        public ImageModel this[string index] => this.GetImage(index);
         public string BaseFolderPath { get; set; }
+        public string ImportedFolderPath => Path.Combine(this.BaseFolderPath, "Imported");
 
         public ObservableCollection<ImageModel> Images { get; } = new ObservableCollection<ImageModel>();
 
         public int Count => this.Images.Count;
         public bool IsReadOnly => false;
         public void Add(ImageModel item) => this.Images.Add(item);
+
         public void Clear() => this.Images.Clear();
+
         public bool Contains(ImageModel item) => this.Images.Contains(item);
+
         public void CopyTo(ImageModel[] array, int arrayIndex) => this.Images.CopyTo(array, arrayIndex);
+
         public IEnumerator<ImageModel> GetEnumerator() => this.Images.GetEnumerator();
+
         public int IndexOf(ImageModel item) => this.Images.IndexOf(item);
+
         public void Insert(int index, ImageModel item) => this.Images.Insert(index, item);
+
         public bool Remove(ImageModel item) => this.Images.Remove(item);
+
         public void RemoveAt(int index) => this.Images.RemoveAt(index);
+
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
         public ImageModel GetImage(string name)
@@ -104,6 +119,39 @@
             {
                 this.Images.Add(mdl);
             }
+        }
+
+        public bool CheckImageValidity(ref string filePath)
+        {
+            string ext = Path.GetExtension(filePath).ToLower();
+            if (!ImageExtensions.Any(e => e.Equals(ext)))
+            {
+                MessageBox.Show(MainWindow.Translate("Error_ImageExtInvalidDesc"), MainWindow.Translate("Error_ImageExtInvalidTitle"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            if (!filePath.StartsWith(this.BaseFolderPath)) // Not in base directory!
+            {
+                if (!Directory.Exists(this.ImportedFolderPath))
+                {
+                    Directory.CreateDirectory(this.ImportedFolderPath);
+                }
+
+                string nPath = Path.Combine(this.ImportedFolderPath, Path.GetFileName(filePath));
+                int i = 0;
+                while (File.Exists(nPath))
+                {
+                    nPath = Path.Combine(this.ImportedFolderPath, Path.GetFileNameWithoutExtension(filePath) + " (" + i++ + ")" + Path.GetExtension(filePath));
+                }
+
+                File.Copy(filePath, nPath);
+                filePath = nPath;
+                ImageModel img = new ImageModel(filePath.Substring(this.BaseFolderPath.Length), s => new Tuple<bool, Func<Stream>>(true, () => File.OpenRead(nPath)));
+                this.Images.Add(img);
+                return true;
+            }
+
+            return true;
         }
     }
 }

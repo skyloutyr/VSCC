@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CrashDesc" xml:space="preserve">
-    <value>Приложение аварийно завершило работу со следующей ошибкой: {0}[{1}]. Желаете ли вернуть настройки обратно на заводские?</value>
+    <value>В предидущий раз приложение аварийно завершило работу. Желаете ли вы восстановить настройки на изначальные?</value>
   </data>
   <data name="CrashTitle" xml:space="preserve">
-    <value>Приложение аварийно закрыто!</value>
+    <value>Неожиданное аварийное закрытие приложения!</value>
   </data>
   <data name="CreateItem_Amount" xml:space="preserve">
     <value>Количество</value>
@@ -243,6 +243,12 @@
   </data>
   <data name="Edit_Languages" xml:space="preserve">
     <value>Языки</value>
+  </data>
+  <data name="Error_ImageExtInvalidDesc" xml:space="preserve">
+    <value>Выбранное расширение изображения не поддерживается. Приложение поддерживает следующие расширения: JPG, PNG, BMP, GIF, TIFF, JPEG XR и ICO.</value>
+  </data>
+  <data name="Error_ImageExtInvalidTitle" xml:space="preserve">
+    <value>Выбранный файл не опознан!</value>
   </data>
   <data name="Extras_AaB" xml:space="preserve">
     <value>Внешность и Биография</value>
@@ -482,13 +488,13 @@
     <value>Лесной Гном</value>
   </data>
   <data name="General_Race_HalfElf" xml:space="preserve">
-    <value>Полу-Эльф</value>
+    <value>Полуэльф</value>
   </data>
   <data name="General_Race_Halfling" xml:space="preserve">
     <value>Полурослик</value>
   </data>
   <data name="General_Race_HalfOrc" xml:space="preserve">
-    <value>Полу-Орк</value>
+    <value>Полуорк</value>
   </data>
   <data name="General_Race_HillDwarf" xml:space="preserve">
     <value>Холмовой Дварф</value>
@@ -500,7 +506,7 @@
     <value>Вариант Человека</value>
   </data>
   <data name="General_Race_MoonElf" xml:space="preserve">
-    <value>Лесной Эльф</value>
+    <value>Лунный Эльф</value>
   </data>
   <data name="General_Race_MountainDwarf" xml:space="preserve">
     <value>Горный Дварф</value>
