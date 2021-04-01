@@ -25,6 +25,16 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Starting VSCC updater.");
+            ServicePointManager.ServerCertificateValidationCallback += (s, cert, chain, err) => true;
+            Version v = Environment.OSVersion.Version;
+            if (v < new Version(6, 2)) // Win 7 or older
+            {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Ssl3;
+            }
+
             try
             {
                 PID = int.Parse(args[0]);
