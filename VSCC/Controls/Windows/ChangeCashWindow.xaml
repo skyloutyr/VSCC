@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p="clr-namespace:VSCC.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VSCC.Controls.Windows"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:lcontrols="clr-namespace:VSCC.Controls"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Window_ChangeCash_Title}" Height="106" Width="411.5" Background="{StaticResource Static.Background}">
     <Grid>
@@ -14,11 +13,11 @@
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_EP}" Margin="159,4,0,0" Foreground="{StaticResource Static.Foreground}" />
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_SP}" Margin="239,4,0,0" Foreground="{StaticResource Static.Foreground}" />
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Inventory_CP}" Margin="319,4,0,0" Foreground="{StaticResource Static.Foreground}" />
-        <xctk:IntegerUpDown x:Name="IntUD_PP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,10,0,0" Width="48" />
-        <xctk:IntegerUpDown x:Name="IntUD_GP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,10,0,0" Width="48" />
-        <xctk:IntegerUpDown x:Name="IntUD_EP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,10,0,0" Width="48" />
-        <xctk:IntegerUpDown x:Name="IntUD_SP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="262,10,0,0" Width="48" />
-        <xctk:IntegerUpDown x:Name="IntUD_CP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="342,10,0,0" Width="48" />
+        <lcontrols:NumericUpDown x:Name="IntUD_PP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,10,0,0" Width="48" />
+        <lcontrols:NumericUpDown x:Name="IntUD_GP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="102,10,0,0" Width="48" />
+        <lcontrols:NumericUpDown x:Name="IntUD_EP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,10,0,0" Width="48" />
+        <lcontrols:NumericUpDown x:Name="IntUD_SP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="262,10,0,0" Width="48" />
+        <lcontrols:NumericUpDown x:Name="IntUD_CP" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="342,10,0,0" Width="48" />
         <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,46,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
         <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="330,46,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
     </Grid>

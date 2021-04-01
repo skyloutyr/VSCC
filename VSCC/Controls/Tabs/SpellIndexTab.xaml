@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:p="clr-namespace:VSCC.Properties"
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
+             xmlns:lcontrols="clr-namespace:VSCC.Controls"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}">
     <UserControl.Resources>
@@ -53,8 +53,8 @@
                     </GroupBox>
                     <GroupBox Header="{x:Static p:Resources.SpellIndex_Level}" HorizontalAlignment="Left" Height="56" Margin="10,214,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
-                            <xctk:IntegerUpDown x:Name="IntUD_LvlMin" Value="0" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" />
-                            <xctk:IntegerUpDown x:Name="IntUD_LvlMax" Value="9" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,10,0,0" Width="80" />
+                            <lcontrols:NumericUpDown x:Name="IntUD_LvlMin" Value="0" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" />
+                            <lcontrols:NumericUpDown x:Name="IntUD_LvlMax" Value="9" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,10,0,0" Width="80" />
                             <Label Content="->" HorizontalAlignment="Left" Margin="112,7,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>

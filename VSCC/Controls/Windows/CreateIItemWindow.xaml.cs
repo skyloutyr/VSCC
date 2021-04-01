@@ -1,5 +1,6 @@
 ﻿namespace VSCC.Controls.Windows
 {
+    using ColorPickerWPF;
     using Microsoft.Win32;
     using System;
     using System.Windows;
@@ -40,18 +41,21 @@
             if (ofd.ShowDialog() ?? false)
             {
                 string path = ofd.FileName;
-                string name = path.Substring(AppState.Current.TInventory.Images.BaseFolderPath.Length);
-                ((InventoryItem)this.DataContext).ImageIndex = name;
+                if (AppState.Current.TInventory.Images.CheckImageValidity(ref path))
+                {
+                    string name = path.Substring(AppState.Current.TInventory.Images.BaseFolderPath.Length);
+                    ((InventoryItem)this.DataContext).ImageIndex = name;
+                }
             }
         }
 
+        private uint Color2ARGB(Color c) => ((uint)c.A << 24) | ((uint)c.R << 16) | ((uint)c.G << 8) | c.B;
+
         private void Button_Click_3(object sender, RoutedEventArgs e) // Color picker button
         {
-            ColorPickerWindow cpw = new ColorPickerWindow();
-            cpw.ColorPicker_Picker.SelectedColor = ((SolidColorBrush)((InventoryItem)this.DataContext).Color).Color;
-            if (cpw.ShowDialog() ?? false)
+            if (ColorPickerWindow.ShowDialog(out Color color))
             {
-                ((InventoryItem)this.DataContext).TitleColor = cpw.ARGB;
+                ((InventoryItem)this.DataContext).TitleColor = this.Color2ARGB(color);
                 ((Button)sender).InvalidateVisual();
                 this.TextBox_Name.InvalidateVisual();
             }

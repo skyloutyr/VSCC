@@ -1,5 +1,6 @@
 ﻿namespace VSCC.Controls.Windows
 {
+    using ColorPickerWPF;
     using Microsoft.Win32;
     using System;
     using System.Windows;
@@ -28,7 +29,11 @@
 
             if (ofd.ShowDialog() ?? false)
             {
-                ((Feat)this.DataContext).ImageIndex = ofd.FileName.Substring(AppState.Current.TExtras.Images.BaseFolderPath.Length);
+                string s = ofd.FileName;
+                if (AppState.Current.TExtras.Images.CheckImageValidity(ref s))
+                {
+                    ((Feat)this.DataContext).ImageIndex = s.Substring(AppState.Current.TExtras.Images.BaseFolderPath.Length);
+                }
             }
         }
 
@@ -44,13 +49,13 @@
             this.Close();
         }
 
+        private uint Color2ARGB(Color c) => ((uint)c.A << 24) | ((uint)c.R << 16) | ((uint)c.G << 8) | c.B;
+
         private void Btn_ColorChange_Click(object sender, RoutedEventArgs e) // Name Color
         {
-            ColorPickerWindow cpw = new ColorPickerWindow();
-            cpw.ColorPicker_Picker.SelectedColor = ((SolidColorBrush)((Feat)this.DataContext).NameColorProperty).Color;
-            if (cpw.ShowDialog() ?? false)
+            if (ColorPickerWindow.ShowDialog(out Color color))
             {
-                ((Feat)this.DataContext).NameColor = cpw.ARGB;
+                ((Feat)this.DataContext).NameColor = this.Color2ARGB(color);
                 ((Button)sender).InvalidateVisual();
                 this.TextBox_Name.InvalidateVisual();
             }
@@ -58,11 +63,9 @@
 
         private void Btn_ValColorChange_Click(object sender, RoutedEventArgs e) // Foreground Bar Color
         {
-            ColorPickerWindow cpw = new ColorPickerWindow();
-            cpw.ColorPicker_Picker.SelectedColor = ((SolidColorBrush)((Feat)this.DataContext).BarForegroundProperty).Color;
-            if (cpw.ShowDialog() ?? false)
+            if (ColorPickerWindow.ShowDialog(out Color color))
             {
-                ((Feat)this.DataContext).BarColorForeground = cpw.ARGB;
+                ((Feat)this.DataContext).BarColorForeground = this.Color2ARGB(color);
                 ((Button)sender).InvalidateVisual();
                 this.IntUD_CurrentValue.InvalidateVisual();
             }
@@ -70,11 +73,9 @@
 
         private void Btn_BackColorChange_Click(object sender, RoutedEventArgs e) // Background Bar Color
         {
-            ColorPickerWindow cpw = new ColorPickerWindow();
-            cpw.ColorPicker_Picker.SelectedColor = ((SolidColorBrush)((Feat)this.DataContext).BarBackgroundProperty).Color;
-            if (cpw.ShowDialog() ?? false)
+            if (ColorPickerWindow.ShowDialog(out Color color))
             {
-                ((Feat)this.DataContext).BarColorBackground = cpw.ARGB;
+                ((Feat)this.DataContext).BarColorBackground = this.Color2ARGB(color);
                 ((Button)sender).InvalidateVisual();
                 this.IntUD_MaxValue.InvalidateVisual();
             }

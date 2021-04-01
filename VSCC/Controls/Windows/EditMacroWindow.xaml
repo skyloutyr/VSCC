@@ -3,8 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VSCC.Controls.Windows"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:p="clr-namespace:VSCC.Properties"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Window_EditMacro_Title}" Height="450" Width="800" Background="{StaticResource Static.Background}" Loaded="Window_Loaded">

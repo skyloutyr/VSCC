@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:VSCC.Controls.Tabs"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:lcontrols="clr-namespace:VSCC.Controls"
              xmlns:p="clr-namespace:VSCC.Properties" xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" Initialized="UserControl_Initialized">
@@ -36,14 +35,14 @@
                             <Button Content="1d12" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="150,10,0,0" Click="Button_Click_6" Foreground="{StaticResource Static.Foreground}" />
                             <Button Content="1d20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="185,10,0,0" Click="Button_Click_7" Foreground="{StaticResource Static.Foreground}" />
                             <Button Content="1d100" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="40" Margin="220,10,0,0" Click="Button_Click_8" Foreground="{StaticResource Static.Foreground}" />
-                            <xctk:IntegerUpDown x:Name="IntUD_AdvRollNumDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="1" Value="1" Margin="10,37,0,0" Width="50" />
+                            <lcontrols:NumericUpDown x:Name="IntUD_AdvRollNumDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="1" Value="1" Margin="10,37,0,0" Width="50" />
                             <Label Content="d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,34,0,0" Foreground="{StaticResource Static.Foreground}" />
-                            <xctk:IntegerUpDown x:Name="IntUD_AdvRollSidesDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="2" Value="2" Margin="95,37,0,0" Width="50" />
+                            <lcontrols:NumericUpDown x:Name="IntUD_AdvRollSidesDice" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="2" Value="2" Margin="95,37,0,0" Width="50" />
                             <ComboBox x:Name="ComboBox_AdvRollMathType" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,36,0,0" SelectedIndex="0" Foreground="{StaticResource Static.Foreground}">
                                 <ComboBoxItem Content="+" />
                                 <ComboBoxItem Content="-" />
                             </ComboBox>
-                            <xctk:IntegerUpDown x:Name="IntUD_AdvRollMod" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="0" Value="0" Margin="206,37,0,0" Width="50" />
+                            <lcontrols:NumericUpDown x:Name="IntUD_AdvRollMod" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="0" Value="0" Margin="206,37,0,0" Width="50" />
                             <Button Content="{x:Static p:Resources.R20_AdvancedRoll}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="87" Margin="10,62,0,0" Click="Button_Click_9" Foreground="{StaticResource Static.Foreground}" ToolTip="{x:Static p:Resources.Tooltip_Button_AdvancedRoll}" />
                             <CheckBox x:Name="CheckBox_AsSimpleRoll" VerticalAlignment="Top" HorizontalAlignment="Left" Content="{x:Static p:Resources.R20_AsMulRolls}" Margin="150,66,0,0" Foreground="{StaticResource Static.Foreground}" ToolTip="{x:Static p:Resources.Tooltip_Checkbox_AsMultipleRolls}" />
                         </Grid>

@@ -13,15 +13,14 @@
     using VSCC.Controls.Windows;
     using VSCC.DataType;
     using VSCC.State;
-    using Xceed.Wpf.Toolkit;
 
     /// <summary>
     /// Interaction logic for GeneralTab.xaml
     /// </summary>
     public partial class GeneralTab : UserControl
     {
-        private readonly KeyValuePair<CheckBox, IntegerUpDown>[] _statsProfMap;
-        private readonly KeyValuePair<IntegerUpDown, IntegerUpDown[]>[] _statsSkillsMap;
+        private readonly KeyValuePair<CheckBox, NumericUpDown>[] _statsProfMap;
+        private readonly KeyValuePair<NumericUpDown, NumericUpDown[]>[] _statsSkillsMap;
 
         public ObservableCollection<StatModifier> ModifiersStrength { get; set; } = new ObservableCollection<StatModifier>();
         public ObservableCollection<StatModifier> ModifiersDexterity { get; set; } = new ObservableCollection<StatModifier>();
@@ -35,41 +34,41 @@
             this.InitializeComponent();
             this._statsProfMap = new[]
             {
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Str, this.IntUD_Saves_Str),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Dex, this.IntUD_Saves_Dex),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Con, this.IntUD_Saves_Con),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Cha, this.IntUD_Saves_Cha),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Int, this.IntUD_Saves_Int),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Saves_Wis, this.IntUD_Saves_Wis),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Saves_Str, this.IntUD_Saves_Str),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Saves_Dex, this.IntUD_Saves_Dex),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Saves_Con, this.IntUD_Saves_Con),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Saves_Cha, this.IntUD_Saves_Cha),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Saves_Int, this.IntUD_Saves_Int),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Saves_Wis, this.IntUD_Saves_Wis),
 
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Athletics, this.IntUD_Athletics),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Acrobatics, this.IntUD_Acrobatics),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_SleightOfHand, this.IntUD_SleightOfHand),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Stealth, this.IntUD_Stealth),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Arcana, this.IntUD_Arcana),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_History, this.IntUD_History),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Investigation, this.IntUD_Investigation),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Nature, this.IntUD_Nature),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Religion, this.IntUD_Religion),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_AnimalHandling, this.IntUD_AnimalHandling),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Insight, this.IntUD_Insight),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Medicine, this.IntUD_Medicine),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Perception, this.IntUD_Perception),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Survival, this.IntUD_Survival),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Deception, this.IntUD_Deception),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Intimidation, this.IntUD_Intimidation),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Performance, this.IntUD_Performance),
-                new KeyValuePair<CheckBox, IntegerUpDown>(this.CheckBox_Persuasion, this.IntUD_Persuasion),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Athletics, this.IntUD_Athletics),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Acrobatics, this.IntUD_Acrobatics),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_SleightOfHand, this.IntUD_SleightOfHand),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Stealth, this.IntUD_Stealth),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Arcana, this.IntUD_Arcana),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_History, this.IntUD_History),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Investigation, this.IntUD_Investigation),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Nature, this.IntUD_Nature),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Religion, this.IntUD_Religion),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_AnimalHandling, this.IntUD_AnimalHandling),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Insight, this.IntUD_Insight),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Medicine, this.IntUD_Medicine),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Perception, this.IntUD_Perception),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Survival, this.IntUD_Survival),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Deception, this.IntUD_Deception),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Intimidation, this.IntUD_Intimidation),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Performance, this.IntUD_Performance),
+                new KeyValuePair<CheckBox, NumericUpDown>(this.CheckBox_Persuasion, this.IntUD_Persuasion),
             };
 
             this._statsSkillsMap = new[]
             {
-                new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Str, new []{ this.IntUD_Saves_Str, this.IntUD_Athletics }),
-                new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Dex, new []{ this.IntUD_Saves_Dex, this.IntUD_Acrobatics, this.IntUD_SleightOfHand, this.IntUD_Stealth }),
-                new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Int, new []{ this.IntUD_Saves_Int, this.IntUD_Arcana, this.IntUD_History, this.IntUD_Investigation, this.IntUD_Nature, this.IntUD_Religion }),
-                new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Wis, new []{ this.IntUD_Saves_Wis, this.IntUD_AnimalHandling, this.IntUD_Insight, this.IntUD_Medicine, this.IntUD_Perception, this.IntUD_Survival }),
-                new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Cha, new []{ this.IntUD_Saves_Cha, this.IntUD_Deception, this.IntUD_Persuasion, this.IntUD_Performance, this.IntUD_Intimidation }),
-                new KeyValuePair<IntegerUpDown, IntegerUpDown[]>(this.IntUD_Con, new []{ this.IntUD_Saves_Con }),
+                new KeyValuePair<NumericUpDown, NumericUpDown[]>(this.IntUD_Str, new []{ this.IntUD_Saves_Str, this.IntUD_Athletics }),
+                new KeyValuePair<NumericUpDown, NumericUpDown[]>(this.IntUD_Dex, new []{ this.IntUD_Saves_Dex, this.IntUD_Acrobatics, this.IntUD_SleightOfHand, this.IntUD_Stealth }),
+                new KeyValuePair<NumericUpDown, NumericUpDown[]>(this.IntUD_Int, new []{ this.IntUD_Saves_Int, this.IntUD_Arcana, this.IntUD_History, this.IntUD_Investigation, this.IntUD_Nature, this.IntUD_Religion }),
+                new KeyValuePair<NumericUpDown, NumericUpDown[]>(this.IntUD_Wis, new []{ this.IntUD_Saves_Wis, this.IntUD_AnimalHandling, this.IntUD_Insight, this.IntUD_Medicine, this.IntUD_Perception, this.IntUD_Survival }),
+                new KeyValuePair<NumericUpDown, NumericUpDown[]>(this.IntUD_Cha, new []{ this.IntUD_Saves_Cha, this.IntUD_Deception, this.IntUD_Persuasion, this.IntUD_Performance, this.IntUD_Intimidation }),
+                new KeyValuePair<NumericUpDown, NumericUpDown[]>(this.IntUD_Con, new []{ this.IntUD_Saves_Con }),
             };
 
             this.ModifiersStrength.CollectionChanged += this.ChangeStatModifiers;
@@ -131,17 +130,17 @@
         {
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.State.General.ProfficiencyBonus = this.GetProfBonusForLvl(AppState.Current.State.General.Level);
-            (IntegerUpDown, TextBox)[] statMods = { (this.IntUD_Str, this.TextBox_Str), (this.IntUD_Dex, this.TextBox_Dex), (this.IntUD_Con, this.TextBox_Con), (this.IntUD_Cha, this.TextBox_Cha), (this.IntUD_Wis, this.TextBox_Wis), (this.IntUD_Int, this.TextBox_Int) };
+            (NumericUpDown, TextBox)[] statMods = { (this.IntUD_Str, this.TextBox_Str), (this.IntUD_Dex, this.TextBox_Dex), (this.IntUD_Con, this.TextBox_Con), (this.IntUD_Cha, this.TextBox_Cha), (this.IntUD_Wis, this.TextBox_Wis), (this.IntUD_Int, this.TextBox_Int) };
             for (int i = 0; i < 6; ++i)
             {
-                (IntegerUpDown, TextBox) dat = statMods[i];
-                dat.Item2.Text = this.GetModifierForStat(dat.Item1.Value ?? 10).ToString();
+                (NumericUpDown, TextBox) dat = statMods[i];
+                dat.Item2.Text = this.GetModifierForStat(dat.Item1.Value).ToString();
             }
 
-            foreach (KeyValuePair<IntegerUpDown, IntegerUpDown[]> kvp in this._statsSkillsMap)
+            foreach (KeyValuePair<NumericUpDown, NumericUpDown[]> kvp in this._statsSkillsMap)
             {
-                int res = this.GetModifierForStat(kvp.Key.Value ?? 0);
-                foreach (IntegerUpDown intUD in kvp.Value)
+                int res = this.GetModifierForStat(kvp.Key.Value);
+                foreach (NumericUpDown intUD in kvp.Value)
                 {
                     intUD.Value = res;
                     if (this._statsProfMap.First(kv => kv.Value == intUD).Key.IsChecked ?? false)
@@ -154,18 +153,18 @@
             AppState.Current.FreezeAutocalc = false;
         }
 
-        private void Stat_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void Stat_ValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
         {
             if (AppState.Current.FreezeAutocalc)
             {
                 return;
             }
 
-            int oldVal = (int)(e.OldValue ?? 0);
-            int newVal = (int)(e.NewValue ?? 0);
+            int oldVal = e.OldValue;
+            int newVal = e.NewValue;
             int oldModVal = this.GetModifierForStat(oldVal);
             int newModVal = this.GetModifierForStat(newVal);
-            IntegerUpDown inUD = (IntegerUpDown)sender;
+            NumericUpDown inUD = (NumericUpDown)sender;
             if (inUD == this.IntUD_Str)
             {
                 AppState.Current.TInventory.RecalculateWeights(false, true, true);
@@ -184,54 +183,40 @@
                 tb.Text = (newModVal + statDiff).ToString();
             }
 
-            foreach (IntegerUpDown stat in this._statsSkillsMap.First(kv => kv.Key == inUD).Value)
+            foreach (NumericUpDown stat in this._statsSkillsMap.First(kv => kv.Key == inUD).Value)
             {
-                if (!stat.Value.HasValue)
-                {
-                    stat.Value = this.GetBaseValueForStat(stat);
-                }
-                else
-                {
-                    stat.Value += newModVal - oldModVal;
-                }
+                stat.Value += newModVal - oldModVal;
             }
         }
 
-        private void IntUD_Lvl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void IntUD_Lvl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
         {
             if (AppState.Current.FreezeAutocalc)
             {
                 return;
             }
 
-            int oldVal = (int)(e.OldValue ?? 0);
-            int newVal = (int)(e.NewValue ?? 0);
-            int currProfVal = this.IntUD_ProfBonus.Value ?? 0;
+            int oldVal = e.OldValue;
+            int newVal = e.NewValue;
+            int currProfVal = this.IntUD_ProfBonus.Value;
             int shouldBeProfVal = this.GetProfBonusForLvl(oldVal);
             this.IntUD_ProfBonus.Value = this.GetProfBonusForLvl(newVal) + (currProfVal - shouldBeProfVal);
         }
 
-        private void IntUD_ProfBonus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void IntUD_ProfBonus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
         {
             if (AppState.Current.FreezeAutocalc)
             {
                 return;
             }
 
-            int oldVal = (int)(e.OldValue ?? 0);
-            int newVal = (int)(e.NewValue ?? 0);
-            foreach (KeyValuePair<CheckBox, IntegerUpDown> kv in this._statsProfMap)
+            int oldVal = e.OldValue;
+            int newVal = e.NewValue;
+            foreach (KeyValuePair<CheckBox, NumericUpDown> kv in this._statsProfMap)
             {
                 if (kv.Key.IsChecked ?? false)
                 {
-                    if (!kv.Value.Value.HasValue)
-                    {
-                        kv.Value.Value = this.GetBaseValueForStat(kv.Value);
-                    }
-                    else
-                    {
-                        kv.Value.Value += newVal - oldVal;
-                    }
+                    kv.Value.Value += newVal - oldVal;
                 }
             }
         }
@@ -247,20 +232,13 @@
                 return;
             }
 
-            int val = (this.IntUD_ProfBonus.Value ?? 0);
-            IntegerUpDown intUD = this._statsProfMap.First(kv => kv.Key == stat).Value;
-            if (!intUD.Value.HasValue)
-            {
-                intUD.Value = this.GetBaseValueForStat(intUD);
-            }
-            else
-            {
-                intUD.Value += check ? val : -val;
-            }
+            int val = (this.IntUD_ProfBonus.Value);
+            NumericUpDown intUD = this._statsProfMap.First(kv => kv.Key == stat).Value;
+            intUD.Value += check ? val : -val;
         }
 
-        private int GetBaseValueForStat(IntegerUpDown stat) => this.GetModifierForStat(this._statsSkillsMap.First(kv => kv.Value.Any(iud => iud == stat)).Key.Value ?? 10) + (this._statsProfMap.First(kv => kv.Value == stat).Key.IsChecked ?? false ? this.IntUD_ProfBonus.Value ?? 0 : 0);
         private int GetModifierForStat(int stat) => (int)Math.Floor((stat - 10) / 2F);
+
         private int GetProfBonusForLvl(int v) => v < 5 ? 2 : v < 9 ? 3 : v < 13 ? 4 : v < 17 ? 5 : 6;
 
         private void Bar_Exp_MouseUp(object sender, MouseButtonEventArgs e)

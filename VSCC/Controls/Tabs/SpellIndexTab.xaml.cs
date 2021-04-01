@@ -80,7 +80,7 @@
                 return false;
             }
 
-            if (st.Level < (this.IntUD_LvlMin.Value ?? 0) || st.Level > (this.IntUD_LvlMax.Value ?? 0))
+            if (st.Level < this.IntUD_LvlMin.Value || st.Level > this.IntUD_LvlMax.Value)
             {
                 return false;
             }

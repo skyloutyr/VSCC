@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:p="clr-namespace:VSCC.Properties"
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:lcontrols="clr-namespace:VSCC.Controls"
              mc:Ignorable="d"
              d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" >
     <UserControl.Resources>
@@ -29,11 +29,11 @@
                         <ComboBoxItem Content="{x:Static p:Resources.General_Charisma}" />
                     </ComboBox>
                     <Label Content="{x:Static p:Resources.Spellbook_SaveDC}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown Value="0" x:Name="IntUD_SpellSave" HorizontalAlignment="Left" Margin="406,5,0,0" VerticalAlignment="Top" Width="72" />
+                    <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellSave" HorizontalAlignment="Left" Margin="406,5,0,0" VerticalAlignment="Top" Width="72" />
                     <Label Content="{x:Static p:Resources.Spellbook_AttackBonus}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="564,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown Value="0" x:Name="IntUD_SpellAttackAbility" HorizontalAlignment="Left" Margin="677,6,0,0" VerticalAlignment="Top" Width="72" />
+                    <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellAttackAbility" HorizontalAlignment="Left" Margin="677,6,0,0" VerticalAlignment="Top" Width="72" />
                     <Label Content="{x:Static p:Resources.Spellbook_MaxSpells}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="843,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown Value="0" x:Name="IntUD_SpellsAmount" HorizontalAlignment="Left" Margin="916,6,0,0" VerticalAlignment="Top" Width="72" />
+                    <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellsAmount" HorizontalAlignment="Left" Margin="916,6,0,0" VerticalAlignment="Top" Width="72" />
                 </Grid>
             </GroupBox>
             <TabControl x:Name="TabControl_Spellbook" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="697" Background="{StaticResource Static.Background}" BorderThickness="0 1 0 0">
@@ -42,8 +42,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_0CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_0MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_0CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_0MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -89,8 +89,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_1CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_1MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_1CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_1MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -134,8 +134,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_2CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_2MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_2CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_2MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -179,8 +179,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_3CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_3MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_3CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_3MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -224,8 +224,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_4CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_4MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_4CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_4MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0"  Foreground="{StaticResource Static.Foreground}"/>
                             </Grid>
                         </Border>
@@ -269,8 +269,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_5CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_5MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_5CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_5MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -314,8 +314,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_6CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_6MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_6CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_6MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -359,8 +359,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_7CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_7MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_7CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_7MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -404,8 +404,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_8CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_8MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_8CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_8MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
@@ -449,8 +449,8 @@
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
                             <Grid>
                                 <Label Content="{x:Static p:Resources.Spellbook_Slots}" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_9CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
-                                <xctk:IntegerUpDown Value="0" x:Name="IntUD_9MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_9CS" HorizontalAlignment="Left" Margin="43,0,0,0" Width="49" />
+                                <lcontrols:NumericUpDown Value="0" x:Name="IntUD_9MS" HorizontalAlignment="Left" Margin="119,0,0,0" Width="49" />
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>

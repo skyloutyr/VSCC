@@ -4,9 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:p="clr-namespace:VSCC.Properties"
-             xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:vscc="clr-namespace:VSCC.Controls"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:lcontrols="clr-namespace:VSCC.Controls"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" Initialized="UserControl_Initialized">
@@ -16,15 +15,15 @@
                 <Grid>
                     <Label Content="{x:Static p:Resources.Inventory_PP}" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/platinum_coin.png" Margin="33,17,0,0" />
-                    <xctk:IntegerUpDown x:Name="IntUD_PP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,15,0,0" Width="64" Value="0" />
+                    <lcontrols:NumericUpDown x:Name="IntUD_PP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,15,0,0" Width="64" Value="0" />
                     <Label Content="{x:Static p:Resources.Inventory_GP}" HorizontalAlignment="Left" Margin="124,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown x:Name="IntUD_GP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,15,0,0" Width="64" Value="0" />
+                    <lcontrols:NumericUpDown x:Name="IntUD_GP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,15,0,0" Width="64" Value="0" />
                     <Label Content="{x:Static p:Resources.Inventory_EP}" HorizontalAlignment="Left" Margin="242,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown x:Name="IntUD_EP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,15,0,0" Width="64" Value="0" />
+                    <lcontrols:NumericUpDown x:Name="IntUD_EP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,15,0,0" Width="64" Value="0" />
                     <Label Content="{x:Static p:Resources.Inventory_SP}" HorizontalAlignment="Left" Margin="364,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown x:Name="IntUD_SP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="407,15,0,0" Width="64" Value="0" />
+                    <lcontrols:NumericUpDown x:Name="IntUD_SP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="407,15,0,0" Width="64" Value="0" />
                     <Label Content="{x:Static p:Resources.Inventory_CP}" HorizontalAlignment="Left" Margin="486,11,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown x:Name="IntUD_CP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="529,15,0,0" Width="64" Value="0" />
+                    <lcontrols:NumericUpDown x:Name="IntUD_CP" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="529,15,0,0" Width="64" Value="0" />
                     <Button x:Name="Btn_AddCash" Content="+" HorizontalAlignment="Left" Margin="606,14,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="Btn_AddCash_Click" Foreground="{StaticResource Static.Foreground}"/>
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/gold_coin.png" Margin="149,17,0,0" />
                     <Image Height="16" Width="16" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/VSCC;component/Images/AppFeatures/electrum_coin.png" Margin="264,17,0,0" />
@@ -139,9 +138,9 @@
                     </Button>
                     <Label Content="{x:Static p:Resources.Inventory_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="265,-3,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="342,19,0,0" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:SingleUpDown x:Name="IntUD_WeightCurrent" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,22,0,0" Width="50" Height="21"/>
-                    <xctk:SingleUpDown x:Name="IntUD_WeightMax1" Value="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,22,0,0" Width="50" Height="21"/>
-                    <xctk:SingleUpDown x:Name="IntUD_WeightMax2" Value="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,22,0,0" Width="50" Height="21"/>
+                    <lcontrols:SingleUpDown x:Name="IntUD_WeightCurrent" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,22,0,0" Width="50" Height="21"/>
+                    <lcontrols:SingleUpDown x:Name="IntUD_WeightMax1" Value="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,22,0,0" Width="50" Height="21"/>
+                    <lcontrols:SingleUpDown x:Name="IntUD_WeightMax2" Value="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,22,0,0" Width="50" Height="21"/>
                     <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="406,19,0,0" Foreground="{StaticResource Static.Foreground}"/>
                 </Grid>
             </GroupBox>

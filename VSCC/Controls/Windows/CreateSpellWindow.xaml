@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p="clr-namespace:VSCC.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VSCC.Controls.Windows"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:lcontrols="clr-namespace:VSCC.Controls"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Window_CreateSpell_Title}" Height="520" Width="386" Background="{StaticResource Static.Background}">
     <Grid>
@@ -29,7 +28,7 @@
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="143,75,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">
             <Grid>
                 <Label Content="{x:Static p:Resources.CreateSpell_Level}" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{StaticResource Static.Foreground}"/>
-                <xctk:IntegerUpDown x:Name="IntUD_Level" Value="{Binding Level}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,0,0,0" Height="30" Width="47" />
+                <lcontrols:NumericUpDown x:Name="IntUD_Level" Value="{Binding Level}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,0,0,0" Height="30" Width="47" />
             </Grid>
         </Border>
         <Border HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="106" Margin="262,75,0,0" BorderThickness="1" BorderBrush="PowderBlue" CornerRadius="6">

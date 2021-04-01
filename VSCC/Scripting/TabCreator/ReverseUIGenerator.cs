@@ -7,8 +7,8 @@
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using VSCC.Controls;
     using VSCC.Scripting.TabCreator.Defs;
-    using Xceed.Wpf.Toolkit;
 
     public class ReverseUIGenerator
     {
@@ -26,7 +26,7 @@
             [typeof(CheckBox)] = UIType.CheckBox,
             [typeof(RadioButton)] = UIType.RadioButton,
             [typeof(ScrollViewer)] = UIType.ScrollViewer,
-            [typeof(IntegerUpDown)] = UIType.IntUpDown,
+            [typeof(NumericUpDown)] = UIType.IntUpDown,
             [typeof(SingleUpDown)] = UIType.FloatUpDown
         };
 
@@ -133,14 +133,14 @@
                 ret.ScrollViewerData = new ScrollViewerDefinition() { HorizontalScrollBarVisibility = scrollviewer.HorizontalScrollBarVisibility, VerticalScrollBarVisibility = scrollviewer.VerticalScrollBarVisibility, PanningMode = scrollviewer.PanningMode };
             }
 
-            if (element is IntegerUpDown integerupdown)
+            if (element is NumericUpDown integerupdown)
             {
-                ret.NumericUpDownData = new NumericUpDownDefinition() { Value = integerupdown.Value ?? 0 };
+                ret.NumericUpDownData = new NumericUpDownDefinition() { Value = integerupdown.Value };
             }
 
             if (element is SingleUpDown singleupdown)
             {
-                ret.NumericUpDownData = new NumericUpDownDefinition() { Value = singleupdown.Value ?? 0 };
+                ret.NumericUpDownData = new NumericUpDownDefinition() { Value = singleupdown.Value };
             }
 
             if (element is Viewbox viewbox)

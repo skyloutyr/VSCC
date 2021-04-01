@@ -289,6 +289,7 @@
         }
 
         private void CommandBindingCopy_Executed(object sender, ExecutedRoutedEventArgs e) => this.Btn_Copy_Click(null, default);
+
         private void CommandBindingCut_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             this.Btn_Copy_Click(null, default);

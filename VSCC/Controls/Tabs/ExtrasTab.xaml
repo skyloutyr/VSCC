@@ -4,11 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:p="clr-namespace:VSCC.Properties"
-             xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:Themes="clr-namespace:Xceed.Wpf.Toolkit.Themes;assembly=Xceed.Wpf.Toolkit" x:Class="VSCC.Controls.Tabs.ExtrasTab"
-             xmlns:cb="clr-namespace:VSCC.Controls"
+             xmlns:lcontrols="clr-namespace:VSCC.Controls"
+             x:Class="VSCC.Controls.Tabs.ExtrasTab"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000">
     <UserControl.Resources>
@@ -160,13 +158,13 @@
             <GroupBox Header="{x:Static p:Resources.Extras_AaB}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="710" Width="448" Margin="542,10,0,0" Foreground="{StaticResource Static.Foreground}">
                 <Grid>
                     <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="10,10,0,0" Header="{x:Static p:Resources.Extras_Age}">
-                        <xctk:IntegerUpDown x:Name="IntUD_Age" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0" />
+                        <lcontrols:NumericUpDown x:Name="IntUD_Age" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0" />
                     </GroupBox>
                     <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="105,10,0,0" Header="{x:Static p:Resources.Extras_Height}">
-                        <xctk:SingleUpDown x:Name="FloatUD_Height" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0.0"/>
+                        <lcontrols:SingleUpDown x:Name="FloatUD_Height" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0"/>
                     </GroupBox>
                     <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="90" Margin="200,10,0,0" Header="{x:Static p:Resources.Extras_Weight}">
-                        <xctk:SingleUpDown x:Name="FloatUD_Weight" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0" />
+                        <lcontrols:SingleUpDown x:Name="FloatUD_Weight" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,20,-2,0" Width="68" Value="0" />
                     </GroupBox>
                     <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="67" Width="131" Margin="295,10,0,0" Header="{x:Static p:Resources.Extras_Gender}">
                         <ComboBox x:Name="ComboBox_Gender" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,-2,0" Width="109" IsReadOnly="False" IsEditable="True" Foreground="{StaticResource Static.Foreground}">

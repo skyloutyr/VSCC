@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:p="clr-namespace:VSCC.Properties"
-             xmlns:local="clr-namespace:VSCC.Controls.Tabs"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:Controls="clr-namespace:VSCC.Controls" xmlns:Themes="clr-namespace:Xceed.Wpf.Toolkit.Themes;assembly=Xceed.Wpf.Toolkit" x:Class="VSCC.Controls.Tabs.GeneralTab"
+             xmlns:lcontrols="clr-namespace:VSCC.Controls"
+             xmlns:Controls="clr-namespace:VSCC.Controls" 
+             x:Class="VSCC.Controls.Tabs.GeneralTab"
              mc:Ignorable="d" 
              d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}">
     <UserControl.Resources>
@@ -35,7 +35,7 @@
                     <Controls:ColoredBar x:Name="Bar_Temp_HP" HorizontalAlignment="Left" Height="20" Margin="142,105,0,0" VerticalAlignment="Top" Width="232" Background="{x:Null}" BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Foreground="Black" BarColor="#FF00ECE1" BarBackground="#FF005F74" FontWeight="Bold" MouseDown="Bar_Exp_MouseUp" />
                     <Label x:Name="Label_Lvl" Content="{x:Static p:Resources.General_Lvl}" HorizontalAlignment="Left" Margin="117,125,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <Label x:Name="Label_Race" Content="{x:Static p:Resources.General_Race}" HorizontalAlignment="Left" Margin="117,156,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                    <xctk:IntegerUpDown x:Name="IntUD_Lvl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,130,0,0" Height="20" Width="56" Value="1" Minimum="1" Maximum="20" ValueChanged="IntUD_Lvl_ValueChanged"/>
+                    <lcontrols:NumericUpDown x:Name="IntUD_Lvl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,130,0,0" Height="20" Width="56" Value="1" Minimum="1" Maximum="20" ValueChanged="IntUD_Lvl_ValueChanged"/>
                     <ComboBox x:Name="ComboBox_Class" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="192" Margin="207,130,0,0" IsEditable="True" Background="Black" Foreground="{StaticResource Static.Foreground}">
                         <ComboBoxItem x:Name="CBItem_Class_Barbarian" Content="{x:Static p:Resources.General_Class_Barbarian}"/>
                         <ComboBoxItem x:Name="CBItem_Class_Bard" Content="{x:Static p:Resources.General_Class_Bard}"/>
@@ -115,7 +115,7 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="10,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Strength}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Str" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Str" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                             <Button x:Name="Btn_TempStat_Str" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
@@ -125,7 +125,7 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="10,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Dexterity}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Dex" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Dex" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                             <Button x:Name="Btn_TempStat_Dex" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Dex" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
@@ -135,7 +135,7 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="10,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Constitution}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Con" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Con" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                             <Button x:Name="Btn_TempStat_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Con" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
@@ -145,7 +145,7 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="106,234,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Charisma}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Cha" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Cha" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                             <Button x:Name="Btn_TempStat_Cha" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Cha" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
@@ -155,7 +155,7 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="106,314,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Intelligence}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Int" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Int" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                             <Button x:Name="Btn_TempStat_Int" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Int" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
@@ -165,7 +165,7 @@
                     <Border HorizontalAlignment="Left" Height="75" Margin="106,395,0,0" VerticalAlignment="Top" Width="90" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Wisdom}" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.5" Width="88" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Wis" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,18,0,0" Width="44" Height="24" Minimum="0" Value="10" TextAlignment="Center" ValueChanged="Stat_ValueChanged"/>
                             <TextBox x:Name="TextBox_Wis" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" TextAlignment="Center" FontWeight="Bold" FontSize="18"/>
                             <Button x:Name="Btn_TempStat_Wis" HorizontalAlignment="Left" VerticalAlignment="Top" Width="19" Height="23" Margin="59,18,0,0" Foreground="{StaticResource Static.Foreground}" Click="Btn_TempStat_Str_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditModifiers}" >
                                 <Path x:Name="Path_Down_Wis" Data="M0,0L8,0 4,7z" Fill="{StaticResource Static.Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Visible" VerticalAlignment="Center"/>
@@ -176,80 +176,80 @@
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Saves}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox x:Name="CheckBox_Saves_Str" Content="{x:Static p:Resources.General_Str}" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Str" HorizontalAlignment="Left" Margin="85,25,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Saves_Str" HorizontalAlignment="Left" Margin="85,25,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Saves_Dex" Content="{x:Static p:Resources.General_Dex}" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Dex" HorizontalAlignment="Left" Margin="85,45,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Saves_Dex" HorizontalAlignment="Left" Margin="85,45,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Saves_Con" Content="{x:Static p:Resources.General_Con}" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Con" HorizontalAlignment="Left" Margin="85,65,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Saves_Con" HorizontalAlignment="Left" Margin="85,65,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Saves_Int" Content="{x:Static p:Resources.General_Int}" HorizontalAlignment="Left" Margin="0,86,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Int" HorizontalAlignment="Left" Margin="85,85,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Saves_Int" HorizontalAlignment="Left" Margin="85,85,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Saves_Wis" Content="{x:Static p:Resources.General_Wis}" HorizontalAlignment="Left" Margin="0,106,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Wis" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Saves_Wis" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Saves_Cha" Content="{x:Static p:Resources.General_Cha}" HorizontalAlignment="Left" Margin="0,126,0,0" VerticalAlignment="Top" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Saves_Cha" HorizontalAlignment="Left" Margin="85,125,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Saves_Cha" HorizontalAlignment="Left" Margin="85,125,0,0" VerticalAlignment="Top" Height="16" Width="51" Value="0" FontSize="11"/>
                         </Grid>
                     </Border>
                     <Border BorderBrush="{StaticResource Static.Border}" HorizontalAlignment="Left" Height="460" Margin="344,10,0,0" BorderThickness="1" VerticalAlignment="Top" Width="188">
                         <Grid>
                             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="166" Content="{x:Static p:Resources.General_Skills}" Margin="10,10,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox x:Name="CheckBox_Athletics" Content="{x:Static p:Resources.General_Skill_Athletics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,38,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Athletics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,38,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Athletics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,38,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Acrobatics" Content="{x:Static p:Resources.General_Skill_Acrobatics}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,59,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Acrobatics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,59,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Acrobatics" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,59,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Stealth" Content="{x:Static p:Resources.General_Skill_Stealth}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,101,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Stealth" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,101,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Stealth" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,101,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_SleightOfHand" Content="{x:Static p:Resources.General_Skill_SleightOfHand}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,80,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_SleightOfHand" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,80,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_SleightOfHand" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,80,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_History" Content="{x:Static p:Resources.General_Skill_History}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,141,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_History" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,141,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_History" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,141,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Arcana" Content="{x:Static p:Resources.General_Skill_Arcana}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,120,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Arcana" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,120,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Arcana" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,120,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_AnimalHandling" Content="{x:Static p:Resources.General_Skill_AH}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,223,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_AnimalHandling" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,223,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_AnimalHandling" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,223,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Investigation" Content="{x:Static p:Resources.General_Skill_Investigation}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,162,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Investigation" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,162,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Investigation" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,162,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Medicine" Content="{x:Static p:Resources.General_Skill_Medicine}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,264,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Medicine" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,264,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Medicine" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,264,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Insight" Content="{x:Static p:Resources.General_Skill_Insight}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,243,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Insight" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,243,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Insight" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,243,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Survival" Content="{x:Static p:Resources.General_Skill_Survival}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,306,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Survival" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,306,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Survival" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,306,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Perception" Content="{x:Static p:Resources.General_Skill_Perception}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,285,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Perception" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,285,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Perception" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,285,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Intimidation" Content="{x:Static p:Resources.General_Skill_Intimidation}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,346,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Intimidation" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,346,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Intimidation" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,346,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Deception" Content="{x:Static p:Resources.General_Skill_Deception}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,325,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Deception" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,325,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Deception" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,325,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Persuasion" Content="{x:Static p:Resources.General_Skill_Persuasion}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,388,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Persuasion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,388,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Persuasion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,388,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Performance" Content="{x:Static p:Resources.General_Skill_Performance}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,367,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Performance" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,367,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Performance" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,367,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Nature" Content="{x:Static p:Resources.General_Skill_Nature}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,181,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Nature" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,181,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Nature" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,181,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <CheckBox x:Name="CheckBox_Religion" Content="{x:Static p:Resources.General_Skill_Religion}" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="118" Margin="0,202,0,0" Checked="CheckBox_Stat_Checked" Unchecked="CheckBox_Stat_UnChecked" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Religion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,202,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Religion" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="53" Margin="123,202,0,0" Value="0" TextAlignment="Center" FontSize="11"/>
                             <Button VerticalAlignment="Bottom" Height="30" Margin="0,0,0,0" Content="{x:Static p:Resources.General_Recalculate}" Foreground="{StaticResource Static.Foreground}" Click="Button_Click_2" ToolTip="{x:Static p:Resources.Tooltip_Button_RecalculateStatModifiers}" />
                         </Grid>
                     </Border>
                     <Border BorderThickness="1" HorizontalAlignment="Left" Height="156" Margin="10,72,0,0" BorderBrush="{StaticResource Static.Border}" VerticalAlignment="Top" Width="211">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_HitDice}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD12C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,36,0,0" Width="49" />
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD12C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,36,0,0" Width="49" />
                             <Label Content="d12" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                             <Label Content="/" HorizontalAlignment="Left" Margin="116,33,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD12M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,36,0,0" Width="49"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD10C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,61,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD12M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,36,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD10C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,61,0,0" Width="49"/>
                             <Label Content="d10" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                             <Label Content="/" HorizontalAlignment="Left" Margin="116,58,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD10M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,61,0,0" Width="49"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD8C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,86,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD10M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,61,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD8C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,86,0,0" Width="49"/>
                             <Label Content="d8" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                             <Label Content="/" HorizontalAlignment="Left" Margin="116,83,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD8M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,86,0,0" Width="49"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD6C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,111,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD8M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,86,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD6C" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,111,0,0" Width="49"/>
                             <Label Content="d6" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                             <Label Content="/" HorizontalAlignment="Left" Margin="116,108,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_HD6M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,111,0,0" Width="49"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_HD6M" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,111,0,0" Width="49"/>
                         </Grid>
                     </Border>
                     <Border BorderThickness="1" BorderBrush="{StaticResource Static.Border}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="156" Width="113" Margin="226,72,0,0">
@@ -277,21 +277,20 @@
                     <Border HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_PBonus}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_ProfBonus" Minimum="0" Value="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="60" ValueChanged="IntUD_ProfBonus_ValueChanged"/>
-
+                            <lcontrols:NumericUpDown x:Name="IntUD_ProfBonus" Minimum="0" Value="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="60" ValueChanged="IntUD_ProfBonus_ValueChanged"/>
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="57" Margin="133,10,0,0" VerticalAlignment="Top" Width="85" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_AC}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_AC" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,26,0,0" Width="60"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_AC" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,26,0,0" Width="60"/>
 
                         </Grid>
                     </Border>
                     <Border HorizontalAlignment="Left" Height="57" Margin="226,10,0,0" VerticalAlignment="Top" Width="113" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <Grid>
                             <Label Content="{x:Static p:Resources.General_Speed}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
-                            <xctk:IntegerUpDown x:Name="IntUD_Speed" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="91"/>
+                            <lcontrols:NumericUpDown x:Name="IntUD_Speed" Minimum="0" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,25,0,0" Width="91"/>
 
                         </Grid>
                     </Border>

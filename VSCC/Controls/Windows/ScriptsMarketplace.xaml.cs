@@ -49,6 +49,7 @@
         }
 
         public void HandleCollectionChanged(object sender, NotifyCollectionChangedEventArgs args) => this.ListView_Online.Items.Refresh();
+
         public void HandleLocalCollectionChanged(object sender, NotifyCollectionChangedEventArgs args) => this.ListView_Local.Items.Refresh();
 
         public void HandleIndex(string s, Exception ex)

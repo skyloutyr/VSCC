@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p="clr-namespace:VSCC.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VSCC.Controls.Windows.Macro"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:lcontrols="clr-namespace:VSCC.Controls"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Window_MacroAction_Title}" Height="400" Width="600" Background="{StaticResource Static.Background}">
     <Grid>
@@ -15,8 +14,8 @@
         <ComboBox x:Name="CBAllPossibleActions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="71,37,0,0" Width="511" IsEditable="False" SelectionChanged="CBAllPossibleActions_SelectionChanged" Foreground="{StaticResource Static.Foreground}" />
         <TextBlock x:Name="TBMAInteractable" Margin="10,64,10,35" Foreground="{StaticResource Static.Foreground}" />
         <TextBox x:Name="TBMAConstantString" Visibility="Hidden" Margin="10,64,10,35" Foreground="{StaticResource Static.Foreground}" />
-        <xctk:IntegerUpDown x:Name="IUDAConstantInt" Margin="10,64,10,35" DefaultValue="0" Foreground="{StaticResource Static.Foreground}" Visibility="Hidden"></xctk:IntegerUpDown>
-        <xctk:SingleUpDown x:Name="IUDAConstantFloat" Margin="10,64,10,35" DefaultValue="0" Foreground="{StaticResource Static.Foreground}" Visibility="Hidden"></xctk:SingleUpDown>
+        <lcontrols:NumericUpDown x:Name="IUDAConstantInt" Margin="10,64,10,35" Foreground="{StaticResource Static.Foreground}" Visibility="Hidden"></lcontrols:NumericUpDown>
+        <lcontrols:SingleUpDown x:Name="IUDAConstantFloat" Margin="10,64,10,35" Foreground="{StaticResource Static.Foreground}" Visibility="Hidden"></lcontrols:SingleUpDown>
         <CheckBox x:Name="CBConstantBool" Margin="10,64,10,35" IsChecked="False" Visibility="Hidden" Content="Value" Foreground="{StaticResource Static.Foreground}" />
         <Grid x:Name="CustomContent" Margin="10,64,10,35" Visibility="Hidden" Background="#F1F1F1">
             <Grid.ColumnDefinitions>

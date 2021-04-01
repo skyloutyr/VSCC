@@ -283,12 +283,12 @@
 
             if (this.Action is MacroActionNumberConstant manc)
             {
-                manc.SetValue(this.IUDAConstantInt.Value ?? 0);
+                manc.SetValue(this.IUDAConstantInt.Value);
             }
 
             if (this.Action is MacroActionRealConstant marc)
             {
-                marc.SetValue(this.IUDAConstantFloat.Value ?? 0);
+                marc.SetValue(this.IUDAConstantFloat.Value);
             }
 
             if (this.Action is MacroActionBoolConstant mabc)

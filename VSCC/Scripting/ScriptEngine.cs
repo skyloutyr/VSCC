@@ -10,11 +10,11 @@
     using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
+    using VSCC.Controls;
     using VSCC.Controls.Windows;
     using VSCC.Properties;
     using VSCC.Scripting.TabCreator;
     using VSCC.State;
-    using Xceed.Wpf.Toolkit;
 
     public class ScriptEngine
     {
@@ -214,7 +214,7 @@
                             {
                                 if (value is int i)
                                 {
-                                    elem = new IntegerUpDown()
+                                    elem = new NumericUpDown()
                                     {
                                         VerticalAlignment = VerticalAlignment.Top,
                                         HorizontalAlignment = HorizontalAlignment.Left,
@@ -223,39 +223,12 @@
                                 }
                                 else
                                 {
-                                    if (value is float f)
+                                    elem = new SingleUpDown()
                                     {
-                                        elem = new SingleUpDown()
-                                        {
-                                            VerticalAlignment = VerticalAlignment.Top,
-                                            HorizontalAlignment = HorizontalAlignment.Left,
-                                            Value = f
-                                        };
-                                    }
-                                    else
-                                    {
-                                        if (value is double d)
-                                        {
-                                            elem = new DoubleUpDown()
-                                            {
-                                                VerticalAlignment = VerticalAlignment.Top,
-                                                HorizontalAlignment = HorizontalAlignment.Left,
-                                                Value = d
-                                            };
-                                        }
-                                        else
-                                        {
-                                            if (value is long l)
-                                            {
-                                                elem = new LongUpDown()
-                                                {
-                                                    VerticalAlignment = VerticalAlignment.Top,
-                                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                                    Value = l
-                                                };
-                                            }
-                                        }
-                                    }
+                                        VerticalAlignment = VerticalAlignment.Top,
+                                        HorizontalAlignment = HorizontalAlignment.Left,
+                                        Value = (float)value
+                                    };
                                 }
                             }
                         }
@@ -300,30 +273,13 @@
                             }
                             else
                             {
-                                if (kv.Key is IntegerUpDown iud)
+                                if (kv.Key is NumericUpDown iud)
                                 {
-                                    t[kv.Value] = iud.Value ?? 0;
+                                    t[kv.Value] = iud.Value;
                                 }
                                 else
                                 {
-                                    if (kv.Key is SingleUpDown fud)
-                                    {
-                                        t[kv.Value] = fud.Value ?? 0;
-                                    }
-                                    else
-                                    {
-                                        if (kv.Key is DoubleUpDown dud)
-                                        {
-                                            t[kv.Value] = dud.Value ?? 0;
-                                        }
-                                        else
-                                        {
-                                            if (kv.Key is LongUpDown lud)
-                                            {
-                                                t[kv.Value] = lud.Value ?? 0;
-                                            }
-                                        }
-                                    }
+                                    t[kv.Value] = ((SingleUpDown)kv.Key).Value;
                                 }
                             }
                         }
@@ -405,7 +361,9 @@
     public class UIProvider
     {
         public void RemoveTab(int tabID) => AppState.Current.Window.MainTabs.Items.RemoveAt(tabID);
+
         public string GetInternalTabName(int tabID) => AppState.Current.Window.MainTabs.Items.Count > tabID ? ((TabItem)AppState.Current.Window.MainTabs.Items[tabID]).Name : string.Empty;
+
         public LuaTable AddTab(string tabName, string json)
         {
             LuaTable table = UIGenerator.FromJSON(json);

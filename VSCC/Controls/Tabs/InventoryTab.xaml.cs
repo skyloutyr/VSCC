@@ -137,22 +137,24 @@
             }
         }
 
-        private void UserControl_Initialized(object sender, EventArgs e) =>
+        private void UserControl_Initialized(object sender, EventArgs e)
+        {
             this.KeyUp += (o, kea) =>
-            {
-                if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
-                {
-                    this._haltRefresh = true;
-                    for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
-                    {
-                        InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
-                        this.Items.Remove(ii);
-                    }
+{
+if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
+{
+this._haltRefresh = true;
+for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
+{
+InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
+this.Items.Remove(ii);
+}
 
-                    this._haltRefresh = false;
-                    this.Inventory.Items.Refresh();
-                }
-            };
+this._haltRefresh = false;
+this.Inventory.Items.Refresh();
+}
+};
+        }
 
         private void Btn_Edit_Click(object sender, RoutedEventArgs e)
         {
@@ -284,11 +286,11 @@
             ChangeCashWindow ccw = new ChangeCashWindow();
             if (ccw.ShowDialog() ?? false)
             {
-                this.IntUD_PP.Value = (this.IntUD_PP.Value ?? 0) + ccw.IntUD_PP.Value;
-                this.IntUD_GP.Value = (this.IntUD_GP.Value ?? 0) + ccw.IntUD_GP.Value;
-                this.IntUD_EP.Value = (this.IntUD_EP.Value ?? 0) + ccw.IntUD_EP.Value;
-                this.IntUD_SP.Value = (this.IntUD_SP.Value ?? 0) + ccw.IntUD_SP.Value;
-                this.IntUD_CP.Value = (this.IntUD_CP.Value ?? 0) + ccw.IntUD_CP.Value;
+                this.IntUD_PP.Value = this.IntUD_PP.Value + ccw.IntUD_PP.Value;
+                this.IntUD_GP.Value = this.IntUD_GP.Value + ccw.IntUD_GP.Value;
+                this.IntUD_EP.Value = this.IntUD_EP.Value + ccw.IntUD_EP.Value;
+                this.IntUD_SP.Value = this.IntUD_SP.Value + ccw.IntUD_SP.Value;
+                this.IntUD_CP.Value = this.IntUD_CP.Value + ccw.IntUD_CP.Value;
             }
         }
 
@@ -404,6 +406,7 @@
         }
 
         private void CommandBindingCopy_Executed(object sender, ExecutedRoutedEventArgs e) => this.Btn_Copy_Click(null, default);
+
         private void CommandBindingCut_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             this.Btn_Copy_Click(null, default);

@@ -50,7 +50,7 @@
             NewStatModifierDialog nsmd = new NewStatModifierDialog();
             if (nsmd.ShowDialog() ?? false)
             {
-                this.ContextData.Add(new StatModifier(nsmd.IntUD_Value.Value ?? 0, nsmd.TB_Label.Text));
+                this.ContextData.Add(new StatModifier(nsmd.IntUD_Value.Value, nsmd.TB_Label.Text));
             }
 
             this.StaysOpen = this._parent.StaysOpen = false;

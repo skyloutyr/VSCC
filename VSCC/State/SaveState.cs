@@ -34,6 +34,7 @@
         }
 
         public string Save() => JsonConvert.SerializeObject(this, Formatting.Indented);
+
         public void Load(string s) => AppState.Current.State = JsonConvert.DeserializeObject<SaveState>(s);
     }
 
@@ -107,7 +108,7 @@
 
         public int Level
         {
-            get => AppState.Current.TGeneral.IntUD_Lvl.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Lvl.Value;
             set => AppState.Current.TGeneral.IntUD_Lvl.Value = value;
         }
 
@@ -161,67 +162,67 @@
 
         public int ProfficiencyBonus
         {
-            get => AppState.Current.TGeneral.IntUD_ProfBonus.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_ProfBonus.Value;
             set => AppState.Current.TGeneral.IntUD_ProfBonus.Value = value;
         }
 
         public int ArmorClass
         {
-            get => AppState.Current.TGeneral.IntUD_AC.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_AC.Value;
             set => AppState.Current.TGeneral.IntUD_AC.Value = value;
         }
 
         public int Speed
         {
-            get => AppState.Current.TGeneral.IntUD_Speed.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Speed.Value;
             set => AppState.Current.TGeneral.IntUD_Speed.Value = value;
         }
 
         public int HitDice12Current
         {
-            get => AppState.Current.TGeneral.IntUD_HD12C.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD12C.Value;
             set => AppState.Current.TGeneral.IntUD_HD12C.Value = value;
         }
 
         public int HitDice12Max
         {
-            get => AppState.Current.TGeneral.IntUD_HD12M.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD12M.Value;
             set => AppState.Current.TGeneral.IntUD_HD12M.Value = value;
         }
 
         public int HitDice10Current
         {
-            get => AppState.Current.TGeneral.IntUD_HD10C.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD10C.Value;
             set => AppState.Current.TGeneral.IntUD_HD10C.Value = value;
         }
 
         public int HitDice10Max
         {
-            get => AppState.Current.TGeneral.IntUD_HD10M.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD10M.Value;
             set => AppState.Current.TGeneral.IntUD_HD10M.Value = value;
         }
 
         public int HitDice8Current
         {
-            get => AppState.Current.TGeneral.IntUD_HD8C.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD8C.Value;
             set => AppState.Current.TGeneral.IntUD_HD8C.Value = value;
         }
 
         public int HitDice8Max
         {
-            get => AppState.Current.TGeneral.IntUD_HD8M.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD8M.Value;
             set => AppState.Current.TGeneral.IntUD_HD8M.Value = value;
         }
 
         public int HitDice6Current
         {
-            get => AppState.Current.TGeneral.IntUD_HD6C.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD6C.Value;
             set => AppState.Current.TGeneral.IntUD_HD6C.Value = value;
         }
 
         public int HitDice6Max
         {
-            get => AppState.Current.TGeneral.IntUD_HD6M.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_HD6M.Value;
             set => AppState.Current.TGeneral.IntUD_HD6M.Value = value;
         }
 
@@ -249,7 +250,7 @@
 
         public int StatStr
         {
-            get => AppState.Current.TGeneral.IntUD_Str.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Str.Value;
             set => AppState.Current.TGeneral.IntUD_Str.Value = value;
         }
 
@@ -271,7 +272,7 @@
 
         public int StatDex
         {
-            get => AppState.Current.TGeneral.IntUD_Dex.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Dex.Value;
             set => AppState.Current.TGeneral.IntUD_Dex.Value = value;
         }
 
@@ -293,7 +294,7 @@
 
         public int StatCon
         {
-            get => AppState.Current.TGeneral.IntUD_Con.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Con.Value;
             set => AppState.Current.TGeneral.IntUD_Con.Value = value;
         }
 
@@ -315,7 +316,7 @@
 
         public int StatCha
         {
-            get => AppState.Current.TGeneral.IntUD_Cha.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Cha.Value;
             set => AppState.Current.TGeneral.IntUD_Cha.Value = value;
         }
 
@@ -337,7 +338,7 @@
 
         public int StatWis
         {
-            get => AppState.Current.TGeneral.IntUD_Wis.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Wis.Value;
             set => AppState.Current.TGeneral.IntUD_Wis.Value = value;
         }
 
@@ -359,7 +360,7 @@
 
         public int StatInt
         {
-            get => AppState.Current.TGeneral.IntUD_Int.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Int.Value;
             set => AppState.Current.TGeneral.IntUD_Int.Value = value;
         }
 
@@ -417,145 +418,145 @@
 
         public int StrSave
         {
-            get => AppState.Current.TGeneral.IntUD_Saves_Str.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Saves_Str.Value;
             set => AppState.Current.TGeneral.IntUD_Saves_Str.Value = value;
         }
 
         public int DexSave
         {
-            get => AppState.Current.TGeneral.IntUD_Saves_Dex.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Saves_Dex.Value;
             set => AppState.Current.TGeneral.IntUD_Saves_Dex.Value = value;
         }
 
         public int ConSave
         {
-            get => AppState.Current.TGeneral.IntUD_Saves_Con.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Saves_Con.Value;
             set => AppState.Current.TGeneral.IntUD_Saves_Con.Value = value;
         }
 
         public int IntSave
         {
-            get => AppState.Current.TGeneral.IntUD_Saves_Int.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Saves_Int.Value;
             set => AppState.Current.TGeneral.IntUD_Saves_Int.Value = value;
         }
 
         public int WisSave
         {
-            get => AppState.Current.TGeneral.IntUD_Saves_Wis.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Saves_Wis.Value;
             set => AppState.Current.TGeneral.IntUD_Saves_Wis.Value = value;
         }
 
         public int ChaSave
         {
-            get => AppState.Current.TGeneral.IntUD_Saves_Cha.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Saves_Cha.Value;
             set => AppState.Current.TGeneral.IntUD_Saves_Cha.Value = value;
         }
 
         public int Athletics
         {
-            get => AppState.Current.TGeneral.IntUD_Athletics.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Athletics.Value;
             set => AppState.Current.TGeneral.IntUD_Athletics.Value = value;
         }
 
         public int Acrobatics
         {
-            get => AppState.Current.TGeneral.IntUD_Acrobatics.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Acrobatics.Value;
             set => AppState.Current.TGeneral.IntUD_Acrobatics.Value = value;
         }
 
         public int SleightOfHand
         {
-            get => AppState.Current.TGeneral.IntUD_SleightOfHand.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_SleightOfHand.Value;
             set => AppState.Current.TGeneral.IntUD_SleightOfHand.Value = value;
         }
 
         public int Stealth
         {
-            get => AppState.Current.TGeneral.IntUD_Stealth.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Stealth.Value;
             set => AppState.Current.TGeneral.IntUD_Stealth.Value = value;
         }
 
         public int Arcana
         {
-            get => AppState.Current.TGeneral.IntUD_Arcana.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Arcana.Value;
             set => AppState.Current.TGeneral.IntUD_Arcana.Value = value;
         }
 
         public int History
         {
-            get => AppState.Current.TGeneral.IntUD_History.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_History.Value;
             set => AppState.Current.TGeneral.IntUD_History.Value = value;
         }
 
         public int Investigation
         {
-            get => AppState.Current.TGeneral.IntUD_Investigation.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Investigation.Value;
             set => AppState.Current.TGeneral.IntUD_Investigation.Value = value;
         }
 
         public int Nature
         {
-            get => AppState.Current.TGeneral.IntUD_Nature.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Nature.Value;
             set => AppState.Current.TGeneral.IntUD_Nature.Value = value;
         }
 
         public int Religion
         {
-            get => AppState.Current.TGeneral.IntUD_Religion.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Religion.Value;
             set => AppState.Current.TGeneral.IntUD_Religion.Value = value;
         }
 
         public int AnimalHandling
         {
-            get => AppState.Current.TGeneral.IntUD_AnimalHandling.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_AnimalHandling.Value;
             set => AppState.Current.TGeneral.IntUD_AnimalHandling.Value = value;
         }
 
         public int Insight
         {
-            get => AppState.Current.TGeneral.IntUD_Insight.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Insight.Value;
             set => AppState.Current.TGeneral.IntUD_Insight.Value = value;
         }
 
         public int Medicine
         {
-            get => AppState.Current.TGeneral.IntUD_Medicine.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Medicine.Value;
             set => AppState.Current.TGeneral.IntUD_Medicine.Value = value;
         }
 
         public int Perception
         {
-            get => AppState.Current.TGeneral.IntUD_Perception.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Perception.Value;
             set => AppState.Current.TGeneral.IntUD_Perception.Value = value;
         }
 
         public int Survival
         {
-            get => AppState.Current.TGeneral.IntUD_Survival.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Survival.Value;
             set => AppState.Current.TGeneral.IntUD_Survival.Value = value;
         }
 
         public int Deception
         {
-            get => AppState.Current.TGeneral.IntUD_Deception.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Deception.Value;
             set => AppState.Current.TGeneral.IntUD_Deception.Value = value;
         }
 
         public int Performance
         {
-            get => AppState.Current.TGeneral.IntUD_Performance.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Performance.Value;
             set => AppState.Current.TGeneral.IntUD_Performance.Value = value;
         }
 
         public int Persuasion
         {
-            get => AppState.Current.TGeneral.IntUD_Persuasion.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Persuasion.Value;
             set => AppState.Current.TGeneral.IntUD_Persuasion.Value = value;
         }
 
         public int Intimidation
         {
-            get => AppState.Current.TGeneral.IntUD_Intimidation.Value ?? 0;
+            get => AppState.Current.TGeneral.IntUD_Intimidation.Value;
             set => AppState.Current.TGeneral.IntUD_Intimidation.Value = value;
         }
 
@@ -805,19 +806,19 @@
 
         public int Age
         {
-            get => AppState.Current.TExtras.IntUD_Age.Value ?? 0;
+            get => AppState.Current.TExtras.IntUD_Age.Value;
             set => AppState.Current.TExtras.IntUD_Age.Value = value;
         }
 
         public float Height
         {
-            get => AppState.Current.TExtras.FloatUD_Height.Value ?? 0;
+            get => AppState.Current.TExtras.FloatUD_Height.Value;
             set => AppState.Current.TExtras.FloatUD_Height.Value = value;
         }
 
         public float Weight
         {
-            get => AppState.Current.TExtras.FloatUD_Weight.Value ?? 0;
+            get => AppState.Current.TExtras.FloatUD_Weight.Value;
             set => AppState.Current.TExtras.FloatUD_Weight.Value = value;
         }
 
@@ -835,31 +836,31 @@
     {
         public int PP
         {
-            get => AppState.Current.TInventory.IntUD_PP.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_PP.Value;
             set => AppState.Current.TInventory.IntUD_PP.Value = value;
         }
 
         public int GP
         {
-            get => AppState.Current.TInventory.IntUD_GP.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_GP.Value;
             set => AppState.Current.TInventory.IntUD_GP.Value = value;
         }
 
         public int EP
         {
-            get => AppState.Current.TInventory.IntUD_EP.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_EP.Value;
             set => AppState.Current.TInventory.IntUD_EP.Value = value;
         }
 
         public int SP
         {
-            get => AppState.Current.TInventory.IntUD_SP.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_SP.Value;
             set => AppState.Current.TInventory.IntUD_SP.Value = value;
         }
 
         public int CP
         {
-            get => AppState.Current.TInventory.IntUD_CP.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_CP.Value;
             set => AppState.Current.TInventory.IntUD_CP.Value = value;
         }
 
@@ -890,19 +891,19 @@
 
         public float WeightCurrent
         {
-            get => AppState.Current.TInventory.IntUD_WeightCurrent.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_WeightCurrent.Value;
             set => AppState.Current.TInventory.IntUD_WeightCurrent.Value = value;
         }
 
         public float WeightMax1
         {
-            get => AppState.Current.TInventory.IntUD_WeightMax1.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_WeightMax1.Value;
             set => AppState.Current.TInventory.IntUD_WeightMax1.Value = value;
         }
 
         public float WeightMax2
         {
-            get => AppState.Current.TInventory.IntUD_WeightMax2.Value ?? 0;
+            get => AppState.Current.TInventory.IntUD_WeightMax2.Value;
             set => AppState.Current.TInventory.IntUD_WeightMax2.Value = value;
         }
 
@@ -1032,139 +1033,139 @@
 
         public int SpellSaveDC
         {
-            get => AppState.Current.TSpellbook.IntUD_SpellSave.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_SpellSave.Value;
             set => AppState.Current.TSpellbook.IntUD_SpellSave.Value = value;
         }
 
         public int SpellAttackBonus
         {
-            get => AppState.Current.TSpellbook.IntUD_SpellAttackAbility.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_SpellAttackAbility.Value;
             set => AppState.Current.TSpellbook.IntUD_SpellAttackAbility.Value = value;
         }
 
         public int MaxSpells
         {
-            get => AppState.Current.TSpellbook.IntUD_SpellsAmount.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_SpellsAmount.Value;
             set => AppState.Current.TSpellbook.IntUD_SpellsAmount.Value = value;
         }
 
         public int SpellSlots0Current
         {
-            get => AppState.Current.TSpellbook.IntUD_0CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_0CS.Value;
             set => AppState.Current.TSpellbook.IntUD_0CS.Value = value;
         }
 
         public int SpellSlots1Current
         {
-            get => AppState.Current.TSpellbook.IntUD_1CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_1CS.Value;
             set => AppState.Current.TSpellbook.IntUD_1CS.Value = value;
         }
 
         public int SpellSlots2Current
         {
-            get => AppState.Current.TSpellbook.IntUD_2CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_2CS.Value;
             set => AppState.Current.TSpellbook.IntUD_2CS.Value = value;
         }
 
         public int SpellSlots3Current
         {
-            get => AppState.Current.TSpellbook.IntUD_3CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_3CS.Value;
             set => AppState.Current.TSpellbook.IntUD_3CS.Value = value;
         }
 
         public int SpellSlots4Current
         {
-            get => AppState.Current.TSpellbook.IntUD_4CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_4CS.Value;
             set => AppState.Current.TSpellbook.IntUD_4CS.Value = value;
         }
 
         public int SpellSlots5Current
         {
-            get => AppState.Current.TSpellbook.IntUD_5CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_5CS.Value;
             set => AppState.Current.TSpellbook.IntUD_5CS.Value = value;
         }
 
         public int SpellSlots6Current
         {
-            get => AppState.Current.TSpellbook.IntUD_6CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_6CS.Value;
             set => AppState.Current.TSpellbook.IntUD_6CS.Value = value;
         }
 
         public int SpellSlots7Current
         {
-            get => AppState.Current.TSpellbook.IntUD_7CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_7CS.Value;
             set => AppState.Current.TSpellbook.IntUD_7CS.Value = value;
         }
 
         public int SpellSlots8Current
         {
-            get => AppState.Current.TSpellbook.IntUD_8CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_8CS.Value;
             set => AppState.Current.TSpellbook.IntUD_8CS.Value = value;
         }
 
         public int SpellSlots9Current
         {
-            get => AppState.Current.TSpellbook.IntUD_9CS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_9CS.Value;
             set => AppState.Current.TSpellbook.IntUD_9CS.Value = value;
         }
 
         public int SpellSlots0Max
         {
-            get => AppState.Current.TSpellbook.IntUD_0MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_0MS.Value;
             set => AppState.Current.TSpellbook.IntUD_0MS.Value = value;
         }
 
         public int SpellSlots1Max
         {
-            get => AppState.Current.TSpellbook.IntUD_1MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_1MS.Value;
             set => AppState.Current.TSpellbook.IntUD_1MS.Value = value;
         }
 
         public int SpellSlots2Max
         {
-            get => AppState.Current.TSpellbook.IntUD_2MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_2MS.Value;
             set => AppState.Current.TSpellbook.IntUD_2MS.Value = value;
         }
 
         public int SpellSlots3Max
         {
-            get => AppState.Current.TSpellbook.IntUD_3MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_3MS.Value;
             set => AppState.Current.TSpellbook.IntUD_3MS.Value = value;
         }
 
         public int SpellSlots4Max
         {
-            get => AppState.Current.TSpellbook.IntUD_4MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_4MS.Value;
             set => AppState.Current.TSpellbook.IntUD_4MS.Value = value;
         }
 
         public int SpellSlots5Max
         {
-            get => AppState.Current.TSpellbook.IntUD_5MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_5MS.Value;
             set => AppState.Current.TSpellbook.IntUD_5MS.Value = value;
         }
 
         public int SpellSlots6Max
         {
-            get => AppState.Current.TSpellbook.IntUD_6MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_6MS.Value;
             set => AppState.Current.TSpellbook.IntUD_6MS.Value = value;
         }
 
         public int SpellSlots7Max
         {
-            get => AppState.Current.TSpellbook.IntUD_7MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_7MS.Value;
             set => AppState.Current.TSpellbook.IntUD_7MS.Value = value;
         }
 
         public int SpellSlots8Max
         {
-            get => AppState.Current.TSpellbook.IntUD_8MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_8MS.Value;
             set => AppState.Current.TSpellbook.IntUD_8MS.Value = value;
         }
 
         public int SpellSlots9Max
         {
-            get => AppState.Current.TSpellbook.IntUD_9MS.Value ?? 0;
+            get => AppState.Current.TSpellbook.IntUD_9MS.Value;
             set => AppState.Current.TSpellbook.IntUD_9MS.Value = value;
         }
 

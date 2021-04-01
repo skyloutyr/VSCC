@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VSCC.Controls.Dialogs"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:lcontrols="clr-namespace:VSCC.Controls"
         xmlns:Properties="clr-namespace:VSCC.Properties" x:Class="VSCC.Controls.Dialogs.NewStatModifierDialog"
         mc:Ignorable="d"
         Title="{x:Static Properties:Resources.Window_NewStatModifierDialog_Title}" Height="128" Width="640" Background="{StaticResource Static.Background}">
@@ -12,7 +11,7 @@
         <Button Content="{x:Static Properties:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,68,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
         <Button Content="{x:Static Properties:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="558,68,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
         <Label Content="{x:Static Properties:Resources.StatModifier_Label}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0" Width="64" />
-        <xctk:IntegerUpDown x:Name="IntUD_Value" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,37,0,0" Height="26" Width="64" Value="0" />
+        <lcontrols:NumericUpDown x:Name="IntUD_Value" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,37,0,0" Height="26" Width="64" Value="0" />
         <Label Content="{x:Static Properties:Resources.StatModifier_Text}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="79,6,0,0" Width="64" />
         <TextBox x:Name="TB_Label" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Height="77" Width="405" Margin="148,10,0,0" />
     </Grid>

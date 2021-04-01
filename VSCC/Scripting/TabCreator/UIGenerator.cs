@@ -9,8 +9,8 @@
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
+    using VSCC.Controls;
     using VSCC.Scripting.TabCreator.Defs;
-    using Xceed.Wpf.Toolkit;
 
     public class UIGenerator
     {
@@ -208,7 +208,7 @@
 
             [UIType.IntUpDown] = def =>
             {
-                IntegerUpDown intUD = new IntegerUpDown();
+                NumericUpDown intUD = new NumericUpDown();
                 SetBasicData(intUD, def);
                 if (def.NumericUpDownData != null)
                 {

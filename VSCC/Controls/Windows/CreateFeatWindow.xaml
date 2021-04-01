@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:p="clr-namespace:VSCC.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VSCC.Controls.Windows"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:lcontrols="clr-namespace:VSCC.Controls"
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Window_CreateFeat_Title}" Height="477.333" Width="386" Background="{StaticResource Static.Background}">
     <Grid>
@@ -17,8 +16,8 @@
         </Button>
         <TextBox x:Name="TextBox_Name" Text="{Binding NameProperty}" Foreground="{Binding NameColorProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,10,0,0" Width="193" Height="28" />
         <Button x:Name="Btn_ColorChange" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{Binding NameColorProperty}" Height="28" Width="28" Margin="341,10,0,0" Click="Btn_ColorChange_Click"></Button>
-        <xctk:IntegerUpDown x:Name="IntUD_CurrentValue" Value="{Binding ValueProperty}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,43,0,0" Height="30" Width="94" />
-        <xctk:IntegerUpDown x:Name="IntUD_MaxValue" Value="{Binding ValueMaxProperty}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="274,43,0,0" Height="30" Width="94" />
+        <lcontrols:NumericUpDown x:Name="IntUD_CurrentValue" Value="{Binding ValueProperty}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="143,43,0,0" Height="30" Width="94" />
+        <lcontrols:NumericUpDown x:Name="IntUD_MaxValue" Value="{Binding ValueMaxProperty}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="274,43,0,0" Height="30" Width="94" />
 
         <Button x:Name="Btn_ColorChangeVal" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{Binding BarForegroundProperty}" Height="28" Width="94" Margin="143,78,0,0" Click="Btn_ValColorChange_Click"></Button>
         <Button x:Name="Btn_ColorChangeBack" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{Binding BarBackgroundProperty}" Height="28" Width="94" Margin="274,78,0,0" Click="Btn_BackColorChange_Click"></Button>

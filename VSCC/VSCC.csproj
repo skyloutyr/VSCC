@@ -71,7 +71,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -95,6 +94,12 @@
     </Compile>
     <Compile Include="Controls\InventoryItemPanel.xaml.cs">
       <DependentUpon>InventoryItemPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SingleUpDown.xaml.cs">
+      <DependentUpon>SingleUpDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumericUpDown.xaml.cs">
+      <DependentUpon>NumericUpDown.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Tabs\Roll20Tab.xaml.cs">
       <DependentUpon>Roll20Tab.xaml</DependentUpon>
@@ -164,9 +169,6 @@
     </Compile>
     <Compile Include="Controls\Windows\ChangeValueWindow.xaml.cs">
       <DependentUpon>ChangeValueWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Windows\ColorPickerWindow.xaml.cs">
-      <DependentUpon>ColorPickerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Windows\CreateFeatWindow.xaml.cs">
       <DependentUpon>CreateFeatWindow.xaml</DependentUpon>
@@ -407,6 +409,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\SingleUpDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NumericUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Tabs\Roll20Tab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -508,10 +518,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Windows\ChangeValueWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\Windows\ColorPickerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -3525,23 +3531,23 @@
     <Resource Include="Images\AppIcons\icons8-text-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit">
-      <Version>3.7.0</Version>
+    <PackageReference Include="ColorPickerWPF">
+      <Version>1.0.9</Version>
     </PackageReference>
     <PackageReference Include="Fleck">
       <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="NLua">
-      <Version>1.4.26</Version>
+      <Version>1.5.7</Version>
     </PackageReference>
     <PackageReference Include="SemanticVersioning">
-      <Version>1.2.2</Version>
+      <Version>1.3.0</Version>
     </PackageReference>
     <PackageReference Include="VirtualizingWrapPanel">
-      <Version>1.4.0</Version>
+      <Version>1.5.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

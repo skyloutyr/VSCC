@@ -359,6 +359,7 @@
         private Point startPoint;
 
         private void Tvi_MouseDown(object sender, MouseButtonEventArgs e) => this.startPoint = Mouse.GetPosition(Application.Current.MainWindow);
+
         private void Tvi_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             Point mousePos = Mouse.GetPosition(Application.Current.MainWindow);
