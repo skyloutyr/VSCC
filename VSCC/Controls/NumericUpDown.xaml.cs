@@ -9,7 +9,7 @@
     /// </summary>
     public partial class NumericUpDown : UserControl
     {
-        public static readonly DependencyProperty ValueDependency = DependencyProperty.Register("Value", typeof(int), typeof(NumericUpDown), new PropertyMetadata(0));
+        public static readonly DependencyProperty ValueDependency = DependencyProperty.Register("Value", typeof(int), typeof(NumericUpDown), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnValueChanged));
         public static readonly DependencyProperty MaximumDependency = DependencyProperty.Register("MaxValue", typeof(int), typeof(NumericUpDown), new PropertyMetadata(int.MaxValue));
         public static readonly DependencyProperty MinimumDependency = DependencyProperty.Register("MinValue", typeof(int), typeof(NumericUpDown), new PropertyMetadata(0));
         public static readonly DependencyProperty StepDependency = DependencyProperty.Register("Step", typeof(int), typeof(NumericUpDown), new PropertyMetadata(1));
@@ -50,6 +50,14 @@
             remove { this.RemoveHandler(ValueChangedEvent, value); }
         }
 
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            NumericUpDown nud = (NumericUpDown)d;
+            nud._recalcValue = false;
+            nud.TB_Content.Text = e.NewValue.ToString();
+            nud._recalcValue = true;
+        }
+
         public NumericUpDown()
         {
             this.InitializeComponent();
@@ -59,6 +67,12 @@
             this._recalcValue = false;
             this.TB_Content.Text = this.Value.ToString();
             this._recalcValue = true;
+            this.DataContextChanged += this.NumericUpDown_DataContextChanged;
+        }
+
+        private void NumericUpDown_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            this.Value = (int)this.GetValue(ValueDependency);
         }
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)

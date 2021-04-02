@@ -9,7 +9,7 @@
     /// </summary>
     public partial class SingleUpDown : UserControl
     {
-        public static readonly DependencyProperty ValueDependency = DependencyProperty.Register("Value", typeof(float), typeof(SingleUpDown), new PropertyMetadata(0f));
+        public static readonly DependencyProperty ValueDependency = DependencyProperty.Register("Value", typeof(float), typeof(SingleUpDown), new FrameworkPropertyMetadata(0f, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnValueChanged));
         public static readonly DependencyProperty MaximumDependency = DependencyProperty.Register("MaxValue", typeof(float), typeof(SingleUpDown), new PropertyMetadata(float.MaxValue));
         public static readonly DependencyProperty MinimumDependency = DependencyProperty.Register("MinValue", typeof(float), typeof(SingleUpDown), new PropertyMetadata(0f));
         public static readonly DependencyProperty StepDependency = DependencyProperty.Register("Step", typeof(float), typeof(SingleUpDown), new PropertyMetadata(1f));
@@ -59,6 +59,14 @@
             this._recalcValue = false;
             this.TB_Content.Text = this.Value.ToString();
             this._recalcValue = true;
+        }
+
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SingleUpDown nud = (SingleUpDown)d;
+            nud._recalcValue = false;
+            nud.TB_Content.Text = e.NewValue.ToString();
+            nud._recalcValue = true;
         }
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
