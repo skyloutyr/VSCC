@@ -223,11 +223,30 @@
                                 }
                                 else
                                 {
+                                    float v = 0f;
+                                    switch (value)
+                                    {
+                                        case long l:
+                                            v = l;
+                                            break;
+                                        case ulong ul:
+                                            v = ul;
+                                            break;
+                                        case float f:
+                                            v = f;
+                                            break;
+                                        case double d:
+                                            v = (float)d;
+                                            break;
+                                    }
+
                                     elem = new SingleUpDown()
                                     {
                                         VerticalAlignment = VerticalAlignment.Top,
                                         HorizontalAlignment = HorizontalAlignment.Left,
-                                        Value = (float)value
+                                        MaxHeight = 128,
+                                        MaxWidth = 64,
+                                        Value = v
                                     };
                                 }
                             }
