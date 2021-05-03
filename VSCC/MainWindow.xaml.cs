@@ -8,6 +8,7 @@
     using System.Net;
     using System.Reflection;
     using System.Threading;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
@@ -15,6 +16,7 @@
     using VSCC.DataType;
     using VSCC.Properties;
     using VSCC.Roll20;
+    using VSCC.Roll20.Macros;
     using VSCC.Scripting;
     using VSCC.Skins;
     using VSCC.State;
@@ -62,6 +64,7 @@
                 // NOOP
             }
 
+            Task.Run(() => MacroAction.Initialize());
             this.Dispatcher.UnhandledException += this.Dispatcher_UnhandledException;
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.AppThread = Thread.CurrentThread;

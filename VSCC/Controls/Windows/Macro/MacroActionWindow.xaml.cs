@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Documents;
@@ -27,6 +28,11 @@
             this.TypeFilter = type;
             if (type != null)
             {
+                while (!MacroAction.IsInitialized)
+                {
+                    Thread.Sleep(10);
+                }
+
                 this.CBCategories.Items.Add(new ComboBoxItem() { Content = "All", Tag = new object() });
                 foreach (string cat in MacroAction.Actions[type].Where(a => a.Item4).Select(tu => tu.Item3).Distinct())
                 {
@@ -206,6 +212,11 @@
                 string cat = e == null ? this.CBCategories.Text : (string)((ComboBoxItem)e.AddedItems[0]).Content;
                 this.CBAllPossibleActions.Items.Clear();
                 List<ComboBoxItem> t = new List<ComboBoxItem>();
+                while (!MacroAction.IsInitialized)
+                {
+                    Thread.Sleep(10);
+                }
+
                 foreach (Tuple<Type, string, string, bool> mat in MacroAction.Actions[this.TypeFilter])
                 {
                     if (!mat.Item4)

@@ -1,37 +1,39 @@
 ﻿namespace VSCC.Roll20.Macros
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.IO;
-    using System.Reflection;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using System.Windows.Controls;
     using System.Windows.Documents;
     using VSCC.Properties;
 
     public abstract class MacroAction
     {
-        public static Dictionary<Type, List<Tuple<Type, string, string, bool>>> Actions { get; } = new Dictionary<Type, List<Tuple<Type, string, string, bool>>>();
+        public static ConcurrentDictionary<Type, List<Tuple<Type, string, string, bool>>> Actions { get; } = new ConcurrentDictionary<Type, List<Tuple<Type, string, string, bool>>>();
+        public static bool IsInitialized { get; set; }
 
-        static MacroAction()
+        public static void Initialize()
         {
-            foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+            IEnumerable<Type> e = typeof(MacroAction).Assembly.GetTypes();
+            Parallel.ForEach(e, t =>
             {
-                foreach (Type t in a.GetTypes())
+                if (!t.IsAbstract && typeof(MacroAction).IsAssignableFrom(t))
                 {
-                    if (!t.IsAbstract && typeof(MacroAction).IsAssignableFrom(t))
+                    MacroAction ma = (MacroAction)Activator.CreateInstance(t);
+                    Type k = ma.ReturnType;
+                    if (!Actions.ContainsKey(k))
                     {
-                        MacroAction ma = (MacroAction)Activator.CreateInstance(t);
-                        Type k = ma.ReturnType;
-                        if (!Actions.ContainsKey(k))
-                        {
-                            Actions[k] = new List<Tuple<Type, string, string, bool>>();
-                        }
-
-                        Actions[k].Add(new Tuple<Type, string, string, bool>(t, ma.Name, ma.Category, ma.IsQueryable));
+                        Actions[k] = new List<Tuple<Type, string, string, bool>>();
                     }
+
+                    Actions[k].Add(new Tuple<Type, string, string, bool>(t, ma.Name, ma.Category, ma.IsQueryable));
                 }
-            }
+            });
+
+            IsInitialized = true;
         }
 
         public abstract string Name { get; }
