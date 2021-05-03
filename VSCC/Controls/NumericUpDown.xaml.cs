@@ -56,6 +56,7 @@
             nud._recalcValue = false;
             nud.TB_Content.Text = e.NewValue.ToString();
             nud._recalcValue = true;
+            nud.EnableDisableButtons();
         }
 
         public NumericUpDown()

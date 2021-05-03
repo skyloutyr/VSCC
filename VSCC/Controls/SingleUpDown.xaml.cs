@@ -67,6 +67,7 @@
             nud._recalcValue = false;
             nud.TB_Content.Text = e.NewValue.ToString();
             nud._recalcValue = true;
+            nud.EnableDisableButtons();
         }
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
