@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.2.3",
+  "version": "1.2.4",
   "changelog": {
     "0.0.0": "Pre-release version. Basic functionality.",
     "1.0.0": "First release. Added roll20 integration.",
@@ -22,6 +22,7 @@
     "1.2.0": "Major application update. Added macros. Added feat cards. Added many new icons for items. Many things can now be copy-pasted. Items can be nested in other items. Added tooltips to many buttons. Added localization for window titles. Some fixes. There are more changes that likely didn't make it into this limited window.",
     "1.2.1": "Added an error message when defining a local with the same name/without specifying a value. Fixed some localization issues. Made localization more consistent. Changed some UI arrangement",
     "1.2.2": "Fixed an issue that prevented feats from being pasted. Fixed images not being loaded in time. Reworked the image loading code - now allows for images with the same name and loads on-demand. Fixed the stat modifiers(app) changing the stat modifier(dnd) values upon save loading. Removed item/spell templates from save/load data.",
-    "1.2.3": "Updater should now work on Win7 or older. Updater is now updated by the main app. Code Refactoring. Removed the Xceed.Toolkit dependency due to licensing changes of the library. Allowed the app to handle the situations where the user selects an image for a spell/item/feat that is located outside of the app's directory. The application now generates a log upon an unexpected crash, and asks the user to revert their settings upon next startup."
+    "1.2.3": "Updater should now work on Win7 or older. Updater is now updated by the main app. Code Refactoring. Removed the Xceed.Toolkit dependency due to licensing changes of the library. Allowed the app to handle the situations where the user selects an image for a spell/item/feat that is located outside of the app's directory. The application now generates a log upon an unexpected crash, and asks the user to revert their settings upon next startup.",
+    "1.2.4": "Changed the item layout (again). Item amounts can now be changed without opening the item edit window. Items can now be set to not contribute to total inventory weight. Fixed an issue where numeric up downs would not let you change the value with the buttons. Improved macro load performance. Fixed script custom window crashing the app. Fixed Containers duplicating container text each save."
   }
 }
