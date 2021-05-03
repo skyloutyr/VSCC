@@ -353,5 +353,21 @@
                 e.Handled = true;
             }
         }
+
+        private void ButtonItemAmountUp_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            InventoryItem ii = (InventoryItem)b.DataContext;
+            ii.Amount += 1;
+            AppState.Current.State.Inventory.WeightCurrent += ii.Weight * ii.ItemWeightLogicMul;
+        }
+
+        private void ButtonItemAmountDown_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            InventoryItem ii = (InventoryItem)b.DataContext;
+            ii.Amount -= 1;
+            AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.ItemWeightLogicMul;
+        }
     }
 }
