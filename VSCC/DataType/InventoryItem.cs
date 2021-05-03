@@ -251,6 +251,11 @@
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public bool IgnoreItemWeight { get; set; }
+
+        [JsonIgnore]
+        public float ItemWeightLogicMul => this.IgnoreItemWeight ? 0 : 1;
+
         public InventoryItem()
         {
         }
@@ -286,6 +291,7 @@
                 Name = this.Name,
                 Amount = this.Amount,
                 Weight = this.Weight,
+                IgnoreItemWeight = this.IgnoreItemWeight,
                 Cost = this.Cost.Copy(),
                 Type = this.Type,
                 Rarity = this.Rarity,

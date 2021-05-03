@@ -115,6 +115,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ignore item Weight.
+        /// </summary>
+        public static string CreateItem_IgnoreWeight {
+            get {
+                return ResourceManager.GetString("CreateItem_IgnoreWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rarity.
         /// </summary>
         public static string CreateItem_Rarity {

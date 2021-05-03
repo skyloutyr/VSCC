@@ -132,6 +132,9 @@
   <data name="CreateItem_Description" xml:space="preserve">
     <value>Описание</value>
   </data>
+  <data name="CreateItem_IgnoreWeight" xml:space="preserve">
+    <value>Игнорировать Вес</value>
+  </data>
   <data name="CreateItem_Rarity" xml:space="preserve">
     <value>Редкость</value>
   </data>

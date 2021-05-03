@@ -132,6 +132,9 @@
   <data name="CreateItem_Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="CreateItem_IgnoreWeight" xml:space="preserve">
+    <value>Ignore item Weight</value>
+  </data>
   <data name="CreateItem_Rarity" xml:space="preserve">
     <value>Rarity</value>
   </data>

@@ -63,7 +63,7 @@
             {
                 ((InventoryItem)ciiw.DataContext).ContainerID = this.OwnerItem.ObjectID;
                 this.Items.Add((InventoryItem)ciiw.DataContext);
-                AppState.Current.State.Inventory.WeightCurrent += ((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount;
+                AppState.Current.State.Inventory.WeightCurrent += ((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount * ((InventoryItem)ciiw.DataContext).ItemWeightLogicMul;
             }
         }
 
@@ -76,7 +76,7 @@
                 if (ciiw.ShowDialog() ?? false)
                 {
                     this.Items[this.Items.IndexOf(ii)] = (InventoryItem)ciiw.DataContext;
-                    float weightDiff = (((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount) - (ii.Weight * ii.Amount);
+                    float weightDiff = (((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount * ((InventoryItem)ciiw.DataContext).ItemWeightLogicMul) - (ii.Weight * ii.Amount * ii.ItemWeightLogicMul);
                     AppState.Current.State.Inventory.WeightCurrent += weightDiff;
                 }
             }
@@ -98,7 +98,7 @@
         private void DeleteItem(InventoryItem ii)
         {
             this.Items.Remove(ii);
-            AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.Amount;
+            AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.Amount * ii.ItemWeightLogicMul;
             Stack<InventoryItem> itorem = new Stack<InventoryItem>();
             foreach (InventoryItem item in this.Items)
             {

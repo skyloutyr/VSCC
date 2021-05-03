@@ -109,7 +109,7 @@
                 float cw = 0;
                 foreach (InventoryItem ii in this.Items)
                 {
-                    cw += ii.Weight * ii.Amount;
+                    cw += ii.Weight * ii.Amount * ii.ItemWeightLogicMul;
                 }
 
                 AppState.Current.State.Inventory.WeightCurrent = cw;
@@ -133,7 +133,7 @@
             if (ciiw.ShowDialog() ?? false)
             {
                 this.Items.Add((InventoryItem)ciiw.DataContext);
-                AppState.Current.State.Inventory.WeightCurrent += ((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount;
+                AppState.Current.State.Inventory.WeightCurrent += ((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount * ((InventoryItem)ciiw.DataContext).ItemWeightLogicMul;
             }
         }
 
@@ -141,18 +141,18 @@
         {
             this.KeyUp += (o, kea) =>
 {
-if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
-{
-this._haltRefresh = true;
-for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
-{
-InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
-this.Items.Remove(ii);
-}
+    if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
+    {
+        this._haltRefresh = true;
+        for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
+        {
+            InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
+            this.Items.Remove(ii);
+        }
 
-this._haltRefresh = false;
-this.Inventory.Items.Refresh();
-}
+        this._haltRefresh = false;
+        this.Inventory.Items.Refresh();
+    }
 };
         }
 
@@ -165,7 +165,7 @@ this.Inventory.Items.Refresh();
                 if (ciiw.ShowDialog() ?? false)
                 {
                     this.Items[this.Items.IndexOf(ii)] = (InventoryItem)ciiw.DataContext;
-                    float weightDiff = (((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount) - (ii.Weight * ii.Amount);
+                    float weightDiff = (((InventoryItem)ciiw.DataContext).Weight * ((InventoryItem)ciiw.DataContext).Amount * ((InventoryItem)ciiw.DataContext).ItemWeightLogicMul) - (ii.Weight * ii.Amount * ii.ItemWeightLogicMul);
                     AppState.Current.State.Inventory.WeightCurrent += weightDiff;
                 }
             }
@@ -187,7 +187,7 @@ this.Inventory.Items.Refresh();
         private void DeleteItem(InventoryItem ii)
         {
             this.Items.Remove(ii);
-            AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.Amount;
+            AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.Amount * ii.ItemWeightLogicMul;
             Stack<InventoryItem> itorem = new Stack<InventoryItem>();
             foreach (InventoryItem item in this.Items)
             {
