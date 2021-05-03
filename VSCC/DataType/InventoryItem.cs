@@ -148,14 +148,28 @@
         {
             get
             {
-                int i = AppState.Current.TInventory.Items.Count(it => it.ContainerID.Equals(this.ObjectID));
-                return i == 0 ? this.description : MainWindow.Translate("Text_Item_HasContents", i) + "\n\n" + this.description;
+                return this.description;
             }
 
             set
             {
                 this.description = value;
                 this.OnPropertyChanged("Description");
+            }
+        }
+
+        [JsonIgnore]
+        public string DescriptionProperty
+        {
+            get
+            {
+                int i = AppState.Current.TInventory.Items.Count(it => it.ContainerID.Equals(this.ObjectID));
+                return i == 0 ? this.Description : MainWindow.Translate("Text_Item_HasContents", i) + "\n\n" + this.Description;
+            }
+
+            set
+            {
+                this.Description = value;
             }
         }
 
@@ -233,7 +247,7 @@
         public Guid ContainerID { get; set; } = Guid.Empty;
 
         [JsonIgnore]
-        public string GeneratedDescription => $"{ this.Name }\nAmount: { this.Amount }\nWeight: { this.Weight * this.Amount }({ this.Weight })\nCost:{ this.Cost }\nType:{ this.Type }\nRarity: { this.Rarity }\n\n{ this.Description }";
+        public string GeneratedDescription => $"{ this.Name }\nAmount: { this.Amount }\nWeight: { this.Weight * this.Amount }({ this.Weight })\nCost:{ this.Cost }\nType:{ this.Type }\nRarity: { this.Rarity }\n\n{ this.DescriptionProperty }";
 
         public event PropertyChangedEventHandler PropertyChanged;
 

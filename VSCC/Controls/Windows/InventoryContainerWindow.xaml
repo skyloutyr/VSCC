@@ -57,7 +57,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" Background="{StaticResource Static.Background}">
-                            <Grid ToolTip="{Binding Description}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" Height="96" Width="81">
+                            <Grid ToolTip="{Binding DescriptionProperty}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" Height="96" Width="81">
 
                                 <Image Source="/VSCC;component/Images/AppFeatures/gold_coin.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" />
                                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding GP}" Foreground="{StaticResource Static.Foreground}" FontSize="8" Margin="10,-1,0,0" />
@@ -73,7 +73,7 @@
                                 </Viewbox>
 
                                 <TextBlock Text="{Binding Name}" ToolTip="{Binding Name}" TextWrapping="Wrap" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47" Height="26" Margin="0,58,0,0" Foreground="{Binding Color}" Background="{StaticResource Static.Background}" />
-                                <TextBlock Text="{Binding Description}" ToolTip="{Binding Description}" TextWrapping="Wrap" FontSize="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="31" Height="52" Margin="48,10,0,0" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                <TextBlock Text="{Binding DescriptionProperty}" ToolTip="{Binding DescriptionProperty}" TextWrapping="Wrap" FontSize="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="31" Height="52" Margin="48,10,0,0" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
                                 <TextBlock Text="{Binding TotalWeightProperty}" TextWrapping="Wrap" FontSize="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="10" Margin="0,84,0,0" Foreground="{StaticResource Static.Foreground}" Background="Transparent" />
                                 <Image Source="/VSCC;component/Images/AppFeatures/sack.png" Visibility="{Binding HasItems}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="24" Margin="0,10,0,0" />
 
