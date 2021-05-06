@@ -47,7 +47,11 @@
 
         private void LocalSource_Filter(object sender, FilterEventArgs e) => e.Accepted = this.Filter(e.Item);
 
-        private void InventoryContainerWindow_Closed(object sender, EventArgs e) => AppState.Current.TInventory.ChildCollections.Remove(this.Inventory);
+        private void InventoryContainerWindow_Closed(object sender, EventArgs e)
+        {
+            AppState.Current.TInventory.ChildCollections.Remove(this.Inventory);
+            AppState.Current.Window.Focus();
+        }
 
         public bool Filter(object item)
         {
@@ -215,7 +219,7 @@
 
         private void Inventory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (this.Inventory.SelectedItems.Count > 0)
+            if (this.Inventory.SelectedItems.Count > 0 && e.ChangedButton == MouseButton.Left)
             {
                 this.Btn_Edit_Click(null, new RoutedEventArgs());
             }
@@ -360,6 +364,7 @@
             InventoryItem ii = (InventoryItem)b.DataContext;
             ii.Amount += 1;
             AppState.Current.State.Inventory.WeightCurrent += ii.Weight * ii.ItemWeightLogicMul;
+            e.Handled = true;
         }
 
         private void ButtonItemAmountDown_Click(object sender, RoutedEventArgs e)
@@ -368,6 +373,7 @@
             InventoryItem ii = (InventoryItem)b.DataContext;
             ii.Amount -= 1;
             AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.ItemWeightLogicMul;
+            e.Handled = true;
         }
     }
 }

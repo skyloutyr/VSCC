@@ -331,7 +331,7 @@
 
         private void Inventory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (this.Inventory.SelectedItems.Count > 0)
+            if (this.Inventory.SelectedItems.Count > 0 && e.ChangedButton == MouseButton.Left)
             {
                 this.Btn_Edit_Click(null, new RoutedEventArgs());
             }
@@ -371,6 +371,7 @@
                 {
                     JObject item = JObject.Parse(line);
                     InventoryItem ii = this.LoadItemFromJSON(item);
+                    ii.ContainerID = Guid.Empty;
                     ii.ImageList = this.Images;
                     this.Items.Add(ii);
                 }
@@ -477,6 +478,7 @@
             InventoryItem ii = (InventoryItem)b.DataContext;
             ii.Amount += 1;
             AppState.Current.State.Inventory.WeightCurrent += ii.Weight * ii.ItemWeightLogicMul;
+            e.Handled = true;
         }
 
         private void ButtonItemAmountDown_Click(object sender, RoutedEventArgs e)
@@ -485,6 +487,7 @@
             InventoryItem ii = (InventoryItem)b.DataContext;
             ii.Amount -= 1;
             AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.ItemWeightLogicMul;
+            e.Handled = true;
         }
     }
 }

@@ -297,7 +297,8 @@
                 Rarity = this.Rarity,
                 Description = this.Description,
                 TitleColor = this.TitleColor,
-                ObjectID = this.ObjectID
+                ObjectID = this.ObjectID,
+                ContainerID = this.ContainerID
             };
         }
 
