@@ -3,6 +3,7 @@
     using System.ComponentModel;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Media;
 
     /// <summary>
     /// Interaction logic for SingleUpDown.xaml
@@ -18,6 +19,7 @@
         public static readonly RoutedEvent ValueChangedEvent = EventManager.RegisterRoutedEvent("ValueChanged", RoutingStrategy.Bubble, typeof(RoutedPropertyChangedEventHandler<float>), typeof(SingleUpDown));
 
         private bool _recalcValue;
+        private bool _recalcText;
 
         [Category("Common")]
         public float Value
@@ -50,15 +52,18 @@
             remove { this.RemoveHandler(ValueChangedEvent, value); }
         }
 
+        private Brush _textFieldBrush;
+
         public SingleUpDown()
         {
             this.InitializeComponent();
+            this._textFieldBrush = this.TB_Content.Foreground;
             this.TB_Content.TextChanged += this.TB_Content_TextChanged;
             this.BtnUp.Click += this.BtnUp_Click;
             this.BtnDown.Click += this.BtnDown_Click;
-            this._recalcValue = false;
+            this._recalcValue = this._recalcText = false;
             this.TB_Content.Text = this.Value.ToString();
-            this._recalcValue = true;
+            this._recalcValue = this._recalcText = true;
         }
 
         private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -94,21 +99,22 @@
             {
                 if (float.TryParse(this.TB_Content.Text, out float i))
                 {
+                    this.TB_Content.Foreground = this._textFieldBrush;
                     if (i >= this.Minimum && i <= this.Maximum)
                     {
                         e.Handled = true;
-                        this._recalcValue = false;
+                        this._recalcValue = this._recalcText = false;
                         this.Value = i;
                         this.EnableDisableButtons();
-                        this._recalcValue = true;
+                        this._recalcValue = this._recalcText = true;
                     }
                 }
-
-                e.Handled = true;
-                this._recalcValue = false;
-                this.TB_Content.Text = this.Value.ToString();
-                this.EnableDisableButtons();
-                this._recalcValue = true;
+                else
+                {
+                    e.Handled = true;
+                    this.TB_Content.Foreground = new SolidColorBrush(Colors.Red);
+                    return;
+                }
             }
         }
 
@@ -123,7 +129,11 @@
             this.RaiseEvent(args);
             this.EnableDisableButtons();
             this._recalcValue = false;
-            this.TB_Content.Text = this.Value.ToString();
+            if (this._recalcText)
+            {
+                this.TB_Content.Text = this.Value.ToString();
+            }
+
             this._recalcValue = true;
         }
     }
