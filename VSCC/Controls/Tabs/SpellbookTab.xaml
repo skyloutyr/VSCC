@@ -115,7 +115,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -160,7 +162,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -205,7 +209,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -250,7 +256,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -295,7 +303,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -340,7 +350,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -385,7 +397,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -430,7 +444,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -475,7 +491,9 @@
                                     <Grid>
                                         <Grid.ToolTip>
                                             <ToolTip>
-                                                <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" />
+                                                <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
+                                                    <TextBlock Text="{Binding GeneratedDescription}" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" Background="{StaticResource Static.Background}" />
+                                                </Border>
                                             </ToolTip>
                                         </Grid.ToolTip>
                                         <Image Width="64" Height="64" Source="{Binding PictureProperty}" HorizontalAlignment="Left" VerticalAlignment="Top" />
