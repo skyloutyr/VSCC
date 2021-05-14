@@ -161,12 +161,6 @@ Full Exception Object Dump:
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             AppState.Current.Window = this;
-            if (Debugger.IsAttached)
-            {
-                AppState.Current.GenerateDefaultMD5();
-            }
-
-            AppState.Current.SetDefaultMD5();
             ScriptEngine.Create();
             AppEvents.InvokeStartup();
 
@@ -178,6 +172,12 @@ Full Exception Object Dump:
             {
                 AppState.Current.Load(this.OldWindowSaveData, out _);
                 this.OldWindowSaveData = null;
+            }
+            else
+            {
+                // opening a new empty window
+                AppState.Current.Save();
+                AppState.Current.ResetDefaultSaveFile();
             }
 
             this.AllowThemeSwitch.IsChecked = Settings.Default.AllowSkinChangesOnOlderWindowsVersions;
@@ -209,7 +209,8 @@ Full Exception Object Dump:
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.State.Clear();
             AppState.Current.LastSaveFile = string.Empty;
-            AppState.Current.SetDefaultMD5(false);
+            AppState.Current.Save();
+            AppState.Current.ResetDefaultSaveFile();
             AppState.Current.FreezeAutocalc = false;
         }
 

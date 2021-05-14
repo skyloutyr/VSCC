@@ -96,6 +96,11 @@
             return s;
         }
 
+        public void ResetDefaultSaveFile()
+        {
+            this._ignoreLastSaveFile = true;
+        }
+
         private JObject _tempLoadObject;
         public void Load(string s, out LoadFlags flags)
         {
