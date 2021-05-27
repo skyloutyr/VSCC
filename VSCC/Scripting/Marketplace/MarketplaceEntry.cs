@@ -26,11 +26,11 @@
 
         [JsonProperty(PropertyName = "version")]
         [JsonConverter(typeof(SemVerConverter))]
-        public SemVer.Version LatestVersion { get; set; }
+        public SemanticVersioning.Version LatestVersion { get; set; }
 
         [JsonProperty(PropertyName = "accepted_app_version")]
         [JsonConverter(typeof(SemVerRangeConverter))]
-        public SemVer.Range AppRange { get; set; }
+        public SemanticVersioning.Range AppRange { get; set; }
 
         [JsonProperty(PropertyName = "changelog")]
         public Dictionary<string, string> Changelog { get; set; }

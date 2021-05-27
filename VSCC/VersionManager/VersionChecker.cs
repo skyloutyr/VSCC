@@ -16,8 +16,8 @@
     {
         private static Regex updaterVersionRegex = new Regex("^\\[assembly: AssemblyVersion\\(\\\".*\\\"\\)\\]", RegexOptions.Multiline | RegexOptions.Compiled);
 
-        private static SemVer.Version Remote { get; set; }
-        private static SemVer.Version Local { get; set; }
+        private static SemanticVersioning.Version Remote { get; set; }
+        private static SemanticVersioning.Version Local { get; set; }
 
         public static void CheckUpdater()
         {
@@ -48,7 +48,7 @@
 
         public static async Task CheckVersion(bool showFineWindows = true, bool callUpdateFromVC = true, Action<string> updateCallback = null)
         {
-            Tuple<VersionCheckResult, SemVer.Version, string, string> t = await CheckVersionInternal();
+            Tuple<VersionCheckResult, SemanticVersioning.Version, string, string> t = await CheckVersionInternal();
             AppState.Current.Window.Dispatcher.Invoke(() =>
             {
                 switch (t.Item1)
@@ -105,32 +105,32 @@
             CheckUpdater();
         }
 
-        public static async Task<Tuple<VersionCheckResult, SemVer.Version, string, string>> CheckVersionInternal()
+        public static async Task<Tuple<VersionCheckResult, SemanticVersioning.Version, string, string>> CheckVersionInternal()
         {
             try
             {
                 Task<VersionSpecV1> t1 = new Task<VersionSpecV1>(GetVersionSpecV1);
-                Task<SemVer.Version> t2 = new Task<SemVer.Version>(GetCurrentVersion);
+                Task<SemanticVersioning.Version> t2 = new Task<SemanticVersioning.Version>(GetCurrentVersion);
                 t1.Start();
                 t2.Start();
                 VersionSpecV1 spec = await t1;
-                SemVer.Version local = Local = await t2;
-                SemVer.Version remote = Remote = spec.Version;
+                SemanticVersioning.Version local = Local = await t2;
+                SemanticVersioning.Version remote = Remote = spec.Version;
                 string changelog = spec.Changelog.ContainsKey(remote.ToString()) ? spec.Changelog[remote.ToString()] : "No changelog provided";
                 string latestLink = $"https://github.com/skyloutyr/VSCC/releases/download/{ remote }/VSCC.zip";
                 VersionCheckResult result = remote > local ? VersionCheckResult.Behind : remote < local ? VersionCheckResult.Ahead : VersionCheckResult.Current;
-                return new Tuple<VersionCheckResult, SemVer.Version, string, string>(result, remote, changelog, latestLink);
+                return new Tuple<VersionCheckResult, SemanticVersioning.Version, string, string>(result, remote, changelog, latestLink);
             }
             catch (Exception e)
             {
-                return new Tuple<VersionCheckResult, SemVer.Version, string, string>(VersionCheckResult.Error, new SemVer.Version(0, 0, 0), $"{ e.Message }:\n{ e.StackTrace }", string.Empty);
+                return new Tuple<VersionCheckResult, SemanticVersioning.Version, string, string>(VersionCheckResult.Error, new SemanticVersioning.Version(0, 0, 0), $"{ e.Message }:\n{ e.StackTrace }", string.Empty);
             }
         }
 
-        public static SemVer.Version GetCurrentVersion()
+        public static SemanticVersioning.Version GetCurrentVersion()
         {
             JObject localJObj = JObject.Parse(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Version.json")));
-            return new SemVer.Version(localJObj["version"].ToObject<string>());
+            return new SemanticVersioning.Version(localJObj["version"].ToObject<string>());
         }
 
         public static VersionSpecV1 GetVersionSpecV1() => JsonConvert.DeserializeObject<VersionSpecV1>(ReadRemoteVersion());

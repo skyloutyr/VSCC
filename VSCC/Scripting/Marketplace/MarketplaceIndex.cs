@@ -8,7 +8,7 @@
     {
         [JsonConverter(typeof(SemVerConverter))]
         [JsonProperty(PropertyName = "version")]
-        public SemVer.Version Version { get; set; }
+        public SemanticVersioning.Version Version { get; set; }
 
         [JsonProperty(PropertyName = "changelog")]
         public Dictionary<string, string> Changelog { get; set; }
