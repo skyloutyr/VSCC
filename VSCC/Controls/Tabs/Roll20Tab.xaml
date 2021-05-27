@@ -128,8 +128,8 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <Image x:Name="ImgErrs" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="/VSCC;component/Images/AppIcons/icons8-check-64.png" Height="32" Width="32" Margin="0,0,-16,-16" ToolTip="" />
-                    <Image x:Name="ImgErrs_ErrIcon" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="/VSCC;component/Images/AppIcons/icons8-exclamation-64.png" Height="32" Width="32" Margin="0,0,-16,-16" ToolTip="" />
+                    <Image x:Name="ImgErrs" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="/VSCC;component/Images/AppIcons/icons8-check-64.png" Height="32" Width="32" ToolTip="" />
+                    <Image x:Name="ImgErrs_ErrIcon" HorizontalAlignment="Right" VerticalAlignment="Bottom" Source="/VSCC;component/Images/AppIcons/icons8-exclamation-64.png" Height="32" Width="32" ToolTip="" />
                 </Grid>
             </GroupBox>
         </Grid>
