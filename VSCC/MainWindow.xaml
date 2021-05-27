@@ -36,7 +36,6 @@
                     <MenuItem x:Name="Language_English" IsCheckable="True" IsChecked="True" Header="English" Tag="en-US" Checked="MenuItem_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                     <MenuItem x:Name="Language_Russian" IsCheckable="True" IsChecked="False" Header="Русский" Tag="ru-RU" Checked="MenuItem_Checked" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}"/>
                 </MenuItem>
-                <MenuItem x:Name="AllowThemeSwitch" Header="{x:Static p:Resources.Edit_AllowThemeChangeOnOlderWinVersions}" IsCheckable="True" IsChecked="False" Background="{StaticResource Static.Background}"  Style="{StaticResource SubMenuItemEnd}" Checked="AllowThemeSwitch_Checked" Unchecked="AllowThemeSwitch_Checked" />
             </MenuItem>
             <MenuItem x:Name="Scripting" Header="{x:Static p:Resources.MainMenu_Scripting}" IsEnabled="True" Background="{StaticResource Static.Background}" Style="{StaticResource RootMenuItem}">
                 <MenuItem Header="{x:Static p:Resources.MainMenu_Scripting_Scripts}" Click="MenuItem_Click_3" Background="{StaticResource Static.Background}" Style="{StaticResource SubMenuItemEnd}" />

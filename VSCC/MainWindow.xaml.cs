@@ -18,7 +18,6 @@
     using VSCC.Roll20;
     using VSCC.Roll20.Macros;
     using VSCC.Scripting;
-    using VSCC.Skins;
     using VSCC.State;
     using VSCC.Structs;
     using VSCC.VersionManager;
@@ -120,7 +119,8 @@ Full Exception Object Dump:
                         e.Exception.ToString()
                     );
 
-                    System.IO.File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "crashinfo-" + DateTimeOffset.Now.ToString() + ".txt"), text);
+                    string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "crashinfo-latest.txt");
+                    System.IO.File.WriteAllText(path, text);
                     Application.Current.Shutdown(-0x000FFFF); //HRESULT E_UNEXPECTED
                 }
                 catch
@@ -152,7 +152,7 @@ Full Exception Object Dump:
             Type t = obj.GetType();
             foreach (PropertyInfo pi in t.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
             {
-                ret += pi.Name + ": " + pi.GetValue(obj).ToString();
+                ret += pi.Name + ": " + pi.GetValue(obj).ToString() + ", ";
             }
 
             return ret;
@@ -180,14 +180,12 @@ Full Exception Object Dump:
                 AppState.Current.ResetDefaultSaveFile();
             }
 
-            this.AllowThemeSwitch.IsChecked = Settings.Default.AllowSkinChangesOnOlderWindowsVersions;
             this.Language_English.IsChecked = Settings.Default.Language.Equals("en-US");
             this.Language_Russian.IsChecked = Settings.Default.Language.Equals("ru-RU");
             this.Skin_Default.IsChecked = Settings.Default.Skin == 0;
             this.Skin_Bright.IsChecked = Settings.Default.Skin == 1;
             this.Skin_Dark.IsChecked = Settings.Default.Skin == 2;
             this.Skin_Soft.IsChecked = Settings.Default.Skin == 3;
-            this.Skins.IsEnabled = SkinResourceDictionary.IsRunningWin8OrGreater();
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
@@ -446,28 +444,24 @@ Full Exception Object Dump:
 
         public void ChangeSkin(int skinID, bool reloadApp = false)
         {
-            if (SkinResourceDictionary.IsRunningWin8OrGreater())
+            if (Settings.Default.Skin != skinID)
             {
-                bool skinEquals = Settings.Default.Skin == skinID;
-                if (!skinEquals)
+                Settings.Default.Skin = skinID;
+                Settings.Default.Save();
+                ((App)Application.Current).ChangeSkin();
+                if (reloadApp)
                 {
-                    Settings.Default.Skin = skinID;
-                    Settings.Default.Save();
-                    ((App)Application.Current).ChangeSkin();
-                    if (reloadApp)
+                    string s = AppState.Current.Save();
+                    this._forceClose = true;
+                    AppEvents.InvokeExit();
+                    Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
+                    this.Close();
+                    new MainWindow()
                     {
-                        string s = AppState.Current.Save();
-                        this._forceClose = true;
-                        AppEvents.InvokeExit();
-                        Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
-                        this.Close();
-                        new MainWindow()
-                        {
-                            OldWindowSaveData = s
-                        }.Show();
-                        Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
-                        return;
-                    }
+                        OldWindowSaveData = s
+                    }.Show();
+                    Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
+                    return;
                 }
             }
         }
@@ -509,12 +503,14 @@ Full Exception Object Dump:
 
         private void AllowThemeSwitch_Checked(object sender, RoutedEventArgs e)
         {
+            /*
             bool val = Settings.Default.AllowSkinChangesOnOlderWindowsVersions = this.AllowThemeSwitch.IsChecked;
             Settings.Default.Save();
             if (!val && Settings.Default.Skin != 0 && !SkinResourceDictionary.IsRunningWin8OrGreater())
             {
                 this.ChangeSkin(0);
             }
+            */
         }
 
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)

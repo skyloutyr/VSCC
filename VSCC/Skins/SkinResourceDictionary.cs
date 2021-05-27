@@ -47,15 +47,13 @@
         public void UpdateSource()
         {
             Uri value =
-                IsRunningWin8OrGreater() ?
-                    Settings.Default.Skin == 0 ?
-                        this.ResolveSystemSkin() :
-                    Settings.Default.Skin == 1 ?
-                        this._defaultSource :
-                    Settings.Default.Skin == 3 ?
-                        this._softSource :
-                    this._darkSource :
-                this._defaultSource;
+                Settings.Default.Skin == 0 ?
+                    this.ResolveSystemSkin() :
+                Settings.Default.Skin == 1 ?
+                    this._defaultSource :
+                Settings.Default.Skin == 3 ?
+                    this._softSource :
+                this._darkSource;
 
             if (value != null && base.Source != value)
             {
@@ -85,6 +83,7 @@
             }
         }
 
+        /*
         public static bool IsRunningWin8OrGreater()
         {
             OperatingSystem os = Environment.OSVersion;
@@ -100,5 +99,6 @@
 
             return true;
         }
+        */
     }
 }
