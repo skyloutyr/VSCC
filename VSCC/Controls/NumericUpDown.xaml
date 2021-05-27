@@ -11,7 +11,7 @@
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="TB_Content" />
+        <TextBox x:Name="TB_Content" Padding="0" />
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition />
