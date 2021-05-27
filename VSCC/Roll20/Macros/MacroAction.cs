@@ -17,6 +17,11 @@
 
         public static void Initialize()
         {
+            if (Actions.Count > 0)
+            {
+                return;
+            }
+
             IEnumerable<Type> e = typeof(MacroAction).Assembly.GetTypes();
             Parallel.ForEach(e, t =>
             {
