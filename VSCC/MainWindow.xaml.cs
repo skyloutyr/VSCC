@@ -109,7 +109,7 @@ Full Exception Object Dump:
 ";
 
                     text = string.Format(text,
-                        nameof(Environment.OSVersion.Platform),
+                        Environment.OSVersion.Platform,
                         Environment.OSVersion.Version.ToString(),
                         DumpObject2String(Settings.Default),
                         Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory).Any(c => c > 127),
