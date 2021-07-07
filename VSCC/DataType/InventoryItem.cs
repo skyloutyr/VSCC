@@ -46,7 +46,7 @@
 
 
         [JsonIgnore]
-        public BitmapImage PictureProperty => this.imageIndex == null ? null : this.ImageList[this.ImageIndex].Image;
+        public BitmapImage PictureProperty => string.IsNullOrEmpty(this.imageIndex) ? null : this.ImageList[this.ImageIndex].Image;
 
         [JsonIgnore]
         public string AmountProperty => $"{ this.Amount }";
