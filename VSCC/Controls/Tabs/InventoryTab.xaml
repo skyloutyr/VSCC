@@ -8,7 +8,7 @@
              xmlns:lcontrols="clr-namespace:VSCC.Controls"
              xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" Initialized="UserControl_Initialized">
+             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" Initialized="UserControl_Initialized" KeyUp="UserControl_KeyUp">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
             <GroupBox Header="{x:Static p:Resources.Inventory_Cash}" HorizontalAlignment="Left" Height="67" Margin="10,10,0,0" VerticalAlignment="Top" Width="980" Grid.ColumnSpan="2" Foreground="{StaticResource Static.Foreground}">
@@ -77,7 +77,7 @@
                         <ComboBoxItem x:Name="SortBy_Rarity" Content="{x:Static p:Resources.Inventory_Sort_Rarity}" />
                         <ComboBoxItem x:Name="SortBy_Type" Content="{x:Static p:Resources.Inventory_Sort_Type}" />
                     </ComboBox>
-                    <Border HorizontalAlignment="Left" Height="557" Margin="10,49,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
+                    <Border HorizontalAlignment="Left" Height="532" Margin="10,74,0,0" VerticalAlignment="Top" Width="607" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
                         <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick" BorderThickness="0" Background="Transparent" PreviewDrop="Inventory_PreviewDrop" Drop="Inventory_Drop" AllowDrop="True">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -92,7 +92,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" Background="{StaticResource Static.Background}">
-                                        <Grid ToolTip="{Binding DescriptionProperty}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" Height="96" Width="81">
+                                        <Grid ToolTip="{Binding DescriptionProperty}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" MouseLeftButtonDown="Grid_MouseLeftButtonDown" MouseLeftButtonUp="Grid_MouseLeftButtonUp" Height="96" Width="81">
 
                                             <Image Source="/VSCC;component/Images/AppFeatures/gold_coin.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" />
                                             <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding GP}" Foreground="{StaticResource Static.Foreground}" FontSize="8" Margin="10,-1,0,0" />
@@ -125,25 +125,34 @@
                             </ListView.ItemTemplate>
                         </ListView>
                     </Border>
-                    <Button x:Name="Btn_Delete" HorizontalAlignment="Left" Margin="239,21,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Delete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteItem}">
+                    <Button x:Name="Btn_Delete" HorizontalAlignment="Left" Margin="265,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Delete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteItem}">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                     </Button>
                     <Button x:Name="Btn_Edit" HorizontalAlignment="Left" Margin="161,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Edit_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditItem}">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-edit-64.png" Stretch="Uniform"/>
                     </Button>
+                    <Button x:Name="Btn_Edit_R20" HorizontalAlignment="Left" Margin="213,48,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="EditItemR20" ToolTip="{x:Static p:Resources.Tooltip_Button_EditItemR20}">
+                        <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                    </Button>
+                    <Button x:Name="Btn_Run_R20" HorizontalAlignment="Left" Margin="239,48,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="RunItemR20" ToolTip="{x:Static p:Resources.Tooltip_Button_RunItemR20}">
+                        <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                    </Button>
                     <Button x:Name="Btn_Add" HorizontalAlignment="Left" Margin="135,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Add_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CreateItem}">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-add-64.png" Stretch="Uniform"/>
                     </Button>
-                    <Button x:Name="Btn_Refresh" HorizontalAlignment="Left" Margin="265,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Refresh_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_RecalculateWeights}">
+                    <Button x:Name="Btn_Refresh" HorizontalAlignment="Left" Margin="265,48,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Refresh_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_RecalculateWeights}">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-refresh-64.png" Stretch="Uniform"/>
                     </Button>
                     <Button x:Name="Btn_Copy" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Copy_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CopyItem}">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
                     </Button>
-                    <Button x:Name="Btn_Paste" HorizontalAlignment="Left" Margin="213,21,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteItem}">
+                    <Button x:Name="Btn_Paste" HorizontalAlignment="Left" Margin="239,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteItem}">
                         <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
                     </Button>
-                    <Label Content="{x:Static p:Resources.Inventory_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="265,-3,0,0" Foreground="{StaticResource Static.Foreground}"/>
+                    <Button x:Name="Btn_Cut" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CutItem}">
+                        <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                    </Button>
+                    <Label Content="{x:Static p:Resources.Inventory_Weight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="294,-4,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="342,19,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <lcontrols:SingleUpDown x:Name="IntUD_WeightCurrent" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="292,22,0,0" Width="50" Height="21"/>
                     <lcontrols:SingleUpDown x:Name="IntUD_WeightMax1" Value="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356,22,0,0" Width="50" Height="21"/>

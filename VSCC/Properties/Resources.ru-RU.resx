@@ -237,6 +237,15 @@
   <data name="CreateSpell_Verbal" xml:space="preserve">
     <value>Вербальное</value>
   </data>
+  <data name="DamageModifier_Constant_Label" xml:space="preserve">
+    <value>Константа</value>
+  </data>
+  <data name="DamageModifier_Die_Label" xml:space="preserve">
+    <value>Куб</value>
+  </data>
+  <data name="Damage_Modifier_Text_Label" xml:space="preserve">
+    <value>Тип/источник урона</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dnd5eitemindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dnd5eitemindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -808,6 +817,39 @@
   </data>
   <data name="ItemIndex_WondrousOnly" xml:space="preserve">
     <value>Только чудесные</value>
+  </data>
+  <data name="ItemIntegration_Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="ItemIntegration_Damage" xml:space="preserve">
+    <value>Урон</value>
+  </data>
+  <data name="ItemIntegration_Die" xml:space="preserve">
+    <value>Куб: 1d</value>
+  </data>
+  <data name="ItemIntegration_Hit" xml:space="preserve">
+    <value>Попадание</value>
+  </data>
+  <data name="ItemIntegration_IncCha" xml:space="preserve">
+    <value>Включая Хар</value>
+  </data>
+  <data name="ItemIntegration_IncCon" xml:space="preserve">
+    <value>Включая Тело</value>
+  </data>
+  <data name="ItemIntegration_IncDex" xml:space="preserve">
+    <value>Включая Ловк</value>
+  </data>
+  <data name="ItemIntegration_IncInt" xml:space="preserve">
+    <value>Включая Инт</value>
+  </data>
+  <data name="ItemIntegration_IncProf" xml:space="preserve">
+    <value>Включая Бонус Мастерства</value>
+  </data>
+  <data name="ItemIntegration_IncStr" xml:space="preserve">
+    <value>Включая Сил</value>
+  </data>
+  <data name="ItemIntegration_IncWis" xml:space="preserve">
+    <value>Включая Муд</value>
   </data>
   <data name="Macro_ActionAtkDmg_FullInnerText" xml:space="preserve">
     <value>Показать бросок атаки с кубами ({0}) и ({1}) с описанием ({2}), названием ({3}) и модификатором ({4}) персонажем ({5}) с уроном ({6}) и критом ({7}) типа ({8}) </value>
@@ -3036,7 +3078,9 @@
     <value>Скопировать выделеные способности в буфер обмена</value>
   </data>
   <data name="Tooltip_Button_CopyItem" xml:space="preserve">
-    <value>Скопировать выделеные предметы в буфер обмена</value>
+    <value>Скопировать выделеные предметы в буфер обмена
+
+Ctrl + C</value>
   </data>
   <data name="Tooltip_Button_CopyServer" xml:space="preserve">
     <value>Скопировать код, который выполняет сервер в буфер обмена. Этот код будет необходимо вставить в консоль вашего браузера чтобы запустить сервер.</value>
@@ -3048,13 +3092,22 @@
     <value>Добавить новую способность</value>
   </data>
   <data name="Tooltip_Button_CreateItem" xml:space="preserve">
-    <value>Добавить новый предмет</value>
+    <value>Добавить новый предмет
+
+Ctrl + N</value>
+  </data>
+  <data name="Tooltip_Button_CutItem" xml:space="preserve">
+    <value>Вырезать выбраные предметы
+
+Ctrl + X</value>
   </data>
   <data name="Tooltip_Button_DeleteFeat" xml:space="preserve">
     <value>Удалить выбраные способности</value>
   </data>
   <data name="Tooltip_Button_DeleteItem" xml:space="preserve">
-    <value>Удалить выбраные предметы</value>
+    <value>Удалить выбраные предметы
+
+Delete</value>
   </data>
   <data name="Tooltip_Button_DeleteMacro" xml:space="preserve">
     <value>Удалить выбраные Макро</value>
@@ -3072,10 +3125,17 @@
     <value>Выбрать изображение для этой Способности</value>
   </data>
   <data name="Tooltip_Button_EditItem" xml:space="preserve">
-    <value>Редактировать выбраный Предмет</value>
+    <value>Редактировать выбраный Предмет
+
+Ctrl + E, Двойное нажатие ЛКМ</value>
   </data>
   <data name="Tooltip_Button_EditItemImage" xml:space="preserve">
     <value>Выбрать изображение для этого предмета</value>
+  </data>
+  <data name="Tooltip_Button_EditItemR20" xml:space="preserve">
+    <value>Отредактировать интеграцию выбраного предмета с Ролл20
+
+Ctrl + ПКМ</value>
   </data>
   <data name="Tooltip_Button_EditMacro" xml:space="preserve">
     <value>Редактировать выбраное Макро</value>
@@ -3123,10 +3183,18 @@
     <value>Сбросить все модификаторы характеристик и перерассчитать их на основе базовых значений. Это действие сбросит ваши пользовательские значения для навыков и спасбросков!</value>
   </data>
   <data name="Tooltip_Button_RecalculateWeights" xml:space="preserve">
-    <value>Перерассчитать все весы. Это включает в себя вес инвентаря и оба порога.</value>
+    <value>Перерассчитать все весы. Это включает в себя вес инвентаря и оба порога.
+
+F5</value>
   </data>
   <data name="Tooltip_Button_ResetDeathSaves" xml:space="preserve">
     <value>Сбросить все спасброски смерти.</value>
+  </data>
+  <data name="Tooltip_Button_RunItemR20" xml:space="preserve">
+    <value>Выполнить интеграцию выбраного предмета с Ролл20
+
+
+Ctrl + ЛКМ</value>
   </data>
   <data name="Tooltip_Button_RunThisMacro" xml:space="preserve">
     <value>Выполнить это Макро.</value>
@@ -3176,8 +3244,14 @@
   <data name="Window_InventoryContainer_Title" xml:space="preserve">
     <value>Вид Контейнера</value>
   </data>
+  <data name="Window_ItemIntegration_Title" xml:space="preserve">
+    <value>Интеграция предмета с Ролл20</value>
+  </data>
   <data name="Window_MacroAction_Title" xml:space="preserve">
     <value>Редактирование Действия Макро</value>
+  </data>
+  <data name="Window_NewDamageDieDialog_Title" xml:space="preserve">
+    <value>Новая кость урона</value>
   </data>
   <data name="Window_NewStatModifierDialog_Title" xml:space="preserve">
     <value>Новый Модификатор Характеристики</value>

@@ -92,6 +92,9 @@
     <Compile Include="Controls\Dialogs\NewStatModifierDialog.xaml.cs">
       <DependentUpon>NewStatModifierDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Dialogs\NewDamageDieDialog.xaml.cs">
+      <DependentUpon>NewDamageDieDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\InventoryItemPanel.xaml.cs">
       <DependentUpon>InventoryItemPanel.xaml</DependentUpon>
     </Compile>
@@ -188,6 +191,9 @@
     <Compile Include="Controls\Windows\InventoryContainerWindow.xaml.cs">
       <DependentUpon>InventoryContainerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Windows\ItemIntegrationWindow.xaml.cs">
+      <DependentUpon>ItemIntegrationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Windows\Macro\CreateLinkWindow.xaml.cs">
       <DependentUpon>CreateLinkWindow.xaml</DependentUpon>
     </Compile>
@@ -223,6 +229,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Roll20\AdvancedIntegration\IntegrationManager.cs" />
     <Compile Include="Roll20\AdvancedIntegration\SimpleItemIntegration.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionDmg.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionExecuteMacro.cs" />
@@ -404,6 +411,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Dialogs\NewStatModifierDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Dialogs\NewDamageDieDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -544,6 +555,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Windows\InventoryContainerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Windows\ItemIntegrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -7338,6 +7353,12 @@
     <None Include="Images\Lists\Items\Minerals\Icon9.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-cut-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcons\icons8-gear-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

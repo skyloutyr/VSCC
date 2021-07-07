@@ -1,0 +1,103 @@
+﻿<Window x:Class="VSCC.Controls.Windows.ItemIntegrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:p="clr-namespace:VSCC.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSCC.Controls.Windows"
+        mc:Ignorable="d"
+        xmlns:lcontrols="clr-namespace:VSCC.Controls"
+        Title="{x:Static p:Resources.Window_ItemIntegration_Title}" Height="509.333" Width="300" Background="{StaticResource Static.Background}" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox Header="{x:Static p:Resources.ItemIntegration_Hit}" Foreground="{StaticResource Static.Foreground}" Margin="0,0,0,325">
+            <Grid>
+                <Label Content="{x:Static p:Resources.ItemIntegration_Die}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0" />
+                <lcontrols:NumericUpDown x:Name="IntUD_PP" Value="{Binding HitDieSide}" Minimum="0" Maximum="1000" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Width="48" />
+                <CheckBox x:Name="CB_ProfBonus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncProf}" Foreground="{StaticResource Static.Foreground}" Margin="10,37,0,0" IsChecked="{Binding HitIncludeProfficiency}" />
+                <Grid Margin="0,57,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="CB_StrBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncStr}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding HitIncludeStr}" />
+                    <CheckBox x:Name="CB_DexBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncDex}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding HitIncludeDex}" />
+                    <CheckBox x:Name="CB_ConBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCon}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding HitIncludeCon}" />
+                    <CheckBox x:Name="CB_WisBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncWis}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding HitIncludeWis}" />
+                    <CheckBox x:Name="CB_ChaBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCha}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding HitIncludeCha}" />
+                    <CheckBox x:Name="CB_IntBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncInt}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding HitIncludeInt}" />
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="{x:Static p:Resources.ItemIntegration_Damage}" Foreground="{StaticResource Static.Foreground}" Margin="0,144,0,38">
+            <Grid>
+                <Grid Margin="0,0,0,205">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="CB_DmgStrBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncStr}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding DamageIncludeStr}" />
+                    <CheckBox x:Name="CB_DmgDexBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncDex}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding DamageIncludeDex}" />
+                    <CheckBox x:Name="CB_DmgConBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCon}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding DamageIncludeCon}" />
+                    <CheckBox x:Name="CB_DmgWisBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncWis}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding DamageIncludeWis}" />
+                    <CheckBox x:Name="CB_DmgChaBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCha}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding DamageIncludeCha}" />
+                    <CheckBox x:Name="CB_DmgIntBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncInt}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding DamageIncludeInt}" />
+                </Grid>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_Add}" Margin="0,64,0,0" Foreground="{StaticResource Static.Foreground}" Click="Button_Click" />
+                <ListView x:Name="LV_Dice" Margin="0,84,0,0" BorderThickness="1" BorderBrush="{StaticResource Static.Border}" Background="Transparent" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Damage}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" Background="{StaticResource Static.Background}">
+                                <Grid>
+                                    <Button x:Name="Btn_Delete" HorizontalAlignment="Right" VerticalAlignment="Top" Width="21" Height="21" Margin="0,0,1,0" Panel.ZIndex="1" Foreground="{StaticResource Static.Foreground}" BorderThickness="1" Click="Btn_Delete_Click">
+                                        <Path Fill="Red">
+                                            <Path.Data>
+                                                <CombinedGeometry>
+                                                    <CombinedGeometry.Geometry1>
+                                                        <RectangleGeometry Rect="0, 0, 2, 10" >
+                                                            <RectangleGeometry.Transform>
+                                                                <TransformGroup>
+                                                                    <ScaleTransform/>
+                                                                    <SkewTransform/>
+                                                                    <RotateTransform Angle="-45"/>
+                                                                    <TranslateTransform/>
+                                                                </TransformGroup>
+                                                            </RectangleGeometry.Transform>
+                                                        </RectangleGeometry>
+                                                    </CombinedGeometry.Geometry1>
+                                                    <CombinedGeometry.Geometry2>
+                                                        <RectangleGeometry Rect="4, -6, 2, 10" >
+                                                            <RectangleGeometry.Transform>
+                                                                <TransformGroup>
+                                                                    <ScaleTransform/>
+                                                                    <SkewTransform/>
+                                                                    <RotateTransform Angle="45"/>
+                                                                    <TranslateTransform/>
+                                                                </TransformGroup>
+                                                            </RectangleGeometry.Transform>
+                                                        </RectangleGeometry>
+                                                    </CombinedGeometry.Geometry2>
+                                                </CombinedGeometry>
+                                            </Path.Data>
+                                        </Path>
+                                    </Button>
+                                    <TextBlock x:Name="TB_Number" Text="{Binding DisplayDice}" TextAlignment="Left" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,0,0,0" FontSize="12" Width="195" Height="21" />
+                                    <TextBlock x:Name="TB_Type" Text="{Binding DisplayDesc}" TextAlignment="Left" TextWrapping="Wrap" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,0,0,0" FontSize="12" Width="148" Height="21" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </GroupBox>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="{x:Static p:Resources.Generic_Cancel}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,10" Width="100" Click="Button_Click_2" />
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="{x:Static p:Resources.Generic_OK}" Foreground="{StaticResource Static.Foreground}" Margin="0,0,10,10" Width="100" Click="Button_Click_1" />
+    </Grid>
+</Window>

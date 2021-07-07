@@ -9,6 +9,7 @@
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
+    using VSCC.Roll20.AdvancedIntegration;
     using VSCC.State;
     using VSCC.Templates;
 
@@ -256,6 +257,8 @@
         [JsonIgnore]
         public float ItemWeightLogicMul => this.IgnoreItemWeight ? 0 : 1;
 
+        public SimpleItemIntegration Integration { get; set; }
+
         public InventoryItem()
         {
         }
@@ -298,7 +301,8 @@
                 Description = this.Description,
                 TitleColor = this.TitleColor,
                 ObjectID = this.ObjectID,
-                ContainerID = this.ContainerID
+                ContainerID = this.ContainerID,
+                Integration = this.Integration
             };
         }
 
@@ -342,7 +346,9 @@
                 Rarity = obj.Value<string>("Rarity"),
                 Description = obj.Value<string>("Description"),
                 ImageIndex = "",
-                TitleColor = 0
+                TitleColor = 0,
+                ObjectID = Guid.NewGuid(),
+                Integration = null
             };
         }
     }

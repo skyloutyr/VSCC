@@ -237,6 +237,15 @@
   <data name="CreateSpell_Verbal" xml:space="preserve">
     <value>Verbal</value>
   </data>
+  <data name="DamageModifier_Constant_Label" xml:space="preserve">
+    <value>Constant</value>
+  </data>
+  <data name="DamageModifier_Die_Label" xml:space="preserve">
+    <value>Die</value>
+  </data>
+  <data name="Damage_Modifier_Text_Label" xml:space="preserve">
+    <value>Damage Source</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dnd5eitemindex" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dnd5eitemindex.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -808,6 +817,39 @@ Separate multiple types by a new line</value>
   </data>
   <data name="ItemIndex_WondrousOnly" xml:space="preserve">
     <value>Wondrous Only</value>
+  </data>
+  <data name="ItemIntegration_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ItemIntegration_Damage" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="ItemIntegration_Die" xml:space="preserve">
+    <value>Die: 1d</value>
+  </data>
+  <data name="ItemIntegration_Hit" xml:space="preserve">
+    <value>Hit</value>
+  </data>
+  <data name="ItemIntegration_IncCha" xml:space="preserve">
+    <value>Include Charisma</value>
+  </data>
+  <data name="ItemIntegration_IncCon" xml:space="preserve">
+    <value>Include Constitution</value>
+  </data>
+  <data name="ItemIntegration_IncDex" xml:space="preserve">
+    <value>Include Dexterity</value>
+  </data>
+  <data name="ItemIntegration_IncInt" xml:space="preserve">
+    <value>Include Intelligence</value>
+  </data>
+  <data name="ItemIntegration_IncProf" xml:space="preserve">
+    <value>Include Profficiency</value>
+  </data>
+  <data name="ItemIntegration_IncStr" xml:space="preserve">
+    <value>Include Strength</value>
+  </data>
+  <data name="ItemIntegration_IncWis" xml:space="preserve">
+    <value>Include Wisdom</value>
   </data>
   <data name="Macro_ActionAtkDmg_FullInnerText" xml:space="preserve">
     <value>Show an attack roll with dices of ({0}) and ({1}) with a description of ({2}), name of ({3}) and a mod of ({4}) by char ({5}) with a damage of ({6}) and a crit die of ({7}) of type ({8})</value>
@@ -3036,7 +3078,9 @@ On certain browsers you may need to do more actions.</value>
     <value>Copy the selected Features to the clipboard</value>
   </data>
   <data name="Tooltip_Button_CopyItem" xml:space="preserve">
-    <value>Copy the selected items to the clipboard</value>
+    <value>Copy the selected items to the clipboard
+
+Ctrl + C</value>
   </data>
   <data name="Tooltip_Button_CopyServer" xml:space="preserve">
     <value>Copy the code driving the server to the clipboard. The code will need to be pasted into a console of your browser to start. See the Info/About section of the app for a github link.</value>
@@ -3048,19 +3092,34 @@ On certain browsers you may need to do more actions.</value>
     <value>Add a new Feature</value>
   </data>
   <data name="Tooltip_Button_CreateItem" xml:space="preserve">
-    <value>Add a new Item</value>
+    <value>Add a new Item
+
+Ctrl + N</value>
+  </data>
+  <data name="Tooltip_Button_CutItem" xml:space="preserve">
+    <value>Cut the selected item(s) to the clipboard
+
+Ctrl + X</value>
   </data>
   <data name="Tooltip_Button_DeleteFeat" xml:space="preserve">
-    <value>Delete the selected Features</value>
+    <value>Delete the selected Features
+
+Delete</value>
   </data>
   <data name="Tooltip_Button_DeleteItem" xml:space="preserve">
-    <value>Delete the selected Items</value>
+    <value>Delete the selected Items
+
+Delete</value>
   </data>
   <data name="Tooltip_Button_DeleteMacro" xml:space="preserve">
-    <value>Delete the selected Macro</value>
+    <value>Delete the selected Macro
+
+Delete</value>
   </data>
   <data name="Tooltip_Button_DeleteSpell" xml:space="preserve">
-    <value>Delete the selected Spell</value>
+    <value>Delete the selected Spell
+
+Delete</value>
   </data>
   <data name="Tooltip_Button_DeleteThisMacro" xml:space="preserve">
     <value>Delete this Macro</value>
@@ -3072,10 +3131,17 @@ On certain browsers you may need to do more actions.</value>
     <value>Select an image for this Feat</value>
   </data>
   <data name="Tooltip_Button_EditItem" xml:space="preserve">
-    <value>Edit the selected Item</value>
+    <value>Edit the selected Item
+
+Ctrl + E, Double Left Click</value>
   </data>
   <data name="Tooltip_Button_EditItemImage" xml:space="preserve">
     <value>Select an image for this Item</value>
+  </data>
+  <data name="Tooltip_Button_EditItemR20" xml:space="preserve">
+    <value>Edit the selected item's Roll20 Integration
+
+Ctrl + Right mouse click</value>
   </data>
   <data name="Tooltip_Button_EditMacro" xml:space="preserve">
     <value>Edit the selected Macro</value>
@@ -3114,7 +3180,9 @@ On certain browsers you may need to do more actions.</value>
     <value>Paste the clipboard contents as a Feature(s)</value>
   </data>
   <data name="Tooltip_Button_PasteItem" xml:space="preserve">
-    <value>Paste the clipboard contents as an Item(s)</value>
+    <value>Paste the clipboard contents as an Item(s)
+
+Ctrl + V</value>
   </data>
   <data name="Tooltip_Button_PasteMacro" xml:space="preserve">
     <value>Paste the contents of the clipboard as a Macro</value>
@@ -3123,10 +3191,18 @@ On certain browsers you may need to do more actions.</value>
     <value>Reset all stat modifiers and calculate them based on profficiency and raw stat values. This action will remove all manually changed modifiers for skills and saves!</value>
   </data>
   <data name="Tooltip_Button_RecalculateWeights" xml:space="preserve">
-    <value>Recalculate all weights of the inventory. This includes the Item weights, as well as max1/max2 weights</value>
+    <value>Recalculate all weights of the inventory. This includes the Item weights, as well as max1/max2 weights
+
+F5</value>
   </data>
   <data name="Tooltip_Button_ResetDeathSaves" xml:space="preserve">
     <value>Reset death saving throws</value>
+  </data>
+  <data name="Tooltip_Button_RunItemR20" xml:space="preserve">
+    <value>Run the selected item's Roll20 Integration
+
+
+Ctrl + Left mouse click</value>
   </data>
   <data name="Tooltip_Button_RunThisMacro" xml:space="preserve">
     <value>Execute this Macro</value>
@@ -3176,8 +3252,14 @@ On certain browsers you may need to do more actions.</value>
   <data name="Window_InventoryContainer_Title" xml:space="preserve">
     <value>Container View</value>
   </data>
+  <data name="Window_ItemIntegration_Title" xml:space="preserve">
+    <value>Item Roll20 Integration</value>
+  </data>
   <data name="Window_MacroAction_Title" xml:space="preserve">
     <value>Edit Macro Action</value>
+  </data>
+  <data name="Window_NewDamageDieDialog_Title" xml:space="preserve">
+    <value>New Damage Die</value>
   </data>
   <data name="Window_NewStatModifierDialog_Title" xml:space="preserve">
     <value>New Stat Modifier</value>

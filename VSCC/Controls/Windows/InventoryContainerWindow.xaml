@@ -6,12 +6,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wpftk="clr-namespace:WpfToolkit.Controls;assembly=VirtualizingWrapPanel"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.Window_InventoryContainer_Title}" Height="400" Width="500" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_InventoryContainer_Title}" Height="400" Width="500" Background="{StaticResource Static.Background}" KeyUp="UserControl_KeyUp">
     <Grid>
         <Label Content="{x:Static p:Resources.Inventory_Sorting}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
         <CheckBox x:Name="CheckBox_ReverseSearchResults" Content="{x:Static p:Resources.Inventory_InvertSort}" HorizontalAlignment="Left" Margin="117,7,0,0" VerticalAlignment="Top" Checked="CheckBox_ReverseSearchResults_Checked" Unchecked="CheckBox_ReverseSearchResults_Checked" Foreground="{StaticResource Static.Foreground}"/>
         <Label Content="{x:Static p:Resources.Inventory_Filter}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="449,-5,0,0" Foreground="{StaticResource Static.Foreground}"/>
-        <TextBox x:Name="TextBox_Filter" HorizontalAlignment="Left" Height="23" Margin="342,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" TextChanged="TextBox_Filter_TextChanged"/>
+        <TextBox x:Name="TextBox_Filter" HorizontalAlignment="Left" Height="23" Margin="344,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" TextChanged="TextBox_Filter_TextChanged"/>
         <ComboBox x:Name="ComboBox_SortBy" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SortBy_SelectionChanged" Foreground="{StaticResource Static.Foreground}">
             <ComboBoxItem x:Name="SortBy_Name" Content="{x:Static p:Resources.Inventory_Sort_Name}" IsSelected="True" />
             <ComboBoxItem x:Name="SortBy_Amount" Content="{x:Static p:Resources.Inventory_Sort_Amount}" />
@@ -22,7 +22,7 @@
             <ComboBoxItem x:Name="SortBy_Rarity" Content="{x:Static p:Resources.Inventory_Sort_Rarity}" />
             <ComboBoxItem x:Name="SortBy_Type" Content="{x:Static p:Resources.Inventory_Sort_Type}" />
         </ComboBox>
-        <Button x:Name="Btn_Delete" HorizontalAlignment="Left" Margin="239,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Delete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteItem}">
+        <Button x:Name="Btn_Delete" HorizontalAlignment="Left" Margin="318,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Delete_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteItem}">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
         </Button>
         <Button x:Name="Btn_Edit" HorizontalAlignment="Left" Margin="161,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Edit_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_EditItem}">
@@ -34,8 +34,17 @@
         <Button x:Name="Btn_Copy" HorizontalAlignment="Left" Margin="187,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Copy_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CopyItem}">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
         </Button>
-        <Button x:Name="Btn_Paste" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteItem}">
+        <Button x:Name="Btn_Paste" HorizontalAlignment="Left" Margin="240,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteItem}">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Edit_R20" HorizontalAlignment="Left" Margin="266,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="EditItemR20" ToolTip="{x:Static p:Resources.Tooltip_Button_EditItemR20}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Run_R20" HorizontalAlignment="Left" Margin="292,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="RunItemR20" ToolTip="{x:Static p:Resources.Tooltip_Button_RunItemR20}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+        </Button>
+        <Button x:Name="Btn_Cut" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" Width="22" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CutItem}">
+            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
         </Button>
         <Border Margin="10,49,10,10" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
             <ListView x:Name="Inventory" VirtualizingPanel.IsVirtualizing="False" VirtualizingPanel.VirtualizationMode="Recycling" ScrollViewer.HorizontalScrollBarVisibility="Disabled" PreviewMouseLeftButtonDown="Inventory_MouseDown" PreviewMouseMove="Inventory_PreviewMouseMove" MouseDoubleClick="Inventory_MouseDoubleClick" BorderThickness="0" Background="Transparent" PreviewDrop="Inventory_PreviewDrop" Drop="Inventory_Drop" AllowDrop="True">
@@ -57,7 +66,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="1" CornerRadius="4" Background="{StaticResource Static.Background}">
-                            <Grid ToolTip="{Binding DescriptionProperty}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" Height="96" Width="81">
+                            <Grid ToolTip="{Binding DescriptionProperty}" MouseRightButtonDown="InventoryItem_MouseRightButtonDown" MouseRightButtonUp="InventoryItem_MouseRightButtonUp" MouseLeftButtonDown="Grid_MouseLeftButtonDown" MouseLeftButtonUp="Grid_MouseLeftButtonUp" Height="96" Width="81">
 
                                 <Image Source="/VSCC;component/Images/AppFeatures/gold_coin.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" />
                                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding GP}" Foreground="{StaticResource Static.Foreground}" FontSize="8" Margin="10,-1,0,0" />

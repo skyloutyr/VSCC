@@ -430,6 +430,33 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Damage Source.
+        /// </summary>
+        public static string Damage_Modifier_Text_Label {
+            get {
+                return ResourceManager.GetString("Damage_Modifier_Text_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Constant.
+        /// </summary>
+        public static string DamageModifier_Constant_Label {
+            get {
+                return ResourceManager.GetString("DamageModifier_Constant_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die.
+        /// </summary>
+        public static string DamageModifier_Die_Label {
+            get {
+                return ResourceManager.GetString("DamageModifier_Die_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [
         ///    {
         ///        &quot;Description&quot;: &quot;&quot;,
@@ -2147,6 +2174,105 @@ namespace VSCC.Properties {
         public static string ItemIndex_WondrousOnly {
             get {
                 return ResourceManager.GetString("ItemIndex_WondrousOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string ItemIntegration_Add {
+            get {
+                return ResourceManager.GetString("ItemIntegration_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage.
+        /// </summary>
+        public static string ItemIntegration_Damage {
+            get {
+                return ResourceManager.GetString("ItemIntegration_Damage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die: 1d.
+        /// </summary>
+        public static string ItemIntegration_Die {
+            get {
+                return ResourceManager.GetString("ItemIntegration_Die", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hit.
+        /// </summary>
+        public static string ItemIntegration_Hit {
+            get {
+                return ResourceManager.GetString("ItemIntegration_Hit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Charisma.
+        /// </summary>
+        public static string ItemIntegration_IncCha {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncCha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Constitution.
+        /// </summary>
+        public static string ItemIntegration_IncCon {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncCon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Dexterity.
+        /// </summary>
+        public static string ItemIntegration_IncDex {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncDex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Intelligence.
+        /// </summary>
+        public static string ItemIntegration_IncInt {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncInt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Profficiency.
+        /// </summary>
+        public static string ItemIntegration_IncProf {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncProf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Strength.
+        /// </summary>
+        public static string ItemIntegration_IncStr {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncStr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Wisdom.
+        /// </summary>
+        public static string ItemIntegration_IncWis {
+            get {
+                return ResourceManager.GetString("ItemIntegration_IncWis", resourceCulture);
             }
         }
         
@@ -8823,7 +8949,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy the selected items to the clipboard.
+        ///   Looks up a localized string similar to Copy the selected items to the clipboard
+        ///
+        ///Ctrl + C.
         /// </summary>
         public static string Tooltip_Button_CopyItem {
             get {
@@ -8859,7 +8987,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add a new Item.
+        ///   Looks up a localized string similar to Add a new Item
+        ///
+        ///Ctrl + N.
         /// </summary>
         public static string Tooltip_Button_CreateItem {
             get {
@@ -8868,7 +8998,20 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete the selected Features.
+        ///   Looks up a localized string similar to Cut the selected item(s) to the clipboard
+        ///
+        ///Ctrl + X.
+        /// </summary>
+        public static string Tooltip_Button_CutItem {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_CutItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete the selected Features
+        ///
+        ///Delete.
         /// </summary>
         public static string Tooltip_Button_DeleteFeat {
             get {
@@ -8877,7 +9020,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete the selected Items.
+        ///   Looks up a localized string similar to Delete the selected Items
+        ///
+        ///Delete.
         /// </summary>
         public static string Tooltip_Button_DeleteItem {
             get {
@@ -8886,7 +9031,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete the selected Macro.
+        ///   Looks up a localized string similar to Delete the selected Macro
+        ///
+        ///Delete.
         /// </summary>
         public static string Tooltip_Button_DeleteMacro {
             get {
@@ -8895,7 +9042,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete the selected Spell.
+        ///   Looks up a localized string similar to Delete the selected Spell
+        ///
+        ///Delete.
         /// </summary>
         public static string Tooltip_Button_DeleteSpell {
             get {
@@ -8931,7 +9080,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit the selected Item.
+        ///   Looks up a localized string similar to Edit the selected Item
+        ///
+        ///Ctrl + E, Double Left Click.
         /// </summary>
         public static string Tooltip_Button_EditItem {
             get {
@@ -8945,6 +9096,17 @@ namespace VSCC.Properties {
         public static string Tooltip_Button_EditItemImage {
             get {
                 return ResourceManager.GetString("Tooltip_Button_EditItemImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit the selected item&apos;s Roll20 Integration
+        ///
+        ///Ctrl + Right mouse click.
+        /// </summary>
+        public static string Tooltip_Button_EditItemR20 {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_EditItemR20", resourceCulture);
             }
         }
         
@@ -9057,7 +9219,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paste the clipboard contents as an Item(s).
+        ///   Looks up a localized string similar to Paste the clipboard contents as an Item(s)
+        ///
+        ///Ctrl + V.
         /// </summary>
         public static string Tooltip_Button_PasteItem {
             get {
@@ -9084,7 +9248,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Recalculate all weights of the inventory. This includes the Item weights, as well as max1/max2 weights.
+        ///   Looks up a localized string similar to Recalculate all weights of the inventory. This includes the Item weights, as well as max1/max2 weights
+        ///
+        ///F5.
         /// </summary>
         public static string Tooltip_Button_RecalculateWeights {
             get {
@@ -9098,6 +9264,18 @@ namespace VSCC.Properties {
         public static string Tooltip_Button_ResetDeathSaves {
             get {
                 return ResourceManager.GetString("Tooltip_Button_ResetDeathSaves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run the selected item&apos;s Roll20 Integration
+        ///
+        ///
+        ///Ctrl + Left mouse click.
+        /// </summary>
+        public static string Tooltip_Button_RunItemR20 {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_RunItemR20", resourceCulture);
             }
         }
         
@@ -9246,11 +9424,29 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item Roll20 Integration.
+        /// </summary>
+        public static string Window_ItemIntegration_Title {
+            get {
+                return ResourceManager.GetString("Window_ItemIntegration_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Macro Action.
         /// </summary>
         public static string Window_MacroAction_Title {
             get {
                 return ResourceManager.GetString("Window_MacroAction_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Damage Die.
+        /// </summary>
+        public static string Window_NewDamageDieDialog_Title {
+            get {
+                return ResourceManager.GetString("Window_NewDamageDieDialog_Title", resourceCulture);
             }
         }
         

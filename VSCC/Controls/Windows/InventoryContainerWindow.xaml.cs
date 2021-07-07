@@ -13,6 +13,8 @@
     using VSCC.Controls.Tabs;
     using VSCC.DataType;
     using VSCC.Models.ImageList;
+    using VSCC.Roll20;
+    using VSCC.Roll20.AdvancedIntegration;
     using VSCC.State;
 
     /// <summary>
@@ -223,6 +225,8 @@
             {
                 this.Btn_Edit_Click(null, new RoutedEventArgs());
             }
+
+            e.Handled = true;
         }
 
         private void Btn_Copy_Click(object sender, RoutedEventArgs e)
@@ -303,6 +307,7 @@
         private void CommandBindingPaste_Executed(object sender, ExecutedRoutedEventArgs e) => this.Btn_Paste_Click(null, default);
 
         private InventoryItem _rmbTemporaryContext;
+        private InventoryItem _lmbTemporaryContext;
 
         private void InventoryItem_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -318,20 +323,29 @@
             Grid g = (Grid)sender;
             if (g.DataContext is InventoryItem ii && ii == this._rmbTemporaryContext)
             {
-                Point relativePoint = g.PointToScreen(new Point(0, 0));
-                InventoryContainerWindow icw = new InventoryContainerWindow(ii)
+                if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
                 {
-                    Owner = AppState.Current.Window,
-                    Topmost = false,
-                    ShowInTaskbar = false,
-                    WindowStartupLocation = WindowStartupLocation.Manual,
-                    Left = relativePoint.X + 64,
-                    Top = relativePoint.Y + 48,
-                    Title = ii.Name
-                };
+                    this.EditItemR20(ii, new RoutedEventArgs());
+                }
+                else
+                {
+                    Point relativePoint = g.PointToScreen(new Point(0, 0));
+                    InventoryContainerWindow icw = new InventoryContainerWindow(ii)
+                    {
+                        Owner = AppState.Current.Window,
+                        Topmost = false,
+                        ShowInTaskbar = false,
+                        WindowStartupLocation = WindowStartupLocation.Manual,
+                        Left = relativePoint.X + 64,
+                        Top = relativePoint.Y + 48,
+                        Title = ii.Name
+                    };
 
-                icw.Show();
+                    icw.Show();
+                }
             }
+
+            e.Handled = true;
         }
 
         private void Inventory_PreviewDrop(object sender, DragEventArgs e)
@@ -374,6 +388,97 @@
             ii.Amount -= 1;
             AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.ItemWeightLogicMul;
             e.Handled = true;
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is InventoryItem ii)
+            {
+                this._lmbTemporaryContext = ii;
+            }
+        }
+
+        private void Grid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is InventoryItem ii && ii == this._lmbTemporaryContext)
+            {
+                if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control) && R20WSServer.Connected)
+                {
+                    this.RunItemR20(ii, new RoutedEventArgs());
+                }
+            }
+
+            e.Handled = true;
+        }
+
+        private void UserControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.N && e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Control)) // New
+            {
+                this.Btn_Add_Click(this.Btn_Add, new RoutedEventArgs());
+                e.Handled = true;
+            }
+
+            if (e.Key == Key.E && e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Control)) // Edit
+            {
+                this.Btn_Edit_Click(this.Btn_Edit, new RoutedEventArgs());
+                e.Handled = true;
+            }
+        }
+
+        private void EditItemR20(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button) // Click
+            {
+                if (this.Inventory.SelectedItems != null && this.Inventory.SelectedItems.Count > 0)
+                {
+                    InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[0];
+                    SimpleItemIntegration clone = ii.Integration?.Copy() ?? new SimpleItemIntegration();
+                    ItemIntegrationWindow iiw = new ItemIntegrationWindow(clone)
+                    {
+                        Title = ii.Name
+                    };
+
+                    if (iiw.ShowDialog() ?? false)
+                    {
+                        ii.Integration = iiw.Integration;
+                    }
+                }
+            }
+            else
+            {
+                if (sender is InventoryItem ii)
+                {
+                    SimpleItemIntegration clone = ii.Integration?.Copy() ?? new SimpleItemIntegration();
+                    ItemIntegrationWindow iiw = new ItemIntegrationWindow(clone)
+                    {
+                        Title = ii.Name
+                    };
+
+                    if (iiw.ShowDialog() ?? false)
+                    {
+                        ii.Integration = iiw.Integration;
+                    }
+                }
+            }
+        }
+
+        private void RunItemR20(object sender, RoutedEventArgs e)
+        {
+            InventoryItem ii = sender as InventoryItem;
+            if (sender is Button && this.Inventory.SelectedItems != null && this.Inventory.SelectedItems.Count > 0)
+            {
+                ii = (InventoryItem)this.Inventory.SelectedItems[0];
+            }
+
+            if (ii == null || !R20WSServer.Connected)
+            {
+                return;
+            }
+
+            InventoryTab.RunItemsRoll20Integration(ii);
         }
     }
 }

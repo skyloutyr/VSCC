@@ -5,6 +5,7 @@
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
+    using VSCC.Controls.Tabs;
     using VSCC.DataType;
     using VSCC.State;
 
@@ -49,9 +50,18 @@
 
         private void UserControl_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (this.DataContext != null)
+            if (this.DataContext != null && !Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
             {
                 this.SetDataContext(null);
+            }
+        }
+
+        private void UserControl_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control) && this.DataContext is InventoryItem ii)
+            {
+                InventoryTab.RunItemsRoll20Integration(ii);
+                e.Handled = true;
             }
         }
     }

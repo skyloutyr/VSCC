@@ -14,6 +14,8 @@
     using VSCC.Controls.Windows;
     using VSCC.DataType;
     using VSCC.Models.ImageList;
+    using VSCC.Roll20;
+    using VSCC.Roll20.AdvancedIntegration;
     using VSCC.State;
 
     /// <summary>
@@ -140,20 +142,20 @@
         private void UserControl_Initialized(object sender, EventArgs e)
         {
             this.KeyUp += (o, kea) =>
-{
-    if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
-    {
-        this._haltRefresh = true;
-        for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
-        {
-            InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
-            this.Items.Remove(ii);
-        }
+            {
+                if (kea.Key == Key.Delete && this.Inventory.SelectedItems.Count > 0)
+                {
+                    this._haltRefresh = true;
+                    for (int i = this.Inventory.SelectedItems.Count - 1; i >= 0; i--)
+                    {
+                        InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[i];
+                        this.Items.Remove(ii);
+                    }
 
-        this._haltRefresh = false;
-        this.Inventory.Items.Refresh();
-    }
-};
+                    this._haltRefresh = false;
+                    this.Inventory.Items.Refresh();
+                }
+            };
         }
 
         private void Btn_Edit_Click(object sender, RoutedEventArgs e)
@@ -295,10 +297,23 @@
         }
 
         private Point startPoint;
-        private void Inventory_MouseDown(object sender, MouseButtonEventArgs e) => this.startPoint = Mouse.GetPosition(Application.Current.MainWindow);
+        private void Inventory_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
+            {
+                return;
+            }
+
+            this.startPoint = Mouse.GetPosition(Application.Current.MainWindow);
+        }
 
         private void Inventory_PreviewMouseMove(object sender, MouseEventArgs e)
         {
+            if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
+            {
+                return;
+            }
+
             Point mousePos = Mouse.GetPosition(Application.Current.MainWindow);
             Vector diff = this.startPoint - mousePos;
             if (e.LeftButton == MouseButtonState.Pressed && ((Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance) || Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
@@ -331,6 +346,11 @@
 
         private void Inventory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
+            {
+                return;
+            }
+
             if (this.Inventory.SelectedItems.Count > 0 && e.ChangedButton == MouseButton.Left)
             {
                 this.Btn_Edit_Click(null, new RoutedEventArgs());
@@ -417,6 +437,7 @@
         private void CommandBindingPaste_Executed(object sender, ExecutedRoutedEventArgs e) => this.Btn_Paste_Click(null, default);
 
         private InventoryItem _rmbTemporaryContext;
+        private InventoryItem _lmbTemporaryContext;
 
         private void InventoryItem_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -432,20 +453,29 @@
             Grid g = (Grid)sender;
             if (g.DataContext is InventoryItem ii && ii == this._rmbTemporaryContext)
             {
-                Point relativePoint = g.PointToScreen(new Point(0, 0));
-                InventoryContainerWindow icw = new InventoryContainerWindow(ii)
+                if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
                 {
-                    Owner = AppState.Current.Window,
-                    Topmost = false,
-                    ShowInTaskbar = false,
-                    WindowStartupLocation = WindowStartupLocation.Manual,
-                    Left = relativePoint.X + 64,
-                    Top = relativePoint.Y + 48,
-                    Title = ii.Name
-                };
+                    this.EditItemR20(ii, new RoutedEventArgs());
+                }
+                else
+                {
+                    Point relativePoint = g.PointToScreen(new Point(0, 0));
+                    InventoryContainerWindow icw = new InventoryContainerWindow(ii)
+                    {
+                        Owner = AppState.Current.Window,
+                        Topmost = false,
+                        ShowInTaskbar = false,
+                        WindowStartupLocation = WindowStartupLocation.Manual,
+                        Left = relativePoint.X + 64,
+                        Top = relativePoint.Y + 48,
+                        Title = ii.Name
+                    };
 
-                icw.Show();
+                    icw.Show();
+                }
             }
+
+            e.Handled = true;
         }
 
         private void Inventory_PreviewDrop(object sender, DragEventArgs e)
@@ -488,6 +518,341 @@
             ii.Amount -= 1;
             AppState.Current.State.Inventory.WeightCurrent -= ii.Weight * ii.ItemWeightLogicMul;
             e.Handled = true;
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is InventoryItem ii)
+            {
+                this._lmbTemporaryContext = ii;
+            }
+        }
+
+        private void Grid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is InventoryItem ii && ii == this._lmbTemporaryContext)
+            {
+                if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control) && R20WSServer.Connected)
+                {
+                    this.RunItemR20(ii, new RoutedEventArgs());
+                }
+            }
+
+            e.Handled = true;
+        }
+
+
+        // Handle all extra keyboard shortcuts
+        private void UserControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.N && e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Control)) // New
+            {
+                this.Btn_Add_Click(this.Btn_Add, new RoutedEventArgs());
+                e.Handled = true;
+            }
+
+            if (e.Key == Key.E && e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Control)) // Edit
+            {
+                this.Btn_Edit_Click(this.Btn_Edit, new RoutedEventArgs());
+                e.Handled = true;
+            }
+
+            if (e.Key == Key.F5) // Refresh
+            {
+                this.Btn_Refresh_Click(this.Btn_Refresh, new RoutedEventArgs());
+                e.Handled = true;
+            }
+        }
+
+        private void EditItemR20(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button) // Click
+            {
+                if (this.Inventory.SelectedItems != null && this.Inventory.SelectedItems.Count > 0)
+                {
+                    InventoryItem ii = (InventoryItem)this.Inventory.SelectedItems[0];
+                    SimpleItemIntegration clone = ii.Integration?.Copy() ?? new SimpleItemIntegration();
+                    ItemIntegrationWindow iiw = new ItemIntegrationWindow(clone)
+                    {
+                        Title = ii.Name
+                    };
+
+                    if (iiw.ShowDialog() ?? false)
+                    {
+                        ii.Integration = iiw.Integration;
+                    }
+                }
+            }
+            else
+            {
+                if (sender is InventoryItem ii)
+                {
+                    SimpleItemIntegration clone = ii.Integration?.Copy() ?? new SimpleItemIntegration();
+                    ItemIntegrationWindow iiw = new ItemIntegrationWindow(clone)
+                    {
+                        Title = ii.Name
+                    };
+
+                    if (iiw.ShowDialog() ?? false)
+                    {
+                        ii.Integration = iiw.Integration;
+                    }
+                }
+            }
+        }
+
+        private void RunItemR20(object sender, RoutedEventArgs e)
+        {
+            InventoryItem ii = sender as InventoryItem;
+            if (sender is Button && this.Inventory.SelectedItems != null && this.Inventory.SelectedItems.Count > 0)
+            {
+                ii = (InventoryItem)this.Inventory.SelectedItems[0];
+            }
+
+            if (ii == null || !R20WSServer.Connected)
+            {
+                return;
+            }
+
+            RunItemsRoll20Integration(ii);
+        }
+
+        public static void RunItemsRoll20Integration(InventoryItem ii)
+        {
+            SimpleItemIntegration sii = ii.Integration;
+            if (sii != null)
+            {
+                // Determine integration type
+                if (sii.HitDieSide <= 0) // No hit die
+                {
+                    if (sii.Damage.Count == 0) // No damage, description
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.Description,
+                            Data = new TemplateDataDesc
+                            {
+                                Desc = "** " + ii.Name + " **\n" + ii.Description
+                            }
+                        });
+                    }
+                    else // Have damage, but no hit die
+                    {
+                        string damageString = "[[";
+                        for (int i = 0; i < sii.Damage.Count; i++)
+                        {
+                            DamageLine dl = sii.Damage[i];
+                            if (dl.DieSide > 0 && dl.ConstantNumber != 0)
+                            {
+                                damageString += $"[[[[{dl.NumDice}d{dl.DieSide}]] + {dl.ConstantNumber}]][{dl.Label}]";
+                            }
+                            else
+                            {
+                                if (dl.DieSide > 0)
+                                {
+                                    damageString += $"[[{dl.NumDice}d{dl.DieSide}]][{dl.Label}]";
+                                }
+                                else
+                                {
+                                    damageString += $"{dl.ConstantNumber}[{dl.Label}]";
+                                }
+                            }
+
+                            if (i != sii.Damage.Count - 1)
+                            {
+                                damageString += "+";
+                            }
+                        }
+
+                        if (sii.DamageIncludeStr)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_Str")}]";
+                        }
+
+                        if (sii.DamageIncludeDex)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModDex}[{MainWindow.Translate("General_Dex")}]";
+                        }
+
+                        if (sii.DamageIncludeCon)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModCon}[{MainWindow.Translate("General_Con")}]";
+                        }
+
+                        if (sii.DamageIncludeWis)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModWis}[{MainWindow.Translate("General_Wis")}]";
+                        }
+
+                        if (sii.DamageIncludeCha)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModCha}[{MainWindow.Translate("General_Cha")}]";
+                        }
+
+                        if (sii.DamageIncludeInt)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModInt}[{MainWindow.Translate("General_Int")}]";
+                        }
+
+                        damageString += "]]";
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.Dmg,
+                            Data = new TemplateDataDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Name = ii.Name,
+                                Dmg1 = damageString,
+                                Dmg2 = damageString
+                            }
+                        });
+                    }
+                }
+                else // Have hit die
+                {
+                    string hitString = $"[[[[1d{sii.HitDieSide}]][1d{sii.HitDieSide}]";
+
+                    if (sii.HitIncludeProfficiency)
+                    {
+                        hitString += $"+{AppState.Current.State.General.ProfficiencyBonus}[{MainWindow.Translate("General_PBonus")}]";
+                    }
+
+                    if (sii.HitIncludeStr)
+                    {
+                        hitString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_Str")}]";
+                    }
+
+                    if (sii.HitIncludeDex)
+                    {
+                        hitString += $"+{AppState.Current.State.General.StatModDex}[{MainWindow.Translate("General_Dex")}]";
+                    }
+
+                    if (sii.HitIncludeCon)
+                    {
+                        hitString += $"+{AppState.Current.State.General.StatModCon}[{MainWindow.Translate("General_Con")}]";
+                    }
+
+                    if (sii.HitIncludeWis)
+                    {
+                        hitString += $"+{AppState.Current.State.General.StatModWis}[{MainWindow.Translate("General_Wis")}]";
+                    }
+
+                    if (sii.HitIncludeCha)
+                    {
+                        hitString += $"+{AppState.Current.State.General.StatModCha}[{MainWindow.Translate("General_Cha")}]";
+                    }
+
+                    if (sii.HitIncludeInt)
+                    {
+                        hitString += $"+{AppState.Current.State.General.StatModInt}[{MainWindow.Translate("General_Int")}]";
+                    }
+
+                    hitString += "]]";
+                    if (sii.Damage.Count == 0) // Have no damage die
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.Simple,
+                            Data = new TemplateDataSimple
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Name = ii.Name,
+                                R1 = hitString,
+                                R2 = hitString
+                            }
+                        });
+                    }
+                    else // Have damage die
+                    {
+                        string damageString = "[[";
+                        string critString = "[[";
+                        for (int i = 0; i < sii.Damage.Count; i++)
+                        {
+                            DamageLine dl = sii.Damage[i];
+                            if (dl.DieSide > 0 && dl.ConstantNumber != 0)
+                            {
+                                damageString += $"[[[[{dl.NumDice}d{dl.DieSide}]][{dl.NumDice}d{dl.DieSide}] + {dl.ConstantNumber}]][{dl.Label}]";
+                                critString += $"[[{dl.NumDice}d{dl.DieSide}]][{dl.NumDice}d{dl.DieSide} {dl.Label}]";
+                            }
+                            else
+                            {
+                                if (dl.DieSide > 0)
+                                {
+                                    damageString += $"[[{dl.NumDice}d{dl.DieSide}]][{dl.NumDice}d{dl.DieSide} {dl.Label}]";
+                                    critString += $"[[{dl.NumDice}d{dl.DieSide}]][{dl.NumDice}d{dl.DieSide} {dl.Label}]";
+                                }
+                                else
+                                {
+                                    damageString += $"{dl.ConstantNumber}[{dl.Label}]";
+                                }
+                            }
+
+                            if (i != sii.Damage.Count - 1)
+                            {
+                                damageString += "+";
+                                critString += "+";
+                            }
+                        }
+
+                        while (critString[critString.Length - 1] == '+')
+                        {
+                            critString = critString.Substring(0, critString.Length - 1);
+                        }
+
+                        critString += "]]";
+                        if (sii.DamageIncludeStr)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_Str")}]";
+                        }
+
+                        if (sii.DamageIncludeDex)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModDex}[{MainWindow.Translate("General_Dex")}]";
+                        }
+
+                        if (sii.DamageIncludeCon)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModCon}[{MainWindow.Translate("General_Con")}]";
+                        }
+
+                        if (sii.DamageIncludeWis)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModWis}[{MainWindow.Translate("General_Wis")}]";
+                        }
+
+                        if (sii.DamageIncludeCha)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModCha}[{MainWindow.Translate("General_Cha")}]";
+                        }
+
+                        if (sii.DamageIncludeInt)
+                        {
+                            damageString += $"+{AppState.Current.State.General.StatModInt}[{MainWindow.Translate("General_Int")}]";
+                        }
+
+                        damageString += "]]";
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = critString,
+                                Dmg = damageString,
+                                R1 = hitString,
+                                R2 = hitString,
+                                Name = ii.Name
+                            }
+                        });
+                    }
+                }
+            }
         }
     }
 }
