@@ -223,6 +223,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Roll20\AdvancedIntegration\SimpleItemIntegration.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionDmg.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionExecuteMacro.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionSpell.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Roll20\Macros\Actions\MacroActionAtkDmg.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionSimpleRoll.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionShowDescription.cs" />
+    <Compile Include="Roll20\Macros\Actions\MacroActionToGM.cs" />
     <Compile Include="Roll20\Macros\Basic\MacroActionBoolConstant.cs" />
     <Compile Include="Roll20\Macros\Basic\MacroActionRealConstant.cs" />
     <Compile Include="Roll20\Macros\Basic\MacroActionStringConcat.cs" />

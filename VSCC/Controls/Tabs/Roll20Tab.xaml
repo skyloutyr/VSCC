@@ -26,6 +26,7 @@
             </GroupBox>
             <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="495" Width="290" Margin="0,225,0,0" Header="{x:Static p:Resources.R20_Actions}" Foreground="{StaticResource Static.Foreground}">
                 <Grid>
+                    <CheckBox x:Name="CB_GMRoll" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.R20_AsGM}" Foreground="{StaticResource Static.Foreground}" Margin="214,2,0,0" Panel.ZIndex="1" />
                     <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="{x:Static p:Resources.R20_Rolls}" Height="111" Width="278">
                         <Grid>
                             <Button Content="1d4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="30" Margin="10,10,0,0" Click="Button_Click_2" Foreground="{StaticResource Static.Foreground}" />

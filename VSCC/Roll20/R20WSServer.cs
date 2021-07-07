@@ -23,11 +23,12 @@
         public static Action ClientDisconnectCallback { get; set; }
         public static bool Connected { get; set; }
 
-        public static void Roll(string r1, string r2, string type, string action)
+        public static void Roll(string r1, string r2, string type, string action, bool gm)
         {
             Send(new CommandPacket()
             {
                 Template = Template.Simple,
+                GMRoll = gm,
                 Data = new TemplateDataSimple()
                 {
                     R1 = $"[[{ r1 }]]",

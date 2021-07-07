@@ -370,11 +370,11 @@
     {
         public bool IsConnected() => Roll20.R20WSServer.Connected;
 
-        public void PrettyRoll(string r1, string r2, string type, string action) => Roll20.R20WSServer.Roll(r1, r2, type, action);
+        public void PrettyRoll(string r1, string r2, string type, string action) => Roll20.R20WSServer.Roll(r1, r2, type, action, false);
 
-        public void Roll(int numDice, int numSides) => Roll20.R20WSServer.Send(new Roll20.RollPacket() { NumDice = numDice, NumSides = numSides });
+        public void Roll(int numDice, int numSides) => Roll20.R20WSServer.Send(new Roll20.RollPacket() { NumDice = numDice, NumSides = numSides, GMRoll = false });
 
-        public void Message(string message) => Roll20.R20WSServer.Send(new Roll20.MessagePacket() { Text = message });
+        public void Message(string message) => Roll20.R20WSServer.Send(new Roll20.MessagePacket() { Text = message, GMRoll = false });
     }
 
     public class UIProvider

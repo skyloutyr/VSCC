@@ -285,11 +285,21 @@ var templates = {
     ["none"]: function(data) {
         if (data && (data.r || data.roll))
         {
-            if (data.r) {
-                return "/r " + data.r;
+            if (data.gmr) {
+                if (data.r) {
+                    return "[[" + data.r + "]]";
+                }
+                else {
+                    return "[[" + data.roll + "]]";
+                }
             }
             else {
-                return "/r " + data.roll;
+                if (data.r) {
+                    return "/r " + data.r;
+                }
+                else {
+                    return "/r " + data.roll;
+                }
             }
         }
     },
@@ -442,9 +452,9 @@ function validateSite() {
     return false;
 }
 
-function message(text) {
+function message(text, gm) {
     if (text) {
-        chatWindow.value = text;
+        chatWindow.value = gm ? ("/w gm " + text) : text;
         chatButton.click();
         return true;
     }
@@ -503,7 +513,7 @@ function handleServerCommand(data) {
             case "chat_message":
             case "chatmessage": {
                 if (assertParam(data.text, "text", "string")){
-                    return message(data.text);
+                    return message(data.text, data.gmr);
                 } else {
                     return false;
                 }
@@ -511,7 +521,7 @@ function handleServerCommand(data) {
 
             case "roll": {
                 if (assertParam(data.numDice, "numDice", "number") && assertParam(data.numSides, "numSides", "number") && assertInteger(data.numDice, "numDice") && assertInteger(data.numSides, "numSides")) {
-                    return message("/roll " + data.numDice + "d" + data.numSides);
+                    return message("/roll " + data.numDice + "d" + data.numSides, data.gmr);
                 } else {
                     return false;
                 }
@@ -531,7 +541,7 @@ function handleServerCommand(data) {
             case "advanced_command": {
                 if (assertParam(data.template, "template", "string") && assertParam(data.data, "data", "object")) {
                     if (templates[data.template.toLowerCase()]) {
-                        if (message(templates[data.template.toLowerCase()](data.data))) {
+                        if (message(templates[data.template.toLowerCase()](data.data), data.gmr)) {
                             return true;
                         }
                         else {
@@ -597,6 +607,6 @@ function run() {
     }
 }
 
-if (window.confirm("Running VSCC roll20 client 1.1.0.\nBegin launch procedure?")) {
+if (window.confirm("Running VSCC roll20 client 1.2.0.\nBegin launch procedure?")) {
     run();
 }

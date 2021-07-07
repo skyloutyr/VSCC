@@ -15,6 +15,9 @@
 
         [JsonProperty(PropertyName = "data")]
         public object Data { get; set; }
+
+        [JsonProperty(PropertyName = "gmr")]
+        public bool GMRoll { get; set; }
     }
 
     public class MessagePacket
@@ -25,6 +28,9 @@
 
         [JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
+
+        [JsonProperty(PropertyName = "gmr")]
+        public bool GMRoll { get; set; }
     }
 
     public class RollPacket
@@ -38,6 +44,9 @@
 
         [JsonProperty(PropertyName = "numSides")]
         public int NumSides { get; set; }
+
+        [JsonProperty(PropertyName = "gmr")]
+        public bool GMRoll { get; set; }
     }
 
     public class ClosePacket
@@ -76,6 +85,9 @@
     {
         [JsonProperty(PropertyName = "roll")]
         public string Roll { get; set; }
+
+        [JsonProperty(PropertyName = "gmr")]
+        public bool GMRoll { get; set; }
     }
 
     public class TemplateDataDesc

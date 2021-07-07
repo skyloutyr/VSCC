@@ -2349,6 +2349,33 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set GM Whisper mode to {0}.
+        /// </summary>
+        public static string Macro_ActionToGM_FullInnerText {
+            get {
+                return ResourceManager.GetString("Macro_ActionToGM_FullInnerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable or Disable GM whisper mode.
+        /// </summary>
+        public static string Macro_ActionToGM_Name {
+            get {
+                return ResourceManager.GetString("Macro_ActionToGM_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set GM Whisper mode to .
+        /// </summary>
+        public static string Macro_ActionToGM_Text {
+            get {
+                return ResourceManager.GetString("Macro_ActionToGM_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Constant value.
         /// </summary>
         public static string Macro_BasicBoolCon_Name {
@@ -8042,6 +8069,15 @@ namespace VSCC.Properties {
         public static string R20_AdvancedRoll {
             get {
                 return ResourceManager.GetString("R20_AdvancedRoll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To GM.
+        /// </summary>
+        public static string R20_AsGM {
+            get {
+                return ResourceManager.GetString("R20_AsGM", resourceCulture);
             }
         }
         

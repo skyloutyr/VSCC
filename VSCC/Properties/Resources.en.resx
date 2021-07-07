@@ -878,6 +878,15 @@ Separate multiple types by a new line</value>
   <data name="Macro_ActionSpell_Name" xml:space="preserve">
     <value>Show a Spell Card</value>
   </data>
+  <data name="Macro_ActionToGM_FullInnerText" xml:space="preserve">
+    <value>Set GM Whisper mode to {0}</value>
+  </data>
+  <data name="Macro_ActionToGM_Name" xml:space="preserve">
+    <value>Enable or Disable GM whisper mode</value>
+  </data>
+  <data name="Macro_ActionToGM_Text" xml:space="preserve">
+    <value>Set GM Whisper mode to </value>
+  </data>
   <data name="Macro_BasicBoolCon_Name" xml:space="preserve">
     <value>Constant value</value>
   </data>
@@ -2776,6 +2785,9 @@ Separate multiple types by a new line</value>
   </data>
   <data name="R20_AdvancedRoll" xml:space="preserve">
     <value>Advanced Roll</value>
+  </data>
+  <data name="R20_AsGM" xml:space="preserve">
+    <value>To GM</value>
   </data>
   <data name="R20_AsMulRolls" xml:space="preserve">
     <value>As multiple rolls</value>

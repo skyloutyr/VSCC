@@ -71,6 +71,7 @@
                 R20WSServer.Send(new CommandPacket
                 {
                     Template = Template.Spell,
+                    GMRoll = AppState.Current.TRoll20.MacroToGMMode,
                     Data = new TemplateDataSpell
                     {
                         Name = s.Name,

@@ -33,6 +33,7 @@
         public InventoryTab TInventory => ((DockPanel)this.Window.TabInventory.Content).Children[0] as InventoryTab;
         public SpellbookTab TSpellbook => ((DockPanel)this.Window.TabSpellbook.Content).Children[0] as SpellbookTab;
         public ScriptingTab TScripting => ((DockPanel)this.Window.TabScripting.Content).Children[0] as ScriptingTab;
+        public Roll20Tab TRoll20 => ((DockPanel)this.Window.TabRoll20.Content).Children[0] as Roll20Tab;
 
         /// <summary>
         /// Note that this might be null after load is invoked, unless the LoadFlags.KeepLoadObject has been set

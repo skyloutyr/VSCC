@@ -8,6 +8,7 @@
     using VSCC.Controls.Templates.Macro;
     using VSCC.Roll20.Macros.Basic;
     using VSCC.Roll20.Macros.Expressions;
+    using VSCC.State;
 
     public class MacroActionSimpleRoll : MacroAction
     {
@@ -52,6 +53,7 @@
             R20WSServer.Send(new CommandPacket()
             {
                 Template = Template.Simple,
+                GMRoll = AppState.Current.TRoll20.MacroToGMMode,
                 Data = new TemplateDataSimple
                 {
                     R1 = this.Expressionify(this.Params[0].Execute(m, errors).ToString()),

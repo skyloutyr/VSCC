@@ -875,6 +875,15 @@
   <data name="Macro_ActionSpell_Name" xml:space="preserve">
     <value>Показать карточку заклинания</value>
   </data>
+  <data name="Macro_ActionToGM_FullInnerText" xml:space="preserve">
+    <value>Установить режим только ГМу как {0}</value>
+  </data>
+  <data name="Macro_ActionToGM_Name" xml:space="preserve">
+    <value>Включить или выключить режим ГМ сообщений</value>
+  </data>
+  <data name="Macro_ActionToGM_Text" xml:space="preserve">
+    <value>Установить режим только ГМу как</value>
+  </data>
   <data name="Macro_BasicBoolCon_Name" xml:space="preserve">
     <value>Постоянное значение</value>
   </data>
@@ -2773,6 +2782,9 @@
   </data>
   <data name="R20_AdvancedRoll" xml:space="preserve">
     <value>Комплексный</value>
+  </data>
+  <data name="R20_AsGM" xml:space="preserve">
+    <value>Только ГМу</value>
   </data>
   <data name="R20_AsMulRolls" xml:space="preserve">
     <value>Как несколько</value>

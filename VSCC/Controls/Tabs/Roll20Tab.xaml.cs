@@ -20,10 +20,12 @@
     public partial class Roll20Tab : UserControl
     {
         public bool HaltRefresh { get; set; }
+        public bool MacroToGMMode { get; set; }
 
         public Roll20Tab()
         {
             this.InitializeComponent();
+            this.MacroToGMMode = false;
             MacroSerializer.Macros.CollectionChanged += (o, e) =>
             {
                 if (!this.HaltRefresh)
@@ -84,12 +86,12 @@
             ((Grid)this.ImgErrs_ErrIcon.Parent).Children.Remove(this.ImgErrs_ErrIcon);
         }
 
-        private void RollDieSimple(string die) => R20WSServer.Roll(die, die, "Simple Roll", null);
+        private void RollDieSimple(string die) => R20WSServer.Roll(die, die, "Simple Roll", null, this.CB_GMRoll.IsChecked ?? false);
 
         private void RollDieStat(string statname, int stat)
         {
             string die = "1d20" + (stat < 0 ? "-" : "+") + Math.Abs(stat).ToString();
-            R20WSServer.Roll(die, die, "Save/Skill Check", statname);
+            R20WSServer.Roll(die, die, "Save/Skill Check", statname, this.CB_GMRoll.IsChecked ?? false);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) => this.RollDieSimple("1d4");
@@ -117,7 +119,8 @@
                 R20WSServer.Send(new CommandPacket()
                 {
                     Template = Roll20.Template.None,
-                    Data = new TemplateDataManyRolls() { Roll = $"{ this.IntUD_AdvRollNumDice.Value }d{ this.IntUD_AdvRollSidesDice.Value }{ this.ComboBox_AdvRollMathType.Text }{ this.IntUD_AdvRollMod.Value }" }
+                    Data = new TemplateDataManyRolls() { Roll = $"{ this.IntUD_AdvRollNumDice.Value }d{ this.IntUD_AdvRollSidesDice.Value }{ this.ComboBox_AdvRollMathType.Text }{ this.IntUD_AdvRollMod.Value }", GMRoll = this.CB_GMRoll.IsChecked ?? false },
+                    GMRoll = this.CB_GMRoll.IsChecked ?? false
                 });
             }
         }
@@ -188,6 +191,7 @@
         // Macro Run click
         private void Button_Click_36(object sender, RoutedEventArgs e)
         {
+            this.MacroToGMMode = false;
             Macro m = (Macro)((Button)sender).DataContext;
             this.ImgErrs.Source = this._fine;
             this.ImgErrs.ToolTip = null;

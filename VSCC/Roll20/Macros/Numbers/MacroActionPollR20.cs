@@ -36,7 +36,7 @@
         {
             string name = this.Params[0].Execute(m, errors).ToString();
             R20WSServer.Send(new PollPacket()); // Listen call
-            R20WSServer.Send(new MessagePacket() { Text = name });
+            R20WSServer.Send(new MessagePacket() { Text = name, GMRoll = false });
             int? i = R20WSServer.AwaitCallback();
             if (!i.HasValue)
             {

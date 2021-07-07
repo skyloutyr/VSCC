@@ -7,6 +7,7 @@
     using System.Windows.Documents;
     using VSCC.Controls.Templates.Macro;
     using VSCC.Roll20.Macros.Basic;
+    using VSCC.State;
 
     public class MacroActionShowDescription : MacroAction
     {
@@ -41,7 +42,7 @@
                 return null;
             }
 
-            R20WSServer.Send(new CommandPacket() { Template = Template.Description, Data = new TemplateDataDesc { Desc = this.Params[0].Execute(m, errors).ToString() } });
+            R20WSServer.Send(new CommandPacket() { Template = Template.Description, GMRoll = AppState.Current.TRoll20.MacroToGMMode, Data = new TemplateDataDesc { Desc = this.Params[0].Execute(m, errors).ToString() } });
             return null;
         }
 
