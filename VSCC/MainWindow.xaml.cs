@@ -63,12 +63,12 @@
                 // NOOP
             }
 
-            Task.Run(() => MacroAction.Initialize());
             this.Dispatcher.UnhandledException += this.Dispatcher_UnhandledException;
             AppState.Current.FreezeAutocalc = true;
             AppState.Current.AppThread = Thread.CurrentThread;
             this.ChangeLanguage(Settings.Default.Language, true, false);
             this.ChangeSkin(Settings.Default.Skin, false);
+            Task.Run(() => MacroAction.Initialize());
             this.InitializeComponent();
             AppState.Current.FreezeAutocalc = false;
             ServicePointManager.ServerCertificateValidationCallback += (s, cert, chain, err) => true;
