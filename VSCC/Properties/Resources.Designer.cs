@@ -2430,6 +2430,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string Macro_Category_All {
+            get {
+                return ResourceManager.GetString("Macro_Category_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Basic.
         /// </summary>
         public static string Macro_Category_Basic {

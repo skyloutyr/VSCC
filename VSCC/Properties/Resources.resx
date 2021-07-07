@@ -902,6 +902,9 @@ Separate multiple types by a new line</value>
   <data name="Macro_Category_Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
+  <data name="Macro_Category_All" xml:space="preserve">
+    <value>All</value>
+  </data>
   <data name="Macro_Category_Basic" xml:space="preserve">
     <value>Basic</value>
   </data>

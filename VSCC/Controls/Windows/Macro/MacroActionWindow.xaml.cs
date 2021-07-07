@@ -33,7 +33,7 @@
                     Thread.Sleep(10);
                 }
 
-                this.CBCategories.Items.Add(new ComboBoxItem() { Content = "All", Tag = new object() });
+                this.CBCategories.Items.Add(new ComboBoxItem() { Content = MainWindow.Translate("Macro_Category_All"), Tag = new object() });
                 foreach (string cat in MacroAction.Actions[type].Where(a => a.Item4).Select(tu => tu.Item3).Distinct())
                 {
                     ComboBoxItem cbi = new ComboBoxItem
@@ -68,7 +68,7 @@
                         continue;
                     }
 
-                    if (cate.Equals("All") || mat.Item3.Equals(cate))
+                    if (cate.Equals(MainWindow.Translate("Macro_Category_All")) || mat.Item3.Equals(cate))
                     {
                         ComboBoxItem cbi = new ComboBoxItem
                         {
@@ -224,7 +224,7 @@
                         continue;
                     }
 
-                    if (cat.Equals("All") || mat.Item3.Equals(cat))
+                    if (cat.Equals(MainWindow.Translate("Macro_Category_All")) || mat.Item3.Equals(cat))
                     {
                         ComboBoxItem cbi = new ComboBoxItem
                         {
