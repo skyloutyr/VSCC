@@ -10,6 +10,7 @@
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
     using System.Windows;
+    using VSCC.Properties;
     using VSCC.State;
 
     public class VersionChecker
@@ -18,6 +19,9 @@
 
         private static SemanticVersioning.Version Remote { get; set; }
         private static SemanticVersioning.Version Local { get; set; }
+
+        public static bool HasNewerRemote { get; set; }
+        public static string LatestRemote { get; set; }
 
         public static void CheckUpdater()
         {
@@ -55,7 +59,9 @@
                 {
                     case VersionCheckResult.Behind:
                         {
-                            if (MessageBox.Show($"An update is available!\n\r{ t.Item2 }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                            HasNewerRemote = true;
+                            LatestRemote = t.Item4;
+                            if (!Settings.Default.HideUpdateNotification && MessageBox.Show($"An update is available!\n\r{ t.Item2 }\n\r{ t.Item3 }\n\r. Do you want to update now?", "Local version is outdated!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                             {
                                 if (callUpdateFromVC)
                                 {
@@ -76,7 +82,6 @@
                             {
                                 MessageBox.Show($"", "Remote version is outdated!");
                             }
-
                             break;
                         }
 

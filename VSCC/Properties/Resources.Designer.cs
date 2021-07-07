@@ -7857,6 +7857,24 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable Autoupdate.
+        /// </summary>
+        public static string MainMenu_Edit_Autoupdate {
+            get {
+                return ResourceManager.GetString("MainMenu_Edit_Autoupdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prompt for updates.
+        /// </summary>
+        public static string MainMenu_Edit_ShowUpdateWindow {
+            get {
+                return ResourceManager.GetString("MainMenu_Edit_ShowUpdateWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string MainMenu_Exit {

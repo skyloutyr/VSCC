@@ -109,7 +109,7 @@ Full Exception Object Dump:
 ";
 
                     text = string.Format(text,
-                        Environment.OSVersion.Platform,
+                        Enum.GetName(typeof(PlatformID), Environment.OSVersion.Platform),
                         Environment.OSVersion.Version.ToString(),
                         DumpObject2String(Settings.Default),
                         Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory).Any(c => c > 127),
@@ -186,6 +186,8 @@ Full Exception Object Dump:
             this.Skin_Bright.IsChecked = Settings.Default.Skin == 1;
             this.Skin_Dark.IsChecked = Settings.Default.Skin == 2;
             this.Skin_Soft.IsChecked = Settings.Default.Skin == 3;
+            this.CB_Autoupdate.IsChecked = Settings.Default.AutoUpdate;
+            this.CB_PromptUpdates.IsChecked = !Settings.Default.HideUpdateNotification;
         }
 
         private void NewEmpty_Click(object sender, ExecutedRoutedEventArgs e)
@@ -521,6 +523,29 @@ Full Exception Object Dump:
                 ScriptsMarketplace sm = new ScriptsMarketplace();
                 sm.Closed += (o, ea) => this._marketplaceOpen = false;
                 sm.Show();
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (Settings.Default.AutoUpdate && VersionChecker.HasNewerRemote)
+            {
+                UpdateManager.Update(VersionChecker.LatestRemote);
+            }
+        }
+
+        // Enable autoupdates checked
+        private void MenuItem_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (sender == this.CB_Autoupdate)
+            {
+                Settings.Default.AutoUpdate = this.CB_Autoupdate.IsChecked;
+                Settings.Default.Save();
+            }
+            else
+            {
+                Settings.Default.HideUpdateNotification = !this.CB_PromptUpdates.IsChecked;
+                Settings.Default.Save();
             }
         }
     }

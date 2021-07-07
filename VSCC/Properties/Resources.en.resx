@@ -2714,6 +2714,12 @@ Separate multiple types by a new line</value>
   <data name="MainMenu_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="MainMenu_Edit_Autoupdate" xml:space="preserve">
+    <value>Enable Autoupdate</value>
+  </data>
+  <data name="MainMenu_Edit_ShowUpdateWindow" xml:space="preserve">
+    <value>Prompt for updates</value>
+  </data>
   <data name="MainMenu_Exit" xml:space="preserve">
     <value>Exit</value>
   </data>

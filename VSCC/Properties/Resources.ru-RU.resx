@@ -2711,6 +2711,12 @@
   <data name="MainMenu_Edit" xml:space="preserve">
     <value>Отредактировать</value>
   </data>
+  <data name="MainMenu_Edit_Autoupdate" xml:space="preserve">
+    <value>Включить Автообновления</value>
+  </data>
+  <data name="MainMenu_Edit_ShowUpdateWindow" xml:space="preserve">
+    <value>Показывать окно об обновлениях</value>
+  </data>
   <data name="MainMenu_Exit" xml:space="preserve">
     <value>Выйти</value>
   </data>
