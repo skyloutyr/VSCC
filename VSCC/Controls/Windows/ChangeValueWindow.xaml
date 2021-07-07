@@ -10,6 +10,6 @@
     <Grid>
         <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,40,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
         <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="110,40,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
-        <lcontrols:SingleUpDown x:Name="DUD_Value" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="164" Height="25" />
+        <lcontrols:SingleUpDown x:Name="DUD_Value" Minimum="-2147483648" Value="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="164" Height="25" />
     </Grid>
 </Window>

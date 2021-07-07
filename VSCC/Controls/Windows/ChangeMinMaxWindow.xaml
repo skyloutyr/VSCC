@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="{x:Static p:Resources.Window_ChangeMinMax_Title}" Height="100" Width="192" Background="{StaticResource Static.Background}">
     <Grid>
-        <lcontrols:SingleUpDown x:Name="DUD_Min" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="64" />
+        <lcontrols:SingleUpDown x:Name="DUD_Min" Minimum="-2147483648" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="64" />
         <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,7,0,0" Foreground="{StaticResource Static.Foreground}" />
-        <lcontrols:SingleUpDown x:Name="DUD_Max" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,10,0,0" Width="64" />
+        <lcontrols:SingleUpDown x:Name="DUD_Max" Minimum="-2147483648" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,10,0,0" Width="64" />
         <Button Content="{x:Static p:Resources.Generic_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="10,40,0,0" Click="Button_Click" Foreground="{StaticResource Static.Foreground}" />
         <Button Content="{x:Static p:Resources.Generic_OK}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="19" Width="64" Margin="110,40,0,0" Click="Button_Click_1" Foreground="{StaticResource Static.Foreground}" />
     </Grid>
