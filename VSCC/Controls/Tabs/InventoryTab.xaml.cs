@@ -715,6 +715,10 @@
                 else // Have hit die
                 {
                     string hitString = $"[[[[1d{sii.HitDieSide}]][1d{sii.HitDieSide}]";
+                    if (sii.HitConstant > 0)
+                    {
+                        hitString += $"+{sii.HitConstant}";
+                    }
 
                     if (sii.HitIncludeProfficiency)
                     {

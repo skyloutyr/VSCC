@@ -89,11 +89,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Dialogs\NewScalableDamageLineDialog.xaml.cs">
+      <DependentUpon>NewScalableDamageLineDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Dialogs\NewStatModifierDialog.xaml.cs">
       <DependentUpon>NewStatModifierDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Dialogs\NewDamageDieDialog.xaml.cs">
       <DependentUpon>NewDamageDieDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\ScalableValueDialog.xaml.cs">
+      <DependentUpon>ScalableValueDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\InventoryItemPanel.xaml.cs">
       <DependentUpon>InventoryItemPanel.xaml</DependentUpon>
@@ -212,6 +218,9 @@
     <Compile Include="Controls\Windows\ScriptsWindow.xaml.cs">
       <DependentUpon>ScriptsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Windows\SpellIntegrationWindow.xaml.cs">
+      <DependentUpon>SpellIntegrationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataType\CostValue.cs" />
     <Compile Include="DataType\Feat.cs" />
     <Compile Include="DataType\Spell.cs" />
@@ -229,7 +238,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Roll20\AdvancedIntegration\ScalableDamageLine.cs" />
+    <Compile Include="Roll20\AdvancedIntegration\DamageLine.cs" />
     <Compile Include="Roll20\AdvancedIntegration\IntegrationManager.cs" />
+    <Compile Include="Roll20\AdvancedIntegration\ScalableValue.cs" />
+    <Compile Include="Roll20\AdvancedIntegration\ScalableDie.cs" />
+    <Compile Include="Roll20\AdvancedIntegration\SimpleSpellIntegration.cs" />
     <Compile Include="Roll20\AdvancedIntegration\SimpleItemIntegration.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionDmg.cs" />
     <Compile Include="Roll20\Macros\Actions\MacroActionExecuteMacro.cs" />
@@ -410,11 +424,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Dialogs\NewScalableDamageLineDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Dialogs\NewStatModifierDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Dialogs\NewDamageDieDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialogs\ScalableValueDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -583,6 +605,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Windows\ScriptsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Windows\SpellIntegrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

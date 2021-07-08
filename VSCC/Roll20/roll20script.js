@@ -83,7 +83,7 @@ var templates = {
     },
 
     ["atkdmg"]: function (data) {
-        if (data && data.r1) {
+        if (data) {
             let ret = "&{template:atkdmg} ";
             if (data.type) {
                 ret += "{{" + data.type + "=1}} ";
@@ -136,10 +136,23 @@ var templates = {
                 ret += "{{crit1=" + data.crit1 + "}} ";
             }
 
-            ret += "{{r1=" + data.r1 + "}} ";
-            ret += "{{dmg1=" + data.dmg1 + "}} ";
-            ret += "{{attack=1}} ";
-            ret += "{{damage=1}} ";
+            if (data.savedc) {
+                ret += "{{save=1}} ";
+                ret += "{{savedc=" + data.savedc + "}} ";
+                ret += "{{saveattr=" + data.saveattr + "}} ";
+                ret += "{{savedesc=" + data.savedesc + "}} ";
+            }
+
+            if (data.r1) {
+                ret += "{{r1=" + data.r1 + "}} ";
+                ret += "{{attack=1}} ";
+            }
+
+            if (data.dmg1) {
+                ret += "{{dmg1=" + data.dmg1 + "}} ";
+                ret += "{{damage=1}} ";
+            }
+
             ret += "{{dmg1flag=1}} ";
             if (data.r2) {
                 ret += "{{r2=" + data.r2 + "}} ";

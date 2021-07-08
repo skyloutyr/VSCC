@@ -1349,6 +1349,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spell hit.
+        /// </summary>
+        public static string General_SBonus {
+            get {
+                return ResourceManager.GetString("General_SBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [Dex] Acrobatics.
         /// </summary>
         public static string General_Skill_Acrobatics {
@@ -1583,6 +1592,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bonus.
+        /// </summary>
+        public static string Generic_Bonus {
+            get {
+                return ResourceManager.GetString("Generic_Bonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Generic_Cancel {
@@ -1651,6 +1669,15 @@ namespace VSCC.Properties {
         public static string Generic_OldSave_Title {
             get {
                 return ResourceManager.GetString("Generic_OldSave_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Generic_Save {
+            get {
+                return ResourceManager.GetString("Generic_Save", resourceCulture);
             }
         }
         
@@ -8418,6 +8445,123 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable custom scaling.
+        /// </summary>
+        public static string ScalableValue_EnableCustom {
+            get {
+                return ResourceManager.GetString("ScalableValue_EnableCustom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl1.
+        /// </summary>
+        public static string ScalableValue_Lvl1 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl2.
+        /// </summary>
+        public static string ScalableValue_Lvl2 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl3.
+        /// </summary>
+        public static string ScalableValue_Lvl3 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl4.
+        /// </summary>
+        public static string ScalableValue_Lvl4 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl5.
+        /// </summary>
+        public static string ScalableValue_Lvl5 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl6.
+        /// </summary>
+        public static string ScalableValue_Lvl6 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl7.
+        /// </summary>
+        public static string ScalableValue_Lvl7 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl8.
+        /// </summary>
+        public static string ScalableValue_Lvl8 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lvl9.
+        /// </summary>
+        public static string ScalableValue_Lvl9 {
+            get {
+                return ResourceManager.GetString("ScalableValue_Lvl9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scales By: .
+        /// </summary>
+        public static string ScalableValue_Scaling {
+            get {
+                return ResourceManager.GetString("ScalableValue_Scaling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to per level..
+        /// </summary>
+        public static string ScalableValue_Scaling_Postfix {
+            get {
+                return ResourceManager.GetString("ScalableValue_Scaling_Postfix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base Value:.
+        /// </summary>
+        public static string ScalableValue_Value {
+            get {
+                return ResourceManager.GetString("ScalableValue_Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spell Attack Bonus.
         /// </summary>
         public static string Spellbook_AttackBonus {
@@ -8832,6 +8976,42 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Die:.
+        /// </summary>
+        public static string SpellIntegration_Die {
+            get {
+                return ResourceManager.GetString("SpellIntegration_Die", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Cast Abil.
+        /// </summary>
+        public static string SpellIntegration_IncludeCastingAbility {
+            get {
+                return ResourceManager.GetString("SpellIntegration_IncludeCastingAbility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Spell Description Card.
+        /// </summary>
+        public static string SpellIntegration_ShowDesc {
+            get {
+                return ResourceManager.GetString("SpellIntegration_ShowDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use spell save DC instead.
+        /// </summary>
+        public static string SpellIntegration_UseSaveDC {
+            get {
+                return ResourceManager.GetString("SpellIntegration_UseSaveDC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modifier.
         /// </summary>
         public static string StatModifier_Label {
@@ -8940,7 +9120,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create a new Spell.
+        ///   Looks up a localized string similar to Create a new Spell
+        ///
+        ///Ctrl + N.
         /// </summary>
         public static string Tooltip_Button_AddSpell {
             get {
@@ -8987,6 +9169,17 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy the selected spell(s) to the clipboard
+        ///
+        ///Ctrl + C.
+        /// </summary>
+        public static string Tooltip_Button_CopySpell {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_CopySpell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy this macro to the Clipboard.
         /// </summary>
         public static string Tooltip_Button_CopyThisMacro {
@@ -9023,6 +9216,17 @@ namespace VSCC.Properties {
         public static string Tooltip_Button_CutItem {
             get {
                 return ResourceManager.GetString("Tooltip_Button_CutItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cut the selected spell(s) to the clipboard
+        ///
+        ///Ctrl + X.
+        /// </summary>
+        public static string Tooltip_Button_CutSpell {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_CutSpell", resourceCulture);
             }
         }
         
@@ -9156,7 +9360,9 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit the selected Spell.
+        ///   Looks up a localized string similar to Edit the selected Spell
+        ///
+        ///Ctrl + E, Double click.
         /// </summary>
         public static string Tooltip_Button_EditSpell {
             get {
@@ -9170,6 +9376,17 @@ namespace VSCC.Properties {
         public static string Tooltip_Button_EditSpellImage {
             get {
                 return ResourceManager.GetString("Tooltip_Button_EditSpellImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit the selected spell&apos;s Roll20 Integration
+        ///
+        ///Ctrl + Right click.
+        /// </summary>
+        public static string Tooltip_Button_EditSpellR20 {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_EditSpellR20", resourceCulture);
             }
         }
         
@@ -9257,6 +9474,17 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paste the contents of the clipboard as spell(s)
+        ///
+        ///Ctrl + V.
+        /// </summary>
+        public static string Tooltip_Button_PasteSpell {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_PasteSpell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset all stat modifiers and calculate them based on profficiency and raw stat values. This action will remove all manually changed modifiers for skills and saves!.
         /// </summary>
         public static string Tooltip_Button_RecalculateStatModifiers {
@@ -9298,11 +9526,31 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Run the selected spell&apos;s Roll20 Integration
+        ///
+        ///Ctrl + Left Click.
+        /// </summary>
+        public static string Tooltip_Button_RunSpellR20 {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_RunSpellR20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Execute this Macro.
         /// </summary>
         public static string Tooltip_Button_RunThisMacro {
             get {
                 return ResourceManager.GetString("Tooltip_Button_RunThisMacro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If save DC is enabled this is a constant added to the save DC.
+        /// </summary>
+        public static string Tooltip_Button_SaveConstant {
+            get {
+                return ResourceManager.GetString("Tooltip_Button_SaveConstant", resourceCulture);
             }
         }
         
@@ -9330,6 +9578,15 @@ namespace VSCC.Properties {
         public static string Tooltip_Checkbox_AsMultipleRolls {
             get {
                 return ResourceManager.GetString("Tooltip_Checkbox_AsMultipleRolls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cast as lvl.
+        /// </summary>
+        public static string Window_CastAs_Title {
+            get {
+                return ResourceManager.GetString("Window_CastAs_Title", resourceCulture);
             }
         }
         
@@ -9478,6 +9735,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Scaling Value.
+        /// </summary>
+        public static string Window_ScalableValue_Title {
+            get {
+                return ResourceManager.GetString("Window_ScalableValue_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dynamic Script Context Window.
         /// </summary>
         public static string Window_ScriptContext_Title {
@@ -9501,6 +9767,15 @@ namespace VSCC.Properties {
         public static string Window_ScriptsMarketplace_Title {
             get {
                 return ResourceManager.GetString("Window_ScriptsMarketplace_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spell Roll20 Integration.
+        /// </summary>
+        public static string Window_SpellIntegration_Title {
+            get {
+                return ResourceManager.GetString("Window_SpellIntegration_Title", resourceCulture);
             }
         }
     }

@@ -29,6 +29,7 @@
             this.CB_DmgChaBonus.DataContext =
             this.CB_DmgIntBonus.DataContext =
             this.LV_Dice.DataContext =
+            this.IntUD_Constant.DataContext =
             this.IntUD_PP.DataContext = this.Integration;
         }
 

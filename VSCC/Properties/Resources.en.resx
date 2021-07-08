@@ -541,6 +541,9 @@
   <data name="General_Saves" xml:space="preserve">
     <value>Saves</value>
   </data>
+  <data name="General_SBonus" xml:space="preserve">
+    <value>Spell hit</value>
+  </data>
   <data name="General_Skills" xml:space="preserve">
     <value>Skills</value>
   </data>
@@ -619,6 +622,9 @@
   <data name="Generic_Add" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="Generic_Bonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
   <data name="Generic_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -642,6 +648,9 @@
   </data>
   <data name="Generic_OldSave_Title" xml:space="preserve">
     <value>Old save file loaded</value>
+  </data>
+  <data name="Generic_Save" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="Generic_SaveError_Description" xml:space="preserve">
     <value>Couldn't save the sheet to the previous location: {0}, {1}. Press OK to select a different file to save to. Press Cancel to cancel the save alltogether.</value>
@@ -2903,6 +2912,45 @@ On certain browsers you may need to do more actions.</value>
   <data name="R20_WisSave" xml:space="preserve">
     <value>Wisdom Save</value>
   </data>
+  <data name="ScalableValue_EnableCustom" xml:space="preserve">
+    <value>Enable custom scaling</value>
+  </data>
+  <data name="ScalableValue_Lvl1" xml:space="preserve">
+    <value>Lvl1</value>
+  </data>
+  <data name="ScalableValue_Lvl2" xml:space="preserve">
+    <value>Lvl2</value>
+  </data>
+  <data name="ScalableValue_Lvl3" xml:space="preserve">
+    <value>Lvl3</value>
+  </data>
+  <data name="ScalableValue_Lvl4" xml:space="preserve">
+    <value>Lvl4</value>
+  </data>
+  <data name="ScalableValue_Lvl5" xml:space="preserve">
+    <value>Lvl5</value>
+  </data>
+  <data name="ScalableValue_Lvl6" xml:space="preserve">
+    <value>Lvl6</value>
+  </data>
+  <data name="ScalableValue_Lvl7" xml:space="preserve">
+    <value>Lvl7</value>
+  </data>
+  <data name="ScalableValue_Lvl8" xml:space="preserve">
+    <value>Lvl8</value>
+  </data>
+  <data name="ScalableValue_Lvl9" xml:space="preserve">
+    <value>Lvl9</value>
+  </data>
+  <data name="ScalableValue_Scaling" xml:space="preserve">
+    <value>Scales By: </value>
+  </data>
+  <data name="ScalableValue_Scaling_Postfix" xml:space="preserve">
+    <value>per level.</value>
+  </data>
+  <data name="ScalableValue_Value" xml:space="preserve">
+    <value>Base Value:</value>
+  </data>
   <data name="Spellbook_AttackBonus" xml:space="preserve">
     <value>Spell Attack Bonus</value>
   </data>
@@ -3041,6 +3089,18 @@ On certain browsers you may need to do more actions.</value>
   <data name="SpellIndex_Source_XGTE" xml:space="preserve">
     <value>Xanathars Guide To Everything</value>
   </data>
+  <data name="SpellIntegration_Die" xml:space="preserve">
+    <value>Die:</value>
+  </data>
+  <data name="SpellIntegration_IncludeCastingAbility" xml:space="preserve">
+    <value>Include Cast Abil</value>
+  </data>
+  <data name="SpellIntegration_ShowDesc" xml:space="preserve">
+    <value>Show Spell Description Card</value>
+  </data>
+  <data name="SpellIntegration_UseSaveDC" xml:space="preserve">
+    <value>Use spell save DC instead</value>
+  </data>
   <data name="StatModifier_Label" xml:space="preserve">
     <value>Modifier</value>
   </data>
@@ -3078,7 +3138,9 @@ On certain browsers you may need to do more actions.</value>
     <value>Create a new Macro</value>
   </data>
   <data name="Tooltip_Button_AddSpell" xml:space="preserve">
-    <value>Create a new Spell</value>
+    <value>Create a new Spell
+
+Ctrl + N</value>
   </data>
   <data name="Tooltip_Button_AdvancedRoll" xml:space="preserve">
     <value>Use the values above to construct a variable roll and throw it on R20.</value>
@@ -3093,6 +3155,11 @@ Ctrl + C</value>
   </data>
   <data name="Tooltip_Button_CopyServer" xml:space="preserve">
     <value>Copy the code driving the server to the clipboard. The code will need to be pasted into a console of your browser to start. See the Info/About section of the app for a github link.</value>
+  </data>
+  <data name="Tooltip_Button_CopySpell" xml:space="preserve">
+    <value>Copy the selected spell(s) to the clipboard
+
+Ctrl + C</value>
   </data>
   <data name="Tooltip_Button_CopyThisMacro" xml:space="preserve">
     <value>Copy this macro to the Clipboard</value>
@@ -3110,6 +3177,11 @@ Ctrl + N</value>
 
 Ctrl + X</value>
   </data>
+  <data name="Tooltip_Button_CutSpell" xml:space="preserve">
+    <value>Cut the selected spell(s) to the clipboard
+
+Ctrl + X</value>
+  </data>
   <data name="Tooltip_Button_DeleteFeat" xml:space="preserve">
     <value>Delete the selected Features</value>
   </data>
@@ -3122,7 +3194,9 @@ Delete</value>
     <value>Delete the selected Macro</value>
   </data>
   <data name="Tooltip_Button_DeleteSpell" xml:space="preserve">
-    <value>Delete the selected Spell</value>
+    <value>Delete the selected Spell
+
+Delete</value>
   </data>
   <data name="Tooltip_Button_DeleteThisMacro" xml:space="preserve">
     <value>Delete this Macro</value>
@@ -3156,10 +3230,17 @@ Ctrl + Right mouse click</value>
     <value>Select Character Portrait...</value>
   </data>
   <data name="Tooltip_Button_EditSpell" xml:space="preserve">
-    <value>Edit the selected Spell</value>
+    <value>Edit the selected Spell
+
+Ctrl + E, Double click</value>
   </data>
   <data name="Tooltip_Button_EditSpellImage" xml:space="preserve">
     <value>Select an image for this Spell</value>
+  </data>
+  <data name="Tooltip_Button_EditSpellR20" xml:space="preserve">
+    <value>Edit the selected spell's Roll20 Integration
+
+Ctrl + Right click</value>
   </data>
   <data name="Tooltip_Button_EditThisMacro" xml:space="preserve">
     <value>Edit this Macro</value>
@@ -3190,6 +3271,11 @@ Ctrl + V</value>
   <data name="Tooltip_Button_PasteMacro" xml:space="preserve">
     <value>Paste the contents of the clipboard as a Macro</value>
   </data>
+  <data name="Tooltip_Button_PasteSpell" xml:space="preserve">
+    <value>Paste the contents of the clipboard as spell(s)
+
+Ctrl + V</value>
+  </data>
   <data name="Tooltip_Button_RecalculateStatModifiers" xml:space="preserve">
     <value>Reset all stat modifiers and calculate them based on profficiency and raw stat values. This action will remove all manually changed modifiers for skills and saves!</value>
   </data>
@@ -3207,8 +3293,16 @@ F5</value>
 
 Ctrl + Left mouse click</value>
   </data>
+  <data name="Tooltip_Button_RunSpellR20" xml:space="preserve">
+    <value>Run the selected spell's Roll20 Integration
+
+Ctrl + Left Click</value>
+  </data>
   <data name="Tooltip_Button_RunThisMacro" xml:space="preserve">
     <value>Execute this Macro</value>
+  </data>
+  <data name="Tooltip_Button_SaveConstant" xml:space="preserve">
+    <value>If save DC is enabled this is a constant added to the save DC</value>
   </data>
   <data name="Tooltip_Button_StartServer" xml:space="preserve">
     <value>Copies the server driving code into the clipboard, starts the local client and begins trying to establish a connection to the server.</value>
@@ -3218,6 +3312,9 @@ Ctrl + Left mouse click</value>
   </data>
   <data name="Tooltip_Checkbox_AsMultipleRolls" xml:space="preserve">
     <value>Instructs Roll20 to not use a template and parse the roll as a simple chat command.</value>
+  </data>
+  <data name="Window_CastAs_Title" xml:space="preserve">
+    <value>Cast as lvl</value>
   </data>
   <data name="Window_ChangeCash_Title" xml:space="preserve">
     <value>Change Cash</value>
@@ -3267,6 +3364,9 @@ Ctrl + Left mouse click</value>
   <data name="Window_NewStatModifierDialog_Title" xml:space="preserve">
     <value>New Stat Modifier</value>
   </data>
+  <data name="Window_ScalableValue_Title" xml:space="preserve">
+    <value>Edit Scaling Value</value>
+  </data>
   <data name="Window_ScriptContext_Title" xml:space="preserve">
     <value>Dynamic Script Context Window</value>
   </data>
@@ -3275,6 +3375,9 @@ Ctrl + Left mouse click</value>
   </data>
   <data name="Window_Scripts_Title" xml:space="preserve">
     <value>Loaded Scripts</value>
+  </data>
+  <data name="Window_SpellIntegration_Title" xml:space="preserve">
+    <value>Spell Roll20 Integration</value>
   </data>
   <data name="_________" xml:space="preserve">
     <value />

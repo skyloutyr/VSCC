@@ -1,6 +1,9 @@
 ﻿namespace VSCC.Controls.Tabs
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
@@ -8,6 +11,9 @@
     using VSCC.Controls.Windows;
     using VSCC.DataType;
     using VSCC.Models.ImageList;
+    using VSCC.Roll20;
+    using VSCC.Roll20.AdvancedIntegration;
+    using VSCC.State;
 
     public partial class SpellbookTab : UserControl
     {
@@ -443,6 +449,7 @@
             if ((sender as ListView)?.SelectedItems?.Count > 0)
             {
                 this.EditSpellCommand_Executed(null, null);
+                e.Handled = true;
             }
         }
 
@@ -461,6 +468,478 @@
                 {
                     this[page].Remove(s);
                     this[page].Insert(selectedIndex + dir, s);
+                }
+            }
+        }
+
+        private void UserControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.N && e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Control)) // New
+            {
+                this.NewSpellCommand_Executed(sender, default);
+                e.Handled = true;
+            }
+
+            if (e.Key == Key.Delete)
+            {
+                this.DeleteSpellCommand_Executed(sender, default);
+                e.Handled = true;
+            }
+
+            if (e.Key == Key.E && e.KeyboardDevice.Modifiers.HasFlag(ModifierKeys.Control))
+            {
+                this.EditSpellCommand_Executed(sender, default);
+                e.Handled = true;
+            }
+        }
+
+        private void CopySpells(object sender, RoutedEventArgs e) => Clipboard.SetText(string.Join(new string((char)0x1D, 1), this.GetSpellCollection(this.TabControl_Spellbook.SelectedIndex).SelectedItems.Cast<Spell>().Select(s => JObject.FromObject(s))));
+        private void CutSpells(object sender, RoutedEventArgs e)
+        {
+            this.CopySpells(sender, e);
+            this.DeleteSpellCommand_Executed(sender, default);
+        }
+
+        private void PasteSpells(object sender, RoutedEventArgs e)
+        {
+            string s = Clipboard.GetText();
+            try
+            {
+                foreach (string line in s.Split((char)0x1D))
+                {
+                    Spell sp = JsonConvert.DeserializeObject<Spell>(line);
+                    this[sp.Level].Add(sp);
+                }
+            }
+            catch
+            {
+                // NOOP
+            }
+        }
+
+        // Copy
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e) => this.CopySpells(sender, default);
+
+        // Cut
+        private void CommandBinding_Executed_1(object sender, ExecutedRoutedEventArgs e) => this.CutSpells(sender, default);
+
+        // Paste
+        private void CommandBinding_Executed_2(object sender, ExecutedRoutedEventArgs e) => this.PasteSpells(sender, default);
+
+        private Spell _lmbSpell;
+        private Spell _rmbSpell;
+
+        private void RBMDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is Spell s)
+            {
+                this._rmbSpell = s;
+            }
+        }
+
+        private void RMBUp(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is Spell s && s == this._rmbSpell)
+            {
+                if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
+                {
+                    this.EditSpellRoll20(s, new RoutedEventArgs());
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void LBMDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is Spell s)
+            {
+                this._lmbSpell = s;
+            }
+        }
+
+        private void LMBUp(object sender, MouseButtonEventArgs e)
+        {
+            Grid g = (Grid)sender;
+            if (g.DataContext is Spell s && s == this._rmbSpell)
+            {
+                if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
+                {
+                    this.RunSpellRoll20(s, new RoutedEventArgs());
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void EditSpellRoll20(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is Spell s))
+            {
+                ListView collection = this.GetSpellCollection(this.TabControl_Spellbook.SelectedIndex);
+                s = collection.SelectedItems.Count > 0 ? (Spell)collection.SelectedItems[0] : null;
+            }
+
+            if (s != null)
+            {
+                SimpleSpellIntegration ssi = s.Integration?.Copy() ?? new SimpleSpellIntegration();
+                SpellIntegrationWindow siw = new SpellIntegrationWindow(ssi);
+                if (siw.ShowDialog() ?? false)
+                {
+                    s.Integration = ssi;
+                }
+            }
+        }
+
+        private void RunSpellRoll20(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is Spell s))
+            {
+                ListView collection = this.GetSpellCollection(this.TabControl_Spellbook.SelectedIndex);
+                s = collection.SelectedItems.Count > 0 ? (Spell)collection.SelectedItems[0] : null;
+            }
+
+            if (s.Integration == null || !R20WSServer.Connected)
+            {
+                return;
+            }
+
+            ChangeValueWindow cvw = new ChangeValueWindow();
+            cvw.DUD_Value.Value = s.Level;
+            cvw.DUD_Value.Minimum = s.Level;
+            cvw.DUD_Value.Maximum = 9;
+            cvw.DUD_Value.Step = 1;
+            cvw.Title = MainWindow.Translate("Window_CastAs_Title");
+            cvw.ShowDialog();
+            int aLvl = (int)cvw.DUD_Value.Value;
+            if (s.Integration.ShowSpellDescription)
+            {
+                R20WSServer.Send(new CommandPacket
+                {
+                    GMRoll = false,
+                    Template = Roll20.Template.Spell,
+                    Data = new TemplateDataSpell
+                    {
+                        CastingTime = s.CastTime,
+                        CharName = AppState.Current.State.General.Name,
+                        Concentration = s.PropertyConcentration ? "1" : "0",
+                        Desc = s.Description,
+                        Duration = s.Duration,
+                        Material = s.PropertyMaterial ? "1" : "0",
+                        Name = s.Name,
+                        Range = s.Range,
+                        Ritual = s.PropertyRitual ? "1" : "0",
+                        SchoolLevel = $"{ s.School } { s.Level }",
+                        Somatic = s.PropertySomatic ? "1" : "0",
+                        Verbal = s.PropertyVerbal ? "1" : "0",
+                        Target = s.Target
+                    }
+                });
+            }
+
+            string hitString = "";
+            string saveText = "";
+            string damageString = "";
+            string critString = "";
+            if (s.Integration.HitDie.NumDice.GetForLevel(aLvl, s.Level) > 0) // Have a hit effect
+            {
+                hitString = $"[[[[{s.Integration.HitDie.NumDice.GetForLevel(aLvl, s.Level)}d{s.Integration.HitDie.DieSide.GetForLevel(aLvl, s.Level)}]][{s.Integration.HitDie.NumDice.GetForLevel(aLvl, s.Level)}d{s.Integration.HitDie.DieSide.GetForLevel(aLvl, s.Level)}]";
+                if (s.Integration.HitConstant.GetForLevel(aLvl, s.Level) > 0)
+                {
+                    hitString += $"+{s.Integration.HitConstant.GetForLevel(aLvl, s.Level)}";
+                }
+
+                if (s.Integration.HitIncludeProfficiency)
+                {
+                    hitString += $"+{AppState.Current.State.General.ProfficiencyBonus}[{MainWindow.Translate("General_PBonus")}]";
+                }
+
+                if (s.Integration.HitIncludeSpellcastingAbility)
+                {
+                    hitString += $"+{AppState.Current.State.Spellbook.SpellAttackBonus}[{MainWindow.Translate("General_SBonus")}]";
+                }
+
+                if (s.Integration.HitIncludeStr)
+                {
+                    hitString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_Str")}]";
+                }
+
+                if (s.Integration.HitIncludeDex)
+                {
+                    hitString += $"+{AppState.Current.State.General.StatModDex}[{MainWindow.Translate("General_Dex")}]";
+                }
+
+                if (s.Integration.HitIncludeCon)
+                {
+                    hitString += $"+{AppState.Current.State.General.StatModCon}[{MainWindow.Translate("General_Con")}]";
+                }
+
+                if (s.Integration.HitIncludeWis)
+                {
+                    hitString += $"+{AppState.Current.State.General.StatModWis}[{MainWindow.Translate("General_Wis")}]";
+                }
+
+                if (s.Integration.HitIncludeCha)
+                {
+                    hitString += $"+{AppState.Current.State.General.StatModCha}[{MainWindow.Translate("General_Cha")}]";
+                }
+
+                if (s.Integration.HitIncludeInt)
+                {
+                    hitString += $"+{AppState.Current.State.General.StatModInt}[{MainWindow.Translate("General_Int")}]";
+                }
+
+                hitString += "]]";
+            }
+
+            if (s.Integration.Damage.Count > 0)
+            {
+                damageString = "[[";
+                critString = "[[";
+                for (int i = 0; i < s.Integration.Damage.Count; i++)
+                {
+                    ScalableDamageLine dl = s.Integration.Damage[i];
+                    if (dl.Die.NumDice.GetForLevel(aLvl, s.Level) > 0 && dl.ConstantNumber.GetForLevel(aLvl, s.Level) != 0)
+                    {
+                        damageString += $"[[[[{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)}]][{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)}] + {dl.ConstantNumber.GetForLevel(aLvl, s.Level)}]][{dl.Label}]";
+                        critString += $"[[{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)}]][{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)} {dl.Label}]";
+                    }
+                    else
+                    {
+                        if (dl.Die.DieSide.GetForLevel(aLvl, s.Level) > 0)
+                        {
+                            damageString += $"[[{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)}]][{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)} {dl.Label}]";
+                            critString += $"[[{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)}]][{dl.Die.NumDice.GetForLevel(aLvl, s.Level)}d{dl.Die.DieSide.GetForLevel(aLvl, s.Level)} {dl.Label}]";
+                        }
+                        else
+                        {
+                            damageString += $"{dl.ConstantNumber.GetForLevel(aLvl, s.Level)}[{dl.Label}]";
+                        }
+                    }
+
+                    if (i != s.Integration.Damage.Count - 1)
+                    {
+                        damageString += "+";
+                        critString += "+";
+                    }
+                }
+
+                while (critString[critString.Length - 1] == '+')
+                {
+                    critString = critString.Substring(0, critString.Length - 1);
+                }
+
+                critString += "]]";
+                if (s.Integration.DamageIncludeProfficiency)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_PBonus")}]";
+                }
+
+                if (s.Integration.DamageIncludeSpellcastingAbility)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_SBonus")}]";
+                }
+
+                if (s.Integration.DamageIncludeStr)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModStr}[{MainWindow.Translate("General_Str")}]";
+                }
+
+                if (s.Integration.DamageIncludeDex)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModDex}[{MainWindow.Translate("General_Dex")}]";
+                }
+
+                if (s.Integration.DamageIncludeCon)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModCon}[{MainWindow.Translate("General_Con")}]";
+                }
+
+                if (s.Integration.DamageIncludeWis)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModWis}[{MainWindow.Translate("General_Wis")}]";
+                }
+
+                if (s.Integration.DamageIncludeCha)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModCha}[{MainWindow.Translate("General_Cha")}]";
+                }
+
+                if (s.Integration.DamageIncludeInt)
+                {
+                    damageString += $"+{AppState.Current.State.General.StatModInt}[{MainWindow.Translate("General_Int")}]";
+                }
+
+                damageString += "]]";
+            }
+
+            if (s.Integration.HitIsSpellSave)
+            {
+                saveText = "[[";
+                saveText += AppState.Current.State.Spellbook.SpellSaveDC + "[" + MainWindow.Translate("Generic_Save") + "]";
+                int a = s.Integration.SaveConstant.GetForLevel(aLvl, s.Level);
+                if (a != 0)
+                {
+                    saveText += $"+{a}[{MainWindow.Translate("Generic_Bonus")}]";
+                }
+
+                saveText += "]]";
+            }
+
+            // Start sending data.
+            // Main priority goes to save
+            if (!string.IsNullOrEmpty(saveText)) // Have save DC
+            {
+                if (!string.IsNullOrEmpty(hitString)) // Have both save AND hit
+                {
+                    if (!string.IsNullOrEmpty(damageString)) // Have damage too
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkSaveDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = critString,
+                                Dmg = damageString,
+                                Name = s.Name,
+                                R1 = hitString,
+                                R2 = hitString,
+                                Range = s.Range,
+                                SaveAttr = s.Integration.SaveAttr,
+                                SaveDC = saveText,
+                                SaveDesc = string.Empty
+                            }
+                        });
+                    }
+                    else // Only save + hit?
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkSaveDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = critString,
+                                Dmg = string.Empty, // Should result in no damage section output
+                                Name = s.Name,
+                                R1 = hitString,
+                                R2 = hitString,
+                                Range = s.Range,
+                                SaveAttr = s.Integration.SaveAttr,
+                                SaveDC = saveText,
+                                SaveDesc = string.Empty
+                            }
+                        });
+                    }
+                }
+                else // No hit
+                {
+                    if (!string.IsNullOrEmpty(damageString)) // Have damage too
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkSaveDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = critString,
+                                Dmg = damageString,
+                                Name = s.Name,
+                                R1 = string.Empty,
+                                R2 = string.Empty,
+                                Range = s.Range,
+                                SaveAttr = s.Integration.SaveAttr,
+                                SaveDC = saveText,
+                                SaveDesc = string.Empty
+                            }
+                        });
+                    }
+                    else // Only have save
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkSaveDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = string.Empty,
+                                Dmg = string.Empty,
+                                Name = s.Name,
+                                R1 = string.Empty,
+                                R2 = string.Empty,
+                                Range = s.Range,
+                                SaveAttr = s.Integration.SaveAttr,
+                                SaveDC = saveText,
+                                SaveDesc = string.Empty
+                            }
+                        });
+                    }
+                }
+            }
+            else // Do not have a save
+            {
+                if (!string.IsNullOrEmpty(hitString)) // Have hit
+                {
+                    if (!string.IsNullOrEmpty(damageString)) // Have default hit + damage
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = critString,
+                                Dmg = damageString,
+                                Name = s.Name,
+                                R1 = hitString,
+                                R2 = hitString,
+                                Range = s.Range
+                            }
+                        });
+                    }
+                    else // Only have hit?
+                    {
+                        R20WSServer.Send(new CommandPacket
+                        {
+                            GMRoll = false,
+                            Template = Roll20.Template.AtkDmg,
+                            Data = new TemplateDataAtkDmg
+                            {
+                                CharName = AppState.Current.State.General.Name,
+                                Crit = string.Empty,
+                                Dmg = string.Empty,
+                                Name = s.Name,
+                                R1 = hitString,
+                                R2 = hitString,
+                                Range = s.Range
+                            }
+                        });
+                    }
+                }
+                else // Only have damage?
+                {
+                    R20WSServer.Send(new CommandPacket
+                    {
+                        GMRoll = false,
+                        Template = Roll20.Template.AtkDmg,
+                        Data = new TemplateDataAtkDmg
+                        {
+                            CharName = AppState.Current.State.General.Name,
+                            Crit = critString,
+                            Dmg = damageString,
+                            Name = s.Name,
+                            R1 = string.Empty,
+                            R2 = string.Empty,
+                            Range = s.Range
+                        }
+                    });
                 }
             }
         }

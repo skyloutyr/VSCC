@@ -174,6 +174,45 @@
         public string CharName { get; set; }
     }
 
+    public class TemplateDataAtkSaveDmg
+    {
+        [JsonProperty(PropertyName = "mod")]
+        public string Mod { get; set; }
+
+        [JsonProperty(PropertyName = "rname")]
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "r1")]
+        public string R1 { get; set; }
+
+        [JsonProperty(PropertyName = "r2")]
+        public string R2 { get; set; }
+
+        [JsonProperty(PropertyName = "range")]
+        public string Range { get; set; }
+
+        [JsonProperty(PropertyName = "dmg1")]
+        public string Dmg { get; set; }
+
+        [JsonProperty(PropertyName = "dmg1type")]
+        public string DmgType { get; set; }
+
+        [JsonProperty(PropertyName = "crit1")]
+        public string Crit { get; set; }
+
+        [JsonProperty(PropertyName = "charname")]
+        public string CharName { get; set; }
+
+        [JsonProperty(PropertyName = "saveattr")]
+        public string SaveAttr { get; set; }
+
+        [JsonProperty(PropertyName = "savedesc")]
+        public string SaveDesc { get; set; }
+
+        [JsonProperty(PropertyName = "savedc")]
+        public string SaveDC { get; set; }
+    }
+
     public class TemplateDataDmg
     {
 

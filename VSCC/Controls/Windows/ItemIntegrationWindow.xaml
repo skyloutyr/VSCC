@@ -12,7 +12,8 @@
         <GroupBox Header="{x:Static p:Resources.ItemIntegration_Hit}" Foreground="{StaticResource Static.Foreground}" Margin="0,0,0,325">
             <Grid>
                 <Label Content="{x:Static p:Resources.ItemIntegration_Die}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0" />
-                <lcontrols:NumericUpDown x:Name="IntUD_PP" Value="{Binding HitDieSide}" Minimum="0" Maximum="1000" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Width="48" />
+                <lcontrols:NumericUpDown x:Name="IntUD_PP" Value="{Binding HitDieSide}" Minimum="0" Maximum="1000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,10,0,0" Width="48" />
+                <Label Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}" Margin="115,6,0,0" />
                 <CheckBox x:Name="CB_ProfBonus" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncProf}" Foreground="{StaticResource Static.Foreground}" Margin="10,37,0,0" IsChecked="{Binding HitIncludeProfficiency}" />
                 <Grid Margin="0,57,0,0">
                     <Grid.ColumnDefinitions>
@@ -26,6 +27,7 @@
                     <CheckBox x:Name="CB_ChaBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCha}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding HitIncludeCha}" />
                     <CheckBox x:Name="CB_IntBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncInt}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding HitIncludeInt}" />
                 </Grid>
+                <lcontrols:NumericUpDown x:Name="IntUD_Constant" Value="{Binding HitConstant}" Minimum="-1000" Maximum="1000" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,10,0,0" Width="48" />
             </Grid>
         </GroupBox>
         <GroupBox Header="{x:Static p:Resources.ItemIntegration_Damage}" Foreground="{StaticResource Static.Foreground}" Margin="0,144,0,38">

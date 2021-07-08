@@ -7,13 +7,17 @@
              xmlns:local="clr-namespace:VSCC.Controls.Tabs"
              xmlns:lcontrols="clr-namespace:VSCC.Controls"
              mc:Ignorable="d"
-             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" >
+             d:DesignHeight="730" d:DesignWidth="1000" Background="{StaticResource Static.Background}" KeyUp="UserControl_KeyUp">
     <UserControl.Resources>
     </UserControl.Resources>
     <UserControl.CommandBindings>
         <CommandBinding Command="{x:Static local:SpellbookTab.NewSpellCmd}" Executed="NewSpellCommand_Executed" CanExecute="NewSpellCommand_CanExecute" />
         <CommandBinding Command="{x:Static local:SpellbookTab.EditSpellCmd}" Executed="EditSpellCommand_Executed" CanExecute="EditSpellCommand_CanExecute" />
         <CommandBinding Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" Executed="DeleteSpellCommand_Executed" CanExecute="DeleteSpellCommand_CanExecute" />
+        <CommandBinding Command="{x:Static ApplicationCommands.Copy}" Executed="CommandBinding_Executed" />
+        <CommandBinding Command="{x:Static ApplicationCommands.Cut}" Executed="CommandBinding_Executed_1" />
+        <CommandBinding Command="{x:Static ApplicationCommands.Paste}" Executed="CommandBinding_Executed_2" />
+        <CommandBinding Command="{x:Static ApplicationCommands.Delete}" Executed="DeleteSpellCommand_Executed" CanExecute="DeleteSpellCommand_CanExecute" />
     </UserControl.CommandBindings>
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <StackPanel>
@@ -47,7 +51,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -65,7 +84,7 @@
                         <ListView x:Name="List_Cantrips" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick" Background="Transparent" BorderThickness="0">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -94,7 +113,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -112,7 +146,7 @@
                         <ListView x:Name="List_Spells1" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick" Background="Transparent" BorderThickness="0">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -141,7 +175,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -159,7 +208,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells2" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -188,7 +237,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -206,7 +270,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells3" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -235,7 +299,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0"  Foreground="{StaticResource Static.Foreground}"/>
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -253,7 +332,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells4" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -282,7 +361,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -300,7 +394,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells5" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -329,7 +423,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -347,7 +456,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells6" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -376,7 +485,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -394,7 +518,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells7" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -423,7 +547,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -441,7 +580,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells8" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">
@@ -470,7 +609,22 @@
                                 <Label Content="/" HorizontalAlignment="Left" Margin="97,0,0,0" Foreground="{StaticResource Static.Foreground}" />
                             </Grid>
                         </Border>
-                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
+                        <Button HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CopySpell}" Click="CopySpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-share-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="286,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_CutSpell}" Click="CutSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="312,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_PasteSpell}" Click="PasteSpells">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-downloading-updates-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpellR20}" Click="EditSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-gear-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button HorizontalAlignment="Left" Margin="364,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_RunSpellR20}" Click="RunSpellRoll20">
+                            <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
+                        </Button>
+                        <Button Command="{x:Static local:SpellbookTab.DeleteSpellCmd}" HorizontalAlignment="Left" Margin="390,16,0,0" VerticalAlignment="Top" Width="20" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_DeleteSpell}">
                             <Image Source="/VSCC;component/Images/AppIcons/icons8-delete-64.png" Stretch="Uniform"/>
                         </Button>
                         <Button Command="{x:Static local:SpellbookTab.EditSpellCmd}" HorizontalAlignment="Left" Margin="234,16,0,0" VerticalAlignment="Top" Width="21" Height="21" ToolTip="{x:Static p:Resources.Tooltip_Button_EditSpell}">
@@ -488,7 +642,7 @@
                         <ListView Background="Transparent" BorderThickness="0" x:Name="List_Spells9" VirtualizingPanel.IsVirtualizing="False" Margin="0,47,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" MouseDoubleClick="List_Cantrips_MouseDoubleClick">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid MouseLeftButtonDown="LBMDown" MouseLeftButtonUp="LMBUp" MouseRightButtonDown="RBMDown" MouseRightButtonUp="RMBUp">
                                         <Grid.ToolTip>
                                             <ToolTip>
                                                 <Border BorderBrush="{StaticResource Static.Border}" BorderThickness="2" CornerRadius="12">

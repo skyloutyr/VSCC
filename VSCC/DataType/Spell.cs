@@ -8,6 +8,7 @@
     using System.Windows.Media.Imaging;
     using VSCC.Models.ImageList;
     using VSCC.Properties;
+    using VSCC.Roll20.AdvancedIntegration;
     using VSCC.State;
 
     public class Spell : INotifyPropertyChanged
@@ -310,6 +311,8 @@
 
         public Guid ObjectID { get; set; } = Guid.NewGuid();
 
+        public SimpleSpellIntegration Integration { get; set; }
+
         [JsonIgnore]
         public string GeneratedDescription =>
             $"{ this.Name }\n" +
@@ -402,6 +405,7 @@
                 ImageIndex = this.ImageIndex,
                 ImageList = this.ImageList,
                 TitleColor = this.TitleColor,
+                Integration = this.Integration?.Copy(),
                 ObjectID = this.ObjectID
             };
         }

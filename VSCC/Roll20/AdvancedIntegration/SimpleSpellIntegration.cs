@@ -2,11 +2,13 @@
 {
     using System.Collections.ObjectModel;
 
-    public class SimpleItemIntegration
+    public class SimpleSpellIntegration
     {
+        public bool ShowSpellDescription { get; set; }
+
         #region Hit
 
-        public int HitDieSide { get; set; }
+        public ScalableDie HitDie { get; set; } = new ScalableDie();
         public bool HitIncludeProfficiency { get; set; }
         public bool HitIncludeStr { get; set; }
         public bool HitIncludeDex { get; set; }
@@ -14,7 +16,11 @@
         public bool HitIncludeWis { get; set; }
         public bool HitIncludeCha { get; set; }
         public bool HitIncludeInt { get; set; }
-        public int HitConstant { get; set; }
+        public bool HitIncludeSpellcastingAbility { get; set; }
+        public bool HitIsSpellSave { get; set; }
+        public ScalableValue HitConstant { get; set; } = new ScalableValue();
+        public ScalableValue SaveConstant { get; set; } = new ScalableValue();
+        public string SaveAttr { get; set; }
 
         #endregion
 
@@ -27,17 +33,19 @@
         public bool DamageIncludeWis { get; set; }
         public bool DamageIncludeCha { get; set; }
         public bool DamageIncludeInt { get; set; }
+        public bool DamageIncludeSpellcastingAbility { get; set; }
 
-        public ObservableCollection<DamageLine> Damage { get; set; } = new ObservableCollection<DamageLine>();
+        public ObservableCollection<ScalableDamageLine> Damage { get; set; } = new ObservableCollection<ScalableDamageLine>();
 
         #endregion
 
-        public SimpleItemIntegration Copy()
+        public SimpleSpellIntegration Copy()
         {
-            SimpleItemIntegration sii = new SimpleItemIntegration
+            SimpleSpellIntegration sii = new SimpleSpellIntegration
             {
-                HitDieSide = this.HitDieSide,
-                HitConstant = this.HitConstant,
+                ShowSpellDescription = this.ShowSpellDescription,
+                HitDie = this.HitDie.Copy(),
+                HitConstant = this.HitConstant.Copy(),
                 HitIncludeProfficiency = this.HitIncludeProfficiency,
                 HitIncludeStr = this.HitIncludeStr,
                 HitIncludeDex = this.HitIncludeDex,
@@ -45,16 +53,21 @@
                 HitIncludeWis = this.HitIncludeWis,
                 HitIncludeCha = this.HitIncludeCha,
                 HitIncludeInt = this.HitIncludeInt,
+                HitIncludeSpellcastingAbility = this.HitIncludeSpellcastingAbility,
+                HitIsSpellSave = this.HitIsSpellSave,
                 DamageIncludeProfficiency = this.DamageIncludeProfficiency,
                 DamageIncludeStr = this.DamageIncludeStr,
                 DamageIncludeDex = this.DamageIncludeDex,
                 DamageIncludeCon = this.DamageIncludeCon,
                 DamageIncludeWis = this.DamageIncludeWis,
                 DamageIncludeCha = this.DamageIncludeCha,
-                DamageIncludeInt = this.DamageIncludeInt
+                DamageIncludeInt = this.DamageIncludeInt,
+                DamageIncludeSpellcastingAbility = this.DamageIncludeSpellcastingAbility,
+                SaveConstant = this.SaveConstant.Copy(),
+                SaveAttr = this.SaveAttr
             };
 
-            foreach (DamageLine dl in this.Damage)
+            foreach (ScalableDamageLine dl in this.Damage)
             {
                 sii.Damage.Add(dl.Copy());
             }
