@@ -3093,7 +3093,7 @@ On certain browsers you may need to do more actions.</value>
     <value>Include Cast Abil</value>
   </data>
   <data name="SpellIntegration_ShowDesc" xml:space="preserve">
-    <value>Show Spell Description Card</value>
+    <value>Show Description</value>
   </data>
   <data name="SpellIntegration_UseSaveDC" xml:space="preserve">
     <value>Use spell save DC instead</value>

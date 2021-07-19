@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         xmlns:lcontrols="clr-namespace:VSCC.Controls"
         xmlns:p="clr-namespace:VSCC.Properties"
-        Title="SpellIntegrationWindow" Height="597" Width="343" Background="{StaticResource Static.Background}" ResizeMode="NoResize">
+        Title="{x:Static p:Resources.Window_SpellIntegration_Title}" Height="597" Width="343" Background="{StaticResource Static.Background}" ResizeMode="NoResize">
     <Grid>
-        <CheckBox x:Name="CB_ShowSpellCard" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding ShowSpellDescription}" Content="Show Description" Foreground="{StaticResource Static.Foreground}" Margin="10,10,0,0" />
-        <CheckBox x:Name="CB_IsSaveDC" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding HitIsSpellSave}" Content="Use spell save DC instead" Foreground="{StaticResource Static.Foreground}" Margin="136,32,0,0" Panel.ZIndex="1" />
+        <CheckBox x:Name="CB_ShowSpellCard" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding ShowSpellDescription}" Content="{x:Static p:Resources.SpellIntegration_ShowDesc}" Foreground="{StaticResource Static.Foreground}" Margin="10,10,0,0" />
+        <CheckBox x:Name="CB_IsSaveDC" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding HitIsSpellSave}" Content="{x:Static p:Resources.SpellIntegration_UseSaveDC}" Foreground="{StaticResource Static.Foreground}" Margin="136,32,0,0" Panel.ZIndex="1" />
 
         <GroupBox Header="{x:Static p:Resources.ItemIntegration_Hit}" Foreground="{StaticResource Static.Foreground}" Margin="0,30,0,387">
             <Grid>
-                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}" Content="Die: " Margin="10,10,0,0" />
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}" Content="{x:Static p:Resources.SpellIntegration_Die}" Margin="10,10,0,0" />
                 <Button x:Name="Btn_ScalableHitDieNum" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding HitDie.NumDice.TextLabel, Mode=OneWay}" Foreground="{StaticResource Static.Foreground}" Width="36" Height="24" Margin="48,12,0,0" Click="Btn_ScalableHitDieNum_Click" />
                 <Button x:Name="Btn_ScalableHitDieSide" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{Binding HitDie.DieSide.TextLabel, Mode=OneWay}" Foreground="{StaticResource Static.Foreground}" Width="36" Height="24" Margin="112,12,0,0" Click="Btn_ScalableHitDieSide_Click" />
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}" Content="+" Margin="153,10,0,0" />
@@ -25,7 +25,7 @@
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
                     <CheckBox x:Name="CB_ProfBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncProf}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding HitIncludeProfficiency}" />
-                    <CheckBox x:Name="CB_SpellcastingBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Include Casting Abil" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding HitIncludeSpellcastingAbility}" />
+                    <CheckBox x:Name="CB_SpellcastingBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.SpellIntegration_IncludeCastingAbility}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding HitIncludeSpellcastingAbility}" />
                     <CheckBox x:Name="CB_StrBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncStr}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding HitIncludeStr}" />
                     <CheckBox x:Name="CB_DexBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncDex}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding HitIncludeDex}" />
                     <CheckBox x:Name="CB_ConBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCon}" Foreground="{StaticResource Static.Foreground}" Margin="10,60,0,0" IsChecked="{Binding HitIncludeCon}" />
@@ -54,7 +54,7 @@
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
                     <CheckBox x:Name="CB_DmgProfBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncProf}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding DamageIncludeProfficiency}" />
-                    <CheckBox x:Name="CB_DmgSpellcastingBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Include Casting Abil" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding DamageIncludeSpellcastingAbility}" />
+                    <CheckBox x:Name="CB_DmgSpellcastingBonus" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.SpellIntegration_IncludeCastingAbility}" Foreground="{StaticResource Static.Foreground}" Margin="10,0,0,0" IsChecked="{Binding DamageIncludeSpellcastingAbility}" />
                     <CheckBox x:Name="CB_DmgStrBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncStr}" Foreground="{StaticResource Static.Foreground}" Margin="10,20,0,0" IsChecked="{Binding DamageIncludeStr}" />
                     <CheckBox x:Name="CB_DmgDexBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncDex}" Foreground="{StaticResource Static.Foreground}" Margin="10,40,0,0" IsChecked="{Binding DamageIncludeDex}" />
                     <CheckBox x:Name="CB_DmgConBonus" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.ItemIntegration_IncCon}" Foreground="{StaticResource Static.Foreground}" Margin="10,60,0,0" IsChecked="{Binding DamageIncludeCon}" />

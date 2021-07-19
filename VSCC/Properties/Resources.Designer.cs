@@ -8994,7 +8994,7 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Spell Description Card.
+        ///   Looks up a localized string similar to Show Description.
         /// </summary>
         public static string SpellIntegration_ShowDesc {
             get {
