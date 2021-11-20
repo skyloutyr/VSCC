@@ -35,7 +35,7 @@
                     <Label Content="{x:Static p:Resources.Spellbook_SaveDC}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellSave" HorizontalAlignment="Left" Margin="406,5,0,0" VerticalAlignment="Top" Width="72" />
                     <Label Content="{x:Static p:Resources.Spellbook_AttackBonus}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="564,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
-                    <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellAttackAbility" HorizontalAlignment="Left" Margin="677,6,0,0" VerticalAlignment="Top" Width="72" />
+                    <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellAttackAbility" HorizontalAlignment="Left" Margin="677,6,0,0" VerticalAlignment="Top" Width="72" Minimum="-1000000" />
                     <Label Content="{x:Static p:Resources.Spellbook_MaxSpells}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="843,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
                     <lcontrols:NumericUpDown Value="0" x:Name="IntUD_SpellsAmount" HorizontalAlignment="Left" Margin="916,6,0,0" VerticalAlignment="Top" Width="72" />
                 </Grid>

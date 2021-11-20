@@ -17,7 +17,7 @@
         <TextBox x:Name="TB_Label" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="299" Margin="254,37,0,0" />
         <lcontrols:NumericUpDown x:Name="IntUD_DieSide" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="93,37,0,0" Height="26" Width="64" Value="0" />
         <Label Content="+" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="162,37,0,0" />
-        <lcontrols:NumericUpDown x:Name="IntUD_Constant" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="185,37,0,0" Height="26" Width="64" Value="0" />
+        <lcontrols:NumericUpDown x:Name="IntUD_Constant" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="185,37,0,0" Height="26" Width="64" Value="0" Minimum="-1000000" />
         <Label Content="{x:Static Properties:Resources.DamageModifier_Constant_Label}" Foreground="{StaticResource Static.Foreground}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="185,6,0,0" Width="64" />
     </Grid>
 </Window>
