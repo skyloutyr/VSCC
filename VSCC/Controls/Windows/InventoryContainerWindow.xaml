@@ -43,7 +43,7 @@
         <Button x:Name="Btn_Run_R20" HorizontalAlignment="Left" Margin="292,22,0,0" VerticalAlignment="Top" Width="21" Height="21" Click="RunItemR20" ToolTip="{x:Static p:Resources.Tooltip_Button_RunItemR20}">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-run-64.png" Stretch="Uniform"/>
         </Button>
-        <Button x:Name="Btn_Cut" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" Width="22" Height="21" Click="Btn_Paste_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CutItem}">
+        <Button x:Name="Btn_Cut" HorizontalAlignment="Left" Margin="213,22,0,0" VerticalAlignment="Top" Width="22" Height="21" Click="Btn_Cut_Click" ToolTip="{x:Static p:Resources.Tooltip_Button_CutItem}">
             <Image Source="/VSCC;component/Images/AppIcons/icons8-cut-64.png" Stretch="Uniform"/>
         </Button>
         <Border Margin="10,49,10,10" BorderThickness="1" BorderBrush="{StaticResource Static.Border}">
