@@ -39,7 +39,7 @@
                 <Grid>
                     <Label Content="{x:Static p:Resources.SpellIndex_Name}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
-                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Classes}" HorizontalAlignment="Left" Height="145" Margin="10,64,0,0" VerticalAlignment="Top" Width="263">
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Classes}" HorizontalAlignment="Left" Height="162" Margin="10,64,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Bard}" x:Name="CB_Bard" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Cleric}" x:Name="CB_Cleric" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0" Foreground="{StaticResource Static.Foreground}"/>
@@ -49,16 +49,17 @@
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Sorcerer}" x:Name="CB_Sorcerer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,76,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Warlock}" x:Name="CB_Warlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,91,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Wizard}" x:Name="CB_Wizard" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,106,0,0" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Class_Artificer}" x:Name="CB_Artificer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,121,0,0" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Level}" HorizontalAlignment="Left" Height="56" Margin="10,214,0,0" VerticalAlignment="Top" Width="263">
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Level}" HorizontalAlignment="Left" Height="56" Margin="10,231,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
                             <lcontrols:NumericUpDown x:Name="IntUD_LvlMin" Value="0" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="80" />
                             <lcontrols:NumericUpDown x:Name="IntUD_LvlMax" Value="9" Maximum="9" Minimum="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,10,0,0" Width="80" />
                             <Label Content="->" HorizontalAlignment="Left" Margin="112,7,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Schools}" HorizontalAlignment="Left" Height="146" Margin="10,275,0,0" VerticalAlignment="Top" Width="263">
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Schools}" HorizontalAlignment="Left" Height="146" Margin="10,292,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Abjuration}" x:Name="CB_Abj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Conjuration}" x:Name="CB_Con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0" Foreground="{StaticResource Static.Foreground}"/>
@@ -70,16 +71,17 @@
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_School_Transmutation}" x:Name="CB_Tra" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,107,0,0" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>
-                    <CheckBox Content="{x:Static p:Resources.SpellIndex_Ritual}" x:Name="CB_Ritual" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
+                    <CheckBox Content="{x:Static p:Resources.SpellIndex_Ritual}" x:Name="CB_Ritual" HorizontalAlignment="Left" Margin="10,443,0,0" VerticalAlignment="Top" Foreground="{StaticResource Static.Foreground}"/>
                     <Button Content="{x:Static p:Resources.SpellIndex_ApplyFilters}" HorizontalAlignment="Left" Margin="10,678,0,0" VerticalAlignment="Top" Width="263" Click="Button_Click" Foreground="{StaticResource Static.Foreground}"/>
-                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Sources}" HorizontalAlignment="Left" Height="116" Margin="10,446,0,0" VerticalAlignment="Top" Width="263">
+                    <GroupBox Header="{x:Static p:Resources.SpellIndex_Sources}" HorizontalAlignment="Left" Height="133" Margin="10,463,0,0" VerticalAlignment="Top" Width="263">
                         <Grid>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_PHB}" x:Name="CB_PHB" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_EE}" x:Name="CB_EE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCAG}" x:Name="CB_SCAG" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,31,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_XGTE}" x:Name="CB_XGTE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0" Foreground="{StaticResource Static.Foreground}"/>
                             <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_SCPC}" x:Name="CB_SCPC" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0" Foreground="{StaticResource Static.Foreground}"/>
-                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_HB}" x:Name="CB_HB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_TCOE}" x:Name="CB_TCOE" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0" Foreground="{StaticResource Static.Foreground}"/>
+                            <CheckBox Content="{x:Static p:Resources.SpellIndex_Source_HB}" x:Name="CB_HB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,92,0,0" Foreground="{StaticResource Static.Foreground}"/>
                         </Grid>
                     </GroupBox>
                 </Grid>

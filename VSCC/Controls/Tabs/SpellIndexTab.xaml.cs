@@ -56,7 +56,7 @@
                 return false;
             }
 
-            CheckBox[] classes = { this.CB_Bard, this.CB_Cleric, this.CB_Druid, this.CB_Paladin, this.CB_Ranger, this.CB_Sorcerer, this.CB_Warlock, this.CB_Wizard };
+            CheckBox[] classes = { this.CB_Bard, this.CB_Cleric, this.CB_Druid, this.CB_Paladin, this.CB_Ranger, this.CB_Sorcerer, this.CB_Warlock, this.CB_Wizard, this.CB_Artificer };
             bool classesQualify = !classes.Select(c => c.IsChecked ?? false).Any(b => b);
             if (!classesQualify)
             {
@@ -117,7 +117,7 @@
                 }
             }
 
-            CheckBox[] sources = { this.CB_PHB, this.CB_XGTE, this.CB_SCAG, this.CB_SCPC, this.CB_EE, this.CB_HB };
+            CheckBox[] sources = { this.CB_PHB, this.CB_XGTE, this.CB_SCAG, this.CB_SCPC, this.CB_TCOE, this.CB_EE, this.CB_HB };
             bool sourcesQualify = !sources.Select(c => c.IsChecked ?? false).Any(b => b);
             if (!sourcesQualify)
             {

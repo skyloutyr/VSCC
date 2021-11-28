@@ -49,6 +49,7 @@
                         <ComboBoxItem x:Name="CBItem_Class_Sorcerer" Content="{x:Static p:Resources.General_Class_Sorcerer}"/>
                         <ComboBoxItem x:Name="CBItem_Class_Warlock" Content="{x:Static p:Resources.General_Class_Warlock}"/>
                         <ComboBoxItem x:Name="CBItem_Class_Wizard" Content="{x:Static p:Resources.General_Class_Wizard}"/>
+                        <ComboBoxItem x:Name="CBItem_Class_Artificer" Content="{x:Static p:Resources.General_Class_Artificer}"/>
                     </ComboBox>
                     <ComboBox x:Name="ComboBox_Race" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="242" Margin="157,156,0,0" IsEditable="True" Foreground="{StaticResource Static.Foreground}">
                         <ComboBoxItem x:Name="CBItem_Race_Dwarf_Mountain" Content="{x:Static p:Resources.General_Race_MountainDwarf}"/>

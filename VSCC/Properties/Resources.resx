@@ -391,6 +391,9 @@
   <data name="General_Charisma" xml:space="preserve">
     <value>Charisma</value>
   </data>
+  <data name="General_Class_Artificer" xml:space="preserve">
+    <value>Artificer</value>
+  </data>
   <data name="General_Class_Barbarian" xml:space="preserve">
     <value>Barbarian</value>
   </data>
@@ -3008,6 +3011,9 @@ On certain browsers you may need to do more actions.</value>
   <data name="SpellIndex_Classes" xml:space="preserve">
     <value>Classes</value>
   </data>
+  <data name="SpellIndex_Class_Artificer" xml:space="preserve">
+    <value>Artificer</value>
+  </data>
   <data name="SpellIndex_Class_Bard" xml:space="preserve">
     <value>Bard</value>
   </data>
@@ -3088,6 +3094,9 @@ On certain browsers you may need to do more actions.</value>
   </data>
   <data name="SpellIndex_Source_SCPC" xml:space="preserve">
     <value>Sprouting Chaos</value>
+  </data>
+  <data name="SpellIndex_Source_TCOE" xml:space="preserve">
+    <value>Tashas Cauldron of Everything</value>
   </data>
   <data name="SpellIndex_Source_XGTE" xml:space="preserve">
     <value>Xanathars Guide To Everything</value>

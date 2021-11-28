@@ -899,6 +899,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artificer.
+        /// </summary>
+        public static string General_Class_Artificer {
+            get {
+                return ResourceManager.GetString("General_Class_Artificer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Barbarian.
         /// </summary>
         public static string General_Class_Barbarian {
@@ -8733,6 +8742,15 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Artificer.
+        /// </summary>
+        public static string SpellIndex_Class_Artificer {
+            get {
+                return ResourceManager.GetString("SpellIndex_Class_Artificer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bard.
         /// </summary>
         public static string SpellIndex_Class_Bard {
@@ -8972,6 +8990,15 @@ namespace VSCC.Properties {
         public static string SpellIndex_Source_SCPC {
             get {
                 return ResourceManager.GetString("SpellIndex_Source_SCPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tashas Cauldron of Everything.
+        /// </summary>
+        public static string SpellIndex_Source_TCOE {
+            get {
+                return ResourceManager.GetString("SpellIndex_Source_TCOE", resourceCulture);
             }
         }
         
