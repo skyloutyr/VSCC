@@ -298,6 +298,12 @@
 
         private void CommandBindingCopy_Executed(object sender, ExecutedRoutedEventArgs e) => this.Btn_Copy_Click(null, default);
 
+        private void Btn_Cut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Btn_Copy_Click(null, default);
+            this.Btn_Delete_Click(null, default);
+        }
+
         private void CommandBindingCut_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             this.Btn_Copy_Click(null, default);

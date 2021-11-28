@@ -1763,6 +1763,24 @@ namespace VSCC.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extra Credits.
+        /// </summary>
+        public static string Info_Extras {
+            get {
+                return ResourceManager.GetString("Info_Extras", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Russian spell translations by:.
+        /// </summary>
+        public static string Info_Extras_SpellDB_RU {
+            get {
+                return ResourceManager.GetString("Info_Extras_SpellDB_RU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
         public static string Info_Information {

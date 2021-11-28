@@ -679,6 +679,12 @@
   <data name="Info_Author" xml:space="preserve">
     <value>Author</value>
   </data>
+  <data name="Info_Extras" xml:space="preserve">
+    <value>Extra Credits</value>
+  </data>
+  <data name="Info_Extras_SpellDB_RU" xml:space="preserve">
+    <value>Russian spell translations by:</value>
+  </data>
   <data name="Info_Information" xml:space="preserve">
     <value>Information</value>
   </data>

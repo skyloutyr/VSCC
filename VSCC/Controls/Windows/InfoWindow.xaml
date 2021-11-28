@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VSCC.Controls.Windows"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.Window_Info_Title}" Height="300" Width="300" Background="{StaticResource Static.Background}">
+        Title="{x:Static p:Resources.Window_Info_Title}" Height="451.937" Width="300" Background="{StaticResource Static.Background}">
     <StackPanel>
         <Label HorizontalAlignment="Stretch" VerticalAlignment="Top" Content="{x:Static p:Resources.Info_Information}" HorizontalContentAlignment="Center" Foreground="{StaticResource Static.Foreground}"/>
         <TextBlock Text="{x:Static p:Resources.Info_Author}" Foreground="{StaticResource Static.Foreground}" />
@@ -15,19 +15,14 @@
         <TextBlock Text="{Binding Path=CurrentVersion, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:InfoWindow}}}" Foreground="{StaticResource Static.Foreground}" />
         <TextBlock Text="{x:Static p:Resources.Info_License}" Foreground="{StaticResource Static.Foreground}" />
         <TextBlock Foreground="{StaticResource Static.Foreground}">
-            <Hyperlink NavigateUri="https://www.gnu.org/licenses/gpl-3.0.en.html" RequestNavigate="Hyperlink_RequestNavigate">
-                GPL 3.0
+            <Hyperlink NavigateUri="https://github.com/skyloutyr/VSCC/blob/master/LICENSE" RequestNavigate="Hyperlink_RequestNavigate">
+                MIT
             </Hyperlink>
         </TextBlock>
         <TextBlock Text="{x:Static p:Resources.Info_3rd}" Foreground="{StaticResource Static.Foreground}" />
         <TextBlock>
             <Hyperlink NavigateUri="https://www.newtonsoft.com/json" RequestNavigate="Hyperlink_RequestNavigate">
                 Json.NET (MIT)
-            </Hyperlink>
-        </TextBlock>
-        <TextBlock>
-            <Hyperlink NavigateUri="https://github.com/xceedsoftware/wpftoolkit" RequestNavigate="Hyperlink_RequestNavigate">
-                Extended WPF Toolkit (MS-PL)
             </Hyperlink>
         </TextBlock>
         <TextBlock>
@@ -45,11 +40,29 @@
                 NLua (MIT)
             </Hyperlink>
         </TextBlock>
+        <TextBlock>
+            <Hyperlink NavigateUri="https://github.com/statianzo/Fleck" RequestNavigate="Hyperlink_RequestNavigate">
+                Fleck (MIT)
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock>
+            <Hyperlink NavigateUri="https://github.com/drogoganor/ColorPickerWPF" RequestNavigate="Hyperlink_RequestNavigate">
+                ColorPickerWPF (MIT)
+            </Hyperlink>
+        </TextBlock>
         <Label />
         <TextBlock Text="{x:Static p:Resources.Info_Repo}" Foreground="{StaticResource Static.Foreground}" />
         <TextBlock>
             <Hyperlink NavigateUri="https://github.com/skyloutyr/VSCC" RequestNavigate="Hyperlink_RequestNavigate">
                 Github
+            </Hyperlink>
+        </TextBlock>
+        <Label />
+        <TextBlock Text="{x:Static p:Resources.Info_Extras}" Foreground="{StaticResource Static.Foreground}" />
+        <TextBlock Text="{x:Static p:Resources.Info_Extras_SpellDB_RU}" Foreground="{StaticResource Static.Foreground}" />
+        <TextBlock>
+            <Hyperlink NavigateUri="https://www.dungeon.su" RequestNavigate="Hyperlink_RequestNavigate">
+                dungeon.su (unbat)
             </Hyperlink>
         </TextBlock>
     </StackPanel>
