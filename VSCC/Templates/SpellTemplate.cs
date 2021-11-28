@@ -52,5 +52,11 @@
             this._imgGetter = func;
             return this;
         }
+
+        public SpellTemplate ReplaceDescriptionNewline()
+        {
+            this.Description = this.Description.Replace("\\n", "\n").Replace("\r", "");
+            return this;
+        }
     }
 }

@@ -33,7 +33,7 @@
             this.ListView_SpellTemplates.ItemsSource = this.AllSpellTemplates;
             string culture = Thread.CurrentThread.CurrentUICulture.Name;
             string database = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "dnd5espellindex-" + culture + ".json")) ? "dnd5espellindex-" + culture + ".json" : "dnd5espellindex-en-US.json"));
-            this.AllSpellTemplates.AddRange(JsonConvert.DeserializeObject<SpellTemplate[]>(database).Select(s => s.ApplyImageGetterFunc(this.ImageFromSchoolName)));
+            this.AllSpellTemplates.AddRange(JsonConvert.DeserializeObject<SpellTemplate[]>(database).Select(s => s.ApplyImageGetterFunc(this.ImageFromSchoolName).ReplaceDescriptionNewline()));
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(this.ListView_SpellTemplates.ItemsSource);
             view.SortDescriptions.Add(new SortDescription("Level", ListSortDirection.Ascending));
             view.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Ascending));
