@@ -5,6 +5,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
+    using System.IO;
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
@@ -315,10 +316,14 @@
 
             if (ofd.ShowDialog() ?? false)
             {
-                if (Uri.TryCreate(Uri.UriSchemeFile + "://" + System.IO.Path.GetFullPath(ofd.FileName), UriKind.Absolute, out Uri uri))
+                try
                 {
-                    AppState.Current.State.General.PortraitLocation = uri.AbsoluteUri;
-                    //AppState.Current.TGeneral.Portrait.Source = new BitmapImage(uri);
+                    byte[] data = File.ReadAllBytes(ofd.FileName);
+                    AppState.Current.State.General.PortraitLocation = Convert.ToBase64String(data);
+                }
+                catch
+                {
+                    // NOOP
                 }
             }
         }

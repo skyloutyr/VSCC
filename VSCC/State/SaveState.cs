@@ -4,6 +4,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.IO;
     using System.Linq;
     using VSCC.DataType;
     using VSCC.Roll20.Macros;
@@ -722,7 +723,7 @@
             set => AppState.Current.TGeneral.TextBox_Profficencies.Text = value;
         }
 
-        private string _portrait = "file://#0";
+        private string _portrait = "";
         public string PortraitLocation
         {
             get => this._portrait;
@@ -731,7 +732,20 @@
                 this._portrait = value;
                 try
                 {
-                    AppState.Current.TGeneral.Portrait.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(value));
+                    byte[] data = Convert.FromBase64String(this._portrait);
+                    System.Windows.Media.Imaging.BitmapImage img = new System.Windows.Media.Imaging.BitmapImage();
+                    using (MemoryStream ms = new MemoryStream(data))
+                    {
+                        ms.Position = 0;
+                        img.BeginInit();
+                        img.CreateOptions = System.Windows.Media.Imaging.BitmapCreateOptions.PreservePixelFormat;
+                        img.CacheOption = System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+                        img.UriSource = null;
+                        img.StreamSource = ms;
+                        img.EndInit();
+                        img.Freeze();
+                        AppState.Current.TGeneral.Portrait.Source = img;
+                    }
                 }
                 catch
                 {
